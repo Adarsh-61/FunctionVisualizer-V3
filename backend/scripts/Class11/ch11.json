@@ -1,0 +1,150 @@
+{
+  "id": "11_11",
+  "classId": 11,
+  "title": "Introduction to Three Dimensional Geometry",
+  "description": "The leap from the plane to space. This chapter extends the Cartesian coordinate system to three dimensions, introducing the Z-axis, octants, and fundamental measurements like distance and section formulas in 3D space.",
+  "topics": [
+    {
+      "id": "11_11_1",
+      "title": "Coordinate Axes and Coordinate Planes",
+      "content": "### 1. From 2D to 3D\nIn Class 10, we located points in a plane using two perpendicular lines (x and y axes). However, the real world is three-dimensional. To locate a point in space (like a bird flying or a bulb hanging from a ceiling), we need three reference numbers.\n\n### 2. The Rectangular Coordinate System\nConsider three mutually perpendicular lines passing through a common point $O$ (Origin).\n* **X-axis:** Horizontal.\n* **Y-axis:** Vertical (in 2D context) or Horizontal perpendicular to X.\n* **Z-axis:** Perpendicular to the XY plane.\n\nThese axes form three mutually perpendicular planes:\n1.  **XY-Plane:** Contains x and y axes ($z=0$).\n2.  **YZ-Plane:** Contains y and z axes ($x=0$).\n3.  **ZX-Plane:** Contains z and x axes ($y=0$).\n\n### 3. Octants\nJust as 2 axes divide a plane into 4 quadrants, 3 axes divide space into **8 Octants**.\n\n**Naming Convention:**\n* The positive directions are denoted by $X, Y, Z$.\n* The negative directions are denoted by $X', Y', Z'$.\n* Octants are named by the axes enclosing them (e.g., $OXYZ$, $OX'YZ'$).\n\n**Sign Convention Table:**\n\n| Octant | I | II | III | IV | V | VI | VII | VIII |\n| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |\n| **Name** | $OXYZ$ | $OX'YZ$ | $OX'Y'Z$ | $OXY'Z$ | $OXYZ'$ | $OX'YZ'$ | $OX'Y'Z'$ | $OXY'Z'$ |\n| **x** | + | – | – | + | + | – | – | + |\n| **y** | + | + | – | – | + | + | – | – |\n| **z** | + | + | + | + | – | – | – | – |\n\n* **Memory Tip:**\n    * Z is Positive for Octants I to IV (Top floor).\n    * Z is Negative for Octants V to VIII (Basement).\n    * The x and y signs follow the standard 2D Quadrant pattern (I to IV) for both the top and bottom groups.",
+      "examples": [
+        {
+          "id": "ex_11_1",
+          "question": "In which octant do the following points lie?\n(i) $(2, -3, 4)$\n(ii) $(-1, -2, -5)$",
+          "solution": "1.  **Point $(2, -3, 4)$:**\n    * $x$ is positive (+)\n    * $y$ is negative (-)\n    * $z$ is positive (+)\n    * Looking at the pattern $(+, -, +)$, this corresponds to **Octant IV**.\n\n2.  **Point $(-1, -2, -5)$:**\n    * $x$ is negative (-)\n    * $y$ is negative (-)\n    * $z$ is negative (-)\n    * Looking at the pattern $(-, -, -)$, this corresponds to **Octant VII**."
+        }
+      ]
+    },
+    {
+      "id": "11_11_2",
+      "title": "Coordinates of a Point in Space",
+      "content": "### 1. Geometric Interpretation\nLet $P$ be a point in space.\n* Drop a perpendicular from $P$ to the XY-plane, meeting it at $M$.\n* From $M$, drop a perpendicular to the X-axis, meeting it at $A$.\n\nThen:\n* $OA = x$ (x-coordinate)\n* $AM = y$ (y-coordinate)\n* $MP = z$ (z-coordinate)\n\nThe coordinates of $P$ are written as $(x, y, z)$.\n\n### 2. Points on Axes and Planes\n* **Point on X-axis:** $(x, 0, 0)$.\n* **Point on Y-axis:** $(0, y, 0)$.\n* **Point on Z-axis:** $(0, 0, z)$.\n* **Point in XY-plane:** $(x, y, 0)$.\n* **Point in YZ-plane:** $(0, y, z)$.\n* **Point in ZX-plane:** $(x, 0, z)$.\n\n### 3. Images of Points (Reflection)\nFor a point $P(x, y, z)$:\n* Image in **XY-plane:** $(x, y, -z)$ (Sign of missing axis changes).\n* Image in **YZ-plane:** $(-x, y, z)$.\n* Image in **ZX-plane:** $(x, -y, z)$.\n* Image about **X-axis:** $(x, -y, -z)$ (Signs of other two change).\n* Image about **Origin:** $(-x, -y, -z)$.",
+      "examples": [
+        {
+          "id": "ex_11_2",
+          "question": "Find the image of the point $P(-2, 3, 4)$ in the YZ-plane.",
+          "solution": "The reflection of a point $(x, y, z)$ in the YZ-plane preserves the y and z coordinates but negates the x coordinate.\n* Original: $x = -2, y = 3, z = 4$.\n* Image: $x' = -(-2) = 2, y' = 3, z' = 4$.\n* **Result:** $(2, 3, 4)$."
+        }
+      ]
+    },
+    {
+      "id": "11_11_3",
+      "title": "Distance Formula",
+      "content": "### 1. Derivation\nWe extend the 2D Pythagoras theorem to 3D.\nLet $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$ be two points in space.\nConsider a rectangular box with $P$ and $Q$ as opposite corners.\n\nThe length of the edges are $|x_2 - x_1|$, $|y_2 - y_1|$, and $|z_2 - z_1|$.\nBy applying Pythagoras theorem twice (once on the base face, then for the space diagonal):\n$$ PQ^2 = (x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2 $$\n\n**Distance Formula:**\n$$ PQ = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2} $$\n\n### 2. Distance from Origin\nDistance of $P(x, y, z)$ from $O(0, 0, 0)$ is:\n$$ OP = \\sqrt{x^2 + y^2 + z^2} $$\n\n### 3. Applications\n* **Collinearity:** Three points $A, B, C$ are collinear if the sum of two distances equals the third (e.g., $AB + BC = AC$).\n* **Types of Triangles:** Used to verify Isosceles, Equilateral, or Right-angled triangles in 3D.\n* **Parallelogram:** $ABCD$ is a parallelogram if $AB=CD$ and $BC=AD$ (or diagonals bisect each other).",
+      "examples": [
+        {
+          "id": "ex_11_3",
+          "question": "Find the distance between points $P(1, -3, 4)$ and $Q(-4, 1, 2)$.",
+          "solution": "Using the formula:\n$$ d = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2} $$\n$$ d = \\sqrt{(-4 - 1)^2 + (1 - (-3))^2 + (2 - 4)^2} $$\n$$ d = \\sqrt{(-5)^2 + (4)^2 + (-2)^2} $$\n$$ d = \\sqrt{25 + 16 + 4} = \\sqrt{45} $$\n$$ d = 3\\sqrt{5} \\text{ units} $$"
+        },
+        {
+          "id": "ex_11_4",
+          "question": "Show that the points $A(-2, 3, 5)$, $B(1, 2, 3)$ and $C(7, 0, -1)$ are collinear.",
+          "solution": "Calculate distances:\n1.  $AB = \\sqrt{(1+2)^2 + (2-3)^2 + (3-5)^2} = \\sqrt{9 + 1 + 4} = \\sqrt{14}$.\n2.  $BC = \\sqrt{(7-1)^2 + (0-2)^2 + (-1-3)^2} = \\sqrt{36 + 4 + 16} = \\sqrt{56} = 2\\sqrt{14}$.\n3.  $AC = \\sqrt{(7+2)^2 + (0-3)^2 + (-1-5)^2} = \\sqrt{81 + 9 + 36} = \\sqrt{126} = 3\\sqrt{14}$.\n\nObservation: $AB + BC = \\sqrt{14} + 2\\sqrt{14} = 3\\sqrt{14} = AC$.\nSince sum of two distances equals the third, points are **collinear**."
+        }
+      ]
+    },
+    {
+      "id": "11_11_4",
+      "title": "Section Formula",
+      "content": "### 1. Internal Division\nLet $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$ be two points.\nLet $R(x, y, z)$ divide $PQ$ internally in the ratio $m:n$.\n\nThe coordinates of $R$ are:\n$$ x = \\frac{mx_2 + nx_1}{m+n}, \\quad y = \\frac{my_2 + ny_1}{m+n}, \\quad z = \\frac{mz_2 + nz_1}{m+n} $$\n\n### 2. External Division\nIf $R$ divides $PQ$ externally in the ratio $m:n$:\n$$ x = \\frac{mx_2 - nx_1}{m-n}, \\quad y = \\frac{my_2 - ny_1}{m-n}, \\quad z = \\frac{mz_2 - nz_1}{m-n} $$\n\n### 3. Midpoint Formula\nFor ratio $1:1$ (Midpoint):\n$$ M = \\left( \\frac{x_1+x_2}{2}, \\frac{y_1+y_2}{2}, \\frac{z_1+z_2}{2} \\right) $$\n\n### 4. Centroid of a Triangle\nFor a triangle with vertices $A(x_1, y_1, z_1)$, $B(x_2, y_2, z_2)$, and $C(x_3, y_3, z_3)$, the centroid $G$ is:\n$$ G = \\left( \\frac{x_1+x_2+x_3}{3}, \\frac{y_1+y_2+y_3}{3}, \\frac{z_1+z_2+z_3}{3} \\right) $$\n\n### 5. Ratio Formula (k:1 Method)\nTo find the ratio in which a point (or plane) divides a segment, assume the ratio is $k:1$.\n$$ x = \\frac{kx_2 + x_1}{k+1}, \\dots $$\nIf $k$ comes out positive, it's internal division. If negative, it's external.",
+      "examples": [
+        {
+          "id": "ex_11_5",
+          "question": "Find the coordinates of the point which divides the line segment joining the points $(1, -2, 3)$ and $(3, 4, -5)$ in the ratio $2:3$ internally.",
+          "solution": "Here $(x_1, y_1, z_1) = (1, -2, 3)$, $(x_2, y_2, z_2) = (3, 4, -5)$, $m=2, n=3$.\n$$ x = \\frac{2(3) + 3(1)}{2+3} = \\frac{6+3}{5} = \\frac{9}{5} $$\n$$ y = \\frac{2(4) + 3(-2)}{2+3} = \\frac{8-6}{5} = \\frac{2}{5} $$\n$$ z = \\frac{2(-5) + 3(3)}{2+3} = \\frac{-10+9}{5} = -\\frac{1}{5} $$\n**Point:** $(\\frac{9}{5}, \\frac{2}{5}, -\\frac{1}{5})$."
+        },
+        {
+          "id": "ex_11_6",
+          "question": "Find the ratio in which the YZ-plane divides the line segment formed by joining the points $(-2, 4, 7)$ and $(3, -5, 8)$.",
+          "solution": "Let the ratio be $k:1$.\nThe point of division is $\\left( \\frac{3k-2}{k+1}, \\frac{-5k+4}{k+1}, \\frac{8k+7}{k+1} \\right)$.\nSince the point lies on the **YZ-plane**, its **x-coordinate must be zero**.\n$$ \\frac{3k-2}{k+1} = 0 \\implies 3k - 2 = 0 \\implies k = \\frac{2}{3} $$\nRatio is $2/3 : 1$ or **2:3**."
+        }
+      ]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "fmt_11_1",
+      "label": "Distance Formula",
+      "tex": "d = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2}"
+    },
+    {
+      "id": "fmt_11_2",
+      "label": "Distance from Origin",
+      "tex": "d = \\sqrt{x^2 + y^2 + z^2}"
+    },
+    {
+      "id": "fmt_11_3",
+      "label": "Section Formula (Internal)",
+      "tex": "\\left( \\frac{mx_2+nx_1}{m+n}, \\frac{my_2+ny_1}{m+n}, \\frac{mz_2+nz_1}{m+n} \\right)"
+    },
+    {
+      "id": "fmt_11_4",
+      "label": "Section Formula (External)",
+      "tex": "\\left( \\frac{mx_2-nx_1}{m-n}, \\frac{my_2-ny_1}{m-n}, \\frac{mz_2-nz_1}{m-n} \\right)"
+    },
+    {
+      "id": "fmt_11_5",
+      "label": "Midpoint Formula",
+      "tex": "\\left( \\frac{x_1+x_2}{2}, \\frac{y_1+y_2}{2}, \\frac{z_1+z_2}{2} \\right)"
+    },
+    {
+      "id": "fmt_11_6",
+      "label": "Centroid of Triangle",
+      "tex": "\\left( \\frac{\\Sigma x_i}{3}, \\frac{\\Sigma y_i}{3}, \\frac{\\Sigma z_i}{3} \\right)"
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "id": "pq_11_1",
+      "question": "Name the octant in which the point $(-4, 2, -5)$ lies.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "pq_11_2",
+      "question": "Find the distance of point $P(3, 4, 5)$ from the z-axis.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_11_3",
+      "question": "Find the coordinates of a point on y-axis which is at a distance of $5\\sqrt{2}$ from the point $P(3, -2, 5)$.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_11_4",
+      "question": "Determine the points which trisect the line segment joining $P(4, 2, -6)$ and $Q(10, -16, 6)$.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_11_5",
+      "question": "Find the ratio in which the line segment joining the points $(4, 8, 10)$ and $(6, 10, -8)$ is divided by the YZ-plane.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_11_6",
+      "question": "The centroid of a triangle ABC is at the origin. If coordinates of A and B are $(3, -5, 7)$ and $(-1, 7, -6)$ respectively, find the coordinates of C.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "pq_11_7",
+      "question": "Show that the points $A(0, 7, 10)$, $B(-1, 6, 6)$ and $C(-4, 9, 6)$ form an isosceles right-angled triangle.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": "pq_11_8",
+      "question": "Find the locus of a point which moves such that the sum of its distances from points $(4, 0, 0)$ and $(-4, 0, 0)$ is 10.",
+      "difficulty": "Hard (JEE)"
+    },
+    {
+      "id": "pq_11_9",
+      "question": "Find the coordinates of the point which divides the line segment joining the points $P(2, -4, 3)$ and $Q(-4, 5, -6)$ in ratio $2:1$ externally.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_11_10",
+      "question": "Three vertices of a parallelogram ABCD are $A(3, -1, 2)$, $B(1, 2, -4)$ and $C(-1, 1, 2)$. Find the coordinates of the fourth vertex D.",
+      "difficulty": "Medium"
+    }
+  ]
+}

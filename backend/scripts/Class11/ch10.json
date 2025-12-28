@@ -1,0 +1,160 @@
+{
+  "id": "11_10",
+  "classId": 11,
+  "title": "Conic Sections",
+  "description": "A deep exploration of the curves obtained by intersecting a plane with a double-napped right circular cone. This chapter unifies geometry and algebra, covering Circles, Parabolas, Ellipses, and Hyperbolas with rigorous derivations and applications crucial for Physics and Engineering.",
+  "topics": [
+    {
+      "id": "11_10_1",
+      "title": "Introduction to Conic Sections",
+      "content": "### 1. Geometric Construction\nThe term \"Conic Section\" is derived from the fact that these curves are obtained by taking sections (slices) of a cone.\n\n**The Double-Napped Right Circular Cone:**\nConsider a fixed vertical line $l$ (Axis) and another line $m$ (Generator) intersecting it at a fixed point $V$ (Vertex) making an angle $\\alpha$ ($0 < \\alpha < 90^\\circ$).\nWhen the line $m$ rotates around $l$ maintaining the constant angle $\\alpha$, it generates a surface called a **Double-Napped Right Circular Cone**.\n* **Nappes:** The vertex $V$ separates the cone into two parts: the Upper Nappe and the Lower Nappe.\n\n### 2. Intersection with a Plane\nLet a plane intersect the cone. The curve of intersection depends on the position of the plane relative to the vertex and the axis.\nLet $\\beta$ be the angle made by the intersecting plane with the vertical axis of the cone.\n\n#### Case 1: Plane passes through Vertex (Degenerate Conics)\nIf the plane cuts through the vertex $V$, the section is not a curve but a geometric entity:\n1.  **Point:** If $\\beta = 90^\\circ$ (Plane perpendicular to axis). Intersection is just $V$.\n2.  **Line:** If $\\beta = \\alpha$ (Plane touches the generator). Intersection is a line.\n3.  **Pair of Intersecting Lines:** If $0 \\le \\beta < \\alpha$ (Plane cuts through both nappes). Intersection is two lines crossing at $V$.\n\n#### Case 2: Plane does NOT pass through Vertex (Non-Degenerate Conics)\n1.  **Circle:** If $\\beta = 90^\\circ$. The plane is perpendicular to the axis. The section is a circle.\n2.  **Ellipse:** If $\\alpha < \\beta < 90^\\circ$. The plane cuts obliquely across one nappe.\n3.  **Parabola:** If $\\beta = \\alpha$. The plane is parallel to a generator. It cuts one nappe but never closes.\n4.  **Hyperbola:** If $0 \\le \\beta < \\alpha$. The plane intersects both nappes. The curve has two disjoint branches.\n\n### 3. Analytic Definition (Locus Definition)\nA conic section is the locus of a point $P$ which moves in a plane such that the ratio of its distance from a fixed point (Focus) to its perpendicular distance from a fixed line (Directrix) is a constant.\n* This constant ratio is called **Eccentricity ($e$)**.\n    * If $e = 0$: Circle (Special case of ellipse).\n    * If $e = 1$: Parabola.\n    * If $0 < e < 1$: Ellipse.\n    * If $e > 1$: Hyperbola."
+    },
+    {
+      "id": "11_10_2",
+      "title": "The Circle",
+      "content": "### 1. Definition\nA circle is the set of all points in a plane that are at a fixed distance from a fixed point in the plane.\n* **Center:** The fixed point $(h, k)$.\n* **Radius:** The fixed distance $r$ ($r > 0$).\n\n### 2. Equation of a Circle\nLet $P(x, y)$ be any point on the circle with center $C(h, k)$ and radius $r$.\nBy the distance formula, $CP = r$.\n$$ \\sqrt{(x-h)^2 + (y-k)^2} = r $$\nSquaring both sides gives the **Standard Equation**:\n$$ (x-h)^2 + (y-k)^2 = r^2 $$\n\n### 3. Special Cases\n* **Center at Origin:** If $(h, k) = (0, 0)$, equation is $x^2 + y^2 = r^2$.\n* **Passing through Origin:** Satisfies $(0-h)^2 + (0-k)^2 = r^2 \\implies h^2 + k^2 = r^2$.\n\n### 4. General Equation of a Circle\nExpanding the standard form:\n$x^2 - 2hx + h^2 + y^2 - 2ky + k^2 = r^2$\n$x^2 + y^2 - 2hx - 2ky + (h^2 + k^2 - r^2) = 0$\n\nComparing this with the general second-degree equation:\n$$ x^2 + y^2 + 2gx + 2fy + c = 0 $$\nThis represents a circle where:\n* Center: $(-g, -f)$\n* Radius: $\\sqrt{g^2 + f^2 - c}$\n\n**Conditions for existence:**\n* $g^2 + f^2 - c > 0$: Real circle.\n* $g^2 + f^2 - c = 0$: Point circle (radius 0).\n* $g^2 + f^2 - c < 0$: Imaginary circle (no locus).\n\n**Crucial Properties:**\n1. Coefficient of $x^2$ = Coefficient of $y^2$.\n2. No $xy$ term (Coefficient of $xy$ is 0).",
+      "examples": [
+        {
+          "id": "ex_10_1",
+          "question": "Find the equation of the circle with center $(-3, 2)$ and radius 4.",
+          "solution": "Here $(h, k) = (-3, 2)$ and $r = 4$.\nEquation:\n$(x - (-3))^2 + (y - 2)^2 = 4^2$\n$(x + 3)^2 + (y - 2)^2 = 16$\nExpanding:\n$x^2 + 6x + 9 + y^2 - 4y + 4 = 16$\n$x^2 + y^2 + 6x - 4y - 3 = 0$"
+        },
+        {
+          "id": "ex_10_2",
+          "question": "Find the center and radius of the circle $x^2 + y^2 - 8x + 10y - 12 = 0$.",
+          "solution": "Compare with $x^2 + y^2 + 2gx + 2fy + c = 0$.\n$2g = -8 \\implies g = -4$.\n$2f = 10 \\implies f = 5$.\n$c = -12$.\n\n**Center:** $(-g, -f) = (4, -5)$.\n**Radius:** $r = \\sqrt{g^2 + f^2 - c} = \\sqrt{(-4)^2 + (5)^2 - (-12)}$\n$r = \\sqrt{16 + 25 + 12} = \\sqrt{53}$."
+        }
+      ]
+    },
+    {
+      "id": "11_10_3",
+      "title": "The Parabola",
+      "content": "### 1. Definition\nA parabola is the set of all points in a plane that are equidistant from a fixed line (Directrix) and a fixed point (Focus) in the plane.\n* Note: The focus does not lie on the directrix.\n\n### 2. Standard Equation Derivation\nLet the Focus be $F(a, 0)$ and the Directrix be the line $x = -a$ ($a > 0$).\nLet $P(x, y)$ be a point on the parabola.\nDistance $PF = \\sqrt{(x-a)^2 + (y-0)^2}$.\nPerpendicular distance $PM$ from $P$ to directrix $x+a=0$ is $|x+a|$.\n\nBy definition, $PF = PM$:\n$$ \\sqrt{(x-a)^2 + y^2} = |x+a| $$\nSquaring both sides:\n$(x-a)^2 + y^2 = (x+a)^2$\n$x^2 - 2ax + a^2 + y^2 = x^2 + 2ax + a^2$\n$$ y^2 = 4ax $$\nThis is the standard equation of a **Right-Handed Parabola**.\n\n### 3. Key Terminology\n* **Axis:** The line passing through the focus and perpendicular to the directrix (here, the x-axis, $y=0$).\n* **Vertex:** The point where the curve intersects the axis (here, $(0,0)$).\n* **Focal Chord:** A chord passing through the focus.\n* **Latus Rectum (LR):** A focal chord perpendicular to the axis.\n    * Endpoints of LR: Substitute $x=a$ in $y^2=4ax \\implies y^2=4a^2 \\implies y = \\pm 2a$.\n    * Endpoints are $(a, 2a)$ and $(a, -2a)$.\n    * Length of LR = $4a$.\n\n### 4. Four Standard Forms\n1.  **$y^2 = 4ax$**: Opens Right. Focus $(a, 0)$. Directrix $x=-a$.\n2.  **$y^2 = -4ax$**: Opens Left. Focus $(-a, 0)$. Directrix $x=a$.\n3.  **$x^2 = 4ay$**: Opens Up. Focus $(0, a)$. Directrix $y=-a$.\n4.  **$x^2 = -4ay$**: Opens Down. Focus $(0, -a)$. Directrix $y=a$.\n\n### 5. Parametric Coordinates (JEE)\nFor $y^2 = 4ax$, any point on it can be represented as:\n$$ x = at^2, \\quad y = 2at $$\nwhere $t$ is a parameter.",
+      "examples": [
+        {
+          "id": "ex_10_3",
+          "question": "Find the coordinates of the focus, axis, the equation of the directrix and latus rectum of the parabola $y^2 = 8x$.",
+          "solution": "Compare $y^2 = 8x$ with standard form $y^2 = 4ax$.\n$4a = 8 \\implies a = 2$.\n1.  **Focus:** $(a, 0) = (2, 0)$.\n2.  **Axis:** x-axis ($y=0$).\n3.  **Directrix:** $x = -a \\implies x = -2$.\n4.  **Latus Rectum:** Length $= 4a = 8$."
+        },
+        {
+          "id": "ex_10_4",
+          "question": "Find the equation of the parabola with focus $(2, 0)$ and directrix $x = -2$.",
+          "solution": "Since focus is $(a, 0)$ and directrix is $x = -a$, the vertex is at the origin and axis is x-axis.\nHere $a=2$.\nThe equation is of the form $y^2 = 4ax$.\n$$ y^2 = 4(2)x \\implies y^2 = 8x $$"
+        }
+      ]
+    },
+    {
+      "id": "11_10_4",
+      "title": "The Ellipse",
+      "content": "### 1. Definition\nAn ellipse is the set of all points in a plane, the sum of whose distances from two fixed points (Foci) in the plane is constant.\n* **Constant Sum:** usually denoted as $2a$.\n* **Condition:** The constant sum must be greater than the distance between the foci ($2a > 2c$).\n\n### 2. Standard Equation Derivation\nLet the foci be $F_1(-c, 0)$ and $F_2(c, 0)$. Let $P(x, y)$ be on the ellipse.\nCondition: $PF_1 + PF_2 = 2a$.\n$$ \\sqrt{(x+c)^2 + y^2} + \\sqrt{(x-c)^2 + y^2} = 2a $$\nMove one radical to the right and square:\n$$ \\sqrt{(x+c)^2 + y^2} = 2a - \\sqrt{(x-c)^2 + y^2} $$\nSquaring both sides and simplifying heavily (algebraic rigor required):\n$$ (x+c)^2 + y^2 = 4a^2 + (x-c)^2 + y^2 - 4a\\sqrt{(x-c)^2 + y^2} $$\nSimplifying $x$ terms leads to:\n$$ cx - a^2 = -a\\sqrt{(x-c)^2 + y^2} $$\nSquaring again:\n$$ c^2x^2 + a^4 - 2a^2cx = a^2(x^2 - 2cx + c^2 + y^2) $$\n$$ x^2(a^2 - c^2) + a^2y^2 = a^2(a^2 - c^2) $$\nDefine $b^2 = a^2 - c^2$ (Since $a > c$).\n$$ x^2b^2 + a^2y^2 = a^2b^2 $$\nDivide by $a^2b^2$:\n$$ \\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 $$\n\n### 3. Terminology\n* **Major Axis:** The line segment passing through foci. Length $2a$.\n* **Minor Axis:** The line segment perpendicular to major axis through center. Length $2b$.\n* **Vertices:** Endpoints of major axis $(\\pm a, 0)$.\n* **Eccentricity ($e$):** Measure of 'ovalness'. $c = ae$.\n    $$ e = \\frac{c}{a} = \\sqrt{1 - \\frac{b^2}{a^2}} \\quad (0 < e < 1) $$\n* **Latus Rectum:** Chord through focus perpendicular to axis.\n    $$ \\text{Length} = \\frac{2b^2}{a} $$\n\n### 4. Alternative Form (Vertical Ellipse)\nIf the major axis is along the y-axis ($b > a$):\n$$ \\frac{x^2}{b^2} + \\frac{y^2}{a^2} = 1 $$\nHere $a$ is the semi-minor axis and $b$ is the semi-major axis.",
+      "examples": [
+        {
+          "id": "ex_10_5",
+          "question": "Find the coordinates of the foci, the vertices, the length of major axis, the minor axis, the eccentricity and the latus rectum of the ellipse $\\frac{x^2}{25} + \\frac{y^2}{9} = 1$.",
+          "solution": "Since denominator of $x^2$ is larger, major axis is along x-axis.\n$a^2 = 25 \\implies a = 5$.\n$b^2 = 9 \\implies b = 3$.\n\n1.  **c relationship:** $c^2 = a^2 - b^2 = 25 - 9 = 16 \\implies c = 4$.\n2.  **Foci:** $(\\pm c, 0) = (\\pm 4, 0)$.\n3.  **Vertices:** $(\\pm a, 0) = (\\pm 5, 0)$.\n4.  **Major Axis:** $2a = 10$.\n5.  **Minor Axis:** $2b = 6$.\n6.  **Eccentricity:** $e = c/a = 4/5$.\n7.  **Latus Rectum:** $2b^2/a = 2(9)/5 = 18/5$."
+        }
+      ]
+    },
+    {
+      "id": "11_10_5",
+      "title": "The Hyperbola",
+      "content": "### 1. Definition\nA hyperbola is the set of all points in a plane, the difference of whose distances from two fixed points (Foci) in the plane is constant.\n* **Condition:** $|PF_1 - PF_2| = 2a$.\n* $2a$ must be less than the distance between foci ($2a < 2c$).\n\n### 2. Standard Equation Derivation\nFoci at $F_1(-c, 0)$ and $F_2(c, 0)$.\n$$ \\sqrt{(x+c)^2 + y^2} - \\sqrt{(x-c)^2 + y^2} = \\pm 2a $$\nFollowing algebraic steps similar to the ellipse (squaring twice):\nWe arrive at $x^2(c^2 - a^2) - a^2y^2 = a^2(c^2 - a^2)$.\nHere $c > a$, so define $b^2 = c^2 - a^2$.\n$$ \\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1 $$\n\n### 3. Terminology\n* **Transverse Axis:** The line segment connecting vertices. Length $2a$.\n* **Conjugate Axis:** Perpendicular axis. Length $2b$.\n* **Vertices:** $(\\pm a, 0)$.\n* **Foci:** $(\\pm c, 0)$ where $c^2 = a^2 + b^2$.\n* **Eccentricity ($e$):**\n    $$ e = \\frac{c}{a} = \\sqrt{1 + \\frac{b^2}{a^2}} \\quad (e > 1) $$\n* **Latus Rectum:** Length $= \\frac{2b^2}{a}$.\n\n### 4. Conjugate Hyperbola\nHyperbola with transverse axis along y-axis:\n$$ \\frac{y^2}{a^2} - \\frac{x^2}{b^2} = 1 $$\nFoci are $(0, \\pm c)$.\n\n### 5. Rectangular Hyperbola\nIf $a = b$, the equation becomes $x^2 - y^2 = a^2$. The asymptotes are perpendicular ($e = \\sqrt{2}$).",
+      "examples": [
+        {
+          "id": "ex_10_6",
+          "question": "Find the equation of the hyperbola with foci $(0, \\pm 3)$ and vertices $(0, \\pm \\frac{\\sqrt{11}}{2})$.",
+          "solution": "Foci are on y-axis, so equation is $\\frac{y^2}{a^2} - \\frac{x^2}{b^2} = 1$.\nGiven $c = 3$ and $a = \\frac{\\sqrt{11}}{2}$.\nRelation: $c^2 = a^2 + b^2$.\n$9 = \\frac{11}{4} + b^2$\n$b^2 = 9 - 2.75 = 6.25 = \\frac{25}{4}$.\nEquation:\n$$ \\frac{y^2}{11/4} - \\frac{x^2}{25/4} = 1 $$\n$$ 4y^2/11 - 4x^2/25 = 1 \\implies 100y^2 - 44x^2 = 275 $$"
+        }
+      ]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "fmt_10_1",
+      "label": "Standard Equation of Circle",
+      "tex": "(x-h)^2 + (y-k)^2 = r^2"
+    },
+    {
+      "id": "fmt_10_2",
+      "label": "Parabola (Right)",
+      "tex": "y^2 = 4ax, \\; \\text{Focus} (a,0), \\; \\text{Dir} x=-a, \\; \\text{LR} = 4a"
+    },
+    {
+      "id": "fmt_10_3",
+      "label": "Parabola (Up)",
+      "tex": "x^2 = 4ay, \\; \\text{Focus} (0,a), \\; \\text{Dir} y=-a"
+    },
+    {
+      "id": "fmt_10_4",
+      "label": "Standard Equation of Ellipse",
+      "tex": "\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 \\quad (a > b)"
+    },
+    {
+      "id": "fmt_10_5",
+      "label": "Ellipse Parameters",
+      "tex": "c^2 = a^2 - b^2, \\; e = \\frac{c}{a}, \\; \\text{LR} = \\frac{2b^2}{a}"
+    },
+    {
+      "id": "fmt_10_6",
+      "label": "Standard Equation of Hyperbola",
+      "tex": "\\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1"
+    },
+    {
+      "id": "fmt_10_7",
+      "label": "Hyperbola Parameters",
+      "tex": "c^2 = a^2 + b^2, \\; e = \\frac{c}{a}, \\; \\text{LR} = \\frac{2b^2}{a}"
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "id": "pq_10_1",
+      "question": "Find the equation of the circle passing through the points (4, 1) and (6, 5) and whose center is on the line 4x + y = 16.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_10_2",
+      "question": "Find the equation of the parabola with vertex at (0,0) and focus at (0, 2).",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "pq_10_3",
+      "question": "Find the area of the triangle formed by the lines joining the vertex of the parabola x^2 = 12y to the ends of its latus rectum.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_10_4",
+      "question": "If the latus rectum of an ellipse is equal to half of its minor axis, find its eccentricity.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_10_5",
+      "question": "Find the equation of the hyperbola where foci are (0, \u00b112) and the length of the latus rectum is 36.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": "pq_10_6",
+      "question": "A rod of length 12 cm moves with its ends always touching the coordinate axes. Determine the equation of the locus of a point P on the rod, which is 3 cm from the end in contact with the x-axis.",
+      "difficulty": "Hard (JEE)"
+    },
+    {
+      "id": "pq_10_7",
+      "question": "Find the coordinates of the focus and vertex of the parabola y^2 - 8y - x + 19 = 0.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_10_8",
+      "question": "Find the equation of the ellipse whose axes are along the coordinate axes, vertices are (\u00b15, 0) and foci are at (\u00b14, 0).",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "pq_10_9",
+      "question": "Find the eccentricity of the hyperbola 9y^2 - 4x^2 = 36.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_10_10",
+      "question": "An arch is in the form of a semi-ellipse. It is 8m wide and 2m high at the center. Find the height of the arch at a point 1.5m from one end.",
+      "difficulty": "Hard (Real-world)"
+    }
+  ]
+}

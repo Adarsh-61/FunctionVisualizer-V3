@@ -1,0 +1,250 @@
+{
+  "id": "class_9",
+  "title": "Class 9",
+  "chapters": [
+    {
+      "id": "ch_9_circles",
+      "title": "Ch 9: Circles",
+      "topics": [
+        {
+          "id": "topic_9_1_introduction_terminology",
+          "title": "9.1 Definitions and Terminology",
+          "content": "### 1. The Locus Definition\nA **Circle** is not just a round shape. In rigorous geometry, it is defined as a **Locus**.\n\n**Definition:** The collection of all points in a plane, which are at a fixed distance from a fixed point in the plane, is called a circle.\n* **Centre:** The fixed point.\n* **Radius:** The fixed distance.\n\n#### 1.1 The Plane Partition\nA circle divides the plane on which it lies into three distinct parts:\n1.  **Interior:** The set of points whose distance from the centre is *less* than the radius ($d < r$).\n2.  **The Circle (Boundary):** The set of points whose distance is *equal* to the radius ($d = r$).\n3.  **Exterior:** The set of points whose distance is *greater* than the radius ($d > r$).\n\n*Note:* The \"Circular Region\" consists of the Circle + Interior.\n\n#### 1.2 Chord and Diameter\n* **Chord:** A line segment connecting any two points on the circle.\n* **Diameter:** A chord passing through the centre. It is the **longest chord** of the circle.\n    * *Proof of Longest Chord:* In any $\\Delta AOB$ formed by centre $O$ and chord $AB$, sum of two sides ($OA+OB = 2r$) > third side ($AB$). Thus $AB < 2r$, unless $A, O, B$ are collinear (diameter), where $AB = 2r$.\n\n#### 1.3 Arcs: Minor, Major, and Semi-Circle\nA piece of a circle between two points is called an **Arc**.\n* If the arc is smaller than half the perimeter, it is a **Minor Arc**.\n* If it is larger, it is a **Major Arc**.\n* If the ends of the arc are ends of a diameter, it is a **Semi-Circle**.\n\n#### 1.4 Sectors and Segments (Crucial Distinction)\nStudents often confuse these two.\n* **Segment:** The region between a **Chord** and an **Arc**.\n    * *Major Segment:* Contains the centre.\n    * *Minor Segment:* Does not contain the centre.\n* **Sector:** The region between an **Arc** and the two **Radii** joining the centre to the endpoints of the arc.\n    * *Analogy:* A Sector is like a \"Pizza Slice\". A Segment is like the \"Crust\" cut off by a straight knife.",
+          "formulas": [
+            "d < r \\implies \\text{Interior}",
+            "d = r \\implies \\text{On Circle}",
+            "d > r \\implies \\text{Exterior}",
+            "\\text{Diameter} = 2 \\times \\text{Radius}"
+          ],
+          "examples": [
+            {
+              "id": "ex_circ_1",
+              "question": "Is a line passing through the centre of a circle a chord? Justify.",
+              "steps": [
+                {
+                  "explanation": "Definition of Chord: A line segment joining two points on the circle."
+                },
+                {
+                  "explanation": "A line is infinite. A chord is finite."
+                },
+                {
+                  "explanation": "However, the *segment* of the line intercepted by the circle is a chord. Specifically, it is the diameter."
+                },
+                {
+                  "explanation": "Technically, the line itself is a secant; the segment inside is the chord."
+                }
+              ],
+              "finalAnswer": "The segment is a chord (diameter)."
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Circle Terminology",
+            "functions": [],
+            "xRange": [-5, 5],
+            "yRange": [-5, 5],
+            "shapes": [
+              { "type": "circle", "x": 0, "y": 0, "radius": 3, "color": "blue" }
+            ],
+            "annotations": [
+              { "x": 0, "y": 0, "text": "Centre" },
+              { "x": 3, "y": 0, "text": "Radius" }
+            ]
+          }
+        },
+        {
+          "id": "topic_9_2_chord_properties",
+          "title": "9.2 Properties of Chords",
+          "content": "### 2. Theorems on Chords\nThe interaction between the centre and the chords is governed by symmetry.\n\n#### Theorem 9.1 (Equal Chords $\\to$ Equal Angles)\n**Statement:** Equal chords of a circle subtend equal angles at the centre.\n**Given:** A circle with centre $O$. Chords $AB$ and $CD$ such that $AB = CD$.\n**To Prove:** $\\angle AOB = \\angle COD$.\n**Proof:**\n1.  In $\\Delta AOB$ and $\\Delta COD$:\n    * $OA = OC$ (Radii of same circle)\n    * $OB = OD$ (Radii of same circle)\n    * $AB = CD$ (Given)\n2.  By **SSS Congruence Rule**, $\\Delta AOB \\cong \\Delta COD$.\n3.  By CPCT, $\\angle AOB = \\angle COD$.\n\n#### Theorem 9.2 (Converse)\n**Statement:** If the angles subtended by the chords of a circle at the centre are equal, then the chords are equal.\n**Proof:** Use **SAS Congruence** (Radius-Angle-Radius).\n\n#### Theorem 9.3 (Perpendicular from Centre)\n**Statement:** The perpendicular from the centre of a circle to a chord bisects the chord.\n**Given:** Circle with centre $O$, chord $AB$, and $OM \\perp AB$.\n**To Prove:** $AM = MB$.\n**Proof:**\n1.  In right-angled $\\Delta OMA$ and $\\Delta OMB$:\n    * $OA = OB$ (Hypotenuse, Radii)\n    * $OM = OM$ (Common Side)\n    * $\\angle OMA = \\angle OMB = 90^\\circ$ (Given)\n2.  By **RHS Congruence Rule**, $\\Delta OMA \\cong \\Delta OMB$.\n3.  By CPCT, $AM = MB$.\n\n**Intuition:** If you fold the circle along the perpendicular $OM$, point $A$ will land exactly on point $B$ due to symmetry.\n\n#### Theorem 9.4 (Converse of Perpendicular)\n**Statement:** The line drawn through the centre of a circle to bisect a chord is perpendicular to the chord.\n**Proof:** Use **SSS Congruence** ($OA=OB, AM=MB, OM=OM$).\n\n#### Theorem 9.5 (Three Points Circle)\n**Statement:** There is one and only one circle passing through three given non-collinear points.\n**Logic:** The perpendicular bisectors of $AB$ and $BC$ intersect at a unique point $O$ (circumcentre). Since $OA=OB$ and $OB=OC$, $O$ is equidistant from all three.",
+          "formulas": [
+            "\\text{If } AB=CD \\implies \\angle AOB = \\angle COD",
+            "\\text{If } OM \\perp AB \\implies AM = MB"
+          ],
+          "examples": [
+            {
+              "id": "ex_circ_2",
+              "question": "A chord of length 10 cm is at a distance of 12 cm from the centre. Find the radius.",
+              "steps": [
+                {
+                  "explanation": "Let chord be $AB = 10$ cm. Centre $O$. Distance is perpendicular $OM = 12$ cm."
+                },
+                {
+                  "explanation": "By Theorem 9.3, $OM$ bisects $AB$. So $AM = 10/2 = 5$ cm."
+                },
+                {
+                  "explanation": "In right $\\Delta OMA$, apply Pythagoras: $OA^2 = OM^2 + AM^2$."
+                },
+                {
+                  "explanation": "$r^2 = 12^2 + 5^2 = 144 + 25 = 169$."
+                },
+                {
+                  "explanation": "$r = \\sqrt{169} = 13$ cm."
+                }
+              ],
+              "finalAnswer": "13 cm"
+            },
+            {
+              "id": "ex_circ_3",
+              "question": "Two concentric circles with chords. A chord of the larger circle touches the smaller circle. Prove it is bisected at point of contact.",
+              "steps": [
+                {
+                  "explanation": "Let larger circle be $C_1$ and smaller $C_2$, centre $O$."
+                },
+                {
+                  "explanation": "Let chord $AB$ of $C_1$ touch $C_2$ at $P$."
+                },
+                {
+                  "explanation": "Since $AB$ is tangent to $C_2$, radius $OP \\perp AB$."
+                },
+                {
+                  "explanation": "Now consider $C_1$. $OP$ is a perpendicular from centre to chord $AB$."
+                },
+                {
+                  "explanation": "By Theorem 9.3, $OP$ bisects $AB$. Thus $AP = PB$."
+                }
+              ],
+              "finalAnswer": "Proved."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_9_3_equal_chords_distance",
+          "title": "9.3 Equal Chords and Distance from Centre",
+          "content": "### 3. Equidistance Theorems\nIs there a relationship between the length of a chord and how far it is from the centre? Yes.\n\n#### Theorem 9.6\n**Statement:** Equal chords of a circle (or of congruent circles) are equidistant from the centre (or centres).\n**Given:** $AB = CD$. $OL \\perp AB$ and $OM \\perp CD$.\n**To Prove:** $OL = OM$.\n**Proof:**\n1.  Since $OL \\perp AB$, $AL = AB/2$. Since $OM \\perp CD$, $CM = CD/2$.\n2.  Given $AB = CD \\implies AL = CM$.\n3.  In right $\\Delta OLA$ and $\\Delta OMC$:\n    * $OA = OC$ (Radii)\n    * $AL = CM$ (Proved)\n    * $\\angle OLA = \\angle OMC = 90^\\circ$\n4.  By **RHS Congruence**, $\\Delta OLA \\cong \\Delta OMC$.\n5.  By CPCT, $OL = OM$.\n\n#### Theorem 9.7 (Converse)\n**Statement:** Chords equidistant from the centre of a circle are equal in length.\n**Proof:** Use RHS on $\\Delta OLA$ and $\\Delta OMC$ to show $AL = CM$, then double them to get $AB = CD$.\n\n**Advanced Insight:**\n* The closer a chord is to the centre, the longer it is.\n* The diameter (distance = 0) is the longest chord.",
+          "formulas": [
+            "AB = CD \\iff \\text{Dist}(O, AB) = \\text{Dist}(O, CD)"
+          ],
+          "examples": [
+            {
+              "id": "ex_circ_4",
+              "question": "Two equal chords AB and CD intersect within the circle at point P. Prove that corresponding segments are equal (AP=CP and BP=DP).",
+              "steps": [
+                {
+                  "explanation": "Construction: Draw $OM \\perp AB$ and $ON \\perp CD$. Join $OP$."
+                },
+                {
+                  "explanation": "Since $AB=CD$, they are equidistant from centre. So $OM=ON$ (Thm 9.6)."
+                },
+                {
+                  "explanation": "In $\\Delta OMP$ and $\\Delta ONP$:\n$OM=ON$\n$\\angle M = \\angle N = 90^\\circ$\n$OP=OP$ (Common Hypotenuse)."
+                },
+                {
+                  "explanation": "By RHS, $\\Delta OMP \\cong \\Delta ONP$. Thus $MP = NP$."
+                },
+                {
+                  "explanation": "We know $AM = AB/2$ and $CN = CD/2$. Since $AB=CD$, $AM=CN$."
+                },
+                {
+                  "explanation": "Add equations: $AM + MP = CN + NP \\implies AP = CP$."
+                },
+                {
+                  "explanation": "Subtract from totals: $AB - AP = CD - CP \\implies BP = DP$."
+                }
+              ],
+              "finalAnswer": "Proved."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_9_4_angles_subtended_by_arc",
+          "title": "9.4 Angles Subtended by an Arc",
+          "content": "### 4. The \"Star\" Theorems\nThese theorems connect the geometry of the circle to the angles formed by its arcs.\n\n#### Theorem 9.8 (The Central Angle Theorem)\n**Statement:** The angle subtended by an arc at the centre is double the angle subtended by it at any point on the remaining part of the circle.\n\n**Given:** Arc $PQ$ subtends $\\angle POQ$ at centre and $\\angle PAQ$ at point $A$ on the circle.\n**To Prove:** $\\angle POQ = 2\\angle PAQ$.\n**Proof:**\n1.  Join $AO$ and extend it to a point $B$.\n2.  In $\\Delta AOP$: $OA = OP$ (Radii). So $\\angle OAP = \\angle OPA$.\n3.  Exterior angle $\\angle POB = \\angle OAP + \\angle OPA = 2\\angle OAP$.\n4.  Similarly, in $\\Delta AOQ$: Exterior $\\angle QOB = 2\\angle OAQ$.\n5.  Adding logic:\n    * Case (Minor Arc): $\\angle POQ = \\angle POB + \\angle QOB = 2(\\angle OAP + \\angle OAQ) = 2\\angle PAQ$.\n    * Case (Major Arc): Reflex $\\angle POQ = 2\\angle PAQ$.\n\n#### Theorem 9.9 (Angles in Same Segment)\n**Statement:** Angles in the same segment of a circle are equal.\n**Proof:**\n* Let angles be $\\angle PAQ$ and $\\angle PBQ$.\n* Both are subtended by the same arc $PQ$.\n* By Thm 9.8, $\\angle POQ = 2\\angle PAQ$ and $\\angle POQ = 2\\angle PBQ$.\n* Therefore, $2\\angle PAQ = 2\\angle PBQ \\implies \\angle PAQ = \\angle PBQ$.\n\n#### Theorem 9.10 (Semi-Circle Angle)\n**Statement:** The angle in a semi-circle is a right angle.\n**Proof:**\n* The arc is a semi-circle, so the angle at centre is a straight angle ($180^\\circ$).\n* Angle at circumference = Half of centre angle = $180/2 = 90^\\circ$.",
+          "formulas": [
+            "\\angle \\text{Centre} = 2 \\times \\angle \\text{Circumference}",
+            "\\text{Angle in Semi-circle} = 90^\\circ"
+          ],
+          "examples": [
+            {
+              "id": "ex_circ_5",
+              "question": "In a circle with centre O, $\\angle PQR = 100^\\circ$, where P, Q and R are points on the circle. Find $\\angle OPR$.",
+              "steps": [
+                {
+                  "explanation": "Consider the major arc PR. The angle subtended at the circumference is $\\angle PQR = 100^\\circ$."
+                },
+                {
+                  "explanation": "The angle subtended at the centre by the major arc is Reflex $\\angle POR$."
+                },
+                {
+                  "explanation": "Reflex $\\angle POR = 2 \\times \\angle PQR = 200^\\circ$."
+                },
+                {
+                  "explanation": "The inner $\\angle POR = 360^\\circ - 200^\\circ = 160^\\circ$."
+                },
+                {
+                  "explanation": "In $\\Delta OPR$, $OP = OR$ (Radii), so $\\angle OPR = \\angle ORP$."
+                },
+                {
+                  "explanation": "Sum of angles: $160^\\circ + 2\\angle OPR = 180^\\circ$."
+                },
+                {
+                  "explanation": "$2\\angle OPR = 20^\\circ \\implies \\angle OPR = 10^\\circ$."
+                }
+              ],
+              "finalAnswer": "$10^\\circ$"
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Angle at Centre vs Circumference",
+            "functions": [],
+            "points": [
+              { "x": 0, "y": 0, "label": "O" },
+              { "x": -3, "y": -1, "label": "P" },
+              { "x": 3, "y": -1, "label": "Q" },
+              { "x": 0, "y": 3, "label": "A" }
+            ],
+            "xRange": [-4, 4],
+            "yRange": [-4, 4]
+          }
+        },
+        {
+          "id": "topic_9_5_cyclic_quadrilaterals",
+          "title": "9.5 Cyclic Quadrilaterals",
+          "content": "### 5. Cyclic Quadrilaterals\nA quadrilateral is called **Cyclic** if all its four vertices lie on a circle.\n\n#### Theorem 9.11 (Opposite Angles)\n**Statement:** The sum of either pair of opposite angles of a cyclic quadrilateral is $180^\\circ$.\n**Given:** Cyclic Quad $ABCD$.\n**To Prove:** $\\angle A + \\angle C = 180^\\circ$ and $\\angle B + \\angle D = 180^\\circ$.\n**Proof:**\n1.  Join $AC$ and $BD$.\n2.  $\\angle ACB = \\angle ADB$ (Angles in same segment).\n3.  $\\angle BAC = \\angle BDC$ (Angles in same segment).\n4.  In $\\Delta ABC$, $\\angle A + \\angle B + \\angle C = 180^\\circ$ (This logic is circular without center).\n5.  **Better Proof (Using Centre O):**\n    * Let arc $BCD$ subtend $\\alpha$ at centre. $\\angle BAD = \\alpha/2$.\n    * Let arc $DAB$ subtend $\\beta$ at centre. $\\angle BCD = \\beta/2$.\n    * $\\alpha + \\beta = 360^\\circ$ (Complete angle).\n    * $\\angle A + \\angle C = \\alpha/2 + \\beta/2 = (\\alpha+\\beta)/2 = 180^\\circ$.\n\n#### Theorem 9.12 (Converse)\n**Statement:** If the sum of a pair of opposite angles of a quadrilateral is $180^\\circ$, the quadrilateral is cyclic.\n**Proof:** By contradiction. Assume the circle through 3 vertices does not pass through the 4th, intersect edge at point P, prove P coincides with vertex.\n\n#### Properties:\n1.  Exterior angle of a cyclic quad is equal to the interior opposite angle.\n2.  Trapezium is cyclic iff it is isosceles.",
+          "formulas": [
+            "\\angle A + \\angle C = 180^\\circ",
+            "\\angle B + \\angle D = 180^\\circ"
+          ],
+          "examples": [
+            {
+              "id": "ex_circ_6",
+              "question": "In a cyclic quadrilateral ABCD, diagonals intersect at P. If $\\angle DBC = 70^\\circ$ and $\\angle BAC = 30^\\circ$, find $\\angle BCD$. Further, if AB=BC, find $\\angle ECD$.",
+              "steps": [
+                {
+                  "explanation": "$\\angle BDC = \\angle BAC = 30^\\circ$ (Angles in same segment)."
+                },
+                {
+                  "explanation": "In $\\Delta BCD$, $\\angle B + \\angle D + \\angle C = 180^\\circ$. $\\angle DBC = 70, \\angle BDC = 30$."
+                },
+                {
+                  "explanation": "$70 + 30 + \\angle BCD = 180 \\implies \\angle BCD = 80^\\circ$."
+                },
+                {
+                  "explanation": "If $AB=BC$, $\\Delta ABC$ is isosceles. $\\angle BAC = \\angle BCA = 30^\\circ$."
+                },
+                {
+                  "explanation": "$\\angle BCD = 80^\\circ$. We know $\\angle BCA = 30^\\circ$."
+                },
+                {
+                  "explanation": "$\\angle ECD = \\angle BCD - \\angle BCA = 80 - 30 = 50^\\circ$."
+                }
+              ],
+              "finalAnswer": "80°, 50°"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_9_6_practice_bank",
+          "title": "9.6 Practice Bank & Compendium",
+          "content": "### 6. Comprehensive Practice Questions\n\n#### Section A: Proofs & Logic (10 Questions)\n1.  Prove that equal chords subtend equal angles at the circumference.\n2.  If two circles intersect at two points, prove that their centres lie on the perpendicular bisector of the common chord.\n3.  Show that the diameter is the longest chord of a circle.\n4.  Prove that a cyclic parallelogram is a rectangle.\n5.  If a pair of opposite sides of a cyclic quadrilateral are equal, prove that its diagonals are equal.\n\n#### Section B: Must-Practice (Board/JEE Foundation)\n11. **(Must Practice)** Two circles intersect at points A and B. AD and AC are diameters to the two circles. Prove that B lies on the line segment DC.\n12. **(Must Practice)** Prove that the angle bisectors of the angles formed by producing opposite sides of a cyclic quadrilateral (provided they are not parallel) intersect at right angles.\n13. **(Must Practice)** A circle has radius $\\sqrt{2}$ cm. It is divided into two segments by a chord of length 2 cm. Prove that the angle subtended by the chord at a point in the major segment is $45^\\circ$.\n14. **(Must Practice)** If two non-parallel sides of a trapezium are equal, prove that it is cyclic.\n15. **(Must Practice)** AB is a diameter and AC is a chord of a circle such that $\\angle BAC = 30^\\circ$. The tangent at C intersects extended AB at a point D. Prove that $BC = BD$. (Advanced tangent property).\n16. **(Must Practice)** Bisectors of angles A, B and C of a triangle ABC intersect its circumcircle at D, E and F respectively. Prove that the angles of $\\Delta DEF$ are $90 - A/2$, $90 - B/2$, $90 - C/2$.\n17. **(Must Practice)** ABCD is a cyclic quadrilateral whose diagonals intersect at a point E. If $\\angle DBC = 70^\\circ$, $\\angle BAC is 30^\\circ$, find $\\angle BCD$.\n18. **(Must Practice)** Prove that the quadrilateral formed (if possible) by the internal angle bisectors of any quadrilateral is cyclic.\n19. **(Must Practice)** Two congruent circles intersect each other at points A and B. Through A any line segment PAQ is drawn so that P, Q lie on the two circles. Prove that $BP = BQ$.\n20. **(Must Practice)** AC and BD are chords of a circle which bisect each other. Prove that (i) AC and BD are diameters, (ii) ABCD is a rectangle.\n\n---\n\n### 7. Formula & Theorem Compendium\n\n#### 7.1 Chords\n* **Bisector:** $\\perp$ from centre bisects chord.\n* **Equidistance:** Equal chords $\\iff$ Equidistant from centre.\n\n#### 7.2 Angles\n* **Centre Angle:** $2 \\times$ Circumference Angle.\n* **Same Segment:** Angles are equal.\n* **Semi-circle:** $90^\\circ$.\n\n#### 7.3 Cyclic Quadrilaterals\n* **Opp Angles:** Sum $180^\\circ$.\n* **Ext Angle:** Equals Int Opp Angle.",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

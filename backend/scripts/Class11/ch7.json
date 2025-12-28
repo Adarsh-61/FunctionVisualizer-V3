@@ -1,0 +1,179 @@
+{
+  "id": "11_7",
+  "classId": 11,
+  "title": "Binomial Theorem",
+  "description": "A powerful algebraic tool that generalizes the expansion of powers of binomials. This chapter connects Combinatorics with Algebra, forms the basis for Probability distributions, and serves as a fundamental approximation tool in Calculus and Physics.",
+  "topics": [
+    {
+      "id": "11_7_1",
+      "title": "Introduction and Pascal's Triangle",
+      "content": "### 1. The Need for a Theorem\nIn earlier algebra, we memorized identities for small powers:\n* $(a+b)^1 = a+b$\n* $(a+b)^2 = a^2 + 2ab + b^2$\n* $(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$\n\nHowever, expanding $(a+b)^{98}$ by repeated multiplication is practically impossible. We need a general formula for $(a+b)^n$. This general rule is the **Binomial Theorem**.\n\n### 2. Pattern Recognition (Pascal's Triangle)\nLet's analyze the coefficients of the expansions above:\n* Index 0: `1`\n* Index 1: `1 1`\n* Index 2: `1 2 1`\n* Index 3: `1 3 3 1`\n* Index 4: `1 4 6 4 1`\n\n**Observations:**\n1.  **Triangle Structure:** Arranging these forms a triangle known as **Pascal's Triangle** (Blaise Pascal, 1623-1662), though known earlier in India as **Meru Prastara** (Pingala, 200 BC).\n2.  **Recursive Rule:** Each number is the sum of the two numbers directly above it. (e.g., in Index 4, $6 = 3 + 3$).\n3.  **Connection to Combinations:**\n    * Index 2: $^2C_0, ^2C_1, ^2C_2$ $\\rightarrow$ $1, 2, 1$\n    * Index 3: $^3C_0, ^3C_1, ^3C_2, ^3C_3$ $\\rightarrow$ $1, 3, 3, 1$\n\n**Combinatorial Logic:**\nWhy Combinations? When expanding $(a+b)^n = (a+b)(a+b)...(a+b)$, to get a term like $a^{n-r}b^r$, we must choose '$b$' from exactly $r$ brackets and '$a$' from the remaining $(n-r)$ brackets. The number of ways to choose $r$ brackets out of $n$ is exactly $^nC_r$.",
+      "examples": [
+        {
+          "id": "ex_7_1",
+          "question": "Using Pascal's pattern, write the expansion of $(a+b)^5$.",
+          "solution": "1.  The row for index 4 is: 1, 4, 6, 4, 1.\n2.  Generate row for index 5 by adding adjacent terms:\n    * Ends are always 1.\n    * $1+4=5$\n    * $4+6=10$\n    * $6+4=10$\n    * $4+1=5$\n3.  Coefficients: 1, 5, 10, 10, 5, 1.\n4.  Powers: $a$ decreases from 5 to 0; $b$ increases from 0 to 5.\n5.  **Expansion:** $a^5 + 5a^4b + 10a^3b^2 + 10a^2b^3 + 5ab^4 + b^5$."
+        }
+      ]
+    },
+    {
+      "id": "11_7_2",
+      "title": "Binomial Theorem for Positive Integral Index",
+      "content": "### 1. The Statement\nFor any positive integer $n$ and any real numbers $a, b$:\n$$ (a+b)^n = ^nC_0 a^n + ^nC_1 a^{n-1}b + ^nC_2 a^{n-2}b^2 + ... + ^nC_{n-1}ab^{n-1} + ^nC_n b^n $$\n\n**Compact Sigma Notation:**\n$$ (a+b)^n = \\sum_{r=0}^{n} {^nC_r} a^{n-r} b^r $$\n\n### 2. Proof by Mathematical Induction\nThis is a rigorous way to prove the theorem for all $n \\in \\mathbb{N}$.\n\n**Step 1: Base Case ($n=1$)**\nLHS: $(a+b)^1 = a+b$.\nRHS: $\\sum_{r=0}^1 ^1C_r a^{1-r}b^r = ^1C_0 a^1 + ^1C_1 b^1 = a+b$.\nTrue for $n=1$.\n\n**Step 2: Inductive Hypothesis**\nAssume true for $n=k$:\n$$ (a+b)^k = \\sum_{r=0}^k {^kC_r} a^{k-r} b^r $$\n\n**Step 3: Inductive Step ($n=k+1$)**\nConsider $(a+b)^{k+1} = (a+b)(a+b)^k$.\n$$ = (a+b) [^kC_0 a^k + ^kC_1 a^{k-1}b + ... + ^kC_k b^k] $$\nMultiply $a$ and $b$ separately:\n$$ = [^kC_0 a^{k+1} + ^kC_1 a^k b + ...] + [^kC_0 a^k b + ^kC_1 a^{k-1} b^2 + ...] $$\nGroup terms with same powers of $a$ and $b$:\nCoefficient of $a^{k+1}$: $^kC_0 = 1 = ^{k+1}C_0$.\nCoefficient of $a^k b$: $^kC_1 + ^kC_0 = ^{k+1}C_1$ (Pascal's Identity).\nGenerally, Coefficient of $a^{k+1-r}b^r$ is $^kC_r + ^kC_{r-1} = ^{k+1}C_r$.\nThus, the expansion holds for $k+1$. Q.E.D.\n\n### 3. Key Observations\n* Total number of terms is **$n+1$**.\n* Sum of indices of $a$ and $b$ in every term is **$n$**.\n* Coefficients equidistant from beginning and end are equal ($^nC_r = ^nC_{n-r}$).",
+      "examples": [
+        {
+          "id": "ex_7_2",
+          "question": "Expand $(x^2 + \\frac{3}{x})^4, x \\neq 0$.",
+          "solution": "Using Binomial Theorem with $n=4, a=x^2, b=\\frac{3}{x}$:\n$$ = ^4C_0 (x^2)^4 + ^4C_1 (x^2)^3 (\\frac{3}{x}) + ^4C_2 (x^2)^2 (\\frac{3}{x})^2 + ^4C_3 (x^2) (\\frac{3}{x})^3 + ^4C_4 (\\frac{3}{x})^4 $$\n\nSimplify terms:\n1. $1 \\cdot x^8$\n2. $4 \\cdot x^6 \\cdot \\frac{3}{x} = 12x^5$\n3. $6 \\cdot x^4 \\cdot \\frac{9}{x^2} = 54x^2$\n4. $4 \\cdot x^2 \\cdot \\frac{27}{x^3} = \\frac{108}{x}$\n5. $1 \\cdot \\frac{81}{x^4} = \\frac{81}{x^4}$\n\n**Result:** $x^8 + 12x^5 + 54x^2 + \\frac{108}{x} + \\frac{81}{x^4}$."
+        },
+        {
+          "id": "ex_7_3",
+          "question": "Evaluate $(98)^5$ without direct multiplication.",
+          "solution": "Write $98 = (100 - 2)$. Use theorem for $(a-b)^n$:\n$$ (100-2)^5 = ^5C_0(100)^5 - ^5C_1(100)^4(2) + ^5C_2(100)^3(2)^2 - ^5C_3(100)^2(2)^3 + ^5C_4(100)(2)^4 - ^5C_5(2)^5 $$\n$$ = 10^{10} - 5(10^8)(2) + 10(10^6)(4) - 10(10^4)(8) + 5(100)(16) - 32 $$\n$$ = 10000000000 - 1000000000 + 40000000 - 800000 + 8000 - 32 $$\nCalculation yields: **9039207968**."
+        }
+      ]
+    },
+    {
+      "id": "11_7_3",
+      "title": "General Term and Middle Terms",
+      "content": "To solve advanced problems, we stop writing the whole expansion and focus on specific terms.\n\n### 1. General Term ($T_{r+1}$)\nThe $(r+1)^{th}$ term in the expansion of $(a+b)^n$ is denoted by $T_{r+1}$.\n$$ T_{r+1} = {^nC_r} a^{n-r} b^r $$\n* **Note:** The term number is $r+1$, so the binomial coefficient index is $r$. (e.g., 5th term uses $^nC_4$).\n\n### 2. Middle Terms\nThe middle term depends on whether $n$ is even or odd.\n\n**Case A: $n$ is Even**\n* Total terms ($n+1$) is Odd.\n* There is **one** middle term.\n* Position: $(\\frac{n}{2} + 1)^{th}$ term.\n\n**Case B: $n$ is Odd**\n* Total terms ($n+1$) is Even.\n* There are **two** middle terms.\n* Positions: $(\\frac{n+1}{2})^{th}$ and $(\\frac{n+1}{2} + 1)^{th}$ terms.\n\n### 3. Term Independent of x\nOften asked in JEE. To find the term containing $x^0$ (constant term):\n1. Write $T_{r+1}$ for the expansion.\n2. Collect all powers of $x$.\n3. Set the net power of $x$ to 0.\n4. Solve for $r$. If $r$ is a non-negative integer, the term exists.",
+      "examples": [
+        {
+          "id": "ex_7_4",
+          "question": "Find the coefficient of $x^6 y^3$ in the expansion of $(x + 2y)^9$.",
+          "solution": "General term $T_{r+1} = {^9C_r} (x)^{9-r} (2y)^r$.\n$$ T_{r+1} = {^9C_r} 2^r x^{9-r} y^r $$\nWe need power of $y$ to be 3 (or $x$ to be 6). So, $r=3$.\nCoefficient = $^9C_3 \\cdot 2^3 = \\frac{9 \\cdot 8 \\cdot 7}{3 \\cdot 2 \\cdot 1} \\cdot 8 = 84 \\cdot 8 = 672$."
+        },
+        {
+          "id": "ex_7_5",
+          "question": "Find the term independent of $x$ in the expansion of $(\\frac{3x^2}{2} - \\frac{1}{3x})^6$.",
+          "solution": "1. General Term:\n   $$ T_{r+1} = ^6C_r (\\frac{3x^2}{2})^{6-r} (-\\frac{1}{3x})^r $$\n2. Separate constants and variables:\n   $$ T_{r+1} = ^6C_r (\\frac{3}{2})^{6-r} (-\\frac{1}{3})^r (x^2)^{6-r} (x^{-1})^r $$\n   $$ x^{2(6-r) - r} = x^{12-2r-r} = x^{12-3r} $$\n3. For independence, power of $x$ must be 0:\n   $$ 12 - 3r = 0 \\implies 3r = 12 \\implies r = 4 $$\n4. Calculate $T_5$ (since $r=4$):\n   $$ T_5 = ^6C_4 (\\frac{3}{2})^2 (-\\frac{1}{3})^4 = 15 \\cdot \\frac{9}{4} \\cdot \\frac{1}{81} = 15 \\cdot \\frac{1}{36} = \\frac{5}{12} $$"
+        }
+      ]
+    },
+    {
+      "id": "11_7_4",
+      "title": "Properties of Binomial Coefficients (JEE Foundation)",
+      "content": "For $(1+x)^n = C_0 + C_1 x + C_2 x^2 + ... + C_n x^n$, where $C_r = ^nC_r$.\n\n### 1. Sum of Coefficients\nPut $x=1$:\n$$ C_0 + C_1 + C_2 + ... + C_n = 2^n $$\n*Combinatorial Meaning:* Total number of subsets of a set with $n$ elements.\n\n### 2. Alternating Sum\nPut $x=-1$:\n$$ C_0 - C_1 + C_2 - C_3 + ... + (-1)^n C_n = 0 $$\nThis implies: Sum of odd coefficients = Sum of even coefficients = $2^{n-1}$.\n\n### 3. Calculus Applications (Advanced)\n* **Differentiation:** Differentiating $(1+x)^n$ gives identities involving $r C_r$.\n  $$ n(1+x)^{n-1} = 1 C_1 + 2 C_2 x + 3 C_3 x^2 + ... $$\n  Put $x=1$: $C_1 + 2C_2 + ... + nC_n = n 2^{n-1}$.\n* **Integration:** Integrating gives identities involving $\\frac{C_r}{r+1}$.\n\n### 4. Greatest Binomial Coefficient\nThe value of $^nC_r$ is maximum when $r$ is the middle value.\n* If $n$ is even, max at $r = n/2$.\n* If $n$ is odd, max at $r = (n-1)/2$ and $r = (n+1)/2$.",
+      "examples": [
+        {
+          "id": "ex_7_6",
+          "question": "Prove that the sum of coefficients in the expansion of $(1+x-3x^2)^{2163}$ is -1.",
+          "solution": "Let $P(x) = (1+x-3x^2)^{2163} = a_0 + a_1x + a_2x^2 + ...$\nThe sum of coefficients is obtained by putting $x=1$ in the polynomial.\nSum = $P(1) = (1 + 1 - 3(1)^2)^{2163} = (2-3)^{2163} = (-1)^{2163} = -1$."
+        }
+      ]
+    },
+    {
+      "id": "11_7_5",
+      "title": "Applications: Divisibility and Approximations",
+      "content": "### 1. Divisibility Problems\nBinomial theorem allows us to find remainders of huge powers.\n* Strategy: Write base as $(1+k)$ or $(mk \\pm 1)$.\n* Example: To show $6^n - 5n - 1$ is divisible by 25:\n  $6^n = (1+5)^n = 1 + n(5) + ^nC_2(5^2) + ...$\n  $6^n = 1 + 5n + 25(^nC_2 + ...)$\n  $6^n - 5n - 1 = 25k$. Hence divisible.\n\n### 2. Approximations\nIf $x$ is very small compared to 1 ($|x| << 1$), higher powers of $x$ ($x^2, x^3...$) can be neglected.\n$$ (1+x)^n \\approx 1 + nx $$\nThis is widely used in Physics (Error analysis, Binomial approximation in optics/gravitation).",
+      "examples": [
+        {
+          "id": "ex_7_7",
+          "question": "Find the last two digits of $11^{12}$.",
+          "solution": "We need $11^{12} \\pmod{100}$.\n$11^{12} = (1 + 10)^{12} = 1 + ^{12}C_1(10) + ^{12}C_2(10^2) + ...$\nTerms with $10^3$ and higher will end in 000, so they don't affect last two digits.\nWe consider: $1 + 12(10) + \\frac{12 \\cdot 11}{2}(100)$\n$= 1 + 120 + 6600$\n$= 6721$.\nLast two digits are **21**."
+        }
+      ]
+    },
+    {
+      "id": "11_7_6",
+      "title": "Advanced Extension: Multinomial Theorem",
+      "content": "The Binomial Theorem can be generalized for more than two terms.\n\n### 1. The Statement\nFor expansion of $(x_1 + x_2 + ... + x_k)^n$:\n$$ \\text{General Term} = \\frac{n!}{p_1! p_2! ... p_k!} x_1^{p_1} x_2^{p_2} ... x_k^{p_k} $$\nWhere $p_1 + p_2 + ... + p_k = n$ and $0 \\le p_i \\le n$.\n\n### 2. Number of Terms\nThe total number of distinct terms in the expansion of $(x_1 + ... + x_k)^n$ is the number of non-negative integral solutions to $p_1 + ... + p_k = n$, which is:\n$$ ^{n+k-1}C_{k-1} $$\n* Example: $(a+b+c)^n$ has $^{n+3-1}C_{3-1} = ^{n+2}C_2$ terms.\n\n### 3. Binomial Theorem for Any Index (Calculus Link)\nIf $n$ is rational (negative or fraction) and $|x| < 1$:\n$$ (1+x)^n = 1 + nx + \\frac{n(n-1)}{2!}x^2 + \\frac{n(n-1)(n-2)}{3!}x^3 + ... \\infty $$\nUnlike the standard theorem, this series **never terminates**.",
+      "examples": [
+        {
+          "id": "ex_7_8",
+          "question": "Find the coefficient of $a^3 b^4 c^2$ in the expansion of $(a + b + c)^9$.",
+          "solution": "We check if powers sum to $n$: $3+4+2 = 9$. Yes.\nUsing Multinomial Coefficient formula:\n$$ \\text{Coeff} = \\frac{n!}{p_a! p_b! p_c!} = \\frac{9!}{3! 4! 2!} $$\n$$ = \\frac{362880}{6 \\cdot 24 \\cdot 2} = \\frac{362880}{288} = 1260 $$."
+        }
+      ]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "fmt_7_1",
+      "label": "Binomial Theorem",
+      "tex": "(a+b)^n = \\sum_{r=0}^{n} {^nC_r} a^{n-r} b^r"
+    },
+    {
+      "id": "fmt_7_2",
+      "label": "General Term",
+      "tex": "T_{r+1} = {^nC_r} a^{n-r} b^r"
+    },
+    {
+      "id": "fmt_7_3",
+      "label": "Middle Term (n even)",
+      "tex": "T_{\\frac{n}{2}+1}"
+    },
+    {
+      "id": "fmt_7_4",
+      "label": "Middle Terms (n odd)",
+      "tex": "T_{\\frac{n+1}{2}} \\text{ and } T_{\\frac{n+3}{2}}"
+    },
+    {
+      "id": "fmt_7_5",
+      "label": "Sum of Coefficients",
+      "tex": "\\sum_{r=0}^n {^nC_r} = 2^n"
+    },
+    {
+      "id": "fmt_7_6",
+      "label": "Multinomial General Term",
+      "tex": "\\frac{n!}{p_1! p_2! ... p_k!} x_1^{p_1} ... x_k^{p_k}"
+    },
+    {
+      "id": "fmt_7_7",
+      "label": "Approximation (|x| << 1)",
+      "tex": "(1+x)^n \\approx 1 + nx"
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "id": "pq_7_1",
+      "question": "Expand (2x - 3)^6.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "pq_7_2",
+      "question": "Find the 7th term in the expansion of (4x/5 - 5/2x)^9.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "pq_7_3",
+      "question": "Which is larger: 1.01^1000000 or 10000?",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "pq_7_4",
+      "question": "Find the term independent of x in (x^2 + 1/x)^9.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_7_5",
+      "question": "Find the coefficient of x^5 in (x+3)^8.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_7_6",
+      "question": "Prove that 6^(2n) - 35n - 1 is divisible by 1225.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_7_7",
+      "question": "Find the middle term in the expansion of (x/a - a/x)^10.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_7_8",
+      "question": "Find the sum C1 + 2C2 + 3C3 + ... + nCn.",
+      "difficulty": "Hard (JEE)"
+    },
+    {
+      "id": "pq_7_9",
+      "question": "Find the coefficient of a^5 b^4 c^3 in (2a + b - c)^12.",
+      "difficulty": "Hard (JEE)"
+    },
+    {
+      "id": "pq_7_10",
+      "question": "If the coefficients of three consecutive terms in (1+x)^n are in ratio 1:7:42, find n.",
+      "difficulty": "Hard (JEE)"
+    }
+  ]
+}

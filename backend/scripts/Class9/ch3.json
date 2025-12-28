@@ -1,0 +1,251 @@
+{
+  "id": "class_9",
+  "title": "Class 9",
+  "chapters": [
+    {
+      "id": "ch_3_coordinate_geometry",
+      "title": "Ch 3: Coordinate Geometry",
+      "topics": [
+        {
+          "id": "topic_3_1_introduction_history",
+          "title": "3.1 Introduction: The Bridge Between Algebra and Geometry",
+          "content": "### 1. The Great Convergence\nMathematics, for centuries, was divided into two distinct pillars: **Geometry** (the study of shapes, sizes, and space) and **Algebra** (the study of equations, symbols, and quantities). For a long time, these two worlds existed in parallel but rarely intersected.\n\n* **Geometry** was visual and axiomatic, pioneered by Euclid.\n* **Algebra** was symbolic and computational, developed by Al-Khwarizmi and others.\n\nThis separation ended in the 17th century with the arrival of the French mathematician and philosopher **René Descartes** (1596–1650). Legend has it that while lying in bed and watching a fly crawl on the ceiling, Descartes realized he could describe the fly's position uniquely using two numbers: its distance from two adjacent walls.\n\n#### 1.1 The Fundamental Problem of Position\nImagine a blank sheet of paper with a single dot on it. How do you describe the position of this dot to someone who cannot see the paper?\n* Saying \"it's in the middle\" is vague.\n* Saying \"it's near the top left\" is imprecise.\n* To be exact, you need a **Reference System**.\n\nCoordinate Geometry (also called **Analytic Geometry**) answers this fundamental question: *\"How do we define position precisely using numbers?\"*\n\n#### 1.2 The Impact of Coordinate Geometry\nThis field is not just about drawing graphs. It is the foundation of:\n* **Calculus:** Describing curves like $y = x^2$.\n* **Physics:** Mapping trajectories of projectiles and planets.\n* **Computer Graphics:** Every pixel on your screen has coordinates $(x, y)$.\n* **GPS Technology:** Your location on Earth is defined by Latitude and Longitude (a spherical coordinate system).\n\nBy converting geometric figures into algebraic equations, Descartes gave us the power to prove geometric theorems using algebra and to visualize algebraic equations as geometric shapes. This chapter introduces the **Cartesian Coordinate System**, the tool that makes this all possible.",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_3_2_cartesian_system",
+          "title": "3.2 The Cartesian Coordinate System",
+          "content": "### 2. Constructing the Plane\nTo locate a point in a plane, we need two independent pieces of information. The Cartesian system provides this using two perpendicular number lines.\n\n#### 2.1 The Number Line (Review)\nRecall that a number line represents real numbers as points on a line.\n* There is a central point called **Zero (0)**.\n* Positive numbers are to the **Right**.\n* Negative numbers are to the **Left**.\n\n#### 2.2 The Cross: Axes and Origin\nTo create a 2D system, we take two number lines and cross them at their zeroes at a 90-degree angle.\n\n1.  **The X-Axis (Abscissa Axis):** The horizontal number line. \n    * Positive direction: Right ($OX$)\n    * Negative direction: Left ($OX'$)\n2.  **The Y-Axis (Ordinate Axis):** The vertical number line.\n    * Positive direction: Up ($OY$)\n    * Negative direction: Down ($OY'$)\n3.  **The Origin:** The point where the two lines intersect. This is the reference point for all measurements. Its value is zero on both lines.\n\n#### 2.3 The Plane\nThe flat surface containing these axes is called the **Cartesian Plane**, the **Coordinate Plane**, or the **XY-Plane**.\n\n#### 2.4 Quadrants: Dividing the Space\nThe two axes divide the infinite plane into four distinct regions called **Quadrants**. They are numbered counter-clockwise, starting from the top-right.\n\n* **Quadrant I:** Top Right. Bounded by positive x-axis and positive y-axis.\n    * Any point here has $(+, +)$ coordinates.\n    * Logic: You move Right (positive) and Up (positive).\n\n* **Quadrant II:** Top Left. Bounded by negative x-axis and positive y-axis.\n    * Any point here has $(-, +)$ coordinates.\n    * Logic: You move Left (negative) and Up (positive).\n\n* **Quadrant III:** Bottom Left. Bounded by negative x-axis and negative y-axis.\n    * Any point here has $(-, -)$ coordinates.\n    * Logic: You move Left (negative) and Down (negative).\n\n* **Quadrant IV:** Bottom Right. Bounded by positive x-axis and negative y-axis.\n    * Any point here has $(+, -)$ coordinates.\n    * Logic: You move Right (positive) and Down (negative).\n\n**Critical Note:** Points lying *on* the axes do not belong to any quadrant.",
+          "formulas": [
+            "\\text{Quadrant I: } (+, +)",
+            "\\text{Quadrant II: } (-, +)",
+            "\\text{Quadrant III: } (-, -)",
+            "\\text{Quadrant IV: } (+, -)"
+          ],
+          "examples": [
+            {
+              "id": "ex_coord_1",
+              "question": "Identify the quadrant for the following points without plotting: A(2, 3), B(-5, 1), C(-2, -9), D(4, -2).",
+              "steps": [
+                {
+                  "explanation": "Analyze the signs of the coordinates $(x, y)$."
+                },
+                {
+                  "explanation": "Point A(2, 3): Signs are $(+, +)$. This corresponds to Quadrant I."
+                },
+                {
+                  "explanation": "Point B(-5, 1): Signs are $(-, +)$. Negative x (Left), Positive y (Up). Quadrant II."
+                },
+                {
+                  "explanation": "Point C(-2, -9): Signs are $(-, -)$. Negative x (Left), Negative y (Down). Quadrant III."
+                },
+                {
+                  "explanation": "Point D(4, -2): Signs are $(+, -)$. Positive x (Right), Negative y (Down). Quadrant IV."
+                }
+              ],
+              "finalAnswer": "A: I, B: II, C: III, D: IV"
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "The Cartesian Plane & Quadrants",
+            "functions": [
+              {
+                "expression": "0",
+                "color": "black",
+                "label": "X-Axis"
+              }
+            ],
+            "xRange": [
+              -10,
+              10
+            ],
+            "yRange": [
+              -10,
+              10
+            ],
+            "grid": true,
+            "annotations": [
+              { "x": 5, "y": 5, "text": "Quadrant I (+, +)" },
+              { "x": -5, "y": 5, "text": "Quadrant II (-, +)" },
+              { "x": -5, "y": -5, "text": "Quadrant III (-, -)" },
+              { "x": 5, "y": -5, "text": "Quadrant IV (+, -)" }
+            ]
+          }
+        },
+        {
+          "id": "topic_3_3_coordinates_ordered_pairs",
+          "title": "3.3 Coordinates: The Language of Position",
+          "content": "### 3. Defining Position Precisely\nEvery point $P$ in the Cartesian plane is associated with a unique pair of numbers called its **coordinates**.\n\n#### 3.1 Ordered Pairs\nThe coordinates are written as $(x, y)$. This is called an **Ordered Pair** because the order matters.\n* $(2, 3)$ is NOT the same as $(3, 2)$.\n* In $(2, 3)$, we move 2 units right, then 3 units up.\n* In $(3, 2)$, we move 3 units right, then 2 units up.\n\n#### 3.2 Abscissa (x-coordinate)\n* **Definition:** The first number in the pair.\n* **Geometric Meaning:** The perpendicular distance of the point from the **y-axis**.\n    * (Careful: x-coordinate tells you distance from y-axis).\n* **Direction:** Measured along the x-axis (Right/Left).\n* **Notation:** Often denoted by $x$.\n\n#### 3.3 Ordinate (y-coordinate)\n* **Definition:** The second number in the pair.\n* **Geometric Meaning:** The perpendicular distance of the point from the **x-axis**.\n    * (Careful: y-coordinate tells you distance from x-axis).\n* **Direction:** Measured along the y-axis (Up/Down).\n* **Notation:** Often denoted by $y$.\n\n#### 3.4 Coordinates of Special Points\n1.  **The Origin:** The intersection of axes. It is 0 units from y-axis and 0 units from x-axis. Coordinates: $(0, 0)$.\n2.  **Point on X-Axis:** Any point on the x-axis has zero vertical distance. Its ordinate is always 0. General form: $(x, 0)$.\n3.  **Point on Y-Axis:** Any point on the y-axis has zero horizontal distance. Its abscissa is always 0. General form: $(0, y)$.\n\n#### 3.5 Formal Mapping\nThere is a **one-to-one correspondence** (Bijective mapping) between the set of all points in the plane and the set of all ordered pairs of real numbers $\\mathbb{R} \\times \\mathbb{R}$.\n* For every point, there is a unique pair $(x, y)$.\n* For every pair $(x, y)$, there is a unique point.\n\n#### 3.6 Perpendicular Distance vs Coordinates\nThis is a common source of confusion.\n* Coordinates can be negative: $P(-3, -4)$.\n* Distance is always non-negative.\n    * Distance of $P(-3, -4)$ from y-axis is $|-3| = 3$ units.\n    * Distance of $P(-3, -4)$ from x-axis is $|-4| = 4$ units.",
+          "formulas": [
+            "\\text{Origin} = (0, 0)",
+            "\\text{Point on x-axis} = (a, 0)",
+            "\\text{Point on y-axis} = (0, b)",
+            "\\text{Dist from y-axis} = |x|",
+            "\\text{Dist from x-axis} = |y|"
+          ],
+          "examples": [
+            {
+              "id": "ex_coord_2",
+              "question": "Find the perpendicular distance of the point $P(-5, 7)$ from the x-axis and the y-axis.",
+              "steps": [
+                {
+                  "explanation": "Identify the coordinates: Abscissa $x = -5$, Ordinate $y = 7$."
+                },
+                {
+                  "explanation": "Distance from x-axis is given by the absolute value of the ordinate (y-coordinate)."
+                },
+                {
+                  "explanation": "Distance from x-axis = $|7| = 7$ units."
+                },
+                {
+                  "explanation": "Distance from y-axis is given by the absolute value of the abscissa (x-coordinate)."
+                },
+                {
+                  "explanation": "Distance from y-axis = $|-5| = 5$ units."
+                }
+              ],
+              "finalAnswer": "From x-axis: 7 units; From y-axis: 5 units."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_3_4_plotting_points",
+          "title": "3.4 Plotting Points: Step-by-Step",
+          "content": "### 4. The Art of Plotting\nPlotting a point means marking its exact location on the Cartesian plane given its coordinates.\n\n#### 4.1 Methodology\nTo plot a point $P(a, b)$:\n1.  Start at the **Origin** $(0, 0)$.\n2.  **Move Horizontally:** Look at $a$.\n    * If $a > 0$, move $a$ units to the **Right** along the x-axis.\n    * If $a < 0$, move $|a|$ units to the **Left** along the x-axis.\n    * If $a = 0$, stay at the origin horizontally.\n3.  **Move Vertically:** From your new position on the x-axis, look at $b$.\n    * If $b > 0$, move $b$ units **Up** parallel to the y-axis.\n    * If $b < 0$, move $|b|$ units **Down** parallel to the y-axis.\n    * If $b = 0$, stay on the x-axis.\n4.  **Mark the Point:** Draw a dot and label it $P(a, b)$.\n\n#### 4.2 Visualizing Reflection (Symmetry)\nPlotting teaches us about symmetry:\n* Points $(x, y)$ and $(x, -y)$ are mirror images across the **x-axis**.\n* Points $(x, y)$ and $(-x, y)$ are mirror images across the **y-axis**.\n* Points $(x, y)$ and $(-x, -y)$ are symmetric about the **Origin**.\n\n#### 4.3 Why Order Matters (Example)\nLet's plot $A(3, 1)$ and $B(1, 3)$.\n* For $A(3, 1)$: Move 3 Right, 1 Up.\n* For $B(1, 3)$: Move 1 Right, 3 Up.\n* Clearly, these are two different positions in the plane. This reinforces that $(3, 1) \\neq (1, 3)$.",
+          "formulas": [],
+          "examples": [
+            {
+              "id": "ex_coord_3",
+              "question": "Plot the points A(2, 4), B(-2, 4), C(-2, -4), and D(2, -4). What figure is formed by joining them?",
+              "steps": [
+                {
+                  "explanation": "Plot A(2, 4): 2 Right, 4 Up. (Quadrant I)"
+                },
+                {
+                  "explanation": "Plot B(-2, 4): 2 Left, 4 Up. (Quadrant II)"
+                },
+                {
+                  "explanation": "Plot C(-2, -4): 2 Left, 4 Down. (Quadrant III)"
+                },
+                {
+                  "explanation": "Plot D(2, -4): 2 Right, 4 Down. (Quadrant IV)"
+                },
+                {
+                  "explanation": "Join A to B: Horizontal line of length 4 ($2 - (-2)$)."
+                },
+                {
+                  "explanation": "Join B to C: Vertical line of length 8 ($4 - (-4)$)."
+                },
+                {
+                  "explanation": "Join C to D: Horizontal line of length 4."
+                },
+                {
+                  "explanation": "Join D to A: Vertical line of length 8."
+                },
+                {
+                  "explanation": "Since opposite sides are equal (4 and 8) and adjacent sides are perpendicular (axes are perpendicular), the figure is a Rectangle."
+                }
+              ],
+              "finalAnswer": "Rectangle ABCD with length 8 and width 4."
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Plotting Points & Geometry",
+            "functions": [
+              {
+                "expression": "0",
+                "color": "transparent",
+                "label": "Canvas"
+              }
+            ],
+            "xRange": [
+              -5,
+              5
+            ],
+            "yRange": [
+              -5,
+              5
+            ],
+            "points": [
+              { "x": 2, "y": 4, "label": "A(2,4)", "color": "red" },
+              { "x": -2, "y": 4, "label": "B(-2,4)", "color": "blue" },
+              { "x": -2, "y": -4, "label": "C(-2,-4)", "color": "green" },
+              { "x": 2, "y": -4, "label": "D(2,-4)", "color": "purple" }
+            ]
+          }
+        },
+        {
+          "id": "topic_3_5_advanced_concepts_foundation",
+          "title": "3.5 Advanced Foundations (IIT-JEE Level)",
+          "content": "### 5. Beyond Plotting: Analytical Geometry\nClass 9 introduces the grid. However, to prepare for Class 10 and 11, we must understand *relationships* between points. \n\n#### 5.1 The Distance Intuition (Pythagorean Connection)\nHow far apart are two points $A(x_1, y_1)$ and $B(x_2, y_2)$?\nWe don't need a ruler; we need algebra.\n* Horizontal distance: $\\Delta x = |x_2 - x_1|$.\n* Vertical distance: $\\Delta y = |y_2 - y_1|$.\n* These form the legs of a right-angled triangle.\n* By **Pythagoras Theorem**: $\\text{Distance}^2 = (\\Delta x)^2 + (\\Delta y)^2$.\n* $d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$.\n    * *Note: This is officially Class 10 syllabus, but essential for understanding geometrical shapes in Class 9 problems (like proving a square).* \n\n#### 5.2 Area of Triangle Logic\nIf three points $A, B, C$ are collinear (lie on the same line), they cannot form a triangle. The area of the triangle formed by them is **zero**. This concept helps in testing collinearity.\n\n#### 5.3 Locus (The Path of a Point)\nA key concept in advanced geometry is **Locus**: The set of all points satisfying a specific condition.\n* **Example:** What is the set of all points $(x, y)$ such that $x = 3$?\n    * It is a vertical line passing through 3 on the x-axis. Every point on this line has abscissa 3 (e.g., $(3, 0), (3, 5), (3, -100)$).\n* **Example:** What is the set of all points such that $y = x$?\n    * It is a line passing through the origin at 45 degrees. Every point has equal abscissa and ordinate (e.g., $(1, 1), (-5, -5)$).\n\n#### 5.4 Line Equations (Preview)\nA linear equation $ax + by + c = 0$ represents a straight line in the Cartesian plane. The coordinates of every point on the line satisfy this equation.\n* $y = 0$ is the equation of the **x-axis**.\n* $x = 0$ is the equation of the **y-axis**.",
+          "formulas": [
+            "d = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}",
+            "\\text{Equation of x-axis: } y = 0",
+            "\\text{Equation of y-axis: } x = 0"
+          ],
+          "examples": [
+            {
+              "id": "ex_coord_4",
+              "question": "Prove that the points O(0, 0), A(3, 0), and B(0, 4) form a right-angled triangle. Find its area.",
+              "steps": [
+                {
+                  "explanation": "Plot the points. O is Origin. A is on x-axis (3 units right). B is on y-axis (4 units up)."
+                },
+                {
+                  "explanation": "Side OA lies on the x-axis. Length OA = $|3 - 0| = 3$ units."
+                },
+                {
+                  "explanation": "Side OB lies on the y-axis. Length OB = $|4 - 0| = 4$ units."
+                },
+                {
+                  "explanation": "Since x-axis and y-axis are perpendicular, $\\angle AOB = 90^\\circ$."
+                },
+                {
+                  "explanation": "Therefore, $\\Delta OAB$ is a right-angled triangle."
+                },
+                {
+                  "explanation": "Area = $\\frac{1}{2} \\times \\text{Base} \\times \\text{Height} = \\frac{1}{2} \\times 3 \\times 4 = 6$ sq units."
+                }
+              ],
+              "finalAnswer": "Right-angled triangle with Area 6 sq units."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_3_6_solved_examples_bank",
+          "title": "3.6 Master Solved Examples",
+          "content": "### 6. Worked Examples: From Basic to Brain-Teasers\n\n**Example 1: Coordinate Identification**\n**Q:** Write the coordinates of a point which is 5 units left of the y-axis and 3 units below the x-axis.\n**Sol:**\n* 5 units left of y-axis $\\implies$ x-coordinate is negative. $x = -5$.\n* 3 units below x-axis $\\implies$ y-coordinate is negative. $y = -3$.\n* **Coordinates: $(-5, -3)$.**\n\n**Example 2: Axis Reflection**\n**Q:** Find the image of point $P(3, -4)$ when reflected across (i) x-axis, (ii) y-axis, (iii) origin.\n**Sol:**\n* (i) **x-axis reflection:** Keep x same, flip sign of y. $P' (3, 4)$.\n* (ii) **y-axis reflection:** Keep y same, flip sign of x. $P'' (-3, -4)$.\n* (iii) **Origin reflection:** Flip signs of both. $P''' (-3, 4)$.\n\n**Example 3: Geometric Shapes**\n**Q:** Three vertices of a rectangle are $(3, 2), (-4, 2),$ and $(-4, 5)$. Find the fourth vertex.\n**Sol:**\n* Let vertices be $A(3, 2), B(-4, 2), C(-4, 5)$.\n* Side $AB$ is horizontal (y-coords same). Length = $3 - (-4) = 7$.\n* Side $BC$ is vertical (x-coords same). Length = $5 - 2 = 3$.\n* Fourth vertex $D$ must complete the loop. It must be vertically above $A$ and horizontally right of $C$.\n* x-coord of $D$ = x-coord of $A$ = 3.\n* y-coord of $D$ = y-coord of $C$ = 5.\n* **Fourth Vertex: $(3, 5)$.**\n\n**Example 4: Equidistant Points (Logic)**\n**Q:** A point lies on the x-axis and is equidistant from $(-2, 0)$ and $(6, 0)$. Find the point.\n**Sol:**\n* Let the point be $P(x, 0)$ since it is on the x-axis.\n* Points $A(-2, 0)$ and $B(6, 0)$ are also on the x-axis.\n* The problem reduces to finding the midpoint of the segment on the number line connecting -2 and 6.\n* Midpoint formula: $\\frac{-2 + 6}{2} = \\frac{4}{2} = 2$.\n* **Point is $(2, 0)$.**\n\n**Example 5: Area Calculation**\n**Q:** Plot $A(2, 0), B(2, 2), C(0, 2)$ and $O(0, 0)$. Identify the figure and find its area.\n**Sol:**\n* $OA$: Along x-axis, length 2.\n* $OC$: Along y-axis, length 2.\n* $AB$: Vertical line at $x=2$, length 2.\n* $BC$: Horizontal line at $y=2$, length 2.\n* All sides are equal (2 units). Adjacent sides perpendicular.\n* Figure is a **Square**.\n* Area = $\\text{Side}^2 = 2^2 = 4$ sq units.\n\n**Example 6: Quadrant Logic**\n**Q:** If the product of coordinates of a point is positive ($xy > 0$), in which quadrants can the point lie?\n**Sol:**\n* Product is positive if both numbers have the same sign.\n* Case 1: $x > 0$ and $y > 0$ $\\implies$ Quadrant I.\n* Case 2: $x < 0$ and $y < 0$ $\\implies$ Quadrant III.\n* **Ans: Quadrant I or III.**\n\n**Example 7: Collinearity Check**\n**Q:** Are points $A(1, 1), B(2, 2), C(3, 3)$ collinear?\n**Sol:**\n* In all points, $y = x$.\n* This implies all three points lie on the line bisecting the first quadrant.\n* **Yes, they are collinear.**\n\n**Example 8: The Mystery Triangle**\n**Q:** The vertices of a triangle are $(0, 0), (3, 0)$ and $(0, 4)$. Find the length of the hypotenuse.\n**Sol:**\n* It is a right triangle at Origin $(0, 0)$.\n* Base $b = 3$, Height $h = 4$.\n* Hypotenuse = $\\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$.\n\n**Example 9: Ordinate Relations**\n**Q:** Find the value of $a$ if the point $(a, 2)$ lies on the y-axis.\n**Sol:**\n* Any point on the y-axis has x-coordinate (abscissa) zero.\n* Therefore, $a = 0$.\n\n**Example 10: Sign Conventions**\n**Q:** Without plotting, state in which quadrant or on which axis do the following points lie: $(-2, 4), (3, -1), (-1, 0), (1, 2), (-3, -5)$.\n**Sol:**\n* $(-2, 4)$: $(-, +) \\to$ Q II.\n* $(3, -1)$: $(+, -) \\to$ Q IV.\n* $(-1, 0)$: y is 0 $\\to$ Negative x-axis.\n* $(1, 2)$: $(+, +) \\to$ Q I.\n* $(-3, -5)$: $(-, -) \\to$ Q III.",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_3_7_practice_bank",
+          "title": "3.7 Practice Bank",
+          "content": "### 7. Comprehensive Practice Questions\n\n#### Section A: Conceptual & Plotting (10 Questions)\n1.  What is the name of the horizontal line in the Cartesian plane?\n2.  What are the coordinates of the Origin?\n3.  In which quadrant do points with negative abscissa and positive ordinate lie?\n4.  Plot the point $P(-3, -5)$ on a graph paper.\n5.  What is the ordinate of the point $(4, -7)$?\n6.  If a point lies on the x-axis at a distance of 9 units from y-axis to the left, find its coordinates.\n7.  Find the perpendicular distance of $(-3, 4)$ from the y-axis.\n8.  True or False: The point $(0, -5)$ lies in Quadrant III.\n9.  Plot points $A(2, 0)$ and $B(0, 2)$. Join them. Is the line passing through origin?\n10. Name the figure formed by joining $(-1, -1), (1, -1), (1, 1), (-1, 1)$.\n\n#### Section B: Reasoning & Logic (10 Questions)\n11. If the coordinates of a point are $(x, y)$ and $xy < 0$, where can the point lie?\n12. A point is such that its ordinate is twice its abscissa. If abscissa is 3, find the point.\n13. Find the mirror image of $(-3, 5)$ across the x-axis.\n14. The points $A(2, 2), B(-2, 2)$ and $C(-2, -2)$ are three vertices of a square. Find the fourth vertex.\n15. Describe the locus of points where the abscissa is always -2.\n16. Which axis is the line joining $(3, 5)$ and $(3, -2)$ parallel to?\n17. If $P(x, y)$ lies in Q IV, what are the signs of $x$ and $y$?\n18. What is the area of the triangle formed by $(0, 0), (5, 0),$ and $(0, 12)$?\n19. Find $x$ if $(x, -4)$ lies on the y-axis.\n20. Does the point $(3, 2)$ lie on the line $y = x$?\n\n#### Section C: Board & JEE Foundation (Must Practice)\n21. **(Must Practice)** The base $BC$ of an equilateral triangle $ABC$ lies on the y-axis. The coordinates of point $C$ are $(0, -3)$. The origin is the midpoint of the base. Find the coordinates of points $A$ and $B$.\n22. **(Must Practice)** Plot the points $P(1, 0), Q(4, 0)$ and $S(1, 3)$. Find the coordinate of point $R$ such that $PQRS$ is a square.\n23. **(Must Practice)** A point $P$ is reflected across the x-axis to $P'$, and $P'$ is reflected across the y-axis to $P''$. If $P''$ is $(3, -4)$, find coordinates of $P$.\n24. **(Must Practice)** Three vertices of a rectangle are $(3, 2), (-4, 2)$ and $(-4, 5)$. Plot these points and find the coordinates of the fourth vertex.\n25. **(Must Practice)** Determine the area of the triangle formed by the points $A(0, 4), O(0, 0)$ and $B(3, 0)$.\n26. **(Must Practice)** Write the coordinates of the vertices of a square whose side is length 4 units, center is at origin, and sides are parallel to axes.\n27. **(Must Practice)** Point $A$ is chosen on x-axis such that its distance from origin is 5. Point $B$ is on y-axis such that distance from origin is 12. Find the length of $AB$.\n28. **(Must Practice)** If $(x+1, y-2) = (3, 1)$, find coordinates of $(x, y)$.\n29. **(Must Practice)** Without plotting, identify the quadrant where the ordinate is negative and abscissa is positive.\n30. **(Must Practice)** Prove that points $(0, 0), (2, 2), (0, 4), (-2, 2)$ form a Square.\n\n#### Answer Key (Brief)\n1. x-axis | 2. (0,0) | 3. II | 4. Graph | 5. -7 | 6. (-9, 0) | 7. 3 units | 8. False (on y-axis) | 9. No | 10. Square | 11. II or IV | 12. (3, 6) | 13. (-3, -5) | 14. (2, -2) | 15. Line parallel to y-axis at x=-2 | 16. y-axis | 17. x>0, y<0 | 18. 30 sq units | 19. 0 | 20. No | 21. B(0,3), A($3\\sqrt{3}$, 0) or $(-3\\sqrt{3}, 0)$ | 22. (4, 3) | 23. (-3, 4) | 24. (3, 5) | 25. 6 sq units | 26. (2,2), (-2,2), (-2,-2), (2,-2) | 27. 13 | 28. (2, 3) | 29. IV | 30. Distance logic: all sides $\\sqrt{8}$, diagonals equal.",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_3_8_summary_formulae",
+          "title": "3.8 Formula & Concept Compendium",
+          "content": "### 8. Chapter Summary & Reference\n\n#### 8.1 Coordinate System Conventions\n* **Horizontal Line:** x-axis (Abscissa axis).\n* **Vertical Line:** y-axis (Ordinate axis).\n* **Intersection:** Origin $(0, 0)$.\n* **Plane Name:** Cartesian Plane / XY-Plane.\n\n#### 8.2 Sign Conventions (Quadrants)\n| Quadrant | Position | x-sign | y-sign | Coords |\n| :--- | :--- | :--- | :--- | :--- |\n| **I** | Top Right | $+$ | $+$ | $(+, +)$ |\n| **II** | Top Left | $-$ | $+$ | $(-, +)$ |\n| **III** | Bottom Left | $-$ | $-$ | $(-, -)$ |\n| **IV** | Bottom Right | $+$ | $-$ | $(+, -)$ |\n\n#### 8.3 Important Properties\n* **x-coordinate (Abscissa):** Distance from y-axis. Positive to right, negative to left.\n* **y-coordinate (Ordinate):** Distance from x-axis. Positive upwards, negative downwards.\n* **Point on x-axis:** $(x, 0)$ (Ordinate is always 0).\n* **Point on y-axis:** $(0, y)$ (Abscissa is always 0).\n* **Origin:** $(0, 0)$ (Intersection of axes).\n\n#### 8.4 Fundamental Logic\n1.  **Uniqueness:** Every ordered pair $(x, y)$ corresponds to exactly one point.\n2.  **Order:** $(a, b) \\neq (b, a)$ unless $a = b$.\n3.  **Reflection:** \n    * Reflection of $(x, y)$ in x-axis $\\to (x, -y)$.\n    * Reflection of $(x, y)$ in y-axis $\\to (-x, y)$.\n\n#### 8.5 Advanced Formulas (Foundation)\n* **Distance Formula:** $D = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$\n* **Midpoint Formula:** $M = (\\frac{x_1 + x_2}{2}, \\frac{y_1 + y_2}{2})$\n* **Area of Triangle (Determinant Form):** $\\frac{1}{2} |x_1(y_2 - y_3) + x_2(y_3 - y_1) + x_3(y_1 - y_2)|$\n* **Collinearity:** Area = 0 implies points are collinear.",
+          "formulas": [
+            "\\text{Dist} = \\sqrt{(\\Delta x)^2 + (\\Delta y)^2}",
+            "\\text{Reflect x-axis}: (x, -y)",
+            "\\text{Reflect y-axis}: (-x, y)"
+          ],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

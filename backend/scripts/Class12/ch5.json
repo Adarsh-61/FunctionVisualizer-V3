@@ -1,0 +1,214 @@
+{
+  "id": "12_5",
+  "classId": 12,
+  "title": "Continuity and Differentiability",
+  "description": "The bedrock of Calculus. This chapter transitions from the algebra of limits to the rigorous analysis of continuous curves and instantaneous rates of change. It establishes the conditions under which functions behave predictably and develops the powerful machinery of differentiation required for physics, engineering, and higher mathematics.",
+  "topics": [
+    {
+      "id": "12_5_1",
+      "title": "Continuity",
+      "content": "### 1. Intuitive Understanding of Continuity\nBefore the mathematical formalism, let's understand the geometry.\nImagine the graph of a function $y = f(x)$. If you can draw the entire graph on a piece of paper **without lifting your pen**, the function is said to be continuous.\n\n* **Continuous Curve:** No holes, no jumps, no breaks.\n* **Discontinuous Curve:** If there is a hole (missing point), a jump (sudden change in value), or a vertical asymptote (going to infinity), the pen must be lifted. The function is discontinuous at that point.\n\n### 2. Formal Definition of Continuity\nMathematically, 'not lifting the pen' translates to the behavior of limits.\nA function $f(x)$ is continuous at a point $x = c$ if:\n1.  The function is **defined** at $c$ (i.e., $f(c)$ exists).\n2.  The **limit** of the function as $x$ approaches $c$ exists (i.e., $\\lim_{x \\to c} f(x)$ exists).\n3.  The limit equals the function value.\n\n$$ \\lim_{x \\to c} f(x) = f(c) $$\n\n**Expanded Condition (LHL = RHL = Value):**\n$$ \\lim_{x \\to c^-} f(x) = \\lim_{x \\to c^+} f(x) = f(c) $$\n\n* **LHL (Left Hand Limit):** The value $f(x)$ approaches as $x$ gets closer to $c$ from the left ($x < c$).\n* **RHL (Right Hand Limit):** The value $f(x)$ approaches as $x$ gets closer to $c$ from the right ($x > c$).\n\n### 3. Types of Discontinuity (Advanced Insight)\nIf a function is not continuous at $c$, it is discontinuous. We classify discontinuities based on which condition fails:\n\n1.  **Removable Discontinuity:**\n    * Limit exists (LHL = RHL), but does not equal $f(c)$ (or $f(c)$ is undefined).\n    * *Visual:* A hole in the graph.\n    * *Example:* $f(x) = \\frac{x^2-4}{x-2}$ at $x=2$.\n2.  **Jump Discontinuity:**\n    * LHL and RHL exist but are not equal ($LHL \\neq RHL$).\n    * *Visual:* The graph steps up or down.\n    * *Example:* Greatest Integer Function $f(x) = [x]$ at integer points.\n3.  **Infinite Discontinuity:**\n    * Either LHL or RHL (or both) tends to $\\pm \\infty$.\n    * *Visual:* Vertical Asymptote.\n    * *Example:* $f(x) = \\frac{1}{x}$ at $x=0$.\n4.  **Oscillatory Discontinuity:**\n    * The limit does not exist because the function oscillates wildly near $c$.\n    * *Example:* $f(x) = \\sin(1/x)$ at $x=0$.\n\n### 4. Continuity on an Interval\n* **Open Interval $(a, b)$:** $f$ is continuous on $(a, b)$ if it is continuous at every point $c \\in (a, b)$.\n* **Closed Interval $[a, b]$:** $f$ is continuous on $[a, b]$ if:\n    1.  It is continuous on $(a, b)$.\n    2.  Right-continuous at $a$: $\\lim_{x \\to a^+} f(x) = f(a)$.\n    3.  Left-continuous at $b$: $\\lim_{x \\to b^-} f(x) = f(b)$.\n\n### 5. Algebra of Continuous Functions\nLet $f$ and $g$ be two real functions continuous at a real number $c$. Then:\n1.  **Sum:** $f + g$ is continuous at $c$.\n2.  **Difference:** $f - g$ is continuous at $c$.\n3.  **Product:** $f \\cdot g$ is continuous at $c$.\n4.  **Quotient:** $\\frac{f}{g}$ is continuous at $c$ (provided $g(c) \\neq 0$).\n5.  **Scalar Multiplication:** $\\alpha f$ is continuous at $c$.\n\n**Theorem (Composite Functions):**\nIf $f$ is continuous at $c$ and $g$ is continuous at $f(c)$, then the composite function $g \\circ f$ (defined by $(g \\circ f)(x) = g(f(x))$) is continuous at $c$.\n\n* *Example:* $f(x) = \\sin(x^2)$. Let $u(x) = x^2$ (continuous polynomial) and $v(t) = \\sin t$ (continuous trig function). Then $f(x) = v(u(x))$ is continuous.\n\n### 6. Standard Continuous Functions\nThe following functions are continuous everywhere in their domains:\n* Polynomial functions ($a_n x^n + \\dots + a_0$).\n* Rational functions (where denominator $\\neq 0$).\n* Trigonometric functions (sin, cos continuous everywhere; tan, sec, etc., in their domains).\n* Exponential functions ($e^x, a^x$).\n* Logarithmic functions ($\\ln x$ for $x > 0$).\n* Inverse Trigonometric functions (in their principal domains).\n* Modulus function ($|x|$)."
+    },
+    {
+      "id": "12_5_2",
+      "title": "Differentiability",
+      "content": "### 1. Intuitive Meaning of Differentiability\nContinuity ensures a graph is unbroken. Differentiability ensures a graph is **smooth**.\nA function is differentiable at a point if it has a unique, non-vertical tangent at that point. Geometrically, this means the graph has no sharp corners, cusps, or kinks.\n\n### 2. Definition of Derivative (First Principles)\nLet $f$ be a real function and $c$ be a point in its domain. The derivative of $f$ at $c$ is defined by:\n\n$$ f'(c) = \\lim_{h \\to 0} \\frac{f(c+h) - f(c)}{h} $$\n\nprovided this limit exists.\n\n**Left Hand Derivative (LHD):**\n$$ Lf'(c) = \\lim_{h \\to 0^-} \\frac{f(c+h) - f(c)}{h} = \\lim_{h \\to 0} \\frac{f(c-h) - f(c)}{-h} $$\n\n**Right Hand Derivative (RHD):**\n$$ Rf'(c) = \\lim_{h \\to 0^+} \\frac{f(c+h) - f(c)}{h} $$\n\n**Condition for Differentiability:**\nA function is differentiable at $c$ if and only if:\n1.  LHD exists (finite).\n2.  RHD exists (finite).\n3.  LHD = RHD.\n\n### 3. Relation between Continuity and Differentiability\n**Theorem:** If a function $f$ is differentiable at a point $c$, then it is essentially continuous at that point.\n\n**Proof Logic:**\nWe want to show $\\lim_{x \\to c} f(x) = f(c)$, which is equivalent to $\\lim_{x \\to c} [f(x) - f(c)] = 0$.\nWrite $f(x) - f(c) = \\frac{f(x) - f(c)}{x - c} \\cdot (x - c)$ for $x \\neq c$.\nTaking limits:\n$\\lim_{x \\to c} [f(x) - f(c)] = \\lim_{x \\to c} \\frac{f(x) - f(c)}{x - c} \\cdot \\lim_{x \\to c} (x - c)$\n$= f'(c) \\cdot 0 = 0$.\nSo, $\\lim_{x \\to c} f(x) = f(c)$. Thus, $f$ is continuous.\n\n**Converse is FALSE:**\nEvery differentiable function is continuous, but **every continuous function need not be differentiable**.\n* *Counter-Example:* $f(x) = |x|$ at $x=0$.\n    * Continuity: LHL = RHL = 0. Continuous.\n    * Differentiability:\n        * LHD at 0: $\\lim_{h \\to 0^-} \\frac{|h|-0}{h} = \\lim \\frac{-h}{h} = -1$.\n        * RHD at 0: $\\lim_{h \\to 0^+} \\frac{|h|-0}{h} = \\lim \\frac{h}{h} = 1$.\n        * LHD $\\neq$ RHD. Not differentiable.\n    * *Geometric Reason:* There is a sharp corner (kink) at $x=0$.\n\n### 4. Rules of Differentiation (Algebra of Derivatives)\nLet $u$ and $v$ be differentiable functions of $x$.\n1.  **Sum/Difference:** $(u \\pm v)' = u' \\pm v'$.\n2.  **Product Rule (Leibniz Rule):** $(uv)' = u'v + uv'$.\n3.  **Quotient Rule:** $\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}$ (where $v \\neq 0$).\n\n### 5. Chain Rule (Composite Functions)\nThis is the most critical rule for calculus.\nLet $y = f(u)$ and $u = g(x)$. Then $y = f(g(x))$.\nTo find $\\frac{dy}{dx}$:\n$$ \\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx} $$\n\n**Alternative Notation:**\nIf $h(x) = (f \\circ g)(x)$, then $h'(x) = f'(g(x)) \\cdot g'(x)$.\n* *Intuition:* Differentiate the \"outer\" function keeping the \"inner\" intact, then multiply by the derivative of the \"inner\" function (Peeling the onion)."
+    },
+    {
+      "id": "12_5_3",
+      "title": "Exponential and Logarithmic Functions",
+      "content": "### 1. The Exponential Function\nThe exponential function $y = b^x$ ($b > 1$) is a function that grows extremely rapidly. The specific case where the base is Euler's number $e \\approx 2.718...$ is called the **Natural Exponential Function**.\n\n**Definition of $e$:** The number such that the slope of the tangent to $y = e^x$ at $(0,1)$ is exactly 1.\n$$\\lim_{h \\to 0} \\frac{e^h - 1}{h} = 1$$\n\n**Derivative:**\n$$ \\frac{d}{dx}(e^x) = e^x $$\n$$ \\frac{d}{dx}(a^x) = a^x \\ln a $$\n\n### 2. The Logarithmic Function\nThe inverse of the exponential function is the Logarithmic function.\n$y = \\log_b x \\iff x = b^y$.\n* **Domain:** $(0, \\infty)$ (Only positive real numbers).\n* **Range:** $(-\\infty, \\infty)$.\n* **Natural Logarithm:** $\\log_e x$, denoted as $\\ln x$.\n\n**Derivative:**\n$$ \\frac{d}{dx}(\\ln x) = \\frac{1}{x} $$\n$$ \\frac{d}{dx}(\\log_a x) = \\frac{1}{x \\ln a} $$\n\n**Properties of Logarithms (Crucial for Differentiation):**\n1.  $\\ln(xy) = \\ln x + \\ln y$\n2.  $\\ln(x/y) = \\ln x - \\ln y$\n3.  $\\ln(x^n) = n \\ln x$\n4.  **Base Change:** $\\log_a b = \\frac{\\ln b}{\\ln a}$"
+    },
+    {
+      "id": "12_5_4",
+      "title": "Methods of Differentiation",
+      "content": "### 1. Derivatives of Implicit Functions\nSometimes $y$ cannot be explicitly expressed as $y = f(x)$ (e.g., $x^2 + y^2 = r^2$ or $\\sin(xy) = x+y$). These are **Implicit Functions**.\n\n**Method:**\n1.  Differentiate both sides of the equation with respect to $x$.\n2.  Remember that $y$ is a function of $x$, so $\\frac{d}{dx}(y^n) = n y^{n-1} \\frac{dy}{dx}$ (Chain Rule).\n3.  Collect all terms containing $\\frac{dy}{dx}$ on one side.\n4.  Solve for $\\frac{dy}{dx}$.\n\n### 2. Derivatives of Inverse Trigonometric Functions\nUsing implicit differentiation on $x = \\sin y$ (where $y = \\sin^{-1} x$), we derive:\n\n* $\\frac{d}{dx}(\\sin^{-1} x) = \\frac{1}{\\sqrt{1-x^2}}$\n* $\\frac{d}{dx}(\\cos^{-1} x) = -\\frac{1}{\\sqrt{1-x^2}}$\n* $\\frac{d}{dx}(\\tan^{-1} x) = \\frac{1}{1+x^2}$\n* $\\frac{d}{dx}(\\cot^{-1} x) = -\\frac{1}{1+x^2}$\n* $\\frac{d}{dx}(\\sec^{-1} x) = \\frac{1}{|x|\\sqrt{x^2-1}}$\n* $\\frac{d}{dx}(\\text{cosec}^{-1} x) = -\\frac{1}{|x|\\sqrt{x^2-1}}$\n\n### 3. Logarithmic Differentiation\nThis technique is useful when:\n1.  The function is of the form $y = [f(x)]^{g(x)}$ (Variable base, variable exponent).\n2.  The function is a product/quotient of many factors (e.g., $y = \\frac{\\sqrt{x-1}(x-2)}{(x-3)^5}$).\n\n**Method:**\n1.  Take natural log ($\\ln$) on both sides.\n2.  Use log properties to simplify the RHS (bring powers down, split products to sums).\n3.  Differentiate implicitly w.r.t $x$: $\\frac{1}{y} \\frac{dy}{dx} = \\frac{d}{dx}(\\text{RHS})$.\n4.  Multiply by $y$ to isolate $\\frac{dy}{dx}$.\n\n### 4. Derivatives of Functions in Parametric Forms\nSometimes $x$ and $y$ are given as functions of a third variable $t$ (parameter).\n$$ x = f(t), \\quad y = g(t) $$\n\n**Method:**\nUse the Chain Rule relation:\n$$ \\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} $$\nprovided $\\frac{dx}{dt} \\neq 0$."
+    },
+    {
+      "id": "12_5_5",
+      "title": "Higher Order Derivatives",
+      "content": "If $y = f(x)$ is a differentiable function, then its derivative $f'(x)$ is also a function. If $f'(x)$ is differentiable, we can differentiate it again.\n\n* **First Derivative:** $y' = f'(x) = \\frac{dy}{dx}$ (Rate of change of $y$).\n* **Second Derivative:** $y'' = f''(x) = \\frac{d}{dx}(\\frac{dy}{dx}) = \\frac{d^2y}{dx^2}$ (Rate of change of slope, or Concavity/Acceleration).\n* **n-th Derivative:** $y^{(n)} = \\frac{d^ny}{dx^n}$.\n\n**Important Note for Implicit 2nd Derivatives:**\nWhen finding $\\frac{d^2y}{dx^2}$ implicitly, after differentiating the second time, you will get terms involving $\\frac{dy}{dx}$. You must substitute the expression for $\\frac{dy}{dx}$ derived in the first step to get the final answer in terms of $x$ and $y$ only."
+    },
+    {
+      "id": "12_5_6",
+      "title": "Mean Value Theorems",
+      "content": "These theorems guarantee the existence of points with specific properties (like zero slope or parallel slope) without finding the points explicitly.\n\n### 1. Rolle's Theorem\n**Conditions:**\nLet $f: [a, b] \\to \\mathbb{R}$ be a function such that:\n1.  $f$ is **continuous** on the closed interval $[a, b]$.\n2.  $f$ is **differentiable** on the open interval $(a, b)$.\n3.  $f(a) = f(b)$.\n\n**Conclusion:**\nThen there exists at least one real number $c \\in (a, b)$ such that **$f'(c) = 0$**.\n\n**Geometric Interpretation:**\nIf a smooth curve starts and ends at the same height ($f(a)=f(b)$), there must be at least one point between $a$ and $b$ where the tangent is horizontal (slope = 0). This corresponds to a peak or a valley.\n\n### 2. Lagrange's Mean Value Theorem (MVT)\nThis is a generalization of Rolle's Theorem (where $f(a)$ need not equal $f(b)$).\n\n**Conditions:**\nLet $f: [a, b] \\to \\mathbb{R}$ be a function such that:\n1.  $f$ is **continuous** on $[a, b]$.\n2.  $f$ is **differentiable** on $(a, b)$.\n\n**Conclusion:**\nThen there exists at least one point $c \\in (a, b)$ such that:\n$$ f'(c) = \\frac{f(b) - f(a)}{b - a} $$\n\n**Geometric Interpretation:**\nThe value $\\frac{f(b) - f(a)}{b - a}$ is the slope of the **secant line** joining endpoints $(a, f(a))$ and $(b, f(b))$.\nThe theorem states that there is at least one point $c$ on the curve where the **tangent is parallel to this secant line**.\n\n*Note:* If $f(a) = f(b)$, the numerator becomes 0, reducing MVT to Rolle's Theorem."
+    }
+  ],
+  "examples": [
+    {
+      "id": "ex_12_5_1",
+      "title": "Continuity of Piecewise Function",
+      "problem": "Discuss the continuity of the function $f(x)$ at $x=0$, where $f(x) = \\begin{cases} 2x - 1, & x < 0 \\\\ 2x + 1, & x \\ge 0 \\end{cases}$.",
+      "solution": "To check continuity at $c=0$, we evaluate LHL, RHL, and $f(0)$.\n\n1.  **LHL (Left Hand Limit):**\n    $$ \\lim_{x \\to 0^-} f(x) = \\lim_{x \\to 0} (2x - 1) = 2(0) - 1 = -1 $$\n\n2.  **RHL (Right Hand Limit):**\n    $$ \\lim_{x \\to 0^+} f(x) = \\lim_{x \\to 0} (2x + 1) = 2(0) + 1 = 1 $$\n\n3.  **Function Value:**\n    $f(0) = 2(0) + 1 = 1$.\n\n**Conclusion:**\nSince LHL ($-1$) $\\neq$ RHL ($1$), the limit does not exist.\nTherefore, $f$ is **discontinuous** at $x=0$. This is a **Jump Discontinuity**."
+    },
+    {
+      "id": "ex_12_5_2",
+      "title": "Finding Constants for Continuity",
+      "problem": "Find the value of $k$ so that the function $f(x)$ is continuous at $x=2$: $f(x) = \\begin{cases} kx^2, & x \\le 2 \\\\ 3, & x > 2 \\end{cases}$.",
+      "solution": "For continuity at $x=2$, we require:\n$$ \\lim_{x \\to 2^-} f(x) = \\lim_{x \\to 2^+} f(x) = f(2) $$\n\n1.  **LHL ($x \\le 2$):** $\\lim_{x \\to 2} kx^2 = k(2)^2 = 4k$.\n2.  **RHL ($x > 2$):** $\\lim_{x \\to 2} 3 = 3$.\n3.  **Value:** $f(2) = 4k$.\n\nEquating LHL and RHL:\n$4k = 3 \\implies k = 3/4$."
+    },
+    {
+      "id": "ex_12_5_3",
+      "title": "Differentiability of Modulus Function",
+      "problem": "Show that $f(x) = |x - 1|$ is continuous but not differentiable at $x=1$.",
+      "solution": "**Continuity at x=1:**\n* LHL: $\\lim_{x \\to 1^-} |x-1| = 0$.\n* RHL: $\\lim_{x \\to 1^+} |x-1| = 0$.\n* $f(1) = 0$.\n* LHL = RHL = $f(1)$, so **Continuous**.\n\n**Differentiability at x=1:**\nWe check the limits of the difference quotient.\n1.  **LHD (Left Hand Derivative):**\n    $$ Lf'(1) = \\lim_{h \\to 0^-} \\frac{f(1+h) - f(1)}{h} = \\lim_{h \\to 0^-} \\frac{|(1+h)-1| - 0}{h} $$\n    $$ = \\lim_{h \\to 0^-} \\frac{|h|}{h} $$\n    Since $h < 0$, $|h| = -h$. So limit is $\\frac{-h}{h} = -1$.\n\n2.  **RHD (Right Hand Derivative):**\n    $$ Rf'(1) = \\lim_{h \\to 0^+} \\frac{|h|}{h} $$\n    Since $h > 0$, $|h| = h$. So limit is $\\frac{h}{h} = 1$.\n\n**Conclusion:**\nSince LHD ($-1$) $\\neq$ RHD ($1$), $f$ is **not differentiable** at $x=1$."
+    },
+    {
+      "id": "ex_12_5_4",
+      "title": "Chain Rule Application",
+      "problem": "Differentiate $y = \\sin(\\cos(x^2))$ with respect to $x$.",
+      "solution": "Let $y = f(g(h(x)))$ where $f(t) = \\sin t$, $g(u) = \\cos u$, $h(x) = x^2$.\nUsing Chain Rule:\n$$ \\frac{dy}{dx} = \\frac{d}{dx} [\\sin(\\cos(x^2))] $$\n\n1.  Differentiate outer function (sin): $\\cos(\\cos(x^2))$.\n2.  Multiply by derivative of inner (cos): $-\\sin(x^2)$.\n3.  Multiply by derivative of innermost ($x^2$): $2x$.\n\n$$ \\frac{dy}{dx} = \\cos(\\cos(x^2)) \\cdot [-\\sin(x^2)] \\cdot [2x] $$\n$$ \\frac{dy}{dx} = -2x \\sin(x^2) \\cos(\\cos(x^2)) $$"
+    },
+    {
+      "id": "ex_12_5_5",
+      "title": "Implicit Differentiation",
+      "problem": "Find $dy/dx$ if $x^2 + xy + y^2 = 100$.",
+      "solution": "Differentiate both sides w.r.t $x$:\n$$ \\frac{d}{dx}(x^2) + \\frac{d}{dx}(xy) + \\frac{d}{dx}(y^2) = \\frac{d}{dx}(100) $$\n\n1.  $2x$\n2.  Use Product Rule for $xy$: $x \\frac{dy}{dx} + y(1)$\n3.  Use Chain Rule for $y^2$: $2y \\frac{dy}{dx}$\n4.  Constant deriv: 0\n\nEquation: $2x + x \\frac{dy}{dx} + y + 2y \\frac{dy}{dx} = 0$\nGroup terms with $dy/dx$:\n$(x + 2y) \\frac{dy}{dx} = -(2x + y)$\n$$ \\frac{dy}{dx} = -\\frac{2x + y}{x + 2y} $$"
+    },
+    {
+      "id": "ex_12_5_6",
+      "title": "Logarithmic Differentiation",
+      "problem": "Differentiate $y = x^x$.",
+      "solution": "Since base and exponent both vary, we use logs.\n1.  Take $\\ln$ both sides: $\\ln y = \\ln(x^x)$.\n2.  Simplify: $\\ln y = x \\ln x$.\n3.  Differentiate w.r.t $x$:\n    $$ \\frac{d}{dx}(\\ln y) = \\frac{d}{dx}(x \\ln x) $$\n    $$ \\frac{1}{y} \\frac{dy}{dx} = x(\\frac{1}{x}) + \\ln x(1) $$\n    $$ \\frac{1}{y} \\frac{dy}{dx} = 1 + \\ln x $$\n4.  Isolate $dy/dx$:\n    $$ \\frac{dy}{dx} = y(1 + \\ln x) $$\n    $$ \\frac{dy}{dx} = x^x(1 + \\ln x) $$"
+    },
+    {
+      "id": "ex_12_5_7",
+      "title": "Parametric Differentiation",
+      "problem": "Find $dy/dx$ if $x = a(\\theta + \\sin \\theta)$ and $y = a(1 - \\cos \\theta)$.",
+      "solution": "1.  Find $dx/d\\theta$:\n    $$ \\frac{dx}{d\\theta} = a(1 + \\cos \\theta) $$\n2.  Find $dy/d\\theta$:\n    $$ \\frac{dy}{d\\theta} = a(0 - (-\\sin \\theta)) = a \\sin \\theta $$\n3.  Use Chain Rule:\n    $$ \\frac{dy}{dx} = \\frac{dy/d\\theta}{dx/d\\theta} = \\frac{a \\sin \\theta}{a(1 + \\cos \\theta)} $$\n4.  Simplify using Half-Angle formulas:\n    $$ \\frac{dy}{dx} = \\frac{2 \\sin(\\theta/2) \\cos(\\theta/2)}{2 \\cos^2(\\theta/2)} = \\tan(\\theta/2) $$"
+    },
+    {
+      "id": "ex_12_5_8",
+      "title": "Second Order Derivative",
+      "problem": "If $y = A \\sin x + B \\cos x$, prove that $\\frac{d^2y}{dx^2} + y = 0$.",
+      "solution": "1.  First derivative ($y'$):\n    $y' = A \\cos x - B \\sin x$.\n2.  Second derivative ($y''$):\n    $y'' = \\frac{d}{dx}(A \\cos x - B \\sin x)$\n    $y'' = A(-\\sin x) - B(\\cos x)$\n    $y'' = -(A \\sin x + B \\cos x)$\n3.  Substitute original $y$:\n    $y'' = -y$\n    $y'' + y = 0$. Proved."
+    },
+    {
+      "id": "ex_12_5_9",
+      "title": "Mean Value Theorem Verification",
+      "problem": "Verify Rolle's Theorem for $f(x) = x^2 + 2x - 8$ on $[-4, 2]$.",
+      "solution": "1.  **Check Conditions:**\n    * $f(x)$ is a polynomial, so it is continuous on $[-4, 2]$ and differentiable on $(-4, 2)$.\n    * $f(-4) = (-4)^2 + 2(-4) - 8 = 16 - 8 - 8 = 0$.\n    * $f(2) = (2)^2 + 2(2) - 8 = 4 + 4 - 8 = 0$.\n    * Since $f(-4) = f(2)$, conditions are satisfied.\n\n2.  **Find c:**\n    We need $c \\in (-4, 2)$ such that $f'(c) = 0$.\n    $f'(x) = 2x + 2$.\n    Set $f'(c) = 0 \\implies 2c + 2 = 0 \\implies 2c = -2 \\implies c = -1$.\n\n3.  **Verification:**\n    Is $c = -1$ in $(-4, 2)$? Yes.\n    Rolle's theorem is verified."
+    },
+    {
+      "id": "ex_12_5_10",
+      "title": "Differentiability of Greatest Integer Function",
+      "problem": "Prove that the greatest integer function $f(x) = [x]$ is not differentiable at $x=1$.",
+      "solution": "We calculate LHD and RHD at $x=1$.\n\n1.  **RHD:**\n    $$ \\lim_{h \\to 0^+} \\frac{f(1+h) - f(1)}{h} = \\lim_{h \\to 0^+} \\frac{[1+h] - [1]}{h} $$\n    For small $h>0$, $[1+h] = 1$. And $[1]=1$.\n    $$ = \\lim \\frac{1 - 1}{h} = \\frac{0}{h} = 0 $$\n\n2.  **LHD:**\n    $$ \\lim_{h \\to 0^-} \\frac{f(1+h) - f(1)}{h} $$\n    For small $h<0$ (e.g., $h=-0.01$), $1+h = 0.99$, so $[1+h] = 0$.\n    $$ = \\lim \\frac{0 - 1}{h} = \\lim \\frac{-1}{h} $$\n    As $h \\to 0^-$, $\\frac{-1}{\\text{small neg}} \\to \\infty$.\n\nSince LHD is undefined (infinite), the function is not differentiable."
+    }
+  ],
+  "exercises": [
+    {
+      "id": "prob_12_5_1",
+      "question": "Examine the continuity of f(x) = |x - 5| at x = 5.",
+      "type": "Conceptual",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_5_2",
+      "question": "Find all points of discontinuity of f(x) = 1 / (x^2 - 3x + 2).",
+      "type": "Analytical",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_5_3",
+      "question": "Determine the values of a and b such that the function f(x) = {5 if x<=2, ax+b if 2<x<10, 21 if x>=10} is continuous function.",
+      "type": "Algebraic",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_5_4",
+      "question": "Differentiate sin(x^2 + 5) with respect to x.",
+      "type": "Differentiation",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_5_5",
+      "question": "Find dy/dx if 2x + 3y = sin x.",
+      "type": "Implicit Differentiation",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_5_6",
+      "question": "Differentiate y = (log x)^cos x.",
+      "type": "Logarithmic Differentiation",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_5_7",
+      "question": "If x = a(cos t + log tan(t/2)) and y = a sin t, find dy/dx at t = pi/4.",
+      "type": "Parametric",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_5_8",
+      "question": "If y = 500 e^(7x) + 600 e^(-7x), show that d2y/dx2 = 49y.",
+      "type": "Proof",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_5_9",
+      "question": "Verify Mean Value Theorem for f(x) = x(x-1)(x-2) on [0, 1/2].",
+      "type": "Theorem Verification",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_5_10",
+      "question": "Discuss the continuity and differentiability of f(x) = |x| + |x-1| in the interval (-1, 2).",
+      "type": "Conceptual Analysis",
+      "difficulty": "JEE Advanced"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "form_12_5_1",
+      "label": "Definition of Continuity",
+      "tex": "\\lim_{x \\to c} f(x) = f(c)"
+    },
+    {
+      "id": "form_12_5_2",
+      "label": "Definition of Derivative",
+      "tex": "f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}"
+    },
+    {
+      "id": "form_12_5_3",
+      "label": "Product Rule",
+      "tex": "\\frac{d}{dx}(uv) = u \\frac{dv}{dx} + v \\frac{du}{dx}"
+    },
+    {
+      "id": "form_12_5_4",
+      "label": "Quotient Rule",
+      "tex": "\\frac{d}{dx}\\left(\\frac{u}{v}\\right) = \\frac{v \\frac{du}{dx} - u \\frac{dv}{dx}}{v^2}"
+    },
+    {
+      "id": "form_12_5_5",
+      "label": "Chain Rule",
+      "tex": "\\frac{dy}{dx} = \\frac{dy}{dt} \\cdot \\frac{dt}{dx}"
+    },
+    {
+      "id": "form_12_5_6",
+      "label": "Derivative of ln x",
+      "tex": "\\frac{d}{dx}(\\ln x) = \\frac{1}{x}"
+    },
+    {
+      "id": "form_12_5_7",
+      "label": "Derivative of a^x",
+      "tex": "\\frac{d}{dx}(a^x) = a^x \\ln a"
+    },
+    {
+      "id": "form_12_5_8",
+      "label": "Derivative of tan inverse",
+      "tex": "\\frac{d}{dx}(\\tan^{-1} x) = \\frac{1}{1+x^2}"
+    },
+    {
+      "id": "form_12_5_9",
+      "label": "Parametric Differentiation",
+      "tex": "\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt}"
+    },
+    {
+      "id": "form_12_5_10",
+      "label": "Lagrange's Mean Value Theorem",
+      "tex": "f'(c) = \\frac{f(b) - f(a)}{b - a}"
+    }
+  ]
+}

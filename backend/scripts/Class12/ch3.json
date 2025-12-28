@@ -1,0 +1,179 @@
+{
+  "id": "12_3",
+  "classId": 12,
+  "title": "Matrices",
+  "description": "A fundamental shift from scalar algebra to linear algebra. This chapter introduces matrices as structured arrays of numbers, defining their algebra, properties, and transformation rules. It lays the groundwork for determinants, vector spaces, and modern computing applications.",
+  "topics": [
+    {
+      "id": "12_3_1",
+      "title": "Introduction and Matrix Construction",
+      "content": "### 1. The Necessity of Matrices\nIn standard algebra, we deal with single numbers (scalars) representing quantities like length, mass, or time. However, complex systems involves multiple variables interacting simultaneously.\n\n**Example:** Consider a shop selling 3 items (Pens, Pencils, Erasers) across 2 days.\n* Day 1: 30 Pens, 20 Pencils, 10 Erasers.\n* Day 2: 40 Pens, 25 Pencils, 15 Erasers.\n\nWe can represent this data as a rectangular array:\n$$ \\begin{bmatrix} 30 & 20 & 10 \\\\ 40 & 25 & 15 \\end{bmatrix} $$\nThis structure is a **Matrix**. It allows us to manipulate the *entire dataset* as a single mathematical object.\n\n### 2. Formal Definition\nA **matrix** is an ordered rectangular array of numbers or functions. The numbers or functions are called the **elements** or **entries** of the matrix.\n\n**Notation:**\nMatrices are denoted by capital letters ($A, B, C...$).\n$$ A = \\begin{bmatrix} a_{11} & a_{12} & \\dots & a_{1n} \\\\ a_{21} & a_{22} & \\dots & a_{2n} \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ a_{m1} & a_{m2} & \\dots & a_{mn} \\end{bmatrix} $$\n\n### 3. Order of a Matrix\nA matrix having $m$ rows and $n$ columns is called a matrix of order $m \\times n$ (read as \"m by n\").\n* **Horizontal lines** are Rows ($R_1, R_2, ...$).\n* **Vertical lines** are Columns ($C_1, C_2, ...$).\n* **Total elements** = $mn$.\n\n### 4. General Element Representation\nAn element occurring in the $i^{th}$ row and $j^{th}$ column is denoted by $a_{ij}$.\nThus, $A = [a_{ij}]_{m \\times n}$, where $1 \\le i \\le m$ and $1 \\le j \\le n$.\n\n**Construction of Matrices:**\nOften, we define a matrix by a rule for its elements. For example, construct a $2 \\times 2$ matrix where $a_{ij} = i + j$.\n* $a_{11} = 1+1=2$\n* $a_{12} = 1+2=3$\n* $a_{21} = 2+1=3$\n* $a_{22} = 2+2=4$\nResult: $\\begin{bmatrix} 2 & 3 \\\\ 3 & 4 \\end{bmatrix}$"
+    },
+    {
+      "id": "12_3_2",
+      "title": "Types of Matrices",
+      "content": "We classify matrices based on their dimensions and the nature of their elements.\n\n### 1. Based on Dimensions\n* **Column Matrix:** A matrix with only one column. Order: $m \\times 1$. Example: $A = \\begin{bmatrix} 1 \\\\ 2 \\\\ 3 \\end{bmatrix}$.\n* **Row Matrix:** A matrix with only one row. Order: $1 \\times n$. Example: $B = \\begin{bmatrix} 1 & 2 & 3 \\end{bmatrix}$.\n* **Square Matrix:** Number of rows equals number of columns ($m=n$). Order is often just called $n$.\n* **Rectangular Matrix:** $m \\neq n$.\n\n### 2. Based on Elements (Square Matrices)\nLet $A = [a_{ij}]$ be a square matrix of order $n$.\n\n* **Diagonal Elements:** Elements $a_{ij}$ where $i=j$ (i.e., $a_{11}, a_{22}, ..., a_{nn}$). This is the **Principal Diagonal**.\n\n* **Diagonal Matrix:** A square matrix where all non-diagonal elements are zero.\n    $$ a_{ij} = 0 \\quad \\text{if } i \\neq j $$\n    Notation: $A = \\text{diag}(d_1, d_2, ..., d_n)$.\n\n* **Scalar Matrix:** A diagonal matrix where all diagonal elements are equal.\n    $$ a_{ij} = \\begin{cases} 0 & i \\neq j \\\\ k & i = j \\end{cases} $$\n\n* **Identity Matrix ($I$):** A scalar matrix where the diagonal constant is 1.\n    $$ a_{ij} = \\begin{cases} 0 & i \\neq j \\\\ 1 & i = j \\end{cases} $$\n    Properties: $AI = IA = A$. It acts like the number '1' in matrix algebra.\n\n* **Zero (Null) Matrix ($O$):** A matrix where all elements are zero. It acts like the number '0' for addition.\n\n### 3. Triangular Matrices (JEE Focus)\n* **Upper Triangular:** All elements *below* the main diagonal are zero ($a_{ij} = 0$ for $i > j$).\n* **Lower Triangular:** All elements *above* the main diagonal are zero ($a_{ij} = 0$ for $i < j$).\n* *Note:* A diagonal matrix is both upper and lower triangular.\n\n### 4. Trace of a Matrix (Advanced)\nThe sum of the diagonal elements of a square matrix is called the **Trace**.\n$$ \\text{tr}(A) = \\sum_{i=1}^{n} a_{ii} = a_{11} + a_{22} + ... + a_{nn} $$\n**Properties:**\n* $\\text{tr}(A+B) = \\text{tr}(A) + \\text{tr}(B)$\n* $\\text{tr}(kA) = k \\text{tr}(A)$\n* $\\text{tr}(AB) = \\text{tr}(BA)$ (Cyclic property - Very useful in JEE)"
+    },
+    {
+      "id": "12_3_3",
+      "title": "Operations on Matrices",
+      "content": "### 1. Equality of Matrices\nTwo matrices $A = [a_{ij}]$ and $B = [b_{ij}]$ are equal if and only if:\n1.  They have the same order ($m \\times n$).\n2.  Corresponding elements are identical ($a_{ij} = b_{ij}$ for all $i, j$).\n\n### 2. Addition of Matrices\nIf $A$ and $B$ are of the **same order**, their sum $A+B$ is obtained by adding corresponding elements.\n$$ C = A + B \\implies c_{ij} = a_{ij} + b_{ij} $$\n* **Properties:**\n    * **Commutative:** $A + B = B + A$\n    * **Associative:** $(A + B) + C = A + (B + C)$\n    * **Additive Identity:** $A + O = A$\n    * **Additive Inverse:** $A + (-A) = O$\n\n### 3. Scalar Multiplication\nTo multiply a matrix $A$ by a scalar $k$, we multiply **every** element of $A$ by $k$.\n$$ B = kA \\implies b_{ij} = k \\cdot a_{ij} $$\n* *Contrast with Determinants:* In determinants, a scalar multiplies only one row or column. In matrices, it scales the whole array.\n\n### 4. Multiplication of Matrices (The Core Concept)\nMatrix multiplication is NOT element-wise. It represents the composition of linear transformations.\n\n**Condition:** The product $AB$ is defined if and only if the **number of columns in A** equals the **number of rows in B**.\nIf $A$ is $m \\times n$ and $B$ is $n \\times p$, then $AB$ is $m \\times p$.\n\n**The Rule (Row-by-Column):**\nThe element $c_{ij}$ in product $C = AB$ is the sum of products of corresponding elements from the $i^{th}$ row of $A$ and the $j^{th}$ column of $B$.\n$$ c_{ij} = \\sum_{k=1}^{n} a_{ik} b_{kj} = a_{i1}b_{1j} + a_{i2}b_{2j} + ... + a_{in}b_{nj} $$\n\n**Properties of Multiplication:**\n1.  **Non-Commutative:** In general, $AB \\neq BA$. Indeed, if $AB$ is defined, $BA$ might not be.\n2.  **Associative:** $(AB)C = A(BC)$ (whenever defined).\n3.  **Distributive:** $A(B+C) = AB + AC$.\n4.  **Identity:** $IA = A$ and $AI = A$.\n5.  **Zero Product:** $AB = O$ does **not** imply $A=O$ or $B=O$. Non-zero matrices can multiply to give a zero matrix. (These are called *Zero Divisors*).\n\n### 5. Positive Integral Powers\nFor a square matrix $A$:\n* $A^1 = A$\n* $A^2 = A \\cdot A$\n* $A^3 = A \\cdot A \\cdot A$\n* $A^n = A \\cdot A^{n-1}$\n* **Matrix Polynomial:** If $f(x) = x^2 - 5x + 6$, then $f(A) = A^2 - 5A + 6I$. (Note: The constant term becomes scalar $\\times$ Identity matrix)."
+    },
+    {
+      "id": "12_3_4",
+      "title": "Transpose and Symmetric Matrices",
+      "content": "### 1. Transpose of a Matrix\nThe transpose of a matrix $A$, denoted by $A^T$ or $A'$, is obtained by interchanging its rows and columns.\nIf $A = [a_{ij}]_{m \\times n}$, then $A' = [a_{ji}]_{n \\times m}$.\n\n**Properties:**\n1.  $(A')' = A$\n2.  $(kA)' = kA'$\n3.  $(A + B)' = A' + B'$\n4.  **Reversal Law:** $(AB)' = B' A'$ (Crucial property. The order flips).\n    * Generalization: $(ABC)' = C' B' A'$.\n\n### 2. Symmetric Matrix\nA square matrix $A$ is symmetric if $A' = A$.\n* Condition: $a_{ij} = a_{ji}$ for all $i, j$.\n* The matrix is symmetric about the principal diagonal.\n* *Example:* $\\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 4 & 5 \\\\ 3 & 5 & 6 \\end{bmatrix}$.\n\n### 3. Skew-Symmetric Matrix\nA square matrix $A$ is skew-symmetric if $A' = -A$.\n* Condition: $a_{ij} = -a_{ji}$ for all $i, j$.\n* **Diagonal Property:** For diagonal elements ($i=j$), $a_{ii} = -a_{ii} \\implies 2a_{ii} = 0 \\implies a_{ii} = 0$.\n    * **Theorem:** All diagonal elements of a skew-symmetric matrix are zero.\n\n### 4. Representation Theorem\nAny square matrix $A$ can be uniquely expressed as the sum of a symmetric and a skew-symmetric matrix.\n$$ A = \\frac{1}{2}(A + A') + \\frac{1}{2}(A - A') $$\n* Let $P = \\frac{1}{2}(A + A')$. Then $P' = \\frac{1}{2}(A' + A) = P$. So $P$ is symmetric.\n* Let $Q = \\frac{1}{2}(A - A')$. Then $Q' = \\frac{1}{2}(A' - A) = -Q$. So $Q$ is skew-symmetric.\n\n### 5. Orthogonal Matrix (JEE Advanced)\nA square matrix $A$ is orthogonal if $AA' = A'A = I$.\n* This implies $A^{-1} = A'$.\n* The determinant of an orthogonal matrix is $\\pm 1$."
+    },
+    {
+      "id": "12_3_5",
+      "title": "Elementary Operations and Inverse",
+      "content": "### 1. Invertible Matrices\nA square matrix $A$ of order $n$ is invertible if there exists a square matrix $B$ of the same order such that:\n$$ AB = BA = I $$\nHere, $B$ is called the **Inverse** of $A$, denoted $A^{-1}$.\n\n**Properties:**\n1.  **Uniqueness:** If an inverse exists, it is unique.\n2.  **Reversal Law:** $(AB)^{-1} = B^{-1} A^{-1}$.\n3.  $(A')^{-1} = (A^{-1})'$.\n4.  A rectangular matrix does not possess an inverse (because $AB$ and $BA$ cannot both be identity matrices of same order).\n\n### 2. Elementary Operations (Transformations)\nThere are 6 operations (3 row, 3 column) used to transform matrices. These are equivalent to solving linear equations.\n\n**Row Operations ($R$):**\n1.  **Interchange:** $R_i \\leftrightarrow R_j$ (Swap two rows).\n2.  **Scaling:** $R_i \\to kR_i$ (Multiply a row by non-zero $k$).\n3.  **Addition:** $R_i \\to R_i + kR_j$ (Add a multiple of another row).\n\n*(Similar rules apply for Columns $C$)*.\n\n### 3. Finding Inverse by Elementary Operations (Gauss-Jordan)\nTo find $A^{-1}$:\n1.  Write the equation $A = IA$.\n2.  Apply a sequence of elementary **Row Operations** on $A$ (LHS) to reduce it to the Identity matrix $I$.\n3.  Simultaneously apply the **same** operations on $I$ (RHS).\n4.  The equation transforms from $A = IA$ to $I = BA$.\n5.  By definition, $B = A^{-1}$.\n\n**Important:** If using Row operations, stick to row operations throughout. Do not mix row and column operations in the same solution for this method.\n\n**Existence:** If during the process, all elements of a row (or column) on LHS become zero, then $A^{-1}$ does not exist (Matrix is Singular).\n\n### 4. Special Matrices (JEE Advanced)\n1.  **Idempotent:** $A^2 = A$.\n2.  **Involutory:** $A^2 = I$ (Inverse is itself).\n3.  **Nilpotent:** $A^k = O$ for some index $k$. The smallest $k$ is the index of nilpotency.\n4.  **Periodic:** $A^{k+1} = A$ (Period $k$).\n5.  **Hermitian (Complex):** $A^{\\theta} = A$ where $A^{\\theta} = (\\bar{A})'$.\n6.  **Skew-Hermitian:** $A^{\\theta} = -A$."
+    }
+  ],
+  "examples": [
+    {
+      "id": "ex_12_3_1",
+      "title": "Matrix Multiplication Logic",
+      "problem": "If $A = \\begin{bmatrix} 1 & -2 & 3 \\\\ -4 & 2 & 5 \\end{bmatrix}$ and $B = \\begin{bmatrix} 2 & 3 \\\\ 4 & 5 \\\\ 2 & 1 \\end{bmatrix}$, find $AB$ and $BA$. Show they are not equal.",
+      "solution": "**Find AB:**\nOrder of A: $2 \\times 3$. Order of B: $3 \\times 2$. Product AB exists and is $2 \\times 2$.\n$$ AB = \\begin{bmatrix} 1(2)+(-2)(4)+3(2) & 1(3)+(-2)(5)+3(1) \\\\ -4(2)+2(4)+5(2) & -4(3)+2(5)+5(1) \\end{bmatrix} $$\n$$ AB = \\begin{bmatrix} 2-8+6 & 3-10+3 \\\\ -8+8+10 & -12+10+5 \\end{bmatrix} = \\begin{bmatrix} 0 & -4 \\\\ 10 & 3 \\end{bmatrix} $$\n\n**Find BA:**\nOrder of B: $3 \\times 2$. Order of A: $2 \\times 3$. Product BA exists and is $3 \\times 3$.\n$$ BA = \\begin{bmatrix} 2(1)+3(-4) & 2(-2)+3(2) & 2(3)+3(5) \\\\ 4(1)+5(-4) & 4(-2)+5(2) & 4(3)+5(5) \\\\ 2(1)+1(-4) & 2(-2)+1(2) & 2(3)+1(5) \\end{bmatrix} $$\n$$ BA = \\begin{bmatrix} -10 & 2 & 21 \\\\ -16 & 2 & 37 \\\\ -2 & -2 & 11 \\end{bmatrix} $$\n\n**Conclusion:** $AB$ is $2 \\times 2$, $BA$ is $3 \\times 3$. They are not comparable, hence $AB \\neq BA$."
+    },
+    {
+      "id": "ex_12_3_2",
+      "title": "Finding Inverse using Row Operations",
+      "problem": "Find the inverse of $A = \\begin{bmatrix} 1 & 2 \\\\ 2 & -1 \\end{bmatrix}$ using elementary row operations.",
+      "solution": "Write $A = IA$:\n$$ \\begin{bmatrix} 1 & 2 \\\\ 2 & -1 \\end{bmatrix} = \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix} A $$\n\n**Target:** Convert LHS to $I = \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}$.\n\n1.  **Step 1:** Make $a_{21} = 0$. Operation: $R_2 \\to R_2 - 2R_1$.\n    $$ \\begin{bmatrix} 1 & 2 \\\\ 0 & -5 \\end{bmatrix} = \\begin{bmatrix} 1 & 0 \\\\ -2 & 1 \\end{bmatrix} A $$\n\n2.  **Step 2:** Make $a_{22} = 1$. Operation: $R_2 \\to -\\frac{1}{5}R_2$.\n    $$ \\begin{bmatrix} 1 & 2 \\\\ 0 & 1 \\end{bmatrix} = \\begin{bmatrix} 1 & 0 \\\\ 2/5 & -1/5 \\end{bmatrix} A $$\n\n3.  **Step 3:** Make $a_{12} = 0$. Operation: $R_1 \\to R_1 - 2R_2$.\n    $$ \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix} = \\begin{bmatrix} 1 - 2(2/5) & 0 - 2(-1/5) \\\\ 2/5 & -1/5 \\end{bmatrix} A $$\n    $$ I = \\begin{bmatrix} 1/5 & 2/5 \\\\ 2/5 & -1/5 \\end{bmatrix} A $$\n\n**Result:** $A^{-1} = \\begin{bmatrix} 1/5 & 2/5 \\\\ 2/5 & -1/5 \\end{bmatrix}$."
+    },
+    {
+      "id": "ex_12_3_3",
+      "title": "Matrix Polynomial",
+      "problem": "If $A = \\begin{bmatrix} 2 & 3 \\\\ -1 & 2 \\end{bmatrix}$, show that $A^2 - 4A + 7I = O$. Hence find $A^{-1}$.",
+      "solution": "**Part 1: Verify Equation**\nCalculate $A^2 = A \\cdot A$:\n$$ \\begin{bmatrix} 2 & 3 \\\\ -1 & 2 \\end{bmatrix} \\begin{bmatrix} 2 & 3 \\\\ -1 & 2 \\end{bmatrix} = \\begin{bmatrix} 4-3 & 6+6 \\\\ -2-2 & -3+4 \\end{bmatrix} = \\begin{bmatrix} 1 & 12 \\\\ -4 & 1 \\end{bmatrix} $$\nCalculate $4A = \\begin{bmatrix} 8 & 12 \\\\ -4 & 8 \\end{bmatrix}$.\nCalculate $7I = \\begin{bmatrix} 7 & 0 \\\\ 0 & 7 \\end{bmatrix}$.\n\nSubstitute into expression:\n$$ \\begin{bmatrix} 1 & 12 \\\\ -4 & 1 \\end{bmatrix} - \\begin{bmatrix} 8 & 12 \\\\ -4 & 8 \\end{bmatrix} + \\begin{bmatrix} 7 & 0 \\\\ 0 & 7 \\end{bmatrix} = \\begin{bmatrix} 1-8+7 & 12-12+0 \\\\ -4+4+0 & 1-8+7 \\end{bmatrix} = \\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\end{bmatrix} = O $$\nVerified.\n\n**Part 2: Find Inverse**\nWe have $A^2 - 4A + 7I = O$.\nMultiply by $A^{-1}$ (pre-multiply):\n$$ A^{-1}(A^2) - 4A^{-1}(A) + 7A^{-1}(I) = A^{-1}(O) $$\n$$ (A^{-1}A)A - 4I + 7A^{-1} = O $$\n$$ IA - 4I + 7A^{-1} = O $$\n$$ A - 4I + 7A^{-1} = O $$\n$$ 7A^{-1} = 4I - A $$\n$$ 7A^{-1} = \\begin{bmatrix} 4 & 0 \\\\ 0 & 4 \\end{bmatrix} - \\begin{bmatrix} 2 & 3 \\\\ -1 & 2 \\end{bmatrix} = \\begin{bmatrix} 2 & -3 \\\\ 1 & 2 \\end{bmatrix} $$\n$$ A^{-1} = \\frac{1}{7} \\begin{bmatrix} 2 & -3 \\\\ 1 & 2 \\end{bmatrix} $$"
+    },
+    {
+      "id": "ex_12_3_4",
+      "title": "Mathematical Induction with Matrices",
+      "problem": "If $A = \\begin{bmatrix} 1 & 1 \\\\ 0 & 1 \\end{bmatrix}$, prove by induction that $A^n = \\begin{bmatrix} 1 & n \\\\ 0 & 1 \\end{bmatrix}$ for all $n \\in \\mathbb{N}$.",
+      "solution": "**Base Case ($n=1$):**\n$A^1 = \\begin{bmatrix} 1 & 1 \\\\ 0 & 1 \\end{bmatrix}$. Formula gives $\\begin{bmatrix} 1 & 1 \\\\ 0 & 1 \\end{bmatrix}$. True.\n\n**Inductive Hypothesis:**\nAssume true for $n=k$: $A^k = \\begin{bmatrix} 1 & k \\\\ 0 & 1 \\end{bmatrix}$.\n\n**Inductive Step:**\nProve for $n=k+1$.\n$A^{k+1} = A^k \\cdot A = \\begin{bmatrix} 1 & k \\\\ 0 & 1 \\end{bmatrix} \\begin{bmatrix} 1 & 1 \\\\ 0 & 1 \\end{bmatrix}$\nMultiplication:\nRow 1, Col 1: $1(1) + k(0) = 1$.\nRow 1, Col 2: $1(1) + k(1) = k+1$.\nRow 2, Col 1: $0(1) + 1(0) = 0$.\nRow 2, Col 2: $0(1) + 1(1) = 1$.\n\nResult: $\\begin{bmatrix} 1 & k+1 \\\\ 0 & 1 \\end{bmatrix}$.\nThis matches the formula for $n=k+1$.\nThus, by PMI, true for all $n \\in \\mathbb{N}$."
+    },
+    {
+      "id": "ex_12_3_5",
+      "title": "Symmetric and Skew-Symmetric Properties",
+      "problem": "Let $A$ and $B$ be symmetric matrices of the same order. Show that $AB - BA$ is a skew-symmetric matrix.",
+      "solution": "Given: $A' = A$ and $B' = B$.\nLet $X = AB - BA$. We need to check $X'$.\n$$ X' = (AB - BA)' $$\nUsing $(P-Q)' = P' - Q'$:\n$$ X' = (AB)' - (BA)' $$\nUsing Reversal Law $(XY)' = Y'X'$:\n$$ X' = B'A' - A'B' $$\nSubstitute $A'=A, B'=B$:\n$$ X' = BA - AB $$\n$$ X' = -(AB - BA) $$\n$$ X' = -X $$\nSince transpose of $X$ is negative of $X$, $X$ is **skew-symmetric**."
+    }
+  ],
+  "exercises": [
+    {
+      "id": "prob_12_3_1",
+      "question": "Construct a 3x4 matrix A where element a_ij = (1/2)|-3i + j|.",
+      "type": "Construction",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_3_2",
+      "question": "If matrix A has 24 elements, what are the possible orders it can have?",
+      "type": "Conceptual",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_3_3",
+      "question": "Find values of x, y, z, w if [[x-y, 2x+z], [2x-y, 3z+w]] = [[-1, 5], [0, 13]].",
+      "type": "Equality",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_3_4",
+      "question": "If A = [[cos a, sin a], [-sin a, cos a]], then verify A'A = I.",
+      "type": "Orthogonal",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_3_5",
+      "question": "Express matrix A = [[3, 5], [1, -1]] as sum of symmetric and skew-symmetric matrices.",
+      "type": "Decomposition",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_3_6",
+      "question": "If A = [[0, -tan(a/2)], [tan(a/2), 0]] and I is 2x2 identity, show that (I+A) = (I-A)[[cos a, -sin a], [sin a, cos a]].",
+      "type": "Trigonometry Algebra",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_3_7",
+      "question": "If A is square matrix such that A^2 = A, then evaluate (I+A)^3 - 7A.",
+      "type": "Algebra",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_3_8",
+      "question": "Find matrix X such that X [[1, 2, 3], [4, 5, 6]] = [[-7, -8, -9], [2, 4, 6]].",
+      "type": "Matrix Equation",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_3_9",
+      "question": "Let A = [[1, 0], [0, 1]] and B = [[0, 1], [-1, 0]]. Write (aI + bB)(aI - bB) in terms of A.",
+      "type": "Algebra",
+      "difficulty": "JEE Advanced"
+    },
+    {
+      "id": "prob_12_3_10",
+      "question": "Let P(n) = A^n where A = [[1, 1], [0, 1]]. Evaluate limit of P(n)/n as n -> infinity.",
+      "type": "Calculus Link",
+      "difficulty": "JEE Advanced"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "form_12_3_1",
+      "label": "Matrix Multiplication Rule",
+      "tex": "c_{ij} = \\sum_{k=1}^{n} a_{ik} b_{kj}"
+    },
+    {
+      "id": "form_12_3_2",
+      "label": "Transpose Reversal Law",
+      "tex": "(AB)' = B'A'"
+    },
+    {
+      "id": "form_12_3_3",
+      "label": "Symmetric Condition",
+      "tex": "A' = A"
+    },
+    {
+      "id": "form_12_3_4",
+      "label": "Skew-Symmetric Condition",
+      "tex": "A' = -A"
+    },
+    {
+      "id": "form_12_3_5",
+      "label": "Symmetric Decomposition",
+      "tex": "A = \\frac{1}{2}(A+A') + \\frac{1}{2}(A-A')"
+    },
+    {
+      "id": "form_12_3_6",
+      "label": "Inverse Definition",
+      "tex": "AB = BA = I \\implies B = A^{-1}"
+    },
+    {
+      "id": "form_12_3_7",
+      "label": "Inverse Reversal Law",
+      "tex": "(AB)^{-1} = B^{-1}A^{-1}"
+    },
+    {
+      "id": "form_12_3_8",
+      "label": "Trace Property",
+      "tex": "\\text{tr}(AB) = \\text{tr}(BA)"
+    },
+    {
+      "id": "form_12_3_9",
+      "label": "Orthogonal Matrix",
+      "tex": "AA' = I"
+    },
+    {
+      "id": "form_12_3_10",
+      "label": "Idempotent Matrix",
+      "tex": "A^2 = A"
+    }
+  ]
+}

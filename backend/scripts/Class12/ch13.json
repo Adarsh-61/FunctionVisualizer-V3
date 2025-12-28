@@ -1,0 +1,179 @@
+{
+  "id": "12_13",
+  "classId": 12,
+  "title": "Probability",
+  "description": "The advanced study of uncertainty. This chapter moves from simple event probabilities to Conditional Probability, Bayesian Inference (Reverse Probability), and the mathematical modeling of random phenomena using Random Variables and Probability Distributions.",
+  "topics": [
+    {
+      "id": "12_13_1",
+      "title": "Conditional Probability",
+      "content": "### 1. The Concept of Conditioning\nIn many situations, the probability of an event changes if we know that another event has already occurred. This is called **Conditional Probability**.\n\n**Definition:**\nLet $E$ and $F$ be two events associated with the same sample space $S$. The conditional probability of the event $E$ given that $F$ has occurred (denoted by $P(E|F)$) is given by:\n$$ P(E|F) = \\frac{P(E \\cap F)}{P(F)}, \\quad \\text{provided } P(F) \\neq 0 $$\n\n**Intuitive Interpretation (Sample Space Reduction):**\nWhen we know $F$ has occurred, the sample space $S$ is no longer relevant. The \"new\" sample space is $F$. We are looking for the portion of $E$ that lies *inside* $F$, which is $E \\cap F$. Thus, the probability is the ratio of the size (or probability) of $E \\cap F$ to the size of $F$.\n\n### 2. Properties of Conditional Probability\n\n**Property 1 (Boundaries):**\nLet $E$ and $F$ be events of a sample space $S$.\n$$ 0 \\le P(E|F) \\le 1 $$\n*Proof:* Since $E \\cap F \\subseteq F$, $P(E \\cap F) \\le P(F)$. Dividing by $P(F)$ gives ratio $\\le 1$. Also probability is non-negative.\n\n**Property 2 (Sure Event):**\n$$ P(S|F) = 1 \\quad \\text{and} \\quad P(F|F) = 1 $$\n*Proof:* $P(S|F) = P(S \\cap F)/P(F) = P(F)/P(F) = 1$.\n\n**Property 3 (Additivity):**\nIf $A$ and $B$ are disjoint events ($A \\cap B = \\phi$), then:\n$$ P((A \\cup B)|F) = P(A|F) + P(B|F) $$\n*General Form:* $P((A \\cup B)|F) = P(A|F) + P(B|F) - P((A \\cap B)|F)$.\n\n**Property 4 (Complement):**\n$$ P(E'|F) = 1 - P(E|F) $$"
+    },
+    {
+      "id": "12_13_2",
+      "title": "Multiplication Theorem and Independence",
+      "content": "### 1. Multiplication Theorem on Probability\nFrom the definition of conditional probability, $P(E|F) = \\frac{P(E \\cap F)}{P(F)}$. Rearranging gives:\n$$ P(E \\cap F) = P(F) \\cdot P(E|F) $$\nSimilarly, $P(E \\cap F) = P(E) \\cdot P(F|E)$.\n\n**Generalization for n events:**\n$$ P(E_1 \\cap E_2 \\cap \\dots \\cap E_n) = P(E_1) P(E_2|E_1) P(E_3|E_1 E_2) \\dots P(E_n|E_1 \\dots E_{n-1}) $$\n\n### 2. Independent Events\nTwo events $E$ and $F$ are said to be **Independent** if the probability of occurrence of one is not affected by the occurrence of the other.\nMathematically:\n$$ P(E|F) = P(E) \\quad \\text{and} \\quad P(F|E) = P(F) $$\n\n**Definition:**\n$E$ and $F$ are independent if and only if:\n$$ P(E \\cap F) = P(E) \\cdot P(F) $$\n\n**Crucial Distinction: Mutually Exclusive vs Independent**\n* **Mutually Exclusive:** $E$ and $F$ cannot happen together. $P(E \\cap F) = 0$.\n    * If $P(E), P(F) > 0$, they are *Dependent* (if E happens, F *cannot* happen, so probability of F changes to 0).\n* **Independent:** $P(E \\cap F) = P(E)P(F)$. They can happen together.\n    * Independence is a property of probability probabilities; Mutual Exclusivity is a property of sets.\n\n### 3. Properties of Independence\nIf $E$ and $F$ are independent events, then:\n1.  $E$ and $F'$ are independent.\n2.  $E'$ and $F$ are independent.\n3.  $E'$ and $F'$ are independent."
+    },
+    {
+      "id": "12_13_3",
+      "title": "Bayes' Theorem",
+      "content": "This is the mathematical foundation of **Reverse Probability** (inferring causes from effects).\n\n### 1. Partition of a Sample Space\nA set of events $E_1, E_2, \\dots, E_n$ represents a partition of sample space $S$ if:\n1.  $E_i \\cap E_j = \\phi$ for all $i \\neq j$ (Pairwise Disjoint).\n2.  $E_1 \\cup E_2 \\cup \\dots \\cup E_n = S$ (Exhaustive).\n3.  $P(E_i) > 0$ for all $i$.\n\n### 2. Theorem of Total Probability\nLet $\\{E_1, \\dots, E_n\\}$ be a partition of $S$, and $A$ be any event associated with $S$.\nThen the total probability of $A$ occurring is the weighted sum of its probabilities under each condition $E_j$:\n$$ P(A) = \\sum_{j=1}^{n} P(E_j) P(A|E_j) $$\n*Geometric Logic:* $A$ is split into disjoint parts $(A \\cap E_1), (A \\cap E_2), \\dots$. Summing their probabilities gives $P(A)$.\n\n### 3. Bayes' Theorem\nIf we observe event $A$, what is the probability that it was caused by $E_i$?\n$$ P(E_i|A) = \\frac{P(E_i \\cap A)}{P(A)} = \\frac{P(E_i) P(A|E_i)}{\\sum_{j=1}^{n} P(E_j) P(A|E_j)} $$\n\n* **Prior Probability:** $P(E_i)$ (Initial belief).\n* **Posterior Probability:** $P(E_i|A)$ (Updated belief after evidence $A$).\n* **Likelihood:** $P(A|E_i)$."
+    },
+    {
+      "id": "12_13_4",
+      "title": "Random Variables and Probability Distributions",
+      "content": "### 1. Random Variable (R.V.)\nA Random Variable is not a variable in the algebraic sense, but a **function**.\n**Definition:** A random variable $X$ is a real-valued function whose domain is the sample space of a random experiment.\n$$ X : S \\to \\mathbb{R} $$\n*Example:* Tossing 2 coins. $S = \\{HH, HT, TH, TT\\}$. Let $X$ be number of heads.\n$X(HH)=2, X(HT)=1, X(TH)=1, X(TT)=0$.\n\n### 2. Probability Distribution\nThe Probability Distribution of a random variable $X$ is the system of numbers:\n\n| $X$ | $x_1$ | $x_2$ | $\\dots$ | $x_n$ |\n| :--- | :--- | :--- | :--- | :--- |\n| $P(X)$ | $p_1$ | $p_2$ | $\\dots$ | $p_n$ |\n\n**Conditions:**\n1.  $p_i > 0$ for all $i$.\n2.  $\\sum p_i = 1$.\n\n### 3. Mean (Expectation) of a Random Variable\nThe weighted average of the possible values of $X$.\n$$ \\mu = E[X] = \\sum_{i=1}^{n} x_i p_i $$\nIt represents the long-run average value if the experiment is repeated infinitely.\n\n### 4. Variance and Standard Deviation\nVariance measures the spread or dispersion of the random variable around the mean.\n$$ \\text{Var}(X) = \\sigma_x^2 = E[(X - \\mu)^2] = \\sum_{i=1}^{n} (x_i - \\mu)^2 p_i $$\n\n**Computational Formula:**\n$$ \\text{Var}(X) = E[X^2] - (E[X])^2 = \\left( \\sum x_i^2 p_i \\right) - \\left( \\sum x_i p_i \\right)^2 $$\n\n**Standard Deviation:** $\\sigma_x = \\sqrt{\\text{Var}(X)}$."
+    },
+    {
+      "id": "12_13_5",
+      "title": "Bernoulli Trials and Binomial Distribution",
+      "content": "### 1. Bernoulli Trials\nMany experiments are dichotomous (only two outcomes: Success or Failure). Examples: Coin toss, Pass/Fail, Hit/Miss.\nTrials of a random experiment are **Bernoulli Trials** if:\n1.  Finite number of trials.\n2.  Trials are independent.\n3.  Each trial has exactly two outcomes: Success ($S$) and Failure ($F$).\n4.  Probability of success ($p$) remains constant in each trial.\n\n### 2. Binomial Distribution\nLet $X$ be the number of successes in $n$ Bernoulli trials. $X$ can take values $0, 1, 2, \\dots, n$.\nThe probability of getting exactly $x$ successes in $n$ trials is given by:\n$$ P(X = x) = \\binom{n}{x} p^x q^{n-x} $$\nWhere:\n* $p = $ probability of success.\n* $q = 1 - p = $ probability of failure.\n* $\\binom{n}{x} = ^nC_x$ (Combinations).\n\n**Notation:** $X \\sim B(n, p)$.\n\n### 3. Parameters of Binomial Distribution\nFor $B(n, p)$:\n* **Mean:** $\\mu = np$\n* **Variance:** $\\sigma^2 = npq$\n* **Standard Deviation:** $\\sigma = \\sqrt{npq}$"
+    }
+  ],
+  "examples": [
+    {
+      "id": "ex_12_13_1",
+      "title": "Conditional Probability (Family)",
+      "problem": "A family has two children. What is the probability that both the children are boys given that at least one of them is a boy?",
+      "solution": "1.  **Sample Space:** $S = \\{BB, BG, GB, GG\\}$. (Order matters: Elder, Younger). $n(S)=4$.\n2.  **Events:**\n    * $E$: Both are boys $\\implies E = \\{BB\\}$.\n    * $F$: At least one is a boy $\\implies F = \\{BB, BG, GB\\}$.\n3.  **Intersection:** $E \\cap F = \\{BB\\}$.\n4.  **Formula:**\n    $$ P(E|F) = \\frac{P(E \\cap F)}{P(F)} $$\n    $P(E \\cap F) = 1/4$.\n    $P(F) = 3/4$.\n    $$ P(E|F) = \\frac{1/4}{3/4} = \\frac{1}{3} $$"
+    },
+    {
+      "id": "ex_12_13_2",
+      "title": "Independent Events",
+      "problem": "A die is thrown. If E is the event 'the number appearing is a multiple of 3' and F be the event 'the number appearing is even', find if E and F are independent.",
+      "solution": "Sample Space $S = \\{1, 2, 3, 4, 5, 6\\}$.\n1.  $E = \\{3, 6\\} \\implies P(E) = 2/6 = 1/3$.\n2.  $F = \\{2, 4, 6\\} \\implies P(F) = 3/6 = 1/2$.\n3.  Intersection $E \\cap F = \\{6\\} \\implies P(E \\cap F) = 1/6$.\n4.  **Check Independence:**\n    $P(E) \\cdot P(F) = (1/3) \\cdot (1/2) = 1/6$.\n    Since $P(E \\cap F) = P(E) \\cdot P(F)$, the events are **Independent**."
+    },
+    {
+      "id": "ex_12_13_3",
+      "title": "Bayes' Theorem (Classic Factory Problem)",
+      "problem": "A factory has two machines A and B. Machine A produces 60% of items and B produces 40%. Further, 2% of items produced by A and 1% produced by B are defective. An item is chosen at random and found to be defective. Find the probability it was produced by Machine B.",
+      "solution": "1.  **Events:**\n    * $E_1$: Item from Machine A. $P(E_1) = 0.60$.\n    * $E_2$: Item from Machine B. $P(E_2) = 0.40$.\n    * $A$: Item is Defective.\n2.  **Likelihoods (Given):**\n    * $P(A|E_1) = 2\\% = 0.02$.\n    * $P(A|E_2) = 1\\% = 0.01$.\n3.  **Bayes' Formula:** We need $P(E_2|A)$.\n    $$ P(E_2|A) = \\frac{P(E_2) P(A|E_2)}{P(E_1)P(A|E_1) + P(E_2)P(A|E_2)} $$\n    $$ P(E_2|A) = \\frac{0.40 \\times 0.01}{(0.60 \\times 0.02) + (0.40 \\times 0.01)} $$\n    $$ P(E_2|A) = \\frac{0.004}{0.012 + 0.004} = \\frac{0.004}{0.016} = \\frac{1}{4} = 0.25 $$"
+    },
+    {
+      "id": "ex_12_13_4",
+      "title": "Variance of Random Variable",
+      "problem": "Find the variance of the number obtained on a throw of an unbiased die.",
+      "solution": "Let $X$ be the number on the die.\n$X$ takes values $1, 2, 3, 4, 5, 6$.\n$P(X=x) = 1/6$ for all $x$.\n\n1.  **Mean ($E[X]$):**\n    $E[X] = \\sum x_i p_i = \\frac{1}{6}(1+2+3+4+5+6) = \\frac{21}{6} = 3.5$.\n2.  **Expectation of Squares ($E[X^2]$):**\n    $E[X^2] = \\sum x_i^2 p_i = \\frac{1}{6}(1^2+2^2+3^2+4^2+5^2+6^2) = \\frac{1}{6}(1+4+9+16+25+36) = \\frac{91}{6}$.\n3.  **Variance:**\n    $\\text{Var}(X) = E[X^2] - (E[X])^2 = \\frac{91}{6} - (3.5)^2 = 15.166 - 12.25 = 2.916$.\n    (Exact fraction: $91/6 - 49/4 = (182-147)/12 = 35/12$)."
+    },
+    {
+      "id": "ex_12_13_5",
+      "title": "Binomial Probability",
+      "problem": "A pair of dice is thrown 4 times. If getting a doublet is considered a success, find the probability of two successes.",
+      "solution": "1.  **Identify Parameters:**\n    * $n = 4$ (Number of trials).\n    * Success: Doublet $\\{(1,1), (2,2), ..., (6,6)\\}$. 6 outcomes.\n    * $p = 6/36 = 1/6$.\n    * $q = 1 - 1/6 = 5/6$.\n2.  **Formula:** $P(X=x) = \\binom{n}{x} p^x q^{n-x}$.\n    We need $P(X=2)$.\n3.  **Calculate:**\n    $$ P(X=2) = \\binom{4}{2} \\left(\\frac{1}{6}\\right)^2 \\left(\\frac{5}{6}\\right)^{4-2} $$\n    $$ = 6 \\cdot \\frac{1}{36} \\cdot \\frac{25}{36} = \\frac{1}{6} \\cdot \\frac{25}{36} = \\frac{25}{216} $$"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "prob_12_13_1",
+      "question": "If P(A) = 0.8, P(B) = 0.5 and P(B|A) = 0.4, find P(A and B), P(A|B) and P(A or B).",
+      "type": "Formula Application",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_13_2",
+      "question": "A coin is tossed three times, where E: head on third toss, F: heads on first two tosses. Determine P(E|F).",
+      "type": "Conditional",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_13_3",
+      "question": "Probability of solving specific problem independently by A and B are 1/2 and 1/3 respectively. If both try to solve the problem independently, find the probability that the problem is solved.",
+      "type": "Independence",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_13_4",
+      "question": "Bag I contains 3 red and 4 black balls while another Bag II contains 5 red and 6 black balls. One ball is drawn at random from one of the bags and it is found to be red. Find the probability that it was drawn from Bag II.",
+      "type": "Bayes' Theorem",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_13_5",
+      "question": "Two cards are drawn simultaneously (or successively without replacement) from a well shuffled pack of 52 cards. Find the mean and variance of the number of kings.",
+      "type": "Random Variable",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_13_6",
+      "question": "A person has undertaken a construction job. The probabilities are 0.65 that there will be strike, 0.80 that the construction job will be completed on time if there is no strike, and 0.32 that the construction job will be completed on time if there is a strike. Determine the probability that the construction job will be completed on time.",
+      "type": "Total Probability",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_13_7",
+      "question": "Suppose that 5 men out of 100 and 25 women out of 1000 are good orators. An orator is chosen at random. Find the probability that a male person is selected. Assume that there are equal number of men and women.",
+      "type": "Bayes' Theorem",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_13_8",
+      "question": "Ten eggs are drawn successively with replacement from a lot containing 10% defective eggs. Find the probability that there is at least one defective egg.",
+      "type": "Binomial Distribution",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_13_9",
+      "question": "If X is a binomial variate B(n, p) with n=6 and 9P(X=4) = P(X=2), find p.",
+      "type": "Algebraic Probability",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_13_10",
+      "question": "Let A and B be independent events with P(A) = 0.3 and P(B) = 0.4. Find P(A | A union B).",
+      "type": "Advanced Conditional",
+      "difficulty": "JEE Advanced"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "form_12_13_1",
+      "label": "Conditional Probability",
+      "tex": "P(E|F) = \\frac{P(E \\cap F)}{P(F)}"
+    },
+    {
+      "id": "form_12_13_2",
+      "label": "Multiplication Theorem",
+      "tex": "P(E \\cap F) = P(E) P(F|E)"
+    },
+    {
+      "id": "form_12_13_3",
+      "label": "Independent Events",
+      "tex": "P(E \\cap F) = P(E) P(F)"
+    },
+    {
+      "id": "form_12_13_4",
+      "label": "Theorem of Total Probability",
+      "tex": "P(A) = \\sum P(E_j) P(A|E_j)"
+    },
+    {
+      "id": "form_12_13_5",
+      "label": "Bayes' Theorem",
+      "tex": "P(E_i|A) = \\frac{P(E_i) P(A|E_i)}{\\sum P(E_j) P(A|E_j)}"
+    },
+    {
+      "id": "form_12_13_6",
+      "label": "Expectation (Mean)",
+      "tex": "E[X] = \\sum x_i p_i"
+    },
+    {
+      "id": "form_12_13_7",
+      "label": "Variance",
+      "tex": "\\text{Var}(X) = E[X^2] - (E[X])^2"
+    },
+    {
+      "id": "form_12_13_8",
+      "label": "Binomial Probability",
+      "tex": "P(X=x) = \\binom{n}{x} p^x q^{n-x}"
+    },
+    {
+      "id": "form_12_13_9",
+      "label": "Mean of Binomial Dist",
+      "tex": "\\mu = np"
+    },
+    {
+      "id": "form_12_13_10",
+      "label": "Variance of Binomial Dist",
+      "tex": "\\sigma^2 = npq"
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "id": "class_10",
+  "title": "Class 10",
+  "chapters": [
+    {
+      "id": "ch_6_triangles",
+      "title": "Ch 6: Triangles",
+      "topics": [
+        {
+          "id": "topic_6_1_similarity_basics",
+          "title": "6.1 Similarity: The Geometry of Scale",
+          "content": "### 1. Introduction: Scaling the World\nIn Class IX, we studied **Congruence**—the geometry of identical twins. Two figures are congruent if they have the *same shape* and the *same size*. You can superimpose one on the other perfectly.\n\nBut the real world is rarely about identical copies. It is about **Scaling**. \n* A photograph of the Taj Mahal is a small-scale model of the actual monument.\n* A map of India represents the country reduced by a constant factor.\n* An architect's blueprint represents a massive building on a sheet of paper.\n\nIn these cases, the *shape* remains the same, but the *size* changes. This concept is called **Similarity**.\n\n#### 1.1 Formal Definition\nTwo geometric figures are **Similar** if:\n1.  They have the same **shape**.\n2.  They do not necessarily have the same size.\n\n**Polygons:**\nTwo polygons of the same number of sides are similar if:\n1.  Their **corresponding angles** are equal (Equiangular).\n2.  Their **corresponding sides** are in the same ratio (or proportion).\n\n* **Example 1 (Equilateral Triangles):** All equilateral triangles are similar. Their angles are always $60^\\circ$. The ratio of sides will always be constant ($a_1/a_2$).\n* **Example 2 (Circles):** All circles are similar. They only differ by radius.\n* **Example 3 (Squares):** All squares are similar. Angles are $90^\\circ$, and side ratios are constant.\n\n**Non-Example:** Consider a Square and a Rectangle. Corresponding angles are equal ($90^\\circ$), but corresponding sides are not proportional (Square has 1:1 ratio, Rectangle has length:width ratio). They are not similar.\n**Non-Example:** Consider a Square and a Rhombus. Corresponding sides are proportional (1:1), but corresponding angles are different. They are not similar.\n\n**Conclusion:** For similarity of polygons, **BOTH** conditions (angle equality and side proportionality) must be met.",
+          "formulas": [
+            "\\text{Congruent} \\implies \\text{Similar}",
+            "\\text{Similar} \\nRightarrow \\text{Congruent}"
+          ],
+          "examples": [
+            {
+              "id": "ex_tri_1",
+              "question": "Are all isosceles triangles similar? Justify.",
+              "steps": [
+                {
+                  "explanation": "Definition of Isosceles: A triangle with at least two equal sides."
+                },
+                {
+                  "explanation": "Consider $\\Delta ABC$ with angles $40^\\circ, 40^\\circ, 100^\\circ$."
+                },
+                {
+                  "explanation": "Consider $\\Delta PQR$ with angles $70^\\circ, 70^\\circ, 40^\\circ$."
+                },
+                {
+                  "explanation": "Both are isosceles. However, their corresponding angles are not equal."
+                },
+                {
+                  "explanation": "Therefore, they are NOT similar."
+                }
+              ],
+              "finalAnswer": "No, unless they are also right-angled isosceles or equilateral."
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Congruence vs Similarity",
+            "functions": [],
+            "shapes": [
+              { "type": "path", "path": "M 0 0 L 2 4 L 4 0 Z", "color": "blue", "label": "Original" },
+              { "type": "path", "path": "M 5 0 L 7 4 L 9 0 Z", "color": "blue", "label": "Congruent (Same Size)" },
+              { "type": "path", "path": "M 0 5 L 4 13 L 8 5 Z", "color": "red", "label": "Similar (Scaled 2x)" }
+            ],
+            "xRange": [-1, 10],
+            "yRange": [-1, 15]
+          }
+        },
+        {
+          "id": "topic_6_2_bpt_thales",
+          "title": "6.2 Basic Proportionality Theorem (Thales Theorem)",
+          "content": "### 2. The Foundation of Proportionality\nHow do we link parallel lines to ratios? This link is provided by the **Basic Proportionality Theorem (BPT)**, first attributed to the Greek mathematician Thales.\n\n#### Theorem 6.1 (Basic Proportionality Theorem)\n**Statement:** If a line is drawn parallel to one side of a triangle to intersect the other two sides in distinct points, the other two sides are divided in the same ratio.\n\n**Given:** A $\\Delta ABC$ in which a line $DE$ is drawn parallel to $BC$, intersecting $AB$ at $D$ and $AC$ at $E$.\n**To Prove:** $\\frac{AD}{DB} = \\frac{AE}{EC}$.\n\n**Construction:**\n1.  Join $BE$ and $CD$.\n2.  Draw $DM \\perp AC$ and $EN \\perp AB$.\n\n**Proof (The Area Method):**\nWe use the formula $\\text{Area} = \\frac{1}{2} \\times \\text{Base} \\times \\text{Height}$.\n\n1.  **Calculate Area($\\Delta ADE$):**\n    * Using base $AD$: $\\text{Area} = \\frac{1}{2} \\times AD \\times EN$.\n    * Using base $AE$: $\\text{Area} = \\frac{1}{2} \\times AE \\times DM$.\n\n2.  **Calculate Area($\\Delta BDE$):**\n    * Base $DB$, Height $EN$ (Altitude lies outside the triangle).\n    * $\\text{Area} = \\frac{1}{2} \\times DB \\times EN$.\n\n3.  **Calculate Area($\\Delta DEC$):**\n    * Base $EC$, Height $DM$ (Altitude lies outside).\n    * $\\text{Area} = \\frac{1}{2} \\times EC \\times DM$.\n\n4.  **Form Ratios:**\n    * $\\frac{\\text{Area}(ADE)}{\\text{Area}(BDE)} = \\frac{\\frac{1}{2} \\cdot AD \\cdot EN}{\\frac{1}{2} \\cdot DB \\cdot EN} = \\frac{AD}{DB}$.  --- (i)\n    * $\\frac{\\text{Area}(ADE)}{\\text{Area}(DEC)} = \\frac{\\frac{1}{2} \\cdot AE \\cdot DM}{\\frac{1}{2} \\cdot EC \\cdot DM} = \\frac{AE}{EC}$.  --- (ii)\n\n5.  **The Critical Link:**\n    * Consider $\\Delta BDE$ and $\\Delta DEC$.\n    * They share the **same base** $DE$.\n    * They lie between the **same parallels** $DE$ and $BC$.\n    * Therefore, $\\text{Area}(BDE) = \\text{Area}(DEC)$.  --- (iii)\n\n6.  **Conclusion:**\n    * From (iii), the denominators of equations (i) and (ii) are equal.\n    * The numerators are already identical (Area ADE).\n    * Thus, LHS of (i) = LHS of (ii).\n    * Therefore, $\\frac{AD}{DB} = \\frac{AE}{EC}$. **Q.E.D.**\n\n#### Theorem 6.2 (Converse of BPT)\n**Statement:** If a line divides any two sides of a triangle in the same ratio, then the line is parallel to the third side.\n**Proof Logic:** Proof by Contradiction. Assume line is not parallel, draw a parallel line, use BPT, and show points coincide.",
+          "formulas": [
+            "\\text{If } DE || BC \\implies \\frac{AD}{DB} = \\frac{AE}{EC}",
+            "\\frac{AD}{AB} = \\frac{AE}{AC} \\quad (\\text{Corollary})"
+          ],
+          "examples": [
+            {
+              "id": "ex_tri_2",
+              "question": "In $\\Delta ABC$, $DE || BC$ and $AD = 1.5$ cm, $DB = 3$ cm, $AE = 1$ cm. Find $EC$.",
+              "steps": [
+                {
+                  "explanation": "Since $DE || BC$, we apply the Basic Proportionality Theorem."
+                },
+                {
+                  "explanation": "Formula: $\\frac{AD}{DB} = \\frac{AE}{EC}$."
+                },
+                {
+                  "explanation": "Substitute values: $\\frac{1.5}{3} = \\frac{1}{EC}$."
+                },
+                {
+                  "explanation": "Simplify LHS: $\\frac{1.5}{3} = \\frac{1}{2}$."
+                },
+                {
+                  "explanation": "So, $\\frac{1}{2} = \\frac{1}{EC} \\implies EC = 2$ cm."
+                }
+              ],
+              "finalAnswer": "2 cm"
+            },
+            {
+              "id": "ex_tri_3",
+              "question": "ABCD is a trapezium with $AB || DC$. E and F are points on non-parallel sides AD and BC respectively such that $EF || AB$. Show that $\\frac{AE}{ED} = \\frac{BF}{FC}$.",
+              "steps": [
+                {
+                  "explanation": "Construction: Join $AC$ to intersect $EF$ at $G$."
+                },
+                {
+                  "explanation": "In $\\Delta ADC$: $EG || DC$ (Since $EF || AB$ and $AB || DC$). By BPT: $\\frac{AE}{ED} = \\frac{AG}{GC}$."
+                },
+                {
+                  "explanation": "In $\\Delta CAB$: $GF || AB$. By BPT: $\\frac{AG}{GC} = \\frac{BF}{FC}$."
+                },
+                {
+                  "explanation": "Comparing both results: $\\frac{AE}{ED} = \\frac{BF}{FC}$."
+                }
+              ],
+              "finalAnswer": "Proved."
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Basic Proportionality Theorem",
+            "functions": [],
+            "points": [
+              { "x": 0, "y": 0, "label": "B" },
+              { "x": 6, "y": 0, "label": "C" },
+              { "x": 3, "y": 5, "label": "A" },
+              { "x": 1.5, "y": 2.5, "label": "D" },
+              { "x": 4.5, "y": 2.5, "label": "E" }
+            ],
+            "shapes": [
+              { "type": "line", "x1": 1.5, "y1": 2.5, "x2": 4.5, "y2": 2.5, "color": "red", "label": "DE || BC" }
+            ],
+            "xRange": [-1, 7],
+            "yRange": [-1, 6]
+          }
+        },
+        {
+          "id": "topic_6_3_similarity_criteria",
+          "title": "6.3 Criteria for Similarity of Triangles",
+          "content": "### 3. Proving Similarity\nJust as we had SAS, SSS, ASA for congruence, we have criteria for similarity. Remember: Congruence is a special case of Similarity where the scaling factor is 1.\n\n#### 3.1 AAA Similarity Criterion (Angle-Angle-Angle)\n**Theorem 6.3:** If in two triangles, corresponding angles are equal, then their corresponding sides are in the same ratio (proportional) and hence the two triangles are similar.\n\n**Given:** $\\Delta ABC$ and $\\Delta DEF$ such that $\\angle A = \\angle D, \\angle B = \\angle E, \\angle C = \\angle F$.\n**Proof Strategy:** We \"cut\" the larger triangle to make a congruent copy of the smaller one on top, then use BPT.\n1.  Cut $DP = AB$ and $DQ = AC$ on sides $DE$ and $DF$.\n2.  $\\Delta ABC \\cong \\Delta DPQ$ (SAS Congruence, as angles are equal and sides cut to be equal).\n3.  $\\angle ABC = \\angle DPQ$ (CPCT).\n4.  But $\\angle ABC = \\angle DEF$ (Given).\n5.  So $\\angle DPQ = \\angle DEF$. These are corresponding angles.\n6.  Therefore, $PQ || EF$.\n7.  By BPT on $\\Delta DEF$: $\\frac{DP}{DE} = \\frac{DQ}{DF}$.\n8.  Replace $DP, DQ$ with $AB, AC$: $\\frac{AB}{DE} = \\frac{AC}{DF}$.\n9.  Similarly, we can prove $\\frac{AB}{DE} = \\frac{BC}{EF}$. Hence Proved.\n\n**AA Similarity:** Since sum of angles is $180^\\circ$, if two angles are equal, the third *must* be equal. So, finding 2 pairs of equal angles is sufficient to prove similarity.\n\n#### 3.2 SSS Similarity Criterion (Side-Side-Side)\n**Theorem 6.4:** If in two triangles, sides of one triangle are proportional to the sides of the other triangle, then their corresponding angles are equal and hence the two triangles are similar.\n**Statement:** If $\\frac{AB}{DE} = \\frac{BC}{EF} = \\frac{AC}{DF}$, then $\\Delta ABC \\sim \\Delta DEF$.\n**Proof:** Similar construction (cut $DP=AB, DQ=AC$) and use converse of BPT.\n\n#### 3.3 SAS Similarity Criterion\n**Theorem 6.5:** If one angle of a triangle is equal to one angle of the other triangle and the sides including these angles are proportional, then the two triangles are similar.\n**Condition:** $\\frac{AB}{DE} = \\frac{AC}{DF}$ AND $\\angle A = \\angle D$.\n\n**Common Mistake:** Just like in congruence, the angle MUST be the **included** angle. SSA is not a validity criterion for similarity either.",
+          "formulas": [
+            "\\Delta ABC \\sim \\Delta DEF",
+            "\\frac{AB}{DE} = \\frac{BC}{EF} = \\frac{AC}{DF} = k \\quad (\\text{Scale Factor})"
+          ],
+          "examples": [
+            {
+              "id": "ex_tri_4",
+              "question": "A vertical pole of length 6 m casts a shadow 4 m long on the ground and at the same time a tower casts a shadow 28 m long. Find the height of the tower.",
+              "steps": [
+                {
+                  "explanation": "Let $AB$ be the pole and $BC$ be its shadow. $AB = 6, BC = 4$."
+                },
+                {
+                  "explanation": "Let $PQ$ be the tower and $QR$ be its shadow. $QR = 28$. Find $PQ$."
+                },
+                {
+                  "explanation": "At the same time of day, the sun's elevation angle is identical for both objects."
+                },
+                {
+                  "explanation": "So, $\\angle C = \\angle R$ (Sun's angle) and $\\angle B = \\angle Q = 90^\\circ$ (Vertical objects)."
+                },
+                {
+                  "explanation": "By AA Similarity, $\\Delta ABC \\sim \\Delta PQR$."
+                },
+                {
+                  "explanation": "Ratio of sides: $\\frac{AB}{PQ} = \\frac{BC}{QR}$."
+                },
+                {
+                  "explanation": "Substitute: $\\frac{6}{h} = \\frac{4}{28}$."
+                },
+                {
+                  "explanation": "Solve: $h = \\frac{6 \\times 28}{4} = 6 \\times 7 = 42$ m."
+                }
+              ],
+              "finalAnswer": "42 m"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_6_4_areas_similar_triangles",
+          "title": "6.4 Areas of Similar Triangles",
+          "content": "### 4. Scaling Area\nIf you double the sides of a square ($2x$), the area becomes $4x^2$ (quadruples). This square-law relationship holds for all similar figures.\n\n#### Theorem 6.6 (Area Ratio Theorem)\n**Statement:** The ratio of the areas of two similar triangles is equal to the square of the ratio of their corresponding sides.\n\n**Given:** $\\Delta ABC \\sim \\Delta PQR$.\n**To Prove:** $\\frac{\\text{Area}(ABC)}{\\text{Area}(PQR)} = (\\frac{AB}{PQ})^2 = (\\frac{BC}{QR})^2 = (\\frac{AC}{PR})^2$.\n\n**Proof:**\n1.  Draw altitudes $AM \\perp BC$ and $PN \\perp QR$.\n2.  **Area Formula:** $\\text{Area}(ABC) = \\frac{1}{2} \\times BC \\times AM$, $\\text{Area}(PQR) = \\frac{1}{2} \\times QR \\times PN$.\n3.  **Ratio:** $\\frac{\\text{Area}(ABC)}{\\text{Area}(PQR)} = \\frac{BC \\times AM}{QR \\times PN}$.\n4.  **Similarity Logic:**\n    * In $\\Delta ABM$ and $\\Delta PQN$:\n        * $\\angle B = \\angle Q$ (Since $\\Delta ABC \\sim \\Delta PQR$).\n        * $\\angle M = \\angle N = 90^\\circ$ (Construction).\n    * By AA Similarity, $\\Delta ABM \\sim \\Delta PQN$.\n    * Therefore, $\\frac{AM}{PN} = \\frac{AB}{PQ}$.\n5.  **Substitution:**\n    * From original similarity: $\\frac{AB}{PQ} = \\frac{BC}{QR}$.\n    * So $\\frac{AM}{PN} = \\frac{BC}{QR}$.\n6.  **Final Calculation:**\n    * Ratio = $\\frac{BC}{QR} \\times \\frac{AM}{PN} = \\frac{BC}{QR} \\times \\frac{BC}{QR} = (\\frac{BC}{QR})^2$.\n    * Since side ratios are equal, this equals $(\\frac{AB}{PQ})^2$ and $(\\frac{AC}{PR})^2$. **Q.E.D.**",
+          "formulas": [
+            "\\frac{\\text{Area}_1}{\\text{Area}_2} = (\\frac{\\text{Side}_1}{\\text{Side}_2})^2"
+          ],
+          "examples": [
+            {
+              "id": "ex_tri_5",
+              "question": "Let $\\Delta ABC \\sim \\Delta DEF$ and their areas be 64 cm² and 121 cm² respectively. If EF = 15.4 cm, find BC.",
+              "steps": [
+                {
+                  "explanation": "Using the Area Ratio Theorem: $\\frac{\\text{Area}(ABC)}{\\text{Area}(DEF)} = (\\frac{BC}{EF})^2$."
+                },
+                {
+                  "explanation": "Substitute values: $\\frac{64}{121} = (\\frac{BC}{15.4})^2$."
+                },
+                {
+                  "explanation": "Take square root of both sides: $\\frac{8}{11} = \\frac{BC}{15.4}$."
+                },
+                {
+                  "explanation": "Solve for BC: $BC = \\frac{8 \\times 15.4}{11}$."
+                },
+                {
+                  "explanation": "$15.4 / 11 = 1.4$. So $BC = 8 \\times 1.4 = 11.2$ cm."
+                }
+              ],
+              "finalAnswer": "11.2 cm"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_6_5_pythagoras_theorem",
+          "title": "6.5 Pythagoras Theorem",
+          "content": "### 5. The Geometry of Right Angles\nPerhaps the most famous theorem in mathematics, the Pythagoras theorem relates the sides of a right-angled triangle. While you have used it since Class 7, Class 10 provides the **Formal Proof using Similarity**.\n\n#### Theorem 6.7 (Similarity in Right Triangles)\n**Statement:** If a perpendicular is drawn from the vertex of the right angle of a right triangle to the hypotenuse, then triangles on both sides of the perpendicular are similar to the whole triangle and to each other.\n* **Logic:** If $\\angle A = 90^\\circ$ and $AD \\perp BC$, then $\\Delta DBA \\sim \\Delta ABC$ (Common angle B, 90 deg angle) and $\\Delta DAC \\sim \\Delta ABC$.\n\n#### Theorem 6.8 (Pythagoras Theorem)\n**Statement:** In a right triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides.\n**Given:** $\\Delta ABC$ right-angled at $B$.\n**To Prove:** $AC^2 = AB^2 + BC^2$.\n**Construction:** Draw $BD \\perp AC$.\n\n**Proof:**\n1.  **Triangle 1:** $\\Delta ADB \\sim \\Delta ABC$ (Theorem 6.7).\n    * Ratios: $\\frac{AD}{AB} = \\frac{AB}{AC}$.\n    * Cross-multiply: $AD \\cdot AC = AB^2$. --- (i)\n\n2.  **Triangle 2:** $\\Delta BDC \\sim \\Delta ABC$ (Theorem 6.7).\n    * Ratios: $\\frac{CD}{BC} = \\frac{BC}{AC}$.\n    * Cross-multiply: $CD \\cdot AC = BC^2$. --- (ii)\n\n3.  **Summation:**\n    * Add (i) and (ii): $AB^2 + BC^2 = (AD \\cdot AC) + (CD \\cdot AC)$.\n    * Factor out AC: $AB^2 + BC^2 = AC(AD + CD)$.\n    * From figure, $AD + CD = AC$.\n    * Therefore, $AB^2 + BC^2 = AC \\cdot AC = AC^2$. **Q.E.D.**\n\n#### Theorem 6.9 (Converse of Pythagoras)\n**Statement:** In a triangle, if the square of one side is equal to the sum of the squares of the other two sides, then the angle opposite the first side is a right angle.\n**Proof:** Construct a separate right triangle with legs equal to the given triangle's legs. Use Pythagoras on the constructed one, then SSS congruence to show the original is also right-angled.",
+          "formulas": [
+            "H^2 = P^2 + B^2",
+            "AB^2 = AD \\cdot AC \\quad (\\text{Geometric Mean})"
+          ],
+          "examples": [
+            {
+              "id": "ex_tri_6",
+              "question": "BL and CM are medians of a triangle ABC right angled at A. Prove that $4(BL^2 + CM^2) = 5BC^2$.",
+              "steps": [
+                {
+                  "explanation": "In right $\\Delta ABC$: $BC^2 = AB^2 + AC^2$ (1)."
+                },
+                {
+                  "explanation": "In right $\\Delta BAL$ (L is mid-point of AC): $BL^2 = AB^2 + AL^2 = AB^2 + (AC/2)^2$."
+                },
+                {
+                  "explanation": "$4BL^2 = 4AB^2 + AC^2$ (2)."
+                },
+                {
+                  "explanation": "In right $\\Delta CAM$ (M is mid-point of AB): $CM^2 = AC^2 + AM^2 = AC^2 + (AB/2)^2$."
+                },
+                {
+                  "explanation": "$4CM^2 = 4AC^2 + AB^2$ (3)."
+                },
+                {
+                  "explanation": "Add (2) and (3): $4(BL^2 + CM^2) = (4AB^2 + AB^2) + (AC^2 + 4AC^2) = 5AB^2 + 5AC^2$."
+                },
+                {
+                  "explanation": "$4(BL^2 + CM^2) = 5(AB^2 + AC^2) = 5BC^2$."
+                }
+              ],
+              "finalAnswer": "Proved."
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Pythagoras Proof Construction",
+            "functions": [],
+            "points": [
+              { "x": 0, "y": 0, "label": "B" },
+              { "x": 4, "y": 0, "label": "C" },
+              { "x": 0, "y": 3, "label": "A" },
+              { "x": 1.44, "y": 1.92, "label": "D (Altitude foot)" }
+            ],
+            "shapes": [
+              { "type": "line", "x1": 0, "y1": 0, "x2": 1.44, "y2": 1.92, "color": "red", "label": "BD" }
+            ],
+            "xRange": [-1, 5],
+            "yRange": [-1, 4]
+          }
+        },
+        {
+          "id": "topic_6_6_practice_compendium",
+          "title": "6.6 Practice Bank & Formula Compendium",
+          "content": "### 6. Comprehensive Practice Questions\n\n#### Section A: Similarity & BPT (10 Questions)\n1.  If a line intersects sides AB and AC of a $\\Delta ABC$ at D and E respectively and is parallel to BC, prove that $\\frac{AD}{AB} = \\frac{AE}{AC}$.\n2.  ABCD is a trapezium with $AB || DC$. Diagonals intersect at O. Show that $\\frac{AO}{BO} = \\frac{CO}{DO}$.\n3.  In Fig, if $\\frac{PS}{SQ} = \\frac{PT}{TR}$ and $\\angle PST = \\angle PRQ$, prove that $\\Delta PQR$ is an isosceles triangle. (Hint: Converse BPT $\\implies ST || QR \\implies \\angle PST = \\angle PQR$).\n4.  E is a point on side AD produced of a parallelogram ABCD and BE intersects CD at F. Show that $\\Delta ABE \\sim \\Delta CFB$.\n5.  Sides AB and BC and median AD of a triangle ABC are respectively proportional to sides PQ and QR and median PM of $\\Delta PQR$. Show that $\\Delta ABC \\sim \\Delta PQR$.\n6.  D is a point on side BC of $\\Delta ABC$ such that $\\angle ADC = \\angle BAC$. Show that $CA^2 = CB \\cdot CD$.\n7.  A vertical stick 12 m long casts a shadow 8 m long. At the same time, a tower casts a shadow 40 m long. Find height of tower.\n8.  If $\\Delta ABC \\sim \\Delta DEF$, area(ABC) = 64, area(DEF) = 121, and EF = 15.4, find BC.\n9.  Diagonals of a trapezium ABCD with $AB || DC$ intersect at O. If $AB = 2CD$, find ratio of areas of $\\Delta AOB$ and $\\Delta COD$.\n10. Prove that the area of an equilateral triangle described on one side of a square is equal to half the area of the equilateral triangle described on one of its diagonals.\n\n#### Section B: Pythagoras & Advanced Proofs (10 Questions)\n11. An aeroplane leaves an airport and flies due north at 1000 km/hr. Another flies due west at 1200 km/hr. How far apart are they after $1 \\frac{1}{2}$ hours?\n12. Two poles of heights 6 m and 11 m stand on a plane ground. If distance between feet is 12 m, find distance between tops.\n13. D and E are points on sides CA and CB respectively of $\\Delta ABC$ right angled at C. Prove $AE^2 + BD^2 = AB^2 + DE^2$.\n14. The perpendicular from A on side BC of $\\Delta ABC$ intersects BC at D such that $DB = 3CD$. Prove $2AB^2 = 2AC^2 + BC^2$.\n15. In an equilateral triangle ABC, D is a point on side BC such that $BD = \\frac{1}{3}BC$. Prove $9AD^2 = 7AB^2$.\n16. **(Must Practice)** Prove that the sum of the squares of the sides of a rhombus is equal to the sum of the squares of its diagonals.\n17. In $\\Delta ABC$, if $AD \\perp BC$, prove that $AB^2 + CD^2 = BD^2 + AC^2$.\n18. Prove that three times the square of one side of an equilateral triangle is equal to four times the square of one of its altitudes.\n19. Determine if sides 7 cm, 24 cm, 25 cm form a right triangle.\n20. A ladder 10 m long reaches a window 8 m above ground. Find distance of the foot of the ladder from the base of the wall.\n\n#### Section C: Exemplar & Board Challenges (10 Questions)\n21. **(Must Practice)** In Fig 6.1 (Exemplar), if O is intersection of chords AB and CD such that $OB = OD$, then show triangles OAC and ODB are isosceles and similar.\n22. **(Must Practice)** D and E are points on sides AB and AC of $\\Delta ABC$ such that $AD = 2DB$ and $AE = 2EC$. Prove $DE || BC$ and $DE = \\frac{2}{3} BC$ (Wait, $AD/AB = 2/3$, so ratio is 2/3).\n23. **(Must Practice)** In a $\\Delta PQR$, $PR^2 - PQ^2 = QR^2$ and $M$ is a point on side $PR$ such that $QM \\perp PR$. Prove $QM^2 = PM \\times MR$.\n24. **(Must Practice)** Find the altitude of an equilateral triangle of side $2a$.\n25. **(Must Practice)** ABC is an isosceles triangle right angled at C. Prove $AB^2 = 2AC^2$.\n26. **(Must Practice)** If a line divides two sides of a triangle in the same ratio, the line is parallel to the third side (Converse BPT Proof).\n27. **(Must Practice)** Prove that the ratio of areas of two similar triangles is equal to the square of the ratio of their corresponding altitudes.\n28. **(Must Practice)** In a right triangle, the square of the hypotenuse is equal to the sum of squares of other two sides (Pythagoras Proof).\n29. **(Must Practice)** ABCD is a parallelogram. P is a point on side DC and Q is a point on side AD. Prove Area(APB) = Area(BQC)? (Check if valid theorem, likely Area(APB) = 1/2 ABCD = Area(BQC)).\n30. **(Must Practice)** A guy wire attached to a vertical pole of height 18 m is 24 m long and has a stake attached to the other end. How far from the base should the stake be driven so the wire is taut?\n\n---\n\n### 7. Formula Compendium\n\n**1. Similarity Conditions**\n* **AAA / AA:** Corresponding angles equal.\n* **SSS:** Corresponding sides proportional.\n* **SAS:** One angle equal, including sides proportional.\n\n**2. Basic Proportionality Theorem (BPT)**\n* If $DE || BC$, then $\\frac{AD}{DB} = \\frac{AE}{EC}$.\n\n**3. Areas of Similar Triangles**\n* $\\frac{\\text{Area}(\\Delta_1)}{\\text{Area}(\\Delta_2)} = (\\frac{\\text{Side}_1}{\\text{Side}_2})^2 = (\\frac{\\text{Alt}_1}{\\text{Alt}_2})^2 = (\\frac{\\text{Med}_1}{\\text{Med}_2})^2$.\n\n**4. Pythagoras Theorem**\n* Right $\\Delta$: $Hyp^2 = Base^2 + Alt^2$.\n* Converse: If $c^2 = a^2 + b^2$, angle opp $c$ is $90^\\circ$.\n\n**5. Important Results**\n* Diagonal of Square $d = a\\sqrt{2}$.\n* Altitude of Equilateral $\\Delta h = \\frac{\\sqrt{3}}{2}a$.\n* Area of Equilateral $\\Delta A = \\frac{\\sqrt{3}}{4}a^2$.",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

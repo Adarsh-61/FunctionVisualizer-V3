@@ -1,0 +1,224 @@
+{
+  "id": "class_9",
+  "title": "Class 9",
+  "chapters": [
+    {
+      "id": "ch_8_quadrilaterals",
+      "title": "Ch 8: Quadrilaterals",
+      "topics": [
+        {
+          "id": "topic_8_1_introduction_angle_sum",
+          "title": "8.1 Introduction & Angle Sum Property",
+          "content": "### 1. The Geometry of Four Sides\nA **Quadrilateral** (from Latin *quadri* = four, *latus* = side) is a closed plane figure bounded by four line segments. It generalizes the concept of a triangle (3 sides) to the next level of complexity.\n\n#### 1.1 Formal Definition\nLet $A, B, C, D$ be four points in a plane such that no three of them are collinear, and the line segments $AB, BC, CD,$ and $DA$ do not intersect except at their endpoints. The figure formed by these four segments is called the quadrilateral $ABCD$.\n\n* **Vertices:** The points $A, B, C, D$.\n* **Sides:** The segments $AB, BC, CD, DA$.\n* **Angles:** $\\angle A, \\angle B, \\angle C, \\angle D$.\n* **Diagonals:** The segments joining opposite vertices ($AC$ and $BD$).\n\n#### 1.2 The Angle Sum Property\nJust as the sum of angles in a triangle is $180^\\circ$, the sum of angles in a quadrilateral is $360^\\circ$.\n\n**Theorem 8.0:** The sum of the angles of a quadrilateral is $360^\\circ$.\n**Given:** A quadrilateral $ABCD$.\n**To Prove:** $\\angle A + \\angle B + \\angle C + \\angle D = 360^\\circ$.\n**Construction:** Join diagonal $AC$. This divides the quadrilateral into two triangles, $\\Delta ABC$ and $\\Delta ADC$.\n**Proof:**\n1.  In $\\Delta ABC$: $\\angle CAB + \\angle B + \\angle BCA = 180^\\circ$ (Angle Sum Property of $\\Delta$). ---(i)\n2.  In $\\Delta ADC$: $\\angle DAC + \\angle D + \\angle ACD = 180^\\circ$. ---(ii)\n3.  Adding (i) and (ii):\n    $(\\angle CAB + \\angle DAC) + \\angle B + \\angle D + (\\angle BCA + \\angle ACD) = 180^\\circ + 180^\\circ$\n4.  From the figure, $\\angle CAB + \\angle DAC = \\angle A$ and $\\angle BCA + \\angle ACD = \\angle C$.\n5.  Therefore, $\\angle A + \\angle B + \\angle C + \\angle D = 360^\\circ$.\n\n**Intuition:** Any $n$-sided polygon can be divided into $(n-2)$ triangles. For a quadrilateral ($n=4$), we have 2 triangles. $2 \\times 180^\\circ = 360^\\circ$.",
+          "formulas": [
+            "\\Sigma \\text{Angles} = 360^\\circ",
+            "\\text{Sum of Int Angles} = (n-2) \\times 180^\\circ"
+          ],
+          "examples": [
+            {
+              "id": "ex_quad_1",
+              "question": "The angles of a quadrilateral are in the ratio 3 : 5 : 9 : 13. Find all the angles.",
+              "steps": [
+                {
+                  "explanation": "Let the angles be $3x, 5x, 9x, 13x$."
+                },
+                {
+                  "explanation": "According to the Angle Sum Property, their sum is $360^\\circ$."
+                },
+                {
+                  "explanation": "$3x + 5x + 9x + 13x = 360^\\circ$."
+                },
+                {
+                  "explanation": "$30x = 360^\\circ \\implies x = 12^\\circ$."
+                },
+                {
+                  "explanation": "Angles are: $3(12)=36^\\circ, 5(12)=60^\\circ, 9(12)=108^\\circ, 13(12)=156^\\circ$."
+                }
+              ],
+              "finalAnswer": "$36^\\circ, 60^\\circ, 108^\\circ, 156^\\circ$"
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Quadrilateral Angle Sum",
+            "functions": [],
+            "points": [
+              { "x": 0, "y": 0, "label": "A" },
+              { "x": 4, "y": 1, "label": "B" },
+              { "x": 3, "y": 4, "label": "C" },
+              { "x": 1, "y": 3, "label": "D" }
+            ],
+            "xRange": [-1, 5],
+            "yRange": [-1, 5]
+          }
+        },
+        {
+          "id": "topic_8_2_types_and_hierarchy",
+          "title": "8.2 The Hierarchy of Quadrilaterals",
+          "content": "### 2. Classification and Family Tree\nQuadrilaterals are classified based on parallelism of sides, equality of sides, and equality of angles. It is crucial to understand the **inclusive definitions** (e.g., a Square IS a Rectangle).\n\n#### 2.1 Trapezium\nA quadrilateral with **at least one pair** of parallel sides.\n* **Properties:** Consecutive interior angles between parallel sides sum to $180^\\circ$.\n* **Isosceles Trapezium:** Non-parallel sides are equal. Base angles are equal. Diagonals are equal.\n\n#### 2.2 Kite\nA quadrilateral with **two pairs of equal adjacent sides**, but unequal opposite sides.\n* **Properties:** Diagonals intersect at $90^\\circ$. One diagonal is the perpendicular bisector of the other. (Note: A kite is NOT a parallelogram).\n\n#### 2.3 Parallelogram\nA quadrilateral with **both pairs** of opposite sides parallel.\n* **This is the parent class for Rectangles, Rhombuses, and Squares.**\n\n#### 2.4 Special Parallelograms\n1.  **Rectangle:** A parallelogram with one angle of $90^\\circ$. (Implies all angles are $90^\\circ$).\n    * *Definition Logic:* A rectangle is a parallelogram with equiangular properties.\n2.  **Rhombus:** A parallelogram with adjacent sides equal. (Implies all sides are equal).\n    * *Definition Logic:* A rhombus is a parallelogram with equilateral properties.\n3.  **Square:** A parallelogram that is BOTH a rectangle and a rhombus.\n    * All sides equal, all angles $90^\\circ$.\n\n**Venn Diagram Logic:**\n* All Squares are Rectangles.\n* All Squares are Rhombuses.\n* All Rectangles are Parallelograms.\n* NOT all Parallelograms are Rectangles.",
+          "formulas": [
+            "\\text{Square} = \\text{Rectangle} + \\text{Rhombus}",
+            "\\text{Parallelogram} \\implies \\text{Opp Sides } ||"
+          ],
+          "examples": [
+            {
+              "id": "ex_quad_2",
+              "question": "True or False: 'Every parallelogram is a trapezium'. Justify.",
+              "steps": [
+                {
+                  "explanation": "Definition of Trapezium: At least one pair of parallel sides."
+                },
+                {
+                  "explanation": "Definition of Parallelogram: Both pairs of opposite sides are parallel."
+                },
+                {
+                  "explanation": "Since a parallelogram has two pairs parallel, it definitely satisfies the condition of 'at least one pair'."
+                },
+                {
+                  "explanation": "Therefore, strictly speaking, every parallelogram is a special type of trapezium."
+                }
+              ],
+              "finalAnswer": "True"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_8_3_parallelogram_properties",
+          "title": "8.3 Properties of Parallelograms (Theorems 8.1 - 8.7)",
+          "content": "### 3. Deep Dive into Parallelograms\nMost of this chapter focuses on the properties of parallelograms ($||gm$). We will prove each property rigorously using triangle congruence (Chapter 7 concepts).\n\n#### Theorem 8.1 (The Diagonal Property)\n**Statement:** A diagonal of a parallelogram divides it into two congruent triangles.\n**Given:** $||gm$ $ABCD$ with diagonal $AC$.\n**Proof:**\n1.  Since $ABCD$ is a parallelogram, $AB || DC$ and $AD || BC$.\n2.  Take transversal $AC$.\n    * $\\angle BAC = \\angle DCA$ (Alt. Int. Angles).\n    * $\\angle BCA = \\angle DAC$ (Alt. Int. Angles).\n    * $AC = AC$ (Common side).\n3.  By **ASA Criterion**, $\\Delta ABC \\cong \\Delta CDA$.\n**Implication:** This single theorem proves that opposite sides are equal and opposite angles are equal (via CPCT).\n\n#### Theorem 8.2 & 8.4 (Opposite Sides/Angles)\n* **Thm 8.2:** In a parallelogram, opposite sides are equal ($AB=CD, AD=BC$).\n* **Thm 8.4:** In a parallelogram, opposite angles are equal ($\\angle A = \\angle C, \\angle B = \\angle D$).\n* *Proof:* Follows directly from Thm 8.1 CPCT.\n\n#### Theorem 8.3 & 8.5 (Converse Tests)\nHow do we prove a quadrilateral is a parallelogram?\n* **Thm 8.3:** If each pair of opposite sides of a quadrilateral is equal, then it is a parallelogram.\n    * *Proof:* Draw diagonal. Use **SSS** Congruence. Then corresponding angles equal $\\implies$ Alternate angles equal $\\implies$ Lines Parallel.\n* **Thm 8.5:** If in a quadrilateral, each pair of opposite angles is equal, then it is a parallelogram.\n    * *Proof:* Use Angle Sum property ($2A + 2B = 360$) to show co-interior angles sum to 180.\n\n#### Theorem 8.6 (Diagonals Bisect)\n**Statement:** The diagonals of a parallelogram bisect each other.\n**Given:** $||gm$ $ABCD$, diagonals $AC, BD$ intersect at $O$.\n**Proof:**\n1.  In $\\Delta AOB$ and $\\Delta COD$:\n    * $\\angle OAB = \\angle OCD$ (Alt Int, $AB || DC$)\n    * $AB = CD$ (Opp sides equal)\n    * $\\angle OBA = \\angle ODC$ (Alt Int)\n2.  $\\Delta AOB \\cong \\Delta COD$ (ASA).\n3.  $OA = OC$ and $OB = OD$ (CPCT).\n\n#### Theorem 8.7 (Converse Diagonal)\n**Statement:** If the diagonals of a quadrilateral bisect each other, then it is a parallelogram.\n**Proof:** Use SAS on vertically opposite triangles ($\\Delta AOB, \\Delta COD$) to prove $AB = CD$ and $\\angle OAB = \\angle OCD$ (Alt angles) $\\implies AB || CD$.",
+          "formulas": [
+            "\\Delta ABC \\cong \\Delta CDA",
+            "AO=OC, BO=OD \\iff ||gm"
+          ],
+          "examples": [
+            {
+              "id": "ex_quad_3",
+              "question": "Show that if the diagonals of a quadrilateral are equal and bisect each other at right angles, then it is a square.",
+              "steps": [
+                {
+                  "explanation": "Given: Quad $ABCD$ where $AC=BD$, $AC \\perp BD$, and they bisect each other."
+                },
+                {
+                  "explanation": "Step 1: Prove it's a Parallelogram. Since diagonals bisect, it is a $||gm$ (Thm 8.7)."
+                },
+                {
+                  "explanation": "Step 2: Prove it's a Rhombus. Since diagonals are perpendicular ($AC \\perp BD$), in $\\Delta AOD$ and $\\Delta AOB$, $OD=OB$, $\\angle AOD=\\angle AOB=90$, $AO$ common. So $\\Delta AOD \\cong \\Delta AOB$ (SAS). $AD=AB$. Adjacent sides equal $\\implies$ Rhombus."
+                },
+                {
+                  "explanation": "Step 3: Prove it's a Rectangle. In $\\Delta ABC$ and $\\Delta BAD$: $AB=AB$, $BC=AD$ (opp sides), $AC=BD$ (given). By SSS, $\\Delta ABC \\cong \\Delta BAD$. $\\angle ABC = \\angle BAD$. Since $AD || BC$, sum is $180$. $2\\angle A = 180 \\implies \\angle A = 90$."
+                },
+                {
+                  "explanation": "Conclusion: A parallelogram that is a rhombus and a rectangle is a Square."
+                }
+              ],
+              "finalAnswer": "Proved."
+            },
+            {
+              "id": "ex_quad_4",
+              "question": "Theorem 8.8: A quadrilateral is a parallelogram if a pair of opposite sides is equal and parallel.",
+              "steps": [
+                {
+                  "explanation": "Given: $AB = CD$ and $AB || CD$."
+                },
+                {
+                  "explanation": "Join $AC$. In $\\Delta ABC$ and $\\Delta CDA$:"
+                },
+                {
+                  "explanation": "1. $AB = CD$ (Given)."
+                },
+                {
+                  "explanation": "2. $\\angle BAC = \\angle DCA$ (Alt Int, since $AB || CD$)."
+                },
+                {
+                  "explanation": "3. $AC = AC$ (Common)."
+                },
+                {
+                  "explanation": "By SAS, $\\Delta ABC \\cong \\Delta CDA$."
+                },
+                {
+                  "explanation": "CPCT: $BC = AD$."
+                },
+                {
+                  "explanation": "Since both pairs of opposite sides are equal ($AB=CD, BC=AD$), $ABCD$ is a parallelogram."
+                }
+              ],
+              "finalAnswer": "Proved."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_8_4_mid_point_theorem",
+          "title": "8.4 The Mid-Point Theorem (MPT)",
+          "content": "### 4. The Mid-Point Theorem\nThis is one of the most powerful theorems in geometry, linking triangle properties to parallelograms.\n\n#### Theorem 8.9 (The Mid-Point Theorem)\n**Statement:** The line segment joining the mid-points of two sides of a triangle is parallel to the third side and half of it.\n\n**Given:** $\\Delta ABC$, $E$ is mid-point of $AB$, $F$ is mid-point of $AC$.\n**To Prove:**\n1.  $EF || BC$\n2.  $EF = \\frac{1}{2} BC$\n\n**Construction:** Draw a line through $C$ parallel to $AB$. Extend $EF$ to intersect this line at $D$.\n\n**Proof:**\n1.  **Congruence of $\\Delta AEF$ and $\\Delta CDF$:**\n    * $\\angle AFE = \\angle CFD$ (Vertically Opposite)\n    * $AF = CF$ (F is mid-point)\n    * $\\angle FAE = \\angle FCD$ (Alt Int angles, since $AB || CD$)\n    * $\\therefore \\Delta AEF \\cong \\Delta CDF$ (ASA).\n\n2.  **Consequences of CPCT:**\n    * $EF = DF$ (So $F$ is mid-point of $ED$)\n    * $AE = CD$\n\n3.  **Forming a Parallelogram:**\n    * We know $AE = EB$ (E is mid-point).\n    * So $EB = CD$.\n    * Also $EB || CD$ (by construction).\n    * Since one pair of opposite sides is equal and parallel ($EB$ and $CD$), quadrilateral $EBCD$ is a **parallelogram** (Theorem 8.8).\n\n4.  **Final Derivation:**\n    * Since $EBCD$ is a $||gm$, $ED || BC$ and $ED = BC$.\n    * Since $ED$ is the line containing $EF$, $EF || BC$. (Part 1 Proved).\n    * Also, $EF = \\frac{1}{2} ED$ (Since $EF=DF$).\n    * Substituting $ED = BC$, we get $EF = \\frac{1}{2} BC$. (Part 2 Proved).\n\n#### Theorem 8.10 (Converse of MPT)\n**Statement:** The line drawn through the mid-point of one side of a triangle, parallel to another side, bisects the third side.\n**Logic:** Proof by Intercept Theorem or similar construction (producing line to form parallelogram).",
+          "formulas": [
+            "EF || BC",
+            "EF = \\frac{1}{2} BC"
+          ],
+          "examples": [
+            {
+              "id": "ex_quad_5",
+              "question": "Prove that the quadrilateral formed by joining the mid-points of the sides of a quadrilateral, in order, is a parallelogram.",
+              "steps": [
+                {
+                  "explanation": "Given: Quad $ABCD$. $P, Q, R, S$ are mid-points of $AB, BC, CD, DA$ respectively."
+                },
+                {
+                  "explanation": "Construction: Join diagonal $AC$."
+                },
+                {
+                  "explanation": "In $\\Delta ABC$: $P$ and $Q$ are mid-points. By Mid-Point Theorem, $PQ || AC$ and $PQ = \\frac{1}{2} AC$."
+                },
+                {
+                  "explanation": "In $\\Delta ADC$: $S$ and $R$ are mid-points. By Mid-Point Theorem, $SR || AC$ and $SR = \\frac{1}{2} AC$."
+                },
+                {
+                  "explanation": "From above steps: $PQ || SR$ (since both parallel to $AC$) and $PQ = SR$ (both half of $AC$)."
+                },
+                {
+                  "explanation": "Since one pair of opposite sides ($PQ, SR$) is equal and parallel, $PQRS$ is a parallelogram."
+                }
+              ],
+              "finalAnswer": "Proved."
+            },
+            {
+              "id": "ex_quad_6",
+              "question": "l, m and n are three parallel lines intersected by transversals p and q such that l, m and n cut off equal intercepts AB and BC on p. Show that they cut off equal intercepts DE and EF on q.",
+              "steps": [
+                {
+                  "explanation": "Given: $l || m || n$. Transversal $p$ cuts them at $A, B, C$ with $AB = BC$. Transversal $q$ cuts at $D, E, F$."
+                },
+                {
+                  "explanation": "To Prove: $DE = EF$."
+                },
+                {
+                  "explanation": "Construction: Join $AF$ intersecting $m$ at $G$."
+                },
+                {
+                  "explanation": "In $\\Delta ACF$: $B$ is mid-point of $AC$ (since $AB=BC$) and $BG || CF$ (since $m || n$). By Converse of Mid-Point Theorem, $G$ is the mid-point of $AF$."
+                },
+                {
+                  "explanation": "In $\\Delta AFD$: $G$ is mid-point of $AF$ and $GE || AD$ (since $m || l$). By Converse of Mid-Point Theorem, $E$ is mid-point of $DF$."
+                },
+                {
+                  "explanation": "Therefore, $DE = EF$."
+                }
+              ],
+              "finalAnswer": "Proved."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_8_5_practice_and_summary",
+          "title": "8.5 Practice Bank & Compendium",
+          "content": "### 5. Comprehensive Practice Questions\n\n#### Section A: Proofs & Logic (10 Questions)\n1.  Show that the diagonals of a rhombus are perpendicular to each other.\n2.  Prove that the bisectors of the angles of a parallelogram enclose a rectangle.\n3.  ABCD is a trapezium with $AB || DC$. If $AD = BC$, prove that $\\angle A = \\angle B$.\n4.  Show that the line segments joining the mid-points of opposite sides of a quadrilateral bisect each other. (Hint: Use MPT to show inner figure is $||gm$, then use diagonal property).\n5.  In parallelogram $ABCD$, two points $P$ and $Q$ are taken on diagonal $BD$ such that $DP = BQ$. Show that $APCQ$ is a parallelogram.\n\n#### Section B: Must-Practice (Board/JEE Foundation)\n11. **(Must Practice)** Prove that a parallelogram is a rhombus if its diagonals bisect interior angles.\n12. **(Must Practice)** ABCD is a square. E, F, G, H are mid-points. Prove EFGH is a square.\n13. **(Must Practice)** In $\\Delta ABC$, $AD$ is median. $E$ is mid-point of $AD$. $BE$ produced meets $AC$ at $F$. Show that $AF = \\frac{1}{3} AC$. (Requires construction of parallel line).\n14. **(Must Practice)** If the non-parallel sides of a trapezium are equal, prove it is cyclic (opposite angles sum to 180).\n15. **(Must Practice)** Prove that the quadrilateral formed by the angle bisectors of a cyclic quadrilateral is also cyclic.\n16. **(Must Practice)** $E$ and $F$ are points on diagonal $AC$ of a parallelogram $ABCD$ such that $AE = CF$. Show that $BFDE$ is a parallelogram.\n17. **(Must Practice)** Prove that the figure formed by joining mid-points of adjacent sides of a rectangle is a rhombus.\n18. **(Must Practice)** ABC is a triangle right angled at C. A line through the mid-point M of hypotenuse AB and parallel to BC intersects AC at D. Prove $MD \\perp AC$.\n19. **(Must Practice)** Show that the diagonals of a square are equal and bisect each other at right angles.\n20. **(Must Practice)** ABCD is a parallelogram and AP and CQ are perpendiculars from vertices A and C on diagonal BD. Prove $\\Delta APB \\cong \\Delta CQD$.\n\n---\n\n### 6. Formula & Concept Compendium\n\n#### 6.1 Properties Summary\n| Property | Parallelogram | Rectangle | Rhombus | Square |\n| :--- | :---: | :---: | :---: | :---: |\n| Opp Sides Equal | Yes | Yes | Yes | Yes |\n| All Sides Equal | No | No | Yes | Yes |\n| Opp Angles Equal | Yes | Yes | Yes | Yes |\n| All Angles 90 | No | Yes | No | Yes |\n| Diagonals Bisect | Yes | Yes | Yes | Yes |\n| Diagonals Equal | No | Yes | No | Yes |\n| Diagonals Perp | No | No | Yes | Yes |\n\n#### 6.2 Key Theorems\n* **MPT:** Line joining midpoints of two sides is parallel to third and half of it.\n* **Converse MPT:** Line through midpoint parallel to second side bisects third.\n* **Condition for ||gm:** One pair of opp sides equal and parallel ($AB=CD, AB||CD$).\n\n#### 6.3 Proving Checklist\n* To prove **Rectangle**: First prove $||gm$, then one angle $90^\\circ$ OR diagonals equal.\n* To prove **Rhombus**: First prove $||gm$, then adj sides equal OR diagonals perp.\n* To prove **Square**: Prove Rectangle + Rhombus.",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

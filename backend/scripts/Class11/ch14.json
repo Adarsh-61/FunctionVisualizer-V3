@@ -1,0 +1,155 @@
+{
+  "id": "11_14",
+  "classId": 11,
+  "title": "Probability",
+  "description": "A transition from intuitive chance to rigorous mathematical probability. This chapter introduces the Axiomatic Approach, grounded in Set Theory, to quantify uncertainty, forming the basis for Statistics and Stochastic Processes.",
+  "topics": [
+    {
+      "id": "11_14_1",
+      "title": "Random Experiments and Sample Space",
+      "content": "### 1. The Nature of Probability\nIn earlier classes, we studied probability as a measure of chance based on empirical observations (Statistics approach) or classical definitions (number of favorable outcomes / total outcomes). In Class 11, we formalize this using **Set Theory**. This is known as the **Axiomatic Approach to Probability**.\n\n### 2. Random Experiment\nAn experiment is called a **Random Experiment** if it satisfies two conditions:\n1.  It has more than one possible outcome.\n2.  It is not possible to predict the outcome in advance.\n\n**Examples:**\n* **Tossing a fair coin:** Outcomes are Head (H) or Tail (T). We cannot predict which one will occur.\n* **Rolling a die:** Outcomes are 1, 2, 3, 4, 5, 6.\n* *Counter-Example:* Tossing a stone in the air. We know it will fall down. This is a deterministic experiment, not random.\n\n### 3. Outcomes and Sample Space\n* **Outcome:** A possible result of a random experiment.\n* **Sample Space ($S$):** The set of *all* possible outcomes of a random experiment. Each element of the sample space is called a **sample point**.\n\n**Deriving Sample Spaces:**\n1.  **Two Coins:** Tossing two coins (or one coin twice).\n    $S = \\{HH, HT, TH, TT\\}$.\n    $n(S) = 2 \\times 2 = 4$.\n\n2.  **Two Dice:** Rolling two dice.\n    $S = \\{(1,1), (1,2), ..., (1,6), (2,1), ..., (6,6)\\}$.\n    $n(S) = 6 \\times 6 = 36$.\n\n3.  **Coin and Die:** Tossing a coin; if Head, roll a die.\n    $S = \\{T, H1, H2, H3, H4, H5, H6\\}$.\n    Note: Sample spaces need not have \"symmetric\" looking elements.\n\n4.  **Drawing Cards:** From a deck of 52.\n    $n(S) = 52$.\n    *Suits:* Spades ($\\spadesuit$), Clubs ($\\clubsuit$) [Black]; Hearts ($\\heartsuit$), Diamonds ($\\diamondsuit$) [Red].\n    *Ranks:* 2, 3, ..., 10, J, Q, K, A.",
+      "examples": [
+        {
+          "id": "ex_14_1",
+          "question": "A coin is tossed. If it shows head, we draw a ball from a bag consisting of 3 blue and 4 white balls; if it shows tail, we throw a die. Describe the sample space of this experiment.",
+          "solution": "Let us denote Blue balls as $B_1, B_2, B_3$ and White balls as $W_1, W_2, W_3, W_4$.\n1.  **Case 1: Head (H):** We draw a ball.\n    Outcomes: $HB_1, HB_2, HB_3, HW_1, HW_2, HW_3, HW_4$.\n2.  **Case 2: Tail (T):** We throw a die.\n    Outcomes: $T1, T2, T3, T4, T5, T6$.\n\n**Sample Space ($S$):**\n$S = \\{HB_1, HB_2, HB_3, HW_1, HW_2, HW_3, HW_4, T1, T2, T3, T4, T5, T6\\}$."
+        },
+        {
+          "id": "ex_14_2",
+          "question": "Consider the experiment in which a coin is tossed repeatedly until a head comes up. Describe the sample space.",
+          "solution": "The experiment could end on the 1st toss, 2nd toss, or go on indefinitely.\n* 1st toss Head: $H$\n* 1st Tail, 2nd Head: $TH$\n* 1st Tail, 2nd Tail, 3rd Head: $TTH$\n\n**Sample Space:**\n$S = \\{H, TH, TTH, TTTH, ...\\}$\nThis is an example of an **infinite sample space**."
+        }
+      ]
+    },
+    {
+      "id": "11_14_2",
+      "title": "Events and Their Algebra",
+      "content": "### 1. Definition of an Event\nAn **Event** is defined as any **subset** of the sample space $S$.\nIf the outcome of the experiment is an element of subset $E$, we say that the event $E$ has occurred.\n\n* **Example:** Rolling a die. $S = \\{1, 2, 3, 4, 5, 6\\}$.\n    Event $A$: \"Getting an odd number\" $\\implies A = \\{1, 3, 5\\}$.\n    Since $A \\subset S$, $A$ is an event.\n\n### 2. Types of Events\n1.  **Impossible Event:** The empty set $\\phi$. It contains no sample points.\n    * *Ex:* Rolling a 7 on a standard die.\n2.  **Sure Event:** The whole sample space $S$. It always happens.\n    * *Ex:* Rolling a number less than 7 on a die.\n3.  **Simple (Elementary) Event:** An event containing only **one** sample point.\n    * *Ex:* Getting a Head and a 5 ($H5$) in the coin-die experiment.\n4.  **Compound Event:** An event containing more than one sample point.\n\n### 3. Algebra of Events (Set Theory Connection)\nSince events are sets, we can apply set operations:\n\n* **Complementary Event (Not A):** Denoted by $A'$ or $\\bar{A}$.\n    $A' = S - A$. The event occurs if $A$ does *not* occur.\n\n* **Event A or B ($A \\cup B$):** The event that either $A$ occurs or $B$ occurs (or both).\n    $A \\cup B = \\{ \\omega : \\omega \\in A \\text{ or } \\omega \\in B \\}$.\n\n* **Event A and B ($A \\cap B$):** The event that both $A$ and $B$ occur simultaneously.\n    $A \\cap B = \\{ \\omega : \\omega \\in A \\text{ and } \\omega \\in B \\}$.\n\n* **Event A but not B ($A - B$):** $A \\cap B'$.\n\n### 4. Mutually Exclusive and Exhaustive Events\n\n**Mutually Exclusive (Disjoint):**\nTwo events $A$ and $B$ are mutually exclusive if they cannot occur at the same time.\n$$ A \\cap B = \\phi $$\n* *Ex:* Getting an even number and getting an odd number on a die.\n\n**Exhaustive Events:**\nA set of events $E_1, E_2, ..., E_n$ is exhaustive if their union is the entire sample space.\n$$ E_1 \\cup E_2 \\cup ... \\cup E_n = S $$\n* *Ex:* $A = \\{1, 2, 3\\}$ and $B = \\{4, 5, 6\\}$ are mutually exclusive AND exhaustive for a die roll.",
+      "examples": [
+        {
+          "id": "ex_14_3",
+          "question": "Three coins are tossed. Consider the events: A: 'No head appears', B: 'Exactly one head appears', C: 'At least two heads appear'. Do they form a set of mutually exclusive and exhaustive events?",
+          "solution": "Sample Space ($S$) has 8 outcomes: $\\{HHH, HHT, HTH, HTT, THH, THT, TTH, TTT\\}$.\n\n1.  **Define Sets:**\n    * $A = \\{TTT\\}$\n    * $B = \\{HTT, THT, TTH\\}$\n    * $C = \\{HHT, HTH, THH, HHH\\}$ (At least 2 $\\implies$ 2 or 3)\n\n2.  **Check Mutually Exclusive:**\n    * $A \\cap B = \\phi$\n    * $A \\cap C = \\phi$\n    * $B \\cap C = \\phi$\n    Yes, they are pairwise disjoint.\n\n3.  **Check Exhaustive:**\n    * $A \\cup B \\cup C = \\{TTT, HTT, THT, TTH, HHT, HTH, THH, HHH\\} = S$.\n    Yes, their union is the sample space.\n\n**Conclusion:** The events are both mutually exclusive and exhaustive."
+        }
+      ]
+    },
+    {
+      "id": "11_14_3",
+      "title": "Axiomatic Approach to Probability",
+      "content": "### 1. Why Axioms?\nThe classical definition ($P = \\frac{\\text{Favorable}}{\\text{Total}}$) fails if outcomes are not equally likely (e.g., a biased coin). The axiomatic approach, proposed by **A.N. Kolmogorov**, defines probability as a function satisfying specific rules.\n\n### 2. The Definition\nLet $S$ be the sample space of a random experiment. The probability $P$ is a real-valued function with domain $PowerSet(S)$ and range $[0, 1]$ satisfying:\n\n* **Axiom 1 (Non-negativity):** For any event $E$, $P(E) \\ge 0$.\n* **Axiom 2 (Normality):** $P(S) = 1$.\n* **Axiom 3 (Additivity):** If $E$ and $F$ are mutually exclusive events ($E \\cap F = \\phi$), then:\n    $$ P(E \\cup F) = P(E) + P(F) $$\n\n### 3. Probability of an Event\nLet $S = \\{\\omega_1, \\omega_2, ..., \\omega_n\\}$.\nWe assign a number $p_i$ to each elementary outcome $\\omega_i$ such that:\n1.  $0 \\le p_i \\le 1$ for all $i$.\n2.  $\\sum_{i=1}^{n} p_i = 1$.\n\nThe probability of any event $A$ is the sum of the probabilities of the sample points comprising it.\n$$ P(A) = \\sum_{\\omega_i \\in A} P(\\omega_i) $$\n\n### 4. Classical Probability (Equally Likely Outcomes)\nIf all outcomes are equally likely (e.g., fair coin, unbiased die), then for a sample space of size $n$:\n$$ P(\\omega_i) = \\frac{1}{n} \\quad \\text{for all } i $$\nFor any event $A$ containing $m$ outcomes:\n$$ P(A) = \\frac{m}{n} = \\frac{\\text{Number of elements in A}}{\\text{Number of elements in S}} $$\n*This is a special case of the axiomatic definition.*",
+      "examples": [
+        {
+          "id": "ex_14_4",
+          "question": "Let a sample space be $S = \\{\\omega_1, \\omega_2, \\omega_3, \\omega_4, \\omega_5, \\omega_6\\}$. Which of the following assignments of probabilities are valid?\n(a) $P(\\omega_i) = 1/6$ for all i\n(b) $P(\\omega_i) = 1/5$ for i=1..5, $P(\\omega_6) = 0$\n(c) $P(\\omega_1) = 2/3, P(\\omega_2) = 1/3$, others negative.",
+          "solution": "(a) **Valid.** Each $p_i \\ge 0$ and sum $= 6 \\times (1/6) = 1$.\n(b) **Valid.** Each $p_i \\ge 0$ and sum $= 5 \\times (1/5) + 0 = 1$. (Outcomes can have 0 probability).\n(c) **Invalid.** Probabilities cannot be negative."
+        }
+      ]
+    },
+    {
+      "id": "11_14_4",
+      "title": "Addition Theorems and Inequalities",
+      "content": "Using the axioms and set theory, we can derive powerful rules for calculating probabilities of compound events.\n\n### 1. Probability of 'A or B' (Union)\nFor any two events $A$ and $B$:\n$$ P(A \\cup B) = P(A) + P(B) - P(A \\cap B) $$\n* **Proof Logic:** $A \\cup B = A \\cup (B - A)$ where $A$ and $(B-A)$ are disjoint. Also $B = (A \\cap B) \\cup (B - A)$. Using Axiom 3, we rearrange terms.\n* **Special Case:** If $A$ and $B$ are **mutually exclusive** ($A \\cap B = \\phi$), then $P(A \\cap B) = 0$, so:\n    $$ P(A \\cup B) = P(A) + P(B) $$\n\n### 2. Probability of 'not A' (Complement)\nThe events $A$ and $A'$ are mutually exclusive and exhaustive ($A \\cup A' = S$).\n$$ P(A \\cup A') = P(S) = 1 $$\n$$ P(A) + P(A') = 1 $$\n$$ P(A') = 1 - P(A) $$\n\n### 3. Probability of 'A but not B' (Difference)\n$$ P(A - B) = P(A) - P(A \\cap B) $$\n\n### 4. Application of Permutations and Combinations\nIn many problems (especially JEE), the total number of outcomes $n(S)$ and favorable outcomes $n(E)$ are calculated using P&C (Chapter 6).\n* **Selection:** Using $^nC_r$ (Drawing balls, cards, forming committees).\n* **Arrangement:** Using $^nP_r$ or $n!$ (Seating arrangements, numbers).",
+      "examples": [
+        {
+          "id": "ex_14_5",
+          "question": "Two students Anil and Ashima appeared in an examination. The probability that Anil will qualify is 0.05 and that Ashima will qualify is 0.10. The probability that both will qualify is 0.02. Find the probability that:\n(a) Both will not qualify.\n(b) At least one of them will not qualify.\n(c) Only one of them will qualify.",
+          "solution": "Let $E$: Anil qualifies, $F$: Ashima qualifies.\nGiven: $P(E) = 0.05, P(F) = 0.10, P(E \\cap F) = 0.02$.\n\n(a) **Both not:** $P(E' \\cap F')$. By De Morgan's Law, $E' \\cap F' = (E \\cup F)'$.\n   First find $P(E \\cup F) = P(E) + P(F) - P(E \\cap F) = 0.05 + 0.10 - 0.02 = 0.13$.\n   $P(E' \\cap F') = 1 - P(E \\cup F) = 1 - 0.13 = 0.87$.\n\n(b) **At least one not:** $P(E' \\cup F')$. By De Morgan's, $E' \\cup F' = (E \\cap F)'$.\n   $P((E \\cap F)') = 1 - P(E \\cap F) = 1 - 0.02 = 0.98$.\n\n(c) **Only one:** $P(E \\text{ only}) + P(F \\text{ only})$.\n   $= P(E - F) + P(F - E)$\n   $= [P(E) - P(E \\cap F)] + [P(F) - P(E \\cap F)]$\n   $= [0.05 - 0.02] + [0.10 - 0.02]$\n   $= 0.03 + 0.08 = 0.11$."
+        },
+        {
+          "id": "ex_14_6",
+          "question": "A committee of two persons is selected from two men and two women. What is the probability that the committee will have (a) no man? (b) one man?",
+          "solution": "Total people = 4. We select 2.\n$n(S) = ^4C_2 = \\frac{4 \\times 3}{2} = 6$.\n\n(a) **No man:** Means 2 women selected from 2.\n   $n(E) = ^2C_2 = 1$.\n   $P(E) = 1/6$.\n\n(b) **One man:** Means 1 man from 2 AND 1 woman from 2.\n   $n(F) = ^2C_1 \\times ^2C_1 = 2 \\times 2 = 4$.\n   $P(F) = 4/6 = 2/3$."
+        }
+      ]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "fmt_14_1",
+      "label": "Classical Probability",
+      "tex": "P(E) = \\frac{n(E)}{n(S)}"
+    },
+    {
+      "id": "fmt_14_2",
+      "label": "Addition Theorem",
+      "tex": "P(A \\cup B) = P(A) + P(B) - P(A \\cap B)"
+    },
+    {
+      "id": "fmt_14_3",
+      "label": "Mutually Exclusive Events",
+      "tex": "P(A \\cup B) = P(A) + P(B)"
+    },
+    {
+      "id": "fmt_14_4",
+      "label": "Complementary Event",
+      "tex": "P(A') = 1 - P(A)"
+    },
+    {
+      "id": "fmt_14_5",
+      "label": "Difference of Events",
+      "tex": "P(A - B) = P(A) - P(A \\cap B)"
+    },
+    {
+      "id": "fmt_14_6",
+      "label": "De Morgan's Laws (Probability)",
+      "tex": "P(A' \\cap B') = P((A \\cup B)') = 1 - P(A \\cup B)"
+    },
+    {
+      "id": "fmt_14_7",
+      "label": "Exactly One Event Occurs",
+      "tex": "P(A) + P(B) - 2P(A \\cap B)"
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "id": "pq_14_1",
+      "question": "A coin is tossed three times. Consider the following events. A: 'No head appears', B: 'Exactly one head appears'. Check if they are mutually exclusive.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "pq_14_2",
+      "question": "A die is thrown. Find the probability of getting a prime number.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "pq_14_3",
+      "question": "Given P(A) = 3/5 and P(B) = 1/5. Find P(A or B), if A and B are mutually exclusive.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "pq_14_4",
+      "question": "In a single throw of two dice, find the probability that the sum is at least 10.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_14_5",
+      "question": "One card is drawn from a well shuffled deck of 52 cards. If each outcome is equally likely, calculate the probability that the card will be 'not an ace'.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_14_6",
+      "question": "A bag contains 9 discs of which 4 are red, 3 are blue and 2 are yellow. The discs are similar in shape and size. A disc is drawn at random from the bag. Calculate the probability that it will be (i) red, (ii) yellow, (iii) blue, (iv) not blue.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_14_7",
+      "question": "If E and F are events such that P(E) = 1/4, P(F) = 1/2 and P(E and F) = 1/8, find P(not E and not F).",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_14_8",
+      "question": "4 cards are drawn from a well-shuffled deck of 52 cards. What is the probability of obtaining 3 diamonds and one spade?",
+      "difficulty": "Hard (JEE)"
+    },
+    {
+      "id": "pq_14_9",
+      "question": "A box contains 10 red marbles, 20 blue marbles and 30 green marbles. 5 marbles are drawn from the box, what is the probability that (i) all will be blue? (ii) at least one will be green?",
+      "difficulty": "Hard (JEE)"
+    },
+    {
+      "id": "pq_14_10",
+      "question": "Find the probability that when a hand of 7 cards is drawn from a well shuffled deck of 52 cards, it contains (i) all Kings (ii) 3 Kings (iii) at least 3 Kings.",
+      "difficulty": "Hard (JEE)"
+    }
+  ]
+}

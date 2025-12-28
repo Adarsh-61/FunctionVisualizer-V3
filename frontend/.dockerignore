@@ -1,0 +1,59 @@
+# ===========================================
+# Frontend .dockerignore
+# ===========================================
+
+# Dependencies (will be installed fresh in container)
+node_modules/
+.pnp/
+.pnp.js
+
+# Build outputs (will be created during build)
+.next/
+out/
+build/
+
+# Testing
+coverage/
+.nyc_output/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment files (SECURITY)
+.env
+.env.*
+!.env.example
+
+# Git
+.git/
+.gitignore
+
+# Docker (don't copy into image)
+Dockerfile
+.dockerignore
+
+# Documentation
+*.md
+docs/
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Storybook (if present)
+.storybook/
+storybook-static/
+
+# Temporary files
+tmp/
+temp/

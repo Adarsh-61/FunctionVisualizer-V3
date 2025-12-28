@@ -1,0 +1,194 @@
+{
+  "id": "class_10",
+  "title": "Class 10",
+  "chapters": [
+    {
+      "id": "ch_13_statistics",
+      "title": "Ch 13: Statistics",
+      "topics": [
+        {
+          "id": "topic_13_1_introduction_and_data_organization",
+          "title": "13.1 Introduction: The Science of Data",
+          "content": "### 1. Introduction: Why Statistics Matters\nWe live in an information age. Every day, we encounter a barrage of numbers: the average temperature of the month, the strike rate of a cricket player, the inflation rate of the economy, or the polling numbers for an election. These numbers are not just random figures; they are **Data**.\n\nHowever, data in its raw form is often chaotic and meaningless. A list of the heights of 1,000 students is just a wall of numbers. To make sense of it, we need a method to collect, organize, analyze, and interpret this data. This mathematical science is called **Statistics**.\n\nIn Class 9, you learned to organize data into ungrouped frequency distributions and draw bar graphs. In Class 10, we step into the analytical phase. We move from asking \"What is the data?\" to asking \"What does the data represent?\" and \"Where is the center of the data?\"\n\n#### 1.1 Raw Data vs. Grouped Data\nTo understand the necessity of the methods we will learn, consider two scenarios.\n\n**Scenario A: Raw Data (Ungrouped)**\nA teacher asks 5 students for their marks out of 10: \n`5, 7, 9, 6, 8`.\nHere, the data points are few. We can easily see that the lowest is 5 and the highest is 9. We can calculate the average mentally.\n\n**Scenario B: Large Data**\nThe government wants to analyze the monthly income of 50,000 families in a city. A list of 50,000 numbers is useless to a human reader. To interpret this, we must **group** the data. We might say:\n* Families earning ₹10,000 – ₹20,000: 5,000 families\n* Families earning ₹20,000 – ₹30,000: 12,000 families\n\nThis process is called **discretization** or grouping. While grouping makes data manageable, it introduces a challenge: *We lose the exact values of individual observations.* We only know that a family earns between ₹10,000 and ₹20,000; we don't know if it's ₹10,001 or ₹19,999. \n\nThis chapter teaches us how to find accurate averages (Central Tendency) even when the exact individual data points are hidden inside groups.\n\n#### 1.2 Anatomy of a Frequency Distribution Table\nBefore calculating, we must understand the structure of the table we work with.\n\n1.  **Class Interval:** A range of values (e.g., 10 – 20). \n    * **Lower Class Limit ($l$):** The smallest value in the class (e.g., 10).\n    * **Upper Class Limit ($u$):** The largest value in the class (e.g., 20).\n    * **Class Size ($h$):** The difference between the upper and lower limits ($h = u - l$).\n\n2.  **Frequency ($f_i$):** The number of observations that fall within a specific class interval.\n\n3.  **Class Mark ($x_i$):** This is a crucial concept for calculation. Since we don't know the exact values inside a class (e.g., 10–20), we assume that the data is centered at the midpoint. \n    $$x_i = \\frac{\\text{Upper Limit} + \\text{Lower Limit}}{2}$$\n    We treat $x_i$ as the representative of the entire class.\n\n4.  **Continuous vs. Discontinuous Classes:**\n    * **Continuous (Exclusive):** 0–10, 10–20. The upper limit of one class is the lower limit of the next. (10 is included in 10–20, not 0–10).\n    * **Discontinuous (Inclusive):** 0–9, 10–19. There is a gap between 9 and 10. \n    * **Correction:** Most statistical formulas require continuous classes. If given discontinuous classes, we subtract 0.5 from the lower limit and add 0.5 to the upper limit to bridge the gap.",
+          "formulas": [
+            "x_i = \\frac{\\text{Upper Limit} + \\text{Lower Limit}}{2}",
+            "h = \\text{Upper Limit} - \\text{Lower Limit}"
+          ],
+          "examples": [],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_13_2_arithmetic_mean",
+          "title": "13.2 The Arithmetic Mean: Finding the Balance Point",
+          "content": "### 2. The Mean ($\\\\bar{x}$)\nThe Mean is the most common measure of central tendency. It represents the \"center of gravity\" or the \"balance point\" of the data. If the total sum of all observations were distributed equally among all individuals, the value each would receive is the Mean.\n\nFor ungrouped data, Mean = $\\frac{\\sum x_i}{N}$.\nFor grouped data, we use the class marks ($x_i$) as representatives. However, calculating $\\sum f_i x_i$ can become computationally difficult if the numbers are large. Therefore, mathematicians developed three methods to calculate the mean. All three yield the **exact same result**; the difference lies only in the complexity of calculation.\n\n#### 2.1 Method 1: Direct Method\nThis is the definition of the weighted average.\n1.  Find the Class Mark ($x_i$) for each interval.\n2.  Multiply the frequency ($f_i$) by the class mark ($x_i$) to get $f_i x_i$.\n3.  Sum the products ($\\sum f_i x_i$).\n4.  Sum the frequencies ($\\sum f_i$).\n\n**Formula:**\n$$\\bar{x} = \\frac{\\sum f_i x_i}{\\sum f_i}$$\n\n* **When to use:** When the values of $x_i$ and $f_i$ are small, and multiplication is easy.\n* **Drawback:** If $x_i = 1452.5$ and $f_i = 25$, multiplication becomes prone to error.\n\n#### 2.2 Method 2: Assumed Mean Method\nTo handle large numbers, we shift the origin. We pick a central class mark and call it the **Assumed Mean ($a$)**. We then measure how far other values deviate from this anchor.\n\n1.  Choose a value $a$ from the $x_i$ column (usually the middle one).\n2.  Calculate the **Deviation** ($d_i$) for every row: $d_i = x_i - a$.\n3.  Multiply $f_i$ by $d_i$ to get $f_i d_i$.\n4.  Find the mean of deviations: $\\bar{d} = \\frac{\\sum f_i d_i}{\\sum f_i}$.\n5.  Add the assumed mean back to get the true mean.\n\n**Formula:**\n$$\\bar{x} = a + \\frac{\\sum f_i d_i}{\\sum f_i}$$\n\n* **Logic:** If you subtract $a$ from every number, the average decreases by $a$. To fix it, we calculate the average of the remainders (deviations) and add $a$ back.\n\n#### 2.3 Method 3: Step-Deviation Method\nIf the deviations ($d_i$) are still large but share a common factor (usually the class size $h$), we can scale them down further. This involves changing both the origin and the scale.\n\n1.  Calculate $d_i = x_i - a$.\n2.  Divide $d_i$ by the class size $h$ to get $u_i = \\frac{x_i - a}{h}$.\n3.  Multiply $f_i$ by $u_i$.\n4.  The formula adjusts for both the subtraction of $a$ and the division by $h$.\n\n**Formula:**\n$$\\bar{x} = a + \\left( \\frac{\\sum f_i u_i}{\\sum f_i} \\right) \\times h$$\n\n* **When to use:** When class sizes are equal and the deviations are multiples of $h$. This makes calculations trivial (often single-digit numbers).\n\n#### 2.4 Interpretation of Mean\nThe mean is sensitive to **extreme values (outliers)**. \n* *Example:* If 5 people earn ₹100, and one person earns ₹1,000,000, the mean income will be huge, suggesting everyone is rich. This is a flaw of the mean. However, for relatively uniform data (like heights of students), the mean is the most accurate summary.",
+          "formulas": [
+            "\\bar{x} = \\frac{\\sum f_i x_i}{\\sum f_i} \\quad \\text{(Direct)}",
+            "\\bar{x} = a + \\frac{\\sum f_i d_i}{\\sum f_i} \\quad \\text{(Assumed Mean)}",
+            "\\bar{x} = a + \\left( \\frac{\\sum f_i u_i}{\\sum f_i} \\right) \\times h \\quad \\text{(Step-Deviation)}"
+          ],
+          "examples": [
+            {
+              "id": "ex_stat_1",
+              "question": "The following table gives the percentage distribution of female teachers in primary schools of rural areas. Find the mean percentage of female teachers using the Step-Deviation Method.\n\n| Percentage | 15-25 | 25-35 | 35-45 | 45-55 | 55-65 | 65-75 | 75-85 |\n| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |\n| Number of States | 6 | 11 | 7 | 4 | 4 | 2 | 1 |",
+              "steps": [
+                {
+                  "explanation": "First, identify the Class Size ($h$). Here, $h = 25 - 15 = 10$. Next, calculate the Class Marks ($x_i$) for each interval. $x_1 = (15+25)/2 = 20$. The subsequent marks increase by 10: 20, 30, 40, 50, 60, 70, 80."
+                },
+                {
+                  "explanation": "Select the Assumed Mean ($a$). The class marks are 20, 30, 40, 50, 60, 70, 80. The middle value is 50. Let $a = 50$."
+                },
+                {
+                  "explanation": "Calculate $u_i$ for each row using $u_i = (x_i - a)/h = (x_i - 50)/10$.\n* For 20: $(20-50)/10 = -3$\n* For 30: $(30-50)/10 = -2$\n* For 40: $(40-50)/10 = -1$\n* For 50: 0\n* For 60: 1\n* For 70: 2\n* For 80: 3"
+                },
+                {
+                  "explanation": "Multiply $f_i \\times u_i$:\n* $6 \\times (-3) = -18$\n* $11 \\times (-2) = -22$\n* $7 \\times (-1) = -7$\n* $4 \\times 0 = 0$\n* $4 \\times 1 = 4$\n* $2 \\times 2 = 4$\n* $1 \\times 3 = 3$"
+                },
+                {
+                  "explanation": "Calculate Sums:\n$\\sum f_i = 6+11+7+4+4+2+1 = 35$\n$\\sum f_i u_i = (-18 -22 -7) + (4 + 4 + 3) = -47 + 11 = -36$"
+                },
+                {
+                  "explanation": "Apply the Formula:\n$\\bar{x} = a + (\\frac{\\sum f_i u_i}{\\sum f_i}) \\times h$\n$\\bar{x} = 50 + (\\frac{-36}{35}) \\times 10$\n$\\bar{x} = 50 + (\\frac{-360}{35}) = 50 - 10.28$\n$\\bar{x} = 39.72$"
+                },
+                {
+                  "explanation": "**Interpretation:** The mean percentage of female teachers in primary schools across these states is approximately 39.72%."
+                }
+              ],
+              "finalAnswer": "39.72%"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_13_3_mode",
+          "title": "13.3 Mode: The Peak of the Data",
+          "content": "### 3. The Mode\nThe Mode represents the value that occurs **most frequently** in a dataset. It is the measure of popularity. In a voting system, the winner is the candidate who gets the *mode* of the votes.\n\n#### 3.1 Understanding Mode for Grouped Data\nIn ungrouped data (e.g., 2, 4, 2, 5, 2), the mode is simply 2 because it appears most often. \nHowever, in grouped data, we cannot see individual frequencies. We only see a class interval with the highest frequency. This interval is called the **Modal Class**.\n\n* **Conceptual Challenge:** Suppose the Modal Class is 20–30 with a frequency of 50. The mode is definitely inside this interval. But is it 21? 25? 29? \n* **The Logic of Interpolation:** The exact position of the mode inside the class depends on the \"pull\" of the neighboring frequencies.\n    * If the frequency of the *previous* class is high, the mode shifts towards the left (closer to 20).\n    * If the frequency of the *next* class is high, the mode shifts towards the right (closer to 30).\n\n#### 3.2 The Formula\nThe formula calculates this exact balance point within the modal class:\n\n$$ \\text{Mode} = l + \\left( \\frac{f_1 - f_0}{2f_1 - f_0 - f_2} \\right) \\times h $$\n\nWhere:\n* $l$ = Lower limit of the **Modal Class** (the class with max frequency).\n* $h$ = Class size.\n* $f_1$ = Frequency of the **Modal Class**.\n* $f_0$ = Frequency of the class **preceding** (before) the modal class.\n* $f_2$ = Frequency of the class **succeeding** (after) the modal class.\n\n* **Interpretation of the term $(f_1 - f_0)$:** This measures how much the peak rises above the previous value.\n* **Interpretation of the denominator:** This normalizes the position based on both neighbors.\n\n#### 3.3 Important Note on Unimodal Data\nThis formula applies to data with a single distinct peak. If a distribution has two classes with the same maximum frequency (Bimodal), this basic formula requires modification (not in Class 10 scope).",
+          "formulas": [
+            "\\text{Mode} = l + \\left( \\frac{f_1 - f_0}{2f_1 - f_0 - f_2} \\right) \\times h"
+          ],
+          "examples": [
+            {
+              "id": "ex_stat_2",
+              "question": "The given distribution shows the number of runs scored by some top batsmen of the world in one-day international cricket matches. Find the Mode.\n\n| Runs | 3000-4000 | 4000-5000 | 5000-6000 | 6000-7000 | 7000-8000 | 8000-9000 | 9000-10000 |\n| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |\n| Batsmen | 4 | 18 | 9 | 7 | 6 | 3 | 1 |",
+              "steps": [
+                {
+                  "explanation": "1. **Identify the Modal Class:** Look for the highest frequency. The maximum frequency is 18. This corresponds to the class interval **4000 – 5000**. So, the Modal Class is 4000–5000."
+                },
+                {
+                  "explanation": "2. **Identify Parameters:**\n* Lower limit of modal class ($l$) = 4000\n* Class size ($h$) = 1000\n* Frequency of modal class ($f_1$) = 18\n* Frequency of preceding class ($f_0$) = 4\n* Frequency of succeeding class ($f_2$) = 9"
+                },
+                {
+                  "explanation": "3. **Apply Formula:**\n$\\text{Mode} = 4000 + \\left( \\frac{18 - 4}{2(18) - 4 - 9} \\right) \\times 1000$"
+                },
+                {
+                  "explanation": "4. **Calculate:**\nNumerator: $18 - 4 = 14$\nDenominator: $36 - 13 = 23$\nFraction: $14/23 \\approx 0.6087$\nAdjustment: $0.6087 \\times 1000 = 608.7$"
+                },
+                {
+                  "explanation": "5. **Final Addition:** $4000 + 608.7 = 4608.7$"
+                },
+                {
+                  "explanation": "**Interpretation:** Most top batsmen score runs in the range close to 4608.7."
+                }
+              ],
+              "finalAnswer": "4608.7 Runs"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_13_4_median",
+          "title": "13.4 Median: The Middle of the Road",
+          "content": "### 4. The Median\nThe Median is the measure of the **central item**. It divides the distribution into two equal halves: 50% of observations lie below the median, and 50% lie above it.\n\nUnlike the Mean, the Median is **Robust**. It is not easily influenced by outliers. If the richest person walks into a room of middle-class people, the Mean income skyrockets, but the Median income barely moves.\n\n#### 4.1 Concept: Cumulative Frequency (cf)\nTo find the \"middle\" person, we can't just look at individual buckets of data. We need a running total. \n* **Frequency ($f$):** How many in *this* group?\n* **Cumulative Frequency ($cf$):** How many in *this group and all previous groups*?\n\nThis tells us the **rank** or **position** of the data up to that point.\n\n#### 4.2 Locating the Median Class\n1.  Calculate the total number of observations, $N = \\sum f_i$.\n2.  Find the position of the middle item: $N/2$.\n3.  Look at the Cumulative Frequency ($cf$) column. Find the first class where $cf \\ge N/2$. This class contains the middle item. This is the **Median Class**.\n\n#### 4.3 The Formula Explained\nOnce we have the Median Class (say, 20–30), we know the median lies inside it. But where? We assume the data is uniformly distributed within this class.\n\n$$ \\text{Median} = l + \\left( \\frac{\\frac{N}{2} - cf}{f} \\right) \\times h $$\n\nWhere:\n* $l$ = Lower limit of the Median Class.\n* $N$ = Total number of observations.\n* $cf$ = Cumulative frequency of the class **preceding** the median class (How many items did we pass *before* entering this class?).\n* $f$ = Frequency of the Median Class (How many items are *in* this class?).\n* $h$ = Class size.\n\n**The Logic:**\n1.  We need to reach rank $N/2$.\n2.  We have already passed $cf$ items (from previous classes).\n3.  We still need to pass $(N/2 - cf)$ items.\n4.  The current class has $f$ items spread over a width $h$.\n5.  So, we travel a fraction $(N/2 - cf)/f$ of the width $h$ into the class.\n\n",
+          "formulas": [
+            "\\text{Median} = l + \\left( \\frac{\\frac{N}{2} - cf}{f} \\right) \\times h"
+          ],
+          "examples": [
+            {
+              "id": "ex_stat_3",
+              "question": "A survey regarding the heights (in cm) of 51 girls of Class X was conducted. Find the Median height.\n\n| Height (cm) | Less than 140 | Less than 145 | Less than 150 | Less than 155 | Less than 160 | Less than 165 |\n| :--- | :---: | :---: | :---: | :---: | :---: | :---: |\n| No. of Girls | 4 | 11 | 29 | 40 | 46 | 51 |",
+              "steps": [
+                {
+                  "explanation": "1. **Data Conversion:** The data is given as 'Less than' cumulative frequency. We must convert it to standard class intervals to define frequency $f$.\n* Below 140: $f=4$\n* 140-145: $11 - 4 = 7$\n* 145-150: $29 - 11 = 18$\n* 150-155: $40 - 29 = 11$\n* 155-160: $46 - 40 = 6$\n* 160-165: $51 - 46 = 5$"
+                },
+                {
+                  "explanation": "2. **Identify Median Class:**\nTotal $N = 51$.\nTarget Position = $N/2 = 25.5$.\nLook at the cumulative frequency (given in question). The value just greater than 25.5 is 29.\nThis corresponds to the class interval **145 – 150**."
+                },
+                {
+                  "explanation": "3. **Identify Parameters:**\n* $l = 145$ (Lower limit)\n* $f = 18$ (Frequency of this class)\n* $cf = 11$ (Cumulative frequency of the *previous* class, i.e., <145)\n* $h = 5$ (Class width)"
+                },
+                {
+                  "explanation": "4. **Calculate:**\nMedian $= 145 + \\left( \\frac{25.5 - 11}{18} \\right) \\times 5$\n$= 145 + \\left( \\frac{14.5}{18} \\right) \\times 5$\n$= 145 + \\frac{72.5}{18}$\n$= 145 + 4.03$"
+                },
+                {
+                  "explanation": "5. **Final Result:** 149.03 cm.\n**Interpretation:** 50% of the girls are shorter than 149.03 cm, and 50% are taller."
+                }
+              ],
+              "finalAnswer": "149.03 cm"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_13_5_graphical_representation",
+          "title": "13.5 Graphical Representation: The Ogive",
+          "content": "### 5. Seeing the Trends: Cumulative Frequency Curves\nWhile histograms show the frequency of each class, they don't easily tell us \"How many students scored *less than* 50?\". For this, we use the Cumulative Frequency Curve, also known as the **Ogive** (pronounced 'oh-jive').\n\nThere are two types of Ogives, which tell the story of the data from opposite ends.\n\n#### 5.1 Less Than Ogive\nThis graph answers questions like: \"How many items are below value X?\"\n* **X-axis:** Use the **Upper Limits** of the class intervals.\n* **Y-axis:** Use the corresponding **Cumulative Frequencies**.\n* **Shape:** It is an increasing curve (rising upwards).\n* **Logic:** At the upper limit of a class (say 20), the cumulative frequency includes everything in that class and below. Hence, we plot (Upper Limit, cf).\n\n#### 5.2 More Than Ogive\nThis graph answers questions like: \"How many items are above value X?\"\n* **X-axis:** Use the **Lower Limits** of the class intervals.\n* **Y-axis:** Use the **Cumulative Frequencies** (accumulated from the bottom up, or Total - Previous cf).\n* **Shape:** It is a decreasing curve (falling downwards).\n* **Logic:** At the lower limit of the first class (say 0), *all* observations are \"more than or equal to\" 0. So we start at Total N and drop down.\n\n#### 5.3 Finding Median Graphically\nThe Ogive gives us a powerful geometric way to find the Median without calculation.\n\n**Method 1: Using One Ogive (Less Than)**\n1.  Draw the Less Than Ogive.\n2.  Locate $N/2$ on the **Y-axis** (Frequency axis).\n3.  Draw a horizontal line from $N/2$ until it hits the curve.\n4.  From that intersection point, drop a vertical line to the **X-axis**.\n5.  The value on the X-axis is the **Median**.\n\n**Method 2: Intersection of Two Ogives**\n1.  Draw both the 'Less Than' and 'More Than' Ogives on the same graph.\n2.  They will intersect at exactly one point.\n3.  The **X-coordinate (Abscissa)** of this intersection point is the Median.\n\n",
+          "formulas": [],
+          "examples": [
+            {
+              "id": "ex_stat_4",
+              "question": "The annual rainfall (in mm) in a certain region is given. Draw a 'Less than type' ogive and determine the median rainfall.\n\n| Rainfall | 0-10 | 10-20 | 20-30 | 30-40 | 40-50 |\n| :--- | :---: | :---: | :---: | :---: | :---: |\n| Days | 22 | 10 | 8 | 15 | 5 |",
+              "steps": [
+                {
+                  "explanation": "1. **Prepare Coordinates:** We need (Upper Limit, Cumulative Frequency).\n* Upper Limit 10: cf = 22 -> Point (10, 22)\n* Upper Limit 20: cf = 22+10=32 -> Point (20, 32)\n* Upper Limit 30: cf = 32+8=40 -> Point (30, 40)\n* Upper Limit 40: cf = 40+15=55 -> Point (40, 55)\n* Upper Limit 50: cf = 55+5=60 -> Point (50, 60)"
+                },
+                {
+                  "explanation": "2. **Plotting:** Plot these points on a graph paper with Rainfall on X-axis and Cumulative Days on Y-axis. Join them with a smooth freehand curve."
+                },
+                {
+                  "explanation": "3. **Finding Median:**\nTotal $N = 60$. So $N/2 = 30$.\nLocate 30 on the Y-axis.\nDraw a horizontal line to meet the curve.\nDrop a perpendicular to the X-axis.\nReading the graph, the X-value is approx 18."
+                },
+                {
+                  "explanation": "**Calculation Check:** Median Class 10-20. $l=10, cf=22, f=10, h=10$.\nWait, Median class logic check: $N/2=30$. cf for 0-10 is 22. Next cf is 32. So 30 is in 10-20 class. Correct.\nFormula: $10 + ((30-22)/10)*10 = 10 + 8 = 18$."
+                }
+              ],
+              "finalAnswer": "Median is 18 mm."
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Less Than Ogive",
+            "functions": [],
+            "points": [
+              { "x": 10, "y": 22, "label": "(10, 22)" },
+              { "x": 20, "y": 32, "label": "(20, 32)" },
+              { "x": 30, "y": 40, "label": "(30, 40)" },
+              { "x": 40, "y": 55, "label": "(40, 55)" },
+              { "x": 50, "y": 60, "label": "(50, 60)" }
+            ],
+            "xRange": [0, 60],
+            "yRange": [0, 70],
+            "xLabel": "Upper Limits",
+            "yLabel": "Cumulative Frequency"
+          }
+        },
+        {
+          "id": "topic_13_6_empirical_relation",
+          "title": "13.6 The Empirical Relationship",
+          "content": "### 6. Connecting the Three Measures\nFor a perfectly symmetrical distribution (like a Bell Curve), the Mean, Median, and Mode are exactly the same point (the center peak). \n\nHowever, most real-world data is skewed (tilted to one side). In such cases, these three measures drift apart. Statisticians observed an approximate relationship between them for moderately skewed distributions:\n\n$$ 3 \\times \\text{Median} = \\text{Mode} + 2 \\times \\text{Mean} $$\n\n**Interpretation:** The Median always sits *between* the Mode and the Mean. The distance between the Mean and the Mode is roughly three times the distance between the Mean and the Median.\n\n**Utility:** This formula is incredibly useful when calculating one measure is difficult, but the other two are known. For example, finding the Mode from a histogram is easy, and Mean is standard. We can then estimate the Median quickly.",
+          "formulas": [
+            "\\text{Mode} = 3(\\text{Median}) - 2(\\text{Mean})"
+          ],
+          "examples": [],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_13_7_practice_compendium",
+          "title": "13.7 Practice Bank & Formula Compendium",
+          "content": "### 7. Comprehensive Practice Bank\n\n#### Section A: Understanding Basics (10 Questions)\n1.  Define Class Mark. How is it calculated?\n2.  What is the relationship between Mean, Median, and Mode?\n3.  Why do we need to convert inclusive classes (1-10, 11-20) to exclusive ones (0.5-10.5) for finding the Median?\n4.  Which measure of central tendency is found using an Ogive?\n5.  If the mean of 5 observations $x, x+2, x+4, x+6, x+8$ is 11, find the value of $x$.\n6.  Write the formula for the Mode of grouped data.\n7.  Find the class mark of the interval 10 – 25.\n8.  If the mode of a distribution is 8 and mean is 8, what can you say about the median?\n9.  In the formula $\\bar{x} = a + \\frac{\\sum f_i u_i}{\\sum f_i} \\times h$, what does $u_i$ represent?\n10. Can the cumulative frequency of a class be smaller than the cumulative frequency of the preceding class?\n\n#### Section B: Calculation & Application (10 Questions)\n11. Find the mean of the following data: Class 0-10 (7), 10-20 (10), 20-30 (15), 30-40 (8), 40-50 (10).\n12. Calculate the mode of the following frequency distribution: Marks 10-20 (14), 20-30 (13), 30-40 (12), 40-50 (20), 50-60 (11).\n13. Given the median is 28.5. Find missing frequencies $x$ and $y$ if Total N=60. Classes: 0-10(5), 10-20(x), 20-30(20), 30-40(15), 40-50(y), 50-60(5).\n14. Construct a 'Less than' ogive for the data in Q11 and find the median graphically.\n15. The mean of the following distribution is 50. Find the missing frequency $f$. Classes: 0-20(17), 20-40(f), 40-60(32), 60-80(24), 80-100(19).\n16. Find the median of the following data: 19, 25, 59, 48, 35, 31, 30, 32, 51. If 25 is replaced by 52, what is the new median?\n17. Calculate the mean using the Step-Deviation method for the data: 100-150 (4), 150-200 (5), 200-250 (12), 250-300 (2), 300-350 (2).\n18. If the mode of a distribution is 55 and the modal class is 45-60 with frequency 15, preceding frequency 10, and succeeding frequency 10, find the class size (Check consistency).\n19. Convert the following inclusive series into exclusive and find the median class: 10-19(2), 20-29(4), 30-39(8), 40-49(9).\n20. Using the Empirical Formula, find the Mode if Mean = 24 and Median = 25.\n\n#### Section C: Interpretation & Reasoning (Must Practice)\n21. **(Must Practice)** A student calculated the mean of 20 observations as 45. Later, it was found that two observations 18 and 32 were recorded as 81 and 23. Find the correct mean.\n22. **(Must Practice)** \"The median wage is ₹500, but the mean wage is ₹800.\" Explain what this tells you about the income inequality in the factory.\n23. **(Must Practice)** Why is the Mode not a good measure of central tendency if the data set is \"1, 2, 3, 4, 5, 100\"? (Hint: No repetition).\n24. **(Must Practice)** The median of a data set is 40. If every observation is increased by 5, what will be the new median? Prove it logicallly.\n25. **(Must Practice)** Draw 'Less than' and 'More than' ogives on the same axes. What is the significance of their intersection point? Verify with a small dataset.\n26. **(Must Practice)** Comparing two cricket players: Player A has a mean of 50 and mode 10. Player B has a mean of 30 and mode 30. Who is more consistent? Discuss.\n27. **(Must Practice)** Find the mean, median, and mode of the following data: 5, 10, 10, 12, 13. Verify the empirical relationship. Is it exact? Why or why not?\n28. **(Must Practice)** Explain geometrically why the area of a histogram represents the total frequency.\n29. **(Must Practice)** If the class marks of a distribution are 15, 20, 25, 30... find the class size and the class limits of the first class.\n30. **(Must Practice)** In a hospital, the ages of patients are recorded. Which measure of central tendency is most useful for ordering medicines stocks: Mean age or Modal age? Justify.\n\n---\n\n### 8. Formula Compendium\n\n**1. Class Mark**\n$$x_i = \\frac{\\text{Upper Limit} + \\text{Lower Limit}}{2}$$\n\n**2. Arithmetic Mean**\n* **Direct Method:** $$\\bar{x} = \\frac{\\sum f_i x_i}{\\sum f_i}$$\n* **Assumed Mean Method:** $$\\bar{x} = a + \\frac{\\sum f_i d_i}{\\sum f_i}$$ (where $d_i = x_i - a$)\n* **Step-Deviation Method:** $$\\bar{x} = a + \\left( \\frac{\\sum f_i u_i}{\\sum f_i} \\right) \\times h$$ (where $u_i = \\frac{x_i - a}{h}$)\n\n**3. Mode**\n$$ \\text{Mode} = l + \\left( \\frac{f_1 - f_0}{2f_1 - f_0 - f_2} \\right) \\times h $$\n\n**4. Median**\n$$ \\text{Median} = l + \\left( \\frac{\\frac{N}{2} - cf}{f} \\right) \\times h $$\n\n**5. Empirical Relationship**\n$$ 3 \\times \\text{Median} = \\text{Mode} + 2 \\times \\text{Mean} $$",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "id": "11_13",
+  "classId": 11,
+  "title": "Statistics",
+  "description": "Moving beyond averages to the measurement of uncertainty and spread. This chapter introduces Measures of Dispersion (Range, Mean Deviation, Variance, Standard Deviation) and provides the mathematical framework for analyzing data consistency, essential for Data Science and Physics.",
+  "topics": [
+    {
+      "id": "11_13_1",
+      "title": "Introduction: Why Central Tendency is Not Enough",
+      "content": "### 1. The Limitation of Averages\nIn earlier classes, we learned about **Measures of Central Tendency**: Mean ($\\bar{x}$), Median ($M$), and Mode ($Z$). These give us a single value that represents the entire data set. However, an average alone can be misleading.\n\n**Consider this example:**\nTwo cricketers, Player A and Player B, have the following scores in 5 matches:\n* **Player A:** 48, 50, 53, 49, 50. (Mean = 50)\n* **Player B:** 0, 0, 100, 100, 50. (Mean = 50)\n\nBoth have the same mean score of 50. However, Player A is consistent, while Player B is volatile (unreliable). The mean fails to capture this **variability** or **spread**.\n\n### 2. Dispersion\nTo understand data fully, we need to know how 'scattered' the data points are around the average. This property is called **Dispersion**.\n\n**Measures of Dispersion:**\n1.  **Range:** The simplest measure (Max - Min).\n2.  **Quartile Deviation:** Based on the middle 50% of data.\n3.  **Mean Deviation:** The average of absolute differences from the center.\n4.  **Standard Deviation (and Variance):** The most mathematically robust measure, based on squared differences.\n\n### 3. Range\n$$ \\text{Range} = \\text{Maximum Value} - \\text{Minimum Value} $$\n* *Pros:* Easy to calculate.\n* *Cons:* Very sensitive to outliers. It ignores the pattern of distribution between the extremes.",
+      "examples": [
+        {
+          "id": "ex_13_1",
+          "question": "Calculate the range of the following data: 35, 48, 92, 12, 15, 76.",
+          "solution": "1.  Identify the maximum value ($L$): 92\n2.  Identify the minimum value ($S$): 12\n3.  Range = $L - S = 92 - 12 = 80$."
+        }
+      ]
+    },
+    {
+      "id": "11_13_2",
+      "title": "Mean Deviation (M.D.)",
+      "content": "### 1. The Logic of Mean Deviation\nWe want to calculate the average distance of all data points from a central value (Mean $\\bar{x}$ or Median $M$).\nIf we simply take the sum of deviations $\\sum (x_i - \\bar{x})$, the result is always **zero** because positive and negative deviations cancel each other out. \n\nTo fix this, we take the **absolute value** (modulus) of the deviations.\n\n### 2. Mean Deviation for Ungrouped Data\nFor $n$ observations $x_1, x_2, ..., x_n$:\n\n**A. About Mean ($\\bar{x}$):**\n$$ M.D.(\\bar{x}) = \\frac{\\sum_{i=1}^{n} |x_i - \\bar{x}|}{n} $$\n\n**B. About Median ($M$):**\n$$ M.D.(M) = \\frac{\\sum_{i=1}^{n} |x_i - M|}{n} $$\n\n### 3. Mean Deviation for Grouped Data\n\n**A. Discrete Frequency Distribution:**\nIf data points $x_i$ occur with frequencies $f_i$:\n$$ M.D.(\\bar{x}) = \\frac{\\sum_{i=1}^{n} f_i |x_i - \\bar{x}|}{N} $$\nwhere $N = \\sum f_i$.\n\n**B. Continuous Frequency Distribution:**\n1.  Find the midpoint ($x_i$) of each class interval.\n2.  Calculate Mean $\\bar{x}$ or Median $M$ using standard formulas.\n3.  Apply the formula: $M.D. = \\frac{1}{N} \\sum f_i |x_i - A|$ (where $A$ is mean/median).\n\n### 4. Key Property\nThe Mean Deviation is **minimum** when measured from the **Median**. This makes the median the central point that minimizes the total absolute error.",
+      "examples": [
+        {
+          "id": "ex_13_2",
+          "question": "Find the Mean Deviation about the Mean for the data: 6, 7, 10, 12, 13, 4, 8, 12.",
+          "solution": "1.  **Calculate Mean ($\\bar{x}$):**\n    $$ \\bar{x} = \\frac{6+7+10+12+13+4+8+12}{8} = \\frac{72}{8} = 9 $$\n\n2.  **Calculate Absolute Deviations $|x_i - 9|$:**\n    * $|6-9| = 3$\n    * $|7-9| = 2$\n    * $|10-9| = 1$\n    * $|12-9| = 3$\n    * $|13-9| = 4$\n    * $|4-9| = 5$\n    * $|8-9| = 1$\n    * $|12-9| = 3$\n\n3.  **Sum of Deviations:** $3+2+1+3+4+5+1+3 = 22$.\n\n4.  **Calculate M.D.:**\n    $$ M.D.(\\bar{x}) = \\frac{22}{8} = 2.75 $$"
+        }
+      ]
+    },
+    {
+      "id": "11_13_3",
+      "title": "Variance and Standard Deviation",
+      "content": "### 1. Why Not Just Mean Deviation?\nWhile Mean Deviation is intuitive, the modulus function $|x|$ is not differentiable at 0 and is algebraically difficult to handle in higher mathematics. To avoid negative signs without using modulus, we **square** the deviations.\n\n### 2. Variance ($\\sigma^2$)\nThe mean of the squares of the deviations from the mean is called **Variance**.\n\n**Formula (Ungrouped Data):**\n$$ \\sigma^2 = \\frac{1}{n} \\sum_{i=1}^{n} (x_i - \\bar{x})^2 $$\n\n**Alternate Computational Formula:**\nExpanding $(x_i - \\bar{x})^2$ allows for faster calculation:\n$$ \\sigma^2 = \\frac{1}{n} \\sum x_i^2 - \\left( \\frac{\\sum x_i}{n} \\right)^2 $$\n*(Mean of Squares minus Square of Mean)*\n\n### 3. Standard Deviation ($\\sigma$)\nVariance has units that are the square of the original data (e.g., $cm^2$ vs $cm$). To bring the measure back to the original scale, we take the positive square root.\n\n$$ \\sigma = \\sqrt{\\text{Variance}} = \\sqrt{\\frac{1}{n} \\sum (x_i - \\bar{x})^2} $$\n\n### 4. For Discrete Frequency Distribution\n$$ \\sigma^2 = \\frac{1}{N} \\sum_{i=1}^{n} f_i (x_i - \\bar{x})^2 $$\nOR\n$$ \\sigma^2 = \\frac{1}{N} \\sum f_i x_i^2 - \\left( \\frac{\\sum f_i x_i}{N} \\right)^2 $$\n\n### 5. Step-Deviation Method (Continuous Data)\nWhen values of $x_i$ are large, we use the transformation $y_i = \\frac{x_i - A}{h}$.\n\n$$ \\sigma_x = h \\cdot \\sigma_y $$\n$$ \\sigma_x = h \\sqrt{ \\frac{1}{N} \\sum f_i y_i^2 - \\left( \\frac{\\sum f_i y_i}{N} \\right)^2 } $$\n\n**Note:** Variance is independent of the change of origin but depends on the scale. Standard deviation is multiplied by $|h|$ when scale is changed by factor $h$.",
+      "examples": [
+        {
+          "id": "ex_13_3",
+          "question": "Find the Variance and Standard Deviation of: 6, 8, 10, 12, 14.",
+          "solution": "1.  **Mean ($\\bar{x}$):** $\\frac{6+8+10+12+14}{5} = \\frac{50}{5} = 10$.\n2.  **Deviations $(x_i - 10)$:** $-4, -2, 0, 2, 4$.\n3.  **Squared Deviations $(x_i - 10)^2$:** $16, 4, 0, 4, 16$.\n4.  **Sum of Squares:** $16+4+0+4+16 = 40$.\n5.  **Variance ($\\sigma^2$):** $\\frac{40}{5} = 8$.\n6.  **Standard Deviation ($\\sigma$):** $\\sqrt{8} = 2\\sqrt{2} \\approx 2.828$."
+        },
+        {
+          "id": "ex_13_4",
+          "question": "Calculate SD for the following distribution:\n   x: 4, 8, 11, 17, 20, 24, 32\n   f: 3, 5, 9, 5, 4, 3, 1",
+          "solution": "We use the table method.\n$N = \\sum f = 30$.\nCalculate $\\sum fx$ and $\\sum fx^2$.\n1.  $fx$: $12, 40, 99, 85, 80, 72, 32 \\implies \\sum fx = 420$.\n    Mean $\\bar{x} = 420/30 = 14$.\n2.  $fx^2$: $48, 320, 1089, 1445, 1600, 1728, 1024 \\implies \\sum fx^2 = 7254$.\n3.  Variance $\\sigma^2 = \\frac{7254}{30} - (14)^2 = 241.8 - 196 = 45.8$.\n4.  SD $\\sigma = \\sqrt{45.8} \\approx 6.77$."
+        }
+      ]
+    },
+    {
+      "id": "11_13_4",
+      "title": "Analysis of Frequency Distributions",
+      "content": "### 1. Coefficient of Variation (C.V.)\nStandard deviation depends on units. We cannot compare the dispersion of \"heights in cm\" with \"weights in kg\" directly using $\\sigma$. We need a unit-less relative measure.\n\n$$ \\text{C.V.} = \\frac{\\sigma}{\\bar{x}} \\times 100 $$\n\n* **Interpretation:** The distribution with a **lower C.V.** is more consistent (or less variable). The one with higher C.V. is more variable.\n\n### 2. Properties of Variance (JEE Extensions)\n\n**A. Change of Origin and Scale:**\nLet $y_i = a x_i + b$.\n* Mean: $\\bar{y} = a\\bar{x} + b$\n* Variance: $\\sigma_y^2 = a^2 \\sigma_x^2$ (Independent of $b$)\n* S.D.: $\\sigma_y = |a| \\sigma_x$\n\n**B. Variance of Combined Series:**\nIf Group 1 has size $n_1$, mean $\\bar{x}_1$, variance $\\sigma_1^2$ and Group 2 has size $n_2$, mean $\\bar{x}_2$, variance $\\sigma_2^2$:\nCombined Mean $\\bar{x}_{12} = \\frac{n_1\\bar{x}_1 + n_2\\bar{x}_2}{n_1+n_2}$.\nCombined Variance:\n$$ \\sigma_{12}^2 = \\frac{n_1(\\sigma_1^2 + d_1^2) + n_2(\\sigma_2^2 + d_2^2)}{n_1+n_2} $$\nWhere $d_1 = \\bar{x}_1 - \\bar{x}_{12}$ and $d_2 = \\bar{x}_2 - \\bar{x}_{12}$.\n\n**C. Variance of First $n$ Natural Numbers:**\n$$ \\sigma^2 = \\frac{n^2 - 1}{12} $$\n*Derivation:* Uses $\\sum n = \\frac{n(n+1)}{2}$ and $\\sum n^2 = \\frac{n(n+1)(2n+1)}{6}$.",
+      "examples": [
+        {
+          "id": "ex_13_5",
+          "question": "Two plants A and B produce bulbs. \nPlant A: Mean life = 1200 hrs, SD = 100 hrs.\nPlant B: Mean life = 1000 hrs, SD = 90 hrs.\nWhich plant produces more consistent bulbs?",
+          "solution": "We calculate Coefficient of Variation (C.V.).\n1.  **Plant A:**\n    $C.V._A = \\frac{100}{1200} \\times 100 = 8.33\\%$\n2.  **Plant B:**\n    $C.V._B = \\frac{90}{1000} \\times 100 = 9\\%$\n\nSince $C.V._A < C.V._B$, Plant A is more consistent."
+        },
+        {
+          "id": "ex_13_6",
+          "question": "If the variance of 10 observations is 4, and each observation is multiplied by 3, what is the new variance?",
+          "solution": "Let original observations be $x_i$.\nNew observations $y_i = 3x_i$. (Scale change $a=3, b=0$).\nFormula: $\\sigma_y^2 = a^2 \\sigma_x^2$.\nNew Variance = $3^2 \\times 4 = 9 \\times 4 = 36$."
+        }
+      ]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "fmt_13_1",
+      "label": "Mean Deviation (Ungrouped)",
+      "tex": "M.D.(\\bar{x}) = \\frac{\\sum |x_i - \\bar{x}|}{n}"
+    },
+    {
+      "id": "fmt_13_2",
+      "label": "Mean Deviation (Grouped)",
+      "tex": "M.D. = \\frac{\\sum f_i |x_i - A|}{N}"
+    },
+    {
+      "id": "fmt_13_3",
+      "label": "Variance (Ungrouped)",
+      "tex": "\\sigma^2 = \\frac{1}{n} \\sum (x_i - \\bar{x})^2 = \\frac{\\sum x_i^2}{n} - (\\frac{\\sum x_i}{n})^2"
+    },
+    {
+      "id": "fmt_13_4",
+      "label": "Variance (Grouped)",
+      "tex": "\\sigma^2 = \\frac{1}{N} \\sum f_i (x_i - \\bar{x})^2"
+    },
+    {
+      "id": "fmt_13_5",
+      "label": "Standard Deviation",
+      "tex": "\\sigma = \\sqrt{\\sigma^2}"
+    },
+    {
+      "id": "fmt_13_6",
+      "label": "Step Deviation Formula",
+      "tex": "\\sigma_x = h \\sqrt{\\frac{\\sum f_i y_i^2}{N} - (\\frac{\\sum f_i y_i}{N})^2}, \\quad y_i = \\frac{x_i - A}{h}"
+    },
+    {
+      "id": "fmt_13_7",
+      "label": "Coefficient of Variation",
+      "tex": "C.V. = \\frac{\\sigma}{\\bar{x}} \\times 100"
+    },
+    {
+      "id": "fmt_13_8",
+      "label": "Variance of First n Natural Numbers",
+      "tex": "\\sigma^2 = \\frac{n^2 - 1}{12}"
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "id": "pq_13_1",
+      "question": "Find the mean deviation about the median for the data: 13, 17, 16, 14, 11, 13, 10, 16, 11, 18, 12, 17.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "pq_13_2",
+      "question": "If the standard deviation of numbers 2, 3, a and 11 is 3.5, find the value of a.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_13_3",
+      "question": "The mean and variance of 7 observations are 8 and 16, respectively. If 5 of the observations are 2, 4, 10, 12, 14, find the remaining two observations.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_13_4",
+      "question": "Find the coefficient of variation for the following distribution: Class: 0-10, 10-20, ... Freq: 5, 10, ... (Complete table in textbook style).",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_13_5",
+      "question": "Prove that the sum of the squares of deviations is minimum when taken about the mean.",
+      "difficulty": "Hard (Conceptual)"
+    },
+    {
+      "id": "pq_13_6",
+      "question": "The mean and standard deviation of 100 observations were calculated as 40 and 5.1. Later, it was found that one observation was misread as 50 instead of 40. Find the correct mean and standard deviation.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": "pq_13_7",
+      "question": "If each observation of a data set is increased by 5, what happens to the Mean and Standard Deviation?",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "pq_13_8",
+      "question": "Find the variance of the first 20 natural numbers.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "pq_13_9",
+      "question": "Two groups of students have the following stats: Group A (50 students, Mean 60, SD 10), Group B (100 students, Mean 55, SD 12). Find the combined variance.",
+      "difficulty": "Hard (JEE)"
+    },
+    {
+      "id": "pq_13_10",
+      "question": "If the coefficient of variation is 50% and the standard deviation is 20, find the arithmetic mean.",
+      "difficulty": "Easy"
+    }
+  ]
+}

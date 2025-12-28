@@ -1,0 +1,186 @@
+{
+  "id": "11_1",
+  "classId": 11,
+  "title": "Sets",
+  "description": "The foundational language of modern mathematics, covering set theory, logical operations, algebraic laws, and advanced cardinality concepts for IIT-JEE.",
+  "topics": [
+    {
+      "id": "11_1_1",
+      "title": "Introduction and Definitions",
+      "content": "### 1. The Foundation of Mathematics\n\n**\"No one shall expel us from the paradise that Cantor has created.\"** — *David Hilbert*\n\nThe theory of sets is the bedrock upon which all of modern mathematics rests. Whether we are discussing sequences, probability, calculus functions, or geometric points, we are ultimately discussing **sets** of objects. \n\nDeveloped by the German mathematician **Georg Cantor (1845-1918)** while working on trigonometric series, set theory provides the rigorous logical framework to define collections of objects.\n\n### 2. Definition of a Set\n\nA **set** is a **well-defined collection of distinct objects**.\n\n#### What does \"Well-Defined\" mean?\nA collection is well-defined if there is a clear, unambiguous rule to decide whether a particular object belongs to the collection or not. There must be no subjectivity.\n\n**Examples of Well-Defined Sets:**\n* The collection of all vowels in the English alphabet: $V = \\{a, e, i, o, u\\}$. (Rule is absolute)\n* The collection of roots of the equation $x^2 - 5x + 6 = 0$. (Rule is mathematical)\n* The collection of all rivers in India. (Geographically defined)\n\n**Examples of Not Well-Defined Collections (NOT Sets):**\n* *The collection of \"good\" cricket players.* (Subjective: \"Good\" is matter of opinion)\n* *The collection of \"difficult\" problems in mathematics.* (Subjective)\n* *The collection of \"large\" numbers.* (Undefined boundary)\n\n### 3. Notation\n* Sets are usually denoted by **capital letters**: $A, B, C, X, Y, Z$.\n* Elements (or members) are denoted by **small letters**: $a, b, c, x, y, z$.\n* **Membership Symbol ($\u2208$):**\n    * If $a$ is an element of set $A$, we write **$a \\in A$** (read as \"$a$ belongs to $A$\").\n    * If $b$ is *not* an element of set $A$, we write **$b \\notin A$** (read as \"$b$ does not belong to $A$\").",
+      "examples": [
+        {
+          "id": "ex_1_1",
+          "question": "Which of the following are sets? Justify your answer.\n1. The collection of all months of a year beginning with the letter J.\n2. The collection of ten most talented writers of India.\n3. The collection of all natural numbers less than 100.",
+          "solution": "**1. Set.** The rule is clear. Elements are $\\{January, June, July\\}$. We can definitely say 'August' is not in the set.\n**2. Not a Set.** \"Most talented\" is vague and subjective. One person's choice differs from another's.\n**3. Set.** The elements are $\\{1, 2, 3, ..., 99\\}$. The condition is mathematically precise."
+        },
+        {
+          "id": "ex_1_2",
+          "question": "Let $A$ be the set of all prime factors of 30. Insert $\\in$ or $\\notin$:\n1. 3 __ A\n2. 15 __ A\n3. 5 __ A",
+          "solution": "First, find the prime factors of 30: $30 = 2 \\times 3 \\times 5$.\nSo, $A = \\{2, 3, 5\\}$.\n\n1. $3 \\in A$ (Since 3 is a prime factor)\n2. $15 \\notin A$ (15 is a factor, but not a *prime* factor)\n3. $5 \\in A$ (5 is a prime factor)"
+        }
+      ]
+    },
+    {
+      "id": "11_1_2",
+      "title": "Representation of Sets",
+      "content": "There are two primary methods to represent a set. Understanding the conversion between these forms is crucial for solving algebraic set problems.\n\n### 1. Roster or Tabular Form\nIn this form, all elements are **listed**, separated by **commas**, and enclosed within **curly braces** $\\{\\}$.\n\n**Key Rules:**\n* **Order does not matter:** $\\{1, 2, 3\\}$ is the same as $\\{3, 1, 2\\}$.\n* **Repetition is ignored:** A set contains distinct elements. Writing $\\{S, C, H, O, O, L\\}$ is incorrect; it is simply $\\{S, C, H, O, L\\}$.\n\n**Example:**\n* Set of even positive integers less than 7: $\\{2, 4, 6\\}$.\n\n### 2. Set-Builder Form (Property Method)\nIn this form, we define the set by a **single common property** $P(x)$ possessed by all elements $x$ in the set.\n\n**Syntax:**\n$$ A = \\{ x : P(x) \\} $$\nRead as: \"The set of all $x$ such that $x$ satisfies property $P$.\"\n\n**Example:**\n* $V = \\{ x : x \\text{ is a vowel in the English alphabet} \\}$\n* $A = \\{ x : x \\in \\mathbb{N} \\text{ and } 3 < x < 10 \\}$\n\n### 3. Important Number Sets\nThroughout mathematics, standard symbols are used for specific infinite sets:\n* **$\\mathbb{N}$**: Natural numbers $\\{1, 2, 3, ...\\}$\n* **$\\mathbb{W}$**: Whole numbers $\\{0, 1, 2, ...\\}$\n* **$\\mathbb{Z}$**: Integers $\\{..., -2, -1, 0, 1, 2, ...\\}$\n* **$\\mathbb{Q}$**: Rational numbers $\\{ p/q : p,q \\in \\mathbb{Z}, q \\neq 0 \\}$\n* **$\\mathbb{Q}^c$ or $\\mathbb{T}$**: Irrational numbers\n* **$\\mathbb{R}$**: Real numbers\n* **$\\mathbb{Z}^+, \\mathbb{R}^+$**: Positive integers, Positive real numbers",
+      "examples": [
+        {
+          "id": "ex_1_3",
+          "question": "Write the solution set of the equation $x^2 + x - 2 = 0$ in roster form.",
+          "solution": "1. Solve the quadratic equation:\n   $$x^2 + 2x - x - 2 = 0$$\n   $$x(x+2) - 1(x+2) = 0$$\n   $$(x-1)(x+2) = 0$$\n   $$x = 1, -2$$\n2. The set is $\\{1, -2\\}$."
+        },
+        {
+          "id": "ex_1_4",
+          "question": "Write the set $A = \\{1, 4, 9, 16, 25, ...\\}$ in set-builder form.",
+          "solution": "Observe the pattern: \n$1 = 1^2$\n$4 = 2^2$\n$9 = 3^2$\n...\nEach element is the square of a natural number.\n$$ A = \\{ x : x = n^2, n \\in \\mathbb{N} \\} $$"
+        },
+        {
+          "id": "ex_1_5",
+          "question": "Write the set $B = \\{ \\frac{1}{2}, \\frac{2}{3}, \\frac{3}{4}, \\frac{4}{5}, \\frac{5}{6}, \\frac{6}{7} \\}$ in set-builder form.",
+          "solution": "Analyze the numerators ($n$) and denominators ($d$):\n* Numerators: $1, 2, 3, 4, 5, 6$ (Natural numbers $\\le 6$)\n* Denominators: $2, 3, 4, 5, 6, 7$ (Exactly $n + 1$)\n\nThus:\n$$ B = \\left\\{ x : x = \\frac{n}{n+1}, n \\in \\mathbb{N} \\text{ and } 1 \\le n \\le 6 \\right\\} $$"
+        }
+      ]
+    },
+    {
+      "id": "11_1_3",
+      "title": "Types of Sets",
+      "content": "### 1. The Empty Set\nA set containing **no elements** is called the **empty set**, **null set**, or **void set**.\n\n**Notation:** $\\phi$ or $\\{\\}$.\n* **Note:** $\\{0\\}$ is NOT empty; it contains the element 0.\n* **Note:** $\\{\\phi\\}$ is NOT empty; it is a set containing the empty set.\n\n**Examples:**\n* $\\{ x : x \\in \\mathbb{R} \\text{ and } x^2 = -1 \\} = \\phi$ (No real number squares to -1)\n* $\\{ x : x \\text{ is an odd integer divisible by 2} \\} = \\phi$\n\n### 2. Singleton Set\nA set containing **exactly one element**.\n* Example: $\\{ x : x \\in \\mathbb{N}, 3 < x < 5 \\} = \\{ 4 \\}$.\n\n### 3. Finite and Infinite Sets\n* **Finite Set:** A set that is empty or consists of a definite number of elements. Its **cardinality** $n(A)$ is a non-negative integer.\n    * Example: $A = \\{1, 2, 3, 4, 5\\}$, $n(A) = 5$.\n* **Infinite Set:** A set whose elements cannot be listed completely or counted to a finish.\n    * Example: Set of points on a line; Set of primes.\n\n### 4. Equal Sets\nTwo sets $A$ and $B$ are equal if they have **exactly the same elements**.\n$$ A = B \\iff (\\forall x, x \\in A \\iff x \\in B) $$\n\n* Example: $A = \\{1, 2\\}$, $B = \\{2, 1, 1\\}$. Here $A = B$.\n\n### 5. Equivalent Sets\nTwo finite sets $A$ and $B$ are equivalent if they have the **same number of elements**, i.e., same cardinality.\n$$ n(A) = n(B) $$\n* Equal sets are always equivalent, but equivalent sets need not be equal.\n* Example: $A = \\{1, 2, 3\\}$, $B = \\{a, b, c\\}$. $n(A)=n(B)=3$, so they are equivalent.",
+      "examples": [
+        {
+          "id": "ex_1_6",
+          "question": "State whether the set is finite or infinite: $A = \\{ x : x \\in \\mathbb{N} \\text{ and } (x-1)(x-2) = 0 \\}$.",
+          "solution": "Solve the equation: $(x-1)(x-2) = 0 \\implies x=1$ or $x=2$.\nBoth are natural numbers.\n$A = \\{1, 2\\}$.\nSince $n(A) = 2$, it is a **Finite set**."
+        },
+        {
+          "id": "ex_1_7",
+          "question": "Are sets $A = \\{x : x \\text{ is a letter in ALLOY}\\}$ and $B = \\{x : x \\text{ is a letter in LOYAL}\\}$ equal?",
+          "solution": "List distinct elements:\n* $A = \\{A, L, O, Y\\}$ (L is repeated, take once)\n* $B = \\{L, O, Y, A\\}$\nSince every element of $A$ is in $B$ and vice versa, **$A = B$**."
+        }
+      ]
+    },
+    {
+      "id": "11_1_4",
+      "title": "Subsets and Power Sets",
+      "content": "### 1. Subsets\nSet $A$ is a subset of set $B$ if **every element of $A$ is also an element of $B$**.\n\n**Definition:**\n$$ A \\subseteq B \\iff (\\forall x : x \\in A \\implies x \\in B) $$\n\n**Terminology:**\n* If $A \\subseteq B$, then $B$ is the **superset** of $A$ ($B \\supseteq A$).\n* If $A \\subseteq B$ and $A \\neq B$, then $A$ is a **proper subset** of $B$ ($A \\subset B$).\n* If $A = B$, then $A$ is an **improper subset** of $B$.\n\n**Important Properties:**\n1.  **Reflexive:** Every set is a subset of itself ($A \\subseteq A$).\n2.  **Empty Set:** $\\phi$ is a subset of every set ($\\phi \\subseteq A$).\n3.  **Transitive:** If $A \\subseteq B$ and $B \\subseteq C$, then $A \\subseteq C$.\n\n### 2. Intervals as Subsets of Real Numbers ($\\mathbb{R}$)\nLet $a, b \\in \\mathbb{R}$ and $a < b$.\n1.  **Open Interval $(a, b)$:** $\\{ x : a < x < b \\}$ (End points excluded)\n2.  **Closed Interval $[a, b]$:** $\\{ x : a \\le x \\le b \\}$ (End points included)\n3.  **Semi-Open/Closed $[a, b)$:** $\\{ x : a \\le x < b \\}$\n4.  **Semi-Open/Closed $(a, b]$:** $\\{ x : a < x \\le b \\}$\n\n**Length of interval** $= b - a$.\n\n### 3. Power Set\nThe collection of **all possible subsets** of a set $A$ is called the Power Set of $A$, denoted by $P(A)$.\n\n**Example:**\nIf $A = \\{1, 2\\}$, then subsets are $\\phi, \\{1\\}, \\{2\\}, \\{1, 2\\}$.\n$$ P(A) = \\{ \\phi, \\{1\\}, \\{2\\}, \\{1, 2\\} \\} $$\n\n**Theorem (Cardinality of Power Set):**\nIf $n(A) = m$, then $n(P(A)) = 2^m$.\n\n*Proof (Induction):*\n* Base: $m=0, A=\\phi, P(A)=\\{\\phi\\}, n=1=2^0$. True.\n* Assume true for $m=k$. Let set $B$ have $k+1$ elements. $B = A \\cup \\{x\\}$.\n* Subsets of $B$ either contain $x$ or don't.\n* Those that don't are subsets of $A$ ($2^k$ subsets).\n* Those that do are formed by adding $x$ to each subset of $A$ ($2^k$ subsets).\n* Total $= 2^k + 2^k = 2 \\cdot 2^k = 2^{k+1}$.\n\n### 4. Universal Set ($U$)\nA basic set containing all objects under consideration for a particular problem. All other sets in that context are subsets of $U$.",
+      "examples": [
+        {
+          "id": "ex_1_8",
+          "question": "Write down all subsets of $A = \\{ \\phi, 1 \\}$.",
+          "solution": "Let the elements be $x = \\phi$ and $y = 1$. So $A = \\{x, y\\}$.\nSubsets are:\n1. $\\phi$ (Null set)\n2. $\\{x\\} = \\{\\phi\\}$ (Singleton set containing empty set)\n3. $\\{y\\} = \\{1\\}$\n4. $\\{x, y\\} = \\{\\phi, 1\\} = A$\n\nTotal subsets: $2^2 = 4$."
+        },
+        {
+          "id": "ex_1_9",
+          "question": "If $A = \\{1, 2, 3\\}$, find $n(P(P(A)))$.",
+          "solution": "1. $n(A) = 3$.\n2. $n(P(A)) = 2^3 = 8$.\n3. Let $B = P(A)$. Then $n(B) = 8$.\n4. We need $n(P(B)) = 2^{n(B)} = 2^8 = 256$."
+        }
+      ]
+    },
+    {
+      "id": "11_1_5",
+      "title": "Set Operations and Venn Diagrams",
+      "content": "### 1. Venn Diagrams\nVisual representations where the **Universal Set ($U$)** is a rectangle and subsets are circles within it.\n\n### 2. Union of Sets ($A \\cup B$)\nThe set of elements which are in $A$, or in $B$, or in both.\n$$ A \\cup B = \\{ x : x \\in A \\lor x \\in B \\} $$\n\n**Properties:**\n* $A \\cup B = B \\cup A$ (Commutative)\n* $(A \\cup B) \\cup C = A \\cup (B \\cup C)$ (Associative)\n* $A \\cup \\phi = A$ (Identity)\n* $A \\cup A = A$ (Idempotent)\n* $A \\cup U = U$ (Domination)\n\n### 3. Intersection of Sets ($A \\cap B$)\nThe set of elements which are common to both $A$ and $B$.\n$$ A \\cap B = \\{ x : x \\in A \\land x \\in B \\} $$\n\n**Disjoint Sets:** If $A \\cap B = \\phi$, then $A$ and $B$ are disjoint (no common elements).\n\n**Properties:**\n* $A \\cap B = B \\cap A$\n* $(A \\cap B) \\cap C = A \\cap (B \\cap C)$\n* $A \\cap \\phi = \\phi$\n* $A \\cap U = A$\n* **Distributive Law:** $A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)$\n\n### 4. Difference of Sets ($A - B$)\nThe set of elements belonging to $A$ but NOT to $B$.\n$$ A - B = \\{ x : x \\in A \\land x \\notin B \\} $$\n* Also denoted as $A \\cap B^c$.\n* **Note:** $A - B \\neq B - A$ generally.\n\n### 5. Symmetric Difference ($A \\Delta B$)\nThe set of elements in either $A$ or $B$ but not in both.\n$$ A \\Delta B = (A - B) \\cup (B - A) = (A \\cup B) - (A \\cap B) $$\n\n### 6. Complement of a Set ($A'$ or $A^c$)\nThe set of elements in $U$ that are not in $A$.\n$$ A' = \\{ x : x \\in U \\land x \\notin A \\} = U - A $$\n\n**Properties:**\n* $(A')' = A$ (Involution)\n* $A \\cup A' = U$\n* $A \\cap A' = \\phi$\n* $\\phi' = U, U' = \\phi$",
+      "examples": [
+        {
+          "id": "ex_1_10",
+          "question": "If $A = \\{3, 5, 7, 9, 11\\}$, $B = \\{7, 9, 11, 13\\}$, $C = \\{11, 13, 15\\}$. Find $(A \\cup B) \\cap (B \\cup C)$.",
+          "solution": "1. $A \\cup B = \\{3, 5, 7, 9, 11, 13\\}$\n2. $B \\cup C = \\{7, 9, 11, 13, 15\\}$\n3. Intersection of these two:\n   Elements common are $\\{7, 9, 11, 13\\}$.\n   Result: $\\{7, 9, 11, 13\\}$."
+        },
+        {
+          "id": "ex_1_11",
+          "question": "Prove algebraically that $A - B = A \\cap B'$.",
+          "solution": "**Proof:**\nLet $x$ be an arbitrary element.\n$$ x \\in (A - B) $$\n$$ \\iff x \\in A \\text{ and } x \\notin B $$\n$$ \\iff x \\in A \\text{ and } x \\in B' \\quad (\\text{Def of complement}) $$\n$$ \\iff x \\in (A \\cap B') $$\nSince $x$ is arbitrary, $A - B = A \\cap B'$."
+        }
+      ]
+    },
+    {
+      "id": "11_1_6",
+      "title": "Algebra of Sets and De Morgan's Laws",
+      "content": "To solve complex problems at JEE level, one must master the algebraic manipulation of sets without relying solely on Venn diagrams.\n\n### 1. De Morgan's Laws\nThese laws relate the interaction between Union, Intersection, and Complement.\n\n**Law 1:** The complement of the union is the intersection of complements.\n$$ (A \\cup B)' = A' \\cap B' $$\n\n**Law 2:** The complement of the intersection is the union of complements.\n$$ (A \\cap B)' = A' \\cup B' $$\n\n**Rigorous Proof of Law 1:**\nLet $x$ be an arbitrary element.\n1.  Let $x \\in (A \\cup B)'$\n    $\\implies x \\notin (A \\cup B)$\n    $\\implies x \\notin A \\text{ AND } x \\notin B$\n    $\\implies x \\in A' \\text{ AND } x \\in B'$\n    $\\implies x \\in (A' \\cap B')$\n    $\\therefore (A \\cup B)' \\subseteq A' \\cap B'$\n\n2.  Let $y \\in (A' \\cap B')$\n    $\\implies y \\in A' \\text{ AND } y \\in B'$\n    $\\implies y \\notin A \\text{ AND } y \\notin B$\n    $\\implies y \\notin (A \\cup B)$\n    $\\implies y \\in (A \\cup B)'$\n    $\\therefore A' \\cap B' \\subseteq (A \\cup B)'$\n\nFrom 1 and 2, **$(A \\cup B)' = A' \\cap B'$**.\n\n### 2. Distributive Laws\n1.  $A \\cup (B \\cap C) = (A \\cup B) \\cap (A \\cup C)$\n2.  $A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)$\n\n### 3. Absorption Laws (Vital for simplification)\nThese laws allow reducing complex expressions instantly.\n1.  **$A \\cup (A \\cap B) = A$**\n2.  **$A \\cap (A \\cup B) = A$**\n\n*Proof of 1:* \n$A \\cup (A \\cap B)$\n$= (A \\cap U) \\cup (A \\cap B)$ (Identity law)\n$= A \\cap (U \\cup B)$ (Distributive)\n$= A \\cap U$ (Since $B \\subseteq U$)\n$= A$\n\n### 4. Important Identities for Problems\n* $A - B = A \\cap B'$\n* $A - (B \\cup C) = (A - B) \\cap (A - C)$\n* $A - (B \\cap C) = (A - B) \\cup (A - C)$",
+      "examples": [
+        {
+          "id": "ex_1_12",
+          "question": "Simplify the expression: $(A \\cup B) \\cap (A \\cup B')$.",
+          "solution": "Using Distributive Law in reverse:\n$$ (A \\cup B) \\cap (A \\cup B') $$\n$$ = A \\cup (B \\cap B') \\quad (\\text{Extracting common A}) $$\n$$ = A \\cup \\phi \\quad (\\text{Complement law}) $$\n$$ = A $$\n\n**Alternative method (Venn):**\n$A \\cup B$ is everything in A or B.\n$A \\cup B'$ is everything in A or outside B.\nThe intersection is just A."
+        },
+        {
+          "id": "ex_1_13",
+          "question": "Prove that if $A \\cup B = A \\cap B$, then $A = B$.",
+          "solution": "1. We know $A \\cap B \\subseteq A \\subseteq A \\cup B$.\n2. Given $A \\cup B = A \\cap B$, the inequality collapses:\n   $A \\cap B \\subseteq A \\subseteq A \\cap B$.\n   This implies $A = A \\cap B \\implies A \\subseteq B$.\n3. Similarly, $A \\cap B \\subseteq B \\subseteq A \\cup B$.\n   Implies $B = A \\cap B \\implies B \\subseteq A$.\n4. Since $A \\subseteq B$ and $B \\subseteq A$, therefore **$A = B$**."
+        }
+      ]
+    },
+    {
+      "id": "11_1_7",
+      "title": "Cardinality and Practical Problems",
+      "content": "For finite sets, we can establish relationships between the number of elements in unions and intersections.\n\n### 1. Basic Principle (Inclusion-Exclusion for 2 Sets)\n$$ n(A \\cup B) = n(A) + n(B) - n(A \\cap B) $$\n\n*Logic:* When we add $n(A)$ and $n(B)$, the intersection $A \\cap B$ is counted twice. We must subtract it once.\n\n### 2. Disjoint Sets\nIf $A \\cap B = \\phi$, then $n(A \\cup B) = n(A) + n(B)$.\n\n### 3. Difference Formula\n* $n(A - B) = n(A) - n(A \\cap B)$\n* $n(A \\Delta B) = n(A) + n(B) - 2n(A \\cap B)$\n\n### 4. Inclusion-Exclusion for 3 Sets (JEE Standard)\n$$ n(A \\cup B \\cup C) = n(A) + n(B) + n(C) - n(A \\cap B) - n(B \\cap C) - n(C \\cap A) + n(A \\cap B \\cap C) $$\n\n**Derivation:**\nLet $Y = B \\cup C$. Then $n(A \\cup Y) = n(A) + n(Y) - n(A \\cap Y)$.\nExpand $n(Y)$ and $n(A \\cap (B \\cup C))$ using distributive laws to arrive at the formula.",
+      "examples": [
+        {
+          "id": "ex_1_14",
+          "question": "In a survey of 60 people, 25 read H, 26 read T, 26 read I. 9 read H&I, 11 read H&T, 8 read T&I, 3 read all three. Find exact number of people who read only one newspaper.",
+          "solution": "Let $n(H)=25, n(T)=26, n(I)=26$.\nIntersections: $n(H \\cap I)=9, n(H \\cap T)=11, n(T \\cap I)=8$.\nAll three: $n(H \\cap T \\cap I)=3$.\n\n**Using Venn Diagram Formula for \"Only A\":**\n$$ n(\\text{Only H}) = n(H) - n(H \\cap T) - n(H \\cap I) + n(H \\cap T \\cap I) $$\n$$ = 25 - 11 - 9 + 3 = 8 $$\n\n$$ n(\\text{Only T}) = n(T) - n(T \\cap H) - n(T \\cap I) + n(T \\cap H \\cap I) $$\n$$ = 26 - 11 - 8 + 3 = 10 $$\n\n$$ n(\\text{Only I}) = n(I) - n(I \\cap H) - n(I \\cap T) + n(I \\cap H \\cap T) $$\n$$ = 26 - 9 - 8 + 3 = 12 $$\n\nTotal reading exactly one = $8 + 10 + 12 = 30$."
+        },
+        {
+          "id": "ex_1_15",
+          "question": "In a group of 50 students, the number of students studying French, English, Sanskrit were found to be as follows: French = 17, English = 13, Sanskrit = 15. French & English = 9, English & Sanskrit = 4, French & Sanskrit = 5, All three = 3. Find the number of students who study **at least** one of the three languages.",
+          "solution": "We need $n(F \\cup E \\cup S)$.\nFormula:\n$$ n(F \\cup E \\cup S) = n(F) + n(E) + n(S) - n(F \\cap E) - n(E \\cap S) - n(F \\cap S) + n(F \\cap E \\cap S) $$\n$$ = 17 + 13 + 15 - 9 - 4 - 5 + 3 $$\n$$ = 45 - 18 + 3 $$\n$$ = 30 $$\nSo, 30 students study at least one. (Implies 20 study none)."
+        }
+      ]
+    },
+    {
+      "id": "11_1_8",
+      "title": "Cartesian Product and Advanced Concepts",
+      "content": "### 1. Cartesian Product\nWhile sets are unordered, order matters in many mathematical structures (like coordinates). \n\n**Ordered Pair:** $(a, b)$ is a pair of objects where $a$ is the first component and $b$ is the second. \n* $(a, b) \\neq (b, a)$ unless $a=b$.\n\n**Definition:**\nGiven two non-empty sets $A$ and $B$, the Cartesian product $A \\times B$ is the set of all ordered pairs $(a, b)$ such that $a \\in A$ and $b \\in B$.\n$$ A \\times B = \\{ (a, b) : a \\in A, b \\in B \\} $$\n\n**Cardinality:** $n(A \\times B) = n(A) \\times n(B)$.\n\n### 2. IIT-JEE Extension: Countability\n* **Countable Set:** A set is countable if it is finite or can be put into one-to-one correspondence with Natural Numbers $\\mathbb{N}$. (e.g., $\\mathbb{Z}, \\mathbb{Q}$ are countable).\n* **Uncountable Set:** A set that is not countable. (e.g., $\\mathbb{R}, (0, 1)$).\n* **Cantor's Diagonal Argument:** Proves that real numbers are uncountable.\n\n### 3. Boolean Algebra of Sets\nSets under operations $\\cup, \\cap, '$ form a Boolean Algebra.\n**Duality Principle:** If an identity involving unions, intersections, and complements is true, then the identity obtained by swapping $\\cup \\leftrightarrow \\cap$ and $\\phi \\leftrightarrow U$ is also true.\n* Example: Dual of $A \\cup \\phi = A$ is $A \\cap U = A$.\n\n### 4. Relations (Preview)\nA relation $R$ from $A$ to $B$ is simply a **subset** of $A \\times B$.\nTotal number of relations from $A$ to $B$ = Number of subsets of $A \\times B$ = $2^{n(A)n(B)}$.",
+      "examples": [
+        {
+          "id": "ex_1_16",
+          "question": "If $A = \\{1, 2\\}$, find $A \\times A \\times A$.",
+          "solution": "$A \\times A = \\{ (1,1), (1,2), (2,1), (2,2) \\}$.\n$A \\times A \\times A$ consists of ordered triplets $(x, y, z)$.\nTotal elements = $2 \\times 2 \\times 2 = 8$.\n$A \\times A \\times A = \\{ (1,1,1), (1,1,2), (1,2,1), (1,2,2), (2,1,1), (2,1,2), (2,2,1), (2,2,2) \\}$."
+        },
+        {
+          "id": "ex_1_17",
+          "question": "Find the number of relations from Set A containing 3 elements to Set B containing 4 elements.",
+          "solution": "1. $n(A) = 3, n(B) = 4$.\n2. $n(A \\times B) = 3 \\times 4 = 12$.\n3. A relation is a subset of $A \\times B$.\n4. Number of subsets = $2^{12} = 4096$."
+        }
+      ]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "fmt_1",
+      "label": "Power Set Cardinality",
+      "tex": "n(P(A)) = 2^{n(A)}"
+    },
+    {
+      "id": "fmt_2",
+      "label": "Union-Intersection Relation (2 Sets)",
+      "tex": "n(A \\cup B) = n(A) + n(B) - n(A \\cap B)"
+    },
+    {
+      "id": "fmt_3",
+      "label": "Union-Intersection Relation (3 Sets)",
+      "tex": "n(A \\cup B \\cup C) = n(A) + n(B) + n(C) - n(A \\cap B) - n(B \\cap C) - n(C \\cap A) + n(A \\cap B \\cap C)"
+    },
+    {
+      "id": "fmt_4",
+      "label": "De Morgan's Laws",
+      "tex": "(A \\cup B)' = A' \\cap B' \\quad \\text{and} \\quad (A \\cap B)' = A' \\cup B'"
+    },
+    {
+      "id": "fmt_5",
+      "label": "Symmetric Difference",
+      "tex": "A \\Delta B = (A - B) \\cup (B - A) = (A \\cup B) - (A \\cap B)"
+    },
+    {
+      "id": "fmt_6",
+      "label": "Distributive Laws",
+      "tex": "A \\cup (B \\cap C) = (A \\cup B) \\cap (A \\cup C)"
+    },
+    {
+      "id": "fmt_7",
+      "label": "Difference Law",
+      "tex": "A - B = A \\cap B'"
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "id": "class_10",
+  "title": "Class 10",
+  "chapters": [
+    {
+      "id": "ch_11_areas_related_to_circles",
+      "title": "Ch 11: Areas Related to Circles",
+      "topics": [
+        {
+          "id": "topic_11_1_introduction_perimeter_area",
+          "title": "11.1 Perimeter and Area of a Circle: A Review",
+          "content": "### 1. Introduction: The Geometry of Curvature\nMost of the geometry you have studied so far—triangles, quadrilaterals, polygons—deals with straight lines. These are **linear** figures. The circle introduces a fundamental shift: **Curvature**. \n\nCalculating the boundary (perimeter) or the space occupied (area) by a curved figure requires a different mathematical toolset. This chapter bridges the gap between basic geometry and the powerful methods of calculus that you will encounter later.\n\n#### 1.1 The Circle: Definitions Revisited\nA **Circle** is the locus of all points in a plane that are at a fixed distance from a fixed point.\n* **Centre ($O$):** The fixed point.\n* **Radius ($r$):** The fixed distance.\n* **Diameter ($d$):** The longest chord passing through the centre ($d = 2r$).\n\n#### 1.2 The Constant $\\pi$ (Pi)\nWhenever we measure the boundary of a circle (Circumference) and divide it by its diameter, we get a constant value, regardless of the size of the circle.\n$$\\frac{\\text{Circumference}}{\\text{Diameter}} = \\pi$$\n\n* **Nature of $\\pi$:** It is an **Irrational Number**. Its decimal expansion is non-terminating and non-recurring ($3.14159\\dots$).\n* **Approximations:** For practical calculations, we often use $\\frac{22}{7}$ or $3.14$. However, these are *not* the exact values of $\\pi$.\n* **Historical Context:** Aryabhata (AD 476–550) gave a very accurate approximation: $62832/20000 = 3.1416$. Srinivasa Ramanujan derived extremely efficient infinite series to calculate $\\pi$.\n\n#### 1.3 Circumference (Perimeter)\nThe distance covered by travelling once around a circle.\nFrom the definition of $\\pi$:\n$$C = \\pi \\times d = \\pi \\times (2r) = 2\\pi r$$\n\n#### 1.4 Area of a Circle: The Intuitive Proof\nWhy is the area $\\pi r^2$? We can visualize this without advanced calculus.\n1.  **Slicing:** Imagine cutting a circle into a large number of equal sectors (like pizza slices).\n2.  **Rearranging:** Arrange these sectors in a row, alternating pointing up and down.\n3.  **Resulting Shape:** As the number of sectors increases towards infinity, the shape resembles a **Rectangle**.\n    * The **Length** of this rectangle is half the circumference (since half the arcs are on top, half on bottom) = $\\frac{1}{2} \\times 2\\pi r = \\pi r$.\n    * The **Breadth** (or height) corresponds to the radius = $r$.\n4.  **Calculation:** Area of Rectangle = Length $\\times$ Breadth = $(\\pi r) \\times r = \\pi r^2$.\n\nThus, the area of a circle is $\\pi r^2$.",
+          "formulas": [
+            "C = 2\\pi r",
+            "A = \\pi r^2",
+            "d = 2r",
+            "\\pi \\approx \\frac{22}{7} \\approx 3.14"
+          ],
+          "examples": [
+            {
+              "id": "ex_circ_area_1",
+              "question": "The cost of fencing a circular field at the rate of ₹24 per metre is ₹5280. The field is to be ploughed at the rate of ₹0.50 per m². Find the cost of ploughing the field.",
+              "steps": [
+                {
+                  "explanation": "1. **Analyze Fencing:** Fencing is done along the boundary, so it relates to the Circumference. Total Cost = Rate × Length."
+                },
+                {
+                  "explanation": "2. **Find Circumference:** Length = Total Cost / Rate = $5280 / 24 = 220$ m."
+                },
+                {
+                  "explanation": "3. **Find Radius:** Use formula $C = 2\\pi r$. \n$2 \\times \\frac{22}{7} \\times r = 220$.\n$r = \\frac{220 \\times 7}{2 \\times 22} = \\frac{220 \\times 7}{44} = 5 \\times 7 = 35$ m."
+                },
+                {
+                  "explanation": "4. **Find Area:** Ploughing relates to the Area. $A = \\pi r^2$.\n$A = \\frac{22}{7} \\times 35 \\times 35 = 22 \\times 5 \\times 35 = 110 \\times 35 = 3850 \\text{ m}^2$."
+                },
+                {
+                  "explanation": "5. **Calculate Cost:** Cost = Area × Rate = $3850 \\times 0.50 = 1925$."
+                }
+              ],
+              "finalAnswer": "₹1925"
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Circle Area Approximation",
+            "functions": [],
+            "shapes": [
+              { "type": "circle", "x": 0, "y": 0, "radius": 1, "color": "blue", "label": "Original Circle" },
+              { "type": "rect", "x1": 2, "y1": 0, "x2": 5.14, "y2": 1, "color": "green", "label": "Equivalent Rectangle (L=pi*r, W=r)" }
+            ],
+            "xRange": [-2, 6],
+            "yRange": [-2, 2]
+          }
+        },
+        {
+          "id": "topic_11_2_sector_of_circle",
+          "title": "11.2 Areas of Sector and Segment",
+          "content": "### 2. Slicing the Circle: Sectors and Segments\nUsually, we don't deal with full circles, but parts of them. We must distinguish between two types of \"slices\".\n\n#### 2.1 Sector of a Circle\nA **Sector** is the region enclosed by two radii and the corresponding arc.\n* **Minor Sector:** The smaller slice (angle $\\theta < 180^\\circ$).\n* **Major Sector:** The larger slice (angle $360^\\circ - \\theta$).\n* **Central Angle ($\\\\theta$):** The angle subtended by the arc at the centre.\n\n**Deriving Area of Sector:**\nWe use the **Unitary Method** based on angles.\n* Area of the complete circle (angle $360^\\circ$) is $\\pi r^2$.\n* Area corresponding to $1^\\circ$ is $\\frac{\\pi r^2}{360}$.\n* Therefore, area corresponding to angle $\\theta$ is:\n$$A_{\\text{sector}} = \\frac{\\theta}{360} \\times \\pi r^2$$\n\n**Deriving Length of Arc:**\nSimilarly, the total length of the circle is $2\\pi r$.\n* Length of arc corresponding to angle $\\theta$ is:\n$$L_{\\text{arc}} = \\frac{\\theta}{360} \\times 2\\pi r$$\n\n#### 2.2 Segment of a Circle\nA **Segment** is the region bounded by a **Chord** and the corresponding **Arc**.\n* **Minor Segment:** Enclosed by the chord and the minor arc.\n* **Major Segment:** Enclosed by the chord and the major arc.\n\n**Deriving Area of Segment:**\nThere is no direct formula for a segment based purely on $\\theta$ and $r$. We must decompose the figure.\n* Visualize the Sector containing the segment.\n* The Sector is composed of the **Segment** plus the **Triangle** formed by the two radii and the chord.\n* Therefore:\n$$\\text{Area of Segment} = \\text{Area of Sector} - \\text{Area of Triangle}$$\n$$A_{\\text{segment}} = \\left( \\frac{\\theta}{360} \\times \\pi r^2 \\right) - \\text{Area}(\\Delta OAB)$$\n\n#### 2.3 Area of Triangle $\\Delta OAB$\nFinding the area of the central triangle is the tricky part. We drop a perpendicular $OM$ to the chord $AB$.\n* Base of triangle = $AB$.\n* Height of triangle = $OM$.\n* Using trigonometry in $\\Delta OMA$ and $\\Delta OMB$:\n    * $AB = 2r \\sin(\\theta/2)$\n    * $OM = r \\cos(\\theta/2)$\n    * Area $= \\frac{1}{2} \\times \\text{Base} \\times \\text{Height} = \\frac{1}{2} (2r \\sin \\frac{\\theta}{2}) (r \\cos \\frac{\\theta}{2}) = r^2 \\sin \\frac{\\theta}{2} \\cos \\frac{\\theta}{2}$.\n    * Using the identity $\\sin \\theta = 2 \\sin(\\theta/2) \\cos(\\theta/2)$, this simplifies to:\n    $$\\text{Area}(\\Delta OAB) = \\frac{1}{2} r^2 \\sin \\theta$$\n    *(Note: For Class 10, calculating height and base manually for standard angles $60^\\circ, 90^\\circ$ is preferred over memorizing the sine formula directly, though the result is valid.)*\n\n**Special Cases:**\n* **$\\theta = 90^\\circ$:** Triangle is right-angled. Area $= \\frac{1}{2} r^2$.\n* **$\\theta = 60^\\circ$:** Triangle is equilateral. Area $= \\frac{\\sqrt{3}}{4} r^2$.",
+          "formulas": [
+            "A_{\\text{sector}} = \\frac{\\theta}{360} \\pi r^2",
+            "L_{\\text{arc}} = \\frac{\\theta}{360} 2\\pi r",
+            "A_{\\text{segment}} = A_{\\text{sector}} - A_{\\Delta}",
+            "A_{\\Delta} = \\frac{1}{2} r^2 \\sin \\theta"
+          ],
+          "examples": [
+            {
+              "id": "ex_sector_1",
+              "question": "Find the area of a sector of a circle with radius 6 cm if angle of the sector is 60°.",
+              "steps": [
+                {
+                  "explanation": "Given: $r = 6$ cm, $\\theta = 60^\\circ$."
+                },
+                {
+                  "explanation": "Formula: $A = \\frac{\\theta}{360} \\times \\pi r^2$."
+                },
+                {
+                  "explanation": "Substitute: $A = \\frac{60}{360} \\times \\frac{22}{7} \\times 6 \\times 6$."
+                },
+                {
+                  "explanation": "Simplify: $\\frac{1}{6} \\times \\frac{22}{7} \\times 36$."
+                },
+                {
+                  "explanation": "$A = \\frac{22}{7} \\times 6 = \\frac{132}{7} \\approx 18.86 \\text{ cm}^2$."
+                }
+              ],
+              "finalAnswer": "18.86 cm²"
+            },
+            {
+              "id": "ex_segment_1",
+              "question": "A chord of a circle of radius 10 cm subtends a right angle at the centre. Find the area of the corresponding: (i) Minor segment (ii) Major sector. (Use $\\pi = 3.14$)",
+              "steps": [
+                {
+                  "explanation": "Given: $r = 10$ cm, $\\theta = 90^\\circ$."
+                },
+                {
+                  "explanation": "**(i) Minor Segment:**"
+                },
+                {
+                  "explanation": "Area of Sector $= \\frac{90}{360} \\times 3.14 \\times 10^2 = \\frac{1}{4} \\times 314 = 78.5 \\text{ cm}^2$."
+                },
+                {
+                  "explanation": "Area of Triangle: Since angle is $90^\\circ$, it's a right triangle with base=radius and height=radius.\n$A_{\\Delta} = \\frac{1}{2} \\times 10 \\times 10 = 50 \\text{ cm}^2$."
+                },
+                {
+                  "explanation": "Area of Minor Segment = Sector - Triangle = $78.5 - 50 = 28.5 \\text{ cm}^2$."
+                },
+                {
+                  "explanation": "**(ii) Major Sector:**"
+                },
+                {
+                  "explanation": "Angle for major sector = $360 - 90 = 270^\\circ$."
+                },
+                {
+                  "explanation": "Area = $\\frac{270}{360} \\times \\pi r^2 = \\frac{3}{4} \\times 314 = 3 \\times 78.5 = 235.5 \\text{ cm}^2$."
+                },
+                {
+                  "explanation": "Alternative for Major Sector: Total Area - Minor Sector = $314 - 78.5 = 235.5$."
+                }
+              ],
+              "finalAnswer": "(i) 28.5 cm², (ii) 235.5 cm²"
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Sector vs Segment",
+            "functions": [],
+            "shapes": [
+              { "type": "circle", "x": 0, "y": 0, "radius": 5, "color": "grey", "label": "" },
+              { "type": "line", "x1": 0, "y1": 0, "x2": 5, "y2": 0, "color": "blue", "label": "Radius" },
+              { "type": "line", "x1": 0, "y1": 0, "x2": 2.5, "y2": 4.33, "color": "blue", "label": "Radius" },
+              { "type": "line", "x1": 5, "y1": 0, "x2": 2.5, "y2": 4.33, "color": "red", "label": "Chord" }
+            ],
+            "annotations": [
+              { "x": 1.5, "y": 1, "text": "Sector (Whole Wedge)" },
+              { "x": 3.5, "y": 1.5, "text": "Segment (Chord to Arc)" }
+            ],
+            "xRange": [-6, 6],
+            "yRange": [-6, 6]
+          }
+        },
+        {
+          "id": "topic_11_3_composite_figures",
+          "title": "11.3 Areas of Combinations of Plane Figures",
+          "content": "### 3. Decomposing Complex Shapes\nReal-world objects are rarely simple circles or squares. They are combinations—flower beds, drainage covers, architectural designs. Calculating their area requires a strategy of **Decomposition**.\n\n#### 3.1 The Addition Strategy\nIf a figure is composed of two non-overlapping shapes joined together, the total area is the sum.\n* **Example:** An ice-cream cone (Hemisphere + Cone surface).\n\n#### 3.2 The Subtraction Strategy\nIf a shape is \"cut out\" from another, or if we need the area of a gap, we use subtraction.\n* **Formula:** $\\text{Area of Shaded Region} = \\text{Area of Outer Shape} - \\text{Area of Inner/Unshaded Shape}$.\n* **Example:** A circular path around a garden (Annulus/Ring). \n    * Area = $\\pi R^2 - \\pi r^2 = \\pi(R^2 - r^2)$.\n\n#### 3.3 The Overlap Strategy\nSometimes, shapes overlap (e.g., flower petals formed by intersecting semi-circles).\n* Calculate sum of individual areas.\n* Subtract the area of the overlap (which was counted twice).\n\n#### 3.4 Logical Steps for Solving\n1.  **Identify the basic shapes:** Look for circles, semi-circles, quadrants, squares, rectangles, equilateral triangles.\n2.  **Determine dimensions:** Use the problem statement to find radii, side lengths, heights. Watch out for relationships (e.g., side of square = diameter of semi-circle).\n3.  **Formulate the equation:** Write down $\\text{Area} = \\text{Shape}_1 + \\text{Shape}_2$ or $\\text{Shape}_1 - \\text{Shape}_2$.\n4.  **Simplify before calculating:** Do not calculate individual values ($3.14 \\times 25$) immediately. Keep $\\pi$ and fractions until the end to simplify algebraic expressions. Factor out common terms.",
+          "formulas": [
+            "A_{\\text{ring}} = \\pi(R^2 - r^2)",
+            "A_{\\text{composite}} = \\sum A_{\\text{parts}}"
+          ],
+          "examples": [
+            {
+              "id": "ex_composite_1",
+              "question": "Find the area of the shaded region in a square ABCD of side 14 cm, where APD and BPC are semicircles.",
+              "steps": [
+                {
+                  "explanation": "1. **Analyze the Figure:** We have a square. Two semicircles are drawn *inside* it, with diameters AD and BC."
+                },
+                {
+                  "explanation": "2. **Identify Dimensions:** Side of square $a = 14$ cm. The semicircles are on the sides, so their diameter is 14 cm. Radius $r = 7$ cm."
+                },
+                {
+                  "explanation": "3. **Formulate Strategy:** The shaded region is the part of the square *not* covered by the semicircles.\nArea = Area(Square) - [Area(Semicircle 1) + Area(Semicircle 2)]."
+                },
+                {
+                  "explanation": "4. **Combine Shapes:** Two semicircles of same radius make one full circle.\nArea = Area(Square) - Area(Circle)."
+                },
+                {
+                  "explanation": "5. **Calculate:**\n$A_{\\text{square}} = 14 \\times 14 = 196 \\text{ cm}^2$.\n$A_{\\text{circle}} = \\pi r^2 = \\frac{22}{7} \\times 7 \\times 7 = 154 \\text{ cm}^2$."
+                },
+                {
+                  "explanation": "6. **Final Result:** Area = $196 - 154 = 42 \\text{ cm}^2$."
+                }
+              ],
+              "finalAnswer": "42 cm²"
+            },
+            {
+              "id": "ex_composite_2",
+              "question": "A square lawn has a circular flower bed in the centre. The side of the square is 10 m. The diameter of the flower bed is 4 m. Find the area of the remaining lawn. (Use $\\pi = 3.14$)",
+              "steps": [
+                {
+                  "explanation": "1. **Identify Shapes:** Outer shape is a Square ($s=10$). Inner shape is a Circle ($d=4, r=2$)."
+                },
+                {
+                  "explanation": "2. **Strategy:** Subtraction. Area(Lawn) = Area(Square) - Area(Circle)."
+                },
+                {
+                  "explanation": "3. **Calculate:**\n$A_{\\text{square}} = 10^2 = 100 \\text{ m}^2$.\n$A_{\\text{circle}} = \\pi (2)^2 = 3.14 \\times 4 = 12.56 \\text{ m}^2$."
+                },
+                {
+                  "explanation": "4. **Subtract:** $100 - 12.56 = 87.44 \\text{ m}^2$."
+                }
+              ],
+              "finalAnswer": "87.44 m²"
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Square with Semicircles (Example 1)",
+            "functions": [],
+            "shapes": [
+              { "type": "rect", "x1": 0, "y1": 0, "x2": 14, "y2": 14, "color": "grey", "label": "Square" },
+              { "type": "circle", "x": 0, "y": 7, "radius": 7, "color": "white", "label": "Semicircle (Left)" },
+              { "type": "circle", "x": 14, "y": 7, "radius": 7, "color": "white", "label": "Semicircle (Right)" }
+            ],
+            "xRange": [-2, 16],
+            "yRange": [-2, 16]
+          }
+        },
+        {
+          "id": "topic_11_4_practice_compendium",
+          "title": "11.4 Practice Bank & Formula Compendium",
+          "content": "### 4. Comprehensive Practice Bank\n\n#### Section A: Direct Application (10 Questions)\n1.  Find the area of a circle whose circumference is 22 cm.\n2.  Find the area of a quadrant of a circle whose circumference is 22 cm.\n3.  The length of the minute hand of a clock is 14 cm. Find the area swept by the minute hand in 5 minutes.\n4.  Find the area of a sector of a circle with radius 6 cm if angle of the sector is $60^\\circ$.\n5.  In a circle of radius 21 cm, an arc subtends an angle of $60^\\circ$ at the centre. Find the length of the arc.\n6.  Find the area of the minor segment of a circle of radius 10 cm, if the chord subtends a right angle at the centre. (Use $\\pi = 3.14$)\n7.  Find the area of the major sector corresponding to question 6.\n8.  The wheels of a car are of diameter 80 cm each. How many complete revolutions does each wheel make in 10 minutes when the car is travelling at a speed of 66 km/h?\n9.  Find the area of a ring whose outer and inner radii are 20 cm and 15 cm respectively.\n10. If the perimeter and the area of a circle are numerically equal, find the radius of the circle.\n\n#### Section B: Composite Figures (10 Questions)\n11. Find the area of the shaded region if radii of the two concentric circles with centre O are 7 cm and 14 cm respectively and $\\angle AOC = 40^\\circ$.\n12. ABCD is a square of side 14 cm. With centres A, B, C and D, four circles are drawn such that each circle touch externally two of the remaining three circles. Find the area of the shaded region.\n13. From each corner of a square of side 4 cm a quadrant of a circle of radius 1 cm is cut and also a circle of diameter 2 cm is cut from the middle. Find the area of the remaining portion of the square.\n14. In a circular table cover of radius 32 cm, a design is formed leaving an equilateral triangle ABC in the middle. Find the area of the design.\n15. Calculate the area of the designed region common between two quadrants of circles of radius 8 cm each.\n16. A horse is tied to a peg at one corner of a square shaped grass field of side 15 m by means of a 5 m long rope. Find the area of that part of the field in which the horse can graze.\n17. A brooch is made with silver wire in the form of a circle with diameter 35 mm. The wire is also used in making 5 diameters which divide the circle into 10 equal sectors. Find the total length of the silver wire required.\n18. In an equilateral triangle of side 24 cm, a circle is inscribed touching its sides. Find the area of the remaining portion of the triangle.\n19. Three circles each of radius 3.5 cm are drawn in such a way that each of them touches the other two. Find the area enclosed between these circles.\n20. A square OABC is inscribed in a quadrant OPBQ. If OA = 20 cm, find the area of the shaded region. (Use $\\pi = 3.14$)\n\n#### Section C: Advanced Reasoning (Must Practice)\n21. **(Must Practice)** A chord of a circle of radius 12 cm subtends an angle of $120^\\circ$ at the centre. Find the area of the corresponding segment of the circle. (Hint: Use altitude to find base/height of triangle).\n22. **(Must Practice)** The area of an equilateral triangle ABC is 17320.5 cm². With each vertex of the triangle as centre, a circle is drawn with radius equal to half the length of the side of the triangle. Find the area of the shaded region. (Use $\\pi = 3.14$ and $\\sqrt{3} = 1.73205$)\n23. **(Must Practice)** On a square handkerchief, nine circular designs each of radius 7 cm are made. Find the area of the remaining portion of the handkerchief.\n24. **(Must Practice)** Two circular pieces of equal radii and maximum area, touching each other are cut out from a rectangular card board of dimensions 14 cm × 7 cm. Find the area of the remaining card board.\n25. **(Must Practice)** In the given figure, arcs have been drawn with radii 14 cm each and with centres P, Q and R. Find the area of the shaded region. (Sum of sector angles = Sum of triangle angles = 180).\n26. **(Must Practice)** A calf is tied with a rope of length 6 m at the corner of a square grassy lawn of side 20 m. If the length of the rope is increased by 5.5 m, find the increase in area of the grassy lawn in which the calf can graze.\n27. **(Must Practice)** A path of 4 m width runs round a semi-circular grassy plot whose circumference is 81 m. Find the cost of turfing the path at the rate of ₹10 per m².\n28. **(Must Practice)** Find the area of the shaded region where a circular arc of radius 6 cm has been drawn with vertex O of an equilateral triangle OAB of side 12 cm as centre.\n29. **(Must Practice)** The difference between the circumference and the radius of a circle is 37 cm. Find the area of the circle.\n30. **(Must Practice)** A round table cover has six equal designs. If the radius of the cover is 28 cm, find the cost of making the designs at the rate of ₹0.35 per cm². (Use $\\sqrt{3} = 1.7$)\n\n---\n\n### 5. Formula Compendium\n\n**1. Circle Basics**\n* Circumference: $C = 2\\pi r = \\pi d$\n* Area: $A = \\pi r^2$\n* Diameter: $d = 2r$\n\n**2. Sector of a Circle**\n* Length of Arc: $L = \\frac{\\theta}{360} \\times 2\\pi r$\n* Area of Sector: $A = \\frac{\\theta}{360} \\times \\pi r^2$\n* Area of Sector (using Arc Length): $A = \\frac{1}{2} L r$\n\n**3. Segment of a Circle**\n* Area of Minor Segment = Area of Sector - Area of corresponding Triangle\n* Area of Triangle (General): $\\frac{1}{2} r^2 \\sin \\theta$\n* Area of Triangle ($\\\\theta=60^\\circ$): $\\frac{\\sqrt{3}}{4} r^2$\n* Area of Triangle ($\\\\theta=90^\\circ$): $\\frac{1}{2} r^2$\n* Area of Major Segment = Area of Circle - Area of Minor Segment\n\n**4. Composite Figures**\n* Ring (Annulus): $A = \\pi (R^2 - r^2) = \\pi(R+r)(R-r)$\n* Number of Revolutions: $\\frac{\\text{Total Distance}}{\\text{Circumference}}$",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

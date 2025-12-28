@@ -1,0 +1,324 @@
+{
+  "id": "class_9",
+  "title": "Class 9",
+  "chapters": [
+    {
+      "id": "ch_2_polynomials",
+      "title": "Ch 2: Polynomials",
+      "topics": [
+        {
+          "id": "topic_2_1_foundations_of_polynomials",
+          "title": "2.1 Foundations of Polynomials",
+          "content": "### 1. Introduction: From Arithmetic to Algebra\nAlgebra is the generalization of arithmetic. While arithmetic deals with specific numbers, algebra deals with variables and generalized quantities. A **Polynomial** is one of the most fundamental structures in algebra, serving as a bridge between simple equations and complex calculus functions.\n\n#### 1.1 Variables and Constants\n* **Variable:** A symbol (usually a letter like $x, y, z$) that can take on various numerical values. It represents a quantity that can change.\n* **Constant:** A symbol (like $2, -5, \\pi$) that has a fixed numerical value. It represents a quantity that does not change.\n* **Algebraic Expression:** A combination of variables and constants connected by fundamental arithmetic operations ($+, -, \\times, \\div$). Examples: $2x + 3$, $\\sqrt{x}$, $1/x$.\n\n#### 1.2 Formal Definition of a Polynomial\nA polynomial in one variable $x$ is an algebraic expression of the form:\n$$p(x) = a_n x^n + a_{n-1} x^{n-1} + \\dots + a_1 x + a_0$$\nwhere:\n* $a_n, a_{n-1}, \\dots, a_0$ are constants called **coefficients**. These can be any real numbers ($\\mathbb{R}$).\n* $x$ is the **variable**.\n* The exponents $n, n-1, \\dots, 0$ must be **Whole Numbers** (non-negative integers: $0, 1, 2, \\dots$).\n* $a_n \\neq 0$ (unless it is the zero polynomial).\n\n**Crucial Constraint:** An expression is **NOT** a polynomial if the variable $x$ has:\n1.  A negative exponent (e.g., $x^{-1} = 1/x$).\n2.  A fractional exponent (e.g., $x^{1/2} = \\sqrt{x}$).\n3.  An exponent that is irrational or complex.\n\n**Examples:**\n* $2x^2 + 3x - 5$: **Polynomial** (All exponents are whole numbers: 2, 1, 0).\n* $x + \\frac{1}{x}$: **Not a Polynomial** (Term $1/x = x^{-1}$ has a negative exponent).\n* $\\sqrt{x} + 2$: **Not a Polynomial** (Term $\\sqrt{x} = x^{1/2}$ has a fractional exponent).\n* $\\sqrt{2}x^2 + 5$: **Polynomial** (The coefficient $\\sqrt{2}$ can be irrational; only the exponent of $x$ matters).\n\n#### 1.3 Terminology\n* **Terms:** The parts of the polynomial separated by $+$ or $-$ signs. In $4x^2 - 3x + 7$, terms are $4x^2$, $-3x$, and $7$.\n* **Coefficients:** The numerical factor of each term. In $4x^2 - 3x + 7$, coefficient of $x^2$ is 4, of $x$ is -3, and constant term is 7.\n* **Constant Polynomial:** A polynomial containing only a constant term (e.g., $p(x) = 5$). Its degree is 0.\n* **Zero Polynomial:** The polynomial $p(x) = 0$. Its degree is **undefined**.\n\n#### 1.4 Classification by Terms\n* **Monomial:** A polynomial with exactly **one** term. (e.g., $2x, -5x^3, 7$).\n* **Binomial:** A polynomial with exactly **two** non-zero terms. (e.g., $x+1, x^2-5, 2x+3y$).\n* **Trinomial:** A polynomial with exactly **three** non-zero terms. (e.g., $x^2+x+1, 2x^3-5x+2$).\n\n#### 1.5 Degree of a Polynomial\nThe **degree** of a polynomial is the highest power of the variable present in the polynomial.\nLet $p(x) = a_n x^n + \\dots + a_0$ with $a_n \\neq 0$. Then $\\deg(p) = n$.\n\n**Classification by Degree:**\n1.  **Linear Polynomial ($\n = 1$):** General form $ax + b, a \\neq 0$. Graph is a straight line.\n2.  **Quadratic Polynomial ($n = 2$):** General form $ax^2 + bx + c, a \\neq 0$. Graph is a Parabola.\n3.  **Cubic Polynomial ($n = 3$):** General form $ax^3 + bx^2 + cx + d, a \\neq 0$.\n4.  **Biquadratic (Quartic) Polynomial ($n = 4$):** General form $ax^4 + \\dots$\n\n**Advanced Insight (BSc Level):** The set of all polynomials with coefficients in a field $\\mathbb{R}$ (denoted $\\mathbb{R}[x]$) forms a **Ring**. It has properties similar to integers (addition, multiplication, but not always division).",
+          "formulas": [
+            "p(x) = \\sum_{i=0}^{n} a_i x^i",
+            "\\deg(p(x) \\cdot q(x)) = \\deg(p) + \\deg(q)",
+            "\\deg(p(x) + q(x)) \\le \\max(\\deg(p), \\deg(q))"
+          ],
+          "examples": [
+            {
+              "id": "ex_poly_1",
+              "question": "Classify the following as polynomials or not. If yes, state the degree: (i) $x^2 + \\sqrt{x}$ (ii) $\\sqrt{3}x^2 + 5x$ (iii) $t^2 + 5t^{-1}$ (iv) 0",
+              "steps": [
+                {
+                  "explanation": "(i) $x^2 + \\sqrt{x}$: The term $\\sqrt{x}$ can be written as $x^{1/2}$. Since $1/2$ is not a whole number, this is **NOT** a polynomial."
+                },
+                {
+                  "explanation": "(ii) $\\sqrt{3}x^2 + 5x$: The variable $x$ has exponents 2 and 1 (both whole numbers). The coefficient $\\sqrt{3}$ is a real number (allowed). Thus, it **IS** a polynomial. Highest power is 2, so Degree = 2."
+                },
+                {
+                  "explanation": "(iii) $t^2 + 5t^{-1}$: The term $t^{-1}$ has a negative exponent (-1 is not a whole number). Thus, it is **NOT** a polynomial."
+                },
+                {
+                  "explanation": "(iv) 0: This is the **Zero Polynomial**. It is a polynomial, but its degree is **undefined**."
+                }
+              ],
+              "finalAnswer": "(i) No (ii) Yes, Deg 2 (iii) No (iv) Yes, Deg Undefined"
+            },
+            {
+              "id": "ex_poly_2",
+              "question": "Write a binomial of degree 35 and a monomial of degree 100.",
+              "steps": [
+                {
+                  "explanation": "Binomial of degree 35: Must have two terms, and the highest power must be 35. Example: $x^{35} + 10$."
+                },
+                {
+                  "explanation": "Monomial of degree 100: Must have one term, and the power must be 100. Example: $\\sqrt{2} y^{100}$."
+                }
+              ],
+              "finalAnswer": "$x^{35} + 10$ and $\\sqrt{2} y^{100}$"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_2_2_zeroes_of_polynomial",
+          "title": "2.2 Zeroes of a Polynomial",
+          "content": "### 2. The Concept of Zeroes (Roots)\nA polynomial $p(x)$ defines a function. We are often interested in values of $x$ for which the polynomial evaluates to zero. These values have profound geometric and algebraic significance.\n\n#### 2.1 Definition\nA real number $\\alpha$ is called a **zero** of the polynomial $p(x)$ if:\n$$p(\\alpha) = 0$$\nIn the context of equations ($p(x) = 0$), $\\alpha$ is called a **root**.\n\n#### 2.2 Finding Zeroes\n1.  **Linear Polynomial ($ax + b$):** To find the zero, set $p(x) = 0$.\n    $$ax + b = 0 \\implies ax = -b \\implies x = -\\frac{b}{a}$$\n    A linear polynomial always has exactly **one** zero.\n\n2.  **Quadratic Polynomial ($ax^2 + bx + c$):** Can be found by factorization (splitting the middle term) or using the quadratic formula ($x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}$).\n    A quadratic polynomial can have at most **two** real zeroes.\n\n#### 2.3 Geometric Interpretation\nGeometrically, a zero of a polynomial $p(x)$ is the x-coordinate of the point where the graph of $y = p(x)$ intersects the **x-axis**.\n* If graph cuts x-axis at 1 point $\\rightarrow$ 1 real zero.\n* If graph cuts x-axis at 2 points $\\rightarrow$ 2 real zeroes.\n* If graph does not touch x-axis $\\rightarrow$ No real zeroes (Complex roots).\n\n#### 2.4 Properties of Zeroes\n* **Zero Polynomial:** The zero polynomial ($p(x) = 0$) has **every real number** as its zero.\n* **Constant Polynomial:** A non-zero constant polynomial ($p(x) = k, k \\neq 0$) has **no zeroes**.\n* **Max Zeroes:** A polynomial of degree $n$ can have at most $n$ distinct real zeroes (Fundamental Theorem of Algebra - Real version).\n\n#### 2.5 Relationship between Zeroes and Coefficients (Quadratic)\nFor $p(x) = ax^2 + bx + c$ with zeroes $\\alpha, \\beta$:\n* **Sum of Zeroes:** $\\alpha + \\beta = -\\frac{b}{a} = -\\frac{\\text{coeff of } x}{\\text{coeff of } x^2}$\n* **Product of Zeroes:** $\\alpha \\beta = \\frac{c}{a} = \\frac{\\text{constant term}}{\\text{coeff of } x^2}$",
+          "formulas": [
+            "p(\\alpha) = 0 \\iff \\alpha \\text{ is a zero}",
+            "\\alpha + \\beta = -b/a",
+            "\\alpha\\beta = c/a"
+          ],
+          "examples": [
+            {
+              "id": "ex_poly_3",
+              "question": "Verify whether 2 and 0 are zeroes of the polynomial $x^2 - 2x$.",
+              "steps": [
+                {
+                  "explanation": "Let $p(x) = x^2 - 2x$."
+                },
+                {
+                  "explanation": "Evaluate at $x = 2$: $p(2) = (2)^2 - 2(2) = 4 - 4 = 0$. Since $p(2) = 0$, 2 is a zero."
+                },
+                {
+                  "explanation": "Evaluate at $x = 0$: $p(0) = (0)^2 - 2(0) = 0 - 0 = 0$. Since $p(0) = 0$, 0 is a zero."
+                }
+              ],
+              "finalAnswer": "Both 2 and 0 are zeroes."
+            },
+            {
+              "id": "ex_poly_4",
+              "question": "Find the zero of the linear polynomial $p(x) = 3x + 5$ and interpret it geometrically.",
+              "steps": [
+                {
+                  "explanation": "To find the zero, solve $p(x) = 0$."
+                },
+                {
+                  "explanation": "$3x + 5 = 0 \\implies 3x = -5 \\implies x = -5/3$."
+                },
+                {
+                  "explanation": "Geometric Interpretation: The graph of the line $y = 3x + 5$ intersects the x-axis at the point $(-5/3, 0)$."
+                }
+              ],
+              "finalAnswer": "$x = -5/3$"
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Zeroes on Graph",
+            "functions": [
+              {
+                "expression": "x^2 - 4",
+                "color": "blue",
+                "label": "y = x^2 - 4"
+              }
+            ],
+            "xRange": [
+              -4,
+              4
+            ],
+            "yRange": [
+              -5,
+              5
+            ]
+          }
+        },
+        {
+          "id": "topic_2_3_remainder_theorem",
+          "title": "2.3 The Remainder Theorem",
+          "content": "### 3. Division Algorithm and Remainder Theorem\nJust as we divide numbers (e.g., $15 \\div 6 = 2$ rem $3$), we can divide polynomials. The Remainder Theorem provides an elegant shortcut to find the remainder without performing long division.\n\n#### 3.1 Division Algorithm for Polynomials\nIf $p(x)$ and $g(x)$ are two polynomials such that $\\deg(p) \\ge \\deg(g)$ and $g(x) \\neq 0$, then we can find unique polynomials $q(x)$ (quotient) and $r(x)$ (remainder) such that:\n$$p(x) = g(x) \\cdot q(x) + r(x)$$\nwhere either $r(x) = 0$ or $\\deg(r) < \\deg(g)$.\n\n#### 3.2 The Remainder Theorem Statement\nLet $p(x)$ be any polynomial of degree $n \\ge 1$ and let $a$ be any real number. If $p(x)$ is divided by the linear polynomial $(x - a)$, then the remainder is $p(a)$.\n\n**Proof:**\n1.  By division algorithm: $p(x) = (x-a)q(x) + r(x)$.\n2.  Since divisor is degree 1, remainder $r(x)$ must be degree 0 (constant) or zero. Let $r(x) = R$.\n3.  Substitute $x = a$ into the equation:\n    $$p(a) = (a - a)q(a) + R$$\n    $$p(a) = 0 \\cdot q(a) + R$$\n    $$p(a) = R$$\n4.  Thus, the remainder is $p(a)$.\n\n#### 3.3 Application\nInstead of dividing $p(x) = x^4 + x^3 - 2x^2 + x + 1$ by $x-1$ to find the remainder, we simply compute $p(1)$.\n$p(1) = 1 + 1 - 2 + 1 + 1 = 2$. Remainder is 2. This is immensely powerful for checking factors.",
+          "formulas": [
+            "\\text{Dividend} = \\text{Divisor} \\times \\text{Quotient} + \\text{Remainder}",
+            "p(x) = (x-a)q(x) + p(a)"
+          ],
+          "examples": [
+            {
+              "id": "ex_poly_5",
+              "question": "Find the remainder when $x^4 + x^3 - 2x^2 + x + 1$ is divided by $x - 1$.",
+              "steps": [
+                {
+                  "explanation": "Let $p(x) = x^4 + x^3 - 2x^2 + x + 1$."
+                },
+                {
+                  "explanation": "The divisor is $x - 1$. By Remainder Theorem, the remainder is $p(1)$."
+                },
+                {
+                  "explanation": "Substitute $x = 1$: $p(1) = (1)^4 + (1)^3 - 2(1)^2 + 1 + 1$."
+                },
+                {
+                  "explanation": "$p(1) = 1 + 1 - 2 + 1 + 1 = 2$."
+                }
+              ],
+              "finalAnswer": "Remainder is 2."
+            },
+            {
+              "id": "ex_poly_6",
+              "question": "Check whether the polynomial $q(t) = 4t^3 + 4t^2 - t - 1$ is a multiple of $2t + 1$.",
+              "steps": [
+                {
+                  "explanation": "$q(t)$ is a multiple of $2t+1$ if and only if the remainder when dividing by $2t+1$ is 0."
+                },
+                {
+                  "explanation": "Find the zero of the divisor: $2t + 1 = 0 \\implies t = -1/2$."
+                },
+                {
+                  "explanation": "Calculate $q(-1/2)$: $4(-1/2)^3 + 4(-1/2)^2 - (-1/2) - 1$."
+                },
+                {
+                  "explanation": "$= 4(-1/8) + 4(1/4) + 1/2 - 1 = -1/2 + 1 + 1/2 - 1 = 0$."
+                },
+                {
+                  "explanation": "Since remainder is 0, $2t+1$ is a factor, so $q(t)$ is a multiple."
+                }
+              ],
+              "finalAnswer": "Yes, it is a multiple."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_2_4_factor_theorem_and_factorization",
+          "title": "2.4 Factor Theorem & Factorization",
+          "content": "### 4. The Factor Theorem\nThe Factor Theorem is a specific case of the Remainder Theorem, providing a test for divisibility.\n\n#### 4.1 Statement\nIf $p(x)$ is a polynomial of degree $n \\ge 1$ and $a$ is any real number, then:\n1.  $(x - a)$ is a **factor** of $p(x)$ if $p(a) = 0$.\n2.  Conversely, if $(x - a)$ is a factor of $p(x)$, then $p(a) = 0$.\n\n**Proof:**\nBy Remainder Theorem, $p(x) = (x-a)q(x) + p(a)$.\n* If $p(a) = 0$, then $p(x) = (x-a)q(x)$, which means $(x-a)$ divides $p(x)$ perfectly.\n* If $(x-a)$ is a factor, remainder must be zero, so $p(a) = 0$.\n\n#### 4.2 Factorization of Quadratics ($ax^2 + bx + c$)\nWe use the method of **Splitting the Middle Term**.\nTo factor $ax^2 + bx + c$, we find two numbers $p$ and $q$ such that:\n* $p + q = b$ (Coefficient of x)\n* $p \\times q = a \\times c$ (Product of first and last coeff)\nThen rewrite $bx$ as $px + qx$ and factor by grouping.\n\n#### 4.3 Factorization of Cubics ($ax^3 + bx^2 + cx + d$)\nThis is harder and requires a sequential approach:\n1.  **Hit and Trial:** Use Factor Theorem to find one zero, say $x = a$. Try factors of the constant term $d$ ($\\pm 1, \\pm 2, \\dots$).\n2.  **Polynomial Division:** Once a factor $(x-a)$ is found, divide the cubic polynomial by $(x-a)$ using long division.\n3.  **Quadratic Factorization:** The quotient will be a quadratic, which can be factored using splitting the middle term.\n\n**Advanced Concept (Rational Root Theorem):** Any rational root $p/q$ of a polynomial with integer coefficients must have $p$ dividing the constant term and $q$ dividing the leading coefficient.",
+          "formulas": [
+            "(x-a) \\text{ is factor} \\iff p(a) = 0"
+          ],
+          "examples": [
+            {
+              "id": "ex_poly_7",
+              "question": "Factorise $6x^2 + 17x + 5$ by splitting the middle term.",
+              "steps": [
+                {
+                  "explanation": "We need two numbers summing to 17 (coeff of x) and multiplying to $6 \\times 5 = 30$."
+                },
+                {
+                  "explanation": "Factors of 30: 1, 30; 2, 15; 3, 10; 5, 6. The pair (2, 15) sums to 17."
+                },
+                {
+                  "explanation": "Split 17x: $6x^2 + 2x + 15x + 5$."
+                },
+                {
+                  "explanation": "Group terms: $2x(3x + 1) + 5(3x + 1)$."
+                },
+                {
+                  "explanation": "Factor out common binomial: $(3x + 1)(2x + 5)$."
+                }
+              ],
+              "finalAnswer": "$(3x + 1)(2x + 5)$"
+            },
+            {
+              "id": "ex_poly_8",
+              "question": "Factorise the cubic polynomial $x^3 - 23x^2 + 142x - 120$.",
+              "steps": [
+                {
+                  "explanation": "Step 1: Look for a factor using trial. Factors of -120 include $\\pm 1$. Try $x=1$."
+                },
+                {
+                  "explanation": "$p(1) = 1 - 23 + 142 - 120 = 143 - 143 = 0$. So $(x-1)$ is a factor."
+                },
+                {
+                  "explanation": "Step 2: Divide polynomial by $(x-1)$."
+                },
+                {
+                  "explanation": "Using long division: $(x^3 - 23x^2 + 142x - 120) \\div (x-1) = x^2 - 22x + 120$."
+                },
+                {
+                  "explanation": "Step 3: Factorise the quadratic quotient $x^2 - 22x + 120$."
+                },
+                {
+                  "explanation": "Find numbers summing to -22 and multiplying to 120. They are -10 and -12."
+                },
+                {
+                  "explanation": "$x^2 - 10x - 12x + 120 = x(x-10) - 12(x-10) = (x-12)(x-10)$."
+                },
+                {
+                  "explanation": "Combine all factors."
+                }
+              ],
+              "finalAnswer": "$(x-1)(x-10)(x-12)$"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_2_5_algebraic_identities",
+          "title": "2.5 Algebraic Identities",
+          "content": "### 5. Algebraic Identities\nAn identity is an equation that is true for **all** values of the variables. These are standard tools for expansion and factorization.\n\n#### 5.1 Standard Identities (Review)\n1.  $(x + y)^2 = x^2 + 2xy + y^2$\n2.  $(x - y)^2 = x^2 - 2xy + y^2$\n3.  $x^2 - y^2 = (x + y)(x - y)$\n4.  $(x + a)(x + b) = x^2 + (a+b)x + ab$\n\n#### 5.2 Identity for Three Variables\n5.  $(x + y + z)^2 = x^2 + y^2 + z^2 + 2xy + 2yz + 2zx$\n    * **Derivation:** Let $t = x+y$, then $(t+z)^2 = t^2 + 2tz + z^2$. Substitute back $t = x+y$.\n\n#### 5.3 Cubic Identities\n6.  $(x + y)^3 = x^3 + y^3 + 3xy(x + y)$ or $x^3 + 3x^2y + 3xy^2 + y^3$\n7.  $(x - y)^3 = x^3 - y^3 - 3xy(x - y)$ or $x^3 - 3x^2y + 3xy^2 - y^3$\n8.  $x^3 + y^3 = (x + y)(x^2 - xy + y^2)$ (Sum of Cubes - Factorization form)\n9.  $x^3 - y^3 = (x - y)(x^2 + xy + y^2)$ (Diff of Cubes - Factorization form)\n\n#### 5.4 The \"Mega\" Identity (Euler's Identity Context)\n10. $x^3 + y^3 + z^3 - 3xyz = (x + y + z)(x^2 + y^2 + z^2 - xy - yz - zx)$\n    * **Alternative Form:** $\\frac{1}{2}(x+y+z)[(x-y)^2 + (y-z)^2 + (z-x)^2]$\n    * **Conditional Identity:** If $x + y + z = 0$, then $x^3 + y^3 + z^3 = 3xyz$. This is frequently used in exams.",
+          "formulas": [
+            "(x+y+z)^2 = \\sum x^2 + 2\\sum xy",
+            "x^3+y^3+z^3-3xyz = (\\sum x)(\\sum x^2 - \\sum xy)",
+            "\\text{If } x+y+z=0 \\implies x^3+y^3+z^3=3xyz"
+          ],
+          "examples": [
+            {
+              "id": "ex_poly_9",
+              "question": "Evaluate $(999)^3$ using a suitable identity.",
+              "steps": [
+                {
+                  "explanation": "Write 999 as $1000 - 1$."
+                },
+                {
+                  "explanation": "Use $(a-b)^3 = a^3 - b^3 - 3ab(a-b)$."
+                },
+                {
+                  "explanation": "$(1000 - 1)^3 = 1000^3 - 1^3 - 3(1000)(1)(1000 - 1)$."
+                },
+                {
+                  "explanation": "$= 1000000000 - 1 - 3000(999)$."
+                },
+                {
+                  "explanation": "$= 1000000000 - 1 - 2997000 = 997002999$."
+                }
+              ],
+              "finalAnswer": "997002999"
+            },
+            {
+              "id": "ex_poly_10",
+              "question": "Factorise $8x^3 + 27y^3 + 36x^2y + 54xy^2$.",
+              "steps": [
+                {
+                  "explanation": "Recognize the form: $a^3 + b^3 + 3a^2b + 3ab^2 = (a+b)^3$."
+                },
+                {
+                  "explanation": "$8x^3 = (2x)^3$ so $a = 2x$."
+                },
+                {
+                  "explanation": "$27y^3 = (3y)^3$ so $b = 3y$."
+                },
+                {
+                  "explanation": "Check middle terms: $3(2x)^2(3y) = 3(4x^2)(3y) = 36x^2y$. Correct."
+                },
+                {
+                  "explanation": "$3(2x)(3y)^2 = 3(2x)(9y^2) = 54xy^2$. Correct."
+                },
+                {
+                  "explanation": "So, the expression is $(2x + 3y)^3$."
+                }
+              ],
+              "finalAnswer": "$(2x + 3y)^3$"
+            },
+            {
+              "id": "ex_poly_11",
+              "question": "Without calculating cubes, find the value of $(-12)^3 + (7)^3 + (5)^3$.",
+              "steps": [
+                {
+                  "explanation": "Let $x = -12, y = 7, z = 5$."
+                },
+                {
+                  "explanation": "Check sum: $x + y + z = -12 + 7 + 5 = 0$."
+                },
+                {
+                  "explanation": "Since sum is 0, use identity $x^3 + y^3 + z^3 = 3xyz$."
+                },
+                {
+                  "explanation": "Value = $3(-12)(7)(5) = 3(-12)(35) = -36(35) = -1260$."
+                }
+              ],
+              "finalAnswer": "-1260"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_2_6_practice_and_formulas",
+          "title": "2.6 Practice & Formula Compendium",
+          "content": "### 6. Practice Problems & Formula Sheet\n\n#### Section A: Conceptual & Short Answer (Level 1)\n1.  Define the degree of a zero polynomial.\n2.  Is $\\frac{x^2 + 1}{x}$ a polynomial? Justify.\n3.  Find the value of polynomial $5x - 4x^2 + 3$ at $x = -1$.\n4.  Write the coefficient of $x^2$ in $(\\pi/2)x^2 + x$.\n5.  Give an example of a trinomial of degree 3.\n6.  Find the zero of $p(x) = 2x + 5$.\n7.  If $p(x) = x+3$, find $p(x) + p(-x)$.\n8.  Expand $(2a - 3b)^2$.\n9.  Evaluate $104 \\times 96$ using identities.\n10. Check if $x+1$ is a factor of $x^3 + x^2 + x + 1$.\n\n#### Section B: Application & Computation (Level 2)\n11. Find the remainder when $x^3 - ax^2 + 6x - a$ is divided by $x-a$.\n12. Factorise $2x^2 + 7x + 3$ using splitting the middle term.\n13. **(Must Practice)** Factorise $x^3 - 3x^2 - 9x - 5$.\n14. Expand $(\\frac{1}{4}a - \\frac{1}{2}b + 1)^2$.\n15. Evaluate $(99)^3$ using identities.\n16. If $x^2 + y^2 + z^2 = 25$ and $x+y+z=10$, find $xy+yz+zx$.\n17. Factorise $27y^3 + 125z^3$.\n18. Verify $x^3 + y^3 = (x+y)(x^2-xy+y^2)$ for $x=2, y=-1$.\n19. Find the value of $k$ if $x-1$ is a factor of $4x^3 + 3x^2 - 4x + k$.\n20. If $p(x) = x^2 - 4x + 3$, evaluate $p(2) - p(-1) + p(1/2)$.\n\n#### Section C: Advanced / JEE Foundation (Must Practice)\n21. **(Must Practice)** If $x + 1/x = 5$, find the value of $x^3 + 1/x^3$.\n22. **(Must Practice)** Factorise $a^3 - b^3 + 1 + 3ab$.\n23. **(Must Practice)** If $a+b+c=9$ and $ab+bc+ca=26$, find $a^2+b^2+c^2$.\n24. **(Must Practice)** Find the zeroes of the polynomial $x^3 - 6x^2 + 11x - 6$.\n25. **(Must Practice)** If polynomials $az^3 + 4z^2 + 3z - 4$ and $z^3 - 4z + a$ leave the same remainder when divided by $z-3$, find $a$.\n26. **(Must Practice)** Simplify: $\\frac{(a^2 - b^2)^3 + (b^2 - c^2)^3 + (c^2 - a^2)^3}{(a-b)^3 + (b-c)^3 + (c-a)^3}$.\n27. **(Must Practice)** Prove that if $x+y+z=0$, then $x^3+y^3+z^3 = 3xyz$.\n28. **(Must Practice)** Factorise $x^4 + x^2y^2 + y^4$.\n29. **(Must Practice)** If $x = 2 - \\sqrt{3}$, find the value of $(x-1/x)^3$.\n30. **(Must Practice)** Sketch the graph of $p(x) = x^2 - 4$ and identify zeroes.\n\n---\n\n### Formula Compendium\n\n**1. Basic Definitions**\n* $p(x) = a_n x^n + \\dots + a_0$\n* **Degree:** Highest power $n$. ($a_n \\neq 0$)\n\n**2. Theorems**\n* **Remainder Theorem:** Remainder of $p(x) \\div (x-a)$ is $p(a)$.\n* **Factor Theorem:** $(x-a)$ is factor $\\iff p(a) = 0$.\n\n**3. Quadratic Polynomial ($ax^2+bx+c$)**\n* Sum of Zeroes: $\\alpha+\\beta = -b/a$\n* Product of Zeroes: $\\alpha\\beta = c/a$\n* Factorization: Split middle term $bx$ into $px+qx$ where $p+q=b, pq=ac$.\n\n**4. Algebraic Identities**\n* $(x \\pm y)^2 = x^2 \\pm 2xy + y^2$\n* $x^2 - y^2 = (x+y)(x-y)$\n* $(x+a)(x+b) = x^2 + (a+b)x + ab$\n* $(x+y+z)^2 = x^2+y^2+z^2+2(xy+yz+zx)$\n* $(x \\pm y)^3 = x^3 \\pm y^3 \\pm 3xy(x \\pm y)$\n* $x^3 \\pm y^3 = (x \\pm y)(x^2 \\mp xy + y^2)$\n* $x^3+y^3+z^3-3xyz = (x+y+z)(x^2+y^2+z^2-xy-yz-zx)$\n* **Condition:** If $x+y+z=0 \\implies x^3+y^3+z^3=3xyz$.",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

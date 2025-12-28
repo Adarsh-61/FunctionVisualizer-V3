@@ -1,0 +1,189 @@
+{
+  "id": "11_8",
+  "classId": 11,
+  "title": "Sequence and Series",
+  "description": "A comprehensive study of mathematical patterns, progressions, and summations. This chapter covers the theoretical foundations of Arithmetic and Geometric Progressions, the relationships between means, special series, and advanced problem-solving techniques suitable for IIT-JEE and higher mathematics preparation.",
+  "topics": [
+    {
+      "id": "topic_8_1",
+      "title": "Introduction to Sequences",
+      "content": "### 1. Concept of a Sequence\n\nIn mathematics, a **sequence** is an ordered list of objects (usually numbers). Unlike a set, order matters, and the same elements can appear multiple times at different positions.\n\n#### Definition as a Function\nFormally, a sequence is defined as a function $f$ whose domain is the set of natural numbers $\\mathbb{N}$ (or a subset of it) and whose codomain is the set of real numbers $\\mathbb{R}$ (for real sequences).\n\n$$ f: \\mathbb{N} \\to \\mathbb{R} $$\n\nIf the domain is the set of natural numbers $\\{1, 2, 3, ...\\}$, we denote the image of $n$ as $a_n$ instead of $f(n)$.\n\n$$ a_n = f(n) $$\n\nHere, $a_1$ is the first term, $a_2$ is the second term, and $a_n$ is the $n^{th}$ term (also called the general term).\n\n#### Finite vs. Infinite Sequences\n1.  **Finite Sequence:** A sequence containing a finite number of terms. The domain is a finite subset of natural numbers $\\{1, 2, ..., k\\}$.\n    * *Example:* The sequence of digits in the number $\\pi$ up to 5 decimal places: $3, 1, 4, 1, 5, 9$.\n2.  **Infinite Sequence:** A sequence that continues indefinitely. The domain is the entire set $\\mathbb{N}$.\n    * *Example:* The sequence of prime numbers: $2, 3, 5, 7, 11, ...$\n\n### 2. Series\n\nThere is a strict logical distinction between a **sequence** and a **series**.\n\n* **Sequence:** The ordered list $a_1, a_2, a_3, ..., a_n$.\n* **Series:** The indicated sum of the terms of the sequence. It is written as $a_1 + a_2 + a_3 + ... + a_n$.\n\nWe use the Greek letter Sigma ($\\Sigma$) to denote series compactly.\n\n$$ \\sum_{k=1}^{n} a_k = a_1 + a_2 + ... + a_n $$\n\n**Note:** A series is an *expression* of addition. The *value* of the series is the result of that addition.\n\n### 3. Progressions\n\nSequences that follow a specific, predictable mathematical pattern or formula are often called **progressions**. The most fundamental progressions are Arithmetic Progression (A.P.) and Geometric Progression (G.P.)."
+    },
+    {
+      "id": "topic_8_2",
+      "title": "Arithmetic Progression (A.P.)",
+      "content": "### 1. Definition\n\nAn **Arithmetic Progression (A.P.)** is a sequence in which the difference between any two consecutive terms is constant. This constant is called the **common difference** ($d$).\n\nLet $a_1, a_2, a_3, ...$ be an A.P. Then:\n$$ a_{n+1} - a_n = d \\quad \\forall n \\in \\mathbb{N} $$\n\n* If $d > 0$, the A.P. is increasing.\n* If $d < 0$, the A.P. is decreasing.\n* If $d = 0$, the A.P. is a constant sequence.\n\n### 2. General Term of an A.P.\n\nLet $a$ be the first term and $d$ be the common difference.\n* First term: $a_1 = a$\n* Second term: $a_2 = a + d$\n* Third term: $a_3 = a + 2d$\n\nBy induction, the $n^{th}$ term ($a_n$) is given by:\n\n$$ a_n = a + (n-1)d $$\n\n#### Linear Property\nThe $n^{th}$ term of an A.P. is always a **linear expression** in $n$. i.e., $a_n = An + B$, where $A = d$ (common difference) and $B = a-d$.\n\n### 3. $n^{th}$ Term from the End\n\nIf an A.P. has $m$ terms in total, the $n^{th}$ term from the end is the $(m-n+1)^{th}$ term from the beginning.\nAlternatively, if $l$ is the last term, the sequence reversed is an A.P. with first term $l$ and common difference $-d$.\n\n$$ a_n(\\text{from end}) = l - (n-1)d $$\n\n### 4. Sum of First $n$ Terms ($S_n$)\n\nLet $S_n$ denote the sum of the first $n$ terms of an A.P.\n$$ S_n = a + (a+d) + (a+2d) + ... + (a+(n-2)d) + (a+(n-1)d) $$\n\n**Derivation (Gaussian Method):**\nWrite the sum in reverse order:\n$$ S_n = (a+(n-1)d) + (a+(n-2)d) + ... + (a+d) + a $$\n\nAdding the two equations term by term:\n$$ 2S_n = [2a+(n-1)d] + [2a+(n-1)d] + ... + [2a+(n-1)d] $$\n\nThere are $n$ such terms.\n$$ 2S_n = n [2a + (n-1)d] $$\n\n$$ S_n = \\frac{n}{2} [2a + (n-1)d] $$\n\nAlternatively, using the last term $l = a + (n-1)d$:\n\n$$ S_n = \\frac{n}{2} (a + l) $$\n\n#### Quadratic Property of Sum\nThe sum of $n$ terms of an A.P. is always a **quadratic expression** in $n$ of the form $S_n = An^2 + Bn$, with no constant term. The common difference $d = 2A$.\n\n### 5. Arithmetic Mean (A.M.)\n\nIf three numbers $a, A, b$ are in A.P., then $A$ is called the **Arithmetic Mean** of $a$ and $b$.\n\n$$ A - a = b - A \\implies 2A = a + b \\implies A = \\frac{a+b}{2} $$\n\n**Inserting $n$ Arithmetic Means:**\nTo insert $n$ numbers $A_1, A_2, ..., A_n$ between $a$ and $b$ such that the resulting sequence is an A.P.:\nTotal terms = $n + 2$.\nLet $d$ be the common difference.\nLast term $b = a + ((n+2)-1)d \\implies b = a + (n+1)d$.\n\n$$ d = \\frac{b-a}{n+1} $$\n\nThen, $A_k = a + k\\left(\\frac{b-a}{n+1}\\right)$.\n\n### 6. Important Properties of A.P.\n\n1.  **Symmetry:** Sum of terms equidistant from the beginning and end is constant and equal to the sum of the first and last terms.\n    $$ a_k + a_{n-k+1} = a_1 + a_n $$\n2.  **Linear Operations:** If a constant is added, subtracted, multiplied, or divided (non-zero) to each term of an A.P., the resulting sequence is also an A.P.\n3.  **Selection of Terms:**\n    * 3 terms: $a-d, a, a+d$ (Sum = $3a$)\n    * 4 terms: $a-3d, a-d, a+d, a+3d$ (Sum = $4a$, common difference $2d$)\n    * 5 terms: $a-2d, a-d, a, a+d, a+2d$ (Sum = $5a$)"
+    },
+    {
+      "id": "topic_8_3",
+      "title": "Geometric Progression (G.P.)",
+      "content": "### 1. Definition\n\nA **Geometric Progression (G.P.)** is a sequence where each term (except the first) is obtained by multiplying the previous term by a non-zero constant called the **common ratio** ($r$).\n\nLet $a_1, a_2, ...$ be a G.P. Then:\n$$ \\frac{a_{n+1}}{a_n} = r \\quad \\forall n \\in \\mathbb{N} $$\n\n### 2. General Term of a G.P.\n\nLet $a$ be the first term and $r$ be the common ratio.\n* $a_1 = a$\n* $a_2 = ar$\n* $a_3 = ar^2$\n\nBy induction, the $n^{th}$ term ($a_n$) is:\n\n$$ a_n = a r^{n-1} $$\n\n### 3. Sum of First $n$ Terms ($S_n$)\n\n$$ S_n = a + ar + ar^2 + ... + ar^{n-1} $$\n\n**Derivation:**\nMultiply the sum by $r$:\n$$ rS_n = ar + ar^2 + ar^3 + ... + ar^n $$\n\nSubtract the second equation from the first:\n$$ S_n - rS_n = a - ar^n $$\n$$ S_n(1-r) = a(1-r^n) $$\n\nThus, three cases arise:\n1.  **If $r \\neq 1$:**\n    $$ S_n = \\frac{a(r^n - 1)}{r - 1} \\quad \\text{or} \\quad S_n = \\frac{a(1 - r^n)}{1 - r} $$\n2.  **If $r = 1$:** The sequence is $a, a, a, ...$. Sum is simply:\n    $$ S_n = na $$\n\n### 4. Sum to Infinity ($S_\\infty$)\n\nThis is a concept critical for calculus and physics applications. If $|r| < 1$ (i.e., $-1 < r < 1$), then as $n \\to \\infty$, the term $r^n$ approaches 0.\n\n$$ S_\\infty = \\lim_{n \\to \\infty} \\frac{a(1-r^n)}{1-r} = \\frac{a(1-0)}{1-r} $$\n\n$$ S_\\infty = \\frac{a}{1-r} \\quad (|r| < 1) $$\n\n### 5. Geometric Mean (G.M.)\n\nIf three non-zero positive numbers $a, G, b$ are in G.P., then $G$ is called the **Geometric Mean** of $a$ and $b$.\n\n$$ \\frac{G}{a} = \\frac{b}{G} \\implies G^2 = ab \\implies G = \\sqrt{ab} $$\n\n**Inserting $n$ Geometric Means:**\nTo insert $n$ numbers $G_1, G_2, ..., G_n$ between $a$ and $b$:\nTotal terms = $n+2$.\nLet $r$ be the common ratio.\nLast term $b = a r^{n+1}$.\n\n$$ r = \\left(\\frac{b}{a}\\right)^{\\frac{1}{n+1}} $$\n\nThen $G_k = a \\cdot \\left(\\frac{b}{a}\\right)^{\\frac{k}{n+1}}$.\n\n### 6. Properties of G.P.\n\n1.  **Product Property:** The product of terms equidistant from the beginning and the end is constant.\n    $$ a_k \\cdot a_{n-k+1} = a_1 \\cdot a_n $$\n2.  **Logarithmic Link:** If $a_1, a_2, ...$ are in G.P. (positive terms), then $\\log a_1, \\log a_2, ...$ are in A.P.\n3.  **Selection of Terms:**\n    * 3 terms: $a/r, a, ar$ (Product = $a^3$)\n    * 4 terms: $a/r^3, a/r, ar, ar^3$ (Common ratio $r^2$)"
+    },
+    {
+      "id": "topic_8_4",
+      "title": "Relationship Between A.M. and G.M.",
+      "content": "### 1. The Inequality Theorem\n\nFor any two positive real numbers $a$ and $b$:\n\n$$ \\text{Arithmetic Mean (A)} = \\frac{a+b}{2} $$\n$$ \\text{Geometric Mean (G)} = \\sqrt{ab} $$\n\nTheorem: **A $\\ge$ G**\n\n**Proof:**\nConsider the expression $( \\sqrt{a} - \\sqrt{b} )^2$.\nSince the square of any real number is non-negative:\n$$ ( \\sqrt{a} - \\sqrt{b} )^2 \\ge 0 $$\nExpanding:\n$$ a - 2\\sqrt{ab} + b \\ge 0 $$\n$$ a + b \\ge 2\\sqrt{ab} $$\n$$ \\frac{a+b}{2} \\ge \\sqrt{ab} $$\n$$ A \\ge G $$\n\nEquality holds if and only if $a = b$.\n\n### 2. Generalization (Advanced)\nFor $n$ positive numbers $x_1, x_2, ..., x_n$:\n$$ \\frac{x_1 + x_2 + ... + x_n}{n} \\ge (x_1 x_2 ... x_n)^{1/n} $$\n\nThis inequality is a powerful tool in solving maxima/minima problems in algebra without calculus."
+    },
+    {
+      "id": "topic_8_5",
+      "title": "Sum of Special Series",
+      "content": "We often encounter series that are not directly A.P. or G.P. but can be summed using standard formulas for natural powers.\n\n### 1. Sum of First $n$ Natural Numbers ($\\Sigma n$)\n$$ S_n = 1 + 2 + 3 + ... + n = \\frac{n(n+1)}{2} $$\n\n### 2. Sum of Squares of First $n$ Natural Numbers ($\\Sigma n^2$)\n$$ S_n = 1^2 + 2^2 + 3^2 + ... + n^2 = \\frac{n(n+1)(2n+1)}{6} $$\n\n**Proof Idea:** Use the identity $(k+1)^3 - k^3 = 3k^2 + 3k + 1$ and sum from $k=1$ to $n$ (Telescoping sum method).\n\n### 3. Sum of Cubes of First $n$ Natural Numbers ($\\Sigma n^3$)\n$$ S_n = 1^3 + 2^3 + 3^3 + ... + n^3 = \\left[ \\frac{n(n+1)}{2} \\right]^2 $$\n\n**Note:** $\\Sigma n^3 = (\\Sigma n)^2$.\n\n### 4. Method of Difference (Advanced)\nIf the differences of consecutive terms of a sequence form an A.P. or G.P., we can find the general term $a_n$ and then sum it.\n\nAlgorithm:\n1.  Let $S_n = T_1 + T_2 + T_3 + ... + T_n$\n2.  Write $S_n = 0 + T_1 + T_2 + ... + T_{n-1} + T_n$ (shifted one step).\n3.  Subtract the equations. The terms $(T_2-T_1), (T_3-T_2)$ will form a recognizable progression.\n4.  Solve for $T_n$, then use $\\Sigma T_n$ to find the sum."
+    }
+  ],
+  "examples": [
+    {
+      "id": "ex_8_1",
+      "title": "Sum of an A.P. given terms",
+      "problem": "The first term of an A.P. is $a$, the second term is $b$ and the last term is $c$. Show that the sum of the A.P. is $\\frac{(b+c-2a)(a+c)}{2(b-a)}$.",
+      "solution": "Let $d$ be the common difference and $n$ be the number of terms.\n1.  Given first term $A_1 = a$, second term $A_2 = b$. Thus $d = b - a$.\n2.  Last term $l = c$. We know $l = a + (n-1)d$.\n3.  Substitute $d$: $c = a + (n-1)(b-a)$.\n4.  Solve for $n-1$: $n-1 = \\frac{c-a}{b-a}$.\n5.  Solve for $n$: $n = \\frac{c-a}{b-a} + 1 = \\frac{c-a+b-a}{b-a} = \\frac{b+c-2a}{b-a}$.\n6.  Sum formula $S_n = \\frac{n}{2}(a+l) = \\frac{n}{2}(a+c)$.\n7.  Substitute $n$: $S_n = \\frac{1}{2} \\cdot \\frac{b+c-2a}{b-a} \\cdot (a+c)$.\n8.  Result: $S_n = \\frac{(b+c-2a)(a+c)}{2(b-a)}$. Q.E.D."
+    },
+    {
+      "id": "ex_8_2",
+      "title": "Ratio of Sums (Odd vs Even terms)",
+      "problem": "If there are $(2n+1)$ terms in an A.P., prove that the ratio of the sum of odd terms and the sum of even terms is $(n+1):n$.",
+      "solution": "Let the A.P. be $a, a+d, a+2d, ..., a+2nd$. Total terms = $2n+1$.\n\n**Step 1: Analyze Odd Terms**\nOdd positions: $1^{st}, 3^{rd}, 5^{th}, ..., (2n+1)^{th}$.\nSequence: $a, a+2d, a+4d, ...$\nNumber of terms = $n+1$.\nFirst term = $a$, Common difference = $2d$.\nSum $S_{odd} = \\frac{n+1}{2} [2a + ((n+1)-1)2d] = \\frac{n+1}{2} [2a + 2nd] = (n+1)(a+nd)$.\n\n**Step 2: Analyze Even Terms**\nEven positions: $2^{nd}, 4^{th}, ..., (2n)^{th}$.\nSequence: $a+d, a+3d, ...$\nNumber of terms = $n$.\nFirst term = $a+d$, Common difference = $2d$.\nSum $S_{even} = \\frac{n}{2} [2(a+d) + (n-1)2d] = \\frac{n}{2} [2a + 2d + 2nd - 2d] = \\frac{n}{2} [2a + 2nd] = n(a+nd)$.\n\n**Step 3: Find Ratio**\nRatio = $\\frac{S_{odd}}{S_{even}} = \\frac{(n+1)(a+nd)}{n(a+nd)} = \\frac{n+1}{n}$.\nRatio is $(n+1):n$."
+    },
+    {
+      "id": "ex_8_3",
+      "title": "Product of numbers in A.P.",
+      "problem": "The product of three numbers in A.P. is 224, and the largest number is 7 times the smallest. Find the numbers.",
+      "solution": "Let the three numbers be $a-d, a, a+d$. (Selection for 3 terms).\n\n**Step 1: Apply Largest/Smallest condition**\nLargest is $a+d$, smallest is $a-d$ (assuming $d>0$).\n$a+d = 7(a-d)$\n$a+d = 7a - 7d$\n$8d = 6a \\implies d = \\frac{3}{4}a$.\n\n**Step 2: Apply Product condition**\n$(a-d)(a)(a+d) = 224$\n$a(a^2 - d^2) = 224$\nSubstitute $d = \\frac{3}{4}a$:\n$a(a^2 - (\\frac{3}{4}a)^2) = 224$\n$a(a^2 - \\frac{9}{16}a^2) = 224$\n$a(\\frac{7}{16}a^2) = 224$\n$a^3 = \\frac{224 \\times 16}{7} = 32 \\times 16 = 512$\n$a = 8$.\n\n**Step 3: Find d and numbers**\n$d = \\frac{3}{4}(8) = 6$.\nNumbers are $8-6, 8, 8+6 \\implies 2, 8, 14$."
+    },
+    {
+      "id": "ex_8_4",
+      "title": "Functional Equation to G.P.",
+      "problem": "Find the natural number $a$ for which $\\sum_{k=1}^{n} f(a+k) = 16(2^n - 1)$, where the function satisfies $f(x+y) = f(x)f(y)$ for all natural numbers $x,y$ and $f(1)=2$.",
+      "solution": "1.  **Analyze Function:**\n    $f(1) = 2$\n    $f(2) = f(1+1) = f(1)f(1) = 2 \\times 2 = 2^2$\n    $f(3) = f(2+1) = f(2)f(1) = 2^2 \\times 2 = 2^3$\n    By induction, $f(x) = 2^x$.\n\n2.  **Evaluate Sum:**\n    $\\sum_{k=1}^{n} f(a+k) = \\sum_{k=1}^{n} 2^{a+k}$\n    $= 2^{a+1} + 2^{a+2} + ... + 2^{a+n}$\n    This is a G.P. with first term $A = 2^{a+1}$, common ratio $r = 2$, number of terms $n$.\n\n3.  **Sum Formula:**\n    $S_n = \\frac{A(r^n - 1)}{r-1} = \\frac{2^{a+1}(2^n - 1)}{2-1} = 2^{a+1}(2^n - 1)$.\n\n4.  **Solve for a:**\n    Given $S_n = 16(2^n - 1)$.\n    $2^{a+1}(2^n - 1) = 16(2^n - 1)$.\n    $2^{a+1} = 16 = 2^4$.\n    $a+1 = 4 \\implies a = 3$."
+    },
+    {
+      "id": "ex_8_5",
+      "title": "Sum of G.P. Special Case",
+      "problem": "If $S$ be the sum, $P$ the product and $R$ the sum of reciprocals of $n$ terms in a G.P., prove that $P^2 R^n = S^n$.",
+      "solution": "Let the G.P. be $a, ar, ar^2, ..., ar^{n-1}$.\n\n1.  **Sum (S):** $S = \\frac{a(r^n - 1)}{r-1}$.\n2.  **Product (P):** $P = a \\cdot ar \\cdot ... \\cdot ar^{n-1} = a^n r^{1+2+...+(n-1)} = a^n r^{\\frac{n(n-1)}{2}}$.\n3.  **Sum of Reciprocals (R):**\n    $R = \\frac{1}{a} + \\frac{1}{ar} + ... + \\frac{1}{ar^{n-1}}$.\n    This is a G.P. with first term $1/a$ and ratio $1/r$.\n    $R = \\frac{\\frac{1}{a}((\\frac{1}{r})^n - 1)}{\\frac{1}{r} - 1} = \\frac{1}{a} \\frac{1-r^n}{r^n} \\cdot \\frac{r}{1-r} = \\frac{1}{a} \\frac{r^n-1}{r^n} \\frac{r}{r-1}$.\n    Rearranging: $R = \\frac{r^n-1}{a r^{n-1}(r-1)}$.\n\n4.  **Verify Relation:**\n    We check $S/R$: $\\frac{a(r^n-1)/(r-1)}{(r^n-1)/(a r^{n-1}(r-1))} = a^2 r^{n-1}$.\n    Now check $P^2$: $(a^n r^{\\frac{n(n-1)}{2}})^2 = a^{2n} r^{n(n-1)} = (a^2 r^{n-1})^n$.\n    Notice that $(S/R)^n = (a^2 r^{n-1})^n = P^2$.\n    Therefore, $S^n / R^n = P^2 \\implies S^n = P^2 R^n$."
+    },
+    {
+      "id": "ex_8_6",
+      "title": "Minimum Value using AM-GM",
+      "problem": "Find the minimum value of $4^x + 4^{1-x}$ for $x \\in \\mathbb{R}$.",
+      "solution": "Let $a = 4^x$ and $b = 4^{1-x} = \\frac{4}{4^x}$.\nSince exponential functions are always positive, $a, b > 0$. We can apply AM $\\ge$ GM.\n\n$$ \\frac{a+b}{2} \\ge \\sqrt{ab} $$\n$$ \\frac{4^x + 4^{1-x}}{2} \\ge \\sqrt{4^x \\cdot 4^{1-x}} $$\n$$ \\frac{4^x + 4^{1-x}}{2} \\ge \\sqrt{4^{x + 1 - x}} $$\n$$ \\frac{4^x + 4^{1-x}}{2} \\ge \\sqrt{4^1} = 2 $$\n$$ 4^x + 4^{1-x} \\ge 4 $$\n\nMinimum value is 4."
+    },
+    {
+      "id": "ex_8_7",
+      "title": "A.P. and G.P. Combined",
+      "problem": "If $a, b, c$ are in A.P.; $b, c, d$ are in G.P. and $1/c, 1/d, 1/e$ are in A.P., prove that $a, c, e$ are in G.P.",
+      "solution": "1.  $a, b, c$ in A.P. $\\implies b = \\frac{a+c}{2}$ or $2b = a+c$.\n2.  $b, c, d$ in G.P. $\\implies c^2 = bd$.\n3.  $1/c, 1/d, 1/e$ in A.P. $\\implies \\frac{1}{d} = \\frac{1/c + 1/e}{2} \\implies d = \\frac{2ce}{c+e}$ (Harmonic Mean relation).\n\nSubstitute (1) and (3) into (2):\n$c^2 = \\left(\\frac{a+c}{2}\\right) \\left(\\frac{2ce}{c+e}\\right)$\n$c^2 = \\frac{c(a+c)e}{c+e}$\nDivide by $c$ (since $c \\neq 0$):\n$c = \\frac{e(a+c)}{c+e}$\n$c(c+e) = ae + ce$\n$c^2 + ce = ae + ce$\n$c^2 = ae$\n\nSince $c^2 = ae$, $a, c, e$ are in G.P. Q.E.D."
+    },
+    {
+      "id": "ex_8_8",
+      "title": "Sum of Series (Method of Difference)",
+      "problem": "Find the sum to $n$ terms of the series: $5 + 11 + 19 + 29 + 41 + ...$",
+      "solution": "Let $S_n = 5 + 11 + 19 + 29 + ... + a_n$.\nDifferences: $11-5=6, 19-11=8, 29-19=10, 41-29=12$.\nThe differences $6, 8, 10, 12...$ are in A.P.\n\nLet $a_n = An^2 + Bn + C$ (Quadratic form).\n$n=1: A+B+C = 5$\n$n=2: 4A+2B+C = 11$\n$n=3: 9A+3B+C = 19$\n\nSubtracting:\n$3A+B = 6$\n$5A+B = 8$\nSubtracting these: $2A = 2 \\implies A=1$.\n$3(1)+B=6 \\implies B=3$.\n$1+3+C=5 \\implies C=1$.\nSo $a_n = n^2 + 3n + 1$.\n\nSum $S_n = \\Sigma a_n = \\Sigma n^2 + 3\\Sigma n + \\Sigma 1$\n$S_n = \\frac{n(n+1)(2n+1)}{6} + 3\\frac{n(n+1)}{2} + n$\n$S_n = \\frac{n}{6} [ (n+1)(2n+1) + 9(n+1) + 6 ]$\n$S_n = \\frac{n}{6} [ 2n^2 + 3n + 1 + 9n + 9 + 6 ]$\n$S_n = \\frac{n}{6} [ 2n^2 + 12n + 16 ]$\n$S_n = \\frac{n(n^2 + 6n + 8)}{3} = \\frac{n(n+2)(n+4)}{3}$."
+    },
+    {
+      "id": "ex_8_9",
+      "title": "Sum to Infinity of AGP",
+      "problem": "Find the sum to infinity: $1 + \\frac{2}{3} + \\frac{6}{3^2} + \\frac{10}{3^3} + \\frac{14}{3^4} + ...$",
+      "solution": "Note: The numerators are $1, 2, 6, 10, 14...$. Excluding the first term, $2, 6, 10, 14$ is an A.P. with $d=4$.\nLet $S = 1 + \\frac{2}{3} + \\frac{6}{3^2} + \\frac{10}{3^3} + ...$\nSplit $S = 1 + S'$.\n$S' = \\frac{2}{3} + \\frac{6}{3^2} + \\frac{10}{3^3} + ...$\nMultiply by $1/3$: $\\frac{1}{3}S' = \\frac{2}{3^2} + \\frac{6}{3^3} + ...$\nSubtract: $S'(1 - 1/3) = \\frac{2}{3} + (\\frac{4}{3^2} + \\frac{4}{3^3} + ...)$\n$\\frac{2}{3}S' = \\frac{2}{3} + \\frac{4/9}{1-1/3} = \\frac{2}{3} + \\frac{4/9}{2/3} = \\frac{2}{3} + \\frac{2}{3} = \\frac{4}{3}$.\n$S' = 2$.\nTotal Sum $S = 1 + 2 = 3$."
+    },
+    {
+      "id": "ex_8_10",
+      "title": "Depreciation Word Problem",
+      "problem": "At the end of each year the value of a machine depreciates by 20%. If its initial value was 1250, find the value at the end of 5 years.",
+      "solution": "1.  Depreciation = 20%. Remaining value = 80% = 0.8.\n2.  Value follows a G.P. with $a = 1250$ and $r = 0.8$.\n3.  Value after 1 year ($t_1$) = $1250(0.8)$.\n4.  Value after 5 years ($t_5$) = $1250(0.8)^5$.\n5.  $1250 \\times 0.32768 = 409.6$."
+    }
+  ],
+  "exercises": [
+    {
+      "id": "q_8_1",
+      "type": "short_answer",
+      "question": "If the sum of $n$ terms of an A.P. is $2n^2 + 5n$, find its $n^{th}$ term.",
+      "hint": "Use $a_n = S_n - S_{n-1}$."
+    },
+    {
+      "id": "q_8_2",
+      "type": "long_answer",
+      "question": "Insert 5 numbers between 8 and 26 so that the resulting sequence is an A.P.",
+      "hint": "Use $d = (b-a)/(n+1)$."
+    },
+    {
+      "id": "q_8_3",
+      "type": "short_answer",
+      "question": "Find the sum of all natural numbers lying between 100 and 1000, which are multiples of 5.",
+      "hint": "First term 105, last 995. Find $n$ first."
+    },
+    {
+      "id": "q_8_4",
+      "type": "mcq",
+      "question": "If the $p^{th}$, $q^{th}$ and $r^{th}$ terms of a G.P. are $a, b, c$ respectively, then $q-r, r-p, p-q$ are exponents of $a, b, c$ such that $a^{q-r} b^{r-p} c^{p-q}$ equals:",
+      "options": ["0", "1", "abc", "pqr"],
+      "answer": "1"
+    },
+    {
+      "id": "q_8_5",
+      "type": "long_answer",
+      "question": "The sum of two numbers is 6 times their geometric mean, show that numbers are in the ratio $(3 + 2\\sqrt{2}) : (3 - 2\\sqrt{2})$.",
+      "hint": "Use $a+b = 6\\sqrt{ab}$. Divide by $b$ to form quadratic in $(a/b)$."
+    },
+    {
+      "id": "q_8_6",
+      "type": "jee_foundation",
+      "question": "If $a, b, c$ are in G.P. and $x, y$ are arithmetic means between $a, b$ and $b, c$ respectively, prove that $\\frac{a}{x} + \\frac{c}{y} = 2$ and $\\frac{1}{x} + \\frac{1}{y} = \\frac{2}{b}$."
+    },
+    {
+      "id": "q_8_7",
+      "type": "short_answer",
+      "question": "Find the sum to infinity of the G.P. $\\frac{-5}{4}, \\frac{5}{16}, \\frac{-5}{64}, ...$"
+    },
+    {
+      "id": "q_8_8",
+      "type": "jee_foundation",
+      "question": "If $S_1, S_2, S_3$ be the sum of $n, 2n, 3n$ terms respectively of an A.P., show that $S_3 = 3(S_2 - S_1)$."
+    },
+    {
+      "id": "q_8_9",
+      "type": "long_answer",
+      "question": "Find the sum of the series: $1^2 + (1^2+2^2) + (1^2+2^2+3^2) + ...$ upto $n$ terms.",
+      "hint": "General term $T_k = \\Sigma k^2$. Then sum $\\Sigma T_k$."
+    },
+    {
+      "id": "q_8_10",
+      "type": "mcq",
+      "question": "The minimum value of $2^{\\sin x} + 2^{\\cos x}$ is:",
+      "options": ["1", "$2^{1 - 1/\\sqrt{2}}$", "$2^{1 - \\sqrt{2}}$", "2"],
+      "answer": "$2^{1 - 1/\\sqrt{2}}$"
+    }
+  ],
+  "formula_compendium": [
+    {
+      "category": "Arithmetic Progression",
+      "formulas": [
+        "General Term: $a_n = a + (n-1)d$",
+        "Sum of n terms: $S_n = \\frac{n}{2}[2a + (n-1)d]$",
+        "Sum of n terms (alt): $S_n = \\frac{n}{2}(a + l)$",
+        "Arithmetic Mean: $A = \\frac{a+b}{2}$",
+        "Common Difference: $d = a_n - a_{n-1}$"
+      ]
+    },
+    {
+      "category": "Geometric Progression",
+      "formulas": [
+        "General Term: $a_n = a r^{n-1}$",
+        "Sum ($r > 1$): $S_n = \\frac{a(r^n - 1)}{r-1}$",
+        "Sum ($r < 1$): $S_n = \\frac{a(1 - r^n)}{1-r}$",
+        "Sum to Infinity ($|r|<1$): $S_\\infty = \\frac{a}{1-r}$",
+        "Geometric Mean: $G = \\sqrt{ab}$",
+        "Product of $n$ terms: $P = (G.M.)^n$"
+      ]
+    },
+    {
+      "category": "Relations & Special Sums",
+      "formulas": [
+        "AM-GM Inequality: $A \\ge G$",
+        "$\\sum_{k=1}^n k = \\frac{n(n+1)}{2}$",
+        "$\\sum_{k=1}^n k^2 = \\frac{n(n+1)(2n+1)}{6}$",
+        "$\\sum_{k=1}^n k^3 = [\\frac{n(n+1)}{2}]^2$",
+        "Sum of odd numbers: $1 + 3 + ... + (2n-1) = n^2$"
+      ]
+    }
+  ]
+}

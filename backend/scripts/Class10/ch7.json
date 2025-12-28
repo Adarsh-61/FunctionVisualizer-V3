@@ -1,0 +1,277 @@
+{
+  "id": "class_10",
+  "title": "Class 10",
+  "chapters": [
+    {
+      "id": "ch_7_coordinate_geometry",
+      "title": "Ch 7: Coordinate Geometry",
+      "topics": [
+        {
+          "id": "topic_7_1_introduction_foundations",
+          "title": "7.1 The Unification of Algebra and Geometry",
+          "content": "### 1. Introduction: René Descartes' Legacy\nFor centuries, Algebra (the study of equations) and Geometry (the study of shapes) were separate disciplines. The 17th-century French mathematician René Descartes changed this forever by introducing the **Cartesian Coordinate System**. This system allows us to locate points in a plane using pairs of numbers, thereby turning geometric shapes into algebraic equations and vice versa.\n\n#### 1.1 The Cartesian Plane (Recap)\nRecall from Class IX:\n* Two perpendicular number lines intersect at zero to form the **Origin** $O(0,0)$ [cite: 1].\n* The horizontal line is the **X-axis**.\n* The vertical line is the **Y-axis**.\n* A point $P$ is represented by an ordered pair $(x, y)$.\n    * **Abscissa ($x$):** Perpendicular distance from the y-axis.\n    * **Ordinate ($y$):** Perpendicular distance from the x-axis[cite: 6, 7].\n\n#### 1.2 The Power of Coordinates\nIn this chapter, we move beyond merely plotting points. We will develop algebraic tools to measure geometric properties:\n1.  **Distance:** How far apart are two points?\n2.  **Section:** If a point divides a line segment, what are its coordinates?\n3.  **Geometry of Figures:** Can we prove a figure is a square or a triangle using only numbers?\n\nThis analytical approach is the foundation of modern physics, engineering, computer graphics, and GPS navigation.",
+          "formulas": [
+            "O = (0, 0)",
+            "P = (x, y)"
+          ],
+          "examples": [],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_7_2_distance_formula",
+          "title": "7.2 The Distance Formula",
+          "content": "### 2. Measuring Distance Algebraically\nGeometrically, the distance between two points is the length of the straight line segment connecting them. Algebraically, we derive this using the **Pythagoras Theorem**.\n\n#### 2.1 Derivation from First Principles\nLet there be two points $P(x_1, y_1)$ and $Q(x_2, y_2)$ in the Cartesian plane.\n\n**Construction:**\n1.  Draw perpendiculars $PM$ and $QN$ to the x-axis.\n2.  Draw a perpendicular $PT$ from $P$ to $QN$[cite: 105].\n\n**Analysis of Coordinates:**\n* $OR = x_1$ and $OS = x_2$. Therefore, $RS = OS - OR = x_2 - x_1$. Since $PT = RS$, we have $PT = x_2 - x_1$.\n* $SQ = y_2$ and $ST = PM = y_1$. Therefore, $QT = SQ - ST = y_2 - y_1$ [cite: 106].\n\n**Applying Pythagoras Theorem:**\nIn the right-angled triangle $\\Delta PTQ$:\n$$PQ^2 = PT^2 + QT^2$$\n$$PQ^2 = (x_2 - x_1)^2 + (y_2 - y_1)^2$$ [cite: 108, 109].\n\nTaking the square root (distance is non-negative):\n$$PQ = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$\n\nThis is the **Distance Formula**.\n\n#### 2.2 Distance from Origin\nA special case arises when one point is the origin $O(0, 0)$ and the other is $P(x, y)$.\nSubstituting $x_1=0, y_1=0$ into the formula:\n$$OP = \\sqrt{(x - 0)^2 + (y - 0)^2} = \\sqrt{x^2 + y^2}$$[cite: 128].\n\n#### 2.3 Properties of the Distance Formula\n1.  **Symmetry:** $\\sqrt{(x_2 - x_1)^2} = \\sqrt{(x_1 - x_2)^2}$ because squaring eliminates the negative sign. The order of points does not matter[cite: 129].\n2.  **Non-negativity:** Distance is always $\\ge 0$[cite: 119].\n3.  **Horizontal/Vertical Lines:**\n    * If $y_1 = y_2$ (Horizontal line), Distance $= |x_2 - x_1|$.\n    * If $x_1 = x_2$ (Vertical line), Distance $= |y_2 - y_1|$.",
+          "formulas": [
+            "d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}",
+            "d_{\\text{origin}} = \\sqrt{x^2 + y^2}"
+          ],
+          "examples": [
+            {
+              "id": "ex_coord_1",
+              "question": "Find the distance between the points P(–5, 7) and Q(–1, 3).",
+              "steps": [
+                {
+                  "explanation": "Identify coordinates: $x_1 = -5, y_1 = 7$ and $x_2 = -1, y_2 = 3$."
+                },
+                {
+                  "explanation": "Apply the distance formula: $d = \\sqrt{(-1 - (-5))^2 + (3 - 7)^2}$."
+                },
+                {
+                  "explanation": "Simplify inside the root: $d = \\sqrt{(4)^2 + (-4)^2}$."
+                },
+                {
+                  "explanation": "Calculate squares: $d = \\sqrt{16 + 16} = \\sqrt{32}$."
+                },
+                {
+                  "explanation": "Simplify the surd: $32 = 16 \\times 2$, so $d = 4\\sqrt{2}$ units."
+                }
+              ],
+              "finalAnswer": "$4\\sqrt{2}$ units"
+            },
+            {
+              "id": "ex_coord_2",
+              "question": "Find a point on the y-axis which is equidistant from the points A(6, 5) and B(–4, 3).",
+              "steps": [
+                {
+                  "explanation": "A point on the y-axis has coordinates of the form $P(0, y)$[cite: 213]."
+                },
+                {
+                  "explanation": "Equidistant implies $PA = PB$, or $PA^2 = PB^2$ (squaring removes roots)."
+                },
+                {
+                  "explanation": "Calculate $PA^2$: $(6-0)^2 + (5-y)^2 = 36 + 25 + y^2 - 10y$."
+                },
+                {
+                  "explanation": "Calculate $PB^2$: $(-4-0)^2 + (3-y)^2 = 16 + 9 + y^2 - 6y$."
+                },
+                {
+                  "explanation": "Equate them: $61 + y^2 - 10y = 25 + y^2 - 6y$."
+                },
+                {
+                  "explanation": "Simplify: $y^2$ cancels out. $61 - 25 = 10y - 6y$."
+                },
+                {
+                  "explanation": "$36 = 4y \\implies y = 9$."
+                }
+              ],
+              "finalAnswer": "The point is (0, 9)."
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Distance Formula Derivation",
+            "functions": [],
+            "points": [
+              { "x": 2, "y": 3, "label": "P(x1, y1)" },
+              { "x": 6, "y": 6, "label": "Q(x2, y2)" },
+              { "x": 6, "y": 3, "label": "T" }
+            ],
+            "shapes": [
+              { "type": "line", "x1": 2, "y1": 3, "x2": 6, "y2": 6, "color": "blue", "label": "Distance d" },
+              { "type": "line", "x1": 2, "y1": 3, "x2": 6, "y2": 3, "color": "black", "label": "x2-x1" },
+              { "type": "line", "x1": 6, "y1": 3, "x2": 6, "y2": 6, "color": "black", "label": "y2-y1" }
+            ],
+            "xRange": [0, 8],
+            "yRange": [0, 8]
+          }
+        },
+        {
+          "id": "topic_7_3_applications_of_distance",
+          "title": "7.3 Geometric Applications of Distance",
+          "content": "### 3. Using Distance to Prove Geometry\nThe distance formula allows us to classify geometric figures by verifying the lengths of their sides and diagonals.\n\n#### 3.1 Collinearity of Points\nThree points $A, B,$ and $C$ are **collinear** (lie on a single straight line) if and only if the sum of the lengths of the two smaller segments equals the length of the largest segment.\nCondition: $AB + BC = AC$ (assuming B lies between A and C) [cite: 179].\n* If $AB + BC > AC$, the points form a triangle (Triangle Inequality)[cite: 135].\n\n#### 3.2 Types of Triangles\nTo classify $\\Delta ABC$, calculate $AB^2, BC^2, AC^2$:\n1.  **Equilateral:** $AB = BC = AC$.\n2.  **Isosceles:** Any two sides are equal (e.g., $AB = AC$)[cite: 236].\n3.  **Scalene:** All three sides are different.\n4.  **Right-Angled:** Satisfies Pythagoras Theorem (e.g., $AB^2 + BC^2 = AC^2$).\n\n#### 3.3 Types of Quadrilaterals\nTo identify a quadrilateral $ABCD$, calculate 4 sides and 2 diagonals:\n1.  **Parallelogram:** Opposite sides are equal ($AB=CD, BC=AD$). Diagonals are NOT necessarily equal.\n2.  **Rectangle:** Opposite sides are equal AND Diagonals are equal ($AC=BD$).\n3.  **Rhombus:** All 4 sides are equal ($AB=BC=CD=DA$). Diagonals are NOT equal.\n4.  **Square:** All 4 sides are equal AND Diagonals are equal ($AC=BD$)[cite: 148, 153].\n\n*Note:* Verifying diagonals is crucial to distinguish a Square from a Rhombus and a Rectangle from a Parallelogram.",
+          "formulas": [
+            "\\text{Collinear: } AB + BC = AC",
+            "\\text{Square: } 4 \\text{ sides equal } \\& \\text{ Diagonals equal}"
+          ],
+          "examples": [
+            {
+              "id": "ex_coord_3",
+              "question": "Check whether (5, -2), (6, 4) and (7, -2) are the vertices of an isosceles triangle.",
+              "steps": [
+                {
+                  "explanation": "Let points be $A(5, -2), B(6, 4), C(7, -2)$."
+                },
+                {
+                  "explanation": "Find length $AB$: $\\sqrt{(6-5)^2 + (4-(-2))^2} = \\sqrt{1^2 + 6^2} = \\sqrt{37}$."
+                },
+                {
+                  "explanation": "Find length $BC$: $\\sqrt{(7-6)^2 + (-2-4)^2} = \\sqrt{1^2 + (-6)^2} = \\sqrt{37}$."
+                },
+                {
+                  "explanation": "Find length $AC$: $\\sqrt{(7-5)^2 + (-2-(-2))^2} = \\sqrt{2^2 + 0^2} = 2$."
+                },
+                {
+                  "explanation": "Since $AB = BC = \\sqrt{37}$, the triangle has two equal sides."
+                }
+              ],
+              "finalAnswer": "Yes, it is an isosceles triangle."
+            },
+            {
+              "id": "ex_coord_4",
+              "question": "Name the type of quadrilateral formed by the points (-1, -2), (1, 0), (-1, 2), (-3, 0).",
+              "steps": [
+                {
+                  "explanation": "Let vertices be $A(-1, -2), B(1, 0), C(-1, 2), D(-3, 0)$."
+                },
+                {
+                  "explanation": "Sides: $AB = \\sqrt{2^2 + 2^2} = \\sqrt{8}$. $BC = \\sqrt{(-2)^2 + 2^2} = \\sqrt{8}$. $CD = \\sqrt{(-2)^2 + (-2)^2} = \\sqrt{8}$. $DA = \\sqrt{2^2 + (-2)^2} = \\sqrt{8}$."
+                },
+                {
+                  "explanation": "All sides are equal. It is either a Rhombus or a Square. Check diagonals."
+                },
+                {
+                  "explanation": "Diagonal $AC$: $\\sqrt{0^2 + 4^2} = 4$."
+                },
+                {
+                  "explanation": "Diagonal $BD$: $\\sqrt{(-4)^2 + 0^2} = 4$."
+                },
+                {
+                  "explanation": "Since sides are equal and diagonals are equal ($AC=BD=4$), it is a Square."
+                }
+              ],
+              "finalAnswer": "Square."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_7_4_section_formula",
+          "title": "7.4 The Section Formula",
+          "content": "### 4. Dividing a Line Segment\nConsider two points $A$ and $B$. If we place a point $P$ somewhere on the segment $AB$, it divides the segment into two parts with lengths $PA$ and $PB$. The ratio $PA:PB$ determines the specific location of $P$.\n\n#### 4.1 Derivation via Similarity\nLet $A(x_1, y_1)$ and $B(x_2, y_2)$ be two points. Let $P(x, y)$ divide $AB$ internally in the ratio $m_1 : m_2$. Meaning $\\frac{PA}{PB} = \\frac{m_1}{m_2}$[cite: 298].\n\n**Construction:**\nDraw perpendiculars $AR, PS, BT$ to the x-axis. Draw $AQ \\perp PS$ and $PC \\perp BT$ [cite: 314].\n\n**Similarity Argument:**\nTriangles $\\Delta PAQ$ and $\\Delta BPC$ are similar by AA similarity:\n* $\\angle PAQ = \\angle BPC$ (Corresponding angles).\n* $\\angle PQA = \\angle PCB = 90^\\circ$.\n\n**Ratio of Sides:**\n$\\frac{PA}{BP} = \\frac{AQ}{PC} = \\frac{PQ}{BC}$ [cite: 320].\n\n**Substituting Coordinates:**\n* $AQ = x - x_1$\n* $PC = x_2 - x$\n* $PQ = y - y_1$\n* $BC = y_2 - y$ [cite: 321, 322].\n\nSo, $\\frac{m_1}{m_2} = \\frac{x - x_1}{x_2 - x} = \\frac{y - y_1}{y_2 - y}$ [cite: 326].\n\n**Solving for x:**\n$\\frac{m_1}{m_2} = \\frac{x - x_1}{x_2 - x} \\implies m_1(x_2 - x) = m_2(x - x_1)$\n$m_1x_2 - m_1x = m_2x - m_2x_1$\n$m_1x_2 + m_2x_1 = m_1x + m_2x$\n$x(m_1 + m_2) = m_1x_2 + m_2x_1$\n$$x = \\frac{m_1x_2 + m_2x_1}{m_1 + m_2}$$ [cite: 328].\n\n**Solving for y:**\nSimilarly, $$y = \\frac{m_1y_2 + m_2y_1}{m_1 + m_2}$$[cite: 329].\n\nThis is the **Section Formula**.\n\n#### 4.2 The k:1 Method\nWhen the ratio is unknown, it is often algebraically simpler to assume the ratio is $k:1$. The formula becomes:\n$$x = \\frac{kx_2 + x_1}{k + 1}, \\quad y = \\frac{ky_2 + y_1}{k + 1}$$[cite: 335, 337].\nIf the calculated $k$ is positive, the division is internal. If $k$ is negative, the division is external.\n\n#### 4.3 Midpoint Formula\nIf $P$ is the midpoint, the ratio is $1:1$ ($m_1 = 1, m_2 = 1$).\n$$P(x, y) = \\left( \\frac{x_1 + x_2}{2}, \\frac{y_1 + y_2}{2} \\right)$$[cite: 338, 339].",
+          "formulas": [
+            "x = \\frac{m_1x_2 + m_2x_1}{m_1 + m_2}",
+            "y = \\frac{m_1y_2 + m_2y_1}{m_1 + m_2}",
+            "M = (\\frac{x_1+x_2}{2}, \\frac{y_1+y_2}{2})"
+          ],
+          "examples": [
+            {
+              "id": "ex_coord_5",
+              "question": "Find the coordinates of the point which divides the line segment joining the points (4, –3) and (8, 5) in the ratio 3 : 1 internally.",
+              "steps": [
+                {
+                  "explanation": "Let $P(x, y)$ be the point. Ratio $m_1:m_2 = 3:1$."
+                },
+                {
+                  "explanation": "Points: $x_1=4, y_1=-3$ and $x_2=8, y_2=5$."
+                },
+                {
+                  "explanation": "Apply x formula: $x = \\frac{3(8) + 1(4)}{3 + 1} = \\frac{24 + 4}{4} = \\frac{28}{4} = 7$."
+                },
+                {
+                  "explanation": "Apply y formula: $y = \\frac{3(5) + 1(-3)}{3 + 1} = \\frac{15 - 3}{4} = \\frac{12}{4} = 3$."
+                }
+              ],
+              "finalAnswer": "The point is (7, 3)."
+            },
+            {
+              "id": "ex_coord_6",
+              "question": "Find the ratio in which the y-axis divides the line segment joining the points (5, –6) and (–1, –4). Also find the point of intersection.",
+              "steps": [
+                {
+                  "explanation": "Let the ratio be $k:1$. Let the point on y-axis be $P(0, y)$ (since x-coordinate is 0 on y-axis)."
+                },
+                {
+                  "explanation": "Use the section formula for the x-coordinate: $x = \\frac{k(-1) + 1(5)}{k + 1}$."
+                },
+                {
+                  "explanation": "Set $x=0$: $0 = \\frac{-k + 5}{k + 1}$."
+                },
+                {
+                  "explanation": "Solve for k: $-k + 5 = 0 \\implies k = 5$. The ratio is 5:1."
+                },
+                {
+                  "explanation": "Now find y using $k=5$: $y = \\frac{5(-4) + 1(-6)}{5 + 1} = \\frac{-20 - 6}{6} = \\frac{-26}{6} = \\frac{-13}{3}$."
+                }
+              ],
+              "finalAnswer": "Ratio 5:1; Point $(0, -13/3)$."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_7_5_advanced_applications",
+          "title": "7.5 Advanced Applications of Coordinate Geometry",
+          "content": "### 5. Solving Complex Geometric Problems\nThe section formula is a powerful tool for solving problems involving trisection, parallelograms, and centroids.\n\n#### 5.1 Points of Trisection\nTrisection means dividing a segment into **three equal parts**. This requires two points, say $P$ and $Q$, on segment $AB$.\n* Point $P$ divides $AB$ in the ratio **1:2** (since $AP$ is 1 part and $PB$ is 2 parts).\n* Point $Q$ divides $AB$ in the ratio **2:1** (since $AQ$ is 2 parts and $QB$ is 1 part)[cite: 389].\n\n#### 5.2 Finding the Fourth Vertex of a Parallelogram\nIf three vertices $A, B, C$ of a parallelogram $ABCD$ are given, find $D(x, y)$.\n* **Method:** The diagonals of a parallelogram **bisect each other**.\n* Midpoint of $AC$ = Midpoint of $BD$.\n* Calculate midpoint of known diagonal $AC$. Equate it to the formula for midpoint of $BD$ involving $(x, y)$. Solve for $x$ and $y$.\n\n#### 5.3 The Centroid of a Triangle\nThe Centroid ($G$) is the point where the three medians of a triangle intersect. It divides each median in the ratio 2:1.\nFor a triangle with vertices $(x_1, y_1), (x_2, y_2), (x_3, y_3)$, the centroid is given by:\n$$G = \\left( \\frac{x_1 + x_2 + x_3}{3}, \\frac{y_1 + y_2 + y_3}{3} \\right)$$\n(Note: This is an extension derived from applying the section formula twice, first to find the midpoint of a side, then to find the point dividing the median).\n\n#### 5.4 Area of Triangle (Contextual Note)\nWhile the area formula ($0.5 |x_1(y_2-y_3) + ...|$) is standard, one can also determine if points are collinear using the Section Formula. If three points $A, B, C$ are collinear, then $B$ must divide $AC$ in some ratio $k:1$. If you solve for $k$ using x-coordinates and it yields a valid $k$ that *also* works for y-coordinates, the points are collinear.",
+          "formulas": [
+            "\\text{Midpoint}(AC) = \\text{Midpoint}(BD)"
+          ],
+          "examples": [
+            {
+              "id": "ex_coord_7",
+              "question": "Find the coordinates of the points of trisection of the line segment joining (4, –1) and (–2, –3).",
+              "steps": [
+                {
+                  "explanation": "Let points be $A(4, -1)$ and $B(-2, -3)$. We need two points $P$ and $Q$."
+                },
+                {
+                  "explanation": "Point $P$ divides $AB$ in ratio 1:2. $x_p = \\frac{1(-2) + 2(4)}{1+2} = \\frac{6}{3} = 2$. $y_p = \\frac{1(-3) + 2(-1)}{1+2} = \\frac{-5}{3}$."
+                },
+                {
+                  "explanation": "Point $Q$ divides $AB$ in ratio 2:1. $x_q = \\frac{2(-2) + 1(4)}{2+1} = 0$. $y_q = \\frac{2(-3) + 1(-1)}{2+1} = \\frac{-7}{3}$."
+                },
+                {
+                  "explanation": "Note: Similar logic to[cite: 389, 400, 401]."
+                }
+              ],
+              "finalAnswer": "$P(2, -5/3)$ and $Q(0, -7/3)$."
+            },
+            {
+              "id": "ex_coord_8",
+              "question": "If (1, 2), (4, y), (x, 6) and (3, 5) are the vertices of a parallelogram taken in order, find x and y.",
+              "steps": [
+                {
+                  "explanation": "Let vertices be $A(1, 2), B(4, y), C(x, 6), D(3, 5)$."
+                },
+                {
+                  "explanation": "Midpoint of $AC$ = Midpoint of $BD$."
+                },
+                {
+                  "explanation": "Midpoint AC: $(\\frac{1+x}{2}, \\frac{2+6}{2}) = (\\frac{1+x}{2}, 4)$."
+                },
+                {
+                  "explanation": "Midpoint BD: $(\\frac{4+3}{2}, \\frac{y+5}{2}) = (\\frac{7}{2}, \\frac{y+5}{2})$."
+                },
+                {
+                  "explanation": "Equate x-coords: $\\frac{1+x}{2} = \\frac{7}{2} \\implies 1+x = 7 \\implies x=6$."
+                },
+                {
+                  "explanation": "Equate y-coords: $4 = \\frac{y+5}{2} \\implies 8 = y+5 \\implies y=3$."
+                }
+              ],
+              "finalAnswer": "$x=6, y=3$."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_7_6_practice_compendium",
+          "title": "7.6 Practice Bank & Formula Compendium",
+          "content": "### 6. Comprehensive Practice Bank\n\n#### Section A: Distance Formula (10 Questions)\n1.  Find the distance between $(2, 3)$ and $(4, 1)$[cite: 230].\n2.  Check if points $(1, 5), (2, 3), (-2, -11)$ are collinear[cite: 235].\n3.  Find a point on x-axis equidistant from $(2, -5)$ and $(-2, 9)$[cite: 267].\n4.  Find $y$ if the distance between $P(2, -3)$ and $Q(10, y)$ is 10 units[cite: 268].\n5.  Show that points $(1, 7), (4, 2), (-1, -1), (-4, 4)$ form a square[cite: 141].\n6.  If $Q(0, 1)$ is equidistant from $P(5, -3)$ and $R(x, 6)$, find $x$[cite: 272].\n7.  Find the distance of $P(-6, 8)$ from the origin.\n8.  Name the quadrilateral formed by $(-1, -2), (1, 0), (-1, 2), (-3, 0)$[cite: 263].\n9.  Determine if $(5, -2), (6, 4), (7, -2)$ form an isosceles triangle[cite: 236].\n10. Find the relation between $x$ and $y$ if $(x, y)$ is equidistant from $(3, 6)$ and $(-3, 4)$[cite: 274].\n\n#### Section B: Section Formula (10 Questions)\n11. Find the coordinates of the point dividing $(-1, 7)$ and $(4, -3)$ in ratio 2:3[cite: 432].\n12. Find the ratio in which the line segment joining $(-3, 10)$ and $(6, -8)$ is divided by $(-1, 6)$[cite: 455].\n13. Find the coordinates of the points of trisection of the segment joining $(4, -1)$ and $(-2, -3)$[cite: 433].\n14. Find the ratio in which the y-axis divides the segment joining $(5, -6)$ and $(-1, -4)$[cite: 410].\n15. If $(1, 2), (4, y), (x, 6), (3, 5)$ are vertices of a parallelogram, find $x$ and $y$[cite: 459].\n16. Find the coordinates of a point $A$, where $AB$ is the diameter of a circle with center $(2, -3)$ and $B(1, 4)$[cite: 460].\n17. If $A$ and $B$ are $(-2, -2)$ and $(2, -4)$, find $P$ such that $AP = \\frac{3}{7} AB$ and $P$ lies on $AB$[cite: 461].\n18. Find the coordinates of points dividing the segment $A(-2, 2)$ and $B(2, 8)$ into four equal parts[cite: 463].\n19. Find the area of a rhombus if vertices are $(3, 0), (4, 5), (-1, 4), (-2, -1)$. (Hint: Area = 0.5 * d1 * d2) [cite: 464, 465].\n20. The midpoints of the sides of a triangle are $(1, 2), (0, -1)$ and $(2, -1)$. Find the vertices.\n\n#### Section C: Advanced / Reasoning (Must Practice)\n21. **(Must Practice)** A median of a triangle divides it into two triangles of equal areas. Verify this for $\\Delta ABC$ with vertices $A(4, -6), B(3, -2), C(5, 2)$.\n22. **(Must Practice)** Find the center of a circle passing through $(6, -6), (3, -7)$ and $(3, 3)$.\n23. **(Must Practice)** If two opposite vertices of a square are $(-1, 2)$ and $(3, 2)$, find the coordinates of the other two vertices.\n24. **(Must Practice)** The line segment joining $A(1, -5)$ and $B(-4, 5)$ is divided by the x-axis. Find the ratio and the point of division[cite: 457].\n25. **(Must Practice)** Determine the ratio in which the line $2x + y - 4 = 0$ divides the line segment joining the points $A(2, -2)$ and $B(3, 7)$.\n26. **(Must Practice)** If the points $A(6, 1), B(8, 2), C(9, 4)$ and $D(p, 3)$ are vertices of a parallelogram, find $p$.\n27. **(Must Practice)** Prove that the points $(3, 0), (6, 4)$ and $(-1, 3)$ are vertices of a right-angled isosceles triangle.\n28. **(Must Practice)** Find the coordinates of the centroid of the triangle with vertices $(x_1, y_1), (x_2, y_2), (x_3, y_3)$.\n29. **(Must Practice)** If $P(9a - 2, -b)$ divides the segment joining $A(3a+1, -3)$ and $B(8a, 5)$ in the ratio 3:1, find $a$ and $b$.\n30. **(Must Practice)** Show that $\\Delta ABC$ with vertices $A(a, a), B(-a, -a), C(-\\sqrt{3}a, \\sqrt{3}a)$ is equilateral.\n\n---\n\n### 7. Formula Compendium\n\n**1. Distance Formula**\n$$d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$\n\n**2. Distance from Origin**\n$$d = \\sqrt{x^2 + y^2}$$\n\n**3. Section Formula (Internal)**\n$$P(x, y) = \\left( \\frac{m_1x_2 + m_2x_1}{m_1 + m_2}, \\frac{m_1y_2 + m_2y_1}{m_1 + m_2} \\right)$$\n\n**4. Section Formula (Ratio k:1)**\n$$P(x, y) = \\left( \\frac{kx_2 + x_1}{k + 1}, \\frac{ky_2 + y_1}{k + 1} \\right)$$\n\n**5. Midpoint Formula**\n$$P(x, y) = \\left( \\frac{x_1 + x_2}{2}, \\frac{y_1 + y_2}{2} \\right)$$\n\n**6. Centroid of a Triangle**\n$$G(x, y) = \\left( \\frac{x_1 + x_2 + x_3}{3}, \\frac{y_1 + y_2 + y_3}{3} \\right)$$",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

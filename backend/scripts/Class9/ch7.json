@@ -1,0 +1,254 @@
+{
+  "id": "class_9",
+  "title": "Class 9",
+  "chapters": [
+    {
+      "id": "ch_7_triangles",
+      "title": "Ch 7: Triangles",
+      "topics": [
+        {
+          "id": "topic_7_1_congruence_fundamentals",
+          "title": "7.1 Fundamentals of Congruence",
+          "content": "### 1. The Geometry of Rigidity\nA triangle is the most fundamental polygon. It is the only rigid polygon; unlike a square which can squish into a rhombus, a triangle cannot change its shape without breaking its sides. This rigidity is the foundation of engineering structures and geometric proofs.\n\n#### 1.1 Formal Definitions\n* **Triangle:** A closed plane figure formed by three intersecting lines. Defined by three non-collinear points $A, B, C$.\n* **Congruence ($\\cong$):** Two geometric figures are congruent if they have exactly the same shape and size. In Euclidean geometry, this means one can be superimposed on the other to cover it exactly.\n\n#### 1.2 Mathematical Congruence\nFor two triangles $\\Delta ABC$ and $\\Delta PQR$, congruence is not just equality of area. It is a **correspondence**.\n\nIf $\\Delta ABC \\cong \\Delta PQR$, it implies six equalities:\n1.  **Sides:** $AB = PQ$, $BC = QR$, $AC = PR$\n2.  **Angles:** $\\angle A = \\angle P$, $\\angle B = \\angle Q$, $\\angle C = \\angle R$\n\n**CPCT (Corresponding Parts of Congruent Triangles):**\nThis is the \"Golden Hammer\" of geometry proofs. Once you prove two triangles are congruent, you can claim any corresponding pair of sides or angles are equal.\n\n* **Notation Warning:** Writing $\\Delta ABC \\cong \\Delta QRP$ is **NOT** the same as $\\Delta ABC \\cong \\Delta PQR$. The order of vertices dictates the correspondence. If $A \\leftrightarrow Q$, then $\\angle A = \\angle Q$, not $\\angle P$.",
+          "formulas": [
+            "\\Delta ABC \\cong \\Delta PQR \\iff AB=PQ, BC=QR, AC=PR, \\angle A=\\angle P...",
+            "\\text{CPCT: If } \\Delta_1 \\cong \\Delta_2 \\implies \\text{Parts}(\\Delta_1) = \\text{Parts}(\\Delta_2)"
+          ],
+          "examples": [
+            {
+              "id": "ex_tri_1",
+              "question": "If $\\Delta ABC \\cong \\Delta FED$, state the corresponding sides and angles.",
+              "steps": [
+                {
+                  "explanation": "Congruence relies on vertex order: $A \\leftrightarrow F$, $B \\leftrightarrow E$, $C \\leftrightarrow D$."
+                },
+                {
+                  "explanation": "Sides: $AB = FE$, $BC = ED$, $AC = FD$."
+                },
+                {
+                  "explanation": "Angles: $\\angle A = \\angle F$, $\\angle B = \\angle E$, $\\angle C = \\angle D$."
+                }
+              ],
+              "finalAnswer": "Pairs matched by vertex order."
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Congruent Triangles (Visualized via Coordinates)",
+            "functions": [],
+            "xRange": [
+              -5,
+              10
+            ],
+            "yRange": [
+              -5,
+              10
+            ],
+            "points": [
+              {
+                "x": 1,
+                "y": 1,
+                "label": "A",
+                "color": "blue"
+              },
+              {
+                "x": 3,
+                "y": 4,
+                "label": "B",
+                "color": "blue"
+              },
+              {
+                "x": 5,
+                "y": 1,
+                "label": "C",
+                "color": "blue"
+              },
+              {
+                "x": 6,
+                "y": 1,
+                "label": "P",
+                "color": "red"
+              },
+              {
+                "x": 8,
+                "y": 4,
+                "label": "Q",
+                "color": "red"
+              },
+              {
+                "x": 10,
+                "y": 1,
+                "label": "R",
+                "color": "red"
+              }
+            ]
+          }
+        },
+        {
+          "id": "topic_7_2_sas_axiom_asa_theorem",
+          "title": "7.2 SAS Axiom & ASA Theorem",
+          "content": "### 2. The Criteria for Congruence\nDo we need to check all 6 equalities to prove congruence? No. A triangle is defined by 3 independent components. We only need to check 3, provided they satisfy specific criteria.\n\n#### 2.1 Axiom 7.1: SAS Congruence (Side-Angle-Side)\n**Statement:** Two triangles are congruent if two sides and the **included angle** of one triangle are equal to the two sides and the included angle of the other triangle.\n\n* **Why is this an Axiom?** We cannot prove this using simpler concepts without assuming something about the nature of space (rigid motion). We accept this as a starting truth.\n* **The \"Included\" Condition:** The angle MUST be between the two sides. If we have Side-Side-Angle (SSA), congruence is **not** guaranteed (this is the \"Ambiguous Case\").\n\n#### 2.2 Theorem 7.1: ASA Congruence (Angle-Side-Angle)\n**Statement:** Two triangles are congruent if two angles and the **included side** of one triangle are equal to two angles and the included side of the other triangle.\n\n**Given:** $\\Delta ABC, \\Delta DEF$ with $\\angle B = \\angle E, \\angle C = \\angle F, BC = EF$.\n**To Prove:** $\\Delta ABC \\cong \\Delta DEF$.\n**Proof:**\n1.  **Case 1 (Assumption):** Assume $AB = DE$.\n    * $AB = DE$ (Assumed)\n    * $\\angle B = \\angle E$ (Given)\n    * $BC = EF$ (Given)\n    * $\\therefore \\Delta ABC \\cong \\Delta DEF$ (By SAS Axiom).\n\n2.  **Case 2 (Contradiction):** Assume $AB > DE$.\n    * Take point $P$ on $AB$ such that $PB = DE$.\n    * In $\\Delta PBC$ and $\\Delta DEF$:\n        * $PB = DE$ (Construction)\n        * $\\angle B = \\angle E$ (Given)\n        * $BC = EF$ (Given)\n    * $\\Delta PBC \\cong \\Delta DEF$ (SAS Axiom).\n    * $\\implies \\angle PCB = \\angle DFE$ (CPCT).\n    * But given $\\angle ACB = \\angle DFE$.\n    * So $\\angle PCB = \\angle ACB$.\n    * This is impossible unless $P$ coincides with $A$. Thus $AB = DE$.\n\n3.  **Conclusion:** In all cases, the triangles are congruent.\n\n#### 2.3 Corollary: AAS Congruence\n**Statement:** If any two pairs of angles and one pair of corresponding sides are equal, the triangles are congruent.\n**Logic:** If two angles are equal, the third is automatically equal (Angle Sum Property). Thus AAS reduces to ASA.",
+          "formulas": [
+            "\\text{SAS: Side + Included Angle + Side}",
+            "\\text{ASA: Angle + Included Side + Angle}",
+            "\\text{SSA is INVALID}"
+          ],
+          "examples": [
+            {
+              "id": "ex_tri_2",
+              "question": "Line segment $AB$ is parallel to another line segment $CD$. $O$ is the midpoint of $AD$. Prove that $\\Delta AOB \\cong \\Delta DOC$.",
+              "steps": [
+                {
+                  "explanation": "Given: $AB \\parallel CD$, $OA = OD$."
+                },
+                {
+                  "explanation": "Consider $\\Delta AOB$ and $\\Delta DOC$."
+                },
+                {
+                  "explanation": "1. $\\angle BAO = \\angle CDO$ (Alternate Interior Angles, since $AB \\parallel CD$)."
+                },
+                {
+                  "explanation": "2. $OA = OD$ (Given)."
+                },
+                {
+                  "explanation": "3. $\\angle AOB = \\angle DOC$ (Vertically Opposite Angles)."
+                },
+                {
+                  "explanation": "By ASA Criterion, $\\Delta AOB \\cong \\Delta DOC$."
+                }
+              ],
+              "finalAnswer": "Proved via ASA."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_7_3_isosceles_properties",
+          "title": "7.3 Properties of Isosceles Triangles",
+          "content": "### 3. The Isosceles Triangle Theorems\nSymmetry plays a huge role in geometry. An isosceles triangle has two equal sides, which forces symmetry in its angles.\n\n#### 3.1 Theorem 7.2 (Angles Opposite Equal Sides)\n**Statement:** Angles opposite to equal sides of an isosceles triangle are equal.\n\n**Given:** $\\Delta ABC$ with $AB = AC$.\n**To Prove:** $\\angle B = \\angle C$.\n**Construction:** Draw bisector of $\\angle A$ intersecting $BC$ at $D$.\n**Proof:**\n1.  In $\\Delta BAD$ and $\\Delta CAD$:\n    * $AB = AC$ (Given)\n    * $\\angle BAD = \\angle CAD$ (By construction of bisector)\n    * $AD = AD$ (Common side)\n2.  $\\Delta BAD \\cong \\Delta CAD$ (By SAS Axiom).\n3.  $\\therefore \\angle ABD = \\angle ACD$ (CPCT).\n4.  Thus, $\\angle B = \\angle C$. Q.E.D.\n\n#### 3.2 Theorem 7.3 (Sides Opposite Equal Angles)\n**Statement:** The sides opposite to equal angles of a triangle are equal.\n**Given:** $\\Delta ABC$ with $\\angle B = \\angle C$.\n**To Prove:** $AB = AC$.\n**Construction:** Draw bisector of $\\angle A$ intersecting $BC$ at $D$.\n**Proof:**\n1.  In $\\Delta BAD$ and $\\Delta CAD$:\n    * $\\angle B = \\angle C$ (Given)\n    * $\\angle BAD = \\angle CAD$ (Construction)\n    * $AD = AD$ (Common)\n2.  $\\Delta BAD \\cong \\Delta CAD$ (By AAS Criterion).\n3.  $\\therefore AB = AC$ (CPCT).\n\n#### 3.3 Deep Insight: Equilateral Triangles\nSince an equilateral triangle has $AB=BC=AC$, applying Theorem 7.2 twice implies $\\angle A = \\angle B = \\angle C$. Since sum is $180^\\circ$, each must be $60^\\circ$.",
+          "formulas": [
+            "AB = AC \\implies \\angle C = \\angle B",
+            "\\angle B = \\angle C \\implies AC = AB"
+          ],
+          "examples": [
+            {
+              "id": "ex_tri_3",
+              "question": "E and F are midpoints of equal sides AB and AC of $\\Delta ABC$. Prove that BF = CE.",
+              "steps": [
+                {
+                  "explanation": "Given $AB = AC$. Since E and F are midpoints, $AE = EB = \\frac{1}{2}AB$ and $AF = FC = \\frac{1}{2}AC$. Thus $AB=AC \\implies AE=AF$."
+                },
+                {
+                  "explanation": "Consider $\\Delta ABF$ and $\\Delta ACE$."
+                },
+                {
+                  "explanation": "1. $AB = AC$ (Given)."
+                },
+                {
+                  "explanation": "2. $\\angle A = \\angle A$ (Common)."
+                },
+                {
+                  "explanation": "3. $AF = AE$ (Halves of equal sides)."
+                },
+                {
+                  "explanation": "By SAS, $\\Delta ABF \\cong \\Delta ACE$."
+                },
+                {
+                  "explanation": "Therefore, $BF = CE$ (CPCT)."
+                }
+              ],
+              "finalAnswer": "Proved."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_7_4_sss_rhs_criteria",
+          "title": "7.4 SSS and RHS Criteria",
+          "content": "### 4. Advanced Criteria: SSS and RHS\nThese two criteria are theorems that rely on the properties of isosceles triangles.\n\n#### 4.1 Theorem 7.4: SSS Congruence (Side-Side-Side)\n**Statement:** If three sides of one triangle are equal to the three sides of another triangle, then the two triangles are congruent.\n\n**Proof Intuition:** Unlike SAS, we don't have angles. We must *construct* an angle. We place the two triangles base-to-base and use the properties of the resulting quadrilateral (two isosceles triangles).\n**Proof:**\n1.  Given $\\Delta ABC, \\Delta PQR$ with equal sides.\n2.  Place $\\Delta PQR$ such that $QR$ coincides with $BC$ but $P$ falls on the opposite side of $A$, forming $P'$.\n3.  Join $A$ to $P'$.\n4.  Since $AB = BP'$ and $AC = CP'$, $\\Delta ABP'$ and $\\Delta ACP'$ are isosceles.\n5.  $\\angle BAP' = \\angle BP'A$ and $\\angle CAP' = \\angle CP'A$.\n6.  Adding these gives $\\angle BAC = \\angle BP'C = \\angle P$.\n7.  Now we have SAS (Side $AB$, Angle $A$, Side $AC$).\n\n#### 4.2 Theorem 7.5: RHS Congruence (Right Angle-Hypotenuse-Side)\n**Statement:** If in two right triangles the hypotenuse and one side of one are equal to the hypotenuse and one side of the other, they are congruent.\n* **Warning:** This looks like \"SSA\" (which is invalid), but the Right Angle fixes the ambiguity.\n\n**Given:** $\\Delta ABC, \\Delta PQR$ with $\\angle B = \\angle Q = 90^\\circ$, $AC = PR$ (Hyp), $BC = QR$ (Side).\n**Proof:**\n1.  Extend $PQ$ to $S$ such that $QS = AB$. Join $S$ to $R$.\n2.  Prove $\\Delta ABC \\cong \\Delta SQR$ (SAS).\n3.  This implies $AC = SR$ (CPCT).\n4.  Given $AC = PR$, so $SR = PR$.\n5.  $\\Delta PRS$ is isosceles $\\implies \\angle P = \\angle S$.\n6.  Now use AAS on original triangles.",
+          "formulas": [
+            "\\text{SSS: All 3 sides match}",
+            "\\text{RHS: Right Angle + Hypotenuse + Side}"
+          ],
+          "examples": [
+            {
+              "id": "ex_tri_4",
+              "question": "ABC is an isosceles triangle with AB = AC. Draw AP $\\perp$ BC. Show that $\\angle B = \\angle C$ using RHS.",
+              "steps": [
+                {
+                  "explanation": "Consider $\\Delta ABP$ and $\\Delta ACP$."
+                },
+                {
+                  "explanation": "1. $\\angle APB = \\angle APC = 90^\\circ$ (Construction)."
+                },
+                {
+                  "explanation": "2. $AB = AC$ (Hypotenuse, Given)."
+                },
+                {
+                  "explanation": "3. $AP = AP$ (Common Side)."
+                },
+                {
+                  "explanation": "By RHS Criterion, $\\Delta ABP \\cong \\Delta ACP$."
+                },
+                {
+                  "explanation": "Therefore, $\\angle B = \\angle C$ (CPCT)."
+                }
+              ],
+              "finalAnswer": "Proved."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_7_5_inequalities",
+          "title": "7.5 Inequalities in Triangles",
+          "content": "### 5. Triangle Inequalities\nEquality is rare. In the real world, things are usually unequal. This section establishes the logic of \"Greater Than\" in geometry.\n\n#### 5.1 Theorem 7.6 (Angle-Side Relationship)\n**Statement:** If two sides of a triangle are unequal, the angle opposite to the longer side is larger (greater).\n**Given:** $\\Delta ABC$ with $AC > AB$.\n**To Prove:** $\\angle B > \\angle C$.\n**Proof:**\n1.  Mark point $D$ on $AC$ such that $AD = AB$. Join $BD$.\n2.  $\\Delta ABD$ is isosceles $\\implies \\angle ABD = \\angle ADB$ (say $x$).\n3.  $\\|angle ADB$ is an exterior angle to $\\Delta BDC$.\n4.  Exterior Angle > Interior Opposite. So $x > \\angle C$.\n5.  $\\angle B$ (which contains $\\angle ABD$) is definitely $> x$.\n6.  Therefore, $\\angle B > \\angle C$.\n\n#### 5.2 Theorem 7.7 (Side-Angle Relationship)\n**Statement:** In any triangle, the side opposite to the larger (greater) angle is longer.\n**Logic:** Proof by Contradiction. If side is not longer, it is either equal (isosceles) or smaller (contradicts Thm 7.6).\n\n#### 5.3 Theorem 7.8 (Triangle Inequality Theorem)\n**Statement:** The sum of any two sides of a triangle is greater than the third side.\n$$AB + AC > BC$$\n**Proof (Classic construction):**\n1.  Extend side $BA$ to point $D$ such that $AD = AC$. Join $DC$.\n2.  In $\\Delta ADC$, $AD=AC \\implies \\angle ADC = \\angle ACD$.\n3.  $\\angle BCD > \\angle ACD$ (Whole > Part).\n4.  $\\implies \\angle BCD > \\angle ADC$ (since $\\angle ADC = \\angle BDC$).\n5.  In $\\Delta BCD$, side opposite larger angle is longer: $BD > BC$.\n6.  $BD = BA + AD$. Since $AD = AC$, we have $BA + AC > BC$. Q.E.D.\n\n#### 5.4 Shortest Distance\n**Concept:** Of all line segments drawn from a point to a line, the **perpendicular** segment is the shortest. This is proved using the fact that the hypotenuse is the longest side in a right triangle.",
+          "formulas": [
+            "\\text{If } AB > AC \\implies \\angle C > \\angle B",
+            "\\text{If } \\angle B > \\angle C \\implies AC > AB",
+            "a + b > c"
+          ],
+          "examples": [
+            {
+              "id": "ex_tri_5",
+              "question": "D is a point on side BC of $\\Delta ABC$ such that AD = AC. Show that AB > AD.",
+              "steps": [
+                {
+                  "explanation": "1. In $\\Delta ADC$, $AD = AC$ (Given), so $\\angle ADC = \\angle ACD$ (Angles opp equal sides)."
+                },
+                {
+                  "explanation": "2. $\\angle ADC$ is an exterior angle for $\\Delta ABD$."
+                },
+                {
+                  "explanation": "3. Therefore, $\\angle ADC > \\angle ABD$ (Ext angle > Int opp angle)."
+                },
+                {
+                  "explanation": "4. Substituting from step 1: $\\angle ACD > \\angle ABD$, or $\\angle C > \\angle B$."
+                },
+                {
+                  "explanation": "5. In $\\Delta ABC$, since $\\angle C > \\angle B$, the side opposite $\\angle C$ is longer than the side opposite $\\angle B$."
+                },
+                {
+                  "explanation": "6. Therefore, $AB > AC$."
+                },
+                {
+                  "explanation": "7. Since $AC = AD$, $AB > AD$."
+                }
+              ],
+              "finalAnswer": "Proved."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_7_6_practice_bank",
+          "title": "7.6 Practice Bank & Compendium",
+          "content": "### 6. Comprehensive Practice Questions\n\n#### Section A: Proofs & Reasoning (10 Questions)\n1.  Prove that the sum of the three altitudes of a triangle is less than the sum of its three sides.\n2.  Prove that the medians of a triangle are concurrent (intersect at one point).\n3.  If two sides of a triangle are unequal, prove that the median drawn to the third side makes a greater angle with the smaller side.\n4.  Show that in a right angled triangle, the hypotenuse is the longest side.\n5.  Prove that the sum of any two sides of a triangle is greater than twice the median drawn to the third side.\n\n#### Section B: Must-Practice (Board/JEE Foundation)\n11. **(Must Practice)** In $\\Delta ABC$, if AD is the median and $AB + AC > 2AD$, prove it.\n12. **(Must Practice)** ABCD is a quadrilateral. Prove $AB + BC + CD + DA > AC + BD$.\n13. **(Must Practice)** Angles $B$ and $C$ of a triangle $ABC$ are equal. Perpendiculars from $B$ to $AC$ and $C$ to $AB$ are drawn. Prove they are equal.\n14. **(Must Practice)** If the bisector of an angle of a triangle also bisects the opposite side, prove that the triangle is isosceles.\n15. **(Must Practice)** Two sides $AB$ and $BC$ and median $AM$ of one triangle $ABC$ are respectively equal to sides $PQ$ and $QR$ and median $PN$ of $\\Delta PQR$. Prove $\\Delta ABC \\cong \\Delta PQR$.\n16. **(Must Practice)** Prove that the difference between any two sides of a triangle is less than the third side.\n17. **(Must Practice)** In Fig, $PR > PQ$ and $PS$ bisects $\\angle QPR$. Prove that $\\angle PSR > \\angle PSQ$.\n18. **(Must Practice)** ABC is an isosceles triangle with $AB=AC$. Side $BA$ is produced to $D$ such that $AD=AB$. Prove that $\\angle BCD$ is a right angle.\n19. **(Must Practice)** Prove that a triangle must have at least two acute angles.\n20. **(Must Practice)** If two isosceles triangles have a common base, prove that the line joining their vertices bisects the base at right angles.\n\n---\n\n### 7. Formula & Theorem Compendium\n\n#### 7.1 Congruence Criteria\n* **SAS:** Side-Angle(incl)-Side.\n* **ASA:** Angle-Side(incl)-Angle.\n* **AAS:** Angle-Angle-Side (derived).\n* **SSS:** Side-Side-Side.\n* **RHS:** Right-Hypotenuse-Side.\n\n#### 7.2 Isosceles Properties\n* Equal sides $\\implies$ Equal opp angles.\n* Equal angles $\\implies$ Equal opp sides.\n\n#### 7.3 Inequality Theorems\n* **Angle-Side:** Longer side $\\iff$ Larger angle.\n* **Sum:** $a + b > c$.\n* **Difference:** $|a - b| < c$.\n* **Projection:** Perpendicular is shortest path.",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

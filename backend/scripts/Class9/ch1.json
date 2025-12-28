@@ -1,0 +1,359 @@
+{
+  "id": "class_9",
+  "title": "Class 9",
+  "chapters": [
+    {
+      "id": "ch_1_number_systems",
+      "title": "Ch 1: Number Systems",
+      "topics": [
+        {
+          "id": "topic_1_1_foundations_and_classification",
+          "title": "1.1 Foundations & Classification of Numbers",
+          "content": "### 1. The Necessity of Numbers\nMathematics is the language of the universe, and numbers are its alphabet. The classification of numbers is not arbitrary; it represents the historical and logical evolution of human thought.\n\n#### 1.1.1 The Hierarchy of Sets\nWe define numbers using **Set Theory**, which provides a rigorous foundation for modern mathematics.\n\n**A. Natural Numbers ($\\mathbb{N}$)**\n* **Definition:** The set of counting numbers. $\\mathbb{N} = \\{1, 2, 3, 4, \\dots\\}$.\n* **Peano Axioms (Advanced):** \n    1. $1$ is a natural number.\n    2. Every natural number $n$ has a successor $n+1$.\n    3. $1$ is not the successor of any natural number.\n* **Closure:** Closed under Addition ($+$) and Multiplication ($\\times$). Not closed under Subtraction or Division.\n\n**B. Whole Numbers ($\\mathbb{W}$)**\n* **Definition:** The set of Natural numbers union with the singleton set $\\{0\\}$. $\\mathbb{W} = \\{0, 1, 2, 3, \\dots\\}$.\n* **Role of Zero:** Zero is the **additive identity** ($a + 0 = a$). It represents the cardinality of an empty set.\n\n**C. Integers ($\\mathbb{Z}$)**\n* **Definition:** The set of Whole numbers and their additive inverses (negatives). $\\mathbb{Z} = \\{\\dots, -3, -2, -1, 0, 1, 2, 3, \\dots\\}$.\n* **Origin:** From German *Zahlen* (to count).\n* **Structure:** $\\mathbb{Z}$ forms a **Ring** under addition and multiplication (Advanced). It allows for the solvability of equations like $x + 5 = 2$.\n\n**D. Rational Numbers ($\\mathbb{Q}$)**\n* **Formal Definition:** A number $r$ is rational if $\\exists p, q \\in \\mathbb{Z}$ such that $r = \\frac{p}{q}$ and $q \\neq 0$.\n* **Standard Form:** A rational number is in standard form if $q > 0$ and $\\text{gcd}(p, q) = 1$.\n* **Q as a Field:** $\\mathbb{Q}$ is the smallest **Field** of characteristic 0. It supports $+$, $-$, $\\times$, and $\\div$ (by non-zero).\n\n#### 1.1.2 The Density Property of Rationals\nOne of the most profound properties of $\\mathbb{Q}$ is **Density**.\n* **Theorem:** Between any two distinct rational numbers $a$ and $b$ (assume $a < b$), there exist infinitely many rational numbers.\n* **Proof Strategy:**\n    * **Arithmetic Mean:** $m_1 = \\frac{a+b}{2}$. Since $\\mathbb{Q}$ is closed under addition and division by 2, $m_1 \\in \\mathbb{Q}$. Clearly $a < m_1 < b$.\n    * **Recursion:** We can find $m_2 = \\frac{a+m_1}{2}$, $m_3 = \\frac{m_1+b}{2}$, and so on ad infinitum.\n* **Method for finding $n$ rationals:**\n    1. **Mean Method:** Repeatedly take averages (tedious for large $n$).\n    2. **Denominator Method:** Convert $a$ and $b$ to equivalent fractions with denominator $k(n+1)$.\n\n#### 1.1.3 Euclid’s Division Lemma (Foundation)\nAlthough often introduced later, this is the bedrock of integer arithmetic.\n* **Statement:** Given positive integers $a$ and $b$, there exist unique integers $q$ and $r$ satisfying $a = bq + r$, where $0 \\le r < b$.\n* **Significance:** This lemma justifies the process of long division and is key to finding HCF (GCD).\n\n#### 1.1.4 The Fundamental Theorem of Arithmetic\n* **Statement:** Every composite number can be expressed (factorized) as a product of primes, and this factorization is unique, apart from the order in which the prime factors occur.\n* **Example:** $120 = 2^3 \\times 3 \\times 5$. No other set of primes multiplies to 120.\n* **Application:** This theorem is crucial for determining if a rational number has a terminating decimal expansion (discussed in 1.3).",
+          "formulas": [
+            "\\mathbb{N} \\subset \\mathbb{W} \\subset \\mathbb{Z} \\subset \\mathbb{Q}",
+            "\\text{Density: } \\forall x, y \\in \\mathbb{Q}, x < y \\implies \\exists z \\in \\mathbb{Q} \\text{ s.t. } x < z < y",
+            "a = bq + r, \\quad 0 \\le r < b",
+            "N = p_1^{a_1} p_2^{a_2} \\dots p_k^{a_k} \\quad (\\text{Unique Factorization})"
+          ],
+          "examples": [
+            {
+              "id": "ex_1_1_1",
+              "question": "Insert 5 rational numbers between $\\frac{3}{5}$ and $\\frac{2}{3}$.",
+              "steps": [
+                {
+                  "explanation": "Make denominators the same. LCM of 5 and 3 is 15."
+                },
+                {
+                  "explanation": "Convert fractions:",
+                  "math": "\\frac{3}{5} = \\frac{9}{15}, \\quad \\frac{2}{3} = \\frac{10}{15}"
+                },
+                {
+                  "explanation": "The gap between 9 and 10 is not enough for 5 integers. Multiply numerator and denominator by $n+1 = 6$."
+                },
+                {
+                  "explanation": "Scale up:",
+                  "math": "\\frac{9 \\times 6}{15 \\times 6} = \\frac{54}{90}, \\quad \\frac{10 \\times 6}{15 \\times 6} = \\frac{60}{90}"
+                },
+                {
+                  "explanation": "Select integers between 54 and 60: 55, 56, 57, 58, 59."
+                }
+              ],
+              "finalAnswer": "The numbers are $\\frac{55}{90}, \\frac{56}{90}, \\frac{57}{90}, \\frac{58}{90}, \\frac{59}{90}$."
+            },
+            {
+              "id": "ex_1_1_2",
+              "question": "Use Euclid's Division Lemma to show that the square of any positive integer is of the form $3m$ or $3m+1$ for some integer $m$.",
+              "steps": [
+                {
+                  "explanation": "Let $a$ be any positive integer. Apply Euclid's Lemma with $b=3$."
+                },
+                {
+                  "explanation": "Possible forms of $a$ are $3q$, $3q+1$, or $3q+2$."
+                },
+                {
+                  "explanation": "Case 1: $a = 3q$. Then $a^2 = (3q)^2 = 9q^2 = 3(3q^2) = 3m$."
+                },
+                {
+                  "explanation": "Case 2: $a = 3q+1$. Then $a^2 = (3q+1)^2 = 9q^2 + 6q + 1 = 3(3q^2 + 2q) + 1 = 3m + 1$."
+                },
+                {
+                  "explanation": "Case 3: $a = 3q+2$. Then $a^2 = (3q+2)^2 = 9q^2 + 12q + 4 = 9q^2 + 12q + 3 + 1 = 3(3q^2 + 4q + 1) + 1 = 3m + 1$."
+                }
+              ],
+              "finalAnswer": "In all cases, $a^2$ is of the form $3m$ or $3m+1$."
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Density of Rational Numbers",
+            "functions": [
+              {
+                "expression": "0",
+                "color": "black",
+                "label": "Number Line"
+              }
+            ],
+            "xRange": [
+              0,
+              2
+            ],
+            "yRange": [
+              -1,
+              1
+            ]
+          }
+        },
+        {
+          "id": "topic_1_2_irrational_numbers_proofs",
+          "title": "1.2 Irrational Numbers & Advanced Proofs",
+          "content": "### 1. The Crisis of Pythagoreans\nThe discovery of irrational numbers was a turning point in mathematics. The Pythagoreans believed all universe quantities could be expressed as ratios of integers. The diagonal of a unit square shattered this belief.\n\n#### 1.2.1 Definition and Properties\n* **Irrational Number ($\\mathbb{I}$ or $\\mathbb{Q}'$):** A real number that cannot be written as $p/q$ ($p,q \\in \\mathbb{Z}, q \\neq 0$).\n* **Decimal Nature:** Non-terminating, non-recurring.\n* **Examples:** $\\sqrt{2}, \\sqrt{3}, \\pi, e, \\phi$ (Golden Ratio).\n\n#### 1.2.2 Formal Proofs of Irrationality\nThis is a standard proof by **Reductio ad Absurdum** (Proof by Contradiction).\n\n**Theorem:** $\\sqrt{2}$ is irrational.\n**Proof:**\n1.  **Assumption:** Assume $\\sqrt{2}$ is rational. Then $\\sqrt{2} = \\frac{p}{q}$ where $p, q \\in \\mathbb{Z}, q \\neq 0$, and $\\text{gcd}(p, q) = 1$ (coprime).\n2.  **Squaring:** $2 = \\frac{p^2}{q^2} \\implies p^2 = 2q^2$.\n3.  **Deduction 1:** $p^2$ is even $\\implies p$ is even (since the square of an odd number is odd). Let $p = 2k$.\n4.  **Substitution:** $(2k)^2 = 2q^2 \\implies 4k^2 = 2q^2 \\implies q^2 = 2k^2$.\n5.  **Deduction 2:** $q^2$ is even $\\implies q$ is even.\n6.  **Contradiction:** We found both $p$ and $q$ are even, meaning they share a factor of 2. This contradicts the assumption that $\\text{gcd}(p, q) = 1$.\n7.  **Conclusion:** The assumption is false. $\\sqrt{2}$ is irrational.\n\n**Generalized Theorem:** If $p$ is a prime number, then $\\sqrt{p}$ is irrational.\n* The proof follows the same logic using Euclid's Lemma: If prime $p$ divides $a^2$, then $p$ divides $a$.\n\n#### 1.2.3 Geometrical Representation\nEvery real number corresponds to a unique point on the number line.\n* **Locating $\\sqrt{n}$:** We use the Pythagorean Theorem ($h^2 = p^2 + b^2$).\n* **The Spiral of Theodorus:**\n    * Start with $\\Delta OAB$, legs 1, 1. Hypotenuse $OB = \\sqrt{2}$.\n    * Construct $BC \\perp OB$ with length 1. New hypotenuse $OC = \\sqrt{(\\sqrt{2})^2 + 1^2} = \\sqrt{3}$.\n    * Construct $CD \\perp OC$ with length 1. New hypotenuse $OD = \\sqrt{(\\sqrt{3})^2 + 1^2} = \\sqrt{4} = 2$.\n    * This process continues to locate $\\sqrt{n}$.\n\n#### 1.2.4 Transcendental vs Algebraic Irrationals (Advanced)\n* **Algebraic:** Roots of polynomial equations with integer coefficients (e.g., $\\sqrt{2}$ is a root of $x^2 - 2 = 0$).\n* **Transcendental:** Numbers that are not roots of any such polynomial (e.g., $\\pi, e$). Proving a number is transcendental is extremely difficult.",
+          "formulas": [
+            "\\sqrt{p} \\notin \\mathbb{Q} \\text{ if } p \\text{ is prime}",
+            "\\text{Pythagoras: } \\text{Hyp}^2 = \\text{Base}^2 + \\text{Alt}^2"
+          ],
+          "examples": [
+            {
+              "id": "ex_1_2_1",
+              "question": "Prove that $3 + 2\\sqrt{5}$ is irrational, given that $\\sqrt{5}$ is irrational.",
+              "steps": [
+                {
+                  "explanation": "Assume the contrary, that $x = 3 + 2\\sqrt{5}$ is rational."
+                },
+                {
+                  "explanation": "Rearrange to isolate the irrational term.",
+                  "math": "x - 3 = 2\\sqrt{5} \\implies \\frac{x-3}{2} = \\sqrt{5}"
+                },
+                {
+                  "explanation": "Analyze the equation: Since $x$ is rational, $\\frac{x-3}{2}$ is also rational (closure of rationals)."
+                },
+                {
+                  "explanation": "Contradiction: We have Rational = Irrational ($\\sqrt{5}$). This is impossible."
+                },
+                {
+                  "explanation": "Therefore, the assumption is false."
+                }
+              ],
+              "finalAnswer": "$3 + 2\\sqrt{5}$ is irrational."
+            },
+            {
+              "id": "ex_1_2_2",
+              "question": "Locate $\\sqrt{10}$ on the number line.",
+              "steps": [
+                {
+                  "explanation": "Express 10 as a sum of two squares: $10 = 9 + 1 = 3^2 + 1^2$."
+                },
+                {
+                  "explanation": "Draw a number line. Mark O at 0 and A at 3."
+                },
+                {
+                  "explanation": "At A (3), construct a perpendicular AB of length 1 unit."
+                },
+                {
+                  "explanation": "Join OB. By Pythagoras: $OB^2 = OA^2 + AB^2 = 3^2 + 1^2 = 10$."
+                },
+                {
+                  "explanation": "So $OB = \\sqrt{10}$. Using a compass with center O and radius OB, draw an arc to cut the number line at P."
+                }
+              ],
+              "finalAnswer": "Point P represents $\\sqrt{10}$."
+            },
+            {
+              "id": "ex_1_2_3",
+              "question": "Identify which of the following are irrational: (i) $\\sqrt{12}$ (ii) $\\sqrt{225}$ (iii) $0.3796$ (iv) $1.1010010001...$",
+              "steps": [
+                {
+                  "explanation": "(i) $\\sqrt{12} = \\sqrt{4 \\times 3} = 2\\sqrt{3}$. Since $\\sqrt{3}$ is irrational, the product is irrational."
+                },
+                {
+                  "explanation": "(ii) $\\sqrt{225} = 15$. Rational."
+                },
+                {
+                  "explanation": "(iii) $0.3796$ is a terminating decimal. Rational."
+                },
+                {
+                  "explanation": "(iv) Non-terminating, non-repeating pattern. Irrational."
+                }
+              ],
+              "finalAnswer": "(i) and (iv) are irrational."
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Irrational Numbers Construction",
+            "functions": [
+              {
+                "expression": "x",
+                "color": "transparent",
+                "label": "Number Line Base"
+              }
+            ],
+            "xRange": [
+              0,
+              4
+            ],
+            "yRange": [
+              -1,
+              2
+            ]
+          }
+        },
+        {
+          "id": "topic_1_3_real_numbers_decimal_expansions",
+          "title": "1.3 Real Numbers & Decimal Expansions",
+          "content": "### 1. The Real Number System ($\\mathbb{R}$)\nThe set of Real Numbers is the union of Rationals and Irrationals: $\\mathbb{R} = \\mathbb{Q} \\cup \\mathbb{I}$.\n* **Completeness Axiom:** The number line has no \"holes\". Every point on the line corresponds to a real number.\n\n#### 1.3.1 Decimal Expansion Types\nThe nature of the decimal expansion of a number $x$ determines its classification.\n\n1.  **Terminating Decimal:**\n    * Ends after a finite number of digits (e.g., $0.5, 2.125$).\n    * **Condition:** A rational number $p/q$ (in simplest form) terminates if and only if the prime factorization of $q$ is of the form $2^n 5^m$, where $n, m$ are non-negative integers.\n    * **Reasoning:** Only 2 and 5 are factors of 10. To convert a fraction to a decimal, we essentially scale it to have a power of 10 in the denominator.\n\n2.  **Non-Terminating Recurring (Repeating):**\n    * A block of digits repeats infinitely (e.g., $0.333\\dots, 1.2727\\dots$).\n    * **Condition:** $p/q$ repeats if $q$ has prime factors other than 2 or 5.\n    * **Periodicity:** The number of repeating digits (period) is always less than the divisor $q$.\n\n3.  **Non-Terminating Non-Recurring:**\n    * No pattern repeats (e.g., $\\pi, 0.1010010001\\dots$).\n    * Corresponds strictly to **Irrational Numbers**.\n\n#### 1.3.2 Conversion: Decimal to Fraction ($p/q$)\n* **Terminating:** Trivial. $0.375 = \\frac{375}{1000} = \\frac{3}{8}$.\n* **Recurring:** Requires algebra.\n    * *Method:* Let $x = 0.\\overline{block}$. Multiply by $10^k$ where $k$ is the block length. Subtract original $x$ to eliminate the recurring part.\n\n#### 1.3.3 Visualizing Decimals (Successive Magnification)\nTo locate $3.765$ on the number line:\n1.  Range [3, 4]. Divide into 10 parts.\n2.  Select [3.7, 3.8]. Magnify. Divide into 10 parts.\n3.  Select [3.76, 3.77]. Magnify. Divide into 10 parts.\n4.  Locate 3.765.",
+          "formulas": [
+            "\\mathbb{R} = \\mathbb{Q} \\cup \\mathbb{I}",
+            "\\frac{p}{q} \\text{ terminates } \\iff q = 2^n 5^m",
+            "\\text{Period length } < \\text{ Divisor}"
+          ],
+          "examples": [
+            {
+              "id": "ex_1_3_1",
+              "question": "Express $0.6 + 0.\\overline{7} + 0.4\\overline{7}$ in the form $p/q$.",
+              "steps": [
+                {
+                  "explanation": "Convert each term to a fraction individually."
+                },
+                {
+                  "explanation": "Term 1: $0.6 = \\frac{6}{10} = \\frac{3}{5}$."
+                },
+                {
+                  "explanation": "Term 2: Let $x = 0.777\\dots$. $10x = 7.777\\dots$. $9x = 7 \\implies x = \\frac{7}{9}$."
+                },
+                {
+                  "explanation": "Term 3: Let $y = 0.4777\\dots$. $10y = 4.777\\dots$. $100y = 47.777\\dots$. $100y - 10y = 43 \\implies 90y = 43 \\implies y = \\frac{43}{90}$."
+                },
+                {
+                  "explanation": "Sum: $\\frac{3}{5} + \\frac{7}{9} + \\frac{43}{90}$."
+                },
+                {
+                  "explanation": "LCM is 90. $\\frac{54}{90} + \\frac{70}{90} + \\frac{43}{90} = \\frac{167}{90}$."
+                }
+              ],
+              "finalAnswer": "$\\frac{167}{90}$"
+            },
+            {
+              "id": "ex_1_3_2",
+              "question": "Without actual division, determine if $\\frac{13}{3125}$ is terminating.",
+              "steps": [
+                {
+                  "explanation": "Factorize the denominator 3125."
+                },
+                {
+                  "explanation": "$3125 = 5 \\times 625 = 5 \\times 5 \\times 125 = 5^5$."
+                },
+                {
+                  "explanation": "The denominator is of the form $2^0 5^5$."
+                },
+                {
+                  "explanation": "Therefore, it has a terminating decimal expansion."
+                }
+              ],
+              "finalAnswer": "Terminating."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_1_4_operations_surds_rationalization",
+          "title": "1.4 Operations on Real Numbers & Rationalization",
+          "content": "### 1. Operations and Closure Properties\n* **Rational + Rational** = Rational.\n* **Irrational + Irrational** = Need not be Irrational (e.g., $\\sqrt{2} + (-\\sqrt{2}) = 0$).\n* **Rational + Irrational** = Irrational.\n* **Rational $\\times$ Irrational** = Irrational (provided Rational $\\neq 0$).\n\n### 2. Algebra of Real Numbers\nFor positive real numbers $a, b$:\n* $\\sqrt{ab} = \\sqrt{a}\\sqrt{b}$\n* $\\sqrt{\\frac{a}{b}} = \\frac{\\sqrt{a}}{\\sqrt{b}}$\n* $(\\sqrt{a} + \\sqrt{b})(\\sqrt{a} - \\sqrt{b}) = a - b$\n* $(a + \\sqrt{b})(a - \\sqrt{b}) = a^2 - b$\n\n### 3. Surds (Radicals)\nA surd is an irrational root of a rational number, e.g., $\\sqrt{2}, \\sqrt[3]{7}$.\n* **Pure Surd:** Entirely under the root (e.g., $\\sqrt{32}$).\n* **Mixed Surd:** Coefficient exists (e.g., $4\\sqrt{2}$).\n\n### 4. Rationalization of the Denominator\nThe process of removing radicals from the denominator to make calculation and estimation easier.\n\n**Type A: Monomial Denominator $\\frac{1}{\\sqrt{a}}$**\n* Multiply numerator and denominator by $\\sqrt{a}$.\n\n**Type B: Binomial Denominator $\\frac{1}{a \\pm \\sqrt{b}}$**\n* Use the **Conjugate**. The conjugate of $a + \\sqrt{b}$ is $a - \\sqrt{b}$.\n* Product: $(a+\\sqrt{b})(a-\\sqrt{b}) = a^2 - b$ (Rational).\n\n**Type C: Trinomial Denominator (Advanced)**\n* Example: $\\frac{1}{\\sqrt{2} + \\sqrt{3} + \\sqrt{5}}$.\n* Strategy: Group terms, e.g., $(\\sqrt{2} + \\sqrt{3}) + \\sqrt{5}$. Rationalize once, then rationalize the resulting binomial.\n\n### 5. Comparing Surds\nTo compare $\\sqrt[n]{a}$ and $\\sqrt[m]{b}$:\n1.  Find $L = \\text{LCM}(n, m)$.\n2.  Convert to order $L$: $\\sqrt[n]{a} = \\sqrt[L]{a^{L/n}}$.\n3.  Compare radicands.",
+          "formulas": [
+            "\\text{RF of } \\sqrt{x} \\text{ is } \\sqrt{x}",
+            "\\text{RF of } a + \\sqrt{b} \\text{ is } a - \\sqrt{b}",
+            "\\sqrt{a} \\times \\sqrt{b} = \\sqrt{ab}"
+          ],
+          "examples": [
+            {
+              "id": "ex_1_4_1",
+              "question": "Simplify: $\\frac{7+3\\sqrt{5}}{3+\\sqrt{5}} - \\frac{7-3\\sqrt{5}}{3-\\sqrt{5}}$.",
+              "steps": [
+                {
+                  "explanation": "Rationalize the first term: $\\frac{7+3\\sqrt{5}}{3+\\sqrt{5}} \\times \\frac{3-\\sqrt{5}}{3-\\sqrt{5}} = \\frac{21 - 7\\sqrt{5} + 9\\sqrt{5} - 15}{9-5} = \\frac{6 + 2\\sqrt{5}}{4} = \\frac{3+\\sqrt{5}}{2}$."
+                },
+                {
+                  "explanation": "Rationalize the second term: $\\frac{7-3\\sqrt{5}}{3-\\sqrt{5}} \\times \\frac{3+\\sqrt{5}}{3+\\sqrt{5}} = \\frac{21 + 7\\sqrt{5} - 9\\sqrt{5} - 15}{9-5} = \\frac{6 - 2\\sqrt{5}}{4} = \\frac{3-\\sqrt{5}}{2}$."
+                },
+                {
+                  "explanation": "Subtract: $\\frac{3+\\sqrt{5}}{2} - \\frac{3-\\sqrt{5}}{2} = \\frac{(3+\\sqrt{5}) - (3-\\sqrt{5})}{2} = \\frac{2\\sqrt{5}}{2} = \\sqrt{5}$."
+                }
+              ],
+              "finalAnswer": "$\\sqrt{5}$"
+            },
+            {
+              "id": "ex_1_4_2",
+              "question": "If $a = \\frac{\\sqrt{3}-\\sqrt{2}}{\\sqrt{3}+\\sqrt{2}}$ and $b = \\frac{\\sqrt{3}+\\sqrt{2}}{\\sqrt{3}-\\sqrt{2}}$, find $a^2 + b^2 - 5ab$.",
+              "steps": [
+                {
+                  "explanation": "Note that $b = 1/a$, so $ab = 1$."
+                },
+                {
+                  "explanation": "Calculate $a+b$: Rationalize denominators. $a = (\\sqrt{3}-\\sqrt{2})^2 / (3-2) = 3+2-2\\sqrt{6} = 5-2\\sqrt{6}$. Similarly $b = 5+2\\sqrt{6}$."
+                },
+                {
+                  "explanation": "$a+b = (5-2\\sqrt{6}) + (5+2\\sqrt{6}) = 10$."
+                },
+                {
+                  "explanation": "We need $a^2 + b^2 - 5ab$. We know $(a+b)^2 = a^2 + b^2 + 2ab$."
+                },
+                {
+                  "explanation": "$a^2 + b^2 = (a+b)^2 - 2ab = 10^2 - 2(1) = 98$."
+                },
+                {
+                  "explanation": "Expression = $98 - 5(1) = 93$."
+                }
+              ],
+              "finalAnswer": "93"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_1_5_laws_of_exponents",
+          "title": "1.5 Advanced Laws of Exponents",
+          "content": "### 1. Fundamental Laws for Real Exponents\nFor $a > 0$ and real numbers $m, n$:\n1.  $a^m \\cdot a^n = a^{m+n}$\n2.  $(a^m)^n = a^{mn}$\n3.  $\\frac{a^m}{a^n} = a^{m-n}$\n4.  $a^m b^m = (ab)^m$\n5.  $a^{-n} = \\frac{1}{a^n}$\n\n### 2. Fractional Exponents\n* $\\sqrt[n]{a} = a^{1/n}$\n* $\\sqrt[n]{a^m} = a^{\\frac{m}{n}}$\n\n### 3. Exponential Equations (JEE Foundation)\n* **Equality:** If $a^x = a^y$ (and $a \\neq 1, 0, -1$), then $x = y$.\n* **Same Index:** If $a^x = b^x$ (and $x \\neq 0$), then $a = b$ (for positive bases).\n\n### 4. Handling Negative Bases (Caution)\n* $(-2)^2 = 4$, but $(-2)^3 = -8$.\n* fractional powers of negative numbers are often undefined in real numbers (e.g., $(-2)^{1/2}$ is complex). We restrict bases to positive reals for calculus continuity.\n\n### 5. Scientific Notation\n* Expressing numbers as $k \\times 10^n$ where $1 \\le k < 10$. Useful for physics and very large/small numbers.",
+          "formulas": [
+            "a^{m/n} = \\sqrt[n]{a^m}",
+            "x^0 = 1, \\forall x \\neq 0"
+          ],
+          "examples": [
+            {
+              "id": "ex_1_5_1",
+              "question": "Solve for x: $2^x \\cdot 5^x = 1000$.",
+              "steps": [
+                {
+                  "explanation": "Use the law $a^x b^x = (ab)^x$."
+                },
+                {
+                  "explanation": "$2^x \\cdot 5^x = (2 \\cdot 5)^x = 10^x$."
+                },
+                {
+                  "explanation": "Rewrite 1000 as a power of 10: $1000 = 10^3$."
+                },
+                {
+                  "explanation": "$10^x = 10^3 \\implies x = 3$."
+                }
+              ],
+              "finalAnswer": "3"
+            },
+            {
+              "id": "ex_1_5_2",
+              "question": "If $25^{x-1} = 5^{2x-1} - 100$, find the value of $x$.",
+              "steps": [
+                {
+                  "explanation": "Rewrite 25 as $5^2$. LHS becomes $(5^2)^{x-1} = 5^{2x-2}$."
+                },
+                {
+                  "explanation": "Equation: $5^{2x-2} = 5^{2x-1} - 100$."
+                },
+                {
+                  "explanation": "Rearrange: $5^{2x-1} - 5^{2x-2} = 100$."
+                },
+                {
+                  "explanation": "Factor out smaller power: $5^{2x-2}(5^1 - 1) = 100$."
+                },
+                {
+                  "explanation": "$5^{2x-2}(4) = 100 \\implies 5^{2x-2} = 25 = 5^2$."
+                },
+                {
+                  "explanation": "Equate exponents: $2x-2 = 2 \\implies 2x = 4 \\implies x=2$."
+                }
+              ],
+              "finalAnswer": "2"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_1_6_chapter_practice_formulas",
+          "title": "1.6 Practice Problems & Formula Compendium",
+          "content": "### Chapter 1: Complete Formula Sheet\n\n**1. Sets & Classifications**\n* $\\mathbb{N} = \\{1, 2, 3, \\dots\\}$\n* $\\mathbb{W} = \\{0, 1, 2, \\dots\\}$\n* $\\mathbb{Z} = \\{\\dots, -1, 0, 1, \\dots\\}$\n* $\\mathbb{Q} = \\{ \\frac{p}{q} : p,q \\in \\mathbb{Z}, q \\neq 0 \\}$\n* $\\mathbb{I} = \\mathbb{R} \\setminus \\mathbb{Q}$ (Non-terminating, non-recurring)\n\n**2. Euclid & Primes**\n* **Division Lemma:** $a = bq + r, 0 \\le r < b$\n* **Fundamental Thm:** Composite $n$ = Unique product of primes.\n* **Terminating Decimal:** Denominator $q = 2^n 5^m$.\n\n**3. Rationalization Identities**\n* $\\frac{1}{\\sqrt{a}} \\to \\frac{\\sqrt{a}}{a}$\n* $\\frac{1}{a + \\sqrt{b}} \\to \\frac{a - \\sqrt{b}}{a^2 - b}$\n* $\\frac{1}{\\sqrt{a} + \\sqrt{b}} \\to \\frac{\\sqrt{a} - \\sqrt{b}}{a - b}$\n\n**4. Algebraic Identities for Reals**\n* $(a+b)^2 = a^2 + 2ab + b^2$\n* $(a-b)^2 = a^2 - 2ab + b^2$\n* $a^2 - b^2 = (a+b)(a-b)$\n* $(x+a)(x+b) = x^2 + (a+b)x + ab$\n* $(a+b+c)^2 = a^2+b^2+c^2+2ab+2bc+2ca$\n* $a^3+b^3 = (a+b)(a^2-ab+b^2)$\n* $a^3-b^3 = (a-b)(a^2+ab+b^2)$\n\n**5. Exponent Laws**\n* $x^a x^b = x^{a+b}$\n* $(x^a)^b = x^{ab}$\n* $x^{-n} = 1/x^n$\n* $x^{1/n} = \\sqrt[n]{x}$\n\n---\n\n### Comprehensive Practice Set\n\n**Section A: Basic & Conceptual (1 mark)**\n1. Is zero a rational number? Justify.\n2. Write the decimal form of $36/100$.\n3. Find an irrational number between $1/7$ and $2/7$.\n4. Evaluate $(64)^{1/2}$.\n5. Simplify $\\sqrt{8} \\times \\sqrt{2}$.\n6. Identify as rational/irrational: $2\\pi$.\n7. What is the conjugate of $3+\\sqrt{7}$?\n8. Express $0.6$ in $p/q$ form.\n9. Find the value of $(256)^{0.16} \\times (256)^{0.09}$.\n10. True/False: Every integer is a whole number.\n\n**Section B: Short Answer (2-3 marks)**\n11. Find 3 rational numbers between 3 and 4 using the mean method.\n12. Express $0.4\\overline{7}$ as a rational number.\n13. Simplify: $(5+\\sqrt{5})(5-\\sqrt{5})$.\n14. Represent $\\sqrt{2}$ on the number line.\n15. Check if $(2+\\sqrt{3})^2$ is irrational.\n16. Rationalize the denominator: $\\frac{1}{7+3\\sqrt{2}}$.\n17. Show that $0.2353535\\dots = 0.2\\overline{35}$ is rational.\n18. Simplify $\\sqrt[3]{2} \\times \\sqrt[4]{3}$ by making orders same.\n19. Solve for $x$: $2^{x-1} = 4$.\n20. Locate $\\sqrt{5}$ geometrically.\n\n**Section C: Advanced & Competency Based (Must Practice)**\n21. **(Must Practice)** Prove that $\\sqrt{3}$ is irrational using the method of contradiction.\n22. **(Must Practice)** Visualize $4.2626$ on the number line up to 4 decimal places using successive magnification.\n23. **(Must Practice)** If $x = 2+\\sqrt{3}$, find the value of $x^2 + \\frac{1}{x^2}$.\n24. **(Must Practice)** Simplify: $\\frac{1}{1+\\sqrt{2}} + \\frac{1}{\\sqrt{2}+\\sqrt{3}} + \\dots + \\frac{1}{\\sqrt{8}+\\sqrt{9}}$.\n25. **(Must Practice)** Rationalize the denominator: $\\frac{1}{\\sqrt{2} + \\sqrt{3} + \\sqrt{5}}$.\n26. **(Must Practice)** If $5^x = 25^{y-1}$ and $4^{y+1} = 2^{2x+2}$, find x and y.\n27. **(Must Practice)** Evaluate: $\\frac{1}{1+x^{a-b}} + \\frac{1}{1+x^{b-a}}$.\n28. **(Must Practice)** If $x = \\frac{\\sqrt{5}-2}{\\sqrt{5}+2}$, find $x + \\frac{1}{x}$.\n29. **(Must Practice)** Find a and b if $\\frac{5+2\\sqrt{3}}{7+4\\sqrt{3}} = a + b\\sqrt{3}$.\n30. **(Must Practice)** Prove that for any prime $p > 2$, $\\sqrt{p}$ is irrational.",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

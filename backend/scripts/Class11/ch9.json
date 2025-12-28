@@ -1,0 +1,209 @@
+{
+  "id": "11_9",
+  "classId": 11,
+  "title": "Straight Lines",
+  "description": "The foundation of Analytic Geometry. This chapter transitions from Euclidean geometry to algebraic geometry, covering the concept of slope, various forms of line equations, and the geometric properties of linear equations in two variables.",
+  "topics": [
+    {
+      "id": "11_9_1",
+      "title": "Introduction and Review of Coordinate Geometry",
+      "content": "### 1. The Marriage of Algebra and Geometry\nGeometry, as studied by Euclid, was purely visual and logical. Algebra, on the other hand, deals with numbers and equations. **René Descartes (1596-1650)** revolutionized mathematics by combining these two fields into **Coordinate Geometry** (or Analytical Geometry).\n\nThe core idea is simple yet profound: **A point in a plane is a pair of numbers $(x, y)$, and a curve in a plane is an equation $f(x, y) = 0$.**\n\n### 2. Recap of Earlier Concepts\nBefore diving into lines, let us rigorously recall the tools from Class 10.\n\n#### A. Distance Formula\nThe distance $d$ between two points $P(x_1, y_1)$ and $Q(x_2, y_2)$ is derived from the Pythagoras Theorem:\n$$ d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} $$\n* **Note:** Distance is always non-negative.\n* **Properties:** $PQ = 0 \\iff P = Q$.\n\n#### B. Section Formula\nThe coordinates of a point $P(x, y)$ dividing the line segment joining $A(x_1, y_1)$ and $B(x_2, y_2)$ internally in the ratio $m:n$ are:\n$$ x = \\frac{mx_2 + nx_1}{m+n}, \\quad y = \\frac{my_2 + ny_1}{m+n} $$\n* **Midpoint Formula:** If $m:n = 1:1$, then $P = (\\frac{x_1+x_2}{2}, \\frac{y_1+y_2}{2})$.\n* **External Division:** If the ratio is $m:n$ externally, replace '$+$' with '$-$'. (Important for JEE).\n\n#### C. Area of a Triangle\nFor a triangle with vertices $(x_1, y_1), (x_2, y_2), (x_3, y_3)$:\n$$ \\text{Area} = \\frac{1}{2} |x_1(y_2 - y_3) + x_2(y_3 - y_1) + x_3(y_1 - y_2)| $$\n* If Area = 0, the three points are **collinear** (lie on a straight line).\n* This determinant form is crucial for understanding linear dependence.\n\n### 3. Locus of a Point\nA **Locus** is the path traced by a point moving under specific geometric conditions. The equation of a straight line is essentially the locus of a point moving in a constant direction.",
+      "examples": [
+        {
+          "id": "ex_9_1",
+          "question": "Find the coordinates of the centroid of the triangle with vertices $(x_1, y_1), (x_2, y_2), (x_3, y_3)$.",
+          "solution": "The centroid divides the median in the ratio 2:1.\nLet $D$ be the midpoint of $BC$. Coordinates of $D = (\\frac{x_2+x_3}{2}, \\frac{y_2+y_3}{2})$.\nLet $G$ be the centroid on median $AD$ such that $AG:GD = 2:1$.\nUsing Section Formula:\n$$ x_G = \\frac{2(\\frac{x_2+x_3}{2}) + 1(x_1)}{2+1} = \\frac{x_1+x_2+x_3}{3} $$\n$$ y_G = \\frac{y_1+y_2+y_3}{3} $$"
+        }
+      ]
+    },
+    {
+      "id": "11_9_2",
+      "title": "Slope of a Line",
+      "content": "### 1. Definition of Slope (Gradient)\nThe slope is a measure of the \"steepness\" and \"direction\" of a line. It is the most fundamental concept in Calculus and Coordinate Geometry.\n\n**Inclination ($\\theta$):**\nThe angle $\\theta$ that a line makes with the **positive direction of the x-axis**, measured in the **anticlockwise** sense.\n* Range of $\\theta$: $0^\\circ \\le \\theta < 180^\\circ$.\n* Horizontal line: $\\theta = 0^\\circ$.\n* Vertical line: $\\theta = 90^\\circ$.\n\n**Slope ($m$):**\nIf $\\theta \\neq 90^\\circ$, the slope $m$ is defined as the tangent of the inclination.\n$$ m = \\tan \\theta $$\n\n* If $\\theta$ is acute ($<90^\\circ$), $m > 0$ (Line rises to the right).\n* If $\\theta$ is obtuse ($>90^\\circ$), $m < 0$ (Line falls to the right).\n* If $\\theta = 0^\\circ$, $m = 0$.\n* If $\\theta = 90^\\circ$, $m$ is **undefined**.\n\n### 2. Slope Given Two Points\nLet a line pass through $P(x_1, y_1)$ and $Q(x_2, y_2)$.\nDraw perpendiculars to the axes to form a right triangle.\nThe vertical rise is $y_2 - y_1$.\nThe horizontal run is $x_2 - x_1$.\nFrom trigonometry:\n$$ \\tan \\theta = \\frac{\\text{Opposite}}{\\text{Adjacent}} = \\frac{y_2 - y_1}{x_2 - x_1} $$\nThus,\n$$ m = \\frac{y_2 - y_1}{x_2 - x_1} $$\n\n### 3. Conditions for Parallelism and Perpendicularity\nLet two non-vertical lines have slopes $m_1$ and $m_2$.\n\n**A. Parallel Lines ($l_1 || l_2$):**\nTheir inclinations are equal: $\\alpha = \\beta$.\n$$ \\tan \\alpha = \\tan \\beta \\implies m_1 = m_2 $$\n\n**B. Perpendicular Lines ($l_1 \\perp l_2$):**\nIf lines are perpendicular, their inclinations differ by $90^\\circ$: $\\beta = \\alpha + 90^\\circ$.\n$$ m_2 = \\tan(\\alpha + 90^\\circ) = -\\cot \\alpha = -\\frac{1}{\\tan \\alpha} = -\\frac{1}{m_1} $$\n$$ m_1 m_2 = -1 $$\n*Logic:* Perpendicular slopes are negative reciprocals of each other.",
+      "examples": [
+        {
+          "id": "ex_9_2",
+          "question": "Find the slope of a line passing through the points $(3, -2)$ and $(-1, 4)$. Is this line perpendicular to a line with slope $2/3$?",
+          "solution": "1.  **Calculate Slope $m_1$:**\n    $$ m_1 = \\frac{y_2 - y_1}{x_2 - x_1} = \\frac{4 - (-2)}{-1 - 3} = \\frac{6}{-4} = -\\frac{3}{2} $$\n\n2.  **Check Perpendicularity:**\n    Slope of second line $m_2 = \\frac{2}{3}$.\n    Product $m_1 m_2 = (-\\frac{3}{2}) \\times (\\frac{2}{3}) = -1$.\n    **Conclusion:** Yes, the lines are perpendicular."
+        },
+        {
+          "id": "ex_9_3",
+          "question": "Line through the points $(-2, 6)$ and $(4, 8)$ is perpendicular to the line through $(8, 12)$ and $(x, 24)$. Find the value of $x$.",
+          "solution": "1.  **Slope of first line ($m_1$):**\n    $$ m_1 = \\frac{8 - 6}{4 - (-2)} = \\frac{2}{6} = \\frac{1}{3} $$\n2.  **Slope of second line ($m_2$):**\n    $$ m_2 = \\frac{24 - 12}{x - 8} = \\frac{12}{x - 8} $$\n3.  **Condition:** $m_1 m_2 = -1$.\n    $$ \\left(\\frac{1}{3}\\right) \\left(\\frac{12}{x-8}\\right) = -1 $$\n    $$ \\frac{4}{x-8} = -1 \\implies 4 = -x + 8 \\implies x = 4 $$"
+        }
+      ]
+    },
+    {
+      "id": "11_9_3",
+      "title": "Angle Between Two Lines",
+      "content": "### 1. Geometric Derivation\nLet two intersecting non-vertical lines $L_1$ and $L_2$ have inclinations $\\theta_1$ and $\\theta_2$ and slopes $m_1$ and $m_2$. Let $\\theta$ be the angle between them.\nFrom exterior angle theorem of triangles:\n$$ \\theta_2 = \\theta_1 + \\theta \\implies \\theta = \\theta_2 - \\theta_1 $$\n\nWe need $\\tan \\theta$:\n$$ \\tan \\theta = \\tan(\\theta_2 - \\theta_1) = \\frac{\\tan \\theta_2 - \\tan \\theta_1}{1 + \\tan \\theta_1 \\tan \\theta_2} $$\nSubstitute $m = \\tan \\theta$:\n$$ \\tan \\theta = \\frac{m_2 - m_1}{1 + m_1 m_2} $$\n\n### 2. Acute vs Obtuse Angle\nTwo intersecting lines form two pairs of angles: an acute angle $\\theta$ and an obtuse angle $180^\\circ - \\theta$. Since $\\tan(180-\\theta) = -\\tan \\theta$, the value can be positive or negative.\nTo find the **acute** angle $\\theta$, we take the modulus:\n$$ \\tan \\theta = \\left| \\frac{m_2 - m_1}{1 + m_1 m_2} \\right| $$\n\n* If $1 + m_1 m_2 = 0$, denominator is zero $\\implies \\tan \\theta = \\infty \\implies \\theta = 90^\\circ$.\n* If $m_1 = m_2$, numerator is zero $\\implies \\theta = 0^\\circ$ (Parallel).\n\n### 3. Collinearity of Three Points\nThree points $A, B, C$ are collinear if and only if the slope of $AB$ is equal to the slope of $BC$.\n$$ m_{AB} = m_{BC} $$\nThis is logically equivalent to saying the angle between $AB$ and $BC$ is $0^\\circ$ or $180^\\circ$.",
+      "examples": [
+        {
+          "id": "ex_9_4",
+          "question": "If the angle between two lines is $\\pi/4$ and the slope of one of the lines is $1/2$, find the slope of the other line.",
+          "solution": "Given $\\theta = 45^\\circ$ (so $\\tan \\theta = 1$) and $m_1 = 1/2$. Let $m_2 = m$.\nFormula: $\\tan \\theta = |\\frac{m_2 - m_1}{1 + m_1 m_2}|$\n$$ 1 = \\left| \\frac{m - 1/2}{1 + m/2} \\right| $$\n$$ 1 = \\left| \\frac{2m - 1}{2 + m} \\right| $$\nTwo cases:\n1.  $\\frac{2m - 1}{2 + m} = 1 \\implies 2m - 1 = 2 + m \\implies m = 3$.\n2.  $\\frac{2m - 1}{2 + m} = -1 \\implies 2m - 1 = -2 - m \\implies 3m = -1 \\implies m = -1/3$.\n**Answer:** Slope can be $3$ or $-1/3$."
+        }
+      ]
+    },
+    {
+      "id": "11_9_4",
+      "title": "Forms of Equation of a Line",
+      "content": "An equation of a line is a relation between $x$ and $y$ that is satisfied by the coordinates of every point on the line, and by no other point.\n\n### 1. Horizontal and Vertical Lines\n* **Horizontal Line:** Parallel to x-axis. Every point has the same y-coordinate $a$. Equation: **$y = a$**. (x-axis is $y=0$).\n* **Vertical Line:** Parallel to y-axis. Every point has the same x-coordinate $b$. Equation: **$x = b$**. (y-axis is $x=0$).\n\n### 2. Point-Slope Form\nLet a line pass through a fixed point $P_0(x_0, y_0)$ and have slope $m$. Let $P(x, y)$ be any arbitrary point on the line.\nThe slope between $P_0$ and $P$ must be $m$.\n$$ \\frac{y - y_0}{x - x_0} = m $$\n$$ y - y_0 = m(x - x_0) $$\nThis is the most useful form for Calculus (Tangents).\n\n### 3. Two-Point Form\nLet the line pass through $P_1(x_1, y_1)$ and $P_2(x_2, y_2)$.\nFirst, find the slope: $m = \\frac{y_2 - y_1}{x_2 - x_1}$.\nNow, use Point-Slope form with $P_1$:\n$$ y - y_1 = \\frac{y_2 - y_1}{x_2 - x_1} (x - x_1) $$\n\n### 4. Slope-Intercept Form\n* **y-intercept ($c$):** The line cuts the y-axis at $(0, c)$.\n    Using Point-Slope with $(0, c)$ and slope $m$:\n    $$ y - c = m(x - 0) \\implies y = mx + c $$\n* **x-intercept ($d$):** The line cuts the x-axis at $(d, 0)$.\n    Using Point-Slope with $(d, 0)$ and slope $m$:\n    $$ y - 0 = m(x - d) \\implies y = m(x - d) $$\n\n### 5. Intercept Form\nSuppose a line makes x-intercept $a$ and y-intercept $b$. It passes through $(a, 0)$ and $(0, b)$.\nUsing Two-Point Form:\n$$ y - 0 = \\frac{b - 0}{0 - a} (x - a) $$\n$$ y = -\\frac{b}{a}(x - a) $$\n$$ \\frac{y}{b} = -\\frac{x}{a} + 1 $$\n$$ \\frac{x}{a} + \\frac{y}{b} = 1 $$\nThis is elegant and symmetric.\n\n### 6. Normal Form (Perpendicular Form)\nThis form is defined by the length of the perpendicular from the origin to the line, and the angle of that perpendicular.\nLet $p$ be the length of perpendicular ($ON$) from origin to the line ($p > 0$).\nLet $\\omega$ be the angle $ON$ makes with positive x-axis.\n\n**Derivation:**\nCoordinates of $N$: $(p \\cos \\omega, p \\sin \\omega)$.\nSlope of $ON = \\tan \\omega$.\nSince line $L$ is perpendicular to $ON$, slope of $L = -1 / \\tan \\omega = -\\cot \\omega = -\\frac{\\cos \\omega}{\\sin \\omega}$.\nUsing Point-Slope Form with point $N$ and slope of $L$:\n$$ y - p \\sin \\omega = -\\frac{\\cos \\omega}{\\sin \\omega} (x - p \\cos \\omega) $$\n$$ y \\sin \\omega - p \\sin^2 \\omega = -x \\cos \\omega + p \\cos^2 \\omega $$\n$$ x \\cos \\omega + y \\sin \\omega = p(\\sin^2 \\omega + \\cos^2 \\omega) $$\n$$ x \\cos \\omega + y \\sin \\omega = p $$\n*Note:* $\\omega$ is the angle of the **normal**, not the line itself.",
+      "examples": [
+        {
+          "id": "ex_9_5",
+          "question": "Find the equation of the line passing through $(-2, 3)$ with slope $-4$.",
+          "solution": "Using Point-Slope Form:\n$$ y - 3 = -4(x - (-2)) $$\n$$ y - 3 = -4(x + 2) $$\n$$ y - 3 = -4x - 8 $$\n$$ 4x + y + 5 = 0 $$"
+        },
+        {
+          "id": "ex_9_6",
+          "question": "Equation of a line is $3x - 4y + 10 = 0$. Find its slope and x- and y-intercepts.",
+          "solution": "1.  **Slope-Intercept Form:** Convert to $y = mx + c$.\n    $$ 4y = 3x + 10 \\implies y = \\frac{3}{4}x + \\frac{10}{4} $$\n    Slope $m = 3/4$, y-intercept $c = 2.5$.\n\n2.  **Intercept Form:** Convert to $x/a + y/b = 1$.\n    $$ 3x - 4y = -10 $$\n    Divide by -10:\n    $$ \\frac{3x}{-10} - \\frac{4y}{-10} = 1 $$\n    $$ \\frac{x}{-10/3} + \\frac{y}{10/4} = 1 $$\n    x-intercept $a = -10/3$, y-intercept $b = 5/2$."
+        },
+        {
+          "id": "ex_9_7",
+          "question": "Find the equation of the line whose perpendicular distance from the origin is 4 units and the angle which the normal makes with positive x-axis is $15^\\circ$.",
+          "solution": "Using Normal Form: $x \\cos \\omega + y \\sin \\omega = p$.\nGiven $p = 4, \\omega = 15^\\circ$.\n$$ \\cos 15^\\circ = \\frac{\\sqrt{6}+\\sqrt{2}}{4}, \\quad \\sin 15^\\circ = \\frac{\\sqrt{6}-\\sqrt{2}}{4} $$\nEquation:\n$$ x \\left(\\frac{\\sqrt{6}+\\sqrt{2}}{4}\\right) + y \\left(\\frac{\\sqrt{6}-\\sqrt{2}}{4}\\right) = 4 $$\n$$ (\\sqrt{6}+\\sqrt{2})x + (\\sqrt{6}-\\sqrt{2})y = 16 $$"
+        }
+      ]
+    },
+    {
+      "id": "11_9_5",
+      "title": "General Equation of a Line",
+      "content": "### 1. The General Linear Equation\nAny equation of the form $Ax + By + C = 0$ (where $A$ and $B$ are not both zero) represents a straight line.\n\n### 2. Reduction to Standard Forms\nWe can transform the general equation to extract geometric information.\n\n**A. Slope-Intercept Form ($y = mx + c$):**\n$$ By = -Ax - C \\implies y = -\\frac{A}{B}x - \\frac{C}{B} $$\n* Slope $m = -\\frac{A}{B} = -\\frac{\\text{Coeff of x}}{\\text{Coeff of y}}$.\n* y-intercept $c = -\\frac{C}{B}$.\n*(Valid if $B \\neq 0$)*.\n\n**B. Intercept Form ($x/a + y/b = 1$):**\n$$ Ax + By = -C \\implies \\frac{Ax}{-C} + \\frac{By}{-C} = 1 $$\n$$ \\frac{x}{-C/A} + \\frac{y}{-C/B} = 1 $$\n* x-intercept $a = -C/A$.\n* y-intercept $b = -C/B$.\n\n**C. Normal Form ($x \\cos \\omega + y \\sin \\omega = p$):**\nTo convert $Ax + By + C = 0$, we must divide by $\\pm\\sqrt{A^2 + B^2}$.\nThe sign is chosen such that the constant term becomes positive (since $p > 0$).\n$$ \\cos \\omega = \\pm \\frac{A}{\\sqrt{A^2+B^2}}, \\quad \\sin \\omega = \\pm \\frac{B}{\\sqrt{A^2+B^2}}, \\quad p = \\frac{|C|}{\\sqrt{A^2+B^2}} $$",
+      "examples": [
+        {
+          "id": "ex_9_8",
+          "question": "Reduce the equation $\\sqrt{3}x + y - 8 = 0$ into normal form. Find $p$ and $\\omega$.",
+          "solution": "1.  Move constant to RHS: $\\sqrt{3}x + y = 8$.\n2.  Divide by $\\sqrt{A^2+B^2} = \\sqrt{(\\sqrt{3})^2 + 1^2} = \\sqrt{4} = 2$.\n    $$ \\frac{\\sqrt{3}}{2}x + \\frac{1}{2}y = 4 $$\n3.  Compare with $x \\cos \\omega + y \\sin \\omega = p$.\n    $p = 4$.\n    $\\cos \\omega = \\sqrt{3}/2, \\sin \\omega = 1/2$.\n    Since both are positive, $\\omega$ is in 1st quadrant.\n    $\\omega = 30^\\circ (\\pi/6)$.\n**Normal Form:** $x \\cos 30^\\circ + y \\sin 30^\\circ = 4$."
+        }
+      ]
+    },
+    {
+      "id": "11_9_6",
+      "title": "Distance of a Point from a Line",
+      "content": "### 1. Geometric Derivation\nLet $L: Ax + By + C = 0$ be a line and $P(x_1, y_1)$ be a point. We want to find the perpendicular distance $d$.\n\nLet the line intersect axes at $Q(-C/A, 0)$ and $R(0, -C/B)$.\nArea of $\\Delta PQR$ can be found in two ways:\n1.  Using coordinates: Area $= \\frac{1}{2} |x_1(0 - (-C/B)) + (-C/A)(-C/B - y_1) + 0(y_1 - 0)|$.\n2.  Using base $QR$ and height $d$: Area $= \\frac{1}{2} QR \\times d$.\n\nEquating these (after lengthy algebra) gives the famous formula:\n$$ d = \\frac{|Ax_1 + By_1 + C|}{\\sqrt{A^2 + B^2}} $$\n\n* **Interpretation:** Just substitute the point into the equation's LHS and divide by the magnitude of the normal vector $(A, B)$.\n* The absolute value ensures distance is positive.\n\n### 2. Distance Between Parallel Lines\nLet two parallel lines be $Ax + By + C_1 = 0$ and $Ax + By + C_2 = 0$.\n(Note: $A$ and $B$ must be same. If not, multiply equations to match coefficients).\nThe distance $d$ is the difference between their perpendicular distances from origin, or more simply:\n$$ d = \\frac{|C_1 - C_2|}{\\sqrt{A^2 + B^2}} $$",
+      "examples": [
+        {
+          "id": "ex_9_9",
+          "question": "Find the distance of the point $(3, -5)$ from the line $3x - 4y - 26 = 0$.",
+          "solution": "Using formula:\n$$ d = \\frac{|Ax_1 + By_1 + C|}{\\sqrt{A^2 + B^2}} $$\nSubstitute $x_1=3, y_1=-5, A=3, B=-4, C=-26$:\n$$ d = \\frac{|3(3) - 4(-5) - 26|}{\\sqrt{3^2 + (-4)^2}} $$\n$$ d = \\frac{|9 + 20 - 26|}{\\sqrt{9 + 16}} $$\n$$ d = \\frac{|3|}{\\sqrt{25}} = \\frac{3}{5} \\text{ units} $$"
+        },
+        {
+          "id": "ex_9_10",
+          "question": "Find the distance between the parallel lines $15x + 8y - 34 = 0$ and $15x + 8y + 31 = 0$.",
+          "solution": "Here $A=15, B=8, C_1=-34, C_2=31$.\n$$ d = \\frac{|C_1 - C_2|}{\\sqrt{A^2 + B^2}} $$\n$$ d = \\frac{|-34 - 31|}{\\sqrt{15^2 + 8^2}} $$\n$$ d = \\frac{|-65|}{\\sqrt{225 + 64}} = \\frac{65}{\\sqrt{289}} = \\frac{65}{17} \\text{ units} $$"
+        }
+      ]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "fmt_9_1",
+      "label": "Slope",
+      "tex": "m = \\tan \\theta = \\frac{y_2 - y_1}{x_2 - x_1}"
+    },
+    {
+      "id": "fmt_9_2",
+      "label": "Point-Slope Form",
+      "tex": "y - y_1 = m(x - x_1)"
+    },
+    {
+      "id": "fmt_9_3",
+      "label": "Two-Point Form",
+      "tex": "y - y_1 = \\frac{y_2 - y_1}{x_2 - x_1}(x - x_1)"
+    },
+    {
+      "id": "fmt_9_4",
+      "label": "Slope-Intercept Form",
+      "tex": "y = mx + c"
+    },
+    {
+      "id": "fmt_9_5",
+      "label": "Intercept Form",
+      "tex": "\\frac{x}{a} + \\frac{y}{b} = 1"
+    },
+    {
+      "id": "fmt_9_6",
+      "label": "Normal Form",
+      "tex": "x \\cos \\omega + y \\sin \\omega = p"
+    },
+    {
+      "id": "fmt_9_7",
+      "label": "Distance of Point from Line",
+      "tex": "d = \\frac{|Ax_1 + By_1 + C|}{\\sqrt{A^2 + B^2}}"
+    },
+    {
+      "id": "fmt_9_8",
+      "label": "Distance Between Parallel Lines",
+      "tex": "d = \\frac{|C_1 - C_2|}{\\sqrt{A^2 + B^2}}"
+    },
+    {
+      "id": "fmt_9_9",
+      "label": "Angle Between Lines",
+      "tex": "\\tan \\theta = \\left| \\frac{m_2 - m_1}{1 + m_1 m_2} \\right|"
+    },
+    {
+      "id": "fmt_9_10",
+      "label": "Perpendicularity Condition",
+      "tex": "m_1 m_2 = -1"
+    },
+    {
+      "id": "fmt_9_11",
+      "label": "Parallelism Condition",
+      "tex": "m_1 = m_2"
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "id": "pq_9_1",
+      "question": "Find the slope of a line which passes through the origin and the midpoint of the line segment joining P(0, -4) and B(8, 0).",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "pq_9_2",
+      "question": "A line passes through (x1, y1) and (h, k). If the slope of the line is m, show that k - y1 = m(h - x1).",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "pq_9_3",
+      "question": "Find the angle between the x-axis and the line joining the points (3, -1) and (4, -2).",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_9_4",
+      "question": "The slope of a line is double of the slope of another line. If tangent of the angle between them is 1/3, find the slopes of the lines.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_9_5",
+      "question": "Find the equation of a line passing through the point (-2, 3) and having equal intercepts on the coordinate axes.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_9_6",
+      "question": "Find equation of the line passing through the point (2, 2) and cutting off intercepts on the axes whose sum is 9.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": "pq_9_7",
+      "question": "Reduce the equation x - \u221a3y + 8 = 0 to normal form and find p and \u03c9.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_9_8",
+      "question": "Find the coordinates of the foot of the perpendicular from the point (-1, 3) to the line 3x - 4y - 16 = 0.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": "pq_9_9",
+      "question": "If p and q are the lengths of perpendiculars from the origin to the lines x cos \u03b8 - y sin \u03b8 = k cos 2\u03b8 and x sec \u03b8 + y cosec \u03b8 = k, respectively, prove that p^2 + 4q^2 = k^2.",
+      "difficulty": "Hard (JEE)"
+    },
+    {
+      "id": "pq_9_10",
+      "question": "In the triangle ABC with vertices A(2, 3), B(4, -1) and C(1, 2), find the equation and length of altitude from the vertex A.",
+      "difficulty": "Medium"
+    }
+  ]
+}

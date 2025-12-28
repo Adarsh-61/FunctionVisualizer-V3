@@ -1,0 +1,201 @@
+{
+  "id": "12_2",
+  "classId": 12,
+  "title": "Inverse Trigonometric Functions",
+  "description": "A critical chapter bridging Trigonometry and Calculus. It explores how to invert periodic functions by restricting domains, defining Principal Value Branches, and deriving properties essential for integration and differentiation.",
+  "topics": [
+    {
+      "id": "12_2_1",
+      "title": "Introduction and Conditions for Invertibility",
+      "content": "### 1. The Inverse Problem\nFrom Chapter 1, we know that a function $f: A \\to B$ is invertible if and only if it is **bijective** (one-one and onto).\n\nConsider the sine function: $f(x) = \\sin x$.\n* **Domain:** $\\mathbb{R}$\n* **Range:** $[-1, 1]$\n\nIs it one-one? No. $\\sin(0) = 0, \\sin(\\pi) = 0, \\sin(2\\pi) = 0$. Many inputs give the same output.\nIs it onto (if codomain is $\\mathbb{R}$)? No. The output never exceeds 1 or goes below -1.\n\nThus, standard trigonometric functions are **NOT** invertible on their natural domains.\n\n### 2. Restricting the Domain\nTo make trigonometric functions invertible, we must restrict their domains to intervals where they are one-one (monotonic) and adjust the codomain to match the range.\n\n**For Sine:**\nIf we restrict the domain to $[-\\frac{\\pi}{2}, \\frac{\\pi}{2}]$, the function becomes one-one and takes all values from -1 to 1 exactly once.\nThus, we define the inverse sine function, $\\sin^{-1} x$ (or $\\arcsin x$), as the inverse of this restricted sine function.\n\n### 3. Principal Value Branch\nFor each trigonometric function, there are infinitely many intervals where it is one-one. By convention, mathematicians have agreed upon one specific interval for each function, called the **Principal Value Branch**.\nWhen we ask for \"the\" value of $\\sin^{-1} x$, we always mean the value in this principal branch."
+    },
+    {
+      "id": "12_2_2",
+      "title": "Definitions and Graphs of Inverse Functions",
+      "content": "### 1. Inverse Sine Function ($\\sin^{-1} x$)\n* **Definition:** $y = \\sin^{-1} x \\iff x = \\sin y$ and $y \\in [-\\frac{\\pi}{2}, \\frac{\\pi}{2}]$.\n* **Domain:** $[-1, 1]$\n* **Range (Principal Branch):** $[-\\frac{\\pi}{2}, \\frac{\\pi}{2}]$\n* **Graph:** Obtained by reflecting the graph of $y = \\sin x$ (restricted) along the line $y=x$.\n\n### 2. Inverse Cosine Function ($\\cos^{-1} x$)\n* **Restriction:** Cosine is one-one on $[0, \\pi]$.\n* **Definition:** $y = \\cos^{-1} x \\iff x = \\cos y$ and $y \\in [0, \\pi]$.\n* **Domain:** $[-1, 1]$\n* **Range (Principal Branch):** $[0, \\pi]$\n\n### 3. Inverse Tangent Function ($\\tan^{-1} x$)\n* **Restriction:** Tangent is one-one on $(-\\frac{\\pi}{2}, \\frac{\\pi}{2})$.\n* **Definition:** $y = \\tan^{-1} x \\iff x = \\tan y$.\n* **Domain:** $\\mathbb{R}$ (All real numbers)\n* **Range (Principal Branch):** $(-\\frac{\\pi}{2}, \\frac{\\pi}{2})$\n\n### 4. Inverse Cotangent Function ($\\cot^{-1} x$)\n* **Restriction:** Cotangent is one-one on $(0, \\pi)$.\n* **Domain:** $\\mathbb{R}$\n* **Range (Principal Branch):** $(0, \\pi)$\n\n### 5. Inverse Secant Function ($\\sec^{-1} x$)\n* **Restriction:** Secant is one-one on $[0, \\pi] - \\{\\frac{\\pi}{2}\\}$.\n* **Domain:** $\\mathbb{R} - (-1, 1)$ i.e., $(-\\infty, -1] \\cup [1, \\infty)$.\n* **Range (Principal Branch):** $[0, \\pi] - \\{\\frac{\\pi}{2}\\}$\n\n### 6. Inverse Cosecant Function ($\\text{cosec}^{-1} x$)\n* **Restriction:** Cosecant is one-one on $[-\\frac{\\pi}{2}, \\frac{\\pi}{2}] - \\{0\\}$.\n* **Domain:** $\\mathbb{R} - (-1, 1)$.\n* **Range (Principal Branch):** $[-\\frac{\\pi}{2}, \\frac{\\pi}{2}] - \\{0\\}$",
+      "examples": [
+        {
+          "id": "ex_12_2_1",
+          "title": "Principal Value Calculation",
+          "problem": "Find the principal value of $\\sin^{-1}(\\frac{1}{\\sqrt{2}})$.",
+          "solution": "Let $y = \\sin^{-1}(\\frac{1}{\\sqrt{2}})$.\nThen $\\sin y = \\frac{1}{\\sqrt{2}}$.\nSince the principal branch of $\\sin^{-1}$ is $[-\\frac{\\pi}{2}, \\frac{\\pi}{2}]$, we look for an angle in this interval whose sine is positive.\nThe angle is in the 1st quadrant.\nWe know $\\sin(\\frac{\\pi}{4}) = \\frac{1}{\\sqrt{2}}$.\nTherefore, the principal value is $\\frac{\\pi}{4}$."
+        },
+        {
+          "id": "ex_12_2_2",
+          "title": "Principal Value with Negative Argument",
+          "problem": "Find the principal value of $\\cot^{-1}(-\\frac{1}{\\sqrt{3}})$.",
+          "solution": "Let $y = \\cot^{-1}(-\\frac{1}{\\sqrt{3}})$.\nThen $\\cot y = -\\frac{1}{\\sqrt{3}}$.\nThe principal branch of $\\cot^{-1}$ is $(0, \\pi)$.\nSince $\\cot y$ is negative, $y$ must lie in the 2nd quadrant (where cot is negative).\nWe know $\\cot(\\frac{\\pi}{3}) = \\frac{1}{\\sqrt{3}}$.\nSo, $\\cot(\\pi - \\frac{\\pi}{3}) = -\\cot(\\frac{\\pi}{3}) = -\\frac{1}{\\sqrt{3}}$.\nThus, $y = \\pi - \\frac{\\pi}{3} = \\frac{2\\pi}{3}$."
+        }
+      ]
+    },
+    {
+      "id": "12_2_3",
+      "title": "Properties of Inverse Trigonometric Functions",
+      "content": "### 1. Self-Adjusting Properties\n* $\\sin(\\sin^{-1} x) = x$ for $x \\in [-1, 1]$.\n* $\\sin^{-1}(\\sin x) = x$ ONLY if $x \\in [-\\frac{\\pi}{2}, \\frac{\\pi}{2}]$.\n    * *JEE Insight:* If $x$ is outside the principal branch, we must use periodicity to bring it inside. E.g., $\\sin^{-1}(\\sin(2\\pi/3)) = \\sin^{-1}(\\sin(\\pi - \\pi/3)) = \\sin^{-1}(\\sin(\\pi/3)) = \\pi/3$.\n\n### 2. Reciprocal Relations\nThese follow from the reciprocal relations of trigonometric ratios.\n* $\\sin^{-1}(1/x) = \\text{cosec}^{-1} x$ for $x \\ge 1$ or $x \\le -1$.\n* $\\cos^{-1}(1/x) = \\sec^{-1} x$ for $x \\ge 1$ or $x \\le -1$.\n* $\\tan^{-1}(1/x) = \\begin{cases} \\cot^{-1} x & x > 0 \\\\ -\\pi + \\cot^{-1} x & x < 0 \\end{cases}$\n\n### 3. Negative Argument Properties\n* $\\sin^{-1}(-x) = -\\sin^{-1} x$\n* $\\tan^{-1}(-x) = -\\tan^{-1} x$\n* $\\text{cosec}^{-1}(-x) = -\\text{cosec}^{-1} x$\n* $\\cos^{-1}(-x) = \\pi - \\cos^{-1} x$\n* $\\sec^{-1}(-x) = \\pi - \\sec^{-1} x$\n* $\\cot^{-1}(-x) = \\pi - \\cot^{-1} x$\n\n*Intuition:* Functions with range symmetric about 0 (sine, tan, cosec) are odd functions. Functions with range $[0, \\pi]$ (cos, sec, cot) handle negatives by shifting to the 2nd quadrant.\n\n### 4. Complementary Angles Properties\nSum of inverse co-functions is always a right angle.\n* $\\sin^{-1} x + \\cos^{-1} x = \\frac{\\pi}{2}$ for $x \\in [-1, 1]$.\n* $\\tan^{-1} x + \\cot^{-1} x = \\frac{\\pi}{2}$ for $x \\in \\mathbb{R}$.\n* $\\sec^{-1} x + \\text{cosec}^{-1} x = \\frac{\\pi}{2}$ for $|x| \\ge 1$."
+    },
+    {
+      "id": "12_2_4",
+      "title": "Sum and Difference Formulas",
+      "content": "These formulas are pivotal for simplifying expressions and solving equations.\n\n### 1. Sum of Tangent Inverses\n$$ \\tan^{-1} x + \\tan^{-1} y = \\tan^{-1}\\left(\\frac{x+y}{1-xy}\\right) $$\n**Conditions:**\n* Valid if $xy < 1$.\n* If $xy > 1$ and $x, y > 0$, then sum exceeds $\\pi/2$, so formula becomes $\\pi + \\tan^{-1}(\\dots)$.\n* If $xy > 1$ and $x, y < 0$, formula becomes $-\\pi + \\tan^{-1}(\\dots)$.\n\n### 2. Difference of Tangent Inverses\n$$ \\tan^{-1} x - \\tan^{-1} y = \\tan^{-1}\\left(\\frac{x-y}{1+xy}\\right) $$\n**Condition:** Valid if $xy > -1$.\n\n### 3. Double Angle Conversions\nExpressing $2\\tan^{-1}x$ in terms of sin, cos, tan:\n1.  $2\\tan^{-1} x = \\sin^{-1}\\left(\\frac{2x}{1+x^2}\\right), \\quad |x| \\le 1$\n2.  $2\\tan^{-1} x = \\cos^{-1}\\left(\\frac{1-x^2}{1+x^2}\\right), \\quad x \\ge 0$\n3.  $2\\tan^{-1} x = \\tan^{-1}\\left(\\frac{2x}{1-x^2}\\right), \\quad -1 < x < 1$"
+    },
+    {
+      "id": "12_2_5",
+      "title": "Simplification by Substitution",
+      "content": "Complex inverse trigonometric expressions can often be simplified to a simple form (like $x$ or $2\\theta$) using algebraic substitutions. This technique is standard in Calculus for differentiation.\n\n**Common Substitutions:**\n1.  **Expression:** $\\sqrt{a^2 - x^2}$ $\\to$ **Substitute:** $x = a \\sin \\theta$ or $x = a \\cos \\theta$.\n2.  **Expression:** $\\sqrt{a^2 + x^2}$ $\\to$ **Substitute:** $x = a \\tan \\theta$ or $x = a \\cot \\theta$.\n3.  **Expression:** $\\sqrt{x^2 - a^2}$ $\\to$ **Substitute:** $x = a \\sec \\theta$ or $x = a \\text{cosec } \\theta$.\n4.  **Expression:** $\\sqrt{\\frac{a-x}{a+x}}$ or $\\sqrt{\\frac{a+x}{a-x}}$ $\\to$ **Substitute:** $x = a \\cos 2\\theta$.",
+      "examples": [
+        {
+          "id": "ex_12_2_3",
+          "title": "Simplification using Substitution",
+          "problem": "Write $\\tan^{-1}\\left(\\frac{\\sqrt{1+x^2}-1}{x}\\right)$ in simplest form.",
+          "solution": "We see $\\sqrt{1+x^2}$, so let's substitute $x = \\tan \\theta$, where $\\theta \\in (-\\frac{\\pi}{2}, \\frac{\\pi}{2}) - \\{0\\}$.\nThen $\\theta = \\tan^{-1} x$.\n\nExpression becomes:\n$$ \\tan^{-1}\\left(\\frac{\\sqrt{1+\\tan^2\\theta}-1}{\\tan\\theta}\\right) = \\tan^{-1}\\left(\\frac{\\sec\\theta-1}{\\tan\\theta}\\right) $$\nConvert to sine and cosine:\n$$ = \\tan^{-1}\\left(\\frac{\\frac{1}{\\cos\\theta}-1}{\\frac{\\sin\\theta}{\\cos\\theta}}\\right) = \\tan^{-1}\\left(\\frac{1-\\cos\\theta}{\\sin\\theta}\\right) $$\nUse half-angle formulas:\n$1 - \\cos\\theta = 2\\sin^2(\\theta/2)$\n$\\sin\\theta = 2\\sin(\\theta/2)\\cos(\\theta/2)$\n$$ = \\tan^{-1}\\left(\\frac{2\\sin^2(\\theta/2)}{2\\sin(\\theta/2)\\cos(\\theta/2)}\\right) $$\n$$ = \\tan^{-1}\\left(\\tan(\\frac{\\theta}{2})\\right) $$\nSince $\\theta/2$ is in the principal branch, this simplifies to:\n$$ = \\frac{\\theta}{2} = \\frac{1}{2} \\tan^{-1} x $$"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "ex_12_2_4",
+      "title": "Properties Application",
+      "problem": "Find the value of $\\sin(\\sin^{-1}\\frac{3}{5} + \\cos^{-1}\\frac{3}{5})$.",
+      "solution": "Using the property $\\sin^{-1} x + \\cos^{-1} x = \\frac{\\pi}{2}$ for $x \\in [-1, 1]$.\nHere $x = \\frac{3}{5}$, which is valid.\nSo, the expression inside the bracket is $\\frac{\\pi}{2}$.\n$\\sin(\\frac{\\pi}{2}) = 1$."
+    },
+    {
+      "id": "ex_12_2_5",
+      "title": "Sum Formula Application",
+      "problem": "Prove that $\\tan^{-1} \\frac{1}{2} + \\tan^{-1} \\frac{2}{11} = \\tan^{-1} \\frac{3}{4}$.",
+      "solution": "Use formula $\\tan^{-1} x + \\tan^{-1} y = \\tan^{-1}\\left(\\frac{x+y}{1-xy}\\right)$.\nHere $x = 1/2, y = 2/11$. Check $xy = (1/2)(2/11) = 1/11 < 1$. Condition satisfied.\n$$ \\text{LHS} = \\tan^{-1}\\left(\\frac{\\frac{1}{2} + \\frac{2}{11}}{1 - \\frac{1}{2} \\cdot \\frac{2}{11}}\\right) $$\n$$ = \\tan^{-1}\\left(\\frac{\\frac{11+4}{22}}{1 - \\frac{2}{22}}\\right) $$\n$$ = \\tan^{-1}\\left(\\frac{\\frac{15}{22}}{\\frac{20}{22}}\\right) $$\n$$ = \\tan^{-1}\\left(\\frac{15}{20}\\right) = \\tan^{-1}\\left(\\frac{3}{4}\\right) = \\text{RHS} $$\nHence Proved."
+    },
+    {
+      "id": "ex_12_2_6",
+      "title": "Complex Evaluation",
+      "problem": "Find the value of $\\cos(\\sec^{-1} x + \\text{cosec}^{-1} x)$, where $|x| \\ge 1$.",
+      "solution": "We know the identity $\\sec^{-1} x + \\text{cosec}^{-1} x = \\frac{\\pi}{2}$ for $|x| \\ge 1$.\nSubstitute this value:\n$\\cos(\\frac{\\pi}{2}) = 0$."
+    },
+    {
+      "id": "ex_12_2_7",
+      "title": "Out of Branch Evaluation",
+      "problem": "Find the value of $\\cos^{-1}(\\cos \\frac{7\\pi}{6})$.",
+      "solution": "We know $\\cos^{-1}(\\cos \\theta) = \\theta$ ONLY if $\\theta \\in [0, \\pi]$.\nHere, $\\frac{7\\pi}{6} > \\pi$, so it's outside the principal branch.\nWe must find an angle $\\alpha \\in [0, \\pi]$ such that $\\cos \\alpha = \\cos \\frac{7\\pi}{6}$.\n$\\cos \\frac{7\\pi}{6} = \\cos(2\\pi - \\frac{5\\pi}{6})$ (Since $\\cos(2\\pi-\\theta) = \\cos \\theta$).\nAlternatively, $\\cos \\frac{7\\pi}{6} = \\cos(\\pi + \\frac{\\pi}{6}) = -\\cos \\frac{\\pi}{6}$.\nSince range is $[0, \\pi]$, we need positive or appropriate mapping.\nWait, simplest is: $\\cos(2\\pi - x) = \\cos x$.\nSo $\\cos \\frac{7\\pi}{6} = \\cos(2\\pi - \\frac{7\\pi}{6}) = \\cos(\\frac{12\\pi - 7\\pi}{6}) = \\cos \\frac{5\\pi}{6}$.\nNow, $\\frac{5\\pi}{6} \\in [0, \\pi]$.\nSo, $\\cos^{-1}(\\cos \\frac{5\\pi}{6}) = \\frac{5\\pi}{6}$."
+    },
+    {
+      "id": "ex_12_2_8",
+      "title": "Triangle Method for Inter-conversion",
+      "problem": "Evaluate $\\sin(\\tan^{-1} x)$.",
+      "solution": "Let $\\theta = \\tan^{-1} x$. Then $\\tan \\theta = \\frac{x}{1}$.\nConstruct a right triangle with Opposite $= x$, Adjacent $= 1$.\nThen Hypotenuse $= \\sqrt{1 + x^2}$.\nWe need $\\sin \\theta$.\nFrom triangle, $\\sin \\theta = \\frac{\\text{Opposite}}{\\text{Hypotenuse}} = \\frac{x}{\\sqrt{1+x^2}}$.\nSo, $\\sin(\\tan^{-1} x) = \\frac{x}{\\sqrt{1+x^2}}$."
+    }
+  ],
+  "exercises": [
+    {
+      "id": "prob_12_2_1",
+      "question": "Find the principal value of sin inverse of -1/2.",
+      "type": "Principal Value",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_2_2",
+      "question": "Find the principal value of cos inverse of sqrt(3)/2.",
+      "type": "Principal Value",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_2_3",
+      "question": "Evaluate tan inverse of 1 + cos inverse of -1/2 + sin inverse of -1/2.",
+      "type": "Calculation",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_2_4",
+      "question": "Express tan inverse of (cos x / (1 - sin x)) in simplest form.",
+      "type": "Simplification",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_2_5",
+      "question": "Prove that 3 sin inverse x = sin inverse (3x - 4x^3).",
+      "type": "Proof",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_2_6",
+      "question": "Find x if tan inverse of (x-1)/(x-2) + tan inverse of (x+1)/(x+2) = pi/4.",
+      "type": "Equation Solving",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_2_7",
+      "question": "Find the value of sin(2 cot inverse (-5/12)).",
+      "type": "Evaluation",
+      "difficulty": "JEE Advanced"
+    },
+    {
+      "id": "prob_12_2_8",
+      "question": "Solve for x: sin inverse (1-x) - 2 sin inverse x = pi/2.",
+      "type": "Equation Solving",
+      "difficulty": "JEE Advanced"
+    },
+    {
+      "id": "prob_12_2_9",
+      "question": "Find the domain of f(x) = sin inverse (2x - 3).",
+      "type": "Domain Finding",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_2_10",
+      "question": "Simplify cot inverse ( sqrt(1 + sin x) + sqrt(1 - sin x) ) / ( sqrt(1 + sin x) - sqrt(1 - sin x) ).",
+      "type": "Simplification",
+      "difficulty": "JEE Main"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "form_12_2_1",
+      "label": "Domain & Range of sin inverse",
+      "tex": "D: [-1, 1], R: [-\\frac{\\pi}{2}, \\frac{\\pi}{2}]"
+    },
+    {
+      "id": "form_12_2_2",
+      "label": "Domain & Range of cos inverse",
+      "tex": "D: [-1, 1], R: [0, \\pi]"
+    },
+    {
+      "id": "form_12_2_3",
+      "label": "Domain & Range of tan inverse",
+      "tex": "D: \\mathbb{R}, R: (-\\frac{\\pi}{2}, \\frac{\\pi}{2})"
+    },
+    {
+      "id": "form_12_2_4",
+      "label": "Negative Argument sin/tan/cosec",
+      "tex": "\\sin^{-1}(-x) = -\\sin^{-1}x"
+    },
+    {
+      "id": "form_12_2_5",
+      "label": "Negative Argument cos/sec/cot",
+      "tex": "\\cos^{-1}(-x) = \\pi - \\cos^{-1}x"
+    },
+    {
+      "id": "form_12_2_6",
+      "label": "Co-function Identity",
+      "tex": "\\sin^{-1}x + \\cos^{-1}x = \\frac{\\pi}{2}"
+    },
+    {
+      "id": "form_12_2_7",
+      "label": "Sum of tan inverse",
+      "tex": "\\tan^{-1}x + \\tan^{-1}y = \\tan^{-1}\\frac{x+y}{1-xy}, xy<1"
+    },
+    {
+      "id": "form_12_2_8",
+      "label": "Difference of tan inverse",
+      "tex": "\\tan^{-1}x - \\tan^{-1}y = \\tan^{-1}\\frac{x-y}{1+xy}, xy>-1"
+    },
+    {
+      "id": "form_12_2_9",
+      "label": "2 tan inverse to sin inverse",
+      "tex": "2\\tan^{-1}x = \\sin^{-1}\\frac{2x}{1+x^2}"
+    },
+    {
+      "id": "form_12_2_10",
+      "label": "2 tan inverse to cos inverse",
+      "tex": "2\\tan^{-1}x = \\cos^{-1}\\frac{1-x^2}{1+x^2}"
+    }
+  ]
+}

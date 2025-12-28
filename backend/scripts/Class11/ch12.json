@@ -1,0 +1,197 @@
+{
+  "id": "11_12",
+  "classId": 11,
+  "title": "Limits and Derivatives",
+  "description": "The gateway to Calculus. This chapter introduces the mathematics of change and motion. It rigorously defines the concept of 'approaching' a value (Limits) and uses it to define the 'instantaneous rate of change' (Derivatives), forming the backbone of modern physics and engineering.",
+  "topics": [
+    {
+      "id": "11_12_1",
+      "title": "Introduction to Calculus",
+      "content": "### 1. The Mathematics of Change\nAlgebra and Geometry largely deal with static objects: fixed shapes, constant speeds, and unchanging values. However, the real world is dynamic. Planets move, populations grow, and coffee cools. \n\n**Calculus** is the branch of mathematics invented to study **change** and **motion**.\n\nIt was independently developed by **Isaac Newton** and **Gottfried Wilhelm Leibniz** in the 17th century to answer questions like:\n1.  What is the instantaneous velocity of an object?\n2.  What is the exact slope of a curve at a single point?\n3.  How do we find the area under a curved boundary?\n\n### 2. The Core Concept: The Limit\nTo calculate instantaneous speed (distance/time) at a specific moment ($t=t_0$), the time interval $\\Delta t$ must become zero. But division by zero is undefined in Algebra. \n\nCalculus solves this by asking: *\"What happens to the ratio as $\\Delta t$ gets closer and closer to 0, without actually being 0?\"*\nThis leads to the concept of the **Limit**.\n\n* **Differential Calculus:** Focuses on Derivatives (Rates of change).\n* **Integral Calculus:** Focuses on Integration (Accumulation of quantities).\nThis chapter focuses on the foundation: **Limits** and **Derivatives**."
+    },
+    {
+      "id": "11_12_2",
+      "title": "The Concept of Limit",
+      "content": "### 1. Intuitive Idea\nConsider the function $f(x) = \\frac{x^2 - 4}{x - 2}$.\nIf we try to find the value at $x=2$, we get $f(2) = \\frac{4-4}{2-2} = \\frac{0}{0}$, which is **undefined** (Indeterminate Form).\n\nHowever, let's calculate values of $f(x)$ for $x$ very close to 2:\n\n**Approaching 2 from the Left ($x < 2$):**\n* $x = 1.9 \\implies f(x) = 3.9$\n* $x = 1.99 \\implies f(x) = 3.99$\n* $x = 1.999 \\implies f(x) = 3.999$\n\n**Approaching 2 from the Right ($x > 2$):**\n* $x = 2.1 \\implies f(x) = 4.1$\n* $x = 2.01 \\implies f(x) = 4.01$\n* $x = 2.001 \\implies f(x) = 4.001$\n\n**Observation:** As $x$ gets closer to 2, $f(x)$ gets closer to 4. We say \"the limit of $f(x)$ as $x$ approaches 2 is 4\".\n\n**Notation:**\n$$ \\lim_{x \\to 2} f(x) = 4 $$\n\n### 2. Left Hand Limit (LHL) and Right Hand Limit (RHL)\nFor a limit to exist, the behavior of the function must be consistent from both sides.\n\n* **Left Hand Limit (LHL):** The expected value of $f$ at $x=a$ given the values of $f$ near $x$ to the left of $a$ ($x < a$).\n    Notation: $\\lim_{x \\to a^-} f(x)$\n* **Right Hand Limit (RHL):** The expected value of $f$ at $x=a$ given the values of $f$ near $x$ to the right of $a$ ($x > a$).\n    Notation: $\\lim_{x \\to a^+} f(x)$\n\n### 3. Existence of a Limit\nLimit $\\lim_{x \\to a} f(x)$ exists **if and only if**:\n1.  LHL exists (is finite).\n2.  RHL exists (is finite).\n3.  LHL = RHL.\n\n$$ \\lim_{x \\to a^-} f(x) = \\lim_{x \\to a^+} f(x) = L \\implies \\lim_{x \\to a} f(x) = L $$\n\n**Important:** The value of the function *at* $x=a$ (i.e., $f(a)$) does not matter for the limit. The limit is about the *journey*, not the *destination*.\n\n### 4. Algebra of Limits\nLet $f$ and $g$ be two functions such that $\\lim_{x \\to a} f(x)$ and $\\lim_{x \\to a} g(x)$ exist.\n1.  **Sum:** $\\lim_{x \\to a} [f(x) + g(x)] = \\lim_{x \\to a} f(x) + \\lim_{x \\to a} g(x)$\n2.  **Difference:** $\\lim_{x \\to a} [f(x) - g(x)] = \\lim_{x \\to a} f(x) - \\lim_{x \\to a} g(x)$\n3.  **Product:** $\\lim_{x \\to a} [f(x) \\cdot g(x)] = [\\lim_{x \\to a} f(x)] \\cdot [\\lim_{x \\to a} g(x)]$\n4.  **Quotient:** $\\lim_{x \\to a} \\frac{f(x)}{g(x)} = \\frac{\\lim_{x \\to a} f(x)}{\\lim_{x \\to a} g(x)}$, provided $\\lim_{x \\to a} g(x) \\neq 0$.",
+      "examples": [
+        {
+          "id": "ex_12_1",
+          "question": "Check if $\\lim_{x \\to 0} f(x)$ exists for $f(x) = \\begin{cases} x - 2 & x < 0 \\\\ x + 2 & x \\ge 0 \\end{cases}$.",
+          "solution": "1.  **LHL ($x \\to 0^-$):**\n    For $x < 0$, $f(x) = x - 2$.\n    $\\lim_{x \\to 0^-} (x - 2) = 0 - 2 = -2$.\n2.  **RHL ($x \\to 0^+$):**\n    For $x > 0$, $f(x) = x + 2$.\n    $\\lim_{x \\to 0^+} (x + 2) = 0 + 2 = +2$.\n3.  **Conclusion:**\n    Since LHL $\\neq$ RHL ($-2 \\neq 2$), the limit **does not exist**."
+        },
+        {
+          "id": "ex_12_2",
+          "question": "Evaluate $\\lim_{x \\to 1} [x^3 - x^2 + 1]$.",
+          "solution": "Since this is a polynomial function, there is no division by zero or indeterminate form at $x=1$. We can use **Direct Substitution**.\n$$ \\lim_{x \\to 1} (x^3 - x^2 + 1) = (1)^3 - (1)^2 + 1 = 1 - 1 + 1 = 1 $$"
+        }
+      ]
+    },
+    {
+      "id": "11_12_3",
+      "title": "Evaluation of Limits (Algebraic)",
+      "content": "When direct substitution results in an indeterminate form like $\\frac{0}{0}$, we must use algebraic manipulation to remove the causing factor.\n\n### 1. Factorization Method\nUsed when numerator and denominator are polynomials and substitution gives $0/0$. We factorize both and cancel the common factor $(x-a)$.\n* **Why?** Since $x \\to a$, $x \\neq a$, so $(x-a) \\neq 0$, allowing cancellation.\n\n### 2. Rationalization Method\nUsed when the function involves square roots (surds). We multiply the numerator and denominator by the conjugate to eliminate roots and find the factor causing zero.\n\n### 3. Standard Limit for Polynomials\n**Theorem:** For any rational number $n$:\n$$ \\lim_{x \\to a} \\frac{x^n - a^n}{x - a} = n a^{n-1} $$\n\n*Proof (for positive integer n):*\nUsing algebraic identity:\n$x^n - a^n = (x-a)(x^{n-1} + x^{n-2}a + ... + a^{n-1})$.\nDividing by $(x-a)$ removes the zero factor.\nLimit $= a^{n-1} + a^{n-1} + ... + a^{n-1}$ ($n$ times) $= n a^{n-1}$.",
+      "examples": [
+        {
+          "id": "ex_12_3",
+          "question": "Evaluate $\\lim_{x \\to 2} \\frac{x^3 - 4x^2 + 4x}{x^2 - 4}$.",
+          "solution": "1.  **Check form:** At $x=2$, Num $= 8 - 16 + 8 = 0$, Den $= 4 - 4 = 0$. Form is $0/0$.\n2.  **Factorize:**\n    Numerator: $x(x^2 - 4x + 4) = x(x-2)^2$.\n    Denominator: $(x-2)(x+2)$.\n3.  **Limit:**\n    $$ \\lim_{x \\to 2} \\frac{x(x-2)^2}{(x-2)(x+2)} $$\n    Cancel one $(x-2)$ (since $x \\neq 2$):\n    $$ \\lim_{x \\to 2} \\frac{x(x-2)}{x+2} $$\n4.  **Substitute:**\n    $$ \\frac{2(2-2)}{2+2} = \\frac{0}{4} = 0 $$"
+        },
+        {
+          "id": "ex_12_4",
+          "question": "Evaluate $\\lim_{z \\to 1} \\frac{z^{1/3} - 1}{z^{1/6} - 1}$.",
+          "solution": "Let $z^{1/6} = y$. Then as $z \\to 1$, $y \\to 1$.\nAlso $z^{1/3} = (z^{1/6})^2 = y^2$.\nSubstitute:\n$$ \\lim_{y \\to 1} \\frac{y^2 - 1}{y - 1} = \\lim_{y \\to 1} (y+1) = 2 $$\n\n**Alternative (Using Standard Limit):**\nDivide Num and Den by $(z-1)$:\n$$ \\frac{\\lim_{z \\to 1} \\frac{z^{1/3} - 1}{z-1}}{\\lim_{z \\to 1} \\frac{z^{1/6} - 1}{z-1}} = \\frac{\\frac{1}{3}(1)^{-2/3}}{\\frac{1}{6}(1)^{-5/6}} = \\frac{1/3}{1/6} = 2 $$"
+        }
+      ]
+    },
+    {
+      "id": "11_12_4",
+      "title": "Trigonometric Limits and Sandwich Theorem",
+      "content": "### 1. The Sandwich Theorem (Squeeze Theorem)\nIf $f(x) \\le g(x) \\le h(x)$ for all $x$ in an open interval containing $a$ (except possibly at $a$), and:\n$$ \\lim_{x \\to a} f(x) = L \\quad \\text{and} \\quad \\lim_{x \\to a} h(x) = L $$\nThen:\n$$ \\lim_{x \\to a} g(x) = L $$\n\n*Intuition:* If $f$ and $h$ squeeze $g$ from above and below, and both approach $L$, $g$ has nowhere else to go but $L$.\n\n### 2. Fundamental Trigonometric Limit\n$$ \\lim_{x \\to 0} \\frac{\\sin x}{x} = 1 $$\n*(where $x$ is in radians)*\n\n**Proof Outline:**\nUsing the unit circle, for $0 < x < \\pi/2$, we can prove geometric areas satisfy:\nArea($\\Delta OAB$) < Area(Sector $OAB$) < Area($\\Delta OAC$)\n$\\frac{1}{2} \\sin x < \\frac{1}{2} x < \\frac{1}{2} \\tan x$\nDividing by $\\frac{1}{2} \\sin x$ (which is positive):\n$1 < \\frac{x}{\\sin x} < \\frac{1}{\\cos x}$\nReciprocating (inequality flips):\n$\\cos x < \\frac{\\sin x}{x} < 1$\nTaking $\\lim_{x \\to 0}$:\n$1 < \\lim \\frac{\\sin x}{x} < 1$. By Sandwich Theorem, limit is 1.\n\n### 3. Other Important Trigonometric Limits\n1.  $\\lim_{x \\to 0} \\frac{\\tan x}{x} = 1$\n2.  $\\lim_{x \\to 0} \\frac{1 - \\cos x}{x} = 0$\n3.  $\\lim_{x \\to 0} \\frac{\\sin^{-1} x}{x} = 1$\n\n**JEE Note:** Always check if the argument of sine tends to 0. $\\lim_{x \\to 0} \\frac{\\sin 5x}{x} \\neq 1$. You must adjust to $\\lim_{x \\to 0} 5 \\frac{\\sin 5x}{5x} = 5(1) = 5$.",
+      "examples": [
+        {
+          "id": "ex_12_5",
+          "question": "Evaluate $\\lim_{x \\to 0} \\frac{\\sin 4x}{\\sin 2x}$.",
+          "solution": "Divide numerator and denominator by $x$:\n$$ \\lim_{x \\to 0} \\frac{\\frac{\\sin 4x}{x}}{\\frac{\\sin 2x}{x}} $$\nAdjust coefficients:\n$$ = \\frac{\\lim_{x \\to 0} 4 \\frac{\\sin 4x}{4x}}{\\lim_{x \\to 0} 2 \\frac{\\sin 2x}{2x}} $$\nSince $x \\to 0$, $4x \\to 0$ and $2x \\to 0$.\n$$ = \\frac{4(1)}{2(1)} = 2 $$"
+        },
+        {
+          "id": "ex_12_6",
+          "question": "Evaluate $\\lim_{x \\to 0} \\frac{1 - \\cos x}{x^2}$.",
+          "solution": "Use trigonometry: $1 - \\cos x = 2 \\sin^2(x/2)$.\n$$ \\lim_{x \\to 0} \\frac{2 \\sin^2(x/2)}{x^2} $$\nRewrite to match standard form $(\\frac{\\sin \\theta}{\\theta})^2$:\n$$ = 2 \\cdot \\lim_{x \\to 0} \\left( \\frac{\\sin(x/2)}{x} \\right)^2 $$\nDivide and multiply inside by 2:\n$$ = 2 \\cdot \\lim_{x \\to 0} \\left( \\frac{\\sin(x/2)}{2 \\cdot (x/2)} \\right)^2 $$\n$$ = 2 \\cdot \\frac{1}{4} \\cdot (1)^2 = \\frac{1}{2} $$"
+        }
+      ]
+    },
+    {
+      "id": "11_12_5",
+      "title": "Derivatives: Introduction and First Principles",
+      "content": "### 1. Geometric Interpretation of Derivative\nConsider a curve $y = f(x)$.\nWe want to find the slope of the tangent at a point $P(c, f(c))$.\nWe take a nearby point $Q(c+h, f(c+h))$.\nThe slope of the **secant** PQ is:\n$$ m_{sec} = \\frac{f(c+h) - f(c)}{(c+h) - c} = \\frac{f(c+h) - f(c)}{h} $$\nAs $h \\to 0$, the point $Q$ moves closer to $P$, and the secant line approaches the **tangent line**.\nThus, the slope of the tangent is:\n$$ m_{tan} = \\lim_{h \\to 0} \\frac{f(c+h) - f(c)}{h} $$\n\n### 2. Definition of Derivative\nSuppose $f$ is a real-valued function. The derivative of $f$ at $x$, denoted by $f'(x)$ or $\\frac{d}{dx}(f(x))$, is defined as:\n$$ f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} $$\nprovided this limit exists.\nThis method of finding derivatives is called **Differentiation from First Principles** (or Delta Method / ab-initio method).\n\n### 3. Physical Interpretation\nIf $f(t)$ represents distance at time $t$:\n* $\\frac{f(t+h) - f(t)}{h}$ is the **average speed** over interval $h$.\n* $\\lim_{h \\to 0}$ of this ratio is the **instantaneous speed** at time $t$.",
+      "examples": [
+        {
+          "id": "ex_12_7",
+          "question": "Find the derivative of $f(x) = x^2$ using first principles.",
+          "solution": "1.  **Definition:** $f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}$.\n2.  **Substitute:** $f(x+h) = (x+h)^2 = x^2 + 2xh + h^2$.\n3.  **Difference:** $f(x+h) - f(x) = (x^2 + 2xh + h^2) - x^2 = 2xh + h^2 = h(2x+h)$.\n4.  **Divide by h:** $\\frac{f(x+h)-f(x)}{h} = 2x + h$.\n5.  **Limit:** $\\lim_{h \\to 0} (2x + h) = 2x$.\nTherefore, $\\frac{d}{dx}(x^2) = 2x$."
+        },
+        {
+          "id": "ex_12_8",
+          "question": "Find the derivative of $f(x) = \\sin x$ using first principles.",
+          "solution": "1.  $f(x+h) = \\sin(x+h)$.\n2.  Numerator: $\\sin(x+h) - \\sin x$.\n    Use identity: $\\sin A - \\sin B = 2 \\cos\\frac{A+B}{2} \\sin\\frac{A-B}{2}$.\n    $= 2 \\cos(x + h/2) \\sin(h/2)$.\n3.  Limit:\n    $$ f'(x) = \\lim_{h \\to 0} \\frac{2 \\cos(x + h/2) \\sin(h/2)}{h} $$\n    $$ = \\lim_{h \\to 0} \\cos(x + h/2) \\cdot \\frac{\\sin(h/2)}{h/2} $$\n4.  Evaluate:\n    $\\cos(x + 0) \\cdot (1) = \\cos x$.\nTherefore, $\\frac{d}{dx}(\\sin x) = \\cos x$."
+        }
+      ]
+    },
+    {
+      "id": "11_12_6",
+      "title": "Algebra of Derivatives and Standard Rules",
+      "content": "Calculating limits every time is tedious. We use standard rules derived from the definition.\n\n### 1. Algebra of Derivatives\nLet $u(x)$ and $v(x)$ be differentiable functions.\n1.  **Sum/Difference Rule:** $(u \\pm v)' = u' \\pm v'$\n2.  **Product Rule (Leibniz Rule):** $(uv)' = u'v + uv'$\n    * *Mnemonic:* First $\\times$ deriv(Second) + Second $\\times$ deriv(First).\n3.  **Quotient Rule:** $\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}$\n    * *Mnemonic:* (Low d-High minus High d-Low) over Low-squared.\n\n### 2. Standard Derivatives\n* **Constant:** $\\frac{d}{dx}(c) = 0$\n* **Power Rule:** $\\frac{d}{dx}(x^n) = n x^{n-1}$ (for any real $n$)\n* **Polynomial:** $\\frac{d}{dx}(a_n x^n + ... + a_0) = a_n(nx^{n-1}) + ... + a_1$\n* **Trigonometric Functions:**\n    * $(\\sin x)' = \\cos x$\n    * $(\\cos x)' = -\\sin x$\n    * $(\\tan x)' = \\sec^2 x$\n    * $(\\cot x)' = -\\text{cosec}^2 x$\n    * $(\\sec x)' = \\sec x \\tan x$\n    * $(\\text{cosec } x)' = -\\text{cosec } x \\cot x$",
+      "examples": [
+        {
+          "id": "ex_12_9",
+          "question": "Find the derivative of $f(x) = x \\sin x$.",
+          "solution": "Use Product Rule with $u = x$ and $v = \\sin x$.\n$$ f'(x) = u'v + uv' $$\n$$ = (\\frac{d}{dx} x)(\\sin x) + (x)(\\frac{d}{dx} \\sin x) $$\n$$ = (1)(\\sin x) + (x)(\\cos x) $$\n$$ = \\sin x + x \\cos x $$"
+        },
+        {
+          "id": "ex_12_10",
+          "question": "Compute the derivative of $f(x) = \\frac{x + \\sin x}{x + \\cos x}$.",
+          "solution": "Use Quotient Rule with $u = x + \\sin x$ and $v = x + \\cos x$.\n$u' = 1 + \\cos x$, $v' = 1 - \\sin x$.\n$$ f'(x) = \\frac{u'v - uv'}{v^2} $$\n$$ = \\frac{(1+\\cos x)(x+\\cos x) - (x+\\sin x)(1-\\sin x)}{(x+\\cos x)^2} $$\nExpand numerator:\n$(x + \\cos x + x\\cos x + \\cos^2 x) - (x - x\\sin x + \\sin x - \\sin^2 x)$\n$= x + \\cos x + x\\cos x + \\cos^2 x - x + x\\sin x - \\sin x + \\sin^2 x$\nNote $\\cos^2 x + \\sin^2 x = 1$.\n$= 1 + \\cos x - \\sin x + x(\\cos x + \\sin x)$\nAnswer: $\\frac{1 + \\cos x - \\sin x + x(\\cos x + \\sin x)}{(x + \\cos x)^2}$."
+        }
+      ]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "fmt_12_1",
+      "label": "Limit Existence",
+      "tex": "\\lim_{x \\to a^-} f(x) = \\lim_{x \\to a^+} f(x) = L"
+    },
+    {
+      "id": "fmt_12_2",
+      "label": "Polynomial Limit",
+      "tex": "\\lim_{x \\to a} \\frac{x^n - a^n}{x - a} = n a^{n-1}"
+    },
+    {
+      "id": "fmt_12_3",
+      "label": "Sine Limit",
+      "tex": "\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1"
+    },
+    {
+      "id": "fmt_12_4",
+      "label": "Tan Limit",
+      "tex": "\\lim_{x \\to 0} \\frac{\\tan x}{x} = 1"
+    },
+    {
+      "id": "fmt_12_5",
+      "label": "Cosine Limit",
+      "tex": "\\lim_{x \\to 0} \\frac{1 - \\cos x}{x} = 0"
+    },
+    {
+      "id": "fmt_12_6",
+      "label": "Derivative Definition",
+      "tex": "f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}"
+    },
+    {
+      "id": "fmt_12_7",
+      "label": "Power Rule",
+      "tex": "\\frac{d}{dx}(x^n) = n x^{n-1}"
+    },
+    {
+      "id": "fmt_12_8",
+      "label": "Product Rule",
+      "tex": "(uv)' = u'v + uv'"
+    },
+    {
+      "id": "fmt_12_9",
+      "label": "Quotient Rule",
+      "tex": "\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}"
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "id": "pq_12_1",
+      "question": "Evaluate lim (x -> 3) (x^2 - 9)/(x - 3).",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "pq_12_2",
+      "question": "Evaluate lim (x -> 0) (ax + x cos x)/(b sin x).",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_12_3",
+      "question": "Evaluate lim (x -> 0) (sqrt(1+x) - 1)/x.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_12_4",
+      "question": "Find the derivative of (x-1)(x-2) from first principles.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": "pq_12_5",
+      "question": "Find the derivative of (5 sin x - 6 cos x + 7).",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "pq_12_6",
+      "question": "Evaluate lim (x -> pi) (sin(pi - x))/(pi(pi - x)).",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_12_7",
+      "question": "If f(x) = (x+1)/x, find f'(x).",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "pq_12_8",
+      "question": "Evaluate lim (x -> 0) (cosec x - cot x).",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_12_9",
+      "question": "Find the derivative of x^5 (3 - 6 x^-9).",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "pq_12_10",
+      "question": "If y = x / (1 + tan x), find dy/dx.",
+      "difficulty": "Hard"
+    }
+  ]
+}

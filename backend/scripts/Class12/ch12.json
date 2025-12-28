@@ -1,0 +1,142 @@
+{
+  "id": "12_12",
+  "classId": 12,
+  "title": "Linear Programming",
+  "description": "The mathematics of optimization. This chapter introduces Linear Programming Problems (LPP), a powerful method used in industry, economics, and logistics to maximize profit or minimize cost subject to linear constraints. It covers formulation, graphical solutions, and the rigorous Corner Point Theorem.",
+  "topics": [
+    {
+      "id": "12_12_1",
+      "title": "Introduction and Terminology",
+      "content": "### 1. The Optimization Problem\nIn business, engineering, and military operations, we often need to make decisions to maximize efficiency (like profit, speed, or output) or minimize waste (like cost, time, or risk), while adhering to specific limitations (budget, capacity, resources). These are called **Optimization Problems**.\n\n**Linear Programming (LP)** is a specific class of optimization problems where:\n1.  The function to be optimized is linear.\n2.  The constraints are linear inequalities.\n\n### 2. Key Terminology\nConsider a furniture dealer who sells tables and chairs. He wants to maximize profit.\n\n1.  **Decision Variables:** The unknown quantities to be determined. usually denoted by $x, y$. (e.g., $x=$ number of tables, $y=$ number of chairs).\n2.  **Objective Function ($Z$):** A linear function $Z = ax + by$ which needs to be maximized or minimized. (e.g., Total Profit $Z = 500x + 150y$).\n3.  **Constraints:** The linear inequalities or equations (restrictions) on the variables. (e.g., Investment limit, Space limit).\n    * Format: $a_1x + b_1y \\le d_1$, etc.\n4.  **Non-negative Constraints:** In physical problems, variables cannot be negative. $x \\ge 0, y \\ge 0$.\n\n### 3. Mathematical Formulation of LPP\n**General Form:**\nMaximize (or Minimize) $Z = c_1x_1 + c_2x_2 + \\dots + c_nx_n$\nSubject to constraints:\n$$ a_{11}x_1 + a_{12}x_2 + \\dots \\le b_1 $$\n$$ a_{21}x_1 + a_{22}x_2 + \\dots \\ge b_2 $$\n$$ \\dots $$\nand $x_1, x_2, \\dots \\ge 0$."
+    },
+    {
+      "id": "12_12_2",
+      "title": "Graphical Method of Solution",
+      "content": "Since the NCERT syllabus deals with two variables ($x, y$), we use the **Graphical Method**.\n\n### 1. The Feasible Region\nThe **Feasible Region** is the common region determined by all the constraints (inequalities) including non-negative constraints. Every point in this region represents a **Feasible Solution**.\n* Points outside represent **Infeasible Solutions**.\n\n### 2. Convexity of the Region\nThe feasible region of an LPP is always a **Convex Polygon** (in 2D). This means if you take any two points inside the region, the line segment joining them lies entirely inside the region.\n\n### 3. The Corner Point Theorem (Fundamental Theorem of LP)\nThis theorem gives us the strategy to find the optimal solution without checking infinite points.\n\n**Theorem 1:** Let $R$ be the feasible region (convex polygon) for an LPP and let $Z = ax + by$ be the objective function. When $Z$ has an optimal value (maximum or minimum), it **must occur at one of the corner points (vertices)** of the feasible region.\n\n**Theorem 2 (Existence):**\nLet $R$ be the feasible region.\n* If $R$ is **Bounded**, then the objective function $Z$ has both a Maximum and a Minimum value on $R$, and each occurs at a corner point.\n* If $R$ is **Unbounded**, then a Maximum or Minimum value **may or may not exist**. If it exists, it must occur at a corner point.\n\n### 4. Algorithm (Corner Point Method)\n1.  Formulate the LPP.\n2.  Draw the graph of constraints and identify the Feasible Region.\n3.  Determine the coordinates of the **Corner Points** (Vertices).\n4.  Evaluate $Z = ax + by$ at each corner point.\n5.  Identify the maximum/minimum value from this list.\n6.  **Unbounded Check:** (See next section)."
+    },
+    {
+      "id": "12_12_3",
+      "title": "Handling Unbounded Regions",
+      "content": "If the feasible region is unbounded, the maximum or minimum value found at the corner points might not be the global extremum. We must verify.\n\n### 1. Verification Step for Unbounded Regions\nLet $M$ be the maximum value of $Z$ obtained at a corner point.\nTo verify if $M$ is truly the maximum:\n1.  Draw the inequality **$ax + by > M$**.\n2.  Check if the open half-plane determined by this inequality has **any point in common** with the feasible region.\n    * If **NO** common point: $M$ is the Maximum.\n    * If **YES** common point: The feasible region extends into values higher than $M$. Thus, **No Maximum exists**.\n\n*(Similarly for Minimum $m$: Check $ax + by < m$)*.\n\n### 2. Multiple Optimal Solutions\nIf two corner points give the same optimal value of $Z$, then **every point on the line segment joining these two points** is also an optimal solution.\nThis implies the LPP has infinitely many solutions."
+    },
+    {
+      "id": "12_12_4",
+      "title": "Types of Linear Programming Problems",
+      "content": "### 1. Manufacturing Problems\nDetermine the number of units of different products to produce to maximize profit, given constraints on labor hours, machine time, raw material, etc.\n\n### 2. Diet Problems\nDetermine the amount of different types of food to mix to minimize cost while satisfying nutritional requirements (min vitamins, min calories, etc.). Usually leads to unbounded regions (min cost).\n\n### 3. Transportation Problems\nMinimize the cost of transporting goods from multiple factories (sources) to multiple depots (destinations), subject to supply and demand constraints.\n\n### 4. Allocation Problems\nAssigning resources (jobs, machines) to tasks to optimize efficiency."
+    }
+  ],
+  "examples": [
+    {
+      "id": "ex_12_12_1",
+      "title": "Manufacturing Problem (Bounded)",
+      "problem": "Maximize $Z = 4x + y$ subject to constraints: $x + y \\le 50$, $3x + y \\le 90$, $x \\ge 0, y \\ge 0$.",
+      "solution": "1.  **Plot Lines:**\n    * $L_1: x + y = 50$. Points $(0, 50), (50, 0)$. Region: Towards origin.\n    * $L_2: 3x + y = 90$. Points $(0, 90), (30, 0)$. Region: Towards origin.\n\n2.  **Feasible Region:**\n    Intersection of $L_1$ and $L_2$:\n    $(3x+y) - (x+y) = 90 - 50 \\implies 2x = 40 \\implies x = 20$.\n    $20 + y = 50 \\implies y = 30$. Point $B(20, 30)$.\n    Vertices of feasible region: $O(0,0), A(30,0), B(20,30), C(0,50)$.\n\n3.  **Evaluate Z:**\n    * At $O(0,0): Z = 0$.\n    * At $A(30,0): Z = 4(30) + 0 = 120$.\n    * At $B(20,30): Z = 4(20) + 30 = 80 + 30 = 110$.\n    * At $C(0,50): Z = 4(0) + 50 = 50$.\n\n4.  **Conclusion:**\n    Maximum value is **120** at point $(30, 0)$."
+    },
+    {
+      "id": "ex_12_12_2",
+      "title": "Diet Problem (Unbounded)",
+      "problem": "Minimize $Z = 200x + 500y$ subject to: $x + 2y \\ge 10$, $3x + 4y \\le 24$, $x \\ge 0, y \\ge 0$. (Wait, Diet problems usually have $\\ge$ constraints leading to unbounded. Let's construct a standard unbounded minimization).\n**Revised Problem:** Minimize $Z = 3x + 2y$ subject to $x + y \\ge 8$, $3x + 5y \\ge 15$, $x \\ge 0, y \\ge 0$.",
+      "solution": "1.  **Plot Lines:**\n    * $L_1: x + y = 8$. $(0, 8), (8, 0)$. Region: Away from origin.\n    * $L_2: 3x + 5y = 15$. $(0, 3), (5, 0)$. Region: Away from origin.\n\n2.  **Feasible Region:**\n    Since both are $\\ge$, the region is unbounded. Vertices are determined by the outer boundary.\n    Points: $A(8, 0)$ and $B(0, 8)$? No, check intersection.\n    Intersection of $x+y=8$ and $3x+5y=15$: No intersection in first quadrant positive range? \n    Actually $3x+5y=15$ is below $x+y=8$ everywhere in first quadrant because for $x=0, y=3 < 8$; for $y=0, x=5 < 8$. \n    So the constraint $x+y \\ge 8$ dominates. The region is bounded by $x+y \\ge 8$ in the first quadrant.\n    Vertices: $(8, 0)$ and $(0, 8)$.\n\n    *Wait, let's try a better example with intersection.*\n    **Corrected Example:** Minimize $Z = 3x + 2y$ subject to $x + y \\ge 8$, $3x + 5y \\ge 30$, $x, y \\ge 0$.\n    * $L_1: x+y=8$. $(0,8), (8,0)$.\n    * $L_2: 3x+5y=30$. $(0,6), (10,0)$.\n    * Intersection: $3(8-y) + 5y = 30 \\implies 24 - 3y + 5y = 30 \\implies 2y = 6 \\implies y = 3, x = 5$.\n    * Vertices of unbounded region: $A(10, 0)$, $B(5, 3)$, $C(0, 8)$.\n\n3.  **Evaluate Z:**\n    * At $A(10, 0): Z = 30$.\n    * At $B(5, 3): Z = 15 + 6 = 21$.\n    * At $C(0, 8): Z = 16$.\n\n    Minimum so far is 16 at $(0, 8)$.\n\n4.  **Unbounded Check:**\n    We must check if $Z < 16$ is possible.\n    Inequality: $3x + 2y < 16$.\n    Plot $3x + 2y = 16$. Points $(0, 8), (16/3, 0)$.\n    Does this line enter the feasible region?\n    At $(0, 8)$, it touches corner C. Since it is strict inequality ($<$), the open half plane is below the line.\n    The feasible region is above the lines $x+y=8$ and $3x+5y=30$.\n    Line $3x+2y=16$ passes through $(0,8)$. Slope $-3/2$. Slope of $x+y=8$ is $-1$. Slope of $3x+5y=30$ is $-3/5$.\n    The line $3x+2y=16$ lies *below* the feasible region for $x>0$. It does not share common points.\n    **Conclusion:** Minimum is indeed **16**."
+    },
+    {
+      "id": "ex_12_12_3",
+      "title": "Transportation Problem Formulation",
+      "problem": "Two factories A and B have stocks of 100 and 50 units. Customers X and Y require 60 and 90 units. Cost matrix given. Formulate LPP.",
+      "solution": "Let Factory A supply $x$ units to X and $y$ units to Y.\nRemaining from A: $100 - (x+y)$. If A sends only to X and Y, then $x+y \\le 100$.\nBut typical problem implies minimizing total cost.\nLet A send $x$ to X. Then B must send $(60-x)$ to X.\nLet A send $y$ to Y. Then B must send $(90-y)$ to Y.\n\n**Constraints:**\n1.  A's capacity: $x + y \\le 100$.\n2.  B's capacity: $(60-x) + (90-y) \\le 50 \\implies 150 - x - y \\le 50 \\implies x + y \\ge 100$.\n    Combining, $x+y = 100$.\n3.  Non-negativity:\n    $x \\ge 0, y \\ge 0$.\n    $60-x \\ge 0 \\implies x \\le 60$.\n    $90-y \\ge 0 \\implies y \\le 90$.\n\n**Objective Function:**\n$Z = C_{AX}x + C_{AY}y + C_{BX}(60-x) + C_{BY}(90-y)$.\nSubstitute costs and simplify to get $Z$ in terms of $x, y$."
+    }
+  ],
+  "exercises": [
+    {
+      "id": "prob_12_12_1",
+      "question": "Maximize Z = 3x + 4y subject to constraints x + y <= 4, x >= 0, y >= 0.",
+      "type": "Graphical Solution",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_12_2",
+      "question": "Minimize Z = -3x + 4y subject to x + 2y <= 8, 3x + 2y <= 12, x >= 0, y >= 0.",
+      "type": "Graphical Solution",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_12_3",
+      "question": "Maximize Z = 5x + 3y subject to 3x + 5y <= 15, 5x + 2y <= 10, x >= 0, y >= 0.",
+      "type": "Graphical Solution",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_12_4",
+      "question": "Minimize Z = 3x + 5y such that x + 3y >= 3, x + y >= 2, x, y >= 0.",
+      "type": "Unbounded Region",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_12_5",
+      "question": "Show that the minimum of Z = x + y subject to 2x + y >= 3, x + 2y >= 6, x, y >= 0 occurs at two points.",
+      "type": "Multiple Optimal Solutions",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_12_6",
+      "question": "A dietician wishes to mix two types of foods in such a way that vitamin contents of the mixture contain at least 8 units of vitamin A and 10 units of vitamin C. Food I contains 2 units/kg of A and 1 unit/kg of C. Food II contains 1 unit/kg of A and 2 units/kg of C. Cost is Rs 50/kg for I and Rs 70/kg for II. Formulate LPP.",
+      "type": "Word Problem (Diet)",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_12_7",
+      "question": "Solve the LPP: Maximize Z = x + y subject to x - y <= -1, -x + y <= 0, x, y >= 0.",
+      "type": "Infeasible Region",
+      "difficulty": "JEE Advanced"
+    },
+    {
+      "id": "prob_12_12_8",
+      "question": "A manufacturer has 3 machines I, II and III installed in his factory. Machines I and II are capable of being operated for at most 12 hours whereas machine III must be operated for at least 5 hours a day. She produces only two items M and N. Formulate constraints.",
+      "type": "Manufacturing Problem",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_12_9",
+      "question": "Maximize Z = 2x + 3y subject to x + y <= 1, 3x + y <= 4, x, y >= 0. What do you observe about the constraints?",
+      "type": "Redundant Constraints",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_12_10",
+      "question": "An oil company has two depots A and B with capacities of 7000 L and 4000 L respectively. The company is to supply oil to three petrol pumps D, E and F whose requirements are 4500L, 3000L and 3500L respectively. Costs are given. Formulate to minimize transport cost.",
+      "type": "Transportation Problem",
+      "difficulty": "JEE Advanced"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "form_12_12_1",
+      "label": "Objective Function",
+      "tex": "Z = ax + by"
+    },
+    {
+      "id": "form_12_12_2",
+      "label": "General Constraints",
+      "tex": "a_i x + b_i y \\le d_i"
+    },
+    {
+      "id": "form_12_12_3",
+      "label": "Non-negative Constraints",
+      "tex": "x \\ge 0, y \\ge 0"
+    },
+    {
+      "id": "form_12_12_4",
+      "label": "Corner Point Theorem",
+      "tex": "Z_{opt} \\in \\{Z(A), Z(B), \\dots\\}"
+    },
+    {
+      "id": "form_12_12_5",
+      "label": "Unbounded Max Check",
+      "tex": "ax + by > M \\cap R = \\phi"
+    },
+    {
+      "id": "form_12_12_6",
+      "label": "Unbounded Min Check",
+      "tex": "ax + by < m \\cap R = \\phi"
+    }
+  ]
+}

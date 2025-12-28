@@ -1,0 +1,244 @@
+{
+  "id": "class_10",
+  "title": "Class 10",
+  "chapters": [
+    {
+      "id": "ch_8_introduction_to_trigonometry",
+      "title": "Ch 8: Introduction to Trigonometry",
+      "topics": [
+        {
+          "id": "topic_8_1_conceptual_foundation",
+          "title": "8.1 Conceptual Foundations: From Geometry to Functions",
+          "content": "### 1. The Genesis of Trigonometry\nMathematics often moves from the *static* to the *dynamic*. Geometry, as you have studied it so far (Euclid, Heron), deals with static shapes: triangles, circles, and quadrilaterals with fixed dimensions. \n\n**Trigonometry** (Greek: *trigonon* = triangle, *metron* = measure) is the bridge that connects **Geometry** (shapes) with **Algebra** (numbers/functions). It was born out of a necessity in astronomy—to calculate the distances to stars and planets that could not be physically measured. \n\n#### 1.1 The Fundamental Problem of Measurement\nImagine you are standing on the bank of a wide river. You see a tree on the opposite bank. You want to know the width of the river without crossing it. \n* **Geometry Approach:** You could try to construct congruent triangles on paper, but that requires scaling.\n* **Trigonometry Approach:** You measure the **angle** of your sightline to the top of the tree. This single *angle*, combined with a known *distance* on your side, fixes the entire geometry of the situation.\n\nTrigonometry is based on a profound realization: **In similar triangles, the ratio of sides is fixed by the angles, regardless of the size of the triangle.**\n\n#### 1.2 Angle as Rotation (The Dynamic View)\nIn Euclidean geometry, an angle is the space between two intersecting lines. In Trigonometry, we upgrade this definition.\n* **Ray:** A line with a starting point (vertex).\n* **Rotation:** Imagine a ray starting at an initial position (Initial Side) and rotating about its vertex to a final position (Terminal Side).\n* **The Angle:** The measure of this rotation.\n    * **Positive Angle:** Counter-clockwise rotation.\n    * **Negative Angle:** Clockwise rotation.\n\nWhile Class 10 focuses on acute angles ($0^\\circ \\le \\theta \\le 90^\\circ$), understanding rotation is crucial for Class 11. An angle is not just a shape; it is a **movement**.\n\n#### 1.3 The Right-Angled Triangle Model\nWhy right triangles? Because any polygon can be broken into triangles, and any triangle can be broken into right triangles (by dropping an altitude). The right triangle is the fundamental unit of 2D space.\n\nConsider a right triangle $\\Delta ABC$ with $\\angle B = 90^\\circ$. For an acute angle $\\theta$ (at $A$):\n1.  **Hypotenuse ($H$):** The side opposite the right angle ($AC$). It is always the longest side.\n2.  **Opposite Side ($P$ or Perpendicular):** The side facing the angle $\\theta$ ($BC$). Its length depends on how wide $\\theta$ opens.\n3.  **Adjacent Side ($B$ or Base):** The side next to $\\theta$ ($AB$). It forms the base of the angle along with the hypotenuse.\n\n**Crucial Concept:** These labels (Opposite, Adjacent) are **relative**. If you switch your focus to $\\angle C$, the Opposite and Adjacent sides swap. The Hypotenuse remains fixed.",
+          "formulas": [
+            "\\text{Angle} = \\text{Measure of Rotation}",
+            "\\text{Hypotenuse} > \\text{Legs}"
+          ],
+          "examples": [],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_8_2_trigonometric_ratios",
+          "title": "8.2 The Six Trigonometric Ratios",
+          "content": "### 2. The Ratios: Quantifying Shape\nIf two right triangles have the same acute angle $\\theta$, they are **similar** (AA similarity). This means the ratio of their corresponding sides is constant.\n\nLet us define these constant ratios. There are 3 sides, and we can form ratios by taking any 2 at a time. The number of permutations of 2 items from 3 is $^3P_2 = 6$. Hence, there are exactly **six** trigonometric ratios.\n\n#### 2.1 The Primary Ratios\nThese measure the fundamental relationships of the triangle.\n\n1.  **Sine (sin $\\theta$):**\n    * **Definition:** The ratio of the **Opposite** side to the **Hypotenuse**.\n    * **Meaning:** It measures how \"tall\" the triangle is relative to its size. As $\\theta$ grows, the height grows.\n    * $$\\sin \\theta = \\frac{\\text{Perpendicular}}{\\text{Hypotenuse}} = \\frac{P}{H}$$\n\n2.  **Cosine (cos $\\theta$):**\n    * **Definition:** The ratio of the **Adjacent** side to the **Hypotenuse**.\n    * **Meaning:** It measures how \"wide\" the triangle is relative to its size. As $\\theta$ grows, the width shrinks.\n    * $$\\cos \\theta = \\frac{\\text{Base}}{\\text{Hypotenuse}} = \\frac{B}{H}$$\n\n3.  **Tangent (tan $\\theta$):**\n    * **Definition:** The ratio of the **Opposite** side to the **Adjacent** side.\n    * **Meaning:** This is the **Slope** or gradient. It represents the rise over run.\n    * $$\\tan \\theta = \\frac{\\text{Perpendicular}}{\\text{Base}} = \\frac{P}{B}$$\n\n#### 2.2 The Reciprocal Ratios\nThese are the multiplicative inverses of the primary ratios.\n\n4.  **Cosecant (cosec $\\theta$):** Reciprocal of Sine.\n    * $$\\text{cosec } \\theta = \\frac{H}{P} = \\frac{1}{\\sin \\theta}$$\n    * *Constraint:* Defined only when $P \\neq 0$ (i.e., $\\theta \\neq 0^\\circ$).\n\n5.  **Secant (sec $\\theta$):** Reciprocal of Cosine.\n    * $$\\sec \\theta = \\frac{H}{B} = \\frac{1}{\\cos \\theta}$$\n    * *Constraint:* Defined only when $B \\neq 0$ (i.e., $\\theta \\neq 90^\\circ$).\n\n6.  **Cotangent (cot $\\theta$):** Reciprocal of Tangent.\n    * $$\\cot \\theta = \\frac{B}{P} = \\frac{1}{\\tan \\theta}$$\n\n#### 2.3 The Quotient Relations\nBy dividing the definitions, we find intrinsic links:\n* $$\\tan \\theta = \\frac{P/H}{B/H} = \\frac{\\sin \\theta}{\\cos \\theta}$$\n* $$\\cot \\theta = \\frac{B/H}{P/H} = \\frac{\\cos \\theta}{\\sin \\theta}$$\n\n**Note on Notation:** $\\sin^2 \\theta$ means $(\\sin \\theta)^2$. It is **NOT** $\\sin(\\theta^2)$. The function is squared, not the angle.",
+          "formulas": [
+            "\\sin \\theta = P/H",
+            "\\cos \\theta = B/H",
+            "\\tan \\theta = P/B",
+            "\\text{cosec } \\theta = 1/\\sin \\theta",
+            "\\sec \\theta = 1/\\cos \\theta",
+            "\\cot \\theta = 1/\\tan \\theta"
+          ],
+          "examples": [
+            {
+              "id": "ex_trig_1",
+              "question": "In $\\Delta ABC$ right-angled at B, if $AB = 12$ and $BC = 5$, find all six trigonometric ratios for angle A.",
+              "steps": [
+                {
+                  "explanation": "First, find the hypotenuse $AC$ using Pythagoras Theorem."
+                },
+                {
+                  "explanation": "$AC^2 = AB^2 + BC^2 = 12^2 + 5^2 = 144 + 25 = 169$."
+                },
+                {
+                  "explanation": "$AC = \\sqrt{169} = 13$."
+                },
+                {
+                  "explanation": "For angle A: Base ($B$) is Adjacent side $AB=12$. Perpendicular ($P$) is Opposite side $BC=5$. Hypotenuse ($H$) is $AC=13$."
+                },
+                {
+                  "explanation": "Calculate Primary Ratios: \n$\\sin A = P/H = 5/13$\n$\\cos A = B/H = 12/13$\n$\\tan A = P/B = 5/12$"
+                },
+                {
+                  "explanation": "Calculate Reciprocal Ratios: \n$\\text{cosec } A = 13/5$\n$\\sec A = 13/12$\n$\\cot A = 12/5$"
+                }
+              ],
+              "finalAnswer": "sinA=5/13, cosA=12/13, tanA=5/12, etc."
+            },
+            {
+              "id": "ex_trig_2",
+              "question": "If $\\tan \\theta = \\frac{a}{b}$, prove that $\\frac{a \\sin \\theta - b \\cos \\theta}{a \\sin \\theta + b \\cos \\theta} = \\frac{a^2 - b^2}{a^2 + b^2}$.",
+              "steps": [
+                {
+                  "explanation": "We are given a ratio $\\tan \\theta = a/b$. We can solve this by converting the expression to use $\\tan \\theta$."
+                },
+                {
+                  "explanation": "Divide the numerator and denominator of the LHS by $\\cos \\theta$."
+                },
+                {
+                  "explanation": "Numerator: $\\frac{a \\sin \\theta}{\\cos \\theta} - \\frac{b \\cos \\theta}{\\cos \\theta} = a \\tan \\theta - b$."
+                },
+                {
+                  "explanation": "Denominator: $\\frac{a \\sin \\theta}{\\cos \\theta} + \\frac{b \\cos \\theta}{\\cos \\theta} = a \\tan \\theta + b$."
+                },
+                {
+                  "explanation": "Substitute $\\tan \\theta = a/b$: \nExpression = $\\frac{a(a/b) - b}{a(a/b) + b}$."
+                },
+                {
+                  "explanation": "Simplify: $\\frac{\\frac{a^2}{b} - b}{\\frac{a^2}{b} + b} = \\frac{\\frac{a^2 - b^2}{b}}{\\frac{a^2 + b^2}{b}}$."
+                },
+                {
+                  "explanation": "Cancel $b$: $\\frac{a^2 - b^2}{a^2 + b^2}$. This equals the RHS."
+                }
+              ],
+              "finalAnswer": "Proved."
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Right Triangle Definitions",
+            "functions": [],
+            "points": [
+              { "x": 0, "y": 0, "label": "A (Angle)" },
+              { "x": 4, "y": 0, "label": "B (90 deg)" },
+              { "x": 4, "y": 3, "label": "C" }
+            ],
+            "shapes": [
+              { "type": "line", "x1": 0, "y1": 0, "x2": 4, "y2": 0, "color": "blue", "label": "Base" },
+              { "type": "line", "x1": 4, "y1": 0, "x2": 4, "y2": 3, "color": "red", "label": "Perp" },
+              { "type": "line", "x1": 0, "y1": 0, "x2": 4, "y2": 3, "color": "green", "label": "Hyp" }
+            ],
+            "xRange": [-1, 5],
+            "yRange": [-1, 4]
+          }
+        },
+        {
+          "id": "topic_8_3_values_standard_angles",
+          "title": "8.3 Values at Standard Angles (Derivation & Logic)",
+          "content": "### 3. The Geometry of Specific Angles\nWhy do we memorize values for 30°, 45°, and 60°? These are not random. They come from the two most perfect triangles: the **Equilateral Triangle** and the **Isosceles Right Triangle**.\n\n#### 3.1 Angle 45° (The Isosceles Right Triangle)\nConsider $\\Delta ABC$ right-angled at $B$ with $\\angle A = 45^\\circ$.\n1.  Since $\\angle A = 45^\\circ$ and $\\angle B = 90^\\circ$, sum of angles implies $\\angle C = 45^\\circ$.\n2.  Therefore, $\\Delta ABC$ is isosceles. $AB = BC$. Let length $= a$.\n3.  By Pythagoras: $AC^2 = a^2 + a^2 = 2a^2 \\implies AC = a\\sqrt{2}$.\n4.  **Ratios:**\n    * $\\sin 45^\\circ = P/H = a / (a\\sqrt{2}) = 1/\\sqrt{2}$.\n    * $\\cos 45^\\circ = B/H = a / (a\\sqrt{2}) = 1/\\sqrt{2}$.\n    * $\\tan 45^\\circ = P/B = a/a = 1$.\n\n#### 3.2 Angles 30° and 60° (The Equilateral Triangle)\nConsider an equilateral triangle $\\Delta ABC$ with side $2a$.\n1.  All angles are $60^\\circ$.\n2.  Draw altitude $AD \\perp BC$. By RHS congruence, $\\Delta ABD \\cong \\Delta ACD$.\n3.  Therefore, $BD = DC = a$ and $\\angle BAD = 30^\\circ$.\n4.  In right $\\Delta ABD$:\n    * Hypotenuse $AB = 2a$.\n    * Base $BD = a$.\n    * Perpendicular $AD = \\sqrt{(2a)^2 - a^2} = \\sqrt{3a^2} = a\\sqrt{3}$.\n\n**For 60° (Focus on $\\angle B$):**\n* $\\sin 60^\\circ = P/H = AD/AB = a\\sqrt{3} / 2a = \\sqrt{3}/2$.\n* $\\cos 60^\\circ = B/H = BD/AB = a / 2a = 1/2$.\n* $\\tan 60^\\circ = P/B = a\\sqrt{3} / a = \\sqrt{3}$.\n\n**For 30° (Focus on $\\angle BAD$):**\n* Perpendicular is now $BD = a$. Base is $AD = a\\sqrt{3}$.\n* $\\sin 30^\\circ = P/H = a / 2a = 1/2$.\n* $\\cos 30^\\circ = B/H = a\\sqrt{3} / 2a = \\sqrt{3}/2$.\n* $\\tan 30^\\circ = P/B = a / a\\sqrt{3} = 1/\\sqrt{3}$.\n\n#### 3.3 Angles 0° and 90° (The Limit Concept)\nConsider $\\Delta ABC$ with $\\angle B = 90^\\circ$ and angle $\\theta$ at $A$.\n* **As $\\theta \\to 0^\\circ$:**\n    * Point $C$ lowers towards $B$.\n    * Perpendicular $BC \\to 0$.\n    * Hypotenuse $AC$ flattens onto Base $AB$, so $AC \\to AB$.\n    * $\\sin 0^\\circ = BC/AC \\to 0/AB = 0$.\n    * $\\cos 0^\\circ = AB/AC \\to AB/AB = 1$.\n* **As $\\theta \\to 90^\\circ$:**\n    * Point $A$ moves closer to $B$.\n    * Base $AB \\to 0$.\n    * Hypotenuse $AC$ becomes vertical, matching Perpendicular $BC$.\n    * $\\sin 90^\\circ = BC/AC \\to 1$.\n    * $\\cos 90^\\circ = AB/AC \\to 0$.\n\n#### 3.4 Summary Table\n| Angle | 0° | 30° | 45° | 60° | 90° |\n| :--- | :---: | :---: | :---: | :---: | :---: |\n| **sin** | 0 | 1/2 | $1/\\sqrt{2}$ | $\\sqrt{3}/2$ | 1 |\n| **cos** | 1 | $\\sqrt{3}/2$ | $1/\\sqrt{2}$ | 1/2 | 0 |\n| **tan** | 0 | $1/\\sqrt{3}$ | 1 | $\\sqrt{3}$ | ND |\n\n*ND = Not Defined (Division by zero)*",
+          "formulas": [
+            "\\sin 30^\\circ = 1/2",
+            "\\sin 45^\\circ = 1/\\sqrt{2}",
+            "\\sin 60^\\circ = \\sqrt{3}/2"
+          ],
+          "examples": [
+            {
+              "id": "ex_trig_3",
+              "question": "Evaluate: $\\frac{5 \\cos^2 60^\\circ + 4 \\sec^2 30^\\circ - \\tan^2 45^\\circ}{\\sin^2 30^\\circ + \\cos^2 30^\\circ}$",
+              "steps": [
+                {
+                  "explanation": "Substitute standard values:"
+                },
+                {
+                  "explanation": "$\\cos 60^\\circ = 1/2$, so $\\cos^2 60^\\circ = 1/4$."
+                },
+                {
+                  "explanation": "$\\sec 30^\\circ = 2/\\sqrt{3}$, so $\\sec^2 30^\\circ = 4/3$."
+                },
+                {
+                  "explanation": "$\\tan 45^\\circ = 1$, so $\\tan^2 45^\\circ = 1$."
+                },
+                {
+                  "explanation": "$\\sin 30^\\circ = 1/2$, $\\cos 30^\\circ = \\sqrt{3}/2$."
+                },
+                {
+                  "explanation": "Numerator: $5(1/4) + 4(4/3) - 1 = 5/4 + 16/3 - 1$."
+                },
+                {
+                  "explanation": "Denominator: $(1/2)^2 + (\\sqrt{3}/2)^2 = 1/4 + 3/4 = 1$ (This is a standard identity)."
+                },
+                {
+                  "explanation": "Solve Numerator: LCM of 4, 3 is 12. \n$\\frac{15 + 64 - 12}{12} = \\frac{67}{12}$."
+                }
+              ],
+              "finalAnswer": "67/12"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_8_4_trigonometric_identities",
+          "title": "8.4 Trigonometric Identities: The Logic of Equality",
+          "content": "### 4. Trigonometric Identities\nAn identity is an equation that is true for *all* values of the variable. In trigonometry, identities allow us to transform expressions into simpler forms. They are not magic tricks; they are direct consequences of the **Pythagoras Theorem**.\n\n#### 4.1 The Pythagorean Identities\nConsider right $\\Delta ABC$ with $\\angle B = 90^\\circ$.\nBy Pythagoras: $P^2 + B^2 = H^2$.\n\n**Derivation 1 (The Fundamental Identity):**\nDivide the entire equation by $H^2$:\n$$\\frac{P^2}{H^2} + \\frac{B^2}{H^2} = \\frac{H^2}{H^2}$$\n$$\\left(\\frac{P}{H}\\right)^2 + \\left(\\frac{B}{H}\\right)^2 = 1$$\n**Result:** $$\\sin^2 \\theta + \\cos^2 \\theta = 1$$\n*Insight:* This is simply the equation of a unit circle ($x^2 + y^2 = 1$).\n\n**Derivation 2 (The Secant Identity):**\nDivide original equation by $B^2$:\n$$\\frac{P^2}{B^2} + \\frac{B^2}{B^2} = \\frac{H^2}{B^2}$$\n$$\\tan^2 \\theta + 1 = \\sec^2 \\theta$$\n\n**Derivation 3 (The Cosecant Identity):**\nDivide original equation by $P^2$:\n$$\\frac{P^2}{P^2} + \\frac{B^2}{P^2} = \\frac{H^2}{P^2}$$\n$$1 + \\cot^2 \\theta = \\text{cosec}^2 \\theta$$\n\n#### 4.2 Proving Identities: Strategy Guide\nProving `LHS = RHS` is a logical art.\n1.  **Strategy A (Basic):** Convert everything to sine and cosine. This works 90% of the time.\n2.  **Strategy B (Algebraic Identity):** Look for $a^2 - b^2$ or $(a+b)^2$ patterns.\n3.  **Strategy C (Rationalization):** If you see $1 \\pm \\sin \\theta$ in the denominator, multiply by the conjugate ($1 \\mp \\sin \\theta$).\n4.  **Strategy D (LHS & RHS):** Simplify LHS and RHS separately to a common point.\n\n#### 4.3 Complementary Angles (Pre-Class 11)\nWhile deleted in some recent NCERT syllabi, this concept is foundational.\nSince $\\angle A + \\angle C = 90^\\circ$ in a right triangle:\n* $\\sin(90^\\circ - \\theta) = \\cos \\theta$\n* $\\tan(90^\\circ - \\theta) = \\cot \\theta$\n* $\\sec(90^\\circ - \\theta) = \\text{cosec } \\theta$\nThis explains the name \"Cosine\" = \"Sine of the Complement\".",
+          "formulas": [
+            "\\sin^2 \\theta + \\cos^2 \\theta = 1",
+            "1 + \\tan^2 \\theta = \\sec^2 \\theta",
+            "1 + \\cot^2 \\theta = \\text{cosec}^2 \\theta"
+          ],
+          "examples": [
+            {
+              "id": "ex_trig_4",
+              "question": "Prove that $\\sqrt{\\frac{1 + \\sin A}{1 - \\sin A}} = \\sec A + \\tan A$.",
+              "steps": [
+                {
+                  "explanation": "The square root blocks direct simplification. Strategy C: Rationalize the denominator."
+                },
+                {
+                  "explanation": "Multiply numerator and denominator inside the root by $(1 + \\sin A)$."
+                },
+                {
+                  "explanation": "$\\sqrt{\\frac{(1 + \\sin A)(1 + \\sin A)}{(1 - \\sin A)(1 + \\sin A)}} = \\sqrt{\\frac{(1 + \\sin A)^2}{1 - \\sin^2 A}}$."
+                },
+                {
+                  "explanation": "Use Identity: $1 - \\sin^2 A = \\cos^2 A$."
+                },
+                {
+                  "explanation": "Expression becomes $\\sqrt{\\frac{(1 + \\sin A)^2}{\\cos^2 A}}$."
+                },
+                {
+                  "explanation": "Remove square root: $\\frac{1 + \\sin A}{\\cos A}$."
+                },
+                {
+                  "explanation": "Split the fraction: $\\frac{1}{\\cos A} + \\frac{\\sin A}{\\cos A}$."
+                },
+                {
+                  "explanation": "Result: $\\sec A + \\tan A$. LHS = RHS."
+                }
+              ],
+              "finalAnswer": "Proved."
+            },
+            {
+              "id": "ex_trig_5",
+              "question": "Prove: $\\frac{\\tan \\theta}{1 - \\cot \\theta} + \\frac{\\cot \\theta}{1 - \\tan \\theta} = 1 + \\sec \\theta \\text{cosec } \\theta$.",
+              "steps": [
+                {
+                  "explanation": "Strategy A: Convert everything to sin and cos. This is often long but reliable."
+                },
+                {
+                  "explanation": "Term 1: $\\frac{\\sin/\\cos}{1 - \\cos/\\sin} = \\frac{\\sin/\\cos}{(\\sin-\\cos)/\\sin} = \\frac{\\sin^2}{\\cos(\\sin-\\cos)}$."
+                },
+                {
+                  "explanation": "Term 2: $\\frac{\\cos/\\sin}{1 - \\sin/\\cos} = \\frac{\\cos/\\sin}{(\\cos-\\sin)/\\cos} = \\frac{\\cos^2}{\\sin(\\cos-\\sin)}$."
+                },
+                {
+                  "explanation": "Notice $(\\cos - \\sin) = -(\\sin - \\cos)$. Factor out the negative sign in Term 2."
+                },
+                {
+                  "explanation": "Expression: $\\frac{\\sin^2}{\\cos(\\sin-\\cos)} - \\frac{\\cos^2}{\\sin(\\sin-\\cos)}$."
+                },
+                {
+                  "explanation": "Take LCM: $\\sin \\cos (\\sin - \\cos)$."
+                },
+                {
+                  "explanation": "Numerator: $\\sin^3 - \\cos^3$. Use $a^3 - b^3 = (a-b)(a^2+b^2+ab)$."
+                },
+                {
+                  "explanation": "Numerator: $(\\sin-\\cos)(\\sin^2 + \\cos^2 + \\sin\\cos)$."
+                },
+                {
+                  "explanation": "Cancel $(\\sin-\\cos)$ from numerator and denominator."
+                },
+                {
+                  "explanation": "Left with: $\\frac{1 + \\sin\\cos}{\\sin\\cos}$ (since $\\sin^2+\\cos^2=1$)."
+                },
+                {
+                  "explanation": "Split: $\\frac{1}{\\sin\\cos} + \\frac{\\sin\\cos}{\\sin\\cos} = \\text{cosec } \\theta \\sec \\theta + 1$."
+                }
+              ],
+              "finalAnswer": "Proved."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_8_5_practice_compendium",
+          "title": "8.5 Practice Bank & Formula Compendium",
+          "content": "### 5. Comprehensive Practice Bank\n\n#### Section A: Understanding Ratios (10 Questions)\n1.  If $\\sin A = 3/4$, calculate $\\cos A$ and $\\tan A$.\n2.  Given $15 \\cot A = 8$, find $\\sin A$ and $\\sec A$.\n3.  In $\\Delta PQR$ right angled at Q, $PR + QR = 25$ cm and $PQ = 5$ cm. Determine $\\sin P, \\cos P, \\tan P$.\n4.  If $\\angle A$ and $\\angle B$ are acute angles such that $\\cos A = \\cos B$, then show that $\\angle A = \\angle B$.\n5.  Evaluate $\\sin 60^\\circ \\cos 30^\\circ + \\sin 30^\\circ \\cos 60^\\circ$.\n6.  Show that $\\tan 48^\\circ \\tan 23^\\circ \\tan 42^\\circ \\tan 67^\\circ = 1$.\n7.  If $\\tan(A+B) = \\sqrt{3}$ and $\\tan(A-B) = 1/\\sqrt{3}$, find A and B.\n8.  Find the value of $2\\tan^2 45^\\circ + \\cos^2 30^\\circ - \\sin^2 60^\\circ$.\n9.  If $\\sin 3A = \\cos(A-26^\\circ)$, where 3A is acute, find A.\n10. Express $\\cot 85^\\circ + \\cos 75^\\circ$ in terms of ratios of angles between $0^\\circ$ and $45^\\circ$.\n\n#### Section B: Identities & Proofs (10 Questions)\n11. Prove $(\\text{cosec } \\theta - \\cot \\theta)^2 = \\frac{1 - \\cos \\theta}{1 + \\cos \\theta}$.\n12. Prove $\\frac{\\cos A}{1 + \\sin A} + \\frac{1 + \\sin A}{\\cos A} = 2 \\sec A$.\n13. Prove $\\sqrt{\\frac{1+\\sin A}{1-\\sin A}} = \\sec A + \\tan A$.\n14. Prove $\\frac{\\sin \\theta - 2\\sin^3 \\theta}{2\\cos^3 \\theta - \\cos \\theta} = \\tan \\theta$.\n15. Prove $(\\sin A + \\text{cosec } A)^2 + (\\cos A + \\sec A)^2 = 7 + \\tan^2 A + \\cot^2 A$.\n16. Prove $\\frac{\\cos A - \\sin A + 1}{\\cos A + \\sin A - 1} = \\text{cosec } A + \\cot A$.\n17. If $\\tan \\theta + \\sin \\theta = m$ and $\\tan \\theta - \\sin \\theta = n$, show that $m^2 - n^2 = 4\\sqrt{mn}$.\n18. If $x = a \\sin \\theta$ and $y = b \\tan \\theta$, prove $\\frac{a^2}{x^2} - \\frac{b^2}{y^2} = 1$.\n19. Prove $(1 + \\tan A + \\sec A)(1 + \\cot A - \\text{cosec } A) = 2$.\n20. If $\\sec \\theta + \\tan \\theta = p$, show that $\\frac{p^2 - 1}{p^2 + 1} = \\sin \\theta$.\n\n#### Section C: Advanced / JEE Foundation (Must Practice)\n21. **(Must Practice)** If $\\cos \\theta + \\sin \\theta = \\sqrt{2} \\cos \\theta$, show that $\\cos \\theta - \\sin \\theta = \\sqrt{2} \\sin \\theta$. (Hint: Square both sides).\n22. **(Must Practice)** Evaluate without tables: $\\frac{\\sec^2 54^\\circ - \\cot^2 36^\\circ}{\\text{cosec}^2 57^\\circ - \\tan^2 33^\\circ} + 2 \\sin^2 38^\\circ \\sec^2 52^\\circ - \\sin^2 45^\\circ$.\n23. **(Must Practice)** If $a \\cos \\theta - b \\sin \\theta = c$, prove that $a \\sin \\theta + b \\cos \\theta = \\pm \\sqrt{a^2 + b^2 - c^2}$.\n24. **(Must Practice)** Eliminate $\\theta$: $x = h + a \\cos \\theta$, $y = k + b \\sin \\theta$.\n25. **(Must Practice)** If $\\sin \\theta + \\sin^2 \\theta = 1$, prove that $\\cos^2 \\theta + \\cos^4 \\theta = 1$.\n26. **(Must Practice)** Find the value of $\\tan 1^\\circ \\tan 2^\\circ \\tan 3^\\circ \\dots \\tan 89^\\circ$.\n27. **(Must Practice)** If $T_n = \\sin^n \\theta + \\cos^n \\theta$, prove $\\frac{T_3 - T_5}{T_1} = \\frac{T_5 - T_7}{T_3}$.\n28. **(Must Practice)** Solve for $\\theta$: $\\frac{\\cos^2 \\theta}{\\cot^2 \\theta - \\cos^2 \\theta} = 3$.\n29. **(Must Practice)** If $\\text{cosec } \\theta - \\sin \\theta = l$ and $\\sec \\theta - \\cos \\theta = m$, prove $l^2 m^2 (l^2 + m^2 + 3) = 1$.\n30. **(Must Practice)** Prove $\\frac{1}{\\text{cosec } A - \\cot A} - \\frac{1}{\\sin A} = \\frac{1}{\\sin A} - \\frac{1}{\\text{cosec } A + \\cot A}$.\n\n---\n\n### 6. Formula Compendium\n\n**1. Definitions**\n* $\\sin \\theta = P/H$\n* $\\cos \\theta = B/H$\n* $\\tan \\theta = P/B = \\sin/\\cos$\n\n**2. Pythagorean Identities**\n* $\\sin^2 \\theta + \\cos^2 \\theta = 1$\n* $1 + \\tan^2 \\theta = \\sec^2 \\theta$\n* $1 + \\cot^2 \\theta = \\text{cosec}^2 \\theta$\n\n**3. Reciprocal Relations**\n* $\\sin \\theta \\cdot \\text{cosec } \\theta = 1$\n* $\\cos \\theta \\cdot \\sec \\theta = 1$\n* $\\tan \\theta \\cdot \\cot \\theta = 1$\n\n**4. Complementary Angles**\n* $\\sin(90-\\theta) = \\cos \\theta$\n* $\\tan(90-\\theta) = \\cot \\theta$\n* $\\sec(90-\\theta) = \\text{cosec } \\theta$\n\n**5. Algebraic Aids**\n* $a^3 \\pm b^3 = (a \\pm b)(a^2 \\mp ab + b^2)$\n* $(a+b)^2 + (a-b)^2 = 2(a^2+b^2)$",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

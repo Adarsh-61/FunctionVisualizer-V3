@@ -1,0 +1,279 @@
+{
+  "id": "class_9",
+  "title": "Class 9",
+  "chapters": [
+    {
+      "id": "ch_6_lines_and_angles",
+      "title": "Ch 6: Lines and Angles",
+      "topics": [
+        {
+          "id": "topic_6_1_foundations_of_geometry",
+          "title": "6.1 Foundations: Lines, Rays, and Angle Intuition",
+          "content": "### 1. Introduction: The Building Blocks of Shape\nGeometry is the study of shape, size, and relative position of figures. In Chapter 5, we established the axioms (rules) of Euclidean Geometry. Now, in Chapter 6, we begin applying these rules to the most fundamental elements of 2D space: **Lines** and **Angles**.\n\nEvery complex architectural structure, every triangular truss in a bridge, and every ray of light in optics can be analyzed using the concepts in this chapter. We are moving from \"looking at shapes\" to \"proving properties of shapes.\"\n\n#### 1.1 Basic Definitions (Recap & Refinement)\nBefore we argue about angles, we must agree on what our objects are.\n\n* **Line Segment:** A part of a line with two distinct end points. It has a definite length. Denoted as $\\overline{AB}$.\n* **Ray:** A part of a line with one end point (source) that extends indefinitely in the other direction. Denoted as $\\vec{AB}$. Examples: Sun rays, laser beams.\n* **Line:** A breadthless length that extends indefinitely in both directions. Denoted as $\\overleftrightarrow{AB}$.\n* **Collinear Points:** Three or more points that lie on the same straight line.\n* **Non-Collinear Points:** Points that do not lie on a single straight line (essential for forming triangles).\n\n#### 1.2 The Anatomy of an Angle\nAn **Angle** is formed when two rays originate from the same end point.\n* **Vertex:** The common end point (e.g., $O$).\n* **Arms (Sides):** The two rays forming the angle (e.g., $\\vec{OA}$ and $\\vec{OB}$).\n* **Measurement:** We measure the \"amount of rotation\" required to overlap one ray onto the other. The standard unit is **Degrees** ($^\\circ$), though advanced mathematics uses **Radians**.\n\n#### 1.3 Types of Angles (The Spectrum of Rotation)\nUnderstanding the magnitude allows us to classify angles:\n1.  **Acute Angle ($0^\\circ < x < 90^\\circ$):** Sharp, narrow. Found in equilateral triangles.\n2.  **Right Angle ($x = 90^\\circ$):** The cornerstone of perpendicularity and trigonometry.\n3.  **Obtuse Angle ($90^\\circ < x < 180^\\circ$):** Wide, open.\n4.  **Straight Angle ($x = 180^\\circ$):** Looks like a straight line. The rays are opposite to each other.\n5.  **Reflex Angle ($180^\\circ < x < 360^\\circ$):** The \"outer\" angle. Often missed by students. Formula: $\\text{Reflex } \\angle A = 360^\\circ - \\angle A$.\n6.  **Complete Angle ($x = 360^\\circ$):** Full rotation.\n\n#### 1.4 Pairs of Angles: The Relationships\nGeometry becomes interesting when angles interact.\n\n* **Complementary Angles:** Two angles whose sum is $90^\\circ$. (e.g., $30^\\circ, 60^\\circ$).\n    * *Mnemonic:* \"C\" for Corner (Right Angle).\n* **Supplementary Angles:** Two angles whose sum is $180^\\circ$. (e.g., $110^\\circ, 70^\\circ$).\n    * *Mnemonic:* \"S\" for Straight (Straight Line).\n* **Adjacent Angles:** Two angles are adjacent if they have:\n    1.  A common vertex.\n    2.  A common arm.\n    3.  Their non-common arms are on different sides of the common arm.\n    * *Note:* Two angles can share a vertex and not be adjacent (e.g., vertically opposite).\n\n#### 1.5 The Linear Pair Axiom (Axiom 6.1 & 6.2)\nThis is a **fundamental truth** we accept without proof, which allows us to prove later theorems.\n\n* **Axiom 6.1:** If a ray stands on a line, then the sum of two adjacent angles so formed is $180^\\circ$.\n* **Axiom 6.2 (Converse):** If the sum of two adjacent angles is $180^\\circ$, then the non-common arms of the angles form a line.\n\n* **Why is this crucial?** This axiom is our primary tool to prove a line is straight. If you calculate angles and find they sum to $180^\\circ$, you have proven collinearity.",
+          "formulas": [
+            "\\text{Linear Pair: } \\angle A + \\angle B = 180^\\circ",
+            "\\text{Reflex } \\angle x = 360^\\circ - x",
+            "\\text{Complementary: } a + b = 90^\\circ",
+            "\\text{Supplementary: } a + b = 180^\\circ"
+          ],
+          "examples": [
+            {
+              "id": "ex_la_1",
+              "question": "If $\\angle A$ and $\\angle B$ form a linear pair and $\\angle A = 2x + 10$ and $\\angle B = 3x - 30$, find the value of x and the angles.",
+              "steps": [
+                {
+                  "explanation": "Since $\\angle A$ and $\\angle B$ form a linear pair, their sum is $180^\\circ$ (Axiom 6.1)."
+                },
+                {
+                  "explanation": "Equation: $(2x + 10) + (3x - 30) = 180$."
+                },
+                {
+                  "explanation": "Simplify: $5x - 20 = 180$."
+                },
+                {
+                  "explanation": "$5x = 200 \\implies x = 40$."
+                },
+                {
+                  "explanation": "Calculate angles: $\\angle A = 2(40) + 10 = 90^\\circ$, $\\angle B = 3(40) - 30 = 90^\\circ$."
+                }
+              ],
+              "finalAnswer": "$x=40, \\angle A = 90^\\circ, \\angle B = 90^\\circ$"
+            },
+            {
+              "id": "ex_la_2",
+              "question": "In a given figure, lines PQ and RS intersect at O. If $\\angle POR : \\angle ROQ = 5 : 7$, find all angles.",
+              "steps": [
+                {
+                  "explanation": "$\\angle POR$ and $\\angle ROQ$ are adjacent angles on line PQ. Thus, they form a linear pair."
+                },
+                {
+                  "explanation": "Let the common ratio be $x$. Then $\\angle POR = 5x$ and $\\angle ROQ = 7x$."
+                },
+                {
+                  "explanation": "$5x + 7x = 180^\\circ \\implies 12x = 180^\\circ \\implies x = 15^\\circ$."
+                },
+                {
+                  "explanation": "$\\angle POR = 5(15) = 75^\\circ$."
+                },
+                {
+                  "explanation": "$\\angle ROQ = 7(15) = 105^\\circ$."
+                },
+                {
+                  "explanation": "Using Vertically Opposite Angles: $\\angle SOQ = \\angle POR = 75^\\circ$ and $\\angle POS = \\angle ROQ = 105^\\circ$."
+                }
+              ],
+              "finalAnswer": "$75^\\circ, 105^\\circ, 75^\\circ, 105^\\circ$"
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Types of Angles",
+            "functions": [],
+            "xRange": [-5, 5],
+            "yRange": [-5, 5],
+            "grid": false
+          }
+        },
+        {
+          "id": "topic_6_2_intersecting_lines_theorems",
+          "title": "6.2 Intersecting Lines & Proof Logic",
+          "content": "### 2. When Lines Meet\nThe intersection of two lines is the birthplace of the first rigorous proof in geometry.\n\n#### 2.1 Vertically Opposite Angles\nWhen two lines intersect, they form four angles. The angles opposite to each other at the vertex are called **Vertically Opposite Angles (VOA)**.\n* Intuition: If you take two scissors blades and open them, the angle between the top blades equals the angle between the handle blades. As one opens, the other opens identically.\n\n#### Theorem 6.1: VOA Equality\n**Statement:** If two lines intersect each other, then the vertically opposite angles are equal.\n\n**Given:** Two lines $AB$ and $CD$ intersect at point $O$.\n**To Prove:**\n1.  $\\angle AOC = \\angle BOD$\n2.  $\\angle AOD = \\angle BOC$\n\n**Proof (Step-by-Step Logic):**\n1.  **Identify Linear Pairs:**\n    Ray $OA$ stands on line $CD$.\n    Therefore, $\\angle AOC + \\angle AOD = 180^\\circ$ (Linear Pair Axiom). ---(i)\n\n2.  **Identify Another Linear Pair:**\n    Ray $OD$ stands on line $AB$.\n    Therefore, $\\angle AOD + \\angle BOD = 180^\\circ$ (Linear Pair Axiom). ---(ii)\n\n3.  **Equate:**\n    From (i) and (ii), both sums equal $180^\\circ$.\n    $\\angle AOC + \\angle AOD = \\angle AOD + \\angle BOD$\n\n4.  **Eliminate Common Term:**\n    Subtract $\\angle AOD$ from both sides (Euclid's Axiom: If equals are subtracted from equals, remainders are equal).\n    $\\angle AOC = \\angle BOD$\n\n5.  **Conclusion:**\n    Similarly, we can prove $\\angle AOD = \\angle BOC$. Hence Proved.\n\n#### 2.2 Proof Writing Strategy\nNotice the structure above:\n1.  **Given/To Prove:** Sets the stage.\n2.  **Axiom Invocation:** We didn't invent logic; we used the Linear Pair Axiom.\n3.  **Algebraic Manipulation:** We treated angles as variables.\n4.  **Conclusion:** We arrived at the truth definitively.\n\nThis method allows us to prove complex geometric truths by breaking them down into simple linear pair relationships.",
+          "formulas": [
+            "\\text{VOA: } \\angle 1 = \\angle 3, \\angle 2 = \\angle 4"
+          ],
+          "examples": [
+            {
+              "id": "ex_la_3",
+              "question": "Prove that the bisectors of a pair of vertically opposite angles are in the same straight line.",
+              "steps": [
+                {
+                  "explanation": "Given: Lines AB and CD intersect at O. Ray OE bisects $\\angle AOC$ and Ray OF bisects $\\angle BOD$."
+                },
+                {
+                  "explanation": "To Prove: EOF is a straight line (i.e., $\\angle EOF = 180^\\circ$)."
+                },
+                {
+                  "explanation": "Proof Step 1: $\\angle AOC = \\angle BOD$ (Vertically Opposite Angles)."
+                },
+                {
+                  "explanation": "Step 2: Since OE bisects $\\angle AOC$, $\\angle AOE = \\frac{1}{2}\\angle AOC$. Similarly, $\\angle BOF = \\frac{1}{2}\\angle BOD$."
+                },
+                {
+                  "explanation": "Step 3: Therefore, $\\angle AOE = \\angle BOF$."
+                },
+                {
+                  "explanation": "Step 4: Now consider line AB. Ray OC stands on it. $\\angle AOC + \\angle BOC = 180^\\circ$."
+                },
+                {
+                  "explanation": "Step 5: Substitute $\\angle AOC = 2\\angle AOE$. So $2\\angle AOE + \\angle BOC = 180^\\circ$."
+                },
+                {
+                  "explanation": "Step 6: We check $\\angle EOC + \\angle BOC + \\angle BOF$. Wait, simpler path: Check $\\angle EOF = \\angle EOC + \\angle BOC + \\angle BOF$."
+                },
+                {
+                  "explanation": "Correction: $\\angle EOC = \\angle BOF$. Linearity check: $\\angle AOE + \\angle AOD + \\angle DOF$. Too complex. Let's use $\\angle AOE + \\angle AO F$?"
+                },
+                {
+                  "explanation": "Better Path: $\\angle EOF = \\angle EOC + \\angle COB + \\angle BOF$. We know $\\angle EOC = \\angle BOF$. So $\\angle EOF = \\angle BOF + \\angle COB + \\angle BOF$? No."
+                },
+                {
+                  "explanation": "Let's use Linear Pair on line AB: $\\angle AOE + \\angle EOC + \\angle BOC = 180$ is false (OE is inside AOC). $\\angle AOB = 180$. $\\angle AOF = \\angle AOB + \\angle BOF = 180 + x$? No."
+                },
+                {
+                  "explanation": "Correct Proof: $\\angle EOF = \\angle EOC + \\angle COB + \\angle BOF$. We know $\\angle EOC = \\angle AOE$. And $\\angle BOF = \\angle AOE$ (proved above). So $\\angle EOF = \\angle AOE + \\angle COB + \\angle AOE$? No. $\\angle COB + \\angle AOC = 180$. $\\angle AOC = \\angle AOE + \\angle EOC = 2\\angle AOE$. So $2\\angle AOE + \\angle COB = 180$. Now, $\\angle EOF = \\angle EOC + \\angle COB + \\angle BOF = \\angle AOE + \\angle COB + \\angle AOE = 2\\angle AOE + \\angle COB = 180^\\circ$."
+                },
+                {
+                  "explanation": "Since $\\angle EOF = 180^\\circ$, EOF is a straight line."
+                }
+              ],
+              "finalAnswer": "Proved."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_6_3_transversals_parallel_lines",
+          "title": "6.3 Transversals and Parallel Lines",
+          "content": "### 3. The Geometry of Parallelism\nParallel lines are lines in a plane that never meet. But in geometry, we define them by their *angular properties* when cut by a third line.\n\n#### 3.1 The Transversal\nA line which intersects two or more lines at distinct points is called a **transversal**.\n\nWhen a transversal ($t$) cuts two lines ($m$ and $n$), 8 angles are formed:\n* **Exterior Angles:** $\\angle 1, \\angle 2, \\angle 7, \\angle 8$ (Outside the parallel zone).\n* **Interior Angles:** $\\angle 3, \\angle 4, \\angle 5, \\angle 6$ (Sandwiched between lines).\n\n#### 3.2 Angle Relationships (The Vocabulary)\n1.  **Corresponding Angles:** Angles in the same relative position at each intersection. (e.g., Top-Right $\\angle 1$ and Top-Right $\\angle 5$).\n2.  **Alternate Interior Angles:** Interior angles on opposite sides of the transversal. Form a \"Z\" shape. (e.g., $\\angle 4$ and $\\angle 6$).\n3.  **Alternate Exterior Angles:** Exterior angles on opposite sides. (e.g., $\\angle 1$ and $\\angle 7$).\n4.  **Interior Angles on the Same Side (Consecutive/Co-interior/Allied):** Form a \"C\" shape. (e.g., $\\angle 4$ and $\\angle 5$).\n\n#### 3.3 Axiom 6.3 & 6.4: Corresponding Angles\nThis is the bedrock of parallel line proofs. We cannot *prove* corresponding angles are equal; we *assume* it to define parallelism.\n\n* **Axiom 6.3 (Corresponding Angles Axiom):** If a transversal intersects two **parallel** lines, then each pair of corresponding angles is equal.\n* **Axiom 6.4 (Converse):** If a transversal intersects two lines such that a pair of corresponding angles is equal, then the two lines are parallel.\n\n#### 3.4 Theorem 6.2: Alternate Interior Angles\n**Statement:** If a transversal intersects two parallel lines, then each pair of alternate interior angles is equal.\n**Proof:**\n1.  **Given:** $AB || CD$, transversal $t$ cuts them. Angles: $\\angle 1$ (exterior), $\\angle 3$ (interior) at top; $\\angle 5$ (interior) at bottom.\n2.  **Axiom:** $\\angle 1 = \\angle 5$ (Corresponding Angles Axiom).\n3.  **Theorem:** $\\angle 1 = \\angle 3$ (Vertically Opposite Angles).\n4.  **Logic:** From (2) and (3), $\\angle 3 = \\angle 5$.\n5.  **Conclusion:** Alternate interior angles are equal.\n\n#### 3.5 Theorem 6.4: Co-interior Angles\n**Statement:** If a transversal intersects two parallel lines, then each pair of interior angles on the same side of the transversal is supplementary ($180^\\circ$).\n**Proof Logic:**\n1.  Linear pair at top intersection gives $\\angle 3 + \\angle 4 = 180^\\circ$.\n2.  Alternate angles gives $\\angle 4 = \\angle 6$.\n3.  Substitute: $\\angle 3 + \\angle 6 = 180^\\circ$?? No, careful with indices.\n    * Correct Logic: $\\angle 1 + \\angle 2 = 180$ (Linear Pair). $\\angle 1 = \\angle 5$ (Corresponding). Thus $\\angle 5 + \\angle 2 = 180$.\n\n**Common Mistake:** Students often think Co-interior angles are *equal*. They are not. They sum to $180^\\circ$. \"C\" for Complementary? No, \"C\" for \"Common sum 180\".",
+          "formulas": [
+            "\\text{Parallel } \\iff \\text{Corr. Angles Equal}",
+            "\\text{Parallel } \\iff \\text{Alt. Int. Angles Equal}",
+            "\\text{Parallel } \\iff \\text{Co-interior Sum } = 180^\\circ"
+          ],
+          "examples": [
+            {
+              "id": "ex_la_4",
+              "question": "If AB || CD, CD || EF and y : z = 3 : 7, find x. (Where x is alt interior to y's counterpart?) Diagram: Three parallel horizontal lines. Transversal cuts them. x is int angle between AB/Transversal. y is int angle between CD/Transversal. z is int angle between EF/Transversal. x and y are co-interior. y and z are... let's assume standard NCERT configuration.",
+              "steps": [
+                {
+                  "explanation": "Assumption: Standard NCERT Fig 6.29 configuration. AB || CD || EF. x and y are co-interior angles between AB and CD (Wait, usually x and y are consecutive?). Let's define clearly: x is angle on AB, y on CD, z on EF. x and y are on same side? No, standard problem is x and y are co-interior. y and z are alternate? Let's solve generic logic."
+                },
+                {
+                  "explanation": "Setup: AB || CD || EF. Transversal cuts. $x$ and $y$ are on the same side between AB and CD ($x+y=180$). $y$ and $z$ are on opposite sides? No, usually angles are defined such that we relate them."
+                },
+                {
+                  "explanation": "Correct Logic for standard problem: AB || EF. $x$ and $z$ are Alternate Interior Angles. So $x = z$."
+                },
+                {
+                  "explanation": "Given $y : z = 3 : 7$. Let $y = 3k, z = 7k$."
+                },
+                {
+                  "explanation": "Between CD and EF: $y$ and $z$ are co-interior sum 180? Or Alternate? If they are on the same side, $y+z=180$. If alternate, $y=z$."
+                },
+                {
+                  "explanation": "Let's assume $y$ and $z$ are co-interior (angles on same side of transversal). Then $3k + 7k = 180 \\implies 10k = 180 \\implies k=18$. $z = 7(18) = 126^\\circ$. Since $x=z$ (Alternate interior from AB to EF), $x=126^\\circ$."
+                },
+                {
+                  "explanation": "Alternative interpretation (NCERT Ex 6.2 Q1): $x+y=180$ (co-interior). But relation is between y and z? Usually $x=z$ is the key."
+                }
+              ],
+              "finalAnswer": "$x = 126^\\circ$"
+            },
+            {
+              "id": "ex_la_5",
+              "question": "Prove that if two lines are parallel to the same line, they are parallel to each other.",
+              "steps": [
+                {
+                  "explanation": "Given: Line $m || l$ and Line $n || l$."
+                },
+                {
+                  "explanation": "To Prove: $m || n$."
+                },
+                {
+                  "explanation": "Construction: Draw a transversal $t$ cutting all three lines."
+                },
+                {
+                  "explanation": "Proof Step 1: Since $m || l$, corresponding angles are equal. Let $\\angle 1$ be on $m$ and $\\angle 2$ be on $l$. So $\\angle 1 = \\angle 2$."
+                },
+                {
+                  "explanation": "Proof Step 2: Since $n || l$, corresponding angles are equal. Let $\\angle 3$ be on $n$ corresponding to $\\angle 2$. So $\\angle 3 = \\angle 2$."
+                },
+                {
+                  "explanation": "Proof Step 3: From 1 and 2, $\\angle 1 = \\angle 3$."
+                },
+                {
+                  "explanation": "Proof Step 4: $\\angle 1$ and $\\angle 3$ are corresponding angles for lines $m$ and $n$."
+                },
+                {
+                  "explanation": "Conclusion: By Converse of Corresponding Angles Axiom, $m || n$."
+                }
+              ],
+              "finalAnswer": "Proved."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_6_4_triangles_angle_sum",
+          "title": "6.4 Triangles: Angle Sum & Exterior Angles",
+          "content": "### 4. Properties of Triangles\nTriangles are closed figures formed by three intersecting lines. The parallel line theorems allow us to prove properties about triangle angles.\n\n#### 4.1 Theorem 6.7: Angle Sum Property\n**Statement:** The sum of the angles of a triangle is $180^\\circ$.\n**Intuition:** If you tear the three corners of a paper triangle and place them adjacent to each other, they form a straight line.\n\n**Proof (Rigorous):**\n1.  **Given:** Triangle $PQR$ with angles $\\angle 1, \\angle 2, \\angle 3$.\n2.  **Construction:** Draw a line $XPY$ parallel to base $QR$ passing through vertex $P$.\n3.  **Proof Logic:**\n    * $XPY || QR$. $PQ$ is a transversal. $\\angle 4$ (at XP) and $\\angle 2$ (at Q) are Alternate Interior Angles. So $\\angle 4 = \\angle 2$.\n    * $PR$ is a transversal. $\\angle 5$ (at YP) and $\\angle 3$ (at R) are Alternate Interior Angles. So $\\angle 5 = \\angle 3$.\n    * XPY is a straight line. So $\\angle 4 + \\angle 1 + \\angle 5 = 180^\\circ$ (Angles on a line).\n    * Substitute $\\angle 4$ and $\\angle 5$: $\\angle 2 + \\angle 1 + \\angle 3 = 180^\\circ$.\n    * Rearrange: $\\angle 1 + \\angle 2 + \\angle 3 = 180^\\circ$.\n\n#### 4.2 Theorem 6.8: Exterior Angle Property\n**Statement:** If a side of a triangle is produced, then the exterior angle so formed is equal to the sum of the two interior opposite angles.\n**Proof:**\n* Let exterior angle be $\\angle 4$. Interior adjacent is $\\angle 3$. Interior opposites are $\\angle 1, \\angle 2$.\n* $\\angle 3 + \\angle 4 = 180^\\circ$ (Linear Pair).\n* $\\angle 1 + \\angle 2 + \\angle 3 = 180^\\circ$ (Angle Sum Property).\n* Equate: $\\angle 3 + \\angle 4 = \\angle 1 + \\angle 2 + \\angle 3$.\n* Subtract $\\angle 3$: $\\angle 4 = \\angle 1 + \\angle 2$.\n\n**Key Insight:** This theorem implies that an exterior angle is strictly *greater* than either of the interior opposite angles. This is crucial for inequality proofs.",
+          "formulas": [
+            "\\Sigma \\angle \\Delta = 180^\\circ",
+            "\\text{Ext } \\angle = \\text{Int } \\angle A + \\text{Int } \\angle B"
+          ],
+          "examples": [
+            {
+              "id": "ex_la_6",
+              "question": "In $\\Delta ABC$, the bisectors of $\\angle B$ and $\\angle C$ intersect at point O. Prove that $\\angle BOC = 90^\\circ + \\frac{1}{2}\\angle A$.",
+              "steps": [
+                {
+                  "explanation": "In $\\Delta ABC$, $\\angle A + \\angle B + \\angle C = 180^\\circ$. So $\\angle B + \\angle C = 180^\\circ - \\angle A$."
+                },
+                {
+                  "explanation": "Divide by 2: $\\frac{1}{2}\\angle B + \\frac{1}{2}\\angle C = 90^\\circ - \\frac{1}{2}\\angle A$."
+                },
+                {
+                  "explanation": "In $\\Delta BOC$, $\\angle OBC + \\angle OCB + \\angle BOC = 180^\\circ$."
+                },
+                {
+                  "explanation": "Since OB and OC are bisectors, $\\angle OBC = \\frac{1}{2}\\angle B$ and $\\angle OCB = \\frac{1}{2}\\angle C$."
+                },
+                {
+                  "explanation": "Substitute: $(\\frac{1}{2}\\angle B + \\frac{1}{2}\\angle C) + \\angle BOC = 180^\\circ$."
+                },
+                {
+                  "explanation": "Substitute first equation: $(90^\\circ - \\frac{1}{2}\\angle A) + \\angle BOC = 180^\\circ$."
+                },
+                {
+                  "explanation": "Solve for $\\angle BOC$: $\\angle BOC = 180^\\circ - 90^\\circ + \\frac{1}{2}\\angle A$."
+                },
+                {
+                  "explanation": "$\\angle BOC = 90^\\circ + \\frac{1}{2}\\angle A$."
+                }
+              ],
+              "finalAnswer": "Proved."
+            },
+            {
+              "id": "ex_la_7",
+              "question": "Find x and y if AB || CD, $\\angle APQ = 50^\\circ$ and $\\angle PRD = 127^\\circ$. (P is on AB, Q and R on CD).",
+              "steps": [
+                {
+                  "explanation": "Observe $\\angle APR$ and $\\angle PRD$ are Alternate Interior Angles? No, P is on AB, R is on CD. PR is transversal."
+                },
+                {
+                  "explanation": "Angles are Alternate Interior: $\\angle APR = \\angle PRD$. So $\\angle APR = 127^\\circ$."
+                },
+                {
+                  "explanation": "$\\angle APR = \\angle APQ + \\angle QPR = 50^\\circ + y$. So $50 + y = 127 \\implies y = 77^\\circ$."
+                },
+                {
+                  "explanation": "Now for x: $\\angle APQ = \\angle PQR$ (Alternate Interior). So $x = 50^\\circ$."
+                }
+              ],
+              "finalAnswer": "$x = 50^\\circ, y = 77^\\circ$"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_6_5_practice_bank",
+          "title": "6.5 Practice Bank & Compendium",
+          "content": "### 5. Comprehensive Practice Questions\n\n#### Section A: Proof Completion (Reasoning)\n1.  Given $\\angle 1 = \\angle 2$ and $\\angle 2 = \\angle 3$, prove line $m || n$. State axioms used.\n2.  Prove that the bisectors of a pair of corresponding angles are parallel.\n3.  Two lines are perpendicular to the same line. Prove they are parallel to each other.\n4.  Prove that the sum of the four angles of a quadrilateral is $360^\\circ$ using the triangle angle sum property.\n5.  If a transversal is perpendicular to one of two parallel lines, prove it is perpendicular to the other.\n\n#### Section B: Calculation & Algebra\n6.  An exterior angle of a triangle is $110^\\circ$ and one of the interior opposite angles is $30^\\circ$. Find the other two angles.\n7.  The angles of a triangle are in ratio 2:3:4. Find the angles.\n8.  If $2x + 10$ and $3x - 5$ are supplementary angles, find x.\n9.  In $\\Delta PQR$, $\\angle P - \\angle Q = 42^\\circ$ and $\\angle Q - \\angle R = 21^\\circ$. Find $\\angle P, \\angle Q, \\angle R$.\n10. Find the angle which is four times its complement.\n\n#### Section C: Must-Practice (Board/JEE Foundation)\n11. **(Must Practice)** The side QR of $\\Delta PQR$ is produced to a point S. If the bisectors of $\\angle PQR$ and $\\angle PRS$ meet at point T, prove that $\\angle QTR = \\frac{1}{2} \\angle QPR$. (The \"Half Angle\" Property).\n12. **(Must Practice)** POQ is a line. Ray OR is perpendicular to line PQ. OS is another ray lying between rays OP and OR. Prove that $\\angle ROS = \\frac{1}{2} (\\angle QOS - \\angle POS)$.\n13. **(Must Practice)** Two mirrors PQ and RS are placed parallel to each other. An incident ray AB strikes mirror PQ at B, the reflected ray moves along BC and strikes mirror RS at C and reflects back along CD. Prove that AB || CD.\n14. **(Must Practice)** In a triangle, if the bisector of an angle is perpendicular to the opposite side, prove the triangle is isosceles.\n15. **(Must Practice)** If two parallel lines are intersected by a transversal, prove that the bisectors of the interior angles form a rectangle.\n16. **(Must Practice)** Prove that the sum of the three altitudes of a triangle is less than the sum of the three sides.\n17. **(Must Practice)** If the arms of one angle are parallel to the arms of another angle, prove that the angles are either equal or supplementary.\n18. **(Must Practice)** In $\\Delta ABC$, AD is altitude and AE is bisector of $\\angle A$. Prove that $\\angle DAE = \\frac{1}{2}(\\angle B - \\angle C)$.\n19. **(Must Practice)** Find the sum of the angles at the vertices of a 5-pointed star.\n20. **(Must Practice)** If a transversal intersects two lines such that the bisectors of a pair of consecutive interior angles are perpendicular, prove that the lines are parallel.\n\n---\n\n### 6. Formula & Concept Compendium\n\n#### 6.1 Axioms\n* **Linear Pair Axiom:** Adjacent angles on a line sum to $180^\\circ$.\n* **Corresponding Angles Axiom:** If lines are parallel, corresponding angles are equal.\n\n#### 6.2 Theorems\n* **Vertically Opposite:** VOA are equal.\n* **Parallelism:**\n    * Alt Int $\\angle$s equal $\\implies$ Parallel.\n    * Co-interior $\\angle$s supplementary $\\implies$ Parallel.\n* **Triangle:**\n    * Sum of angles = $180^\\circ$.\n    * Ext $\\angle$ = Sum of Int Opp $\\angle$s.\n\n#### 6.3 Proof Tricks\n* To prove lines parallel: Look for \"Z\" (Alternate) or \"F\" (Corresponding) shapes.\n* To prove angles equal: Look for isosceles triangles or congruence (next chapter).\n* To find missing angles: Always check for Linear Pairs and Triangles first.",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

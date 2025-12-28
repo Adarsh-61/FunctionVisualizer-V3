@@ -1,0 +1,226 @@
+{
+  "id": "class_10",
+  "title": "Class 10",
+  "chapters": [
+    {
+      "id": "ch_12_surface_areas_volumes",
+      "title": "Ch 12: Surface Areas and Volumes",
+      "topics": [
+        {
+          "id": "topic_12_1_fundamentals",
+          "title": "12.1 The Concept of Three-Dimensional Solids",
+          "content": "### 1. From Planes to Space\nWe live in a three-dimensional world. While we draw on 2D paper, the objects we interact with—bottles, balls, boxes, buildings—are 3D solids. They occupy space and have surfaces.\n\nIn Class 9, you were introduced to basic solids. In Class 10, we move to **Composite Solids**—combinations of basic shapes. To solve these problems, you must first master the art of decomposition: breaking a complex object into simple parts.\n\n#### 1.1 Surface Area vs Volume\nThis distinction is crucial and often confused.\n1.  **Surface Area:** Imagine you want to **paint** the object or wrap it in **gift paper**. The amount of paint or paper required depends on the area of the boundaries (faces). It is a 2D measure of the \"skin\" of the object.\n    * **Unit:** Square units ($cm^2, m^2$).\n2.  **Volume:** Imagine you want to **fill** the object with water or sand. The amount it can hold (capacity) or the space it occupies is Volume. It is a 3D measure of the \"body\" of the object.\n    * **Unit:** Cubic units ($cm^3, m^3$).\n\n#### 1.2 Types of Surface Area\n* **Curved Surface Area (CSA):** Also called Lateral Surface Area. This is the area of the \"curved\" part only, excluding the flat top and bottom bases. Used for open pipes, tents, etc.\n* **Total Surface Area (TSA):** CSA + Area of Top Base + Area of Bottom Base. Used for closed containers, solid blocks, etc.",
+          "formulas": [
+            "\\text{Area Unit} = \\text{unit}^2",
+            "\\text{Volume Unit} = \\text{unit}^3"
+          ],
+          "examples": [],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_12_2_cuboids_cubes",
+          "title": "12.2 Cuboids and Cubes: The Basics Revisited",
+          "content": "### 2. Rectangular Solids\n\n#### 2.1 The Cuboid\nA solid bounded by six rectangular faces. Examples: A brick, a book, a matchbox.\n* **Dimensions:** Length ($l$), Breadth ($b$), Height ($h$).\n* **Faces:** 6 (Opposite faces are identical).\n* **Edges:** 12.\n* **Vertices:** 8.\n\n**Derivations:**\n1.  **TSA:** Sum of areas of all 6 rectangles.\n    * Bottom + Top = $lb + lb = 2lb$\n    * Front + Back = $lh + lh = 2lh$\n    * Left + Right = $bh + bh = 2bh$\n    * $TSA = 2(lb + bh + hl)$\n2.  **LSA:** Area of 4 walls only (exclude top/bottom).\n    * $LSA = 2(lh + bh) = 2h(l+b)$. (Perimeter of base $\\times$ Height).\n3.  **Volume:** Area of Base $\\times$ Height.\n    * $V = (l \\times b) \\times h = lbh$.\n4.  **Diagonal:** The longest rod that can fit inside.\n    * $d = \\sqrt{l^2 + b^2 + h^2}$[cite: 1].\n\n#### 2.2 The Cube\nA special cuboid where $l = b = h = a$ (edge length).\n1.  **TSA:** $6 \\times (a \\times a) = 6a^2$.\n2.  **LSA:** $4 \\times (a \\times a) = 4a^2$.\n3.  **Volume:** $a \\times a \\times a = a^3$.\n4.  **Diagonal:** $\\sqrt{a^2+a^2+a^2} = \\sqrt{3a^2} = a\\sqrt{3}$.",
+          "formulas": [
+            "TSA_{\\text{cuboid}} = 2(lb+bh+hl)",
+            "LSA_{\\text{cuboid}} = 2h(l+b)",
+            "V_{\\text{cuboid}} = lbh",
+            "d_{\\text{cuboid}} = \\sqrt{l^2+b^2+h^2}",
+            "TSA_{\\text{cube}} = 6a^2",
+            "V_{\\text{cube}} = a^3",
+            "d_{\\text{cube}} = a\\sqrt{3}"
+          ],
+          "examples": [
+            {
+              "id": "ex_surf_1",
+              "question": "Two cubes each of volume 64 cm³ are joined end to end. Find the surface area of the resulting cuboid.",
+              "steps": [
+                {
+                  "explanation": "1. **Analyze Cube:** Volume of cube $V = a^3 = 64$. So $a = \\sqrt[3]{64} = 4$ cm."
+                },
+                {
+                  "explanation": "2. **Analyze Joining:** When two cubes are joined end-to-end, they form a cuboid.\n* Length $l = 4 + 4 = 8$ cm.\n* Breadth $b = 4$ cm (unchanged).\n* Height $h = 4$ cm (unchanged)."
+                },
+                {
+                  "explanation": "3. **Calculate TSA:** $TSA = 2(lb + bh + hl)$.\n$TSA = 2(8\\times4 + 4\\times4 + 4\\times8) = 2(32 + 16 + 32) = 2(80) = 160$."
+                },
+                {
+                  "explanation": "4. **Unit:** Area is in cm²."
+                }
+              ],
+              "finalAnswer": "160 cm²"
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Cuboid Joined from Cubes",
+            "functions": [],
+            "shapes": [
+              { "type": "rect", "x1": 0, "y1": 0, "x2": 4, "y2": 4, "color": "blue", "label": "Cube 1" },
+              { "type": "rect", "x1": 4, "y1": 0, "x2": 8, "y2": 4, "color": "green", "label": "Cube 2" }
+            ],
+            "xRange": [-1, 9],
+            "yRange": [-1, 5]
+          }
+        },
+        {
+          "id": "topic_12_3_cylinders_cones",
+          "title": "12.3 Cylinders and Cones: The Rotation Solids",
+          "content": "### 3. Circular Solids\n\n#### 3.1 Right Circular Cylinder\nGenerated by rotating a rectangle about one side. It has circular ends.\n* **Radius ($r$):** Radius of circular base.\n* **Height ($h$):** Perpendicular distance between bases.\n\n**Formulas:**\n1.  **CSA:** Circumference of base $\\times$ Height = $2\\pi r h$.\n2.  **TSA:** CSA + 2 Bases = $2\\pi rh + 2\\pi r^2 = 2\\pi r(h+r)$.\n3.  **Volume:** Area of base $\\times$ Height = $\\pi r^2 h$.\n\n#### 3.2 Right Circular Cone\nGenerated by rotating a right triangle about one side. It tapers to a vertex.\n* **Height ($h$):** Vertical height.\n* **Radius ($r$):** Base radius.\n* **Slant Height ($l$):** Distance from vertex to edge of base.\n* **Relation:** $l^2 = h^2 + r^2$ (Pythagoras Theorem).\n\n**Derivations:**\n1.  **CSA:** $\\pi r l$. (Imagine unrolling the cone into a sector of a circle with radius $l$. The arc length is $2\\pi r$. Area of sector = $1/2 \\times \\text{radius} \\times \\text{arc} = 1/2 \\times l \\times 2\\pi r = \\pi rl$).\n2.  **TSA:** CSA + Base = $\\pi rl + \\pi r^2 = \\pi r(l+r)$.\n3.  **Volume:** $1/3$ of a cylinder with same height and radius = $\\frac{1}{3} \\pi r^2 h$.",
+          "formulas": [
+            "l = \\sqrt{h^2+r^2}",
+            "CSA_{\\text{cone}} = \\pi rl",
+            "TSA_{\\text{cone}} = \\pi r(l+r)",
+            "V_{\\text{cone}} = \\frac{1}{3}\\pi r^2 h"
+          ],
+          "examples": [
+            {
+              "id": "ex_surf_2",
+              "question": "A toy is in the form of a cone of radius 3.5 cm mounted on a hemisphere of same radius. The total height of the toy is 15.5 cm. Find the total surface area of the toy.",
+              "steps": [
+                {
+                  "explanation": "1. **Decompose Solid:** The toy consists of a Cone (top) + Hemisphere (bottom). The flat bases are glued together, so they are *internal*. We only need CSAs."
+                },
+                {
+                  "explanation": "2. **Dimensions:** Radius $r = 3.5$ cm. Total Height $H = 15.5$ cm. Height of hemisphere part = radius = 3.5 cm. Height of cone part $h = H - r = 15.5 - 3.5 = 12$ cm."
+                },
+                {
+                  "explanation": "3. **Slant Height:** $l = \\sqrt{h^2 + r^2} = \\sqrt{12^2 + 3.5^2} = \\sqrt{144 + 12.25} = \\sqrt{156.25} = 12.5$ cm."
+                },
+                {
+                  "explanation": "4. **Calculate Area:** TSA of Toy = CSA(Cone) + CSA(Hemisphere)."
+                },
+                {
+                  "explanation": "5. **Formula:** $\\pi rl + 2\\pi r^2 = \\pi r(l + 2r)$."
+                },
+                {
+                  "explanation": "6. **Substitute:** $\\frac{22}{7} \\times 3.5 (12.5 + 2(3.5)) = 11 \\times (12.5 + 7) = 11 \\times 19.5 = 214.5$ cm²."
+                }
+              ],
+              "finalAnswer": "214.5 cm²"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_12_4_spheres_hemispheres",
+          "title": "12.4 Spheres and Hemispheres",
+          "content": "### 4. Perfect Curvature\n\n#### 4.1 Sphere\nA perfectly round 3D object.\n* **Surface Area:** $4\\pi r^2$. (Archimedes proved this equals the lateral area of a circumscribing cylinder).\n* **Volume:** $\\frac{4}{3} \\pi r^3$.\n\n#### 4.2 Hemisphere\nHalf a sphere.\n* **Curved Surface Area (CSA):** Half of sphere = $2\\pi r^2$.\n* **Total Surface Area (TSA):** CSA + Circular Base = $2\\pi r^2 + \\pi r^2 = 3\\pi r^2$.\n* **Volume:** Half of sphere = $\\frac{2}{3} \\pi r^3$.\n\n#### 4.3 Spherical Shell (Hollow)\nOuter radius $R$, Inner radius $r$.\n* **Volume of Material:** External Vol - Internal Vol = $\\frac{4}{3}\\pi(R^3 - r^3)$[cite: 1].",
+          "formulas": [
+            "A_{\\text{sphere}} = 4\\pi r^2",
+            "V_{\\text{sphere}} = \\frac{4}{3}\\pi r^3",
+            "TSA_{\\text{hemi}} = 3\\pi r^2"
+          ],
+          "examples": [
+            {
+              "id": "ex_surf_3",
+              "question": "A hemispherical bowl made of brass has inner diameter 10.5 cm. Find the cost of tin-plating it on the inside at the rate of ₹16 per 100 cm².",
+              "steps": [
+                {
+                  "explanation": "1. **Identify Surface:** Tin-plating is done on the *inside*. So we need Inner CSA."
+                },
+                {
+                  "explanation": "2. **Dimensions:** Diameter $d = 10.5$, Radius $r = 5.25$ cm."
+                },
+                {
+                  "explanation": "3. **Calculate CSA:** $2\\pi r^2 = 2 \\times \\frac{22}{7} \\times 5.25 \\times 5.25$."
+                },
+                {
+                  "explanation": "4. **Solve:** $44 \\times 0.75 \\times 5.25 = 173.25$ cm²."
+                },
+                {
+                  "explanation": "5. **Cost:** Rate is ₹16 per 100 cm². Cost = $\\frac{173.25}{100} \\times 16 = 1.7325 \\times 16 = 27.72$."
+                }
+              ],
+              "finalAnswer": "₹27.72"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_12_5_frustum",
+          "title": "12.5 Frustum of a Cone",
+          "content": "### 5. The Bucket Shape\nWhen a right circular cone is cut by a plane parallel to its base, the bottom part is called the **Frustum**.\n\n#### 5.1 Dimensions\nIt has two circular ends of different radii.\n* $r_1, r_2$: Radii of the two ends.\n* $h$: Vertical height.\n* $l$: Slant height.\n\n#### 5.2 Slant Height Relation\nBy drawing a perpendicular, we see a right triangle with base $(r_1 - r_2)$ and height $h$.\n$$l = \\sqrt{h^2 + (r_1 - r_2)^2}$$\n\n#### 5.3 Formulas\n1.  **Volume:** $\\frac{1}{3} \\pi h (r_1^2 + r_2^2 + r_1 r_2)$[cite: 1].\n    * *Logic:* Resembles the cone formula but averages the radii terms.\n2.  **CSA:** $\\pi (r_1 + r_2) l$[cite: 1].\n3.  **TSA:** CSA + Top Base + Bottom Base = $\\pi (r_1 + r_2)l + \\pi r_1^2 + \\pi r_2^2$.",
+          "formulas": [
+            "V_{\\text{frustum}} = \\frac{1}{3}\\pi h(r_1^2+r_2^2+r_1r_2)",
+            "CSA_{\\text{frustum}} = \\pi(r_1+r_2)l",
+            "l = \\sqrt{h^2+(r_1-r_2)^2}"
+          ],
+          "examples": [
+            {
+              "id": "ex_surf_4",
+              "question": "A drinking glass is in the shape of a frustum of a cone of height 14 cm. The diameters of its two circular ends are 4 cm and 2 cm. Find the capacity of the glass.",
+              "steps": [
+                {
+                  "explanation": "1. **Identify Shape:** Frustum."
+                },
+                {
+                  "explanation": "2. **Dimensions:** $h = 14$. $d_1 = 4 \\implies r_1 = 2$. $d_2 = 2 \\implies r_2 = 1$."
+                },
+                {
+                  "explanation": "3. **Formula:** $V = \\frac{1}{3} \\pi h (r_1^2 + r_2^2 + r_1 r_2)$."
+                },
+                {
+                  "explanation": "4. **Substitute:** $V = \\frac{1}{3} \\times \\frac{22}{7} \\times 14 (2^2 + 1^2 + 2\\times1)$."
+                },
+                {
+                  "explanation": "5. **Calculate:** $\\frac{44}{3} (4+1+2) = \\frac{44}{3} (7) = \\frac{308}{3} \\approx 102.67$ cm³."
+                }
+              ],
+              "finalAnswer": "102.67 cm³"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_12_6_composite_strategy",
+          "title": "12.6 Strategy for Composite Solids",
+          "content": "### 6. Mastering Complex Problems\n\n#### 6.1 Logic of Combination\n* **Volume:** Usually additive. Volume of composite = Vol 1 + Vol 2.\n* **Surface Area:** **NOT** always additive. When two solids are joined (e.g., hemisphere on cylinder), the contacting surfaces are *hidden*. You must subtract the hidden area or simply sum the visible CSAs.\n    * $TSA_{\\text{composite}} = CSA_1 + CSA_2 + \\text{Exposed Bases}$.\n\n#### 6.2 Conversion of Solids\nWhen a solid is melted and recast into another shape, **Volume remains constant**.\n* Volume of Metal before melting = Volume of Metal after melting.\n* Use this equation to find unknown dimensions (like number of balls, new radius, etc.).\n\n#### 6.3 Flow of Water Problems\n* Water flowing through a pipe is essentially a \"cylinder of water\".\n* Volume flowing per minute = Area of cross-section $\\times$ Speed.\n* Speed must be converted to compatible units (e.g., km/hr to m/min).",
+          "formulas": [
+            "V_{\\text{initial}} = V_{\\text{final}}",
+            "\\text{Flow Vol} = A_{\\text{cross}} \\times \\text{Speed} \\times \\text{Time}"
+          ],
+          "examples": [
+            {
+              "id": "ex_surf_5",
+              "question": "Water flows through a cylindrical pipe of internal radius 1 cm at 80 cm/sec into an empty cylindrical tank of base radius 40 cm. What is the rise of water level in half an hour?",
+              "steps": [
+                {
+                  "explanation": "1. **Pipe Volume (Input):** Radius $r = 1$ cm. Speed = 80 cm/sec. Time = 30 mins = 1800 sec."
+                },
+                {
+                  "explanation": "Length of water column = Speed $\\times$ Time = $80 \\times 1800 = 144000$ cm."
+                },
+                {
+                  "explanation": "Volume In = $\\pi r^2 L = \\pi (1)^2 (144000) = 144000\\pi$ cm³."
+                },
+                {
+                  "explanation": "2. **Tank Volume (Output):** Radius $R = 40$ cm. Let rise be $H$."
+                },
+                {
+                  "explanation": "Volume Out = $\\pi R^2 H = \\pi (40)^2 H = 1600\\pi H$."
+                },
+                {
+                  "explanation": "3. **Equate:** $1600\\pi H = 144000\\pi$."
+                },
+                {
+                  "explanation": "4. **Solve:** $H = 144000 / 1600 = 1440 / 16 = 90$ cm."
+                }
+              ],
+              "finalAnswer": "90 cm"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_12_7_practice_compendium",
+          "title": "12.7 Practice Bank & Formula Compendium",
+          "content": "### 7. Comprehensive Practice Bank\n\n#### Section A: Basic Calculations (10 Questions)\n1.  Find the TSA of a cone with radius 7 cm and slant height 10 cm.\n2.  Calculate volume of a sphere of radius 3 cm.\n3.  Find the curved surface area of a cylinder of height 14 cm and base diameter 4 cm.\n4.  If the volume of a cube is 1000 cm³, find its edge.\n5.  Find the slant height of a cone where $r=3$ and $h=4$.\n6.  Volume of a hemisphere is $18\\pi$. Find radius.\n7.  Find the volume of a frustum with radii 2, 4 and height 6.\n8.  Surface area of a sphere is $616$ cm². Find $r$.\n9.  Find ratio of volumes of two cylinders with radii 1:2 and heights 2:1.\n10. Calculate the diagonal of a cuboid $10 \\times 10 \\times 5$.\n\n#### Section B: Composite & Conversion (10 Questions)\n11. A metallic sphere of radius 4.2 cm is melted and recast into the shape of a cylinder of radius 6 cm. Find the height of the cylinder.\n12. A medicine capsule is in the shape of a cylinder with two hemispheres stuck to each of its ends. Length of capsule is 14 mm, diameter 5 mm. Find surface area.\n13. A tent is in the shape of a cylinder surmounted by a conical top. If height and diameter of cylindrical part are 2.1 m and 4 m, and slant height of top is 2.8 m, find area of canvas.\n14. From a solid cylinder of height 2.4 cm and diameter 1.4 cm, a conical cavity of same height and diameter is hollowed out. Find TSA of remaining solid.\n15. A solid is in the shape of a cone standing on a hemisphere with both their radii equal to 1 cm and height of cone equal to radius. Find volume in terms of $\\pi$.\n16. A gulab jamun contains sugar syrup up to 30% of its volume. Find approx syrup in 45 jamuns, each shaped like a cylinder with two hemispherical ends with length 5 cm and diameter 2.8 cm.\n17. A vessel is in the form of a hollow hemisphere mounted by a hollow cylinder. Diameter of hemisphere is 14 cm and total height is 13 cm. Find inner surface area.\n18. A pen stand made of wood is in shape of cuboid with 4 conical depressions. Dimensions of cuboid 15x10x3.5 cm. Radius of depression 0.5 cm, depth 1.4 cm. Find volume of wood.\n19. A container opened from the top and made up of a metal sheet is in the form of a frustum of a cone of height 16 cm with radii of lower and upper ends as 8 cm and 20 cm. Find cost of milk to fill it at ₹20/L.\n20. A metallic right circular cone 20 cm high and vertical angle $60^\\circ$ is cut into two parts at the middle of its height by a plane parallel to its base. If the frustum is drawn into a wire of diameter 1/16 cm, find length of wire.\n\n#### Section C: Advanced / Reasoning (Must Practice)\n21. **(Must Practice)** Water flows at 10 m/min through a cylindrical pipe 5 mm in diameter. How long to fill a conical vessel of diameter 40 cm and depth 24 cm?\n22. **(Must Practice)** A cistern, internally measuring $150 \\times 120 \\times 110$ cm, has 129600 cm³ of water. Porous bricks are placed in the water until the cistern is full. Each brick absorbs 1/17 of its own volume of water. How many bricks can be put in without overflowing? (Brick dims: $22.5 \\times 7.5 \\times 6.5$).\n23. **(Must Practice)** In a hospital, used water is collected in a cylindrical tank of diameter 2 m and height 5 m. After recycling, this water is used to irrigate a park of length 25 m and breadth 20 m. If the tank is filled completely every day, what will be the height of standing water used for irrigating the park daily?\n24. **(Must Practice)** A solid toy is in the form of a hemisphere surmounted by a right circular cone. The height of the cone is 2 cm and diameter of base is 4 cm. Determine volume. If a right circular cylinder circumscribes the toy, find difference of volumes.\n25. **(Must Practice)** A well of diameter 3 m is dug 14 m deep. The earth taken out of it has been spread evenly all around it in the shape of a circular ring of width 4 m to form an embankment. Find the height of the embankment.\n26. **(Must Practice)** A farmer connects a pipe of internal diameter 20 cm from a canal into a cylindrical tank in her field, which is 10 m in diameter and 2 m deep. If water flows at 3 km/h, in how much time will the tank be filled?\n27. **(Must Practice)** Marbles of diameter 1.4 cm are dropped into a cylindrical beaker of diameter 7 cm containing some water. Find the number of marbles that should be dropped into the beaker so that the water level rises by 5.6 cm.\n28. **(Must Practice)** How many silver coins, 1.75 cm in diameter and thickness 2 mm, must be melted to form a cuboid of dimensions $5.5 \\times 10 \\times 3.5$ cm?\n29. **(Must Practice)** A bucket is in the form of a frustum of a cone of height 30 cm with radii of its lower and upper ends as 10 cm and 20 cm respectively. Find the capacity and surface area. Also find cost of milk at ₹25/L.\n30. **(Must Practice)** Derive the formula for the volume of a frustum of a cone using similarity of triangles.\n\n---\n\n### 8. Formula Compendium\n\n**1. Cylinder**\n* $V = \\pi r^2 h$\n* $CSA = 2\\pi r h$\n* $TSA = 2\\pi r(h+r)$\n\n**2. Cone**\n* $V = \\frac{1}{3}\\pi r^2 h$\n* $CSA = \\pi r l$\n* $TSA = \\pi r(l+r)$\n* $l = \\sqrt{h^2+r^2}$\n\n**3. Sphere**\n* $V = \\frac{4}{3}\\pi r^3$\n* $SA = 4\\pi r^2$\n\n**4. Hemisphere**\n* $V = \\frac{2}{3}\\pi r^3$\n* $CSA = 2\\pi r^2$\n* $TSA = 3\\pi r^2$\n\n**5. Frustum**\n* $V = \\frac{1}{3}\\pi h(r_1^2 + r_2^2 + r_1r_2)$\n* $CSA = \\pi (r_1+r_2)l$\n* $TSA = \\pi (r_1+r_2)l + \\pi r_1^2 + \\pi r_2^2$\n* $l = \\sqrt{h^2 + (r_1-r_2)^2}$",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

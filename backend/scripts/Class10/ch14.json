@@ -1,0 +1,202 @@
+{
+  "id": "class_10",
+  "title": "Class 10",
+  "chapters": [
+    {
+      "id": "ch_14_probability",
+      "title": "Ch 14: Probability",
+      "topics": [
+        {
+          "id": "topic_14_1_introduction_theory",
+          "title": "14.1 Introduction: The Mathematics of Uncertainty",
+          "content": "### 1. Introduction: Quantifying the Unknown\nLife is full of uncertainties. We often ask questions like: \"Will it rain today?\", \"Who will win the match?\", or \"Will I get a head if I toss this coin?\" The answers to these questions are not definite. There is a chance that it will rain, and there is a chance that it will not.\n\nIn mathematics, we do not like ambiguity. We prefer precise numbers. **Probability** is the branch of mathematics that attempts to measure uncertainty. It converts vague terms like \"likely,\" \"maybe,\" \"probably,\" and \"doubtful\" into precise numerical values.\n\nHistorically, the theory of probability originated from games of chance (gambling) in the 17th century, where players wanted to know their chances of winning. Today, it is the backbone of science, economics, genetics, weather forecasting, and artificial intelligence.\n\n#### 1.1 The Concept of Randomness\nBefore calculating probability, we must understand the environment in which it operates. Probability applies only to **Random Experiments**.\n\n**Definition: Experiment**\nAn operation which can produce some well-defined outcomes is called an experiment.\n\n**Definition: Random Experiment**\nAn experiment is called random if:\n1.  It has more than one possible outcome.\n2.  It is impossible to predict the exact outcome in advance.\n\n**Examples:**\n* *Tossing a coin:* We know it will be Head or Tail, but we cannot predict which one it will be in a specific toss. This is a random experiment.\n* *Measuring the length of a table:* If you measure it ten times, you get the same result (ignoring measurement error). This is **deterministic**, not random.\n* *Rolling a die:* We know the result will be 1, 2, 3, 4, 5, or 6. We cannot say which specific number will show up. This is random.\n\n#### 1.2 The Sample Space and Events\nTo analyze a random experiment, we first list everything that *could* happen.\n\n**1. Outcome:**\nA possible result of a random experiment.\n* *Example:* In tossing a coin, 'Head' is an outcome.\n\n**2. Sample Space ($S$):**\nThe set of all possible outcomes of a random experiment.\n* *Symbol:* Usually denoted by $S$.\n* *Example (Coin Toss):* $S = \\{Head, Tail\\}$.\n* *Example (Die Roll):* $S = \\{1, 2, 3, 4, 5, 6\\}$.\n\n**3. Event ($E$):**\nAny subset of the sample space is called an event. An event represents a specific condition we are interested in.\n* *Example:* In rolling a die, let $E$ be the event \"Getting an even number\".\n    * Outcomes favorable to $E$: $\\{2, 4, 6\\}$.\n    * Since $\\{2, 4, 6\\}$ is a part of the Sample Space $\\{1, 2, 3, 4, 5, 6\\}$, it is an event.\n\n#### 1.3 Equally Likely Outcomes\nThis is the most critical assumption in Class 10 Probability. \n\nWhen we toss a coin, we assume the coin is **fair** (or unbiased). This means it is perfectly symmetrical and uniform. There is no physical reason for it to land on one side more often than the other. Therefore, we say the outcomes 'Head' and 'Tail' are **equally likely**.\n\nSimilarly, when rolling a standard die, we assume it is unbiased. Each face (1 to 6) has an equal chance of appearing.\n\n**Contrast:** Suppose you have a bag with 4 Red balls and 1 Blue ball. If you pick a ball without looking, the outcome \"Red\" is *more likely* than \"Blue\". These outcomes are **not** equally likely. However, picking any *specific* individual ball is equally likely. \n\n**Why is this important?**\nThe standard formula for probability (see below) only works if all elementary outcomes are equally likely.",
+          "formulas": [
+            "\\text{Random Experiment} \\implies \\text{Unpredictable Outcome}",
+            "S = \\{ \\text{All Possible Outcomes} \\}",
+            "E \\subseteq S"
+          ],
+          "examples": [
+            {
+              "id": "ex_prob_1",
+              "question": "A coin is tossed once. Identify the experiment, outcomes, sample space, and the event 'Getting a Head'.",
+              "steps": [
+                {
+                  "explanation": "1. **Experiment:** Tossing a coin."
+                },
+                {
+                  "explanation": "2. **Outcomes:** The coin can land showing Head (H) or Tail (T)."
+                },
+                {
+                  "explanation": "3. **Sample Space:** The set of all outcomes is $S = \\{H, T\\}$. The total number of outcomes is 2."
+                },
+                {
+                  "explanation": "4. **Event E:** The event 'Getting a Head' corresponds to the subset $\\{H\\}$. The number of favorable outcomes is 1."
+                }
+              ],
+              "finalAnswer": "S = {H, T}, Event = {H}"
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Sample Space Visualization",
+            "functions": [],
+            "shapes": [
+              { "type": "circle", "x": 0, "y": 0, "radius": 4, "color": "lightgray", "label": "Sample Space S" },
+              { "type": "circle", "x": -1.5, "y": 0, "radius": 1, "color": "blue", "label": "Event E" },
+              { "type": "circle", "x": 1.5, "y": 0, "radius": 1, "color": "red", "label": "Not E" }
+            ],
+            "xRange": [-5, 5],
+            "yRange": [-5, 5]
+          }
+        },
+        {
+          "id": "topic_14_2_theoretical_probability",
+          "title": "14.2 Theoretical Probability (Classical Definition)",
+          "content": "### 2. The Definition of Probability\nThere are two main approaches to probability:\n1.  **Experimental (Empirical) Probability:** Based on actual trials. (e.g., Tossing a coin 1000 times and counting heads). This was covered in Class 9.\n2.  **Theoretical (Classical) Probability:** Based on logic and the assumption of equally likely outcomes. This is the focus of Class 10.\n\n#### 2.1 The Formula\nFor an event $E$ associated with a random experiment where all outcomes are equally likely, the theoretical probability of the event $E$, denoted by $P(E)$, is defined as:\n\n$$ P(E) = \\frac{\\text{Number of outcomes favorable to } E}{\\text{Total number of possible outcomes}} $$\n\n**Let's break this down:**\n* **Total number of possible outcomes:** This is the size of the Sample Space ($|S|$).\n* **Number of outcomes favorable to E:** This is the count of outcomes that satisfy the condition of the event.\n* **Ratio:** Probability is always a ratio (fraction). It represents the *proportion* of the total possibilities that lead to success.\n\n#### 2.2 Range of Probability\nSince the number of favorable outcomes can never be negative and can never exceed the total number of outcomes:\n1.  The numerator is always $\\ge 0$.\n2.  The numerator is always $\\le$ the denominator.\n\nTherefore:\n$$ 0 \\le P(E) \\le 1 $$\n\n* **P(E) = 0:** The event is **Impossible**. (e.g., Rolling a 7 on a standard die).\n* **P(E) = 1:** The event is **Sure** or **Certain**. (e.g., Rolling a number less than 7 on a standard die).\n\n**Important:**\n* Probability can never be negative.\n* Probability can never be greater than 1 (e.g., 1.5 or 110% is impossible).\n\n#### 2.3 Elementary vs. Compound Events\n* **Elementary Event:** An event having only one outcome of the experiment. \n    * *Example:* In tossing a coin, getting Head $\\{H\\}$ is an elementary event.\n    * *Property:* The sum of the probabilities of all the elementary events of an experiment is 1.\n* **Compound Event:** An event that has more than one outcome.\n    * *Example:* In rolling a die, getting an Even number $\\{2, 4, 6\\}$ is a compound event because it contains three elementary outcomes.\n\n#### 2.4 Complementary Events\nFor any event $E$, there exists an event \"Not E\" (denoted as $\\bar{E}$ or $E'$). This event occurs whenever $E$ does *not* occur.\n\nSince an outcome must either be in $E$ or not in $E$:\n$$ P(E) + P(\\text{not } E) = 1 $$\n$$ P(\\bar{E}) = 1 - P(E) $$\n\nThis formula is extremely useful. Sometimes it is difficult to calculate $P(E)$ directly, but easy to calculate $P(\\bar{E})$. We calculate the \"not\" case and subtract from 1.",
+          "formulas": [
+            "P(E) = \\frac{\\text{Favorable Outcomes}}{\\text{Total Outcomes}}",
+            "0 \\le P(E) \\le 1",
+            "P(E) + P(\\bar{E}) = 1"
+          ],
+          "examples": [
+            {
+              "id": "ex_prob_2",
+              "question": "A bag contains a red ball, a blue ball and a yellow ball, all the balls being of the same size. Kritika takes out a ball from the bag without looking into it. What is the probability that she takes out the (i) yellow ball? (ii) red ball? (iii) blue ball?",
+              "steps": [
+                {
+                  "explanation": "1. **Analyze Sample Space:** Total balls = 3 (Red, Blue, Yellow). Total outcomes = 3. Since balls are identical in size, picking any one is equally likely."
+                },
+                {
+                  "explanation": "2. **(i) Yellow Ball:** Let Y be the event 'the ball taken out is yellow'. The number of outcomes favorable to Y is 1.\n$$P(Y) = \\frac{1}{3}$$"
+                },
+                {
+                  "explanation": "3. **(ii) Red Ball:** Let R be the event 'the ball taken out is red'. The number of outcomes favorable to R is 1.\n$$P(R) = \\frac{1}{3}$$"
+                },
+                {
+                  "explanation": "4. **(iii) Blue Ball:** Let B be the event 'the ball taken out is blue'. Favorable outcomes = 1.\n$$P(B) = \\frac{1}{3}$$"
+                },
+                {
+                  "explanation": "5. **Verification:** Sum of probabilities = $1/3 + 1/3 + 1/3 = 1$. This confirms that these are the only elementary events."
+                }
+              ],
+              "finalAnswer": "(i) 1/3, (ii) 1/3, (iii) 1/3"
+            },
+            {
+              "id": "ex_prob_3",
+              "question": "Suppose we throw a die once. (i) What is the probability of getting a number greater than 4? (ii) What is the probability of getting a number less than or equal to 4?",
+              "steps": [
+                {
+                  "explanation": "1. **Sample Space:** When throwing a die, $S = \\{1, 2, 3, 4, 5, 6\\}$. Total outcomes = 6."
+                },
+                {
+                  "explanation": "2. **(i) Event E (Number > 4):** The outcomes greater than 4 are 5 and 6.\nFavorable outcomes = $\\{5, 6\\}$. Count = 2.\n$$P(E) = \\frac{2}{6} = \\frac{1}{3}$$"
+                },
+                {
+                  "explanation": "3. **(ii) Event F (Number <= 4):** The outcomes are 1, 2, 3, 4.\nFavorable outcomes = $\\{1, 2, 3, 4\\}$. Count = 4.\n$$P(F) = \\frac{4}{6} = \\frac{2}{3}$$"
+                },
+                {
+                  "explanation": "4. **Alternative Method:** Notice that Event F is \"Not E\".\n$P(F) = 1 - P(E) = 1 - 1/3 = 2/3$."
+                }
+              ],
+              "finalAnswer": "(i) 1/3, (ii) 2/3"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_14_3_coins_dice_cards",
+          "title": "14.3 Classic Probability Scenarios: Coins, Dice, and Cards",
+          "content": "### 3. Mastering the Classic Scenarios\nProbability problems in examinations revolve around three standard physical models: Coins, Dice, and Playing Cards. Mastering the sample spaces of these is mandatory.\n\n#### 3.1 Coins\n**A. Single Coin Toss:**\n* Outcomes: $\\{H, T\\}$.\n* Total = 2.\n\n**B. Two Coins Tossed Simultaneously:**\n* This is the same as tossing one coin twice.\n* Outcomes: $\\{HH, HT, TH, TT\\}$.\n* Total = $2 \\times 2 = 4$.\n* *Note:* HT means Head on first, Tail on second. TH is different from HT in terms of arrangement, but both represent \"one head and one tail\".\n\n**C. Three Coins Tossed Simultaneously:**\n* Outcomes: $\\{HHH, HHT, HTH, THH, HTT, THT, TTH, TTT\\}$.\n* Total = $2^3 = 8$.\n* *Tip to write:* Write 4 H's, 4 T's. Then 2 H's, 2 T's. Then 1 H, 1 T.\n\n#### 3.2 Dice\n**A. Single Die:**\n* Outcomes: $\\{1, 2, 3, 4, 5, 6\\}$.\n* Total = 6.\n\n**B. Two Dice Thrown Simultaneously:**\n* We list outcomes as ordered pairs $(x, y)$, where $x$ is the first die and $y$ is the second.\n* Sample Space:\n    (1,1), (1,2), (1,3), (1,4), (1,5), (1,6)\n    (2,1), (2,2), (2,3), (2,4), (2,5), (2,6)\n    ...\n    (6,1), (6,2), (6,3), (6,4), (6,5), (6,6)\n* Total Outcomes = $6 \\times 6 = 36$.\n* *Crucial Observation:* (1,2) is different from (2,1). (1,2) means 1 on first die, 2 on second. (2,1) means 2 on first, 1 on second.\n* *Doublets:* (1,1), (2,2), (3,3), (4,4), (5,5), (6,6). Total 6 doublets.\n\n#### 3.3 Playing Cards \nA standard deck has **52 cards**. You must memorize this structure.\n\n**1. Colors:**\n* Red Cards: 26 (Diamonds + Hearts)\n* Black Cards: 26 (Spades + Clubs)\n\n**2. Suits:** (4 Suits, 13 cards each)\n* Spades (Black) $\\spadesuit$\n* Clubs (Black) $\\clubsuit$\n* Hearts (Red) $\\heartsuit$\n* Diamonds (Red) $\\diamondsuit$\n\n**3. Ranks in each Suit:**\n* Number Cards: 2, 3, 4, 5, 6, 7, 8, 9, 10 (9 cards)\n* Face Cards: King (K), Queen (Q), Jack (J) (3 cards)\n* Ace: A (1 card)\n* *Note:* An Ace is usually not considered a face card unless specified.\n\n**Summary:**\n* Total Face Cards = $3 \\times 4 = 12$.\n* Total Aces = 4.\n* Total Kings = 4.\n* Total Red Kings = 2.",
+          "formulas": [
+            "\\text{Total Outcomes (Coins)} = 2^n",
+            "\\text{Total Outcomes (Dice)} = 6^n",
+            "\\text{Total Cards} = 52"
+          ],
+          "examples": [
+            {
+              "id": "ex_prob_4",
+              "question": "One card is drawn from a well-shuffled deck of 52 cards. Calculate the probability that the card will be (i) an ace, (ii) not be an ace.",
+              "steps": [
+                {
+                  "explanation": "1. **Total Outcomes:** The deck has 52 cards. Total outcomes = 52."
+                },
+                {
+                  "explanation": "2. **(i) An Ace:** There are 4 aces in the deck (one of each suit).\nFavorable outcomes = 4.\n$$P(\\text{Ace}) = \\frac{4}{52} = \\frac{1}{13}$$"
+                },
+                {
+                  "explanation": "3. **(ii) Not an Ace:** This is the complementary event.\n$P(\\text{Not Ace}) = 1 - P(\\text{Ace})$.\n$$P(\\text{Not Ace}) = 1 - \\frac{1}{13} = \\frac{12}{13}$$"
+                },
+                {
+                  "explanation": "4. **Alternative Logic for (ii):** Total cards that are not aces = $52 - 4 = 48$. Probability = $48/52 = 12/13$."
+                }
+              ],
+              "finalAnswer": "(i) 1/13, (ii) 12/13"
+            },
+            {
+              "id": "ex_prob_5",
+              "question": "Two dice, one blue and one grey, are thrown at the same time. What is the probability that the sum of the two numbers appearing on the top of the dice is 8?",
+              "steps": [
+                {
+                  "explanation": "1. **Sample Space:** Since there are two dice, total outcomes = $6 \\times 6 = 36$."
+                },
+                {
+                  "explanation": "2. **Event E (Sum is 8):** We need to list pairs $(x, y)$ such that $x + y = 8$. Let's scan systematically:\n* If first is 1, second needs 7 (Impossible).\n* If first is 2, second is 6 (2, 6).\n* If first is 3, second is 5 (3, 5).\n* If first is 4, second is 4 (4, 4).\n* If first is 5, second is 3 (5, 3).\n* If first is 6, second is 2 (6, 2)."
+                },
+                {
+                  "explanation": "3. **Count Favorable:** The pairs are $\\{(2,6), (3,5), (4,4), (5,3), (6,2)\\}$. Total = 5."
+                },
+                {
+                  "explanation": "4. **Calculate Probability:**\n$$P(Sum = 8) = \\frac{5}{36}$$"
+                }
+              ],
+              "finalAnswer": "5/36"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_14_4_common_mistakes",
+          "title": "14.4 Common Mistakes and Conceptual Pitfalls",
+          "content": "### 4. Avoiding Statistical Sins\nProbability seems easy, but it is easy to make logical errors. Here are the most common pitfalls students fall into.\n\n#### 4.1 The Error of \"At Least\" and \"At Most\"\nStudents often confuse these terms in coin problems.\n* **At least 1 Head:** Means 1 Head OR MORE. (1 or 2 heads in 2 coin toss).\n    * Outcomes: HT, TH, HH. (Count = 3).\n* **At most 1 Head:** Means 1 Head OR LESS. (1 or 0 heads).\n    * Outcomes: HT, TH, TT. (Count = 3).\n* *Mistake:* Forgetting the 0 case in \"At most\" or the maximum case in \"At least\".\n\n#### 4.2 The Error of \"Or\" vs \"And\"\nIn probability logic:\n* **OR** usually means Addition (Union). \"King OR Queen\" means you count all Kings and all Queens.\n* **AND** usually means Multiplication/Intersection. \"King AND Red\" means you only count cards that are *both* Kings and Red.\n\n#### 4.3 The \"Three Options\" Fallacy\n*Question:* \"I toss two coins. I can get 0 Heads, 1 Head, or 2 Heads. Therefore, the probability of getting 1 Head is 1/3.\"\n\n**WHY THIS IS WRONG:**\nThe outcomes (0 Heads, 1 Head, 2 Heads) are **NOT equally likely**.\n* 0 Heads = {TT} (1 outcome)\n* 1 Head = {HT, TH} (2 outcomes)\n* 2 Heads = {HH} (1 outcome)\nTotal elementary outcomes = 4.\n* P(0 Heads) = 1/4\n* P(1 Head) = 2/4 = 1/2\n* P(2 Heads) = 1/4\nThe probability is 1/2, not 1/3. Never group outcomes unless the groups are equal in size.\n\n#### 4.4 Ignoring Order in Dice\n*Question:* Two dice are rolled. Probability of getting a 2 and a 3.\n*Mistake:* Counting only (2, 3).\n*Correction:* You must count (2, 3) AND (3, 2). The dice are distinct entities (mathematically distinct even if they look identical).",
+          "formulas": [],
+          "examples": [
+            {
+              "id": "ex_prob_6",
+              "question": "Harpreet tosses two different coins simultaneously. What is the probability that she gets at least one head?",
+              "steps": [
+                {
+                  "explanation": "1. **Sample Space:** S = {HH, HT, TH, TT}. Total = 4."
+                },
+                {
+                  "explanation": "2. **Event:** \"At least one head\" means 1 Head or 2 Heads."
+                },
+                {
+                  "explanation": "3. **Favorable Outcomes:**\n* HT (1 Head)\n* TH (1 Head)\n* HH (2 Heads)"
+                },
+                {
+                  "explanation": "4. **Count:** 3 favorable outcomes."
+                },
+                {
+                  "explanation": "5. **Probability:** $P = \\frac{3}{4}$."
+                },
+                {
+                  "explanation": "6. **Alternative Check:** $P(\\text{At least 1 H}) = 1 - P(\\text{No Heads}) = 1 - P(TT) = 1 - 1/4 = 3/4$."
+                }
+              ],
+              "finalAnswer": "3/4"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_14_5_practice_compendium",
+          "title": "14.5 Practice Bank & Formula Compendium",
+          "content": "### 5. Comprehensive Practice Bank\n\n#### Section A: Basic Counting & Definitions (10 Questions)\n1.  Complete the statement: The probability of an event that cannot happen is ______ and such an event is called ______.\n2.  A die is thrown once. Find the probability of getting a prime number.\n3.  A bag contains 5 red balls and some blue balls. If the probability of drawing a blue ball is double that of a red ball, determine the number of blue balls in the bag.\n4.  Which of the following cannot be the probability of an event? (a) 2/3 (b) -1.5 (c) 15% (d) 0.7.\n5.  If $P(E) = 0.05$, what is the probability of 'not E'?\n6.  A card is drawn from a standard deck. What is the probability it is a Face Card?\n7.  Find the probability of getting a sum of 13 when rolling two dice.\n8.  The probability of a sure event is ______.\n9.  A letter is chosen at random from the word \"MATHEMATICS\". What is the probability it is a vowel?\n10. A coin is tossed twice. What is the probability of getting exactly two tails?\n\n#### Section B: Reasoning & Application (10 Questions)\n11. A box contains 90 discs which are numbered from 1 to 90. If one disc is drawn at random, find the probability that it bears a two-digit number.\n12. Two dice are thrown at the same time. Find the probability that the difference of the numbers on the two dice is 2.\n13. A carton consists of 100 shirts of which 88 are good, 8 have minor defects and 4 have major defects. Jimmy, a trader, will only accept the shirts which are good, but Sujatha, another trader, will only reject the shirts which have major defects. One shirt is drawn at random. What is the probability that it is acceptable to (i) Jimmy? (ii) Sujatha?\n14. A game consists of tossing a one rupee coin 3 times and noting its outcome each time. Hanif wins if all the tosses give the same result i.e., three heads or three tails, and loses otherwise. Calculate the probability that Hanif will lose the game.\n15. A piggy bank contains hundred 50p coins, fifty ₹1 coins, twenty ₹2 coins and ten ₹5 coins. If it is equally likely that one of the coins will fall out when the bank is turned upside down, what is the probability that the coin (i) will be a 50p coin? (ii) will not be a ₹5 coin?\n16. Five cards—the ten, jack, queen, king and ace of diamonds, are well-shuffled with their face downwards. One card is then picked up at random. (i) What is the probability that the card is the queen? (ii) If the queen is drawn and put aside, what is the probability that the second card picked up is (a) an ace? (b) a queen?\n17. (Geometric Probability) Suppose you drop a die at random on the rectangular region shown in a figure of dimensions 3m x 2m. What is the probability that it will land inside a circle with diameter 1m inside the rectangle? (Hint: Ratio of Areas).\n18. 12 defective pens are accidentally mixed with 132 good ones. It is not possible to just look at a pen and tell whether or not it is defective. One pen is taken out at random from this lot. Determine the probability that the pen taken out is a good one.\n19. A lot consists of 144 ball pens of which 20 are defective and the others are good. Nuri will buy a pen if it is good, but will not buy if it is defective. The shopkeeper draws one pen at random and gives it to her. What is the probability that (i) She will buy it? (ii) She will not buy it?\n20. Explain why the probability of getting a sum of 7 when rolling two dice is higher than getting a sum of 12.\n\n#### Section C: Advanced / Trick Questions (Must Practice)\n21. **(Must Practice)** Find the probability that a leap year selected at random will contain 53 Sundays. (Reasoning: A leap year has 366 days = 52 weeks + 2 days. The 2 extra days define the probability).\n22. **(Must Practice)** A number $x$ is selected from the numbers 1, 2, 3 and a second number $y$ is selected from the numbers 1, 4, 9. What is the probability that the product $xy$ is less than 9?\n23. **(Must Practice)** A jar contains 24 marbles, some are green and others are blue. If a marble is drawn at random from the jar, the probability that it is green is 2/3. Find the number of blue marbles in the jar.\n24. **(Must Practice)** Two dice are thrown. What is the probability that the product of the numbers on the top is a perfect square?\n25. **(Must Practice)** A card is drawn from a pack of 52 cards. Find the probability that the card is (i) neither a king nor a queen (ii) a red face card.\n26. **(Must Practice)** Savita and Hamida are friends. What is the probability that both will have (i) different birthdays? (ii) the same birthday? (ignoring a leap year).\n27. **(Must Practice)** A box contains 12 balls out of which $x$ are black. If one ball is drawn at random from the box, what is the probability that it will be black? If 6 more black balls are put in the box, the probability of drawing a black ball is now double of what it was before. Find $x$.\n28. **(Must Practice)** In a family of 3 children, what is the probability of having at least one boy?\n29. **(Must Practice)** Two customers Shyam and Ekta are visiting a particular shop in the same week (Tuesday to Saturday). Each is equally likely to visit the shop on any day. What is the probability that they will visit the shop on (i) the same day? (ii) consecutive days?\n30. **(Must Practice)** Cards marked with numbers 2 to 101 are placed in a box and mixed thoroughly. One card is drawn. Find the probability that the number on the card is a perfect cube.\n\n---\n\n### 6. Formula Compendium\n\n**1. Definition of Probability:**\n$$ P(E) = \\frac{\\text{Number of outcomes favorable to } E}{\\text{Total number of possible outcomes}} $$\n\n**2. Range of Probability:**\n$$ 0 \\le P(E) \\le 1 $$\n* $P(E) = 0$: Impossible Event\n* $P(E) = 1$: Sure Event\n\n**3. Complementary Events:**\n$$ P(\\bar{E}) = 1 - P(E) $$\n$$ P(E) + P(\\bar{E}) = 1 $$\n\n**4. Counting Formulas:**\n* Total outcomes for $n$ coins: $2^n$\n* Total outcomes for $n$ dice: $6^n$\n\n**5. Deck of Cards (52):**\n* Red (26), Black (26)\n* Suits: Spades, Clubs, Hearts, Diamonds (13 each)\n* Face Cards: K, Q, J (Total 12)",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

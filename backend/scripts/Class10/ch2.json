@@ -1,0 +1,192 @@
+{
+  "id": "class_10",
+  "title": "Class 10",
+  "chapters": [
+    {
+      "id": "ch_2_polynomials",
+      "title": "Ch 2: Polynomials",
+      "topics": [
+        {
+          "id": "topic_2_1_fundamentals",
+          "title": "2.1 Fundamentals of Polynomials",
+          "content": "### 1. Introduction: The Algebraic Architecture\nAlgebra is the language of patterns, and **Polynomials** are its sentences. In Class IX, you learned the definition of a polynomial in one variable. Now, we will explore their deeper properties, geometric behaviors, and the hidden relationships between their roots and coefficients.\n\n#### 1.1 What is a Polynomial?\nA polynomial $p(x)$ in one variable $x$ is an algebraic expression of the form:\n$$p(x) = a_n x^n + a_{n-1} x^{n-1} + \\dots + a_2 x^2 + a_1 x + a_0$$\nwhere:\n* $a_0, a_1, \\dots, a_n$ are constants (real numbers) called **coefficients**.\n* $a_n \\neq 0$ (Leading coefficient).\n* $n$ is a **non-negative integer** (Whole Number) called the **Degree** of the polynomial.\n\n**Crucial Distinction:** Expressions like $\\sqrt{x}+2$, $\\frac{1}{x-1}$, or $x^{3/2}$ are **NOT** polynomials because the exponent of the variable is not a whole number[cite: 278].\n\n#### 1.2 Classification by Degree\nThe **degree** dictates the behavior of the polynomial.\n1.  **Linear Polynomial (Degree 1):**\n    * Form: $ax + b, \\quad a \\neq 0$.\n    * Examples: $2x - 3$, $\\sqrt{3}x + 5$[cite: 280].\n    * Graph: A straight line.\n\n2.  **Quadratic Polynomial (Degree 2):**\n    * Form: $ax^2 + bx + c, \\quad a \\neq 0$.\n    * Origin: 'Quadrate' means square [cite: 283].\n    * Examples: $2x^2 + 3x - \\frac{2}{5}$, $y^2 - 2$ [cite: 283-285].\n    * Graph: A Parabola.\n\n3.  **Cubic Polynomial (Degree 3):**\n    * Form: $ax^3 + bx^2 + cx + d, \\quad a \\neq 0$ [cite: 295].\n    * Examples: $x^3$, $\\sqrt{2}x^3$, $3x^3 - 2x^2 + x - 1$ [cite: 293].\n\n#### 1.3 Value vs. Zero of a Polynomial\nIt is vital to distinguish between the *value* of a function and its *zero*.\n* **Value at $k$:** If we replace $x$ with a real number $k$ in $p(x)$, the result $p(k)$ is the value.\n    * *Example:* For $p(x) = x^2 - 3x - 4$, value at $x=2$ is $p(2) = 2^2 - 3(2) - 4 = -6$[cite: 297].\n* **Zero of Polynomial:** A real number $k$ is a **zero** if and only if $p(k) = 0$.\n    * *Example:* $p(-1) = (-1)^2 - 3(-1) - 4 = 1 + 3 - 4 = 0$. Thus, $-1$ is a zero [cite: 300-303].",
+          "formulas": [
+            "p(x) = \\sum_{i=0}^n a_i x^i",
+            "p(k) = 0 \\iff k \\text{ is a zero}"
+          ],
+          "examples": [
+            {
+              "id": "ex_poly_1",
+              "question": "Check if -1 and 4 are zeroes of the polynomial $p(x) = x^2 - 3x - 4$.",
+              "steps": [
+                {
+                  "explanation": "To check if a number is a zero, substitute it into the polynomial and check if the result is 0."
+                },
+                {
+                  "explanation": "For $x = -1$: $p(-1) = (-1)^2 - 3(-1) - 4 = 1 + 3 - 4 = 4 - 4 = 0$. Since result is 0, -1 is a zero."
+                },
+                {
+                  "explanation": "For $x = 4$: $p(4) = (4)^2 - 3(4) - 4 = 16 - 12 - 4 = 16 - 16 = 0$. Since result is 0, 4 is a zero."
+                }
+              ],
+              "finalAnswer": "Yes, both are zeroes."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_2_2_geometrical_meaning",
+          "title": "2.2 Geometrical Meaning of Zeroes",
+          "content": "### 2. The Geometry of Roots\nWhy do we care about zeroes? Geometrically, finding a zero is equivalent to finding where a curve touches the ground (the x-axis).\n\n#### 2.1 Linear Polynomials ($ax + b$)\nThe graph of $y = ax + b$ is always a **straight line** [cite: 320].\n* It intersects the x-axis at exactly one point.\n* The coordinate of intersection is $(-\\frac{b}{a}, 0)$.\n* Thus, a linear polynomial has exactly **one** zero [cite: 339].\n\n#### 2.2 Quadratic Polynomials ($ax^2 + bx + c$)\nThe graph of a quadratic polynomial is a curve called a **Parabola**[cite: 361].\n* **Shape:** If $a > 0$, it opens **upwards** ($\\cup$). If $a < 0$, it opens **downwards** ($\\cap$) [cite: 352-361].\n* **Intersection with X-axis:** The x-coordinates of the intersection points are the zeroes.\n\n**Three Cases of Intersection:**\n1.  **Two Distinct Points:** The graph cuts the x-axis at two separate points $A$ and $A'$.\n    * Result: **2 distinct zeroes** [cite: 377-379].\n    * Algebraic condition: Discriminant $D = b^2 - 4ac > 0$.\n2.  **One Point (Touching):** The graph touches the x-axis at exactly one point $A$ (the vertex).\n    * Result: **2 equal zeroes** (appears as 1 unique zero) [cite: 384-390].\n    * Algebraic condition: $D = 0$.\n3.  **No Intersection:** The graph is entirely above or below the x-axis.\n    * Result: **No real zeroes** [cite: 395-403].\n    * Algebraic condition: $D < 0$.\n\n**Conclusion:** A quadratic polynomial has **at most** 2 real zeroes [cite: 405].\n\n#### 2.3 Cubic Polynomials ($ax^3 + bx^2 + cx + d$)\nThe graph of a cubic polynomial is a curve that can bend twice.\n* It can cross the x-axis at 1, 2, or 3 points.\n* **Example:** $y = x^3 - 4x$ cuts the axis at -2, 0, and 2. Hence, 3 zeroes [cite: 413].\n* **Example:** $y = x^3$ cuts only at 0. Hence, 1 zero [cite: 437].\n* **Conclusion:** A polynomial of degree $n$ has **at most** $n$ zeroes[cite: 444].",
+          "formulas": [
+            "\\text{Zero} = \\text{x-intercept}",
+            "\\text{Degree } n \\implies \\le n \\text{ Zeroes}"
+          ],
+          "examples": [
+            {
+              "id": "ex_poly_2",
+              "question": "Look at the graph of $y = x^3 - 4x$. How many zeroes does it have?",
+              "steps": [
+                {
+                  "explanation": "We check the intersection points with the x-axis."
+                },
+                {
+                  "explanation": "The graph passes through $(-2, 0)$, $(0, 0)$, and $(2, 0)$."
+                },
+                {
+                  "explanation": "Since there are 3 distinct intersection points, there are 3 zeroes: -2, 0, and 2."
+                }
+              ],
+              "finalAnswer": "3 Zeroes"
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Quadratic vs Cubic Graphs",
+            "functions": [
+              {
+                "expression": "x^2 - 4",
+                "color": "blue",
+                "label": "Quadratic (2 zeroes)"
+              },
+              {
+                "expression": "x^3 - 4x",
+                "color": "red",
+                "label": "Cubic (3 zeroes)"
+              }
+            ],
+            "xRange": [
+              -4,
+              4
+            ],
+            "yRange": [
+              -5,
+              5
+            ]
+          }
+        },
+        {
+          "id": "topic_2_3_coeffs_relationship",
+          "title": "2.3 Relationship: Zeroes & Coefficients",
+          "content": "### 3. The Algebra of Roots\nThere is a rigid mathematical link between the roots (zeroes) of a polynomial and its coefficients. This relationship allows us to solve equations without explicitly factoring them every time.\n\n#### 3.1 Quadratic Polynomials\nLet $p(x) = ax^2 + bx + c$ ($a \\ne 0$) have zeroes $\\alpha$ and $\\beta$.\nSince $\\alpha$ and $\\beta$ are zeroes, $(x - \\alpha)$ and $(x - \\beta)$ are factors of $p(x)$.\nWe can write:\n$$ax^2 + bx + c = k(x - \\alpha)(x - \\beta)$$\nwhere $k$ is a constant[cite: 503].\n\nExpanding the RHS:\n$= k[x^2 - (\\alpha + \\beta)x + \\alpha\\beta]$\n$= kx^2 - k(\\alpha + \\beta)x + k\\alpha\\beta$\n\nComparing coefficients with LHS ($ax^2 + bx + c$):\n1.  $a = k$\n2.  $b = -k(\\alpha + \\beta) \\implies b = -a(\\alpha + \\beta) \\implies \\alpha + \\beta = -\\frac{b}{a}$\n3.  $c = k\\alpha\\beta \\implies c = a\\alpha\\beta \\implies \\alpha\\beta = \\frac{c}{a}$\n\n**Key Formulas:**\n* **Sum of zeroes:** $\\alpha + \\beta = -\\frac{b}{a} = -\\frac{\\text{Coeff of } x}{\\text{Coeff of } x^2}$ [cite: 511].\n* **Product of zeroes:** $\\alpha\\beta = \\frac{c}{a} = \\frac{\\text{Constant term}}{\\text{Coeff of } x^2}$ [cite: 511].\n\n#### 3.2 Cubic Polynomials\nLet $p(x) = ax^3 + bx^2 + cx + d$ have zeroes $\\alpha, \\beta, \\gamma$.\nFollowing a similar derivation ($k(x-\\alpha)(x-\\beta)(x-\\gamma)$), we get[cite: 577]:\n1.  **Sum:** $\\alpha + \\beta + \\gamma = -\\frac{b}{a}$\n2.  **Sum of Product of pairs:** $\\alpha\\beta + \\beta\\gamma + \\gamma\\alpha = \\frac{c}{a}$\n3.  **Product:** $\\alpha\\beta\\gamma = -\\frac{d}{a}$",
+          "formulas": [
+            "\\alpha + \\beta = -b/a",
+            "\\alpha\\beta = c/a",
+            "\\sum \\alpha = -b/a",
+            "\\sum \\alpha\\beta = c/a",
+            "\\alpha\\beta\\gamma = -d/a"
+          ],
+          "examples": [
+            {
+              "id": "ex_poly_3",
+              "question": "Find the zeroes of $x^2 + 7x + 10$ and verify the relationship with coefficients.",
+              "steps": [
+                {
+                  "explanation": "Factorize the polynomial by splitting the middle term: $x^2 + 2x + 5x + 10$."
+                },
+                {
+                  "explanation": "$x(x+2) + 5(x+2) = (x+2)(x+5)$."
+                },
+                {
+                  "explanation": "Zeroes are $x = -2$ and $x = -5$. So $\\alpha = -2, \\beta = -5$."
+                },
+                {
+                  "explanation": "**Verification:** Sum = $(-2) + (-5) = -7$. From formula: $-b/a = -7/1 = -7$. Matched."
+                },
+                {
+                  "explanation": "Product = $(-2)(-5) = 10$. From formula: $c/a = 10/1 = 10$. Matched."
+                }
+              ],
+              "finalAnswer": "Zeroes: -2, -5. Verified."
+            },
+            {
+              "id": "ex_poly_4",
+              "question": "Find a quadratic polynomial with sum of zeroes = -3 and product = 2.",
+              "steps": [
+                {
+                  "explanation": "We know $\\alpha + \\beta = -b/a = -3$ and $\\alpha\\beta = c/a = 2$."
+                },
+                {
+                  "explanation": "Assume $a = 1$. Then $-b = -3 \\implies b = 3$. And $c = 2$."
+                },
+                {
+                  "explanation": "The polynomial is $ax^2 + bx + c = 1x^2 + 3x + 2$."
+                },
+                {
+                  "explanation": "General form: $k(x^2 + 3x + 2)$."
+                }
+              ],
+              "finalAnswer": "$x^2 + 3x + 2$"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_2_4_division_algorithm",
+          "title": "2.4 Division Algorithm for Polynomials",
+          "content": "### 4. Polynomial Division logic\nJust as we divide integers, we can divide polynomials. This process is crucial for factorizing cubic polynomials or finding remaining zeroes when some are known.\n\n#### 4.1 The Algorithm Statement\nIf $p(x)$ and $g(x)$ are any two polynomials with $g(x) \\neq 0$, then we can find polynomials $q(x)$ (quotient) and $r(x)$ (remainder) such that:\n$$p(x) = g(x) \\times q(x) + r(x)$$\nwhere either $r(x) = 0$ or $\\deg(r(x)) < \\deg(g(x))$.\n\n#### 4.2 Utility in Finding Zeroes\nIf we know that $\\alpha$ is a zero of a cubic polynomial $p(x)$:\n1.  Then $(x - \\alpha)$ is a factor.\n2.  Divide $p(x)$ by $(x - \\alpha)$. The remainder will be 0.\n3.  The quotient $q(x)$ will be a **quadratic** polynomial.\n4.  Factorize $q(x)$ (splitting terms or quadratic formula) to find the remaining two zeroes.\n\n#### 4.3 Division Steps (Long Division)\n1.  Arrange terms of dividend and divisor in decreasing order of degree.\n2.  Divide the first term of dividend by first term of divisor to get the first term of quotient.\n3.  Multiply divisor by this term and subtract from dividend.\n4.  Repeat until the degree of remainder is less than divisor.",
+          "formulas": [
+            "\\text{Dividend} = \\text{Divisor} \\times \\text{Quotient} + \\text{Remainder}",
+            "\\deg(r) < \\deg(g)"
+          ],
+          "examples": [
+            {
+              "id": "ex_poly_5",
+              "question": "Divide $2x^2 + 3x + 1$ by $x + 2$.",
+              "steps": [
+                {
+                  "explanation": "1. Divide $2x^2$ by $x$. Result $2x$. This is first term of quotient."
+                },
+                {
+                  "explanation": "2. Multiply $(x+2)$ by $2x$: $2x^2 + 4x$. Subtract this from dividend."
+                },
+                {
+                  "explanation": "3. $(2x^2 + 3x + 1) - (2x^2 + 4x) = -x + 1$. New dividend is $-x + 1$."
+                },
+                {
+                  "explanation": "4. Divide $-x$ by $x$. Result $-1$. Second term of quotient."
+                },
+                {
+                  "explanation": "5. Multiply $(x+2)$ by $-1$: $-x - 2$. Subtract."
+                },
+                {
+                  "explanation": "6. $(-x + 1) - (-x - 2) = 3$. Remainder is 3."
+                }
+              ],
+              "finalAnswer": "Quotient: $2x-1$, Remainder: 3"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_2_5_practice_compendium",
+          "title": "2.5 Practice Bank & Formula Compendium",
+          "content": "### 5. Comprehensive Practice Bank\n\n#### Section A: Conceptual & Short Answer (10 Questions)\n1.  Define the degree of a polynomial.\n2.  Give an example of a polynomial of degree 0.\n3.  How many zeroes can a polynomial of degree $n$ have at most?\n4.  If the graph of a polynomial does not intersect the x-axis, what can you say about its zeroes?\n5.  Find the zero of the linear polynomial $3x + 5$.\n6.  Write the general form of a cubic polynomial.\n7.  What is the relationship between the sum of zeroes and coefficients for a quadratic polynomial?\n8.  If $\\alpha$ and $1/\\alpha$ are zeroes of $4x^2 - 2x + (k-4)$, find $k$. (Hint: Product = 1).\n9.  Can $x^2 + 1$ have real zeroes? Explain geometrically.\n10. Calculate the value of $p(x) = x^2 - 4x + 3$ at $x=2$.\n\n#### Section B: Problem Solving (10 Questions)\n11. Find the zeroes of $6x^2 - 3 - 7x$ and verify the relationship with coefficients.\n12. Find a quadratic polynomial whose zeroes are $2+\\sqrt{3}$ and $2-\\sqrt{3}$.\n13. If sum of squares of zeroes of $x^2 - 8x + k$ is 40, find $k$.\n14. Divide $3x^3 + x^2 + 2x + 5$ by $1 + 2x + x^2$.\n15. Check if $t^2 - 3$ is a factor of $2t^4 + 3t^3 - 2t^2 - 9t - 12$.\n16. If two zeroes of $x^4 - 6x^3 - 26x^2 + 138x - 35$ are $2 \\pm \\sqrt{3}$, find other zeroes.\n17. Find the quadratic polynomial sum of whose zeroes is 0 and one zero is 5.\n18. If $\\alpha, \\beta$ are zeroes of $x^2 + 5x + 5$, find the value of $\\alpha^{-1} + \\beta^{-1}$.\n19. Find the zeroes of $4u^2 + 8u$.\n20. If the graph of $y=p(x)$ passes through origin, is 0 necessarily a zero?\n\n#### Section C: Advanced / JEE Foundation (Must Practice)\n21. **(Must Practice)** If $\\alpha, \\beta$ are zeroes of $x^2 - px + q$, prove that $\\frac{\\alpha^2}{\\beta^2} + \\frac{\\beta^2}{\\alpha^2} = \\frac{p^4}{q^2} - \\frac{4p^2}{q} + 2$.\n22. **(Must Practice)** If the zeroes of the polynomial $x^3 - 3x^2 + x + 1$ are $a-b, a, a+b$, find $a$ and $b$.\n23. **(Must Practice)** A polynomial $p(x)$ leaves remainder 5 when divided by $x-1$ and remainder 7 when divided by $x-2$. Find the remainder when divided by $(x-1)(x-2)$.\n24. **(Must Practice)** Find the condition that zeroes of $ax^3 + bx^2 + cx + d$ are in AP.\n25. **(Must Practice)** If $\\alpha, \\beta, \\gamma$ are zeroes of $x^3 + 4x + 1$, find $(\\alpha+\\beta)^{-1} + (\\beta+\\gamma)^{-1} + (\\gamma+\\alpha)^{-1}$.\n26. **(Must Practice)** Form a cubic polynomial with zeroes 3, 2, -1.\n27. **(Must Practice)** If one zero of $2x^2 - 3x + k$ is reciprocal to the other, find $k$.\n28. **(Must Practice)** If the polynomial $x^4 - 6x^3 + 16x^2 - 25x + 10$ is divided by $x^2 - 2x + k$, the remainder comes out to be $x + a$, find $k$ and $a$.\n29. **(Must Practice)** Explain why a cubic polynomial must have at least one real zero (Graphical logic).\n30. **(Must Practice)** Graph $y = x^2 - 6x + 9$ and identify the vertex.\n\n---\n\n### 6. Formula Compendium\n\n**1. General Forms**\n* Linear: $ax+b$\n* Quadratic: $ax^2+bx+c$\n* Cubic: $ax^3+bx^2+cx+d$\n\n**2. Quadratic Relations ($ax^2+bx+c$)**\n* $\\alpha + \\beta = -\\frac{b}{a}$\n* $\\alpha\\beta = \\frac{c}{a}$\n* Construction: $k[x^2 - (\\text{Sum})x + (\\text{Product})]$\n\n**3. Cubic Relations ($ax^3+bx^2+cx+d$)**\n* $\\alpha+\\beta+\\gamma = -\\frac{b}{a}$\n* $\\alpha\\beta + \\beta\\gamma + \\gamma\\alpha = \\frac{c}{a}$\n* $\\alpha\\beta\\gamma = -\\frac{d}{a}$\n\n**4. Division Algorithm**\n* $p(x) = g(x)q(x) + r(x)$\n* $\\text{deg}(r) < \\text{deg}(g)$",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

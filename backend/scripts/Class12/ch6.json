@@ -1,0 +1,185 @@
+{
+  "id": "12_6",
+  "classId": 12,
+  "title": "Application of Derivatives",
+  "description": "The transition from abstract calculus to concrete problem-solving. This chapter utilizes the derivative to model real-world change, analyze the geometry of curves (tangents, normals, shape), estimate values, and solve complex optimization problems (maxima/minima), forming the core of engineering and economic analysis.",
+  "topics": [
+    {
+      "id": "12_6_1",
+      "title": "Rate of Change of Quantities",
+      "content": "### 1. Concept of Instantaneous Rate\nIn physics and geometry, quantities often change with respect to time or another variable. The derivative $\\frac{dy}{dx}$ represents the **instantaneous rate of change** of $y$ with respect to $x$.\n\n**Definition:**\nIf a quantity $y$ varies with another quantity $x$, satisfying $y = f(x)$, then $f'(x_0)$ or $\\frac{dy}{dx}|_{x=x_0}$ represents the rate of change of $y$ with respect to $x$ at $x = x_0$.\n\n### 2. Related Rates (Chain Rule Application)\nOften, two variables $x$ and $y$ are related by an equation, and both change with respect to a third variable (usually time $t$).\nBy the Chain Rule:\n$$ \\frac{dy}{dt} = \\frac{dy}{dx} \\cdot \\frac{dx}{dt} $$\n\n**Common Scenarios:**\n1.  **Geometry:** Area ($A$) and Radius ($r$) of a circle. $\\frac{dA}{dt} = \\frac{d}{dt}(\\pi r^2) = 2\\pi r \\frac{dr}{dt}$.\n2.  **Volume:** Volume ($V$) and Edge ($x$) of a cube. $\\frac{dV}{dt} = \\frac{d}{dt}(x^3) = 3x^2 \\frac{dx}{dt}$.\n3.  **Ladder Problems:** Relationship $x^2 + y^2 = L^2$. Differentiating w.r.t $t$: $2x\\frac{dx}{dt} + 2y\\frac{dy}{dt} = 0$.\n\n### 3. Marginal Cost and Revenue (Economics Application)\n* **Marginal Cost (MC):** The instantaneous rate of change of total cost ($C$) with respect to the number of items produced ($x$).\n    $$ MC = \\frac{dC}{dx} $$\n* **Marginal Revenue (MR):** The rate of change of total revenue ($R$) with respect to the number of items sold ($x$).\n    $$ MR = \\frac{dR}{dx} $$"
+    },
+    {
+      "id": "12_6_2",
+      "title": "Increasing and Decreasing Functions",
+      "content": "### 1. Intuitive & Formal Definitions\nWe analyze the behavior of a function $f$ on an interval $I$.\n\n* **Strictly Increasing:** For all $x_1, x_2 \\in I$, if $x_1 < x_2 \\implies f(x_1) < f(x_2)$. (Graph always goes up).\n* **Increasing (Non-Decreasing):** If $x_1 < x_2 \\implies f(x_1) \\le f(x_2)$.\n* **Strictly Decreasing:** If $x_1 < x_2 \\implies f(x_1) > f(x_2)$. (Graph always goes down).\n* **Decreasing (Non-Increasing):** If $x_1 < x_2 \\implies f(x_1) \\ge f(x_2)$.\n\n### 2. The First Derivative Test for Monotonicity\nLet $f$ be continuous on $[a, b]$ and differentiable on $(a, b)$.\n\n1.  **Strictly Increasing:** If $f'(x) > 0$ for all $x \\in (a, b)$.\n2.  **Strictly Decreasing:** If $f'(x) < 0$ for all $x \\in (a, b)$.\n3.  **Constant Function:** If $f'(x) = 0$ for all $x \\in (a, b)$.\n\n**Geometric Interpretation:**\n* $f'(x) > 0$: The tangent has a positive slope (acute angle with x-axis), so the curve is rising.\n* $f'(x) < 0$: The tangent has a negative slope (obtuse angle with x-axis), so the curve is falling.\n\n### 3. Critical Points and Intervals\nTo find intervals of monotonicity:\n1.  Find $f'(x)$.\n2.  Set $f'(x) = 0$ to find **Critical Points**.\n3.  Also include points where $f'(x)$ is undefined.\n4.  Plot these points on a number line to divide the domain into disjoint intervals.\n5.  Test the sign of $f'(x)$ in each interval.\n\n**JEE Insight:**\nIf $f'(x) \\ge 0$ and equality holds only at discrete points (not an interval), the function is still considered Strictly Increasing (e.g., $y=x^3$ at $x=0$)."
+    },
+    {
+      "id": "12_6_3",
+      "title": "Tangents and Normals",
+      "content": "### 1. Slope of Tangent and Normal\nLet $y = f(x)$ be a curve and $P(x_0, y_0)$ be a point on it.\n* **Slope of Tangent ($m_T$):** The derivative evaluated at the point.\n    $$ m_T = \\left[ \\frac{dy}{dx} \\right]_{(x_0, y_0)} = f'(x_0) $$\n* **Slope of Normal ($m_N$):** The normal is perpendicular to the tangent.\n    $$ m_N = -\\frac{1}{m_T} = -\\frac{1}{f'(x_0)} $$\n    *(Provided $f'(x_0) \\neq 0$)*.\n\n### 2. Equations of Lines\nUsing the Point-Slope form ($y - y_0 = m(x - x_0)$):\n\n* **Equation of Tangent:**\n    $$ y - y_0 = f'(x_0) (x - x_0) $$\n* **Equation of Normal:**\n    $$ y - y_0 = -\\frac{1}{f'(x_0)} (x - x_0) $$\n    $$ (y - y_0)f'(x_0) + (x - x_0) = 0 $$\n\n### 3. Special Cases\n1.  **Tangent Parallel to X-axis:** $f'(x_0) = 0$. Equation: $y = y_0$.\n2.  **Tangent Parallel to Y-axis (Vertical Tangent):** $f'(x_0) \\to \\infty$ (or $dx/dy = 0$). Equation: $x = x_0$.\n3.  **Angle between Two Curves:** The angle between their tangents at the point of intersection.\n    $$ \\tan \\theta = \\left| \\frac{m_1 - m_2}{1 + m_1 m_2} \\right| $$\n    * **Orthogonal Curves:** If $m_1 m_2 = -1$ (intersect at $90^\\circ$).\n\n### 4. Subtangent and Subnormal (JEE Advanced)\nLet $P(x, y)$ be a point. Let tangent meet x-axis at $T$ and normal meet x-axis at $N$. Let $M$ be the projection of $P$ on x-axis.\n* **Length of Subtangent ($TM$):** $|y / f'(x)|$\n* **Length of Subnormal ($MN$):** $|y \\cdot f'(x)|$\n* **Length of Tangent ($PT$):** $|\\frac{y}{f'(x)} \\sqrt{1 + (f'(x))^2}|$\n* **Length of Normal ($PN$):** $|y \\sqrt{1 + (f'(x))^2}|$"
+    },
+    {
+      "id": "12_6_4",
+      "title": "Approximations and Differentials",
+      "content": "### 1. Concept of Differential\nLet $y = f(x)$. Let $\\Delta x$ be a small increment in $x$.\nThe corresponding increment in $y$ is $\\Delta y = f(x + \\Delta x) - f(x)$.\n\nFrom the definition of derivative:\n$$ \\lim_{\\Delta x \\to 0} \\frac{\\Delta y}{\\Delta x} = f'(x) $$\nFor very small $\\Delta x$:\n$$ \\frac{\\Delta y}{\\Delta x} \\approx f'(x) \\implies \\Delta y \\approx f'(x) \\cdot \\Delta x $$\n\n**Definitions:**\n* **Differential of $x$ ($dx$):** Defined as equal to $\\Delta x$.\n* **Differential of $y$ ($dy$):** Defined as $f'(x) dx$.\n* **Approximation:** $\\Delta y \\approx dy$.\n\n### 2. Geometric Interpretation\n* $\\Delta y$ is the **actual change** in the function value on the curve.\n* $dy$ is the **change along the tangent line** corresponding to change $dx$.\n* For small changes, the tangent is a good approximation of the curve.\n\n### 3. Approximate Value Formula\n$$ f(x + \\Delta x) = f(x) + \\Delta y \\approx f(x) + f'(x)\\Delta x $$\n\n### 4. Errors\n* **Absolute Error:** $\\Delta x$\n* **Relative Error:** $\\frac{\\Delta x}{x}$\n* **Percentage Error:** $\\frac{\\Delta x}{x} \\times 100$"
+    },
+    {
+      "id": "12_6_5",
+      "title": "Maxima and Minima",
+      "content": "### 1. Local Maxima and Minima\n* **Local Maximum:** A point $c$ is a local maximum if $f(c) \\ge f(x)$ for all $x$ in a small neighborhood $(c-h, c+h)$.\n* **Local Minimum:** A point $c$ is a local minimum if $f(c) \\le f(x)$ for all $x$ in a small neighborhood.\n\n### 2. First Derivative Test\nLet $c$ be a critical point ($f'(c)=0$ or undefined).\n1.  If $f'(x)$ changes sign from **positive to negative** as $x$ increases through $c$, then $c$ is a point of **Local Maximum**.\n2.  If $f'(x)$ changes sign from **negative to positive**, then $c$ is a point of **Local Minimum**.\n3.  If $f'(x)$ does **not change sign**, then $c$ is a **Point of Inflection**.\n\n### 3. Second Derivative Test\nLet $c$ be a critical point where $f'(c) = 0$ and $f$ is twice differentiable.\n1.  If $f''(c) < 0$: Local **Maximum** at $c$.\n    * *Logic:* Curve is concave down (frowning), so slope decreases.\n2.  If $f''(c) > 0$: Local **Minimum** at $c$.\n    * *Logic:* Curve is concave up (smiling), so slope increases.\n3.  If $f''(c) = 0$: Test fails. Use First Derivative Test.\n\n### 4. Absolute (Global) Maxima and Minima\nOn a **closed interval** $[a, b]$, a continuous function always attains an absolute maximum and minimum.\n**Method:**\n1.  Find all critical points in $(a, b)$.\n2.  Evaluate $f(x)$ at all critical points.\n3.  Evaluate $f(x)$ at endpoints $a$ and $b$.\n4.  Compare all values. The largest is the Absolute Max, the smallest is Absolute Min.\n\n### 5. Optimization Problems\nThis is the practical heart of calculus. Steps:\n1.  Identify the quantity to be maximized/minimized ($Q$).\n2.  Express $Q$ as a function of a single variable, say $x$. Use given constraints to eliminate other variables.\n3.  Find the domain of $x$ (feasible values).\n4.  Calculate $dQ/dx$ and set to 0 to find critical points.\n5.  Use the Second Derivative Test to confirm max/min.\n\n**JEE Insight - Point of Inflection:**\nA point where concavity changes (i.e., $f''(x)$ changes sign). Usually where $f''(x)=0$."
+    }
+  ],
+  "examples": [
+    {
+      "id": "ex_12_6_1",
+      "title": "Related Rates (Ladder Problem)",
+      "problem": "A ladder 5 m long is leaning against a wall. The bottom of the ladder is pulled along the ground, away from the wall, at the rate of 2 cm/s. How fast is its height on the wall decreasing when the foot of the ladder is 4 m away from the wall?",
+      "solution": "**1. Setup:**\nLet $x$ be the distance of the foot from the wall, and $y$ be the height on the wall.\nLadder length $L = 5$ m is constant.\nRelationship: $x^2 + y^2 = 5^2 = 25$.\n\n**2. Differentiate:**\nDifferentiate w.r.t time $t$:\n$$ \\frac{d}{dt}(x^2 + y^2) = \\frac{d}{dt}(25) $$\n$$ 2x \\frac{dx}{dt} + 2y \\frac{dy}{dt} = 0 $$\n$$ x \\frac{dx}{dt} + y \\frac{dy}{dt} = 0 $$\n\n**3. Substitute Values:**\nGiven $\\frac{dx}{dt} = 2$ cm/s $= 0.02$ m/s (Unit consistency is crucial, let's stick to meters).\nWhen $x = 4$ m:\nFind $y$: $4^2 + y^2 = 25 \\implies y^2 = 9 \\implies y = 3$ m.\n\n**4. Solve:**\n$$ 4(0.02) + 3\\left(\\frac{dy}{dt}\\right) = 0 $$\n$$ 0.08 + 3\\frac{dy}{dt} = 0 $$\n$$ \\frac{dy}{dt} = -\\frac{0.08}{3} \\text{ m/s} $$\n$$ \\frac{dy}{dt} = -\\frac{8}{3} \\text{ cm/s} $$\n\n**Conclusion:** The height is decreasing at the rate of $8/3$ cm/s."
+    },
+    {
+      "id": "ex_12_6_2",
+      "title": "Strictly Increasing Interval",
+      "problem": "Find the intervals in which the function $f(x) = 4x^3 - 6x^2 - 72x + 30$ is strictly increasing or decreasing.",
+      "solution": "**1. Find Derivative:**\n$f'(x) = 12x^2 - 12x - 72$.\n\n**2. Find Critical Points:**\nSet $f'(x) = 0$:\n$12(x^2 - x - 6) = 0$\n$12(x - 3)(x + 2) = 0$\nCritical points: $x = 3, x = -2$.\n\n**3. Analyze Intervals:**\nDivide real line into $(-\\infty, -2)$, $(-2, 3)$, and $(3, \\infty)$.\n\n* **Interval $(-\\infty, -2)$:** Test point $x = -3$.\n    $f'(-3) = 12(-3-3)(-3+2) = 12(-6)(-1) > 0$.\n    Strictly Increasing.\n* **Interval $(-2, 3)$:** Test point $x = 0$.\n    $f'(0) = 12(-3)(2) < 0$.\n    Strictly Decreasing.\n* **Interval $(3, \\infty)$:** Test point $x = 4$.\n    $f'(4) = 12(1)(6) > 0$.\n    Strictly Increasing.\n\n**Conclusion:**\nStrictly Increasing in $(-\\infty, -2) \\cup (3, \\infty)$.\nStrictly Decreasing in $(-2, 3)$."
+    },
+    {
+      "id": "ex_12_6_3",
+      "title": "Tangent Equation",
+      "problem": "Find the equation of the tangent to the curve $y = \\sqrt{3x - 2}$ which is parallel to the line $4x - 2y + 5 = 0$.",
+      "solution": "**1. Slope of given line:**\n$4x - 2y + 5 = 0 \\implies 2y = 4x + 5 \\implies y = 2x + 2.5$.\nSlope $m = 2$.\nSince tangent is parallel, Slope of tangent $m_T = 2$.\n\n**2. Derivative of Curve:**\n$y = (3x - 2)^{1/2}$.\n$\\frac{dy}{dx} = \\frac{1}{2}(3x - 2)^{-1/2} \\cdot 3 = \\frac{3}{2\\sqrt{3x-2}}$.\n\n**3. Find Point of Contact:**\nSet derivative equal to slope:\n$\\frac{3}{2\\sqrt{3x-2}} = 2$\n$3 = 4\\sqrt{3x-2}$\nSquaring: $9 = 16(3x - 2) \\implies \\frac{9}{16} = 3x - 2$.\n$3x = 2 + \\frac{9}{16} = \\frac{41}{16} \\implies x = \\frac{41}{48}$.\nFind $y$: $y = \\sqrt{3(41/48) - 2} = \\sqrt{41/16 - 32/16} = \\sqrt{9/16} = \\frac{3}{4}$.\nPoint $P(\\frac{41}{48}, \\frac{3}{4})$.\n\n**4. Equation of Tangent:**\n$y - \\frac{3}{4} = 2(x - \\frac{41}{48})$\nMultiply by 4:\n$4y - 3 = 8x - \\frac{41}{6}$\nMultiply by 6:\n$24y - 18 = 48x - 41$\n$48x - 24y - 23 = 0$."
+    },
+    {
+      "id": "ex_12_6_4",
+      "title": "Approximation",
+      "problem": "Use differential to approximate $\\sqrt{25.3}$.",
+      "solution": "Let $y = \\sqrt{x}$.\nSelect $x = 25$ (perfect square near 25.3) and $\\Delta x = 0.3$.\n\n**1. Differential dy:**\n$y = x^{1/2} \\implies \\frac{dy}{dx} = \\frac{1}{2\\sqrt{x}}$.\nAt $x=25$, $\\frac{dy}{dx} = \\frac{1}{2(5)} = 0.1$.\n$dy = \\frac{dy}{dx} \\Delta x = (0.1)(0.3) = 0.03$.\n\n**2. Approximation:**\n$\\sqrt{25.3} = y + \\Delta y \\approx y + dy$.\n$y(\\text{at } 25) = 5$.\n$\\sqrt{25.3} \\approx 5 + 0.03 = 5.03$."
+    },
+    {
+      "id": "ex_12_6_5",
+      "title": "Optimization (Volume Max)",
+      "problem": "A square piece of tin of side 18 cm is to be made into a box without top, by cutting a square from each corner and folding up the flaps to form the box. What should be the side of the square to be cut off so that the volume of the box is the maximum possible?",
+      "solution": "**1. Setup:**\nLet the side of the square cut be $x$ cm.\nThe dimensions of the box will be:\nLength $L = 18 - 2x$\nWidth $W = 18 - 2x$\nHeight $H = x$\nRestriction: $18 - 2x > 0 \\implies x < 9$. Also $x > 0$. Domain: $(0, 9)$.\n\n**2. Volume Function:**\n$V(x) = L \\cdot W \\cdot H = (18 - 2x)^2 x$.\n$V(x) = x(324 - 72x + 4x^2) = 4x^3 - 72x^2 + 324x$.\n\n**3. Critical Points:**\n$V'(x) = 12x^2 - 144x + 324$.\nSet $V'(x) = 0$:\n$12(x^2 - 12x + 27) = 0$\n$12(x - 9)(x - 3) = 0$.\nPoints: $x = 3, x = 9$.\nSince $x=9$ makes length 0, it's rejected. Only critical point is $x=3$.\n\n**4. Second Derivative Test:**\n$V''(x) = 24x - 144$.\nAt $x = 3$: $V''(3) = 24(3) - 144 = 72 - 144 = -72 < 0$.\nNegative 2nd derivative implies **Maximum**.\n\n**Conclusion:**\nThe side of the square to be cut is 3 cm. Max Volume = $(18-6)^2(3) = 144 \\times 3 = 432 \\text{ cm}^3$."
+    },
+    {
+      "id": "ex_12_6_6",
+      "title": "Inscribed Cone in Sphere (JEE Classic)",
+      "problem": "Prove that the volume of the largest cone that can be inscribed in a sphere of radius R is 8/27 of the volume of the sphere.",
+      "solution": "**1. Diagram Setup:**\nSphere Radius $R$ (Constant). Cone Radius $r$, Height $h$ (Variables).\nLet the cone vertex be at top. Center of sphere is on the axis of cone.\nLet distance from center to base of cone be $x$.\nHeight $h = R + x$ (if center inside) or $R-x$.\nLet's assume center inside cone. $h = R+x$. (where $x \\in [0, R)$).\nRadius relationship: $r^2 + x^2 = R^2 \\implies r^2 = R^2 - x^2$.\n\n**2. Volume Function:**\n$V = \\frac{1}{3} \\pi r^2 h = \\frac{1}{3} \\pi (R^2 - x^2) (R + x)$.\nLet's maximize $V(x)$.\n$V(x) = \\frac{\\pi}{3} (R^2 + R^2x - x^2R - x^3) = \\frac{\\pi}{3} (R^3 + R^2x - Rx^2 - x^3)$.\n\n**3. Differentiation:**\n$\\frac{dV}{dx} = \\frac{\\pi}{3} (0 + R^2 - 2Rx - 3x^2)$.\nSet to 0: $R^2 - 2Rx - 3x^2 = 0$.\n$(R - 3x)(R + x) = 0$.\n$x = R/3$ or $x = -R$ (Height can't be 0, reject -R).\nSo $x = R/3$.\n\n**4. Test:**\n$\\frac{d^2V}{dx^2} = \\frac{\\pi}{3} (-2R - 6x)$. At $x=R/3$, Value $< 0$. Maxima.\n\n**5. Calculate Volume:**\nMax Volume at $x = R/3$.\n$h = R + R/3 = 4R/3$.\n$r^2 = R^2 - (R/3)^2 = 8R^2/9$.\n$V_{max} = \\frac{1}{3} \\pi (\\frac{8R^2}{9}) (\\frac{4R}{3}) = \\frac{32 \\pi R^3}{81}$.\n\n**6. Compare with Sphere:**\n$V_{sphere} = \\frac{4}{3} \\pi R^3$.\nRatio $= \\frac{32 \\pi R^3 / 81}{4 \\pi R^3 / 3} = \\frac{32}{81} \\times \\frac{3}{4} = \\frac{8}{27}$.\nProved."
+    }
+  ],
+  "exercises": [
+    {
+      "id": "prob_12_6_1",
+      "question": "The side of a square is increasing at the rate of 0.2 cm/s. Find the rate of increase of the perimeter of the square.",
+      "type": "Rate of Change",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_6_2",
+      "question": "Find the point on the curve y = x^3 - 11x + 5 at which the tangent is y = x - 11.",
+      "type": "Tangents",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_6_3",
+      "question": "Show that the function f(x) = tan x - x is always increasing on R.",
+      "type": "Monotonicity",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_6_4",
+      "question": "Find approximate value of (25)^(1/3) using differentials.",
+      "type": "Approximation",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_6_5",
+      "question": "A balloon, which always remains spherical, has a variable diameter 3/2(2x + 1). Find the rate of change of its volume with respect to x.",
+      "type": "Related Rates",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_6_6",
+      "question": "Find the intervals in which the function f(x) = sin x + cos x, 0 <= x <= 2pi, is strictly increasing or decreasing.",
+      "type": "Monotonicity",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_6_7",
+      "question": "Find the equation of the normal to the curve x = a cos^3 t, y = a sin^3 t at t = pi/4.",
+      "type": "Tangents (Parametric)",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_6_8",
+      "question": "Of all the closed cylindrical cans (right circular), of a given volume of 100 cubic cm, find the dimensions of the can which has the minimum surface area.",
+      "type": "Optimization",
+      "difficulty": "JEE Advanced"
+    },
+    {
+      "id": "prob_12_6_9",
+      "question": "Find the area of the greatest rectangle that can be inscribed in an ellipse x^2/a^2 + y^2/b^2 = 1.",
+      "type": "Optimization",
+      "difficulty": "JEE Advanced"
+    },
+    {
+      "id": "prob_12_6_10",
+      "question": "Show that the semi-vertical angle of the cone of the maximum volume and of given slant height is tan inverse sqrt(2).",
+      "type": "Optimization (Geometric)",
+      "difficulty": "JEE Advanced"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "form_12_6_1",
+      "label": "Instantaneous Rate",
+      "tex": "\\frac{dy}{dx} = \\lim_{\\Delta x \\to 0} \\frac{\\Delta y}{\\Delta x}"
+    },
+    {
+      "id": "form_12_6_2",
+      "label": "Chain Rule (Related Rates)",
+      "tex": "\\frac{dy}{dt} = \\frac{dy}{dx} \\cdot \\frac{dx}{dt}"
+    },
+    {
+      "id": "form_12_6_3",
+      "label": "Slope of Tangent",
+      "tex": "m_T = f'(x_0)"
+    },
+    {
+      "id": "form_12_6_4",
+      "label": "Slope of Normal",
+      "tex": "m_N = -\\frac{1}{f'(x_0)}"
+    },
+    {
+      "id": "form_12_6_5",
+      "label": "Equation of Tangent",
+      "tex": "y - y_0 = f'(x_0)(x - x_0)"
+    },
+    {
+      "id": "form_12_6_6",
+      "label": "Strictly Increasing Condition",
+      "tex": "f'(x) > 0"
+    },
+    {
+      "id": "form_12_6_7",
+      "label": "Approximation Formula",
+      "tex": "f(x + \\Delta x) \\approx f(x) + f'(x)\\Delta x"
+    },
+    {
+      "id": "form_12_6_8",
+      "label": "Second Derivative Test (Max)",
+      "tex": "f'(c) = 0, f''(c) < 0"
+    },
+    {
+      "id": "form_12_6_9",
+      "label": "Second Derivative Test (Min)",
+      "tex": "f'(c) = 0, f''(c) > 0"
+    },
+    {
+      "id": "form_12_6_10",
+      "label": "Angle between curves",
+      "tex": "\\tan \\theta = \\left| \\frac{m_1 - m_2}{1 + m_1 m_2} \\right|"
+    }
+  ]
+}

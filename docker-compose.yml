@@ -1,0 +1,167 @@
+# ==============================================================================
+# FUNCTION VISUALISER - DOCKER COMPOSE CONFIGURATION
+# ==============================================================================
+#
+# This file orchestrates the multi-container application deployment.
+# Run with: docker compose up -d
+#
+# Architecture:
+#   - Backend:  FastAPI (Python) on port 8000
+#   - Frontend: Next.js (Node.js) on port 3000
+#   - Network:  Internal bridge network for service communication
+#
+# Security Features:
+#   - Read-only filesystems with tmpfs for writable areas
+#   - Resource limits (CPU/memory) to prevent runaway processes
+#   - Health checks for automatic recovery
+#   - Non-root users (configured in Dockerfiles)
+#
+# Environment Variables (from .env file):
+#   - AI_MODE: "local", "cloud", or "auto" (default: auto)
+#   - OPENROUTER_API_KEY: API key for cloud AI (optional)
+#   - OLLAMA_BASE_URL: Local Ollama server URL (default: host.docker.internal:11434)
+#
+# ==============================================================================
+
+services:
+  # ============================================================================
+  # BACKEND SERVICE
+  # ============================================================================
+  # FastAPI application for mathematical computation and AI chat
+  # Compute-optimized with higher resource allocation
+  # ============================================================================
+  backend:
+    # Build configuration
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+
+    # Image naming for registry push
+    image: function-visualiser-backend:latest
+    container_name: function-visualiser-backend
+
+    # Restart policy: always restart unless manually stopped
+    restart: always
+
+    # Environment variables
+    # Note: In production, use Docker secrets instead of environment variables
+    environment:
+      - PORT=8000
+      - AI_MODE=${AI_MODE:-auto}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      # OLLAMA_BASE_URL: Must use host.docker.internal to reach Ollama on host machine
+      - OLLAMA_BASE_URL=${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+
+    # Port mapping: host:container
+    ports:
+      - "8000:8000"
+
+    # Health check: Verifies the /health endpoint responds
+    # Used by Docker and depends_on condition
+    healthcheck:
+      test: [ "CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+    # Internal network for service-to-service communication
+    networks:
+      - app-network
+
+    # Resource limits and reservations
+    # Limits: Maximum resources the container can use
+    # Reservations: Guaranteed minimum resources
+    deploy:
+      resources:
+        limits:
+          cpus: '2.00' # Maximum 2 CPU cores
+          memory: 2G # Maximum 2GB RAM
+        reservations:
+          cpus: '0.50' # Guaranteed 0.5 CPU cores
+          memory: 512M # Guaranteed 512MB RAM
+
+    # Security: Read-only root filesystem
+    # Prevents malicious writes to the filesystem
+    read_only: true
+
+    # Writable temporary filesystems
+    # Required for Python cache and any temporary files
+    tmpfs:
+      - /tmp
+      - /app/__pycache__:uid=10001,gid=10001
+      - /app/app/__pycache__:uid=10001,gid=10001
+
+  # ============================================================================
+  # FRONTEND SERVICE
+  # ============================================================================
+  # Next.js application for user interface
+  # Lighter resource allocation than backend
+  # ============================================================================
+  frontend:
+    # Build configuration
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+
+    # Image naming for registry push
+    image: function-visualiser-frontend:latest
+    container_name: function-visualiser-frontend
+
+    # Restart policy
+    restart: always
+
+    # Environment variables
+    environment:
+      - NODE_ENV=production
+      # Client-side API URL (browser makes requests here)
+      - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL:-http://localhost:8000}
+      # Server-side API URL (SSR uses internal Docker network)
+      - INTERNAL_API_URL=http://backend:8000
+
+    # Port mapping
+    ports:
+      - "3000:3000"
+
+    # Wait for backend to be healthy before starting
+    # Ensures API is available when frontend starts
+    depends_on:
+      backend:
+        condition: service_healthy
+
+    # Health check: Verifies the frontend responds
+    healthcheck:
+      test: [ "CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+    # Internal network
+    networks:
+      - app-network
+
+    # Resource limits (lighter than backend)
+    deploy:
+      resources:
+        limits:
+          cpus: '1.00' # Maximum 1 CPU core
+          memory: 1G # Maximum 1GB RAM
+        reservations:
+          cpus: '0.25' # Guaranteed 0.25 CPU cores
+          memory: 256M # Guaranteed 256MB RAM
+
+    # Security: Read-only root filesystem
+    read_only: true
+
+    # Writable temporary filesystem
+    tmpfs:
+      - /tmp
+
+# ==============================================================================
+# NETWORKS
+# ==============================================================================
+# Bridge network for internal service communication
+# Services can reach each other by name (e.g., http://backend:8000)
+# ==============================================================================
+networks:
+  app-network:
+    driver: bridge

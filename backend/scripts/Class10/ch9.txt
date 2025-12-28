@@ -1,0 +1,137 @@
+{
+  "id": "class_10",
+  "title": "Class 10",
+  "chapters": [
+    {
+      "id": "ch_9_applications_of_trigonometry",
+      "title": "Ch 9: Some Applications of Trigonometry",
+      "topics": [
+        {
+          "id": "topic_9_1_definitions_and_concepts",
+          "title": "9.1 Terminology: The Geometry of Vision",
+          "content": "### 1. From Ratio to Reality\nIn the previous chapter, we treated trigonometry as a mathematical game of ratios ($P/H, B/H$). In this chapter, we step out of the abstract classroom into the real world. We use these ratios to measure the unmeasurable—the height of Mount Everest, the width of a river, or the distance of a ship from a lighthouse—without physically measuring them.\n\nThis branch of mathematics is historically known as **Heights and Distances**.\n\n#### 1.1 The Physics of Sight\nTo solve these problems, we must model how we \"see\" things mathematically. We assume light travels in straight lines.\n\n**1. Line of Sight:**\nImagine a ray of light traveling from the eye of an observer to the object being viewed. [cite_start]This straight line is called the **Line of Sight**[cite: 134].\n\n**2. Horizontal Level:**\nImagine a line drawn from the observer's eye parallel to the ground (earth's surface). This is the **Horizontal Level** or **Horizontal Line**. [cite_start]It serves as the baseline ($x$-axis) for measuring angles.\n\n#### 1.2 Angle of Elevation (Looking Up)\nWhen the object is *above* the horizontal level (e.g., looking at a kite or the top of a tower):\n* We have to raise our head.\n* The angle formed between the **Line of Sight** and the **Horizontal Level** is called the **Angle of Elevation** [cite: 134][cite_start].\n* *Mnemonic:* \"Elevation\" implies going up (like an elevator).\n\n#### 1.3 Angle of Depression (Looking Down)\nWhen the object is *below* the horizontal level (e.g., standing on a balcony looking at a car on the road):\n* We have to lower our head.\n* The angle formed between the **Line of Sight** and the **Horizontal Level** is called the **Angle of Depression**[cite: 135].\n* *Important Geometry:* Since the horizontal level at the eye is parallel to the ground, the Angle of Depression is numerically equal to the Angle of Elevation from the object back up to the observer (Alternate Interior Angles). This property is crucial for solving problems.\n\n#### 1.4 The Right Triangle Model\nEvery problem in this chapter reduces to constructing a right-angled triangle where:\n* **Vertical Side:** Represents the height (tower, building, cliff).\n* **Horizontal Side:** Represents the distance (ground, river width).\n* **Hypotenuse:** Represents the Line of Sight (ladder, string of kite).\n* **Angle:** The angle of elevation or depression.",
+          "formulas": [
+            "\\text{Depression} = \\text{Elevation} \\quad (\\text{Alt. Int. Angles})"
+          ],
+          "examples": [
+            {
+              "id": "ex_app_1",
+              "question": "A tower stands vertically on the ground. From a point on the ground, which is 15 m away from the foot of the tower, the angle of elevation of the top of the tower is found to be 60°. Find the height of the tower.",
+              "steps": [
+                {
+                  "explanation": "1. **Draw the Diagram:** Let $AB$ be the vertical tower (height $h$). Let $C$ be the point on the ground. Join $B$ (foot) to $C$. Join $A$ (top) to $C$."
+                },
+                {
+                  "explanation": "2. **Identify Given Data:** Distance $BC = 15$ m. Angle of elevation $\\angle ACB = 60^\\circ$. We need $AB$."
+                },
+                {
+                  "explanation": "3. **Select Ratio:** We know the Adjacent side ($BC$) and need the Opposite side ($AB$). The ratio connecting Opposite and Adjacent is **Tangent**."
+                },
+                {
+                  "explanation": "4. **Apply Formula:** In $\\Delta ABC$, $\\tan 60^\\circ = \\frac{AB}{BC}$."
+                },
+                {
+                  "explanation": "5. **Solve:** $\\sqrt{3} = \\frac{h}{15} \\implies h = 15\\sqrt{3}$."
+                }
+              ],
+              "finalAnswer": "Height is $15\\sqrt{3}$ m."
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Angle of Elevation",
+            "functions": [],
+            "points": [
+              { "x": 0, "y": 0, "label": "C (Observer)" },
+              { "x": 15, "y": 0, "label": "B (Foot)" },
+              { "x": 15, "y": 26, "label": "A (Top)" }
+            ],
+            "shapes": [
+              { "type": "line", "x1": 0, "y1": 0, "x2": 15, "y2": 0, "color": "blue", "label": "Horizontal (15m)" },
+              { "type": "line", "x1": 15, "y1": 0, "x2": 15, "y2": 26, "color": "red", "label": "Vertical (h)" },
+              { "type": "line", "x1": 0, "y1": 0, "x2": 15, "y2": 26, "color": "green", "label": "Line of Sight" }
+            ],
+            "xRange": [-2, 20],
+            "yRange": [-2, 30]
+          }
+        },
+        {
+          "id": "topic_9_2_problem_solving_strategy",
+          "title": "9.2 Strategy for Solving Applications",
+          "content": "### 2. The Art of Mathematical Modeling\nSolving trigonometry word problems is 80% diagramming and 20% calculation. Follow this rigorous 4-step process:\n\n#### Step 1: The Diagram (Visualization)\n* Read the problem sentence by sentence.\n* Draw a rough sketch. Represent ground/water by a horizontal line.\n* Represent vertical objects (towers, trees, poles) by vertical lines perpendicular to the ground ($90^\\circ$ angle).\n* **Important:** If the observer has a height (e.g., a 1.5m tall boy), the horizontal level starts from his **eyes**, not his feet. The total height of the object will be (Height above eyes + Height of observer).\n\n#### Step 2: The Variables\n* Label vertices (e.g., $\\Delta ABC$).\n* Mark known values (angles, lengths).\n* Assign variables ($h, x, y$) to unknown quantities.\n\n#### Step 3: The Ratio Selection\n* Look at the right triangle relative to the given angle $\\theta$:\n    * Known: Hypotenuse, Unknown: Opposite $\\to$ Use $\\sin \\theta$.\n    * Known: Adjacent, Unknown: Opposite $\\to$ Use $\\tan \\theta$ (Most common).\n    * Known: Adjacent, Unknown: Hypotenuse $\\to$ Use $\\cos \\theta$.\n\n#### Step 4: The Algebra\n* Set up the equation.\n* Substitute trigonometric values ($\\tan 30^\\circ = 1/\\sqrt{3}$, etc.).\n* Solve for the variable.\n* **Note:** If the answer involves $\\sqrt{3}$, usually leave it unless asked to use $1.732$.",
+          "formulas": [],
+          "examples": [
+            {
+              "id": "ex_app_2",
+              "question": "An electrician has to repair an electric fault on a pole of height 5 m. She needs to reach a point 1.3 m below the top of the pole to undertake the repair work. What should be the length of the ladder that she should use which, when inclined at an angle of 60° to the horizontal, would enable her to reach the required position? (Use $\\sqrt{3} = 1.73$)",
+              "steps": [
+                {
+                  "explanation": "1. **Analyze Height:** Total pole height $AD = 5$ m. She reaches point $B$ which is 1.3 m below top $A$. So height $BD = 5 - 1.3 = 3.7$ m. This is the vertical side (Opposite)."
+                },
+                {
+                  "explanation": "2. **Analyze Ladder:** The ladder $BC$ is the Hypotenuse. We need to find its length."
+                },
+                {
+                  "explanation": "3. **Select Ratio:** Angle is $60^\\circ$. We know Opposite (3.7) and need Hypotenuse (Length). Use $\\sin 60^\\circ$."
+                },
+                {
+                  "explanation": "4. **Equation:** $\\sin 60^\\circ = \\frac{BD}{BC} \\implies \\frac{\\sqrt{3}}{2} = \\frac{3.7}{L}$."
+                },
+                {
+                  "explanation": "5. **Solve:** $L = \\frac{3.7 \\times 2}{\\sqrt{3}} = \\frac{7.4}{1.73} \\approx 4.28$ m."
+                }
+              ],
+              "finalAnswer": "Ladder length approx 4.28 m."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_9_3_solved_examples_single_triangle",
+          "title": "9.3 Basic Problems (Single Triangle)",
+          "content": "### 3. Single Triangle Problems\nThese involve a straightforward application of one ratio.\n\n#### Example 9.3.1: The Broken Tree\n**Problem:** A tree breaks due to a storm and the broken part bends so that the top of the tree touches the ground making an angle $30^\\circ$ with it. The distance between the foot of the tree to the point where the top touches the ground is 8 m. Find the height of the tree.\n\n**Solution Analysis:**\n1.  **Original Tree:** Let total height be $H$. The tree breaks at point $C$. The bottom part $BC$ remains vertical.\n2.  **Broken Part:** The top part $AC$ breaks and falls to form the hypotenuse $CD$. (Point $A$ touches ground at $D$).\n3.  **Components:** Height of tree = Vertical Part ($BC$) + Hypotenuse Part ($CD$).\n4.  **Triangle:** Right $\\Delta CBD$ at $B$. Angle at $D = 30^\\circ$. Base $BD = 8$ m.\n\n**Calculation:**\n* Find $BC$ (Opposite): $\\tan 30^\\circ = \\frac{BC}{BD} \\implies \\frac{1}{\\sqrt{3}} = \\frac{BC}{8} \\implies BC = \\frac{8}{\\sqrt{3}}$ m.\n* Find $CD$ (Hypotenuse): $\\cos 30^\\circ = \\frac{BD}{CD} \\implies \\frac{\\sqrt{3}}{2} = \\frac{8}{CD} \\implies CD = \\frac{16}{\\sqrt{3}}$ m.\n* Total Height: $BC + CD = \\frac{8}{\\sqrt{3}} + \\frac{16}{\\sqrt{3}} = \\frac{24}{\\sqrt{3}}$.\n* Rationalize: $\\frac{24\\sqrt{3}}{3} = 8\\sqrt{3}$ m.\n\n#### Example 9.3.2: The Kite\n**Problem:** A kite is flying at a height of 60 m above the ground. The string attached to the kite is temporarily tied to a point on the ground. The inclination of the string with the ground is $60^\\circ$. Find the length of the string, assuming that there is no slack in the string.\n\n**Solution Analysis:**\n* **Vertical:** $h = 60$ m (Opposite).\n* **Hypotenuse:** String Length $L$.\n* **Angle:** $60^\\circ$.\n* **Ratio:** $\\sin 60^\\circ = \\frac{\\text{Opp}}{\\text{Hyp}} \\implies \\frac{\\sqrt{3}}{2} = \\frac{60}{L}$.\n* **Calculation:** $L = \\frac{120}{\\sqrt{3}} = \\frac{120\\sqrt{3}}{3} = 40\\sqrt{3}$ m.",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_9_4_solved_examples_double_triangle",
+          "title": "9.4 Advanced Problems (Double Triangles)",
+          "content": "### 4. Two-Triangle Problems\nMost exam questions involve two positions or two angles. This creates two right triangles sharing a common side.\n\n#### Type A: Movement Towards/Away\n**Scenario:** An observer moves towards a tower. The angle of elevation increases (e.g., $30^\\circ \\to 60^\\circ$).\n\n**Example 9.4.1 (The Shadow Problem):**\nThe shadow of a tower standing on level ground is found to be 40 m longer when the Sun's altitude is $30^\\circ$ than when it is $60^\\circ$. Find the height of the tower.\n\n**Solution:**\n1.  **Diagram:** Let tower be $AB = h$. Let $C$ be the point for $60^\\circ$ and $D$ be the point for $30^\\circ$. $D$ is further away. So $D-C-B$ is the line order.\n2.  **Given:** $DC = 40$ m. Let $CB = x$.\n3.  **Triangle 1 ($\\Delta ABC$):** $\\tan 60^\\circ = h/x \\implies \\sqrt{3} = h/x \\implies h = x\\sqrt{3}$.\n4.  **Triangle 2 ($\\Delta ABD$):** $\\tan 30^\\circ = h/(40+x) \\implies 1/\\sqrt{3} = h/(40+x)$.\n5.  **Substitution:** Substitute $h = x\\sqrt{3}$ into eq 2.\n    * $1/\\sqrt{3} = (x\\sqrt{3}) / (40+x)$\n    * $40 + x = 3x$\n    * $2x = 40 \\implies x = 20$ m.\n6.  **Find Height:** $h = x\\sqrt{3} = 20\\sqrt{3}$ m.\n\n#### Type B: Object on Top of Object\n**Scenario:** A statue on a pedestal, or a flagstaff on a building.\n\n**Example 9.4.2:**\nFrom a point on the ground, the angles of elevation of the bottom and the top of a transmission tower fixed at the top of a 20 m high building are $45^\\circ$ and $60^\\circ$ respectively. Find the height of the tower.\n\n**Solution:**\n1.  **Diagram:** Building $BC = 20$. Tower $AB = h$ on top of $BC$. Observer at $P$. Distance $PC = x$.\n2.  **Triangle 1 ($\\Delta BCP$, Bottom of tower):** Angle $45^\\circ$. Height 20.\n    * $\\tan 45^\\circ = 20/x \\implies 1 = 20/x \\implies x = 20$ m.\n3.  **Triangle 2 ($\\Delta ACP$, Top of tower):** Angle $60^\\circ$. Total Height $AC = 20 + h$.\n    * $\\tan 60^\\circ = (20+h)/x$.\n    * $\\sqrt{3} = (20+h)/20$.\n    * $20\\sqrt{3} = 20 + h$.\n    * $h = 20\\sqrt{3} - 20 = 20(\\sqrt{3} - 1)$ m.\n\n#### Type C: Elevation and Depression (From a Height)\n**Scenario:** Observer on top of a building looking at another object.\n\n**Example 9.4.3:**\nFrom the top of a 7 m high building, the angle of elevation of the top of a cable tower is $60^\\circ$ and the angle of depression of its foot is $45^\\circ$. Determine the height of the tower.\n\n**Solution:**\n1.  **Diagram:** Building $AB=7$. Tower $CD=H$. Observer at $A$. Draw horizontal line $AE$ from $A$ to tower $CD$.\n2.  **Depression Logic:** Angle of depression to foot $C$ is $45^\\circ$. So $\\angle ACE = 45^\\circ$ (Alternate Interior).\n3.  **Triangle 1 ($\\Delta AEC$):** In rectangle $ABCE$, $CE = AB = 7$. $AE = BC = x$. (Wait, typically $C$ is foot). Let's re-orient.\n    * Let Building be on left ($AB$). Tower on right ($CD$).\n    * Draw $AM \\perp CD$. $AM$ is horizontal.\n    * Depression to foot $C$ is $45^\\circ \\implies \\angle ACM = 45^\\circ$.\n    * In $\\Delta AMC$: $\\tan 45^\\circ = CM/AM$. Since $CM = AB = 7$, $AM = 7$.\n4.  **Triangle 2 ($\\Delta AMD$):** Elevation to top $D$ is $60^\\circ$. Base $AM = 7$.\n    * $\\tan 60^\\circ = DM/AM \\implies \\sqrt{3} = DM/7 \\implies DM = 7\\sqrt{3}$.\n5.  **Total Height:** $H = CM + DM = 7 + 7\\sqrt{3} = 7(1+\\sqrt{3})$ m.",
+          "formulas": [
+            "\\tan \\theta = \\frac{h}{x}",
+            "\\tan \\theta_2 = \\frac{h}{x+d}"
+          ],
+          "examples": [],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Example 9.4.2 (Tower on Building)",
+            "functions": [],
+            "points": [
+              { "x": 0, "y": 0, "label": "P (Observer)" },
+              { "x": 20, "y": 0, "label": "C (Base)" },
+              { "x": 20, "y": 20, "label": "B (Top of Bldg)" },
+              { "x": 20, "y": 34.64, "label": "A (Top of Tower)" }
+            ],
+            "shapes": [
+              { "type": "line", "x1": 20, "y1": 0, "x2": 20, "y2": 20, "color": "blue", "label": "Building (20)" },
+              { "type": "line", "x1": 20, "y1": 20, "x2": 20, "y2": 34.64, "color": "red", "label": "Tower (h)" },
+              { "type": "line", "x1": 0, "y1": 0, "x2": 20, "y2": 20, "color": "green", "label": "Sight to B (45 deg)" },
+              { "type": "line", "x1": 0, "y1": 0, "x2": 20, "y2": 34.64, "color": "purple", "label": "Sight to A (60 deg)" }
+            ],
+            "xRange": [-5, 25],
+            "yRange": [-5, 40]
+          }
+        },
+        {
+          "id": "topic_9_5_practice_bank",
+          "title": "9.5 Comprehensive Practice Bank",
+          "content": "### 5. Practice Questions\n\n#### Section A: Basic Elevation & Depression (10 Questions)\n1.  A ladder 15 m long just reaches the top of a vertical wall. If the ladder makes an angle of $60^\\circ$ with the wall, find the height of the wall.\n2.  The shadow of a tower is equal to its height. Find the angle of elevation of the sun.\n3.  A circus artist is climbing a 20 m long rope, which is tightly stretched and tied from the top of a vertical pole to the ground. Find the height of the pole, if the angle made by the rope with the ground level is $30^\\circ$.\n4.  A bridge across a river makes an angle of $45^\\circ$ with the river bank. If the length of the bridge across the river is 150 m, what is the width of the river?\n5.  Find the angle of elevation of the sun when the shadow of a pole $h$ metres high is $\\sqrt{3}h$ metres long.\n6.  A kite is flying with a thread 100 m long. If the thread makes an angle of $60^\\circ$ with the horizontal, find the height of the kite.\n7.  From a point 20 m away from the foot of a tower, the angle of elevation of the top is $30^\\circ$. Find the height of the tower.\n8.  A tree 12 m high is broken by the wind in such a way that its top touches the ground and makes an angle $60^\\circ$ with the ground. At what height from the bottom did the tree break?\n9.  The ratio of the height of a tower and the length of its shadow on the ground is $\\sqrt{3}:1$. What is the angle of elevation of the sun?\n10. A tower is 50 m high. Find the angle of elevation of its top from a point 50 m away.\n\n#### Section B: Two Triangles & Advanced Reasoning (10 Questions)\n11. The angles of elevation of the top of a tower from two points at a distance of 4 m and 9 m from the base of the tower and in the same straight line with it are complementary. Prove that the height of the tower is 6 m.\n12. A 1.2 m tall girl spots a balloon moving with the wind in a horizontal line at a height of 88.2 m from the ground. The angle of elevation of the balloon from the eyes of the girl at any instant is $60^\\circ$. After some time, the angle of elevation reduces to $30^\\circ$. Find the distance travelled by the balloon during the interval.\n13. Two poles of equal heights are standing opposite each other on either side of the road, which is 80 m wide. From a point between them on the road, the angles of elevation of the top of the poles are $60^\\circ$ and $30^\\circ$ respectively. Find the height of the poles and the distances of the point from the poles.\n14. From the top of a 7 m high building, the angle of elevation of the top of a cable tower is $60^\\circ$ and the angle of depression of its foot is $45^\\circ$. Determine the height of the tower.\n15. As observed from the top of a 75 m high lighthouse from the sea-level, the angles of depression of two ships are $30^\\circ$ and $45^\\circ$. If one ship is exactly behind the other on the same side of the lighthouse, find the distance between the two ships.\n16. A straight highway leads to the foot of a tower. A man standing at the top of the tower observes a car at an angle of depression of $30^\\circ$, which is approaching the foot of the tower with a uniform speed. Six seconds later, the angle of depression of the car is found to be $60^\\circ$. Find the time taken by the car to reach the foot of the tower from this point.\n17. The angle of elevation of a cloud from a point 60 m above a lake is $30^\\circ$ and the angle of depression of the reflection of the cloud in the lake is $60^\\circ$. Find the height of the cloud.\n18. A man standing on the deck of a ship, which is 10 m above water level, observes the angle of elevation of the top of a hill as $60^\\circ$ and the angle of depression of the base of the hill as $30^\\circ$. Calculate the distance of the hill from the ship and the height of the hill.\n19. The angles of elevation of the top of a rock from the top and foot of a 100 m high tower are $30^\\circ$ and $45^\\circ$ respectively. Find the height of the rock.\n20. A vertical tower stands on a horizontal plane and is surmounted by a vertical flagstaff of height $h$. At a point on the plane, the angles of elevation of the bottom and the top of the flagstaff are $\\alpha$ and $\\beta$ respectively. Prove that the height of the tower is $\\frac{h \\tan \\alpha}{\\tan \\beta - \\tan \\alpha}$.\n\n#### Section C: Must-Practice (Board/JEE Foundation)\n21. **(Must Practice)** Example 11 from the text (complementary angles logic).\n22. **(Must Practice)** Example 16 (Time-Distance relation in trigonometry).\n23. **(Must Practice)** The \"Cloud Reflection\" problem (Question 17 in Section B).\n24. **(Must Practice)** The \"Balloon\" problem (Question 12 in Section B).\n25. **(Must Practice)** A straight line cuts two concentric circles. Find lengths of chords.\n26. **(Must Practice)** From the top of a building $H$ meters high, the angles of depression of the top and bottom of a vertical lamp post are observed to be $\\alpha$ and $\\beta$ respectively. Find the horizontal distance and height of the lamp post.\n27. **(Must Practice)** An aeroplane flying horizontally 1 km above the ground is observed at an elevation of $60^\\circ$. After 10 seconds, its elevation is observed to be $30^\\circ$. Find the speed of the aeroplane in km/hr.\n28. **(Must Practice)** Two stations due south of a leaning tower which leans towards the north are at distances $a$ and $b$ from its foot. If $\\alpha$ and $\\beta$ are the elevations of the top of the tower from these stations, prove that its inclination $\\theta$ to the horizontal is given by $\\cot \\theta = \\frac{b \\cot \\alpha - a \\cot \\beta}{b-a}$.\n29. **(Must Practice)** If the angle of elevation of a cloud from a point $h$ metres above a lake is $\\alpha$ and the angle of depression of its reflection in the lake is $\\beta$, prove that the height of the cloud is $\\frac{h(\\tan \\beta + \\tan \\alpha)}{\\tan \\beta - \\tan \\alpha}$.\n30. **(Must Practice)** A ladder rests against a vertical wall at an inclination $\\alpha$ to the horizontal. Its foot is pulled away from the wall through a distance $p$ so that its upper end slides a distance $q$ down the wall and then the ladder makes an angle $\\beta$ to the horizontal. Show that $\\frac{p}{q} = \\frac{\\cos \\beta - \\cos \\alpha}{\\sin \\alpha - \\sin \\beta}$.\n\n---\n\n### 6. Formula & Concept Compendium\n\n#### 6.1 Definitions\n* **Line of Sight:** Line from eye to object.\n* **Angle of Elevation:** Angle above horizontal.\n* **Angle of Depression:** Angle below horizontal.\n\n#### 6.2 Key Properties\n* **Depression = Elevation:** The angle of depression from top to bottom equals the angle of elevation from bottom to top (Alternate Angles).\n* **Height Calculation:** $\\tan \\theta = \\frac{\\text{Height}}{\\text{Distance}}$.\n* **Distance Calculation:** $\\text{Distance} = \\frac{\\text{Height}}{\\tan \\theta} = \\text{Height} \\times \\cot \\theta$.\n\n#### 6.3 Standard Values used in Applications\n| Angle | $\\sin$ | $\\cos$ | $\\tan$ |\n| :--- | :--- | :--- | :--- |\n| $30^\\circ$ | $1/2$ | $\\sqrt{3}/2$ | $1/\\sqrt{3}$ |\n| $45^\\circ$ | $1/\\sqrt{2}$ | $1/\\sqrt{2}$ | $1$ |\n| $60^\\circ$ | $\\sqrt{3}/2$ | $1/2$ | $\\sqrt{3}$ |\n\n#### 6.4 Common Surd Values\n* $\\sqrt{2} \\approx 1.414$\n* $\\sqrt{3} \\approx 1.732$",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

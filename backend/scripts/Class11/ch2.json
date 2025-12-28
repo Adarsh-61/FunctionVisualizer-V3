@@ -1,0 +1,127 @@
+{
+  "id": "11_2",
+  "classId": 11,
+  "title": "Relations and Functions",
+  "description": "The bridge between static sets and dynamic calculus. This chapter rigorously defines Cartesian products, relations, and the most critical concept in mathematics: Functions, with deep dives into their graphs and domain/range techniques.",
+  "topics": [
+    {
+      "id": "11_2_1",
+      "title": "Cartesian Product of Sets",
+      "content": "### 1. From Sets to Ordered Pairs\nIn Chapter 1, we learned that sets are unordered collections (e.g., $\\{a, b\\} = \\{b, a\\}$). However, in geometry and coordinate systems, **order matters**. The point $(1, 2)$ is distinct from $(2, 1)$.\n\n**Ordered Pair:** An ordered pair consists of two objects listed in a specific order. \n* Notation: $(a, b)$\n* $a$ is the first component, $b$ is the second component.\n\n**Equality of Ordered Pairs:**\nTwo ordered pairs $(a, b)$ and $(c, d)$ are equal **if and only if** their corresponding components are equal.\n$$ (a, b) = (c, d) \\iff a = c \\text{ and } b = d $$\n\n### 2. Cartesian Product ($A \\times B$)\nGiven two non-empty sets $A$ and $B$, the Cartesian product $A \\times B$ is the set of **all possible ordered pairs** where the first component comes from $A$ and the second from $B$.\n\n**Definition:**\n$$ A \\times B = \\{ (a, b) : a \\in A, b \\in B \\} $$\n\n**Important Properties:**\n1.  **Non-Commutativity:** Generally, $A \\times B \\neq B \\times A$ (unless $A = B$ or one is empty).\n2.  **Cardinality:** If $n(A) = p$ and $n(B) = q$, then $n(A \\times B) = pq$.\n3.  **Empty Product:** If either $A$ or $B$ is null, $A \\times B = \\phi$.\n4.  **Ordered Triplets:** $A \\times A \\times A = \\{ (a, b, c) : a, b, c \\in A \\}$. This represents 3D space if $A = \\mathbb{R}$.\n\n### 3. Algebraic Properties (JEE Focus)\nThe Cartesian product distributes over set operations:\n* $A \\times (B \\cup C) = (A \\times B) \\cup (A \\times C)$\n* $A \\times (B \\cap C) = (A \\times B) \\cap (A \\times C)$\n* $A \\times (B - C) = (A \\times B) - (A \\times C)$\n\n**Intersection Result:**\n$$ n((A \\times B) \\cap (C \\times D)) = n(A \\cap C) \\times n(B \\cap D) $$",
+      "examples": [
+        {
+          "id": "ex_2_1",
+          "question": "If $(x + 1, y - 2) = (3, 1)$, find the values of $x$ and $y$.",
+          "solution": "Since the ordered pairs are equal, their corresponding components must be equal.\n1.  Equate first components: $x + 1 = 3 \\implies x = 2$.\n2.  Equate second components: $y - 2 = 1 \\implies y = 3$.\n**Answer:** $x = 2, y = 3$."
+        },
+        {
+          "id": "ex_2_2",
+          "question": "Let $A = \\{1, 2\\}$ and $B = \\{3, 4\\}$. Write $A \\times B$. How many subsets will $A \\times B$ have?",
+          "solution": "1.  $A \\times B = \\{ (1, 3), (1, 4), (2, 3), (2, 4) \\}$.\n2.  Number of elements in $A \\times B$ is $2 \\times 2 = 4$.\n3.  Number of subsets is the size of the Power Set: $2^4 = 16$."
+        }
+      ]
+    },
+    {
+      "id": "11_2_2",
+      "title": "Relations",
+      "content": "### 1. The Concept of Relation\nIn daily life, a relation links two persons (e.g., \"is father of\"). In mathematics, a relation links elements of two sets.\n\n**Mathematical Definition:**\nA **Relation $R$** from a non-empty set $A$ to a non-empty set $B$ is a **subset** of the Cartesian product $A \\times B$.\n$$ R \\subseteq A \\times B $$\n\nIf $(x, y) \\in R$, we say \"$x$ is related to $y$ by $R$\" and write $x R y$.\n\n### 2. Components of a Relation\nFor a relation $R$ from $A$ to $B$:\n1.  **Domain:** The set of all first components of the ordered pairs in $R$.\n    $$ \\text{Dom}(R) = \\{ x : (x, y) \\in R \\} \\subseteq A $$\n2.  **Range:** The set of all second components of the ordered pairs in $R$.\n    $$ \\text{Range}(R) = \\{ y : (x, y) \\in R \\} \\subseteq B $$\n3.  **Codomain:** The entire set $B$ is the codomain.\n    * Note: $\\text{Range}(R) \\subseteq \\text{Codomain}(R)$.\n\n### 3. Representation Methods\n* **Roster Form:** Listing pairs, e.g., $R = \\{(1, 2), (3, 4)\\}$.\n* **Set-Builder Form:** $R = \\{ (x, y) : x \\in A, y \\in B, y = x + 1 \\}$.\n* **Arrow Diagram:** Drawing sets $A$ and $B$ as ovals and drawing arrows from $x$ to $y$ if linked.\n\n### 4. Total Number of Relations\nThe total number of possible relations from set $A$ to set $B$ is the number of possible subsets of $A \\times B$.\n$$ \\text{Total Relations} = 2^{n(A) \\times n(B)} $$",
+      "examples": [
+        {
+          "id": "ex_2_3",
+          "question": "Let $A = \\{1, 2, 3, 4, 5, 6\\}$. Define a relation $R$ from $A$ to $A$ by $R = \\{ (x, y) : y = x + 1 \\}$. Depict this relation and find Domain, Range.",
+          "solution": "1.  **Identify Pairs:** We substitute $x \\in A$ and check if $y \\in A$.\n    * $x=1 \\implies y=2$. $(1, 2) \\in R$.\n    * $x=2 \\implies y=3$. $(2, 3) \\in R$.\n    * $x=3 \\implies y=4$. $(3, 4) \\in R$.\n    * $x=4 \\implies y=5$. $(4, 5) \\in R$.\n    * $x=5 \\implies y=6$. $(5, 6) \\in R$.\n    * $x=6 \\implies y=7$. But $7 \\notin A$, so stop.\n\n2.  **Roster Form:** $R = \\{ (1, 2), (2, 3), (3, 4), (4, 5), (5, 6) \\}$.\n\n3.  **Domain:** First elements $\\{1, 2, 3, 4, 5\\}$.\n4.  **Range:** Second elements $\\{2, 3, 4, 5, 6\\}$.\n5.  **Codomain:** Set $A = \\{1, 2, 3, 4, 5, 6\\}$."
+        }
+      ]
+    },
+    {
+      "id": "11_2_3",
+      "title": "Functions",
+      "content": "### 1. Introduction to Functions\nA function is the most important concept in modern mathematics. It can be visualized as a **machine** that takes an input and produces a unique output.\n\n**Definition:**\nA relation $f$ from set $A$ to set $B$ is called a **Function** if **every element of set $A$ has one and only one image in set $B$.**\n\n**Notation:** $f: A \\to B$\n\n**Key Conditions for a Function:**\n1.  **Totality:** Every element in the domain $A$ must be mapped to something. (No leftover inputs).\n2.  **Uniqueness:** No element in $A$ can have more than one image. (One input cannot produce two outputs).\n    * *Analogy:* In a valid class database, every student (Input) has exactly one Roll Number (Output). Two students can share a birthday, but one student cannot have two birthdays.\n\n### 2. Image and Pre-image\nIf $(x, y) \\in f$, we write $y = f(x)$.\n* $y$ is called the **image** of $x$ under $f$.\n* $x$ is called the **pre-image** of $y$ under $f$.\n\n### 3. Vertical Line Test (Geometric check)\nA curve in the Cartesian plane represents a function of $x$ if and only if **no vertical line intersects the curve at more than one point**.\n* Circle ($x^2 + y^2 = 1$): Not a function (Vertical line hits twice).\n* Parabola ($y = x^2$): Is a function.\n\n### 4. Real-Valued Functions\nA function $f: A \\to B$ is called a real-valued function if $B$ is a subset of $\\mathbb{R}$. If $A$ is also a subset of $\\mathbb{R}$, it is called a real function.",
+      "examples": [
+        {
+          "id": "ex_2_4",
+          "question": "Examine if the following relations are functions:\n1. $R_1 = \\{(2,1), (3,1), (4,2)\\}$\n2. $R_2 = \\{(2,2), (2,4), (3,3), (4,4)\\}$\n3. $R_3 = \\{(1,2), (2,3), (3,4), (4,5), (5,6), (6,7)\\}$",
+          "solution": "1.  **Function.** Every first element (2, 3, 4) has a unique image. (It is okay that 2 and 3 both map to 1).\n2.  **Not a Function.** Element 2 has two images: 2 and 4. This violates uniqueness.\n3.  **Function.** Every element maps to a unique output."
+        }
+      ]
+    },
+    {
+      "id": "11_2_4",
+      "title": "Standard Functions and their Graphs",
+      "content": "Understanding the behavior and graphs of standard functions is essential for Calculus.\n\n### 1. Identity Function\n$$ f(x) = x $$\n* Domain: $\\mathbb{R}$, Range: $\\mathbb{R}$.\n* Graph: A straight line passing through origin with slope 1 ($45^\\circ$ angle).\n\n### 2. Constant Function\n$$ f(x) = c $$\n* Domain: $\\mathbb{R}$, Range: $\\{c\\}$.\n* Graph: A horizontal line parallel to x-axis.\n\n### 3. Polynomial Functions\n* **Square Function ($f(x) = x^2$):** Parabola opening upwards. Domain $\\mathbb{R}$, Range $[0, \\infty)$.\n* **Cubic Function ($f(x) = x^3$):** S-shaped curve passing through origin. Domain $\\mathbb{R}$, Range $\\mathbb{R}$.\n\n### 4. Rational Functions\nFunctions of the form $f(x) = \\frac{p(x)}{q(x)}$ where $q(x) \\neq 0$.\n* **Reciprocal Function ($f(x) = 1/x$):**\n    * Domain: $\\mathbb{R} - \\{0\\}$.\n    * Range: $\\mathbb{R} - \\{0\\}$.\n    * Graph: Hyperbola in 1st and 3rd quadrants. As $x \\to \\infty, y \\to 0$.\n\n### 5. The Modulus Function (Absolute Value)\n$$ f(x) = |x| = \\begin{cases} x & \\text{if } x \\ge 0 \\\\ -x & \\text{if } x < 0 \\end{cases} $$\n* **Domain:** $\\mathbb{R}$\n* **Range:** $[0, \\infty)$\n* **Graph:** V-shaped with vertex at $(0,0)$.\n* **Properties:**\n    * $\\sqrt{x^2} = |x|$ (Important! $\\sqrt{x^2} \\neq x$ if $x$ is negative).\n    * $|x| < a \\iff -a < x < a$.\n    * $|x| > a \\iff x < -a \\text{ or } x > a$.\n\n### 6. The Signum Function\n$$ f(x) = \\text{sgn}(x) = \\begin{cases} 1 & \\text{if } x > 0 \\\\ 0 & \\text{if } x = 0 \\\\ -1 & \\text{if } x < 0 \\end{cases} $$\n* Also written as $f(x) = \\frac{|x|}{x}$ for $x \\neq 0$.\n* **Domain:** $\\mathbb{R}$.\n* **Range:** $\\{-1, 0, 1\\}$.\n\n### 7. Greatest Integer Function (Step Function)\n$$ f(x) = [x] $$\n$[x]$ represents the greatest integer less than or equal to $x$.\n* Examples: $[2.3] = 2$, $[5] = 5$, $[-2.3] = -3$ (since $-3 < -2.3$).\n* **Domain:** $\\mathbb{R}$.\n* **Range:** $\\mathbb{Z}$ (Integers).\n* **Graph:** Looks like steps (Stepped Function).\n* **Key Property:** $x - 1 < [x] \\le x$.\n\n### 8. Fractional Part Function (JEE Extra)\n$$ \\{x\\} = x - [x] $$\n* Examples: $\\{2.3\\} = 0.3$, $\\{-2.3\\} = 0.7$.\n* **Range:** $[0, 1)$.\n* **Period:** 1.",
+      "examples": [
+        {
+          "id": "ex_2_5",
+          "question": "Find the value of: 1. $|-5| - |-2|$\n2. $[4.7] + [-4.7]$\n3. sgn($-10$)",
+          "solution": "1. $|-5| - |-2| = 5 - 2 = 3$.\n2. $[4.7] = 4$. For $[-4.7]$, the greatest integer less than -4.7 is -5. So, $4 + (-5) = -1$.\n3. sgn($-10$) = -1 (since inputs < 0 give -1)."
+        }
+      ]
+    },
+    {
+      "id": "11_2_5",
+      "title": "Algebra of Functions",
+      "content": "Just as we add numbers, we can add, subtract, multiply, and divide functions.\n\nLet $f: X \\to \\mathbb{R}$ and $g: X \\to \\mathbb{R}$ be two real functions.\n\n**1. Addition:**\n$(f + g)(x) = f(x) + g(x)$, for all $x \\in X$.\n\n**2. Subtraction:**\n$(f - g)(x) = f(x) - g(x)$, for all $x \\in X$.\n\n**3. Multiplication by Scalar:**\n$(\\alpha f)(x) = \\alpha f(x)$, where $\\alpha$ is a real constant.\n\n**4. Product of two functions:**\n$(fg)(x) = f(x)g(x)$, for all $x \\in X$.\n\n**5. Quotient of two functions:**\n$\\left(\\frac{f}{g}\\right)(x) = \\frac{f(x)}{g(x)}$, provided $g(x) \\neq 0$.\n\n### Domain of Algebra of Functions (Critical for JEE)\nThe domain of the new function is generally the **intersection** of the domains of the individual functions.\n\n* $D_{f \\pm g} = D_f \\cap D_g$\n* $D_{f \\cdot g} = D_f \\cap D_g$\n* $D_{f/g} = D_f \\cap D_g - \\{ x : g(x) = 0 \\}$",
+      "examples": [
+        {
+          "id": "ex_2_6",
+          "question": "Let $f(x) = \\sqrt{x}$ and $g(x) = x$. Find $(f+g)(x)$, $(fg)(x)$ and define their domains.",
+          "solution": "1.  **Domains:**\n    * $f(x) = \\sqrt{x}$ is defined for $x \\ge 0$. $D_f = [0, \\infty)$.\n    * $g(x) = x$ is defined for all $\\mathbb{R}$. $D_g = \\mathbb{R}$.\n    * Intersection: $D_f \\cap D_g = [0, \\infty)$.\n\n2.  $(f+g)(x) = \\sqrt{x} + x$. Domain: $[0, \\infty)$.\n3.  $(fg)(x) = x\\sqrt{x} = x^{3/2}$. Domain: $[0, \\infty)$."
+        }
+      ]
+    },
+    {
+      "id": "11_2_6",
+      "title": "Finding Domain and Range (Techniques)",
+      "content": "This is the most common problem type in exams. Here are the golden rules.\n\n### Rules for Finding Domain\n1.  **Denominator $\\neq 0$:** If $f(x) = \\frac{1}{Q(x)}$, set $Q(x) \\neq 0$.\n2.  **Even Roots $\\ge 0$:** If $f(x) = \\sqrt{E(x)}$, set $E(x) \\ge 0$.\n3.  **Logarithms:** If $f(x) = \\log_a(B(x))$, set $B(x) > 0$ and base conditions ($a>0, a \\neq 1$).\n\n### Rules for Finding Range\nRange is the set of all output values $y$.\n**Method 1: Express $x$ in terms of $y$**\n1.  Let $y = f(x)$.\n2.  Solve for $x$ to get $x = g(y)$.\n3.  Find the domain of $g(y)$. This is often the range of $f$.\n\n**Method 2: Using Known Ranges**\n* Start with known facts like $x^2 \\ge 0$, $-1 \\le \\sin x \\le 1$, $|x| \\ge 0$.\n* Construct the function using inequalities.\n\n**Method 3: Calculus (Monotonicity)**\n(For Class 12, but useful to know) If $f'(x) > 0$, function is increasing; range is $[f(min), f(max)]$.",
+      "examples": [
+        {
+          "id": "ex_2_7",
+          "question": "Find the domain and range of $f(x) = \\sqrt{9 - x^2}$.",
+          "solution": "**Domain:**\nFor square root to be defined, $9 - x^2 \\ge 0$.\n$(3-x)(3+x) \\ge 0$.\nUsing wavy curve method: $x \\in [-3, 3]$.\n\n**Range:**\nLet $y = \\sqrt{9 - x^2}$.\nClearly $y \\ge 0$ (square root is non-negative).\nSquare both sides: $y^2 = 9 - x^2 \\implies x^2 = 9 - y^2$.\nSince $x^2 \\ge 0$, we have $9 - y^2 \\ge 0 \\implies y^2 \\le 9 \\implies -3 \\le y \\le 3$.\nCombining $y \\ge 0$ and $y \\in [-3, 3]$, we get **Range** = $[0, 3]$."
+        },
+        {
+          "id": "ex_2_8",
+          "question": "Find the range of $f(x) = \\frac{x^2}{1+x^2}$.",
+          "solution": "1.  Since $x^2 \\ge 0$, both numerator and denominator are non-negative.\n2.  Clearly $x^2 < 1 + x^2$, so the ratio is always $< 1$.\n3.  Minimum value is at $x=0$, $f(0) = 0$.\n4.  So, $0 \\le f(x) < 1$.\n**Range:** $[0, 1)$."
+        }
+      ]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "fmt_2_1",
+      "label": "Equality of Ordered Pairs",
+      "tex": "(a, b) = (x, y) \\iff a=x \\text{ and } b=y"
+    },
+    {
+      "id": "fmt_2_2",
+      "label": "Cartesian Product Cardinality",
+      "tex": "n(A \\times B) = n(A) \\times n(B)"
+    },
+    {
+      "id": "fmt_2_3",
+      "label": "Number of Relations",
+      "tex": "N_R = 2^{n(A)n(B)}"
+    },
+    {
+      "id": "fmt_2_4",
+      "label": "Modulus Function",
+      "tex": "|x| = \\begin{cases} x & x \\ge 0 \\\\ -x & x < 0 \\end{cases}"
+    },
+    {
+      "id": "fmt_2_5",
+      "label": "Modulus Inequality",
+      "tex": "|x| < a \\iff -a < x < a"
+    },
+    {
+      "id": "fmt_2_6",
+      "label": "Greatest Integer Function Property",
+      "tex": "x - 1 < [x] \\le x"
+    },
+    {
+      "id": "fmt_2_7",
+      "label": "Fractional Part Function",
+      "tex": "\\{x\\} = x - [x], \\quad 0 \\le \\{x\\} < 1"
+    }
+  ]
+}

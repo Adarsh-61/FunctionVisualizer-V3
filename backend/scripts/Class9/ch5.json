@@ -1,0 +1,196 @@
+{
+  "id": "class_9",
+  "title": "Class 9",
+  "chapters": [
+    {
+      "id": "ch_5_euclid_geometry",
+      "title": "Ch 5: Introduction to Euclid's Geometry",
+      "topics": [
+        {
+          "id": "topic_5_1_logic_and_history",
+          "title": "5.1 The Logical Foundations of Geometry",
+          "content": "### 1. Introduction: The Necessity of Structure\nGeometry, derived from the Greek words *geo* (earth) and *metrein* (to measure), began as a practical science. Ancient civilizations—Egyptians, Babylonians, Indians, and Chinese—used geometry for land surveying, architecture, and astronomy. However, their approach was empirical: they knew *what* worked, but they were not primarily concerned with *why* it worked.\n\nAround 300 BCE, a Greek mathematician named **Euclid** of Alexandria collected all known geometric knowledge of his time and organized it into a single, logical framework. His masterpiece, *The Elements*, is not just a book on geometry; it is the first comprehensive example of a **Deductive System**.\n\n#### 1.1 The Architecture of Mathematics\nTo understand Euclid's work, one must understand how mathematics is built. You cannot prove everything. If you try to define every term, you end up in an infinite loop of definitions. If you try to prove every statement, you need previous statements to prove them, leading to an infinite regression.\n\nTo resolve this, a mathematical system is built in layers:\n1.  **Undefined Terms:** The most basic building blocks (Point, Line, Plane) which we accept without definition to avoid circularity.\n2.  **Definitions:** Precise descriptions of other terms using undefined terms.\n3.  **Axioms & Postulates:** Statements assumed to be true without proof. They are the \"rules of the game.\"\n4.  **Theorems:** Statements that are proved to be true using axioms, definitions, and previously proved theorems.\n\nThis structure—starting from unproved assumptions to derive complex truths—is the essence of **Axiomatic Geometry**.\n\n#### 1.2 Undefined Terms: The Starting Point\nWhy do we leave some terms undefined?\nConsider the definition of a **Point**. Euclid defined it as \"that which has no part.\" But what is a \"part\"? If we define \"part\" as \"a portion of a whole,\" what is a \"portion\"? Eventually, we must point to a concept and say, \"We all intuitively understand this.\"\n\nIn modern geometry, we accept three concepts as undefined:\n1.  **Point:** Represents a location in space. It has no dimension (no length, breadth, or height).\n2.  **Line:** Represents direction and length. It has one dimension (length) but no breadth. It extends indefinitely in both directions.\n3.  **Plane:** Represents a flat surface. It has two dimensions (length and breadth) but no thickness. It extends indefinitely.\n\nWhile undefined, these terms are given properties through **Axioms**. For example, we don't define a line, but we define the *behavior* of a line via an axiom: \"Through any two points, there is exactly one line.\"",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_5_2_euclid_definitions_analysis",
+          "title": "5.2 Euclid's Definitions: A Critical Analysis",
+          "content": "### 2. Euclid's Definitions (Book I of The Elements)\nEuclid began *The Elements* with 23 definitions. While some are mathematically archaic, they provide insight into how early mathematicians conceptualized space.\n\n1.  **\"A point is that which has no part.\"**\n    * *Analysis:* This implies indivisibility. A point is a zero-dimensional object. It is a location, not a substance.\n2.  **\"A line is breadthless length.\"**\n    * *Analysis:* This defines a 1D object. By stating it has no breadth, Euclid isolates the property of length.\n3.  **\"The ends of a line are points.\"**\n    * *Analysis:* This describes a line segment. It establishes the boundary relationship: a 0D object (point) bounds a 1D object (line).\n4.  **\"A straight line is a line which lies evenly with the points on itself.\"**\n    * *Analysis:* This is arguably the most cryptic definition. It suggests uniformity and symmetry. If you look at a straight line from one end, it hides all the other points behind the first one.\n5.  **\"A surface is that which has length and breadth only.\"**\n    * *Analysis:* This defines a 2D object. No thickness.\n6.  **\"The edges of a surface are lines.\"**\n    * *Analysis:* Just as points bound lines, lines bound surfaces. This hierarchy of dimensions (Point $\\to$ Line $\\to$ Surface $\\to$ Solid) is central to Euclidean thought.\n7.  **\"A plane surface is a surface which lies evenly with the straight lines on itself.\"**\n    * *Analysis:* Similar to the straight line definition, it implies flatness. If you take any two points on a plane, the straight line connecting them lies entirely within the plane.\n\n#### 2.1 Moving to Modern Definitions\nWe now refine these historical definitions for precision:\n* **Collinear Points:** Three or more points that lie on the same line.\n* **Concurrent Lines:** Three or more lines that intersect at the same point.\n* **Intersects:** Two lines intersect if they share exactly one common point.",
+          "formulas": [],
+          "examples": [
+            {
+              "id": "ex_euclid_1",
+              "question": "Why is the definition 'A line is a collection of points' technically insufficient without further context in modern topology?",
+              "steps": [
+                {
+                  "explanation": "A 'collection of points' implies a Set. A circle is also a collection of points. A sphere is a collection of points."
+                },
+                {
+                  "explanation": "To define a line, we need to specify the *structure* or *order* of these points (linearity, betweenness). This is why Euclid tried to describe 'straightness' rather than just composition."
+                }
+              ],
+              "finalAnswer": "It fails to distinguish a line from any other geometric figure composed of points."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_5_3_axioms_common_notions",
+          "title": "5.3 Common Notions: The Axioms of Quantity",
+          "content": "### 3. Axioms vs. Postulates\nEuclid distinguished between two types of assumptions:\n* **Postulates:** Assumptions specific to geometry (e.g., about lines and circles).\n* **Common Notions (Axioms):** Assumptions applicable to all sciences (logic, magnitude, numbers).\n\nToday, we use the term \"Axiom\" for both. However, understanding Euclid's separation helps us see geometry as a specific application of general logic.\n\n#### 3.1 Euclid's 7 Common Notions\nThese are the rules of equality and inequality.\n\n**1. Things which are equal to the same thing are equal to one another.**\n* *Logic:* If $A = B$ and $C = B$, then $A = C$. This is the **Transitive Property** of equality.\n* *Application:* Used in almost every proof to bridge two separate steps.\n\n**2. If equals are added to equals, the wholes are equal.**\n* *Logic:* If $A = B$ and $C = D$, then $A + C = B + D$.\n* *Application:* Adding line segments or angles.\n\n**3. If equals are subtracted from equals, the remainders are equal.**\n* *Logic:* If $A = B$ and $C = D$, then $A - C = B - D$.\n\n**4. Things which coincide with one another are equal to one another.**\n* *Logic:* This is the principle of **Superposition**. If figure X can be placed exactly on figure Y so they cover each other perfectly, they are congruent/equal.\n* *Note:* Modern geometry avoids moving figures physically, but this was Euclid's primary way of proving congruence (e.g., SAS congruence).\n\n**5. The whole is greater than the part.**\n* *Logic:* If $B$ is a part of $A$, then $A > B$. This axiom defines the concept of \"magnitude\" or \"size.\"\n* *Limitation:* This holds for finite quantities. In modern set theory with infinite sets, a part can be equivalent to the whole (e.g., the set of even integers is equivalent in cardinality to the set of all integers). But in Euclidean geometry, we deal with finite lengths and areas.\n\n**6. Things which are double of the same things are equal to one another.**\n* *Logic:* If $A = 2X$ and $B = 2X$, then $A = B$.\n\n**7. Things which are halves of the same things are equal to one another.**\n* *Logic:* If $A = \\frac{1}{2}X$ and $B = \\frac{1}{2}X$, then $A = B$.\n\n#### 3.2 Consistency of Axioms\nA set of axioms must be **Consistent**. This means it is impossible to deduce a statement and its negation from the same set of axioms. If a system allows you to prove both \"Line L is parallel to Line M\" and \"Line L intersects Line M\", the system is broken (inconsistent). Euclidean geometry is consistent.",
+          "formulas": [
+            "A = B, B = C \\implies A = C",
+            "A = B \\implies A+x = B+x",
+            "A > Part(A)"
+          ],
+          "examples": [
+            {
+              "id": "ex_axiom_1",
+              "question": "If Area(Triangle ABC) = Area(Rectangle PQRS) and Area(Triangle XYZ) = Area(Rectangle PQRS), what can you conclude?",
+              "steps": [
+                {
+                  "explanation": "We are given two things equal to the same thing (Rectangle PQRS)."
+                },
+                {
+                  "explanation": "According to Axiom 1: \"Things which are equal to the same thing are equal to one another.\""
+                },
+                {
+                  "explanation": "Conclusion: Area(Triangle ABC) = Area(Triangle XYZ)."
+                }
+              ],
+              "finalAnswer": "The areas are equal."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_5_4_postulates_1_4",
+          "title": "5.4 The First Four Postulates: Constructing Space",
+          "content": "### 4. Euclid's Postulates\nThese are the specific assumptions about geometric space.\n\n#### Postulate 1: Straight Line Construction\n**\"A straight line may be drawn from any one point to any other point.\"**\n* *Implication:* Given two distinct points $A$ and $B$, there exists a line segment connecting them.\n* *Uniqueness Axiom:* A closely related modern axiom states, \"Given two distinct points, there is a **unique** line that passes through them.\" Euclid assumed uniqueness implicitly in his proofs, though he didn't explicitly state it in this postulate.\n\n#### Postulate 2: Terminated Lines\n**\"A terminated line can be produced indefinitely.\"**\n* *Clarification:* What Euclid called a \"terminated line,\" we call a **Line Segment**.\n* *Implication:* Space is infinite. You never hit a wall. If you have a segment $AB$, you can extend it towards $B$ to a point $C$, and further to $D$, forever. This establishes the continuous and infinite nature of the line.\n\n#### Postulate 3: Circles\n**\"A circle can be drawn with any centre and any radius.\"**\n* *Implication:* This guarantees the existence of circles and, crucially, the ability to transfer distances. If you have a segment length $r$, you can construct a circle of radius $r$ anywhere in the plane. This is the foundation of compass-and-straightedge constructions.\n\n#### Postulate 4: Right Angles\n**\"All right angles are equal to one another.\"**\n* *Why is this needed?* Isn't 90 degrees always 90 degrees?\n* *Deep Logic:* This postulates the **Homogeneity** and **Isotropy** of space. It means space is the same everywhere (homogeneity) and looks the same in every direction (isotropy).\n* If this were not true, a right angle measured at the North Pole might be \"sharper\" or \"wider\" than a right angle measured at the Equator. This postulate ensures that the shape of an object doesn't change just because you move it to a different location.",
+          "formulas": [],
+          "examples": [
+            {
+              "id": "ex_postulate_1",
+              "question": "Identify the postulate used: 'We can extend the side BC of triangle ABC to a point D'.",
+              "steps": [
+                {
+                  "explanation": "The action described is taking a line segment (side BC) and extending it."
+                },
+                {
+                  "explanation": "This corresponds directly to Postulate 2: 'A terminated line can be produced indefinitely'."
+                }
+              ],
+              "finalAnswer": "Postulate 2"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_5_5_postulate_5_analysis",
+          "title": "5.5 The Fifth Postulate: The Complexity of Parallels",
+          "content": "### 5. Euclid's Fifth Postulate\nThis is the most famous and controversial postulate in the history of mathematics.\n\n**Statement:**\n\"If a straight line falling on two straight lines makes the interior angles on the same side of it taken together less than two right angles, then the two straight lines, if produced indefinitely, meet on that side on which the sum of angles is less than two right angles.\"\n\n#### 5.1 Breaking it Down\nLet line $l$ intersect lines $m$ and $n$.\nLet the interior angles on one side be $\\alpha$ and $\\beta$.\n* **Condition:** $\\alpha + \\beta < 180^\\circ$ (two right angles).\n* **Conclusion:** Lines $m$ and $n$ will intersect if extended on that side.\n* **Inverse Implication:** If $\\alpha + \\beta = 180^\\circ$, the lines never meet. They are **Parallel**.\n\n#### 5.2 Why is it Controversial?\nCompare Postulate 5 to Postulate 1 (\"Draw a line from A to B\").\n* Postulate 1 is simple, intuitive, and brief.\n* Postulate 5 is complex, wordy, and conditional.\nFor 2000 years, mathematicians felt Postulate 5 was not basic enough to be an axiom. It looked like a theorem. They tried to prove it using Postulates 1–4. \n**They all failed.**\nWhy? Because it *is* an independent axiom. You cannot derive parallel lines strictly from the concepts of points, extension, and circles.\n\n#### 5.3 Equivalent Versions (Playfair's Axiom)\nSince Euclid's version is cumbersome, John Playfair proposed a simpler, logically equivalent statement:\n**\"For every line $l$ and for every point $P$ not lying on $l$, there exists a unique line $m$ passing through $P$ and parallel to $l$.\"**\n\nThis asserts two things:\n1.  **Existence:** A parallel line exists.\n2.  **Uniqueness:** Only *one* such line exists.\n\nOther equivalents:\n* The sum of angles in a triangle is $180^\\circ$.\n* Rectangles exist (quadrilaterals with 4 right angles).\n* If a line intersects one of two parallel lines, it must intersect the other.",
+          "formulas": [
+            "\\alpha + \\beta < 180^\\circ \\implies \\text{Intersection}",
+            "\\alpha + \\beta = 180^\\circ \\implies \\text{Parallel}"
+          ],
+          "examples": [
+            {
+              "id": "ex_postulate_5",
+              "question": "Does Euclid's fifth postulate imply the existence of parallel lines? Explain.",
+              "steps": [
+                {
+                  "explanation": "Postulate 5 states that if the sum of interior angles is *less* than 180 degrees, lines meet."
+                },
+                {
+                  "explanation": "This logically implies the boundary condition: If the sum *equals* 180 degrees, they do *not* meet."
+                },
+                {
+                  "explanation": "Lines that do not meet are defined as parallel lines. Thus, the postulate implicitly defines the condition for parallelism."
+                }
+              ],
+              "finalAnswer": "Yes, by defining the condition for non-intersection."
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Visualizing Postulate 5",
+            "functions": [
+              { "expression": "0.5*x + 1", "color": "blue", "label": "Line m" },
+              { "expression": "-0.2*x + 4", "color": "green", "label": "Line n" },
+              { "expression": "100*(x-2)", "color": "red", "label": "Transversal (Vertical-ish)" }
+            ],
+            "xRange": [-5, 10],
+            "yRange": [-2, 8]
+          }
+        },
+        {
+          "id": "topic_5_6_non_euclidean_context",
+          "title": "5.6 Non-Euclidean Geometries (Advanced Context)",
+          "content": "### 6. What if Postulate 5 is Wrong?\nThe failure to prove the Fifth Postulate led to a breakthrough in the 19th century (by Gauss, Bolyai, and Lobachevsky). They asked: *\"What if we assume Postulate 5 is FALSE? Do we get a contradiction, or do we get a new kind of geometry?\"*\n\nThey found that new, consistent geometries exist.\n\n#### 6.1 Hyperbolic Geometry\n* **Assumption:** Through a point $P$ outside line $l$, there are **infinite** lines parallel to $l$.\n* **Result:** Space is curved like a saddle.\n* **Triangle Sum:** The sum of angles in a triangle is **less than** $180^\\circ$.\n\n#### 6.2 Elliptic (Spherical) Geometry\n* **Assumption:** Through a point $P$ outside line $l$, there are **zero** lines parallel to $l$. (All lines intersect).\n* **Result:** Space is curved like a sphere.\n* **Example:** Lines of longitude on Earth are \"straight lines\" (great circles). They are parallel at the equator but meet at the poles.\n* **Triangle Sum:** The sum of angles in a triangle is **greater than** $180^\\circ$.\n\n**Significance:** This proves that Euclidean Geometry is not the \"absolute truth\" of the universe, but rather the geometry of **flat surfaces**. On curved surfaces, Euclid's definitions hold, but the Fifth Postulate does not.",
+          "formulas": [
+            "\\Sigma \\text{Angles} = 180^\\circ \\quad (\\text{Euclidean})",
+            "\\Sigma \\text{Angles} < 180^\\circ \\quad (\\text{Hyperbolic})",
+            "\\Sigma \\text{Angles} > 180^\\circ \\quad (\\text{Elliptic})"
+          ],
+          "examples": [],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_5_7_logic_proofs_theorems",
+          "title": "5.7 The Structure of a Proof",
+          "content": "### 7. Deductive Reasoning\nA mathematical proof is a logical argument that establishes the truth of a theorem beyond doubt.\n\n#### 7.1 Components of a Theorem\nA theorem usually takes the form: **\"If P, then Q.\"**\n* **Hypothesis (Given):** The condition $P$ assumed to be true.\n* **Conclusion (To Prove):** The result $Q$ derived from $P$.\n\n#### 7.2 Steps in a Proof\n1.  **Statement:** Write clearly what is given and what needs to be proved.\n2.  **Construction (Optional):** Drawing auxiliary lines to help in the proof. (Justified by Postulates 1–3).\n3.  **Proof:** A sequence of logical statements.\n    * Every statement must be supported by a **Reason**.\n    * Valid reasons: Definitions, Axioms, Postulates, or Previously Proved Theorems.\n\n#### 7.3 Theorem 5.1 (Two distinct lines cannot have more than one point in common)\n**Given:** Two distinct lines $l$ and $m$.\n**To Prove:** They have at most one intersection point.\n**Proof (by Contradiction):**\n1.  **Assumption:** Assume the contrary—that lines $l$ and $m$ intersect at two distinct points, say $P$ and $Q$.\n2.  **Implication:** This means line $l$ passes through $P$ and $Q$. Line $m$ also passes through $P$ and $Q$.\n3.  **Conflict:** This implies there are *two different lines* passing through the same two distinct points $P$ and $Q$.\n4.  **Axiom Check:** Recall the axiom (derived from Postulate 1): \"Given two distinct points, there is a **unique** line that passes through them.\"\n5.  **Contradiction:** Our assumption contradicts the uniqueness axiom.\n6.  **Conclusion:** Therefore, our assumption is false. Two distinct lines cannot share more than one point.",
+          "formulas": [],
+          "examples": [
+            {
+              "id": "ex_proof_1",
+              "question": "Prove that an equilateral triangle can be constructed on any given line segment. (Euclid's Proposition 1)",
+              "steps": [
+                {
+                  "explanation": "Given: Line segment AB."
+                },
+                {
+                  "explanation": "Step 1: Using Postulate 3, draw a circle with center A and radius AB."
+                },
+                {
+                  "explanation": "Step 2: Draw a circle with center B and radius BA."
+                },
+                {
+                  "explanation": "Step 3: Let the circles intersect at point C."
+                },
+                {
+                  "explanation": "Step 4: Join AC and BC (Postulate 1)."
+                },
+                {
+                  "explanation": "Proof: AC = AB (Radii of same circle). BC = AB (Radii of same circle). By Axiom 1, AC = BC. Thus AB = BC = CA."
+                },
+                {
+                  "explanation": "Triangle ABC is equilateral."
+                }
+              ],
+              "finalAnswer": "Constructed and Proved."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_5_8_practice_bank",
+          "title": "5.8 Practice Bank",
+          "content": "### 8. Comprehensive Practice Questions\n\n#### Section A: Conceptual Reasoning (True/False with Justification)\n1.  **Statement:** Only one line can pass through a single point.\n    * **Answer:** False. Infinite lines can pass through a single point (Pencil of lines).\n2.  **Statement:** There are infinite number of lines which pass through two distinct points.\n    * **Answer:** False. Axiom of uniqueness states only one line passes through two points.\n3.  **Statement:** A terminated line can be produced indefinitely on both sides.\n    * **Answer:** True. This is Postulate 2.\n4.  **Statement:** If two circles are equal, their radii are equal.\n    * **Answer:** True. By definition of congruence (superposition).\n5.  **Statement:** In Fig, if $AB = PQ$ and $PQ = XY$, then $AB = XY$.\n    * **Answer:** True. Axiom 1 (Things equal to the same thing...).\n6.  **Statement:** A Point has a dimension of 1.\n    * **Answer:** False. A point is zero-dimensional.\n7.  **Statement:** The boundaries of solids are surfaces.\n    * **Answer:** True. Solid $\\to$ Surface $\\to$ Line $\\to$ Point.\n8.  **Statement:** Euclid's geometry is valid only for curved surfaces.\n    * **Answer:** False. It is valid for flat (planar) surfaces.\n9.  **Statement:** 'Line' is a defined term in geometry.\n    * **Answer:** False. It is an undefined term.\n10. **Statement:** Playfair's axiom is equivalent to the Fifth Postulate.\n    * **Answer:** True.\n\n#### Section B: Analytical Questions\n11. If a point $C$ lies between two points $A$ and $B$ such that $AC = BC$, then prove that $AC = \\frac{1}{2} AB$. Explain by drawing the figure.\n12. Prove that every line segment has one and only one midpoint.\n13. If point $P$ lies on line $AB$, can we say $AP + PB = AB$? Which axiom is used?\n14. Define 'Parallel Lines' using the concept of intersection.\n15. Solve the equation $a - 15 = 25$ and state which Euclid's axiom is used here.\n16. Why is Axiom 5 (\"The whole is greater than the part\") considered a universal truth?\n17. Does Euclid’s fifth postulate imply the existence of parallel lines? Explain.\n18. Explain why the statement \"A line contains infinite points\" is consistent with Euclid's postulates.\n19. Consider the statement: \"Two lines that do not intersect are parallel.\" Is this a definition or a theorem?\n20. Explain the difference between an Axiom and a Theorem.\n\n#### Section C: Must-Practice (Reasoning)\n21. **(Must Practice)** Prove that two distinct lines cannot be parallel to the same line. (Hint: Use Playfair's Axiom).\n22. **(Must Practice)** Check if the system of axioms is consistent: (i) Given two distinct points A and B, there is a third point C between them. (ii) Given points A and B, there is a point C not on the line AB.\n23. **(Must Practice)** Ram says \"If equals are multiplied by equals, the products are equal\". Is this a valid Euclidean axiom? (Yes, implied by double/halves notions).\n24. **(Must Practice)** In geometric proof, why do we need 'undefined terms'?\n25. **(Must Practice)** Why did Euclid separate Postulate 5 from the first four?\n26. **(Must Practice)** How would you rewrite Euclid’s fifth postulate so it would be easier to understand? (Use Playfair's version).\n27. **(Must Practice)** Does the concept of 'Similarity' exist in Euclidean geometry? (Yes, shape same, size different).\n28. **(Must Practice)** Is it possible for two lines to be perpendicular to the same line? What is the relationship between them?\n29. **(Must Practice)** If $AB = CD$, can we say $AB + EF = CD + EF$? Which axiom applies?\n30. **(Must Practice)** Read the following axioms: (i) Four points are collinear. (ii) Three lines form a triangle. Are these consistent?",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_5_9_compendium",
+          "title": "5.9 Formula & Concept Compendium",
+          "content": "### 9. Chapter Summary\n\n#### 9.1 Hierarchy of Geometry\n1.  **Solids:** 3 Dimensions (Length, Breadth, Height). Boundaries are Surfaces.\n2.  **Surfaces:** 2 Dimensions (Length, Breadth). Boundaries are Lines.\n3.  **Lines:** 1 Dimension (Length). Boundaries are Points.\n4.  **Points:** 0 Dimensions. No part.\n\n#### 9.2 The Seven Common Notions (Axioms)\n1.  $A=X, B=X \\implies A=B$\n2.  $A=B \\implies A+C = B+C$\n3.  $A=B \\implies A-C = B-C$\n4.  Coinciding figures are equal.\n5.  Whole > Part.\n6.  $A=B \\implies 2A = 2B$\n7.  $A=B \\implies A/2 = B/2$\n\n#### 9.3 The Five Postulates\n1.  **Line Existence:** Unique straight line between two points.\n2.  **Line Extension:** Lines can be extended indefinitely.\n3.  **Circle Construction:** Circle exists for any center and radius.\n4.  **Right Angles:** All right angles are equal.\n5.  **Parallel Postulate:** If interior angles sum < $180^\\circ$, lines intersect.\n\n#### 9.4 Key Logic Concepts\n* **Consistency:** A system where axioms do not contradict each other.\n* **Theorem:** A statement proved using axioms and logic.\n* **Playfair's Axiom:** For a line $l$ and point $P$ not on $l$, there is a unique line through $P$ parallel to $l$.",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

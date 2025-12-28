@@ -1,0 +1,275 @@
+{
+  "id": "class_10",
+  "title": "Class 10",
+  "chapters": [
+    {
+      "id": "ch_4_quadratic_equations",
+      "title": "Ch 4: Quadratic Equations",
+      "topics": [
+        {
+          "id": "topic_4_1_introduction_and_modeling",
+          "title": "4.1 Introduction: The Logic of Squares",
+          "content": "### 1. From Linear to Quadratic\nIn Chapter 3, we dealt with linear equations like $ax + b = 0$. These model situations where change is constant (e.g., buying items at a fixed price). However, nature and geometry often involve **products** of variables, leading to terms with degree 2.\n\n#### 1.1 The Necessity of Degree 2\nConsider this problem: *\"A charity trust wants to build a prayer hall with a carpet area of 300 sq m. The length must be one metre more than twice its breadth.\"* [cite: 1]\n\n* Let Breadth = $x$ metres.\n* Then Length = $(2x + 1)$ metres.\n* Area = Length $\\times$ Breadth = $(2x+1) \\cdot x$.\n* Equation: $2x^2 + x = 300 \\implies 2x^2 + x - 300 = 0$.\n\nThis is not a linear equation. It involves $x^2$. This is a **Quadratic Equation**.\n\n#### 1.2 Formal Definition\nA quadratic equation in the variable $x$ is an equation of the form:\n$$ax^2 + bx + c = 0$$\nwhere $a, b, c$ are real numbers and **$a \\neq 0$**.\n\n* **Standard Form:** Writing the equation in descending powers of $x$ (i.e., $x^2$ term, then $x$ term, then constant).\n* **Why $a \\neq 0$?** If $a=0$, the equation becomes $bx+c=0$, which is linear, not quadratic.\n\n#### 1.3 Roots vs Zeroes\n* **Polynomial Context:** For $p(x) = ax^2+bx+c$, the values of $x$ for which $p(x)=0$ are called **Zeroes**.\n* **Equation Context:** For $ax^2+bx+c=0$, the values of $x$ that satisfy the equation are called **Roots**.\n* *Conceptually, they are the same thing.* Solving a quadratic equation is equivalent to finding the zeroes of a quadratic polynomial.\n\n#### 1.4 Historical Note\nQuadratic equations have been studied since antiquity. The Babylonians (c. 2000 BC) solved problems equivalent to quadratics. Euclid developed a geometric approach. Brahmagupta (AD 598–665) gave an explicit formula nearly identical to the modern one. [cite: 1]",
+          "formulas": [
+            "ax^2 + bx + c = 0 \\quad (a \\neq 0)",
+            "\\text{Area} = l \\times b"
+          ],
+          "examples": [
+            {
+              "id": "ex_quad_1",
+              "question": "Check whether the following are quadratic equations: (i) $(x-2)^2 + 1 = 2x - 3$, (ii) $x(x+1) + 8 = (x+2)(x-2)$.",
+              "steps": [
+                {
+                  "explanation": "(i) Expand LHS: $(x-2)^2 + 1 = x^2 - 4x + 4 + 1 = x^2 - 4x + 5$."
+                },
+                {
+                  "explanation": "Equate to RHS: $x^2 - 4x + 5 = 2x - 3$."
+                },
+                {
+                  "explanation": "Rearrange: $x^2 - 6x + 8 = 0$."
+                },
+                {
+                  "explanation": "This is of the form $ax^2+bx+c=0$ with $a=1 \\neq 0$. So, it is a quadratic equation."
+                },
+                {
+                  "explanation": "(ii) Expand LHS: $x^2 + x + 8$."
+                },
+                {
+                  "explanation": "Expand RHS: $x^2 - 4$ (Difference of squares)."
+                },
+                {
+                  "explanation": "Equate: $x^2 + x + 8 = x^2 - 4$."
+                },
+                {
+                  "explanation": "Cancel $x^2$: $x + 12 = 0$."
+                },
+                {
+                  "explanation": "This is linear (degree 1), not quadratic."
+                }
+              ],
+              "finalAnswer": "(i) Yes, (ii) No"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_4_2_solution_by_factorisation",
+          "title": "4.2 Solution by Factorisation",
+          "content": "### 2. Solving by Breaking It Down\nFactorisation relies on a fundamental property of real numbers called the **Zero Product Property**.\n\n**Zero Product Property:** If $A \\cdot B = 0$, then either $A=0$ or $B=0$ (or both).\nThis allows us to break a degree-2 problem into two degree-1 problems.\n\n#### 2.1 Splitting the Middle Term (Logic)\nTo solve $ax^2 + bx + c = 0$:\nWe seek to express $bx$ as the sum of two terms $px + qx$ such that the factorization works by grouping.\n* **Condition 1:** $p + q = b$ (The sum is the middle coefficient).\n* **Condition 2:** $p \\times q = a \\times c$ (The product matches the product of outer coefficients).\n\n**Why does this work?**\nIf we write $ax^2 + px + qx + c$, we factor by grouping:\n$= x(ax + p) + \\dots$ wait, this is general. Let's look at the structure:\n$(mx + n)(rx + s) = mrx^2 + (ms+nr)x + ns$.\nHere $a=mr, b=ms+nr, c=ns$.\nProduct $ac = (mr)(ns) = mrns$.\nProduct of split parts of $b$: $(ms)(nr) = msnr$.\nThey are identical! This proves that splitting the middle term is mathematically sound.\n\n#### 2.2 Algorithm\n1.  Find $a, b, c$.\n2.  Find product $ac$.\n3.  Find two numbers that multiply to $ac$ and add to $b$.\n4.  Rewrite the equation splitting the middle term.\n5.  Factor by grouping.\n6.  Set each factor to 0 to find roots.",
+          "formulas": [
+            "p + q = b",
+            "p \\times q = a \\times c"
+          ],
+          "examples": [
+            {
+              "id": "ex_quad_2",
+              "question": "Find the roots of the quadratic equation $6x^2 - x - 2 = 0$.",
+              "steps": [
+                {
+                  "explanation": "Identify $a=6, b=-1, c=-2$."
+                },
+                {
+                  "explanation": "Product $ac = 6 \\times (-2) = -12$. Sum $b = -1$."
+                },
+                {
+                  "explanation": "We need factors of -12 that sum to -1. The numbers are -4 and 3."
+                },
+                {
+                  "explanation": "Split middle term: $6x^2 - 4x + 3x - 2 = 0$."
+                },
+                {
+                  "explanation": "Group terms: $(6x^2 - 4x) + (3x - 2)$."
+                },
+                {
+                  "explanation": "Factor out common terms: $2x(3x - 2) + 1(3x - 2) = 0$."
+                },
+                {
+                  "explanation": "Combine: $(3x - 2)(2x + 1) = 0$."
+                },
+                {
+                  "explanation": "Zero Product Property: $3x - 2 = 0 \\implies x = 2/3$ OR $2x + 1 = 0 \\implies x = -1/2$."
+                }
+              ],
+              "finalAnswer": "Roots are $2/3, -1/2$"
+            },
+            {
+              "id": "ex_quad_3",
+              "question": "Find roots of $3x^2 - 2\\sqrt{6}x + 2 = 0$.",
+              "steps": [
+                {
+                  "explanation": "$a=3, b=-2\\sqrt{6}, c=2$. Product $ac = 6$."
+                },
+                {
+                  "explanation": "We need numbers summing to $-2\\sqrt{6}$ and multiplying to 6. Logic: $\\sqrt{6} \\times \\sqrt{6} = 6$. So $-\\sqrt{6}$ and $-\\sqrt{6}$ work."
+                },
+                {
+                  "explanation": "Split: $3x^2 - \\sqrt{6}x - \\sqrt{6}x + 2 = 0$."
+                },
+                {
+                  "explanation": "Group: $\\sqrt{3}x(\\sqrt{3}x - \\sqrt{2}) - \\sqrt{2}(\\sqrt{3}x - \\sqrt{2}) = 0$."
+                },
+                {
+                  "explanation": "Factors: $(\\sqrt{3}x - \\sqrt{2})(\\sqrt{3}x - \\sqrt{2}) = 0$."
+                },
+                {
+                  "explanation": "Roots: $x = \\sqrt{2}/\\sqrt{3} = \\sqrt{2/3}$."
+                }
+              ],
+              "finalAnswer": "Repeated root $\\sqrt{2/3}$"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_4_3_completing_the_square",
+          "title": "4.3 Completing the Square: The Geometric Method",
+          "content": "### 3. The Geometric Origin of the Formula\nFactorisation fails when roots are irrational (e.g., $x^2 - 2 = 0$). We need a method to handle *any* quadratic. This method is **Completing the Square**.\n\n#### 3.1 The Intuition\nConsider $x^2 + 4x$. This is not a perfect square. A perfect square looks like $(x+a)^2 = x^2 + 2ax + a^2$.\nComparing $x^2 + 4x$ with $x^2 + 2ax$, we see $2a = 4 \\implies a = 2$.\nTo make it a perfect square, we need to add $a^2 = 2^2 = 4$.\nSo, $x^2 + 4x + 4 = (x+2)^2$.\n\n**General Rule:** To complete the square for $x^2 + bx$, add $(\\frac{b}{2})^2$.\n\n#### 3.2 The Method Step-by-Step\nTo solve $ax^2 + bx + c = 0$:\n1.  **Isolate constant:** $ax^2 + bx = -c$.\n2.  **Make leading coeff 1:** Divide by $a$: $x^2 + \\frac{b}{a}x = -\\frac{c}{a}$.\n3.  **Complete the square:** Add $(\\frac{1}{2} \\text{coeff of } x)^2$ to both sides. i.e., add $(\\frac{b}{2a})^2$.\n4.  **Factor:** The LHS becomes $(x + \\frac{b}{2a})^2$.\n5.  **Solve:** Take square root and rearrange.\n\n#### 3.3 Derivation of the Quadratic Formula\nLet's apply this method to the general form. This is one of the most important derivations in high school algebra.\n\n1.  $ax^2 + bx + c = 0$\n2.  $x^2 + \\frac{b}{a}x = -\\frac{c}{a}$ (Divide by $a$)\n3.  Add $(\\frac{b}{2a})^2$ to both sides:\n    $$x^2 + \\frac{b}{a}x + (\\frac{b}{2a})^2 = -\\frac{c}{a} + (\\frac{b}{2a})^2$$\n4.  Factor LHS and simplify RHS:\n    $$(x + \\frac{b}{2a})^2 = -\\frac{c}{a} + \\frac{b^2}{4a^2}$$\n    $$(x + \\frac{b}{2a})^2 = \\frac{-4ac + b^2}{4a^2}$$\n    $$(x + \\frac{b}{2a})^2 = \\frac{b^2 - 4ac}{4a^2}$$\n5.  Take square roots:\n    $$x + \\frac{b}{2a} = \\pm \\sqrt{\\frac{b^2 - 4ac}{4a^2}}$$\n    $$x + \\frac{b}{2a} = \\frac{\\pm \\sqrt{b^2 - 4ac}}{2a}$$\n6.  Isolate $x$:\n    $$x = -\\frac{b}{2a} \\pm \\frac{\\sqrt{b^2 - 4ac}}{2a}$$\n    $$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$\n\nThis is the **Quadratic Formula**.",
+          "formulas": [
+            "x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}",
+            "\\text{To complete square, add } (b/2a)^2"
+          ],
+          "examples": [
+            {
+              "id": "ex_quad_4",
+              "question": "Solve $5x^2 - 6x - 2 = 0$ by completing the square.",
+              "steps": [
+                {
+                  "explanation": "Divide by 5: $x^2 - \\frac{6}{5}x - \\frac{2}{5} = 0$."
+                },
+                {
+                  "explanation": "Move constant: $x^2 - \\frac{6}{5}x = \\frac{2}{5}$."
+                },
+                {
+                  "explanation": "Find term to add: Coeff of x is $-6/5$. Half is $-3/5$. Square is $9/25$."
+                },
+                {
+                  "explanation": "Add $9/25$ to both sides: $x^2 - \\frac{6}{5}x + \\frac{9}{25} = \\frac{2}{5} + \\frac{9}{25}$."
+                },
+                {
+                  "explanation": "Factor LHS and simplify RHS: $(x - \\frac{3}{5})^2 = \\frac{10}{25} + \\frac{9}{25} = \\frac{19}{25}$."
+                },
+                {
+                  "explanation": "Take square root: $x - \\frac{3}{5} = \\pm \\frac{\\sqrt{19}}{5}$."
+                },
+                {
+                  "explanation": "Solve: $x = \\frac{3}{5} \\pm \\frac{\\sqrt{19}}{5} = \\frac{3 \\pm \\sqrt{19}}{5}$."
+                }
+              ],
+              "finalAnswer": "$x = \\frac{3 \\pm \\sqrt{19}}{5}$"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_4_4_nature_of_roots",
+          "title": "4.4 Nature of Roots: The Discriminant",
+          "content": "### 4. Interpreting the Solution\nThe Quadratic Formula is $x = \\frac{-b \\pm \\sqrt{D}}{2a}$, where $D = b^2 - 4ac$. This term $D$ is called the **Discriminant** because it discriminates (determines) the nature of the roots.\n\n#### 4.1 The Three Cases\nSince $D$ is inside a square root, its sign controls the outcome:\n\n1.  **Case 1: $D > 0$ (Two Distinct Real Roots)**\n    * $\\sqrt{D}$ is a positive real number.\n    * We get two values: $\\frac{-b + \\sqrt{D}}{2a}$ and $\\frac{-b - \\sqrt{D}}{2a}$.\n    * **Geometric Meaning:** The parabola cuts the x-axis at two distinct points.\n\n2.  **Case 2: $D = 0$ (Two Equal Real Roots)**\n    * $\\sqrt{D} = 0$.\n    * Roots are $\\frac{-b \\pm 0}{2a} = \\frac{-b}{2a}$.\n    * We say the roots are coincident or repeated.\n    * **Geometric Meaning:** The parabola touches the x-axis at exactly one point (the vertex).\n\n3.  **Case 3: $D < 0$ (No Real Roots)**\n    * $\\sqrt{D}$ involves the square root of a negative number, which is not real (it is imaginary).\n    * There are no real solutions.\n    * **Geometric Meaning:** The parabola lies entirely above or below the x-axis and never crosses it.\n\n#### 4.2 Application in Problem Solving\nDetermining the nature of roots is often the first step in solving applied problems (e.g., checking if a rectangular park with specific dimensions is possible).",
+          "formulas": [
+            "D = b^2 - 4ac",
+            "D > 0 \\implies \\text{2 Distinct Real Roots}",
+            "D = 0 \\implies \\text{2 Equal Real Roots}",
+            "D < 0 \\implies \\text{No Real Roots}"
+          ],
+          "examples": [
+            {
+              "id": "ex_quad_5",
+              "question": "Find the value of $k$ for which the equation $2x^2 + kx + 3 = 0$ has two equal roots.",
+              "steps": [
+                {
+                  "explanation": "Condition for equal roots: Discriminant $D = 0$."
+                },
+                {
+                  "explanation": "$a=2, b=k, c=3$."
+                },
+                {
+                  "explanation": "$D = b^2 - 4ac = k^2 - 4(2)(3) = k^2 - 24$."
+                },
+                {
+                  "explanation": "Set $D=0: k^2 - 24 = 0$."
+                },
+                {
+                  "explanation": "$k^2 = 24 \\implies k = \\pm\\sqrt{24} = \\pm 2\\sqrt{6}$."
+                }
+              ],
+              "finalAnswer": "$k = \\pm 2\\sqrt{6}$"
+            },
+            {
+              "id": "ex_quad_6",
+              "question": "Is it possible to design a rectangular park of perimeter 80 m and area 400 m²? If so, find its length and breadth.",
+              "steps": [
+                {
+                  "explanation": "Let length be $l$ and breadth be $b$."
+                },
+                {
+                  "explanation": "Perimeter $2(l+b) = 80 \\implies l+b = 40 \\implies b = 40-l$."
+                },
+                {
+                  "explanation": "Area $l \\times b = 400 \\implies l(40-l) = 400$."
+                },
+                {
+                  "explanation": "$40l - l^2 = 400 \\implies l^2 - 40l + 400 = 0$."
+                },
+                {
+                  "explanation": "Check Discriminant $D$: $a=1, b=-40, c=400$."
+                },
+                {
+                  "explanation": "$D = (-40)^2 - 4(1)(400) = 1600 - 1600 = 0$."
+                },
+                {
+                  "explanation": "Since $D=0$, real roots exist (and are equal). So it is possible."
+                },
+                {
+                  "explanation": "Solve: $l = \\frac{-(-40)}{2(1)} = 20$."
+                },
+                {
+                  "explanation": "Breadth $b = 40 - 20 = 20$."
+                },
+                {
+                  "explanation": "It is a square park of side 20 m."
+                }
+              ],
+              "finalAnswer": "Yes, Length=20m, Breadth=20m"
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Discriminant Cases",
+            "functions": [
+              {
+                "expression": "x^2 - 4",
+                "color": "green",
+                "label": "D > 0 (2 roots)"
+              },
+              {
+                "expression": "x^2",
+                "color": "blue",
+                "label": "D = 0 (1 root)"
+              },
+              {
+                "expression": "x^2 + 2",
+                "color": "red",
+                "label": "D < 0 (No roots)"
+              }
+            ],
+            "xRange": [
+              -5,
+              5
+            ],
+            "yRange": [
+              -5,
+              5
+            ]
+          }
+        },
+        {
+          "id": "topic_4_5_practice_compendium",
+          "title": "4.5 Practice Bank & Formula Compendium",
+          "content": "### 5. Comprehensive Practice Bank\n\n#### Section A: Conceptual & Short Answer (10 Questions)\n1.  Define the discriminant of a quadratic equation.\n2.  What is the condition for a quadratic equation to have no real roots?\n3.  Solve $x^2 - 9 = 0$ by factorization.\n4.  Solve $x^2 + 5x = 0$.\n5.  If $x=1$ is a root of $ax^2 + ax + 3 = 0$, find $a$.\n6.  Write the quadratic equation with roots 3 and 4.\n7.  State whether true or false: Every quadratic equation has at least one real root. (False).\n8.  Find the nature of roots for $2x^2 - 3x + 5 = 0$.\n9.  What is the maximum number of roots a quadratic equation can have?\n10. Express $(x+1)^2 = 2(x-3)$ in standard quadratic form.\n\n#### Section B: Problem Solving (10 Questions)\n11. Find the roots of $100x^2 - 20x + 1 = 0$ by factorization.\n12. Solve $2x^2 + x - 4 = 0$ using the quadratic formula.\n13. Find two numbers whose sum is 27 and product is 182.\n14. The altitude of a right triangle is 7 cm less than its base. If the hypotenuse is 13 cm, find the other two sides.\n15. Solve for $x$: $\\frac{1}{x+4} - \\frac{1}{x-7} = \\frac{11}{30}, x \\neq -4, 7$.\n16. Find the value of $k$ if the roots of $kx(x-2) + 6 = 0$ are equal.\n17. Solve $4x^2 + 4\\sqrt{3}x + 3 = 0$ by completing the square.\n18. Find two consecutive positive integers, sum of whose squares is 365.\n19. A train travels 360 km at a uniform speed. If the speed had been 5 km/h more, it would have taken 1 hour less for the same journey. Find the speed of the train.\n20. Solve for $x$: $x^2 + 5\\sqrt{5}x - 70 = 0$.\n\n#### Section C: Advanced / JEE Foundation (Must Practice)\n21. **(Must Practice)** A motor boat whose speed is 18 km/h in still water takes 1 hour more to go 24 km upstream than to return downstream to the same spot. Find the speed of the stream.\n22. **(Must Practice)** Two water taps together can fill a tank in $9\\frac{3}{8}$ hours. The tap of larger diameter takes 10 hours less than the smaller one to fill the tank separately. Find the time in which each tap can separately fill the tank.\n23. **(Must Practice)** Solve for $x$: $\\frac{1}{a+b+x} = \\frac{1}{a} + \\frac{1}{b} + \\frac{1}{x}$, where $a+b \\neq 0$.\n24. **(Must Practice)** If the roots of $(b-c)x^2 + (c-a)x + (a-b) = 0$ are equal, prove that $2b = a + c$ (i.e., a, b, c are in AP).\n25. **(Must Practice)** Solve $9x^2 - 9(a+b)x + (2a^2 + 5ab + 2b^2) = 0$.\n26. **(Must Practice)** The sum of the reciprocals of Rehman's ages (in years) 3 years ago and 5 years from now is $1/3$. Find his present age.\n27. **(Must Practice)** In a class test, the sum of Shefali's marks in Mathematics and English is 30. Had she got 2 marks more in Mathematics and 3 marks less in English, the product of their marks would have been 210. Find her marks in the two subjects.\n28. **(Must Practice)** A cottage industry produces a certain number of pottery articles in a day. It was observed on a particular day that the cost of production of each article (in rupees) was 3 more than twice the number of articles produced on that day. If the total cost of production on that day was ₹90, find the number of articles produced and the cost of each article.\n29. **(Must Practice)** Find the roots of $4x^2 - 4a^2x + (a^4 - b^4) = 0$.\n30. **(Must Practice)** If $-5$ is a root of $2x^2 + px - 15 = 0$ and the quadratic equation $p(x^2 + x) + k = 0$ has equal roots, find the value of $k$.\n\n---\n\n### 6. Formula Compendium\n\n**1. Standard Form**\n$$ax^2 + bx + c = 0, \\quad a \\neq 0$$\n\n**2. Quadratic Formula**\n$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$\n\n**3. Discriminant**\n$$D = b^2 - 4ac$$\n\n**4. Nature of Roots**\n* $D > 0$: Two distinct real roots.\n* $D = 0$: Two equal real roots (Coincident).\n* $D < 0$: No real roots (Imaginary).\n\n**5. Relations**\n* Sum of roots $\\alpha + \\beta = -b/a$\n* Product of roots $\\alpha \\beta = c/a$\n\n**6. Completing the Square**\n* Add $(\\frac{b}{2a})^2$ to both sides after isolating terms.",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

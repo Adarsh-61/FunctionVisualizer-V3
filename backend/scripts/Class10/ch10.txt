@@ -1,0 +1,224 @@
+{
+  "id": "class_10",
+  "title": "Class 10",
+  "chapters": [
+    {
+      "id": "ch_10_circles",
+      "title": "Ch 10: Circles",
+      "topics": [
+        {
+          "id": "topic_10_1_introduction_tangents",
+          "title": "10.1 Circles and Lines: The Geometry of Contact",
+          [cite_start]"content": "### 1. Introduction: The Meeting of Curves and Lines\nIn Class IX, we studied the circle as a static locus of points. In Class 10, we study the **dynamic interaction** between a circle and a straight line. This interaction is the foundation of calculus (tangents are derivatives), optics (reflection), and mechanics (gears and pulleys).\n\n#### 1.1 The Three Possibilities\nConsider a circle with centre $O$ and a straight line $PQ$ in the same plane. There are exactly three geometric possibilities regarding their intersection [cite: 1-2]:\n\n1.  **Non-intersecting Line:** The line and the circle have **no common points**. The distance from the centre to the line is greater than the radius ($d > r$).\n2.  **Secant:** The line intersects the circle at **two distinct points** ($A$ and $B$). The distance from the centre to the line is less than the radius ($d < r$). The portion of the line inside the circle is a *chord*.\n3.  **Tangent:** The line touches the circle at **exactly one point** ($P$). The distance from the centre to the line is exactly equal to the radius ($d = r$).\n\n#### 1.2 Defining the Tangent (The Limit Concept)\nWhat exactly is a tangent?\n* **Static Definition:** A line that intersects the circle at only one point.\n* **Dynamic Definition (Calculus Foundation):** Imagine a secant line intersecting the circle at points $A$ and $B$. If we rotate the line or move it such that the point $B$ moves closer and closer to $A$, the chord $AB$ shrinks. When $B$ finally coincides with $A$, the secant becomes a **Tangent**. The two points of intersection have merged into one.\n\n* **Point of Contact:** The unique common point between the tangent and the circle.\n\n#### 1.3 Theorem 10.1 (The Radius-Tangent Theorem)\n**Statement:** The tangent at any point of a circle is perpendicular to the radius through the point of contact.\n\n**Given:** A circle with centre $O$ and a tangent $XY$ touching at point $P$.\n**To Prove:** $OP \\perp XY$.\n\n**Proof (By Logic of Shortest Distance):**\n1.  Take any point $Q$ on the tangent $XY$, other than $P$.\n2.  Since $P$ is the *only* point of contact, $Q$ must lie in the **exterior** of the circle.\n3.  Therefore, the distance $OQ$ must be greater than the radius of the circle.\n4.  So, $OQ > OP$.\n5.  This is true for *every* point on the line $XY$ except $P$. Thus, $OP$ is the **shortest distance** from the centre $O$ to the line $XY$.\n6.  In geometry, the shortest distance from a point to a line is the **perpendicular distance**.\n7.  Therefore, $OP \\perp XY$. **Q.E.D.**\n\n**Corollary:**\n* There can be only one tangent at a specific point on the circle.\n* The line perpendicular to a tangent at the point of contact passes through the centre. (This line is often called the **Normal**).",
+          "formulas": [
+            "d > r \\implies \\text{Non-intersecting}",
+            "d < r \\implies \\text{Secant}",
+            "d = r \\implies \\text{Tangent}",
+            "\\text{Tangent} \\perp \\text{Radius}"
+          ],
+          "examples": [
+            {
+              "id": "ex_circ_1",
+              "question": "A tangent $PQ$ at a point $P$ of a circle of radius 5 cm meets a line through the centre $O$ at a point $Q$ so that $OQ = 12$ cm. Find the length $PQ$.",
+              "steps": [
+                {
+                  "explanation": "1. **Visualize:** We have a circle with centre $O$ and radius $OP = 5$ cm. $P$ is the point of contact. $Q$ is an external point on the tangent."
+                },
+                {
+                  "explanation": "2. **Apply Theorem 10.1:** Since $PQ$ is a tangent and $OP$ is the radius, $OP \\perp PQ$. Thus, $\\Delta OPQ$ is a right-angled triangle at $P$."
+                },
+                {
+                  "explanation": "3. **Use Pythagoras Theorem:** $OQ^2 = OP^2 + PQ^2$."
+                },
+                {
+                  "explanation": "4. **Substitute Values:** $12^2 = 5^2 + PQ^2 \\implies 144 = 25 + PQ^2$."
+                },
+                {
+                  "explanation": "5. **Solve:** $PQ^2 = 144 - 25 = 119$. So, $PQ = \\sqrt{119}$ cm."
+                }
+              ],
+              "finalAnswer": "$\\sqrt{119}$ cm"
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Tangent Perpendicularity",
+            "functions": [],
+            "shapes": [
+              { "type": "circle", "x": 0, "y": 0, "radius": 5, "color": "blue", "label": "Circle O" },
+              { "type": "line", "x1": 5, "y1": -10, "x2": 5, "y2": 10, "color": "red", "label": "Tangent XY" },
+              { "type": "line", "x1": 0, "y1": 0, "x2": 5, "y2": 0, "color": "green", "label": "Radius OP" }
+            ],
+            "xRange": [-6, 10],
+            "yRange": [-10, 10]
+          }
+        },
+        {
+          "id": "topic_10_2_tangents_from_external_point",
+          "title": "10.2 Tangents from an External Point",
+          "content": "### 2. Tangents from the Outside World\nWe know that at a point *on* the circle, there is exactly one tangent. What happens if the point is *outside*?\n\n#### 2.1 Number of Tangents\n1.  **Point Inside:** No tangent can be drawn. Any line passing through an internal point will cut the circle at two points (Secant).\n2.  **Point On Circle:** Exactly one tangent.\n3.  [cite_start]**Point Outside:** Exactly **two** tangents can be drawn to the circle [cite: 1-3].\n\n**Visual Logic:** Imagine holding a ball and placing a flat stick against it. You can touch it at one point. Now imagine creating a cone around the ball with the apex at the external point. The cone touches the ball along a circle, but in the 2D cross-section, these appear as two lines touching the circle.\n\n#### 2.2 Theorem 10.2 (The Two-Tangent Theorem)\n**Statement:** The lengths of tangents drawn from an external point to a circle are equal.\n\n**Given:** A circle with centre $O$, an external point $P$, and two tangents $PQ$ and $PR$ touching at $Q$ and $R$.\n**To Prove:** $PQ = PR$.\n\n**Proof (By Congruence):**\n1.  **Construction:** Join $OQ, OR$, and $OP$.\n2.  **Right Angles:** By Theorem 10.1, $OQ \\perp PQ$ and $OR \\perp PR$. So $\\angle OQP = \\angle ORP = 90^\\circ$.\n3.  **Compare Triangles:** In right-angled $\\Delta OQP$ and $\\Delta ORP$:\n    * $OQ = OR$ (Radii of the same circle).\n    * $OP = OP$ (Common Hypotenuse).\n    * $\\angle OQP = \\angle ORP = 90^\\circ$.\n4.  **Congruence:** By **RHS Criterion**, $\\Delta OQP \\cong \\Delta ORP$.\n5.  **Conclusion:** By CPCT (Corresponding Parts of Congruent Triangles), $PQ = PR$. **Q.E.D.**\n\n#### 2.3 Additional Properties (Derived from Theorem 10.2)\nSince $\\Delta OQP \\cong \\Delta ORP$, other parts correspond too:\n1.  **Angle at Center:** $\\angle POQ = \\angle POR$. The line joining the centre to the external point bisects the angle between the radii.\n2.  **Angle at Vertex:** $\\angle OPQ = \\angle OPR$. The line joining the centre to the external point bisects the angle between the tangents.\n3.  **Supplementary Angles:** The angle between the tangents ($\\angle QPR$) and the angle subtended by the radii at the centre ($\\angle QOR$) are supplementary ($180^\\circ$).\n    * *Reason:* In quadrilateral $PQOR$, sum of angles is $360^\\circ$. $\\angle Q = 90^\\circ, \\angle R = 90^\\circ$. [cite_start]So $\\angle P + \\angle O = 360 - 180 = 180^\\circ$. [cite: 9-10]",
+          "formulas": [
+            "PQ = PR",
+            "\\angle QPR + \\angle QOR = 180^\\circ",
+            "\\Delta OQP \\cong \\Delta ORP"
+          ],
+          "examples": [
+            {
+              "id": "ex_circ_2",
+              "question": "If tangents $PA$ and $PB$ from a point $P$ to a circle with centre $O$ are inclined to each other at an angle of $80^\\circ$, then find $\\angle POA$.",
+              "steps": [
+                {
+                  "explanation": "1. **Given:** Angle between tangents $\\angle APB = 80^\\circ$."
+                },
+                {
+                  "explanation": "2. **Bisector Property:** We know that the line $OP$ bisects the angle between the tangents. Therefore, $\\angle APO = \\frac{1}{2} \\angle APB = 40^\\circ$."
+                },
+                {
+                  "explanation": "3. **Triangle Property:** In $\\Delta OAP$, $\\angle OAP = 90^\\circ$ (Tangent $\\perp$ Radius)."
+                },
+                {
+                  "explanation": "4. **Angle Sum:** In $\\Delta OAP$, $\\angle POA + \\angle OAP + \\angle APO = 180^\\circ$."
+                },
+                {
+                  "explanation": "5. **Calculation:** $\\angle POA + 90^\\circ + 40^\\circ = 180^\\circ \\implies \\angle POA = 50^\\circ$."
+                }
+              ],
+              "finalAnswer": "$50^\\circ$"
+            },
+            {
+              "id": "ex_circ_3",
+              "question": "Prove that the parallelogram circumscribing a circle is a rhombus.",
+              "steps": [
+                {
+                  "explanation": "1. **Given:** A parallelogram $ABCD$ circumscribing a circle. Let points of contact be $P, Q, R, S$ on sides $AB, BC, CD, DA$ respectively."
+                },
+                {
+                  "explanation": "2. **Tangent Property:** Tangents from an external point are equal. \n$AP = AS$ (from A)\n$BP = BQ$ (from B)\n$CR = CQ$ (from C)\n$DR = DS$ (from D)"
+                },
+                {
+                  "explanation": "3. **Add Equations:** $(AP + BP) + (CR + DR) = (AS + DS) + (BQ + CQ)$."
+                },
+                {
+                  "explanation": "4. **Combine Segments:** $AB + CD = AD + BC$."
+                },
+                {
+                  "explanation": "5. **Parallelogram Property:** In a parallelogram, opposite sides are equal ($AB = CD$ and $BC = AD$). Substitute this into the equation."
+                },
+                {
+                  "explanation": "6. **Substitution:** $AB + AB = BC + BC \\implies 2AB = 2BC \\implies AB = BC$."
+                },
+                {
+                  "explanation": "7. **Conclusion:** Adjacent sides are equal. [cite_start]A parallelogram with equal adjacent sides is a **Rhombus**. [cite: 9-10]"
+                }
+              ],
+              "finalAnswer": "Proved."
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Tangents from External Point",
+            "functions": [],
+            "points": [
+              { "x": 0, "y": 0, "label": "O" },
+              { "x": 10, "y": 0, "label": "P" },
+              { "x": 3, "y": 4, "label": "Q" },
+              { "x": 3, "y": -4, "label": "R" }
+            ],
+            "shapes": [
+              { "type": "circle", "x": 0, "y": 0, "radius": 5, "color": "blue", "label": "Circle" },
+              { "type": "line", "x1": 10, "y1": 0, "x2": 3, "y2": 4, "color": "red", "label": "Tangent PQ" },
+              { "type": "line", "x1": 10, "y1": 0, "x2": 3, "y2": -4, "color": "red", "label": "Tangent PR" },
+              { "type": "line", "x1": 0, "y1": 0, "x2": 3, "y2": 4, "color": "green", "label": "Radius OQ" },
+              { "type": "line", "x1": 0, "y1": 0, "x2": 3, "y2": -4, "color": "green", "label": "Radius OR" }
+            ],
+            "xRange": [-6, 12],
+            "yRange": [-6, 6]
+          }
+        },
+        {
+          "id": "topic_10_3_advanced_tangent_geometry",
+          "title": "10.3 Advanced Geometric Proofs",
+          "content": "### 3. Logic in Action: Complex Proofs\nUsing the two fundamental theorems (Radius-Tangent Perpendicularity and Equal Tangents), we can prove sophisticated geometric properties.\n\n#### 3.1 The Chord of Contact\nThe line joining the points of contact of two tangents from an external point is called the **Chord of Contact**. In our previous notation, the line $QR$ is the chord of contact for point $P$.\n* **Property:** The line $OP$ is the perpendicular bisector of the chord of contact $QR$.\n* **Proof:** In $\\Delta PQR$, $PQ = PR$, so it's isosceles. The line $PO$ bisects angle $P$. In an isosceles triangle, the angle bisector is the perpendicular bisector of the base.\n\n#### 3.2 Quadrilaterals Circumscribing Circles\nIf a quadrilateral $ABCD$ circumscribes a circle (touches it at 4 points), a powerful property emerges:\n**Property:** Sum of opposite sides is equal.\n$$AB + CD = BC + DA$$\n(We proved this in Example 10.2.3. It works for *any* circumscribing quadrilateral, not just parallelograms).\n\n#### 3.3 Circles and Triangles (Incircle)\nA circle inscribed in a triangle touches all three sides. The center of this circle is the **Incenter** (intersection of angle bisectors). The sides of the triangle act as tangents.\n\n**Example Analysis:**\nIf a circle touches sides $BC, CA, AB$ of $\\Delta ABC$ at $D, E, F$ respectively, then:\n* $AF = AE$\n* $BD = BF$\n* $CD = CE$\nThis allows us to set up algebraic equations to find side lengths if segments are known.",
+          "formulas": [
+            "AB + CD = BC + DA \\quad (\\text{Circumscribing Quad})"
+          ],
+          "examples": [
+            {
+              "id": "ex_circ_4",
+              "question": "A triangle $ABC$ is drawn to circumscribe a circle of radius 4 cm such that the segments $BD$ and $DC$ into which $BC$ is divided by the point of contact $D$ are of lengths 8 cm and 6 cm respectively. Find the sides $AB$ and $AC$.",
+              "steps": [
+                {
+                  "explanation": "1. **Setup:** Let the circle touch $AB$ at $F$ and $AC$ at $E$. Centre $O$. Radius $OD=OE=OF=4$. Given $BD=8, CD=6$."
+                },
+                {
+                  "explanation": "2. **Tangent Equality:** $BF = BD = 8$ cm. $CE = CD = 6$ cm. Let $AF = AE = x$ cm."
+                },
+                {
+                  "explanation": "3. **Side Lengths:** $a = BC = 14$. $c = AB = 8+x$. $b = AC = 6+x$."
+                },
+                {
+                  "explanation": "4. **Area Method:** Calculate Area($ABC$) in two ways. First by Heron's Formula, second by sum of areas of $\\Delta OBC, \\Delta OCA, \\Delta OAB$."
+                },
+                {
+                  "explanation": "5. **Heron's Formula:** $s = (14 + 8+x + 6+x)/2 = 14+x$. Area = $\\sqrt{s(s-a)(s-b)(s-c)} = \\sqrt{(14+x)(x)(8)(6)} = \\sqrt{48x(14+x)}$."
+                },
+                {
+                  "explanation": "6. **Sum of Areas:** Area = Area($OBC$) + Area($OCA$) + Area($OAB$) = $0.5(4)(14) + 0.5(4)(6+x) + 0.5(4)(8+x) = 28 + 12 + 2x + 16 + 2x = 56 + 4x$."
+                },
+                {
+                  "explanation": "7. **Equate:** $\\sqrt{48x(14+x)} = 4(14+x)$. Square both sides: $48x(14+x) = 16(14+x)^2$."
+                },
+                {
+                  "explanation": "8. **Solve:** $3x = 14+x \\implies 2x = 14 \\implies x = 7$."
+                },
+                {
+                  "explanation": "9. [cite_start]**Result:** $AB = 8+7 = 15$ cm, $AC = 6+7 = 13$ cm. [cite: 9-10]"
+                }
+              ],
+              "finalAnswer": "AB=15cm, AC=13cm"
+            },
+            {
+              "id": "ex_circ_5",
+              "question": "Prove that the angle between the two tangents drawn from an external point to a circle is supplementary to the angle subtended by the line-segment joining the points of contact at the centre.",
+              "steps": [
+                {
+                  "explanation": "1. **Diagram:** Circle centre $O$. External point $P$. Tangents $PA, PB$. Radii $OA, OB$."
+                },
+                {
+                  "explanation": "2. **Quadrilateral:** Consider quadrilateral $OAPB$."
+                },
+                {
+                  "explanation": "3. **Right Angles:** Angle $\\angle OAP = 90^\\circ$ and $\\angle OBP = 90^\\circ$ (Tangent $\\perp$ Radius)."
+                },
+                {
+                  "explanation": "4. **Angle Sum Property:** The sum of angles in a quadrilateral is $360^\\circ$. So $\\angle AOB + \\angle OAP + \\angle APB + \\angle OBP = 360^\\circ$."
+                },
+                {
+                  "explanation": "5. **Substitution:** $\\angle AOB + 90 + \\angle APB + 90 = 360$."
+                },
+                {
+                  "explanation": "6. **Result:** $\\angle AOB + \\angle APB = 180^\\circ$. Supplementary."
+                }
+              ],
+              "finalAnswer": "Proved."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_10_4_practice_questions",
+          "title": "10.4 Practice Bank & Formula Compendium",
+          "content": "### 4. Comprehensive Practice Bank\n\n#### Section A: Conceptual & Short Answer (10 Questions)\n1.  How many tangents can a circle have? (Infinite).\n2.  A tangent $PQ$ at a point $P$ of a circle of radius 5 cm meets a line through the centre $O$ at a point $Q$ so that $OQ = 12$ cm. Find length $PQ$.\n3.  If tangents $PA$ and $PB$ from a point $P$ to a circle with centre $O$ are inclined to each other at angle of $80^\\circ$, then find $\\angle POA$.\n4.  Prove that the tangents drawn at the ends of a diameter of a circle are parallel.\n5.  Find the length of the tangent drawn from a point whose distance from the centre of a circle is 25 cm and the radius of the circle is 7 cm.\n6.  A point $P$ is 13 cm from the centre of the circle. The length of the tangent drawn from $P$ to the circle is 12 cm. Find the radius of the circle.\n7.  Two concentric circles are of radii 5 cm and 3 cm. Find the length of the chord of the larger circle which touches the smaller circle.\n8.  If radii of two concentric circles are 4 cm and 5 cm, then find the length of each chord of one circle which is tangent to the other circle.\n9.  From a point $Q$, the length of the tangent to a circle is 24 cm and the distance of $Q$ from the centre is 25 cm. Find the radius.\n10. In a circle, if the angle between two radii is $130^\\circ$, what is the angle between the tangents at the ends of the radii?\n\n#### Section B: Proofs & Advanced Reasoning (10 Questions)\n11. Prove that the perpendicular at the point of contact to the tangent to a circle passes through the centre.\n12. Prove that the angle between the two tangents drawn from an external point to a circle is supplementary to the angle subtended by the line-segment joining the points of contact at the centre.\n13. Prove that the parallelogram circumscribing a circle is a rhombus.\n14. Prove that opposite sides of a quadrilateral circumscribing a circle subtend supplementary angles at the centre of the circle.\n15. Two tangents $TP$ and $TQ$ are drawn to a circle with centre $O$ from an external point $T$. Prove that $\\angle PTQ = 2 \\angle OPQ$.\n16. $PQ$ is a chord of length 8 cm of a circle of radius 5 cm. The tangents at $P$ and $Q$ intersect at a point $T$. Find the length $TP$.\n17. Prove that a cyclic parallelogram is a rectangle. (Recall Ch 9, but useful here).\n18. A triangle $ABC$ is drawn to circumscribe a circle of radius 4 cm such that the segments $BD$ and $DC$ are 8 cm and 6 cm. Find sides $AB$ and $AC$.\n19. In a right triangle $ABC$, right angled at $B$, $BC=6$ cm and $AB=8$ cm. A circle is inscribed in the triangle. Find the radius of the incircle.\n20. If an isosceles triangle $ABC$, in which $AB = AC = 6$ cm, is inscribed in a circle of radius 9 cm, find the area of the triangle.\n\n---\n\n### 5. Formula & Theorem Compendium\n\n**1. Radius-Tangent Theorem (10.1):**\n$$Radius \\perp Tangent \\text{ at Point of Contact}$$\n$$\\angle OPA = 90^\\circ$$\n\n**2. Tangent Length Theorem (10.2):**\nLengths of tangents from an external point are equal.\n$$PA = PB$$\n\n**3. Triangle Congruence Result:**\nFor tangents from external point $P$ to circle centre $O$:\n* $\\Delta OAP \\cong \\Delta OBP$ (RHS)\n* $\\angle APO = \\angle BPO$ (Centre line bisects tangent angle)\n* $\\angle AOP = \\angle BOP$ (Centre line bisects radii angle)\n\n**4. Supplementary Angles:**\n$$\\angle APB + \\angle AOB = 180^\\circ$$\n\n**5. Circumscribing Quadrilateral:**\n$$AB + CD = BC + DA$$\n\n**6. Length of Tangent Formula (Pythagoras):**\n$$L = \\sqrt{d^2 - r^2}$$\nwhere $d$ is distance from centre, $r$ is radius.",
+          "formulas": [
+            "\\angle OPA = 90^\\circ",
+            "PA = PB",
+            "\\Delta OAP \\cong \\Delta OBP",
+            "L = \\sqrt{d^2 - r^2}"
+          ],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

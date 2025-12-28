@@ -1,0 +1,179 @@
+{
+  "id": "12_9",
+  "classId": 12,
+  "title": "Differential Equations",
+  "description": "The language of the universe. This chapter focuses on equations involving derivatives, which model how quantities change over time and space. It covers the classification, formation, and rigorous methods for solving first-order differential equations, including Variable Separable, Homogeneous, and Linear forms.",
+  "topics": [
+    {
+      "id": "12_9_1",
+      "title": "Introduction and Classification",
+      "content": "### 1. What is a Differential Equation?\nIn algebra, we solve equations like $x^2 - 5x + 6 = 0$ to find unknown numbers ($x$). In calculus, we often encounter equations involving an unknown **function** and its **derivatives** (rates of change). Such an equation is called a **Differential Equation (D.E.)**.\n\n**Definition:**\nAn equation involving an independent variable ($x$), a dependent variable ($y$), and derivatives of the dependent variable with respect to the independent variable ($\\frac{dy}{dx}, \\frac{d^2y}{dx^2}, \\dots$) is called an Ordinary Differential Equation (ODE).\n\n* **Example:** $\\frac{dy}{dx} = x + 5$ (Slope depends on x).\n* **Physical Context:** Newton's Second Law $F = ma$ is actually $F = m \\frac{d^2x}{dt^2}$.\n\n### 2. Order of a Differential Equation\nThe **Order** of a D.E. is the order of the **highest order derivative** appearing in the equation.\n* Example: $\\frac{d^2y}{dx^2} + y = 0$. Highest derivative is 2nd order. Order = 2.\n* Example: $(\\frac{dy}{dx})^3 - 4\\frac{dy}{dx} = 0$. Highest derivative is 1st order. Order = 1.\n\n### 3. Degree of a Differential Equation\nThe **Degree** is the power (exponent) of the highest order derivative when the equation is expressed as a **polynomial in derivatives**.\n\n**Conditions for Degree to be Defined:**\n1.  Derivatives must not be inside transcendental functions like $\\sin(y'), e^{y'}, \\log(y')$.\n2.  The equation must be cleared of fractional powers (radicals) on derivatives.\n\n**Examples:**\n* $\\frac{d^2y}{dx^2} + (\\frac{dy}{dx})^2 = 0$. Order: 2. Power of highest derivative: 1. Degree: 1.\n* $(\\frac{d^2y}{dx^2})^3 + \\frac{dy}{dx} = 0$. Order: 2. Degree: 3.\n* $\\frac{dy}{dx} + \\sin(\\frac{dy}{dx}) = 0$. Order: 1. Degree: **Not Defined** (Not a polynomial in $y'$)."
+    },
+    {
+      "id": "12_9_2",
+      "title": "Solutions of Differential Equations",
+      "content": "### 1. General and Particular Solutions\nA solution to a D.E. is a function $y = f(x)$ that satisfies the equation.\n\n* **General Solution:** A solution containing arbitrary constants (parameters). The number of arbitrary constants equals the **Order** of the D.E. geometrically, this represents a **Family of Curves**.\n    * Example: For $y' = 1$, General Solution is $y = x + C$ (Family of parallel lines).\n\n* **Particular Solution:** A solution obtained from the general solution by giving specific values to the arbitrary constants (usually determined by initial conditions like $y(0) = 1$). Represents a specific curve.\n\n### 2. Formation of Differential Equations\nGiven a family of curves with $n$ arbitrary constants, we can form a D.E. of order $n$.\n\n**Algorithm:**\n1.  Write the equation of the family of curves: $F(x, y, c_1, c_2, \\dots, c_n) = 0$.\n2.  Differentiate the equation $n$ times with respect to $x$.\n3.  Eliminate the constants $c_1, c_2, \\dots, c_n$ using the original equation and the derived equations.\n4.  The resulting equation involving $x, y$ and derivatives is the required D.E.\n\n* **Insight:** The D.E. represents the inherent geometric property of the family that is independent of the specific member."
+    },
+    {
+      "id": "12_9_3",
+      "title": "Method 1: Variable Separable",
+      "content": "This is the simplest method for solving First Order, First Degree D.E.s.\n\n### 1. The Method\nIf the differential equation can be written in the form:\n$$ \\frac{dy}{dx} = h(x) \\cdot g(y) $$\nWe can separate the variables:\n$$ \\frac{1}{g(y)} dy = h(x) dx $$\nIntegrating both sides:\n$$ \\int \\frac{1}{g(y)} dy = \\int h(x) dx + C $$\n\n### 2. Equations Reducible to Variable Separable\nSometimes variables aren't directly separable, especially in the form $\\frac{dy}{dx} = f(ax + by + c)$.\n**Substitution:**\nLet $v = ax + by + c$.\nDifferentiate w.r.t $x$: $\\frac{dv}{dx} = a + b\\frac{dy}{dx}$.\nSubstitute $\\frac{dy}{dx}$ in terms of $\\frac{dv}{dx}$. The new equation in $v$ and $x$ will be separable."
+    },
+    {
+      "id": "12_9_4",
+      "title": "Method 2: Homogeneous Differential Equations",
+      "content": "### 1. Homogeneous Functions\nA function $F(x, y)$ is homogeneous of degree $n$ if $F(\\lambda x, \\lambda y) = \\lambda^n F(x, y)$ for any non-zero constant $\\lambda$.\n* Example: $F(x, y) = x^2 + xy$. $F(\\lambda x, \\lambda y) = \\lambda^2 x^2 + \\lambda^2 xy = \\lambda^2 F(x, y)$. Degree 2.\n\n### 2. Homogeneous D.E.\nA differential equation is homogeneous if it can be written as:\n$$ \\frac{dy}{dx} = F(x, y) $$\nwhere $F(x, y)$ is a homogeneous function of degree 0.\nAlternatively, it can be written as $\\frac{dy}{dx} = g\\left(\\frac{y}{x}\\right)$.\n\n### 3. Solving Strategy\n1.  **Substitution:** Put $y = vx$.\n    Differentiating w.r.t $x$: $\\frac{dy}{dx} = v + x\\frac{dv}{dx}$.\n2.  **Substitute in D.E.:**\n    $$ v + x\\frac{dv}{dx} = g(v) $$\n3.  **Separate Variables:**\n    $$ x\\frac{dv}{dx} = g(v) - v \\implies \\frac{dv}{g(v) - v} = \\frac{dx}{x} $$\n4.  Integrate and substitute $v = y/x$ back at the end.\n\n* **Note:** If the function is of the form $h(x/y)$, use substitution $x = vy$."
+    },
+    {
+      "id": "12_9_5",
+      "title": "Method 3: Linear Differential Equations",
+      "content": "### 1. Standard Linear Form\nA first-order D.E. is linear if the dependent variable $y$ and its derivative appear only in the first degree and are not multiplied together.\n\n**Form:**\n$$ \\frac{dy}{dx} + P(x)y = Q(x) $$\nWhere $P$ and $Q$ are constants or functions of $x$ only.\n\n### 2. Integrating Factor (I.F.) Method\nHow do we solve this? We want the LHS to look like the derivative of a product.\nMultiply the entire equation by a function $\\mu(x)$ (called Integrating Factor).\n$$ \\mu \\frac{dy}{dx} + \\mu P y = \\mu Q $$\nWe want LHS $= \\frac{d}{dx}(\\mu y) = \\mu \\frac{dy}{dx} + y \\frac{d\\mu}{dx}$.\nComparing terms, we need: $\\frac{d\\mu}{dx} = \\mu P$.\nSeparating variables: $\\frac{d\\mu}{\\mu} = P dx$.\nIntegrate: $\\ln \\mu = \\int P dx \\implies \\mu = e^{\\int P dx}$.\n\n**Integrating Factor:**\n$$ I.F. = e^{\\int P dx} $$\n\n**Solution:**\nMultiplying by I.F. makes the LHS a perfect derivative.\n$$ \\frac{d}{dx}(y \\cdot I.F.) = Q \\cdot I.F. $$\nIntegrating both sides w.r.t $x$:\n$$ y(I.F.) = \\int (Q \\cdot I.F.) dx + C $$\n\n### 3. The Second Linear Form\nIf the equation is linear in $x$:\n$$ \\frac{dx}{dy} + P_1(y)x = Q_1(y) $$\n* **I.F.:** $e^{\\int P_1 dy}$\n* **Solution:** $x(I.F.) = \\int (Q_1 \\cdot I.F.) dy + C$\n\n### 4. Bernoulli's Equation (Reducible to Linear) - JEE Focus\nEquations of the form $\\frac{dy}{dx} + Py = Qy^n$.\n* Divide by $y^n$: $y^{-n}\\frac{dy}{dx} + P y^{1-n} = Q$.\n* Put $v = y^{1-n}$. Then $\\frac{dv}{dx} = (1-n)y^{-n}\\frac{dy}{dx}$.\n* This transforms the equation into a standard linear form in $v$."
+    }
+  ],
+  "examples": [
+    {
+      "id": "ex_12_9_1",
+      "title": "Order and Degree Identification",
+      "problem": "Find the order and degree of: $x \\frac{d^2y}{dx^2} + x(\\frac{dy}{dx})^2 - y\\frac{dy}{dx} = 0$.",
+      "solution": "1.  Identify highest derivative: $\\frac{d^2y}{dx^2}$ (2nd order).\n    So, **Order = 2**.\n2.  Check if polynomial in derivatives: Yes.\n3.  Identify power of highest derivative: The term is $(\\frac{d^2y}{dx^2})^1$.\n    So, **Degree = 1**."
+    },
+    {
+      "id": "ex_12_9_2",
+      "title": "Variable Separable with Substitution",
+      "problem": "Solve the differential equation $(x+y)^2 \\frac{dy}{dx} = a^2$.",
+      "solution": "1.  Direct separation is hard. Let $x+y = v$.\n2.  Differentiate w.r.t $x$: $1 + \\frac{dy}{dx} = \\frac{dv}{dx} \\implies \\frac{dy}{dx} = \\frac{dv}{dx} - 1$.\n3.  Substitute in D.E.:\n    $v^2 (\\frac{dv}{dx} - 1) = a^2$\n    $\\frac{dv}{dx} - 1 = \\frac{a^2}{v^2}$\n    $\\frac{dv}{dx} = 1 + \\frac{a^2}{v^2} = \\frac{v^2 + a^2}{v^2}$.\n4.  Separate variables:\n    $\\frac{v^2}{v^2 + a^2} dv = dx$.\n5.  Integrate:\n    $\\int \\frac{v^2 + a^2 - a^2}{v^2 + a^2} dv = \\int dx$\n    $\\int (1 - \\frac{a^2}{v^2 + a^2}) dv = x + C$\n    $v - a^2 \\cdot \\frac{1}{a} \\tan^{-1}(\\frac{v}{a}) = x + C$\n    $v - a \\tan^{-1}(\\frac{v}{a}) = x + C$.\n6.  Replace $v = x+y$:\n    $(x+y) - a \\tan^{-1}\\left(\\frac{x+y}{a}\\right) = x + C$\n    $y - a \\tan^{-1}\\left(\\frac{x+y}{a}\\right) = C$."
+    },
+    {
+      "id": "ex_12_9_3",
+      "title": "Homogeneous Equation",
+      "problem": "Solve: $x^2 dy + y(x+y) dx = 0$.",
+      "solution": "1.  Rewrite as $dy/dx$:\n    $x^2 dy = -y(x+y) dx$\n    $\\frac{dy}{dx} = -\\frac{y(x+y)}{x^2} = -\\frac{xy + y^2}{x^2}$.\n    Degree of num = 2, den = 2. Homogeneous.\n2.  Substitute $y = vx$, $dy/dx = v + x\\frac{dv}{dx}$.\n3.  Substitute in Eq:\n    $v + x\\frac{dv}{dx} = -\\frac{x(vx) + (vx)^2}{x^2} = -\\frac{x^2(v+v^2)}{x^2} = -(v+v^2)$.\n    $x\\frac{dv}{dx} = -v - v^2 - v = -(2v + v^2)$.\n4.  Separate:\n    $\\frac{dv}{v(2+v)} = -\\frac{dx}{x}$.\n5.  Partial Fractions:\n    $\\frac{1}{v(v+2)} = \\frac{1}{2}(\\frac{1}{v} - \\frac{1}{v+2})$.\n    $\\frac{1}{2} \\int (\\frac{1}{v} - \\frac{1}{v+2}) dv = -\\int \\frac{dx}{x}$.\n    $\\frac{1}{2} [\\ln v - \\ln(v+2)] = -\\ln x + \\ln C$.\n    $\\ln \\sqrt{\\frac{v}{v+2}} = \\ln \\frac{C}{x}$.\n    $\\sqrt{\\frac{y/x}{y/x + 2}} = \\frac{C}{x}$.\n    Squaring and simplifying gives the general solution."
+    },
+    {
+      "id": "ex_12_9_4",
+      "title": "Linear Differential Equation",
+      "problem": "Solve: $\\frac{dy}{dx} + \\frac{y}{x} = x^2$.",
+      "solution": "1.  Identify Linear form: $\\frac{dy}{dx} + Py = Q$.\n    Here $P = 1/x$, $Q = x^2$.\n2.  Find I.F.:\n    $I.F. = e^{\\int P dx} = e^{\\int (1/x) dx} = e^{\\ln x} = x$.\n3.  General Solution:\n    $y(I.F.) = \\int Q(I.F.) dx + C$\n    $y(x) = \\int (x^2)(x) dx + C$\n    $xy = \\int x^3 dx + C$\n    $xy = \\frac{x^4}{4} + C$.\n    $y = \\frac{x^3}{4} + Cx^{-1}$."
+    },
+    {
+      "id": "ex_12_9_5",
+      "title": "Bernoulli's Equation (Advanced)",
+      "problem": "Solve: $\\frac{dy}{dx} + y = xy^3$.",
+      "solution": "1.  This is Bernoulli's form ($y^n$ on RHS).\n    Divide by $y^3$:\n    $y^{-3}\\frac{dy}{dx} + y^{-2} = x$.\n2.  Substitute $v = y^{-2}$.\n    Differentiate: $\\frac{dv}{dx} = -2y^{-3}\\frac{dy}{dx} \\implies y^{-3}\\frac{dy}{dx} = -\\frac{1}{2}\\frac{dv}{dx}$.\n3.  Substitute back:\n    $-\\frac{1}{2}\\frac{dv}{dx} + v = x$\n    $\\frac{dv}{dx} - 2v = -2x$.\n4.  This is Linear in $v$. $P = -2, Q = -2x$.\n    $I.F. = e^{\\int -2 dx} = e^{-2x}$.\n5.  Solution:\n    $v e^{-2x} = \\int (-2x)e^{-2x} dx + C$.\n    Solve integral by parts: $\\int x e^{-2x} dx = x(\\frac{e^{-2x}}{-2}) - \\int \\frac{e^{-2x}}{-2} dx = -\\frac{xe^{-2x}}{2} - \\frac{e^{-2x}}{4}$.\n    $v e^{-2x} = -2 [ -\\frac{xe^{-2x}}{2} - \\frac{e^{-2x}}{4} ] + C$\n    $v e^{-2x} = xe^{-2x} + \\frac{1}{2}e^{-2x} + C$.\n    $v = x + \\frac{1}{2} + Ce^{2x}$.\n    $y^{-2} = x + 0.5 + Ce^{2x}$."
+    }
+  ],
+  "exercises": [
+    {
+      "id": "prob_12_9_1",
+      "question": "Find order and degree of (d2y/dx2)^2 + cos(dy/dx) = 0.",
+      "type": "Classification",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_9_2",
+      "question": "Form the differential equation representing the family of parabolas having vertex at origin and axis along positive y-axis.",
+      "type": "Formation",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_9_3",
+      "question": "Solve the differential equation dy/dx = (1 - cos x) / (1 + cos x).",
+      "type": "Variable Separable",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_9_4",
+      "question": "Find the general solution of sec^2 x tan y dx + sec^2 y tan x dy = 0.",
+      "type": "Variable Separable",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_9_5",
+      "question": "Solve the homogeneous differential equation (x^2 + xy) dy = (x^2 + y^2) dx.",
+      "type": "Homogeneous",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_9_6",
+      "question": "Solve the linear differential equation dy/dx + (sec x)y = tan x.",
+      "type": "Linear",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_9_7",
+      "question": "Solve (1 + y^2) dx = (tan inverse y - x) dy.",
+      "type": "Linear (Type 2)",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_9_8",
+      "question": "Find the equation of a curve passing through the point (0, 1). If the slope of the tangent to the curve at any point (x, y) is equal to the sum of the x coordinate (abscissa) and the product of the x coordinate and y coordinate (ordinate) of that point.",
+      "type": "Application",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_9_9",
+      "question": "Solve the differential equation dy/dx + y/x = y^2.",
+      "type": "Bernoulli",
+      "difficulty": "JEE Advanced"
+    },
+    {
+      "id": "prob_12_9_10",
+      "question": "Solve x dy/dx = y(log y - log x + 1).",
+      "type": "Homogeneous",
+      "difficulty": "JEE Main"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "form_12_9_1",
+      "label": "Variable Separable",
+      "tex": "\\int \\frac{1}{g(y)} dy = \\int h(x) dx + C"
+    },
+    {
+      "id": "form_12_9_2",
+      "label": "Homogeneous Substitution",
+      "tex": "y = vx \\implies \\frac{dy}{dx} = v + x\\frac{dv}{dx}"
+    },
+    {
+      "id": "form_12_9_3",
+      "label": "Linear DE Form",
+      "tex": "\\frac{dy}{dx} + Py = Q"
+    },
+    {
+      "id": "form_12_9_4",
+      "label": "Integrating Factor (Standard)",
+      "tex": "I.F. = e^{\\int P dx}"
+    },
+    {
+      "id": "form_12_9_5",
+      "label": "Solution of Linear DE",
+      "tex": "y(I.F.) = \\int (Q \\cdot I.F.) dx + C"
+    },
+    {
+      "id": "form_12_9_6",
+      "label": "Linear DE (Type 2)",
+      "tex": "\\frac{dx}{dy} + P_1 x = Q_1"
+    },
+    {
+      "id": "form_12_9_7",
+      "label": "IF for Type 2",
+      "tex": "I.F. = e^{\\int P_1 dy}"
+    },
+    {
+      "id": "form_12_9_8",
+      "label": "Newton's Law of Cooling",
+      "tex": "\\frac{dT}{dt} = -k(T - T_s)"
+    },
+    {
+      "id": "form_12_9_9",
+      "label": "Growth Model",
+      "tex": "\\frac{dy}{dt} = ky \\implies y = y_0 e^{kt}"
+    },
+    {
+      "id": "form_12_9_10",
+      "label": "Bernoulli Substitution",
+      "tex": "v = y^{1-n} \\text{ for } y' + Py = Qy^n"
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "id": "12_10",
+  "classId": 12,
+  "title": "Vector Algebra",
+  "description": "The mathematics of direction and magnitude. This chapter formalizes the study of vectors, covering vector addition, scalar multiplication, dot and cross products, and their geometric interpretations, forming the basis for 3D Geometry and Physics.",
+  "topics": [
+    {
+      "id": "12_10_1",
+      "title": "Basic Concepts and Types of Vectors",
+      "content": "### 1. Scalar vs Vector Quantities\nIn physics and mathematics, quantities are classified into two types:\n* **Scalars:** Quantities having only magnitude (e.g., Mass, Length, Time, Temperature, Work).\n* **Vectors:** Quantities having both magnitude and direction (e.g., Displacement, Velocity, Force, Acceleration).\n\n### 2. Representation of a Vector\nA vector is represented by a directed line segment. Let points $A$ and $B$ be the initial and terminal points.\n* **Notation:** $\\vec{AB}$ or $\\vec{a}$.\n* **Magnitude:** The length of the segment $AB$, denoted by $|\\vec{AB}|$ or $|\\vec{a}|$. Magnitude is always non-negative.\n* **Direction:** The direction from $A$ to $B$.\n\n### 3. Types of Vectors\n1.  **Zero Vector (Null Vector):** A vector whose initial and terminal points coincide. Magnitude is 0. Direction is indeterminate. Denoted by $\\vec{0}$.\n2.  **Unit Vector:** A vector with magnitude 1. Denoted by $\\hat{a}$. Formula: $\\hat{a} = \\frac{\\vec{a}}{|\\vec{a}|}$.\n3.  **Co-initial Vectors:** Vectors having the same initial point.\n4.  **Collinear Vectors:** Vectors parallel to the same line, irrespective of magnitude or direction.\n5.  **Equal Vectors:** Two vectors are equal if they have the same magnitude AND same direction.\n6.  **Negative of a Vector:** A vector with same magnitude but opposite direction. $\\vec{BA} = -\\vec{AB}$.\n\n### 4. Position Vector\nConsider a point $P(x, y, z)$ in space with respect to the origin $O(0, 0, 0)$. The vector $\\vec{OP}$ having $O$ as initial and $P$ as terminal point is the **Position Vector** of $P$.\n$$ \\vec{r} = \\vec{OP} = x\\hat{i} + y\\hat{j} + z\\hat{k} $$\nWhere $\\hat{i}, \\hat{j}, \\hat{k}$ are unit vectors along x, y, and z axes respectively.\n**Magnitude:** $|\\vec{r}| = \\sqrt{x^2 + y^2 + z^2}$.\n\n### 5. Direction Cosines and Direction Ratios\nLet a vector $\\vec{r}$ make angles $\\alpha, \\beta, \\gamma$ with positive x, y, z axes respectively.\n* **Direction Angles:** $\\alpha, \\beta, \\gamma$.\n* **Direction Cosines (DCs):** $l = \\cos \\alpha, m = \\cos \\beta, n = \\cos \\gamma$.\n    * **Important Relation:** $l^2 + m^2 + n^2 = 1$.\n* **Direction Ratios (DRs):** Any three numbers $a, b, c$ proportional to the DCs ($l, m, n$).\n    * If $\\vec{r} = a\\hat{i} + b\\hat{j} + c\\hat{k}$, then $a, b, c$ are the direction ratios.\n    * Relation: $l = \\frac{a}{\\sqrt{a^2+b^2+c^2}}$, etc."
+    },
+    {
+      "id": "12_10_2",
+      "title": "Algebra of Vectors",
+      "content": "### 1. Vector Addition\nVectors cannot be added like ordinary numbers. They follow specific laws.\n\n**A. Triangle Law:**\nIf two vectors are represented by two sides of a triangle in sequence, their sum is represented by the third side taken in the opposite order.\n$$ \\vec{AB} + \\vec{BC} = \\vec{AC} $$\n\n**B. Parallelogram Law:**\nIf two vectors are represented by adjacent sides of a parallelogram co-initial at a point, their sum is represented by the diagonal passing through that point.\n\n**Properties of Addition:**\n1.  **Commutative:** $\\vec{a} + \\vec{b} = \\vec{b} + \\vec{a}$\n2.  **Associative:** $(\\vec{a} + \\vec{b}) + \\vec{c} = \\vec{a} + (\\vec{b} + \\vec{c})$\n3.  **Additive Identity:** $\\vec{a} + \\vec{0} = \\vec{a}$\n4.  **Additive Inverse:** $\\vec{a} + (-\\vec{a}) = \\vec{0}$\n\n### 2. Scalar Multiplication\nMultiplying a vector $\\vec{a}$ by a scalar $\\lambda$ yields a vector $\\lambda\\vec{a}$.\n* **Magnitude:** $|\\lambda\\vec{a}| = |\\lambda| |\\vec{a}|$.\n* **Direction:** Same as $\\vec{a}$ if $\\lambda > 0$, opposite if $\\lambda < 0$.\n\n### 3. Vector Joining Two Points\nIf $P_1(x_1, y_1, z_1)$ and $P_2(x_2, y_2, z_2)$ are two points:\n$$ \\vec{P_1 P_2} = \\vec{OP_2} - \\vec{OP_1} = (x_2-x_1)\\hat{i} + (y_2-y_1)\\hat{j} + (z_2-z_1)\\hat{k} $$\n\n### 4. Section Formula\nIf $\\vec{a}$ and $\\vec{b}$ are position vectors of $A$ and $B$, and point $R$ divides $AB$ in ratio $m:n$:\n* **Internal Division:** $\\vec{r} = \\frac{m\\vec{b} + n\\vec{a}}{m+n}$\n* **External Division:** $\\vec{r} = \\frac{m\\vec{b} - n\\vec{a}}{m-n}$\n* **Midpoint:** $\\vec{r} = \\frac{\\vec{a} + \\vec{b}}{2}$"
+    },
+    {
+      "id": "12_10_3",
+      "title": "Scalar (Dot) Product",
+      "content": "### 1. Definition\nThe scalar product of two non-zero vectors $\\vec{a}$ and $\\vec{b}$ is defined as:\n$$ \\vec{a} \\cdot \\vec{b} = |\\vec{a}| |\\vec{b}| \\cos \\theta $$\nwhere $\\theta$ is the angle between the vectors ($0 \\le \\theta \\le \\pi$).\n* Result is a **Scalar**.\n* If either vector is zero, dot product is 0.\n\n### 2. Geometric Interpretation\n$\\vec{a} \\cdot \\vec{b} = |\\vec{a}| (|\\vec{b}| \\cos \\theta) = |\\vec{a}| \\times (\\text{Projection of } \\vec{b} \\text{ on } \\vec{a})$.\nOr $\\vec{a} \\cdot \\vec{b} = |\\vec{b}| \\times (\\text{Projection of } \\vec{a} \\text{ on } \\vec{b})$.\n**Projection of $\\vec{a}$ on $\\vec{b}$:** $\\frac{\\vec{a} \\cdot \\vec{b}}{|\\vec{b}|} = \\vec{a} \\cdot \\hat{b}$.\n\n### 3. Properties\n1.  **Commutative:** $\\vec{a} \\cdot \\vec{b} = \\vec{b} \\cdot \\vec{a}$\n2.  **Distributive:** $\\vec{a} \\cdot (\\vec{b} + \\vec{c}) = \\vec{a} \\cdot \\vec{b} + \\vec{a} \\cdot \\vec{c}$\n3.  **Scalar Property:** $(\\lambda \\vec{a}) \\cdot \\vec{b} = \\lambda (\\vec{a} \\cdot \\vec{b})$\n4.  **Self Product:** $\\vec{a} \\cdot \\vec{a} = |\\vec{a}|^2$\n5.  **Orthogonality:** $\\vec{a} \\cdot \\vec{b} = 0 \\iff \\vec{a} \\perp \\vec{b}$ (if non-zero).\n\n### 4. Calculation in Components\nIf $\\vec{a} = a_1\\hat{i} + a_2\\hat{j} + a_3\\hat{k}$ and $\\vec{b} = b_1\\hat{i} + b_2\\hat{j} + b_3\\hat{k}$:\n$$ \\vec{a} \\cdot \\vec{b} = a_1b_1 + a_2b_2 + a_3b_3 $$\n\n**Angle Formula:**\n$$ \\cos \\theta = \\frac{\\vec{a} \\cdot \\vec{b}}{|\\vec{a}| |\\vec{b}|} $$"
+    },
+    {
+      "id": "12_10_4",
+      "title": "Vector (Cross) Product",
+      "content": "### 1. Definition\nThe vector product of two non-zero vectors $\\vec{a}$ and $\\vec{b}$ is defined as:\n$$ \\vec{a} \\times \\vec{b} = |\\vec{a}| |\\vec{b}| \\sin \\theta \\hat{n} $$\nwhere $\\theta$ is the angle, and $\\hat{n}$ is a unit vector perpendicular to both $\\vec{a}$ and $\\vec{b}$ (Right Hand Rule).\n* Result is a **Vector**.\n\n### 2. Properties\n1.  **Non-Commutative:** $\\vec{a} \\times \\vec{b} = -(\\vec{b} \\times \\vec{a})$\n2.  **Distributive:** $\\vec{a} \\times (\\vec{b} + \\vec{c}) = \\vec{a} \\times \\vec{b} + \\vec{a} \\times \\vec{c}$\n3.  **Self Product:** $\\vec{a} \\times \\vec{a} = \\vec{0}$\n4.  **Parallelism:** $\\vec{a} \\times \\vec{b} = \\vec{0} \\iff \\vec{a} || \\vec{b}$.\n5.  **Standard Unit Vectors:** $\\hat{i} \\times \\hat{j} = \\hat{k}, \\hat{j} \\times \\hat{k} = \\hat{i}, \\hat{k} \\times \\hat{i} = \\hat{j}$. (Cyclic order).\n\n### 3. Calculation using Determinants\nIf $\\vec{a} = a_1\\hat{i} + a_2\\hat{j} + a_3\\hat{k}$ and $\\vec{b} = b_1\\hat{i} + b_2\\hat{j} + b_3\\hat{k}$:\n$$ \\vec{a} \\times \\vec{b} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ a_1 & a_2 & a_3 \\\\ b_1 & b_2 & b_3 \\end{vmatrix} $$\n\n### 4. Geometric Applications\n* **Area of Triangle:** $\\text{Area} = \\frac{1}{2} |\\vec{a} \\times \\vec{b}|$ (where $\\vec{a}, \\vec{b}$ are adjacent sides).\n* **Area of Parallelogram:** $\\text{Area} = |\\vec{a} \\times \\vec{b}|$.\n* **Lagrange's Identity:** $|\\vec{a} \\times \\vec{b}|^2 = |\\vec{a}|^2 |\\vec{b}|^2 - (\\vec{a} \\cdot \\vec{b})^2$."
+    }
+  ],
+  "examples": [
+    {
+      "id": "ex_12_10_1",
+      "title": "Unit Vector Calculation",
+      "problem": "Find the unit vector in the direction of the sum of the vectors $\\vec{a} = 2\\hat{i} + 2\\hat{j} - 5\\hat{k}$ and $\\vec{b} = 2\\hat{i} + \\hat{j} + 3\\hat{k}$.",
+      "solution": "1.  **Find Sum Vector ($\\\\vec{c}$):**\n    $\\vec{c} = \\vec{a} + \\vec{b} = (2+2)\\hat{i} + (2+1)\\hat{j} + (-5+3)\\hat{k}$.\n    $\\vec{c} = 4\\hat{i} + 3\\hat{j} - 2\\hat{k}$.\n2.  **Find Magnitude:**\n    $|\\vec{c}| = \\sqrt{4^2 + 3^2 + (-2)^2} = \\sqrt{16 + 9 + 4} = \\sqrt{29}$.\n3.  **Find Unit Vector:**\n    $\\hat{c} = \\frac{\\vec{c}}{|\\vec{c}|} = \\frac{1}{\\sqrt{29}}(4\\hat{i} + 3\\hat{j} - 2\\hat{k})$."
+    },
+    {
+      "id": "ex_12_10_2",
+      "title": "Dot Product for Angle",
+      "problem": "Find the angle between vectors $\\vec{a} = \\hat{i} + \\hat{j} - \\hat{k}$ and $\\vec{b} = \\hat{i} - \\hat{j} + \\hat{k}$.",
+      "solution": "Formula: $\\cos \\theta = \\frac{\\vec{a} \\cdot \\vec{b}}{|\\vec{a}| |\\vec{b}|}$.\n1.  **Dot Product:**\n    $\\vec{a} \\cdot \\vec{b} = (1)(1) + (1)(-1) + (-1)(1) = 1 - 1 - 1 = -1$.\n2.  **Magnitudes:**\n    $|\\vec{a}| = \\sqrt{1^2+1^2+(-1)^2} = \\sqrt{3}$.\n    $|\\vec{b}| = \\sqrt{1^2+(-1)^2+1^2} = \\sqrt{3}$.\n3.  **Cosine:**\n    $\\cos \\theta = \\frac{-1}{\\sqrt{3}\\sqrt{3}} = -\\frac{1}{3}$.\n    $\\theta = \\cos^{-1}(-1/3)$."
+    },
+    {
+      "id": "ex_12_10_3",
+      "title": "Projection of Vector",
+      "problem": "Find the projection of vector $\\vec{a} = 2\\hat{i} + 3\\hat{j} + 2\\hat{k}$ on the vector $\\vec{b} = \\hat{i} + 2\\hat{j} + \\hat{k}$.",
+      "solution": "Formula: Projection $= \\frac{\\vec{a} \\cdot \\vec{b}}{|\\vec{b}|}$.\n1.  **Dot Product:**\n    $\\vec{a} \\cdot \\vec{b} = 2(1) + 3(2) + 2(1) = 2 + 6 + 2 = 10$.\n2.  **Magnitude of b:**\n    $|\\vec{b}| = \\sqrt{1^2 + 2^2 + 1^2} = \\sqrt{6}$.\n3.  **Projection:**\n    $= \\frac{10}{\\sqrt{6}} = \\frac{5\\sqrt{6}}{3}$ units."
+    },
+    {
+      "id": "ex_12_10_4",
+      "title": "Area of Triangle using Cross Product",
+      "problem": "Find the area of the triangle with vertices $A(1, 1, 1)$, $B(1, 2, 3)$, and $C(2, 3, 1)$.",
+      "solution": "Area $= \\frac{1}{2} |\\vec{AB} \\times \\vec{AC}|$.\n1.  **Find Vectors:**\n    $\\vec{AB} = (1-1)\\hat{i} + (2-1)\\hat{j} + (3-1)\\hat{k} = \\hat{j} + 2\\hat{k}$.\n    $\\vec{AC} = (2-1)\\hat{i} + (3-1)\\hat{j} + (1-1)\\hat{k} = \\hat{i} + 2\\hat{j}$.\n2.  **Cross Product:**\n    $\\vec{AB} \\times \\vec{AC} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 0 & 1 & 2 \\\\ 1 & 2 & 0 \\end{vmatrix}$\n    $= \\hat{i}(0-4) - \\hat{j}(0-2) + \\hat{k}(0-1)$\n    $= -4\\hat{i} + 2\\hat{j} - \\hat{k}$.\n3.  **Magnitude:**\n    $|\\vec{AB} \\times \\vec{AC}| = \\sqrt{(-4)^2 + 2^2 + (-1)^2} = \\sqrt{16+4+1} = \\sqrt{21}$.\n4.  **Area:**\n    $\\frac{\\sqrt{21}}{2}$ sq units."
+    }
+  ],
+  "exercises": [
+    {
+      "id": "prob_12_10_1",
+      "question": "Find the unit vector in the direction of vector a = i + j + 2k.",
+      "type": "Basic Vector",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_10_2",
+      "question": "Find the direction cosines of the vector joining the points A(1, 2, -3) and B(-1, -2, 1) directed from A to B.",
+      "type": "Direction Cosines",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_10_3",
+      "question": "Show that the points A(2i-j+k), B(i-3j-5k), C(3i-4j-4k) are vertices of a right angled triangle.",
+      "type": "Dot Product Application",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_10_4",
+      "question": "If a = 5i - j - 3k and b = i + 3j - 5k, then show that the vectors a+b and a-b are perpendicular.",
+      "type": "Orthogonality",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_10_5",
+      "question": "Find a unit vector perpendicular to each of the vectors (a+b) and (a-b), where a = i+j+k, b = i+2j+3k.",
+      "type": "Cross Product",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_10_6",
+      "question": "Find the area of a parallelogram whose adjacent sides are determined by the vectors a = i - j + 3k and b = 2i - 7j + k.",
+      "type": "Geometric Area",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_10_7",
+      "question": "If |a|=2, |b|=5 and |a x b| = 8, find a.b.",
+      "type": "Lagrange Identity",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_10_8",
+      "question": "If a, b, c are unit vectors such that a+b+c = 0, find the value of a.b + b.c + c.a.",
+      "type": "Algebraic Vector",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_10_9",
+      "question": "Three vectors a, b, c satisfy a+b+c=0. If |a|=3, |b|=5, |c|=7, find the angle between a and b.",
+      "type": "Conceptual",
+      "difficulty": "JEE Advanced"
+    },
+    {
+      "id": "prob_12_10_10",
+      "question": "Let a = i+4j+2k, b = 3i-2j+7k and c = 2i-j+4k. Find a vector d which is perpendicular to both a and b, and c.d = 15.",
+      "type": "Advanced Construction",
+      "difficulty": "JEE Advanced"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "form_12_10_1",
+      "label": "Magnitude of Vector",
+      "tex": "|\\vec{r}| = \\sqrt{x^2+y^2+z^2}"
+    },
+    {
+      "id": "form_12_10_2",
+      "label": "Unit Vector",
+      "tex": "\\hat{a} = \\frac{\\vec{a}}{|\\vec{a}|}"
+    },
+    {
+      "id": "form_12_10_3",
+      "label": "Section Formula",
+      "tex": "\\vec{r} = \\frac{m\\vec{b} + n\\vec{a}}{m+n}"
+    },
+    {
+      "id": "form_12_10_4",
+      "label": "Dot Product",
+      "tex": "\\vec{a} \\cdot \\vec{b} = |\\vec{a}| |\\vec{b}| \\cos \\theta"
+    },
+    {
+      "id": "form_12_10_5",
+      "label": "Projection of a on b",
+      "tex": "\\text{Proj} = \\frac{\\vec{a} \\cdot \\vec{b}}{|\\vec{b}|}"
+    },
+    {
+      "id": "form_12_10_6",
+      "label": "Cross Product",
+      "tex": "\\vec{a} \\times \\vec{b} = |\\vec{a}| |\\vec{b}| \\sin \\theta \\hat{n}"
+    },
+    {
+      "id": "form_12_10_7",
+      "label": "Cross Product (Determinant)",
+      "tex": "\\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ a_1 & a_2 & a_3 \\\\ b_1 & b_2 & b_3 \\end{vmatrix}"
+    },
+    {
+      "id": "form_12_10_8",
+      "label": "Lagrange's Identity",
+      "tex": "|\\vec{a} \\times \\vec{b}|^2 + (\\vec{a} \\cdot \\vec{b})^2 = |\\vec{a}|^2 |\\vec{b}|^2"
+    },
+    {
+      "id": "form_12_10_9",
+      "label": "Area of Triangle",
+      "tex": "\\frac{1}{2} |\\vec{a} \\times \\vec{b}|"
+    },
+    {
+      "id": "form_12_10_10",
+      "label": "Direction Cosine Relation",
+      "tex": "l^2 + m^2 + n^2 = 1"
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "id": "class_10",
+  "title": "Class 10",
+  "chapters": [
+    {
+      "id": "ch_3_pair_of_linear_equations",
+      "title": "Ch 3: Pair of Linear Equations in Two Variables",
+      "topics": [
+        {
+          "id": "topic_3_1_introduction_and_geometric_meaning",
+          "title": "3.1 Introduction: Systems of Linear Equations",
+          "content": "### 1. The Power of Two\nIn Class IX, we studied linear equations in *one* variable (e.g., $2x + 5 = 0$), which represents a point on a number line. We also introduced linear equations in *two* variables (e.g., $ax + by + c = 0$), which represents a **straight line** in the Euclidean plane. [cite: 363-366]\n\nNow, we step into the world of **Systems**. Real-world problems rarely depend on a single constraint. Usually, multiple conditions must be satisfied simultaneously.\n* **Example:** \"The number of rides Akhila had is half the number of times she played Hoopla,\" AND \"Total cost was ₹20.\" [cite: 367-370].\n\nThese two conditions form a **Pair of Linear Equations**. Finding a solution means finding a state of the world that satisfies *both* conditions at the same time.\n\n#### 1.1 Mathematical Definition\nA pair of linear equations in two variables $x$ and $y$ is generally of the form:\n$$a_1x + b_1y + c_1 = 0$$\n$$a_2x + b_2y + c_2 = 0$$\nwhere $a_1, b_1, c_1, a_2, b_2, c_2$ are real numbers, and $a_1^2 + b_1^2 \\neq 0$, $a_2^2 + b_2^2 \\neq 0$.\n\n#### 1.2 The Geometric Interpretation\nSince every linear equation represents a line, a pair of equations represents **two lines** on the same Cartesian plane. There are only three logical possibilities for two lines in a plane:\n\n1.  **Intersecting Lines:** The lines cross at exactly one unique point. This point is the **Unique Solution**. The system is **Consistent**.\n2.  **Parallel Lines:** The lines never meet. There is **No Solution**. The system is **Inconsistent**.\n3.  **Coincident Lines:** The lines lie exactly on top of each other. Every point on the line is a solution. There are **Infinitely Many Solutions**. The system is **Dependent (and Consistent)**. [cite: 364-365]\n\nThis geometric intuition is the foundation of Linear Algebra. The question \"Does a solution exist?\" is equivalent to \"Do the lines meet?\"",
+          "formulas": [
+            "a_1x + b_1y + c_1 = 0",
+            "a_2x + b_2y + c_2 = 0"
+          ],
+          "examples": [
+            {
+              "id": "ex_lin_1",
+              "question": "Akhila goes to a fair. Let $x$ be the number of rides on the Giant Wheel and $y$ be the number of times she played Hoopla. The situations are: (1) $y = x/2$ and (2) $3x + 4y = 20$. Represent this graphically and find the solution.",
+              "steps": [
+                {
+                  "explanation": "Convert equations to standard form."
+                },
+                {
+                  "explanation": "Eq 1: $y = x/2 \\implies x - 2y = 0$."
+                },
+                {
+                  "explanation": "Eq 2: $3x + 4y - 20 = 0$."
+                },
+                {
+                  "explanation": "Find points for Eq 1: If $x=0, y=0$. If $x=2, y=1$. Points: $(0,0), (2,1)$."
+                },
+                {
+                  "explanation": "Find points for Eq 2: If $x=0, 4y=20 \\implies y=5$. If $y=2, 3x=12 \\implies x=4$. Points: $(0,5), (4,2)$."
+                },
+                {
+                  "explanation": "Plot these lines. They intersect at $(4, 2)$."
+                },
+                {
+                  "explanation": "Therefore, she took 4 rides and played Hoopla 2 times."
+                }
+              ],
+              "finalAnswer": "x=4, y=2"
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Intersecting Lines Solution",
+            "functions": [
+              {
+                "expression": "x/2",
+                "color": "blue",
+                "label": "y = x/2"
+              },
+              {
+                "expression": "(20 - 3*x)/4",
+                "color": "red",
+                "label": "3x + 4y = 20"
+              }
+            ],
+            "points": [
+              {
+                "x": 4,
+                "y": 2,
+                "label": "Intersection (4, 2)",
+                "color": "green"
+              }
+            ],
+            "xRange": [-1, 6],
+            "yRange": [-1, 6]
+          }
+        },
+        {
+          "id": "topic_3_2_consistency_conditions",
+          "title": "3.2 Conditions for Consistency",
+          "content": "### 2. Algebraic Conditions for Solvability\nWe don't always need to draw a graph to know if lines intersect. We can look at the **ratio of coefficients**. This is a powerful shortcut derived from the slope-intercept form ($y = mx + c$).\n\nFor the system:\n$$a_1x + b_1y + c_1 = 0$$\n$$a_2x + b_2y + c_2 = 0$$\n\n#### 2.1 Case 1: Intersecting Lines (Unique Solution)\n* **Condition:** $\\frac{a_1}{a_2} \\neq \\frac{b_1}{b_2}$\n* **Logic:** The slopes of the lines ($-a_1/b_1$ and $-a_2/b_2$) are different. Lines with different slopes *must* intersect somewhere in the infinite plane.\n* **Status:** Consistent.\n\n#### 2.2 Case 2: Coincident Lines (Infinite Solutions)\n* **Condition:** $\\frac{a_1}{a_2} = \\frac{b_1}{b_2} = \\frac{c_1}{c_2}$\n* **Logic:** One equation is just a multiple of the other (e.g., $x+y=2$ and $2x+2y=4$). They represent the exact same constraint.\n* **Status:** Dependent (Consistent).\n\n#### 2.3 Case 3: Parallel Lines (No Solution)\n* **Condition:** $\\frac{a_1}{a_2} = \\frac{b_1}{b_2} \\neq \\frac{c_1}{c_2}$\n* **Logic:** The slopes are equal (lines travel in the same direction) but the y-intercepts are different. They run side-by-side forever like railway tracks.\n* **Status:** Inconsistent.\n\n[cite: 366-368]",
+          "formulas": [
+            "\\text{Unique: } \\frac{a_1}{a_2} \\neq \\frac{b_1}{b_2}",
+            "\\text{Infinite: } \\frac{a_1}{a_2} = \\frac{b_1}{b_2} = \\frac{c_1}{c_2}",
+            "\\text{No Sol: } \\frac{a_1}{a_2} = \\frac{b_1}{b_2} \\neq \\frac{c_1}{c_2}"
+          ],
+          "examples": [
+            {
+              "id": "ex_lin_2",
+              "question": "Check whether the pair of equations $x + 3y = 6$ and $2x - 3y = 12$ is consistent.",
+              "steps": [
+                {
+                  "explanation": "Standard form: $1x + 3y - 6 = 0$ and $2x - 3y - 12 = 0$."
+                },
+                {
+                  "explanation": "Identify coefficients: $a_1=1, b_1=3, c_1=-6$; $a_2=2, b_2=-3, c_2=-12$."
+                },
+                {
+                  "explanation": "Check ratios: $a_1/a_2 = 1/2$. $b_1/b_2 = 3/-3 = -1$."
+                },
+                {
+                  "explanation": "Since $1/2 \\neq -1$, i.e., $a_1/a_2 \\neq b_1/b_2$."
+                },
+                {
+                  "explanation": "The lines intersect at a unique point. The system is consistent."
+                }
+              ],
+              "finalAnswer": "Consistent (Unique Solution)"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_3_3_algebraic_methods",
+          "title": "3.3 Algebraic Methods of Solution",
+          "content": "### 3. Solving Without Graphing\nGraphical methods are imprecise for non-integer solutions (e.g., $\\sqrt{2}, 4\\sqrt{2}$). We need precise algebraic algorithms.\n\n#### 3.3.1 Substitution Method\n**Concept:** Express one variable in terms of the other from the first equation, and \"substitute\" it into the second. This reduces the problem to a linear equation in one variable.\n* **Algorithm:**\n    1. Find $y$ in terms of $x$ from Eq 1.\n    2. Plug this expression into Eq 2 (replacing $y$).\n    3. Solve for $x$.\n    4. Substitute $x$ back to find $y$.\n\n#### 3.3.2 Elimination Method\n**Concept:** Make the coefficients of one variable (say $x$) equal in both equations by multiplying with constants, then subtract the equations to \"eliminate\" that variable.\n* **Algorithm:**\n    1. Multiply Eq 1 by $a_2$ and Eq 2 by $a_1$ (to match x-coefficients).\n    2. Subtract new Eq 2 from new Eq 1.\n    3. The $x$ terms cancel out, leaving an equation in $y$ only.\n    4. Solve for $y$ and back-substitute.\n\n[cite: 365-367]",
+          "formulas": [],
+          "examples": [
+            {
+              "id": "ex_lin_3",
+              "question": "Solve by Elimination: $9x - 4y = 2000$ and $7x - 3y = 2000$.",
+              "steps": [
+                {
+                  "explanation": "We want to eliminate $y$. Multiply Eq 1 by 3 and Eq 2 by 4."
+                },
+                {
+                  "explanation": "Eq 1 $\\times$ 3: $27x - 12y = 6000$ (A)"
+                },
+                {
+                  "explanation": "Eq 2 $\\times$ 4: $28x - 12y = 8000$ (B)"
+                },
+                {
+                  "explanation": "Subtract (A) from (B): $(28x - 27x) + (-12y - (-12y)) = 8000 - 6000$."
+                },
+                {
+                  "explanation": "$x = 2000$."
+                },
+                {
+                  "explanation": "Substitute $x$ in Eq 1: $9(2000) - 4y = 2000$."
+                },
+                {
+                  "explanation": "$18000 - 4y = 2000 \\implies 4y = 16000 \\implies y = 4000$."
+                }
+              ],
+              "finalAnswer": "x=2000, y=4000"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_3_4_reducible_equations",
+          "title": "3.4 Reducible to Linear Form",
+          "content": "### 4. Non-Linear Disguises\nSome equations are not linear (e.g., variables in denominator like $2/x + 3/y = 13$) but can be transformed into linear ones.\n\n**Strategy:**\n1.  Identify the troublesome non-linear term (e.g., $1/x$).\n2.  Substitute it with a dummy variable: Let $u = 1/x$ and $v = 1/y$.\n3.  The equation becomes $2u + 3v = 13$, which is linear.\n4.  Solve for $u, v$.\n5.  Invert back to find $x, y$ ($x = 1/u$).\n\n**Important:** This technique works for upstream/downstream problems where speed relationships are reciprocal ($1/(x+y)$).",
+          "formulas": [
+            "\\text{Let } \\frac{1}{x} = u, \\frac{1}{y} = v"
+          ],
+          "examples": [
+            {
+              "id": "ex_lin_4",
+              "question": "Solve: $\\frac{2}{x} + \\frac{3}{y} = 13$ and $\\frac{5}{x} - \\frac{4}{y} = -2$.",
+              "steps": [
+                {
+                  "explanation": "Let $u = 1/x$ and $v = 1/y$."
+                },
+                {
+                  "explanation": "System becomes: $2u + 3v = 13$ (1) and $5u - 4v = -2$ (2)."
+                },
+                {
+                  "explanation": "Eliminate $v$: Multiply (1) by 4 and (2) by 3."
+                },
+                {
+                  "explanation": "$8u + 12v = 52$ and $15u - 12v = -6$."
+                },
+                {
+                  "explanation": "Add equations: $23u = 46 \\implies u = 2$."
+                },
+                {
+                  "explanation": "Find $v$: $2(2) + 3v = 13 \\implies 3v = 9 \\implies v = 3$."
+                },
+                {
+                  "explanation": "Convert back: $x = 1/u = 1/2$, $y = 1/v = 1/3$."
+                }
+              ],
+              "finalAnswer": "x=1/2, y=1/3"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_3_5_practice_compendium",
+          "title": "3.5 Practice Bank & Formula Compendium",
+          "content": "### 5. Comprehensive Practice Bank\n\n#### Section A: Graphical & Conceptual (10 Questions)\n1.  For what value of $k$ will the lines $3x + y = 1$ and $(2k-1)x + (k-1)y = 2k+1$ be parallel?\n2.  Draw the graph of $x - y + 1 = 0$ and $3x + 2y - 12 = 0$. Determine coordinates of vertices formed by lines and x-axis.\n3.  Is the pair $2x - 3y = 8$ and $4x - 6y = 9$ consistent?\n4.  Find the value of $c$ for infinite solutions: $cx - y = 2$ and $6x - 2y = 3$. (No value, check condition).\n5.  Write an equation of a line parallel to $2x + 3y = 5$.\n6.  Geometrically, what does $a_1/a_2 \\neq b_1/b_2$ signify?\n7.  Solve graphically: $x + y = 10, y - x = 4$.\n8.  Can a pair of linear equations have exactly two solutions? (No, 0, 1 or Infinite).\n9.  What is the condition for coincident lines?\n10. Describe the graph of $x = 0$ and $y = 0$.\n\n#### Section B: Algebraic Methods (10 Questions)\n11. Solve by substitution: $s - t = 3, s/3 + t/2 = 6$.\n12. Solve by elimination: $3x - 5y - 4 = 0$ and $9x = 2y + 7$.\n13. Solve for x and y: $ax + by = a-b$, $bx - ay = a+b$.\n14. Find $x, y$: $152x - 378y = -74$ and $-378x + 152y = -604$.\n15. Solve: $2/\\sqrt{x} + 3/\\sqrt{y} = 2$ and $4/\\sqrt{x} - 9/\\sqrt{y} = -1$.\n16. Solve the cyclic system: $x + y = 5, y + z = 7, z + x = 6$.\n17. Find $\\lambda$ for unique solution: $\\lambda x + y = 1, x + \\lambda y = 2$.\n18. The sum of digits of a two-digit number is 9. Also, nine times this number is twice the number obtained by reversing digits. Find the number.\n19. Five years ago, Nuri was thrice as old as Sonu. Ten years later, Nuri will be twice as old as Sonu. Find ages.\n20. A boat goes 30 km upstream and 44 km downstream in 10 hours. In 13 hours, it can go 40 km upstream and 55 km downstream. Determine speeds.\n\n#### Section C: Advanced / JEE Foundation (Must Practice)\n21. **(Must Practice)** Solve for $x, y$: $\\frac{5}{x-1} + \\frac{1}{y-2} = 2$ and $\\frac{6}{x-1} - \\frac{3}{y-2} = 1$.\n22. **(Must Practice)** Points A and B are 90 km apart. One car starts from A and another from B. If they go in the same direction, they meet in 9 hrs. If opposite, in 9/7 hrs. Find speeds.\n23. **(Must Practice)** Solve the system with parameters $a, b$: $(a-b)x + (a+b)y = a^2 - 2ab - b^2$ and $(a+b)(x+y) = a^2 + b^2$.\n24. **(Must Practice)** Roohi travels 300 km partially by train, partially by bus. If she travels 60 km by train and rest by bus, it takes 4 hrs. If 100 km by train and rest by bus, it takes 10 mins longer. Find speeds.\n25. **(Must Practice)** 2 women and 5 men can finish an embroidery work in 4 days, while 3 women and 6 men can finish in 3 days. Find time taken by 1 woman alone.\n26. **(Must Practice)** The area of a rectangle gets reduced by 9 sq units if length is reduced by 5 and breadth increased by 3. If length increased by 3 and breadth by 2, area increases by 67. Find dimensions.\n27. **(Must Practice)** Find the cyclic solution: $x+y=2xy, y+z=2yz, z+x=2zx$ (Dividing by xyz type).\n28. **(Must Practice)** Graph $|x| + |y| = 2$. Find area enclosed.\n29. **(Must Practice)** For what values of $a$ and $b$ does the system have infinite solutions? $2x + 3y = 7, (a-b)x + (a+b)y = 3a+b-2$.\n30. **(Must Practice)** Solve: $43x + 67y = -24, 67x + 43y = 24$.\n\n---\n\n### 6. Formula Compendium\n\n**1. General Pair**\n* $a_1x + b_1y + c_1 = 0$\n* $a_2x + b_2y + c_2 = 0$\n\n**2. Conditions for Solvability**\n* **Intersecting (Unique):** $\\frac{a_1}{a_2} \\neq \\frac{b_1}{b_2}$\n* **Parallel (No Sol):** $\\frac{a_1}{a_2} = \\frac{b_1}{b_2} \\neq \\frac{c_1}{c_2}$\n* **Coincident (Infinite):** $\\frac{a_1}{a_2} = \\frac{b_1}{b_2} = \\frac{c_1}{c_2}$\n\n**3. Speed/Distance Logic**\n* Upstream Speed: $u - v$\n* Downstream Speed: $u + v$\n* Time = Distance / Speed",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

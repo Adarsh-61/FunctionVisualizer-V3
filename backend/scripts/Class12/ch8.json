@@ -1,0 +1,164 @@
+{
+  "id": "12_8",
+  "classId": 12,
+  "title": "Application of Integrals",
+  "description": "The geometric realization of the definite integral. This chapter applies the machinery of calculus to calculate areas of bounded regions, bridging the gap between algebraic functions and planar geometry. It covers areas under simple curves, areas between curves, and complex regions defined by inequalities.",
+  "topics": [
+    {
+      "id": "12_8_1",
+      "title": "Area Under Simple Curves",
+      "content": "### 1. Introduction: The Area Problem\nIn geometry, we have formulas for the area of regular shapes (rectangles, triangles, circles). But how do we find the area of an irregular shape bounded by a curve $y = f(x)$?\nThis was one of the primary motivations for the development of Integral Calculus.\n\n### 2. The Concept of Elementary Area\nConsider the region bounded by the curve $y = f(x)$, the x-axis, and the ordinates $x = a$ and $x = b$.\nWe can imagine this region divided into extremely thin vertical strips.\n\n**Vertical Strip Approach:**\n* Consider an arbitrary strip at position $x$ with infinitesimally small width $dx$.\n* The height of this strip is approximately $y = f(x)$.\n* The area of this rectangular strip is $dA = \\text{height} \\times \\text{width} = y \\cdot dx = f(x) dx$.\n* The total area $A$ is the sum of these elemental areas as $x$ varies from $a$ to $b$.\n\n$$ A = \\int_{a}^{b} f(x) dx $$\n\n**Horizontal Strip Approach:**\nSometimes, it is easier to integrate with respect to $y$.\nConsider the region bounded by $x = g(y)$, the y-axis, and lines $y = c, y = d$.\n* Take a horizontal strip at height $y$ with width $dy$.\n* The length of this strip is $x = g(y)$.\n* Elemental Area $dA = x \\cdot dy = g(y) dy$.\n\n$$ A = \\int_{c}^{d} g(y) dy $$\n\n### 3. Sign Convention of Area\nThe definite integral $\\int_{a}^{b} f(x) dx$ represents the *algebraic* sum of areas.\n1.  **Above x-axis:** If $f(x) > 0$, the integral is positive.\n2.  **Below x-axis:** If $f(x) < 0$, the integral is negative. However, geometric **Area** is always positive.\n    * Formula: Area = $\\int_{a}^{b} |f(x)| dx$.\n3.  **Crossing the axis:** If the curve crosses the axis at $c \\in (a, b)$, we must split the integral:\n    $$ A = \\left| \\int_{a}^{c} f(x) dx \\right| + \\left| \\int_{c}^{b} f(x) dx \\right| $$",
+      "examples": [
+        {
+          "id": "ex_12_8_1",
+          "title": "Area of a Circle (Derivation)",
+          "problem": "Find the area enclosed by the circle $x^2 + y^2 = a^2$ using integration.",
+          "solution": "The circle is symmetric about both x and y axes.\nTotal Area = $4 \\times$ Area of the region in the first quadrant.\n\n1.  **Equation:** $y^2 = a^2 - x^2 \\implies y = \\sqrt{a^2 - x^2}$ (for 1st quadrant, $y>0$).\n2.  **Limits:** $x$ varies from $0$ to $a$.\n3.  **Integral Setup:**\n    $$ A_1 = \\int_{0}^{a} y dx = \\int_{0}^{a} \\sqrt{a^2 - x^2} dx $$\n4.  **Standard Integral Formula:**\n    $$ \\int \\sqrt{a^2 - x^2} dx = \\frac{x}{2}\\sqrt{a^2 - x^2} + \\frac{a^2}{2}\\sin^{-1}\\left(\\frac{x}{a}\\right) $$\n5.  **Evaluate:**\n    $$ A_1 = \\left[ \\frac{x}{2}\\sqrt{a^2 - x^2} + \\frac{a^2}{2}\\sin^{-1}\\left(\\frac{x}{a}\\right) \\right]_{0}^{a} $$\n    Upper Limit ($a$): $\\frac{a}{2}(0) + \\frac{a^2}{2}\\sin^{-1}(1) = \\frac{a^2}{2} \\cdot \\frac{\\pi}{2} = \\frac{\\pi a^2}{4}$.\n    Lower Limit ($0$): $0 + 0 = 0$.\n    $$ A_1 = \\frac{\\pi a^2}{4} $$\n6.  **Total Area:** $4 A_1 = 4 \\left( \\frac{\\pi a^2}{4} \\right) = \\pi a^2$. verified."
+        },
+        {
+          "id": "ex_12_8_2",
+          "title": "Area of Ellipse",
+          "problem": "Find the area enclosed by the ellipse $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$.",
+          "solution": "Due to symmetry, Area = $4 \\times$ Area in 1st quadrant.\n1.  **Express y in terms of x:**\n    $$ \\frac{y^2}{b^2} = 1 - \\frac{x^2}{a^2} = \\frac{a^2 - x^2}{a^2} $$\n    $$ y = \\frac{b}{a} \\sqrt{a^2 - x^2} $$\n2.  **Integral:**\n    $$ A = 4 \\int_{0}^{a} \\frac{b}{a} \\sqrt{a^2 - x^2} dx $$\n    $$ A = \\frac{4b}{a} \\int_{0}^{a} \\sqrt{a^2 - x^2} dx $$\n3.  **Evaluation:**\n    From the previous example, we know $\\int_{0}^{a} \\sqrt{a^2 - x^2} dx = \\frac{\\pi a^2}{4}$.\n    $$ A = \\frac{4b}{a} \\left( \\frac{\\pi a^2}{4} \\right) = \\pi a b $$\n**Result:** The area of an ellipse is $\\pi a b$."
+        }
+      ]
+    },
+    {
+      "id": "12_8_2",
+      "title": "Area of the Region Bounded by a Curve and a Line",
+      "content": "Finding the area bounded by a line and a curve (like a parabola or circle) involves identifying the points of intersection and setting up the definite integral.\n\n### 1. Algorithm\n1.  **Sketch the Graph:** Visualize the region. Identify symmetry if any.\n2.  **Find Intersections:** Solve the equations of the curve and the line simultaneously to find the limits of integration ($x$-coordinates or $y$-coordinates).\n3.  **Identify the Region:** Determine which function represents the height $y$ (or width $x$) over the interval.\n4.  **Integrate:** Apply $\\int_{a}^{b} y dx$ or $\\int_{c}^{d} x dy$.\n\n### 2. Area between a Line and Parabola\nA common JEE problem involves finding the area bounded by $y^2 = 4ax$ and a line passing through the focus (Latus Rectum) or an arbitrary line $y = mx + c$.\n\n* **Key Concept:** If using vertical strips ($dx$), the height is $y(x)$. For a parabola $y^2 = 4ax$, $y = \\pm 2\\sqrt{ax}$. The total height is $y_{upper} - y_{lower} = \\sqrt{4ax} - (-\\sqrt{4ax}) = 2\\sqrt{4ax}$ (if bounded symmetric). If bounded by x-axis, just $\\sqrt{4ax}$.",
+      "examples": [
+        {
+          "id": "ex_12_8_3",
+          "title": "Area Bounded by Parabola and Line",
+          "problem": "Find the area of the region bounded by the curve $y = x^2$ and the line $y = 4$.",
+          "solution": "**Method 1: Vertical Strips ($dx$)**\n1.  **Intersection:** $x^2 = 4 \\implies x = \\pm 2$.\n2.  **Upper and Lower:** The region is bounded above by line $y=4$ and below by parabola $y=x^2$.\n3.  **Integral:**\n    $$ A = \\int_{-2}^{2} (y_{upper} - y_{lower}) dx = \\int_{-2}^{2} (4 - x^2) dx $$\n    Due to symmetry (even function), $A = 2 \\int_{0}^{2} (4 - x^2) dx$.\n    $$ A = 2 \\left[ 4x - \\frac{x^3}{3} \\right]_{0}^{2} $$\n    $$ A = 2 \\left( 8 - \\frac{8}{3} \\right) = 2 \\left( \\frac{16}{3} \\right) = \\frac{32}{3} \\text{ sq units} $$\n\n**Method 2: Horizontal Strips ($dy$)**\n1.  **Limits:** $y$ varies from 0 (vertex) to 4 (line).\n2.  **Function:** $y = x^2 \\implies x = \\pm \\sqrt{y}$.\n    Right branch ($x>0$): $x = \\sqrt{y}$. Left branch: $x = -\\sqrt{y}$.\n    Width of strip = $x_{right} - x_{left} = \\sqrt{y} - (-\\sqrt{y}) = 2\\sqrt{y}$.\n3.  **Integral:**\n    $$ A = \\int_{0}^{4} 2\\sqrt{y} dy = 2 \\left[ \\frac{y^{3/2}}{3/2} \\right]_{0}^{4} $$\n    $$ A = 2 \\cdot \\frac{2}{3} [y^{3/2}]_{0}^{4} = \\frac{4}{3} (4^{3/2}) $$\n    $$ A = \\frac{4}{3} (8) = \\frac{32}{3} \\text{ sq units} $$"
+        }
+      ]
+    },
+    {
+      "id": "12_8_3",
+      "title": "Area Between Two Curves",
+      "content": "### 1. The General Formula\nIf we have two curves $y = f(x)$ and $y = g(x)$ such that $f(x) \\ge g(x)$ on the interval $[a, b]$, the area of the region bounded between them is:\n\n$$ A = \\int_{a}^{b} [\\text{Upper Curve} - \\text{Lower Curve}] dx $$\n$$ A = \\int_{a}^{b} [f(x) - g(x)] dx $$\n\n### 2. Steps to Solve\n1.  **Sketch** both curves on the same axes.\n2.  Find the **points of intersection** by solving $f(x) = g(x)$. These give the limits $a$ and $b$.\n3.  Identify which function is **upper** ($y_1$) and which is **lower** ($y_2$) in the interval $(a, b)$.\n4.  Integrate the difference.\n\n### 3. Complex Regions (JEE Advanced)\nSometimes, the upper/lower curves change definitions at a certain point $c$. In such cases, we split the integral:\n$$ A = \\int_{a}^{c} (f_1(x) - g(x)) dx + \\int_{c}^{b} (f_2(x) - g(x)) dx $$",
+      "examples": [
+        {
+          "id": "ex_12_8_4",
+          "title": "Area Between Two Parabolas",
+          "problem": "Find the area bounded by the two parabolas $y = x^2$ and $y^2 = x$.",
+          "solution": "1.  **Intersection Points:**\n    Substitute $y=x^2$ into $y^2=x$:\n    $(x^2)^2 = x \\implies x^4 - x = 0 \\implies x(x^3 - 1) = 0$.\n    Real roots: $x = 0$ and $x = 1$.\n    Points: $(0,0)$ and $(1,1)$.\n\n2.  **Identify Upper/Lower:**\n    In the interval $(0, 1)$, for a test point $x = 1/4$:\n    $y = x^2 = 1/16 = 0.0625$.\n    $y = \\sqrt{x} = 1/2 = 0.5$.\n    So $y = \\sqrt{x}$ (from $y^2=x$) is the upper curve.\n\n3.  **Integral:**\n    $$ A = \\int_{0}^{1} (\\sqrt{x} - x^2) dx $$\n    $$ A = \\left[ \\frac{x^{3/2}}{3/2} - \\frac{x^3}{3} \\right]_{0}^{1} $$\n    $$ A = \\left( \\frac{2}{3}(1) - \\frac{1}{3} \\right) - 0 = \\frac{1}{3} \\text{ sq units} $$"
+        },
+        {
+          "id": "ex_12_8_5",
+          "title": "Area Bounded by Circle and Line (Inequalities)",
+          "problem": "Find the area of the region $\\{(x, y) : x^2 + y^2 \\le 1 \\le x + y\\}$.",
+          "solution": "**1. Decode Inequalities:**\n* $x^2 + y^2 \\le 1$: Region **inside** the circle $x^2 + y^2 = 1$ (Radius 1, Center Origin).\n* $x + y \\ge 1$: Region **above** the line $x + y = 1$.\n\n**2. Intersection:**\nLine $x+y=1$ meets the circle at $(1, 0)$ and $(0, 1)$.\nThe region is the minor segment cut by the line in the first quadrant.\n\n**3. Setup Integral:**\nUpper curve: Circle $y = \\sqrt{1 - x^2}$.\nLower curve: Line $y = 1 - x$.\nLimits: $x$ goes from 0 to 1.\n\n**4. Evaluate:**\n$$ A = \\int_{0}^{1} (\\sqrt{1-x^2} - (1-x)) dx $$\n$$ A = \\int_{0}^{1} \\sqrt{1-x^2} dx - \\int_{0}^{1} (1-x) dx $$\nArea under circle quadrant - Area under line triangle.\nArea Circle Quadrant = $\\frac{\\pi(1)^2}{4} = \\frac{\\pi}{4}$.\nArea Triangle = $\\int_{0}^{1} (1-x) dx = [x - x^2/2]_0^1 = 1 - 1/2 = 1/2$.\n$$ A = \\frac{\\pi}{4} - \\frac{1}{2} $$"
+        },
+        {
+          "id": "ex_12_8_6",
+          "title": "Area Involving Modulus",
+          "problem": "Find the area bounded by $y = |x - 1|$ and $y = 1$.",
+          "solution": "1.  **Graph:**\n    $y = |x-1|$ is a V-shaped graph with vertex at $(1, 0)$.\n    $y = 1$ is a horizontal line.\n\n2.  **Intersections:**\n    $|x-1| = 1 \\implies x-1 = 1$ or $x-1 = -1$.\n    $x = 2$ or $x = 0$.\n    Points: $(0, 1)$ and $(2, 1)$.\n\n3.  **Symmetry:**\n    The region is a triangle with base on line $y=1$ from $x=0$ to $x=2$ (Length 2) and height 1.\n    Geometric Area = $1/2 \\times 2 \\times 1 = 1$.\n\n4.  **Calculus Method:**\n    Upper curve $y=1$. Lower curve $y=|x-1|$.\n    $$ A = \\int_{0}^{2} (1 - |x-1|) dx $$\n    Split at $x=1$:\n    $$ A = \\int_{0}^{1} (1 - (-(x-1))) dx + \\int_{1}^{2} (1 - (x-1)) dx $$\n    $$ A = \\int_{0}^{1} (1 + x - 1) dx + \\int_{1}^{2} (1 - x + 1) dx $$\n    $$ A = \\int_{0}^{1} x dx + \\int_{1}^{2} (2 - x) dx $$\n    $$ A = [x^2/2]_0^1 + [2x - x^2/2]_1^2 $$\n    $$ A = (1/2) + [(4-2) - (2-1/2)] = 1/2 + [2 - 1.5] = 1/2 + 1/2 = 1 $$"
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "prob_12_8_1",
+      "question": "Find the area of the region bounded by the curve y^2 = 9x, x=2, x=4 and the x-axis in the first quadrant.",
+      "type": "Simple Curve",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_8_2",
+      "question": "Find the area of the region bounded by the ellipse x^2/16 + y^2/9 = 1.",
+      "type": "Standard Curve",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_8_3",
+      "question": "Find the area of the region bounded by the parabola y = x^2 and y = |x|.",
+      "type": "Two Curves",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_8_4",
+      "question": "Find the area of the region {(x, y) : 0 <= y <= x^2 + 1, 0 <= y <= x + 1, 0 <= x <= 2}.",
+      "type": "Inequalities",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_8_5",
+      "question": "Using integration find the area of the triangular region whose sides have the equations y = 2x + 1, y = 3x + 1 and x = 4.",
+      "type": "Triangle Area",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_8_6",
+      "question": "Find the area of the smaller region bounded by the ellipse x^2/a^2 + y^2/b^2 = 1 and the line x/a + y/b = 1.",
+      "type": "Curve and Line",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_8_7",
+      "question": "Find the area bounded by the curve y = cos x between x = 0 and x = 2pi.",
+      "type": "Trigonometric Area",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_8_8",
+      "question": "Find the area of the region enclosed between the two circles: x^2 + y^2 = 4 and (x-2)^2 + y^2 = 4.",
+      "type": "Two Curves Intersection",
+      "difficulty": "JEE Advanced"
+    },
+    {
+      "id": "prob_12_8_9",
+      "question": "Compute the area bounded by the curve y = x |x|, x-axis and ordinates x = -1 and x = 1.",
+      "type": "Modulus Function",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_8_10",
+      "question": "Find the area bounded by the curves y = sqrt(x), 2y - x + 3 = 0 and the x-axis in the first quadrant.",
+      "type": "Multiple Boundaries",
+      "difficulty": "JEE Advanced"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "form_12_8_1",
+      "label": "Area (Vertical Strip)",
+      "tex": "A = \\int_{a}^{b} f(x) dx"
+    },
+    {
+      "id": "form_12_8_2",
+      "label": "Area (Horizontal Strip)",
+      "tex": "A = \\int_{c}^{d} g(y) dy"
+    },
+    {
+      "id": "form_12_8_3",
+      "label": "Area Between Curves",
+      "tex": "A = \\int_{a}^{b} [f(x) - g(x)] dx, \\text{ where } f(x) \\ge g(x)"
+    },
+    {
+      "id": "form_12_8_4",
+      "label": "Area of Circle Quadrant",
+      "tex": "\\int_{0}^{a} \\sqrt{a^2-x^2} dx = \\frac{\\pi a^2}{4}"
+    },
+    {
+      "id": "form_12_8_5",
+      "label": "Standard Integral Root(a^2-x^2)",
+      "tex": "\\int \\sqrt{a^2-x^2} dx = \\frac{x}{2}\\sqrt{a^2-x^2} + \\frac{a^2}{2}\\sin^{-1}\\frac{x}{a}"
+    },
+    {
+      "id": "form_12_8_6",
+      "label": "Area of Ellipse",
+      "tex": "A = \\pi ab"
+    },
+    {
+      "id": "form_12_8_7",
+      "label": "Area of Parabola Segment (0 to a)",
+      "tex": "\\int_0^a 2\\sqrt{ax} dx = \\frac{4}{3}a^2"
+    }
+  ]
+}

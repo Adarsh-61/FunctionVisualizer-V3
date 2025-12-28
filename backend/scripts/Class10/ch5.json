@@ -1,0 +1,254 @@
+{
+  "id": "class_10",
+  "title": "Class 10",
+  "chapters": [
+    {
+      "id": "ch_5_arithmetic_progressions",
+      "title": "Ch 5: Arithmetic Progressions",
+      "topics": [
+        {
+          "id": "topic_5_1_sequences_and_ap",
+          "title": "5.1 Sequences, Series, and Arithmetic Progressions",
+          "content": "### 1. The Mathematics of Patterns\nHuman beings are pattern-seeking creatures. We observe patterns in nature—the spirals of a pine cone, the arrangement of petals in a sunflower, or the holes in a honeycomb[cite: 638]. In mathematics, we formalize these patterns into **Sequences**.\n\n#### 1.1 What is a Sequence?\nA sequence is an ordered list of numbers following a specific rule. Each number in the sequence is called a **term**.\n* **Example:** 1, 2, 3, 4... (Natural numbers)\n* **Example:** 100, 70, 40, 10... (Decreasing pattern) [cite: 683]\n* **Example:** 2, 4, 8, 16... (Multiplicative pattern)\n\n#### 1.2 Definition of Arithmetic Progression (AP)\nAn **Arithmetic Progression** is a specific type of sequence where the difference between any two consecutive terms is constant. This constant difference is called the **Common Difference** ($d$) [cite: 701-702].\n\n**Formal Definition:**\nA sequence $a_1, a_2, a_3, \\dots, a_n, \\dots$ is an Arithmetic Progression if there exists a constant $d$ such that:\n$$a_{k+1} - a_k = d$$\nfor all natural numbers $k$.\n\n* **First Term ($a$):** The starting point of the sequence ($a_1$).\n* **Common Difference ($d$):** The fixed number added to the preceding term to get the next term[cite: 701]. It can be positive, negative, or zero[cite: 702].\n\n#### 1.3 Types of APs\n1.  **Finite AP:** An AP with a limited number of terms. It has a distinct **last term** ($l$) [cite: 721-722].\n    * *Example:* Heights of students in a line: 147, 148, ..., 157[cite: 709].\n2.  **Infinite AP:** An AP that continues indefinitely. It has no last term [cite: 723-724].\n    * *Example:* 1, 2, 3, 4, ... [cite: 682].\n\n#### 1.4 General Form of an AP\nIf the first term is $a$ and the common difference is $d$, the AP can be written as:\n$$a, a+d, a+2d, a+3d, \\dots$$\nThis represents the structure of every possible arithmetic progression [cite: 718-720].\n\n#### 1.5 Identifying an AP\nTo check if a list of numbers is an AP, calculate the difference between consecutive terms ($a_2 - a_1$, $a_3 - a_2$, etc.). If these differences are all equal, the list is an AP [cite: 761-762].\n\n* **List:** 6, 9, 12, 15\n    * $9 - 6 = 3$\n    * $12 - 9 = 3$\n    * $15 - 12 = 3$\n    * Since differences are constant ($d=3$), it is an AP [cite: 757-762].\n* **List:** 1, 1, 2, 3, 5\n    * $1 - 1 = 0$\n    * $2 - 1 = 1$\n    * Differences are not constant. Not an AP[cite: 775].",
+          "formulas": [
+            "a_{k+1} - a_k = d",
+            "\\text{General Form: } a, a+d, a+2d, \\dots"
+          ],
+          "examples": [
+            {
+              "id": "ex_ap_1",
+              "question": "For the AP: $\\frac{3}{2}, \\frac{1}{2}, -\\frac{1}{2}, -\\frac{3}{2}, \\dots$, write the first term $a$ and the common difference $d$.",
+              "steps": [
+                {
+                  "explanation": "Identify the first term $a$, which is the first number in the list."
+                },
+                {
+                  "explanation": "$a = \\frac{3}{2}$[cite: 783]."
+                },
+                {
+                  "explanation": "Calculate the common difference $d$ by subtracting the first term from the second term ($a_2 - a_1$)."
+                },
+                {
+                  "explanation": "$d = \\frac{1}{2} - \\frac{3}{2} = \\frac{1-3}{2} = \\frac{-2}{2} = -1$[cite: 783]."
+                },
+                {
+                  "explanation": "Verification: Check $a_3 - a_2 = -\\frac{1}{2} - \\frac{1}{2} = -1$. It matches."
+                }
+              ],
+              "finalAnswer": "$a = 3/2, d = -1$"
+            },
+            {
+              "id": "ex_ap_2",
+              "question": "Which of the following form an AP? (i) 4, 10, 16, 22... (ii) 1, -1, -3, -5...",
+              "steps": [
+                {
+                  "explanation": "**Case (i):** Calculate differences."
+                },
+                {
+                  "explanation": "$a_2 - a_1 = 10 - 4 = 6$. $a_3 - a_2 = 16 - 10 = 6$. $a_4 - a_3 = 22 - 16 = 6$ [cite: 791-793]."
+                },
+                {
+                  "explanation": "Since the difference is constant ($d=6$), it is an AP."
+                },
+                {
+                  "explanation": "**Case (ii):** Calculate differences."
+                },
+                {
+                  "explanation": "$a_2 - a_1 = -1 - 1 = -2$. $a_3 - a_2 = -3 - (-1) = -2$. $a_4 - a_3 = -5 - (-3) = -2$ [cite: 797-800]."
+                },
+                {
+                  "explanation": "Difference is constant ($d=-2$). It is an AP."
+                }
+              ],
+              "finalAnswer": "Both are APs."
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Linear Nature of AP",
+            "functions": [
+              {
+                "expression": "2*x + 1",
+                "color": "blue",
+                "label": "AP: 3, 5, 7, 9..."
+              }
+            ],
+            "points": [
+              { "x": 1, "y": 3, "label": "a1" },
+              { "x": 2, "y": 5, "label": "a2" },
+              { "x": 3, "y": 7, "label": "a3" },
+              { "x": 4, "y": 9, "label": "a4" }
+            ],
+            "xRange": [0, 6],
+            "yRange": [0, 12]
+          }
+        },
+        {
+          "id": "topic_5_2_nth_term",
+          "title": "5.2 The General Term (nth Term)",
+          "content": "### 2. Generalizing the Progression\nIf we know the starting point ($a$) and the step size ($d$), we can predict the value of any term in the sequence without writing out all the preceding terms.\n\n#### 2.1 Derivation of the $n$th Term Formula\nLet's observe the pattern of terms in an AP [cite: 901-906]:\n* **1st Term ($a_1$):** $a = a + (1-1)d$\n* **2nd Term ($a_2$):** $a + d = a + (2-1)d$\n* **3rd Term ($a_3$):** $a_2 + d = (a+d) + d = a + 2d = a + (3-1)d$\n* **4th Term ($a_4$):** $a_3 + d = (a+2d) + d = a + 3d = a + (4-1)d$\n\nFollowing this logic, the $n$th term is obtained by adding $d$ exactly $(n-1)$ times to the first term.\n\n**Formula:**\n$$a_n = a + (n-1)d$$\nwhere:\n* $a_n$ is the $n$th term (General Term).\n* $a$ is the first term.\n* $n$ is the position of the term.\n* $d$ is the common difference.\n\n#### 2.2 Variables in the Equation\nThe equation $a_n = a + (n-1)d$ connects four variables: $a_n, a, n, d$. If any three are known, the fourth can be calculated. \n* **Finding $d$:** $d = \\frac{a_n - a}{n-1}$\n* **Finding $n$:** $n = \\frac{a_n - a}{d} + 1$\n\n#### 2.3 Real-Life Application Example\nReena's salary starts at ₹8000 and increases by ₹500 annually [cite: 640].\n* $a = 8000$, $d = 500$.\n* Salary for 5th year: $a_5 = 8000 + (5-1)500 = 8000 + 2000 = 10000$ [cite: 874].\n* Salary for 25th year: $a_{25} = 8000 + (24)500 = 8000 + 12000 = 20000$[cite: 897].",
+          "formulas": [
+            "a_n = a + (n-1)d",
+            "n = \\frac{a_n - a}{d} + 1"
+          ],
+          "examples": [
+            {
+              "id": "ex_ap_3",
+              "question": "Find the 10th term of the AP: 2, 7, 12...",
+              "steps": [
+                {
+                  "explanation": "Identify the parameters: First term $a = 2$."
+                },
+                {
+                  "explanation": "Common difference $d = 7 - 2 = 5$[cite: 919]."
+                },
+                {
+                  "explanation": "We need the 10th term, so $n = 10$."
+                },
+                {
+                  "explanation": "Apply formula: $a_{10} = a + (10-1)d = 2 + 9(5)$."
+                },
+                {
+                  "explanation": "Calculation: $2 + 45 = 47$[cite: 923]."
+                }
+              ],
+              "finalAnswer": "47"
+            },
+            {
+              "id": "ex_ap_4",
+              "question": "Which term of the AP: 21, 18, 15... is -81? Also is any term 0?",
+              "steps": [
+                {
+                  "explanation": "Here $a = 21$, $d = 18 - 21 = -3$. We are given $a_n = -81$ and need to find $n$[cite: 926]."
+                },
+                {
+                  "explanation": "Formula: $-81 = 21 + (n-1)(-3)$."
+                },
+                {
+                  "explanation": "Rearrange: $-81 - 21 = -3(n-1) \\implies -102 = -3(n-1)$."
+                },
+                {
+                  "explanation": "Divide: $n-1 = \\frac{-102}{-3} = 34$."
+                },
+                {
+                  "explanation": "$n = 34 + 1 = 35$. So the 35th term is -81[cite: 934]."
+                },
+                {
+                  "explanation": "Check for 0: Set $a_n = 0$. $0 = 21 + (n-1)(-3)$."
+                },
+                {
+                  "explanation": "$3(n-1) = 21 \\implies n-1 = 7 \\implies n = 8$."
+                },
+                {
+                  "explanation": "Since $n=8$ is a positive integer, the 8th term is 0[cite: 942]."
+                }
+              ],
+              "finalAnswer": "35th term is -81; 8th term is 0."
+            },
+            {
+              "id": "ex_ap_5",
+              "question": "Determine the AP whose 3rd term is 5 and the 7th term is 9.",
+              "steps": [
+                {
+                  "explanation": "We are given two conditions which form a system of linear equations."
+                },
+                {
+                  "explanation": "$a_3 = a + 2d = 5$ (Eq 1)[cite: 945]."
+                },
+                {
+                  "explanation": "$a_7 = a + 6d = 9$ (Eq 2)[cite: 947]."
+                },
+                {
+                  "explanation": "Subtract Eq 1 from Eq 2: $(a+6d) - (a+2d) = 9 - 5$."
+                },
+                {
+                  "explanation": "$4d = 4 \\implies d = 1$."
+                },
+                {
+                  "explanation": "Substitute $d=1$ into Eq 1: $a + 2(1) = 5 \\implies a = 3$."
+                },
+                {
+                  "explanation": "The AP is 3, 4, 5, 6, 7...[cite: 950]."
+                }
+              ],
+              "finalAnswer": "3, 4, 5, 6..."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_5_3_sum_of_n_terms",
+          "title": "5.3 Sum of First n Terms (Sn)",
+          "content": "### 3. Summation of Series\nOften, we need the *total* of an AP sequence (e.g., total money saved after 20 months). Adding term by term is tedious. We use a formula derived by the young mathematician Carl Friedrich Gauss.\n\n#### 3.1 The Gaussian Insight\nGauss was asked to sum numbers from 1 to 100. He realized that if you list the series forwards and backwards, the terms pair up to give a constant sum [cite: 1133-1143].\n$$S = 1 + 2 + \\dots + 100$$\n$$S = 100 + 99 + \\dots + 1$$\n$$2S = 101 + 101 + \\dots + 101 \\quad (100 \\text{ times})$$\n$$2S = 100 \\times 101 \\implies S = \\frac{100 \\times 101}{2} = 5050$$\n\n#### 3.2 General Formula Derivation\nLet $S$ be the sum of $n$ terms of an AP with first term $a$ and last term $l$ (where $l = a_n = a+(n-1)d$).\n1.  $S = a + (a+d) + \\dots + (l-d) + l$\n2.  Reverse: $S = l + (l-d) + \\dots + (a+d) + a$ [cite: 1151-1152]\n3.  Add: $2S = (a+l) + (a+l) + \\dots + (a+l)$ ($n$ times) [cite: 1157]\n4.  $2S = n(a+l)$\n\n**Formula A (Last Term Known):**\n$$S_n = \\frac{n}{2}(a + l)$$\n[cite: 1169]\n\n**Formula B (Standard):**\nSubstitute $l = a + (n-1)d$ into Formula A:\n$S_n = \\frac{n}{2}(a + [a + (n-1)d])$\n$$S_n = \\frac{n}{2}[2a + (n-1)d]$$\n[cite: 1160]\n\n#### 3.3 Properties of Sum\n* The sum of the first $n$ positive integers is $\\frac{n(n+1)}{2}$ [cite: 1249].\n* The $n$th term can be found from the sum: $a_n = S_n - S_{n-1}$[cite: 1191]. Logic: The sum of 5 terms minus the sum of 4 terms leaves exactly the 5th term.",
+          "formulas": [
+            "S_n = \\frac{n}{2}[2a + (n-1)d]",
+            "S_n = \\frac{n}{2}(a + l)",
+            "a_n = S_n - S_{n-1}",
+            "\\sum_{i=1}^n i = \\frac{n(n+1)}{2}"
+          ],
+          "examples": [
+            {
+              "id": "ex_ap_6",
+              "question": "Find the sum of the first 22 terms of the AP: 8, 3, -2...",
+              "steps": [
+                {
+                  "explanation": "Identify $a=8$, $n=22$, $d = 3 - 8 = -5$[cite: 1194]."
+                },
+                {
+                  "explanation": "Use Formula B: $S_{22} = \\frac{22}{2}[2(8) + (22-1)(-5)]$. "
+                },
+                {
+                  "explanation": "$S_{22} = 11[16 + 21(-5)]$."
+                },
+                {
+                  "explanation": "$S_{22} = 11[16 - 105] = 11[-89]$."
+                },
+                {
+                  "explanation": "$S_{22} = -979$[cite: 1197]."
+                }
+              ],
+              "finalAnswer": "-979"
+            },
+            {
+              "id": "ex_ap_7",
+              "question": "How many terms of the AP: 24, 21, 18... must be taken so that their sum is 78?",
+              "steps": [
+                {
+                  "explanation": "Here $a=24, d=-3, S_n=78$. We need to find $n$."
+                },
+                {
+                  "explanation": "$78 = \\frac{n}{2}[2(24) + (n-1)(-3)]$[cite: 1219]."
+                },
+                {
+                  "explanation": "$156 = n[48 - 3n + 3] = n[51 - 3n] = 51n - 3n^2$."
+                },
+                {
+                  "explanation": "Quadratic equation: $3n^2 - 51n + 156 = 0$. Divide by 3: $n^2 - 17n + 52 = 0$[cite: 1220]."
+                },
+                {
+                  "explanation": "Factorize: $(n-4)(n-13) = 0$."
+                },
+                {
+                  "explanation": "Solutions: $n=4$ or $n=13$."
+                },
+                {
+                  "explanation": "Why two answers? The sum of terms from 5th to 13th is zero ($15, 12, 9, 6, 3, 0, -3, -6, -9$), so adding them doesn't change the total sum[cite: 1233]."
+                }
+              ],
+              "finalAnswer": "4 or 13"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_5_4_practice_compendium",
+          "title": "5.4 Practice Bank & Formula Compendium",
+          "content": "### 4. Comprehensive Practice Bank\n\n#### Section A: Understanding Terms and Difference (10 Questions)\n1.  Find the common difference of the AP: $1, -1, -3, -5...$\n2.  Write the first 4 terms of an AP if $a=4$ and $d=-3$.\n3.  Is the list $1^2, 2^2, 3^2, 4^2...$ an AP? Justify.\n4.  Find the 10th term of the AP: $\\sqrt{2}, \\sqrt{8}, \\sqrt{18}...$\n5.  If the $n$th term of a sequence is $3 + 2n$, is it an AP?\n6.  Find $k$ if $2k, k+10, 3k+2$ are in AP.\n7.  Find the 5th term from the end of the AP: $3, 5, 7, ..., 201$.\n8.  The taxi fare is 15 for the first km and rises by 8 for each subsequent km. Write the series.\n9.  What is the next term of $\\sqrt{7}, \\sqrt{28}, \\sqrt{63}$?\n10. Check if 301 is a term of 5, 11, 17, 23...\n\n#### Section B: Problem Solving (10 Questions)\n11. Determine the AP whose 3rd term is 16 and 7th term exceeds the 5th term by 12.\n12. How many two-digit numbers are divisible by 3?\n13. Find the 31st term of an AP whose 11th term is 38 and 16th term is 73.\n14. Find the sum of the first 40 positive integers divisible by 6.\n15. If the sum of the first 14 terms of an AP is 1050 and the first term is 10, find the 20th term.\n16. How many terms of the AP: 9, 17, 25... must be taken to give a sum of 636?\n17. Find the sum of the first 15 multiples of 8.\n18. The first and last terms of an AP are 17 and 350. If $d=9$, how many terms are there?\n19. Find the sum of odd numbers between 0 and 50.\n20. A sum of ₹700 is to be used to give 7 cash prizes. If each prize is ₹20 less than the preceding one, find the value of each prize.\n\n#### Section C: Advanced / JEE Foundation (Must Practice)\n21. **(Must Practice)** The sum of the 4th and 8th terms of an AP is 24, and the sum of the 6th and 10th terms is 44. Find the AP.\n22. **(Must Practice)** If the sum of the first $n$ terms of an AP is $4n - n^2$, what is the first term? What is the $n$th term?\n23. **(Must Practice)** A spiral is made of successive semicircles with radii 0.5, 1.0, 1.5... Find the total length of the spiral of 13 semicircles.\n24. **(Must Practice)** 200 logs are stacked: 20 in the bottom row, 19 in the next, 18 in the next. How many rows are needed for 200 logs, and how many are in the top row?\n25. **(Must Practice)** In a potato race, a bucket is 5m from the first potato, and others are 3m apart. There are 10 potatoes. Calculate the total distance run by the competitor.\n26. **(Must Practice)** Which term of the AP 121, 117, 113... is its first negative term?\n27. **(Must Practice)** The houses of a row are numbered 1 to 49. Show there is a value $x$ such that sum of numbers preceding $x$ equals sum of numbers following it.\n28. **(Must Practice)** If $S_m = S_n$ for an AP (where $m \\neq n$), prove that $S_{m+n} = 0$.\n29. **(Must Practice)** The angles of a triangle are in AP. The greatest angle is twice the least. Find all angles.\n30. **(Must Practice)** If the $p$th term is $q$ and the $q$th term is $p$, prove that the $n$th term is $p+q-n$.\n\n---\n\n### 5. Formula Compendium\n\n**1. General Term**\n$$a_n = a + (n-1)d$$\n* $a$: First term\n* $d$: Common difference ($a_2 - a_1$)\n* $n$: Number of terms\n\n**2. Sum of n Terms**\n$$S_n = \\frac{n}{2}[2a + (n-1)d]$$\n$$S_n = \\frac{n}{2}(a + l)$$\n* $l$: Last term ($a_n$)\n\n**3. Arithmetic Mean**\nIf $a, b, c$ are in AP, then:\n$$b = \\frac{a+c}{2}$$\n\n**4. Key Properties**\n* $a_n = S_n - S_{n-1}$\n* Sum of first $n$ positive integers: $\\frac{n(n+1)}{2}$",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

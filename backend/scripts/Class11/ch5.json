@@ -1,0 +1,120 @@
+{
+  "id": "11_5",
+  "classId": 11,
+  "title": "Linear Inequalities",
+  "description": "A fundamental shift from 'exact equality' to 'constraints and regions'. This chapter builds the algebraic and graphical logic required for Calculus domains, Linear Programming, and analyzing real-world optimization problems.",
+  "topics": [
+    {
+      "id": "11_5_1",
+      "title": "Introduction to Inequalities",
+      "content": "### 1. From Equations to Inequalities\nIn earlier classes, we solved equations like $2x + 3 = 0$ to find a specific value. However, real-world problems often involve **constraints** rather than equalities.\n* *\"Budget is at most \u20b9200\"* $\\implies x \\le 200$\n* *\"Speed must exceed 60 km/h\"* $\\implies s > 60$\n* *\"Marks required to pass\"* $\\implies m \\ge 33$\n\n**Definition:**\nTwo real numbers or two algebraic expressions related by the symbols $<$, $>$, $\\le$, or $\\ge$ form an **Inequality**.\n\n### 2. Classification of Inequalities\n\n**A. Numerical vs Literal**\n* **Numerical:** $3 < 5$, $7 > 2$. (Fixed truth)\n* **Literal:** $x < 5$, $y \\ge 2$. (Depends on variable)\n\n**B. Strict vs Slack**\n* **Strict Inequality:** Uses $<$ or $>$. The boundary is **excluded**.\n    * Example: $x < 3$ means $x$ can be 2.999... but never 3.\n* **Slack Inequality:** Uses $\\le$ or $\\ge$. The boundary is **included**.\n    * Example: $x \\le 3$ means $x$ can be exactly 3.\n\n**C. Linear vs Quadratic**\n* **Linear Inequality:** The variable has power 1. (e.g., $ax + b < 0$, $ax + by < c$)\n* **Quadratic Inequality:** The variable has power 2. (e.g., $ax^2 + bx + c > 0$)\n\n*Note: This chapter focuses on Linear Inequalities in one and two variables.*\n\n### 3. Algebraic Properties (The Rules of the Game)\nSolving an inequality is similar to solving an equation, with one **critical exception**.\n\n**Rule 1: Addition/Subtraction**\nEqual numbers may be added to (or subtracted from) both sides of an inequality without affecting the sign.\n* If $a < b$, then $a + k < b + k$.\n* *Intuition:* Shifting two points on a number line by the same distance preserves their relative order.\n\n**Rule 2: Multiplication/Division by Positive Number**\nBoth sides can be multiplied (or divided) by the same **positive** number without changing the sign.\n* If $a < b$ and $k > 0$, then $ka < kb$.\n\n**Rule 3: Multiplication/Division by Negative Number (CRITICAL)**\nWhen both sides are multiplied (or divided) by a **negative** number, the inequality sign **MUST BE REVERSED**.\n* If $a < b$ and $k < 0$, then $ka > kb$.\n\n**Why? (Proof by Logic)**\nConsider $2 < 5$.\nMultiply by $-1$.\n* LHS becomes $-2$.\n* RHS becomes $-5$.\nOn the number line, $-5$ is to the left of $-2$. Therefore, $-2 > -5$.\nThe order flips across the origin.",
+      "examples": [
+        {
+          "id": "ex_5_1",
+          "question": "Solve $30x < 200$ when:\n(i) x is a natural number,\n(ii) x is an integer.",
+          "solution": "1.  **Simplify:** Divide both sides by 30.\n    $$ x < \\frac{200}{30} \\implies x < \\frac{20}{3} \\implies x < 6.66... $$\n\n2.  **Case (i): x is a natural number ($\\mathbb{N}$)**\n    The natural numbers less than 6.66 are $\\{1, 2, 3, 4, 5, 6\\}$.\n    **Solution Set:** $\\{1, 2, 3, 4, 5, 6\\}$.\n\n3.  **Case (ii): x is an integer ($\\mathbb{Z}$)**\n    The integers less than 6.66 include all negative integers, zero, and positive up to 6.\n    **Solution Set:** $\\{..., -3, -2, -1, 0, 1, 2, 3, 4, 5, 6\\}$."
+        },
+        {
+          "id": "ex_5_2",
+          "question": "Solve $5x - 3 < 3x + 1$ when $x$ is a real number.",
+          "solution": "1.  **Group x terms:** Subtract $3x$ from both sides.\n    $$ 5x - 3x - 3 < 1 \\implies 2x - 3 < 1 $$\n2.  **Isolate x:** Add 3 to both sides.\n    $$ 2x < 4 $$\n3.  **Solve:** Divide by 2 (positive, so sign stays).\n    $$ x < 2 $$\n4.  **Real Solution:** The set of all real numbers strictly less than 2.\n    **Interval:** $(-\\infty, 2)$."
+        }
+      ]
+    },
+    {
+      "id": "11_5_2",
+      "title": "Algebraic Solutions and Interval Notation",
+      "content": "### 1. Interval Notation\nSince solutions to inequalities are often infinite sets of real numbers, we use interval notation.\n\n* **Open Interval $(a, b)$:** $\\{x : a < x < b\\}$. Endpoints excluded.\n* **Closed Interval $[a, b]$:** $\\{x : a \\le x \\le b\\}$. Endpoints included.\n* **Semi-Open/Closed $[a, b)$ or $(a, b]$:** One end included, one excluded.\n* **Infinity:** $\\infty$ and $-\\infty$ are always enclosed by round brackets `(` `)`.\n\n### 2. Solving Linear Inequalities in One Variable\n**Standard Form:** $ax + b < 0$ (or $>$, $\\le$, $\\ge$).\n\n**Algorithm:**\n1.  Remove fractions by multiplying by LCM (watch the sign of LCM!).\n2.  Open brackets and collect $x$-terms on one side, constants on the other.\n3.  Solve for $x$.\n4.  Express the result in interval notation.\n\n**Important Pitfall: Variables in Denominator**\nNever cross-multiply a variable if you don't know its sign.\n* *Wrong:* $\\frac{1}{x} < 2 \\implies 1 < 2x$ (This assumes $x > 0$).\n* *Correct:* Bring to one side: $\\frac{1}{x} - 2 < 0 \\implies \\frac{1-2x}{x} < 0$. Then use critical point method (Wavy Curve).\n\n### 3. Representation on Number Line\n* **Strict Inequality ($<$ or $>$)**: Use a **hollow circle** (o) at the boundary.\n* **Slack Inequality ($\\le$ or $\\ge$)**: Use a **solid/filled circle** (\u2022) at the boundary.\n* Shade the region satisfying the condition.",
+      "examples": [
+        {
+          "id": "ex_5_3",
+          "question": "Solve: $\\frac{x}{4} < \\frac{5x-2}{3} - \\frac{7x-3}{5}$.",
+          "solution": "1.  **LCM:** The LCM of 4, 3, 5 is 60. Multiply entire inequality by 60.\n    $$ 60 \\left( \\frac{x}{4} \\right) < 60 \\left( \\frac{5x-2}{3} - \\frac{7x-3}{5} \\right) $$\n2.  **Simplify:**\n    $$ 15x < 20(5x - 2) - 12(7x - 3) $$\n3.  **Expand:**\n    $$ 15x < 100x - 40 - 84x + 36 $$\n    $$ 15x < 16x - 4 $$\n4.  **Rearrange:**\n    $$ 15x - 16x < -4 $$\n    $$ -x < -4 $$\n5.  **Multiply by -1 (REVERSE SIGN):**\n    $$ x > 4 $$\n6.  **Solution:** $(4, \\infty)$."
+        },
+        {
+          "id": "ex_5_4",
+          "question": "Solve the system of inequalities: $3x - 7 < 5 + x$ AND $11 - 5x \\le 1$.",
+          "solution": "We solve both independently and find the **Intersection**.\n\n**Inequality 1:**\n$$ 3x - x < 5 + 7 \\implies 2x < 12 \\implies x < 6 $$\nInterval $A = (-\\infty, 6)$.\n\n**Inequality 2:**\n$$ -5x \\le 1 - 11 \\implies -5x \\le -10 $$\nDivide by -5 (Reverse Sign):\n$$ x \\ge 2 $$\nInterval $B = [2, \\infty)$.\n\n**Intersection ($A \\cap B$):**\nNumbers that are $\\ge 2$ AND $< 6$.\n**Final Solution:** $[2, 6)$."
+        }
+      ]
+    },
+    {
+      "id": "11_5_3",
+      "title": "Graphical Solution (Two Variables)",
+      "content": "### 1. Introduction to Half-Planes\nA linear equation $ax + by = c$ represents a straight line. This line divides the Cartesian plane into two parts called **Half-Planes**.\n* **Vertical Line ($x = a$):** Divides plane into Left and Right half-planes.\n* **Non-Vertical Line ($y = mx + c$):** Divides plane into Upper and Lower half-planes.\n\n**Regions:**\n1.  The line itself: $ax + by = c$\n2.  Region 1: $ax + by > c$\n3.  Region 2: $ax + by < c$\n\n### 2. Algorithm to Solve $ax + by < c$ Graphically\n**Step 1: Draw the Boundary Line**\n* Replace inequality with equality: $ax + by = c$.\n* Find intercepts: Put $x=0$ to find $y$, put $y=0$ to find $x$.\n* **Dotted Line:** If inequality is strict ($<$ or $>$).\n* **Solid Line:** If inequality is slack ($\\le$ or $\\ge$).\n\n**Step 2: Test Point Method**\n* Choose a point **not on the line**. The Origin $(0,0)$ is the best choice (unless the line passes through it).\n* Substitute the coordinates into the inequality.\n* **True Statement:** Shade the region **containing** the test point.\n* **False Statement:** Shade the region **opposite** to the test point.\n\n### 3. Systems of Inequalities\nTo solve a system of inequalities (e.g., $x+y > 5$ and $x-y < 3$):\n1.  Draw the graph for each inequality on the same coordinate axes.\n2.  Identify the region common to all (The Intersection).\n3.  This **Feasible Region** is the solution set.",
+      "examples": [
+        {
+          "id": "ex_5_5",
+          "question": "Solve graphically: $3x + 2y > 6$.",
+          "solution": "1.  **Boundary Line:** Consider $3x + 2y = 6$.\n    * $(x=0, y=3)$ and $(x=2, y=0)$.\n    * Draw a **Dotted Line** passing through $(0,3)$ and $(2,0)$ (since $>$ is strict).\n2.  **Test Point (0,0):**\n    * Substitute in $3x + 2y > 6$:\n    * $3(0) + 2(0) > 6 \\implies 0 > 6$\n    * **FALSE**.\n3.  **Shading:** Since (0,0) is false, shade the half-plane **away** from the origin (Upper Right region)."
+        },
+        {
+          "id": "ex_5_6",
+          "question": "Solve the system graphically:\n$x + y \\ge 5$\n$x - y \\le 3$",
+          "solution": "1.  **Line 1 ($x + y = 5$):** Passes through (0,5), (5,0). Solid line.\n    * Test (0,0): $0 \\ge 5$ (False). Shade away from origin.\n2.  **Line 2 ($x - y = 3$):** Passes through (0, -3), (3,0). Solid line.\n    * Test (0,0): $0 \\le 3$ (True). Shade towards origin.\n3.  **Common Region:** The solution is the overlapping shaded area bounded by these two lines."
+        }
+      ]
+    },
+    {
+      "id": "11_5_4",
+      "title": "Applications and Word Problems",
+      "content": "Inequalities are the language of constraints in science, economics, and chemistry. Translating word problems into algebraic inequalities is a key skill.\n\n### Common Keywords\n* **\"At least\"**: $\\ge$\n* **\"At most\"**: $\\le$\n* **\"More than\" / \"Exceeds\"**: $>$\n* **\"Less than\"**: $<$\n* **\"Between $a$ and $b$ inclusive\"**: $a \\le x \\le b$\n\n### Mixture Problems\nCommon in chemistry (e.g., mixing acid solutions).\n* Logic: Amount of pure substance in Mix 1 + Amount in Mix 2 = Total Amount in Final Mix.\n* Constraint: Final concentration must lie between defined limits.",
+      "examples": [
+        {
+          "id": "ex_5_7",
+          "question": "In an experiment, a solution of hydrochloric acid is to be kept between $30^\\circ$ and $35^\\circ$ Celsius. What is the range of temperature in degree Fahrenheit if conversion formula is $C = \\frac{5}{9}(F - 32)$?",
+          "solution": "1.  **Given:** $30 < C < 35$.\n2.  **Substitute Formula:**\n    $$ 30 < \\frac{5}{9}(F - 32) < 35 $$\n3.  **Isolate F:**\n    * Multiply by 9/5:\n        $$ 30 \\times \\frac{9}{5} < F - 32 < 35 \\times \\frac{9}{5} $$\n        $$ 54 < F - 32 < 63 $$\n    * Add 32:\n        $$ 54 + 32 < F < 63 + 32 $$\n        $$ 86 < F < 95 $$\n4.  **Answer:** The temperature must be between $86^\\circ$F and $95^\\circ$F."
+        },
+        {
+          "id": "ex_5_8",
+          "question": "A manufacturer has 600 litres of a 12% solution of acid. How many litres of a 30% acid solution must be added to it so that acid content in the resulting mixture will be more than 15% but less than 18%?",
+          "solution": "1.  **Let** $x$ be litres of 30% solution added.\n2.  **Total Mixture:** $(600 + x)$ litres.\n3.  **Total Acid Content:**\n    * From 12% solution: $0.12 \\times 600 = 72$.\n    * From 30% solution: $0.30x$.\n    * Total Acid = $72 + 0.30x$.\n4.  **Constraints:**\n    * Condition 1: Acid > 15% of Total\n        $$ 72 + 0.30x > 0.15(600 + x) $$\n    * Condition 2: Acid < 18% of Total\n        $$ 72 + 0.30x < 0.18(600 + x) $$\n5.  **Solving 1:**\n    $72 + 0.3x > 90 + 0.15x \\implies 0.15x > 18 \\implies x > 120$.\n6.  **Solving 2:**\n    $72 + 0.3x < 108 + 0.18x \\implies 0.12x < 36 \\implies x < 300$.\n7.  **Result:** More than 120 litres but less than 300 litres."
+        }
+      ]
+    },
+    {
+      "id": "11_5_5",
+      "title": "Advanced JEE Extensions",
+      "content": "### 1. Absolute Value Inequalities\nThe modulus function $|x|$ measures distance from zero. This geometric interpretation makes solving simple.\n\n**Fundamental Rules:**\nFor $a > 0$:\n1.  **$|x| < a \\iff -a < x < a$** (Distance is less than $a$)\n2.  **$|x| > a \\iff x < -a \\text{ or } x > a$** (Distance is more than $a$)\n\n**Generalized:**\n* $|x - k| < a \\implies k-a < x < k+a$\n* $|x - k| > a \\implies x < k-a \\text{ or } x > k+a$\n\n### 2. Rational Inequalities (Wavy Curve Introduction)\nTo solve $\\frac{P(x)}{Q(x)} > 0$:\n1.  Factorize numerator and denominator into linear factors $(x - a)$.\n2.  Find **Critical Points** (where factors become zero).\n3.  Plot points on number line.\n4.  Start from rightmost interval with **+** sign (if all leading coefficients are positive).\n5.  Alternate signs at each root (unless the factor has an even power).\n\n### 3. Triangle Inequality (Revisited)\n$|a + b| \\le |a| + |b|$.\nThis is a fundamental inequality used in analysis and calculus proofs.",
+      "examples": [
+        {
+          "id": "ex_5_9",
+          "question": "Solve $|2x - 3| \\le 5$.",
+          "solution": "Using property $|X| \\le a \\implies -a \\le X \\le a$:\n$$ -5 \\le 2x - 3 \\le 5 $$\nAdd 3 to all parts:\n$$ -2 \\le 2x \\le 8 $$\nDivide by 2:\n$$ -1 \\le x \\le 4 $$\n**Interval:** $[-1, 4]$."
+        },
+        {
+          "id": "ex_5_10",
+          "question": "Solve $|x - 1| \\ge 3$.",
+          "solution": "Using property $|X| \\ge a \\implies X \\le -a \\text{ or } X \\ge a$:\n$$ x - 1 \\le -3 \\quad \\text{OR} \\quad x - 1 \\ge 3 $$\n$$ x \\le -2 \\quad \\text{OR} \\quad x \\ge 4 $$\n**Interval:** $(-\\infty, -2] \\cup [4, \\infty)$."
+        }
+      ]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "fmt_5_1",
+      "label": "Sign Reversal Rule",
+      "tex": "a < b \\text{ and } k < 0 \\implies ka > kb"
+    },
+    {
+      "id": "fmt_5_2",
+      "label": "Absolute Value (<)",
+      "tex": "|x| < a \\iff -a < x < a \\quad (a > 0)"
+    },
+    {
+      "id": "fmt_5_3",
+      "label": "Absolute Value (>)",
+      "tex": "|x| > a \\iff x < -a \\text{ or } x > a \\quad (a > 0)"
+    },
+    {
+      "id": "fmt_5_4",
+      "label": "Triangle Inequality",
+      "tex": "|a + b| \\le |a| + |b|"
+    },
+    {
+      "id": "fmt_5_5",
+      "label": "Arithmetic Mean - Geometric Mean",
+      "tex": "\\frac{a+b}{2} \\ge \\sqrt{ab} \\quad (a, b \\ge 0)"
+    }
+  ]
+}

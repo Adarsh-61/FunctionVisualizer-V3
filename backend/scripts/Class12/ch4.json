@@ -1,0 +1,184 @@
+{
+  "id": "12_4",
+  "classId": 12,
+  "title": "Determinants",
+  "description": "A deep dive into the scalar values associated with square matrices. This chapter covers the rigorous definition, properties, and applications of determinants, extending to the Adjoint, Inverse, and the solution of systems of linear equations using Matrix and Cramer's methods.",
+  "topics": [
+    {
+      "id": "12_4_1",
+      "title": "Introduction and Definition",
+      "content": "### 1. Conceptual Foundation\nIn the previous chapter (Matrices), we treated systems of numbers as single rectangular entities. However, for **Square Matrices**, there exists a powerful scalar value that characterizes the matrix uniquely. This value is called the **Determinant**.\n\n**Why do we need it?**\nConsider the system of linear equations:\n$$ a_1 x + b_1 y = c_1 $$\n$$ a_2 x + b_2 y = c_2 $$\nUsing algebra, this system has a unique solution if and only if $a_1 b_2 - a_2 b_1 \\neq 0$. The number $a_1 b_2 - a_2 b_1$ \"determines\" the uniqueness of the solution. This number is the determinant of the coefficient matrix.\n\n### 2. Formal Definition\nLet $M$ be the set of all square matrices of order $n$. We can define a function $f: M \\to \\mathbb{K}$ (where $\\mathbb{K}$ is a scalar field like $\\mathbb{R}$ or $\\mathbb{C}$) which associates each matrix $A \\in M$ to a unique number.\n\n$$ f(A) = |A| = \\det(A) $$\n\n* **Note:** The symbol $|A|$ represents the determinant, **not** the modulus or absolute value. Determinants can be negative.\n* **Restriction:** Determinants are defined **only** for square matrices.\n\n### 3. Expansion of Determinants\n\n**A. Determinant of Order 1:**\nIf $A = [a]$, then $|A| = a$.\n\n**B. Determinant of Order 2:**\nIf $A = \\begin{bmatrix} a_{11} & a_{12} \\\\ a_{21} & a_{22} \\end{bmatrix}$, then:\n$$ |A| = a_{11}a_{22} - a_{21}a_{12} $$\n*Geometric Interpretation:* The absolute value of this determinant represents the area of the parallelogram formed by the row vectors.\n\n**C. Determinant of Order 3:**\nIf $A = \\begin{bmatrix} a_{11} & a_{12} & a_{13} \\\\ a_{21} & a_{22} & a_{23} \\\\ a_{31} & a_{32} & a_{33} \\end{bmatrix}$.\nWe can expand along any row or column. Expanding along Row 1 ($R_1$):\n$$ |A| = (-1)^{1+1} a_{11} \\begin{vmatrix} a_{22} & a_{23} \\\\ a_{32} & a_{33} \\end{vmatrix} + (-1)^{1+2} a_{12} \\begin{vmatrix} a_{21} & a_{23} \\\\ a_{31} & a_{33} \\end{vmatrix} + (-1)^{1+3} a_{13} \\begin{vmatrix} a_{21} & a_{22} \\\\ a_{31} & a_{32} \\end{vmatrix} $$\n$$ |A| = a_{11}(a_{22}a_{33} - a_{32}a_{23}) - a_{12}(a_{21}a_{33} - a_{31}a_{23}) + a_{13}(a_{21}a_{32} - a_{31}a_{22}) $$\n\n**General Rule for Sign:** The sign corresponds to $(-1)^{i+j}$. For a $3 \\times 3$ matrix, the signs are:\n$$ \\begin{bmatrix} + & - & + \\\\ - & + & - \\\\ + & - & + \\end{bmatrix} $$\n\n**Sarrus Rule (Only for 3x3):**\nA visual mnemonic involving repeating the first two columns and summing diagonals. (Useful for quick calculation, but expansion is rigorous)."
+    },
+    {
+      "id": "12_4_2",
+      "title": "Properties of Determinants",
+      "content": "Properties allow us to evaluate determinants without tedious expansion. These are critical for JEE Advanced problems involving proofs and simplifications.\n\n**Property 1: Reflection Property**\nThe value of a determinant remains unchanged if its rows and columns are interchanged.\n$$ |A| = |A^T| $$\n*Implication:* Any property applicable to rows is also applicable to columns.\n\n**Property 2: Switching Property**\nIf any two rows (or columns) of a determinant are interchanged, the sign of the determinant changes.\n$$ R_i \\leftrightarrow R_j \\implies \\Delta_{new} = -\\Delta_{old} $$\n\n**Property 3: Identity Property**\nIf any two rows (or columns) of a determinant are identical (all corresponding elements are same), then the value of the determinant is **zero**.\n*Proof:* If we swap the identical rows, $\\Delta = -\\Delta \\implies 2\\Delta = 0 \\implies \\Delta = 0$.\n\n**Property 4: Scalar Multiplication Property**\nIf each element of a row (or a column) of a determinant is multiplied by a constant $k$, then the value of the new determinant is $k$ times the value of the original determinant.\n* **Critical Consequence:** Unlike matrices, where $k$ multiplies *every* element, in determinants, we can factor out $k$ from a *single* row.\n* **Theorem:** If $A$ is a square matrix of order $n$, then $|kA| = k^n |A|$.\n\n**Property 5: Splitting Property**\nIf some or all elements of a row (or column) are expressed as sum of two (or more) terms, then the determinant can be expressed as sum of two (or more) determinants.\n$$ \\begin{vmatrix} a_1+x & b_1 & c_1 \\\\ a_2+y & b_2 & c_2 \\\\ a_3+z & b_3 & c_3 \\end{vmatrix} = \\begin{vmatrix} a_1 & b_1 & c_1 \\\\ a_2 & b_2 & c_2 \\\\ a_3 & b_3 & c_3 \\end{vmatrix} + \\begin{vmatrix} x & b_1 & c_1 \\\\ y & b_2 & c_2 \\\\ z & b_3 & c_3 \\end{vmatrix} $$\n\n**Property 6: Invariance Property**\nThe value of a determinant remains unchanged if to each element of any row (or column), we add equimultiples of corresponding elements of other rows (or columns).\nOperation: $R_i \\to R_i + kR_j$\n$$ \\Delta_{new} = \\Delta_{old} $$\n*Note:* This is the most used property for simplifying determinants before expansion.\n\n**Property 7: Triangular Property**\nThe determinant of a triangular matrix (upper or lower) or a diagonal matrix is simply the product of its diagonal elements.\n$$ |A| = a_{11} \\times a_{22} \\times \\dots \\times a_{nn} $$"
+    },
+    {
+      "id": "12_4_3",
+      "title": "Area of a Triangle using Determinants",
+      "content": "### 1. The Formula\nIn Coordinate Geometry, the area of a triangle with vertices $(x_1, y_1), (x_2, y_2), (x_3, y_3)$ is given by:\n$$ \\text{Area} = \\frac{1}{2} [x_1(y_2-y_3) + x_2(y_3-y_1) + x_3(y_1-y_2)] $$\nThis expression is exactly the expansion of a determinant:\n$$ \\Delta = \\frac{1}{2} \\begin{vmatrix} x_1 & y_1 & 1 \\\\ x_2 & y_2 & 1 \\\\ x_3 & y_3 & 1 \\end{vmatrix} $$\n\n### 2. Important Notes\n1.  **Absolute Value:** Area is always positive. So, we take the absolute value of the determinant result.\n2.  **Given Area:** If area is given (e.g., 4 units), use both $\\pm 4$ for calculation, as the coordinate calculation could yield negative.\n3.  **Collinearity:** Three points are collinear if and only if the area of the triangle formed by them is **zero**.\n    $$ \\begin{vmatrix} x_1 & y_1 & 1 \\\\ x_2 & y_2 & 1 \\\\ x_3 & y_3 & 1 \\end{vmatrix} = 0 $$\n\n### 3. Equation of a Line\nThe equation of a line passing through $(x_1, y_1)$ and $(x_2, y_2)$ can be found by assuming a variable point $(x, y)$ on the line and setting the area to zero:\n$$ \\begin{vmatrix} x & y & 1 \\\\ x_1 & y_1 & 1 \\\\ x_2 & y_2 & 1 \\end{vmatrix} = 0 $$"
+    },
+    {
+      "id": "12_4_4",
+      "title": "Minors and Cofactors",
+      "content": "These are the building blocks for finding the Inverse of a matrix.\n\n### 1. Minors\nThe **Minor** of an element $a_{ij}$ of a determinant is the determinant obtained by deleting the $i^{th}$ row and $j^{th}$ column in which the element $a_{ij}$ lies.\n* Denoted by $M_{ij}$.\n* Order of minor is $n-1$ (if original is $n$).\n\n### 2. Cofactors\nThe **Cofactor** of an element $a_{ij}$, denoted by $A_{ij}$, is defined by:\n$$ A_{ij} = (-1)^{i+j} M_{ij} $$\n* It is simply the signed minor.\n\n### 3. Expansion Theorem\nA determinant can be expressed as the sum of products of elements of any row (or column) with their corresponding **cofactors**.\n$$ \\Delta = \\sum_{j=1}^{n} a_{ij} A_{ij} = a_{i1}A_{i1} + a_{i2}A_{i2} + \\dots + a_{in}A_{in} $$\n\n### 4. Property of Alien Cofactors (Crucial for Inverse)\nIf elements of a row (or column) are multiplied with the cofactors of any **other** row (or column), their sum is **zero**.\n$$ \\sum_{j=1}^{n} a_{ij} A_{kj} = 0 \\quad \\text{if } i \\neq k $$\n*Example:* $a_{11}A_{21} + a_{12}A_{22} + a_{13}A_{23} = 0$.\n*Intuition:* This operation simulates a determinant with two identical rows, which must be zero."
+    },
+    {
+      "id": "12_4_5",
+      "title": "Adjoint and Inverse of a Matrix",
+      "content": "### 1. Adjoint of a Matrix\nThe **Adjoint** of a square matrix $A = [a_{ij}]$ is defined as the **transpose** of the matrix of cofactors $[A_{ij}]$.\n$$ \\text{adj } A = [A_{ij}]^T $$\n* Where $A_{ij}$ is the cofactor of $a_{ij}$.\n* **Note:** For a $2 \\times 2$ matrix $\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$, the adjoint is $\\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$ (Swap diagonal elements, change sign of off-diagonal elements).\n\n### 2. The Fundamental Theorem of Adjoint\nFor any square matrix $A$ of order $n$:\n$$ A(\\text{adj } A) = (\\text{adj } A)A = |A| I $$\n* **Derivation:** The product matrix $A(\\text{adj } A)$ has elements $c_{ij} = \\sum a_{ik} A_{jk}$. From the property of cofactors, if $i=j$, sum is $|A|$, and if $i \\neq j$, sum is 0. Thus, the result is a scalar matrix with $|A|$ on diagonals.\n\n**Consequences (JEE Important):**\n1.  $|\\text{adj } A| = |A|^{n-1}$\n2.  $\\text{adj }(\\text{adj } A) = |A|^{n-2} A$\n3.  $|\\text{adj }(\\text{adj } A)| = |A|^{(n-1)^2}$\n\n### 3. Singular and Non-Singular Matrices\n* **Singular Matrix:** If $|A| = 0$. (Not invertible).\n* **Non-Singular Matrix:** If $|A| \\neq 0$. (Invertible).\n\n### 4. Inverse of a Matrix\nA square matrix $A$ is invertible if and only if $A$ is non-singular.\nFrom the fundamental theorem: $A \\left( \\frac{1}{|A|} \\text{adj } A \\right) = I$.\nBy definition of inverse ($AB=I$), we get:\n$$ A^{-1} = \\frac{1}{|A|} (\\text{adj } A) $$\n\n**Properties of Inverse:**\n1.  $(A^{-1})^{-1} = A$\n2.  $(A^T)^{-1} = (A^{-1})^T$\n3.  $(AB)^{-1} = B^{-1} A^{-1}$ (Reversal Law)\n4.  $|A^{-1}| = \\frac{1}{|A|}$"
+    },
+    {
+      "id": "12_4_6",
+      "title": "Applications: Solving Systems of Linear Equations",
+      "content": "### 1. Matrix Method (Inverse Method)\nConsider the system:\n$$ A X = B $$\nWhere $A$ is the coefficient matrix, $X$ is the variable column vector, and $B$ is the constant column vector.\n\n**Case 1: Unique Solution**\nIf $|A| \\neq 0$ (Non-singular), then $A^{-1}$ exists.\nMultiply by $A^{-1}$ on the left:\n$$ A^{-1}(AX) = A^{-1}B \\implies I X = A^{-1}B \\implies X = A^{-1}B $$\nThis gives a unique solution.\n\n**Case 2: No Solution or Infinite Solutions (Singular Case)**\nIf $|A| = 0$, calculate $(\\text{adj } A) B$.\n1.  If $(\\text{adj } A) B \\neq O$: The system is **Inconsistent** (No Solution).\n2.  If $(\\text{adj } A) B = O$: The system may be **Consistent** (Infinitely many solutions) or **Inconsistent** (No solution). (Further investigation required, usually infinite solutions).\n\n### 2. Cramer's Rule (Determinant Method) - JEE Focus\nFor a system of 3 equations:\n$$ \\Delta = |A| $$\n$$ \\Delta_1 = \\text{Det with 1st col replaced by constants } B $$\n$$ \\Delta_2 = \\text{Det with 2nd col replaced by constants } B $$\n$$ \\Delta_3 = \\text{Det with 3rd col replaced by constants } B $$\n\n* **Unique Solution:** If $\\Delta \\neq 0$, then $x = \\Delta_1/\\Delta, y = \\Delta_2/\\Delta, z = \\Delta_3/\\Delta$.\n* **Infinite Solutions:** If $\\Delta = \\Delta_1 = \\Delta_2 = \\Delta_3 = 0$.\n* **No Solution:** If $\\Delta = 0$ and at least one of $\\Delta_1, \\Delta_2, \\Delta_3$ is non-zero.\n\n### 3. Homogeneous System ($AX = O$)\n* **Trivial Solution:** $x=y=z=0$ (Always exists).\n* **Non-Trivial Solutions:** Exist if and only if $|A| = 0$. (Infinite solutions)."
+    }
+  ],
+  "examples": [
+    {
+      "id": "ex_12_4_1",
+      "title": "Evaluation using Properties",
+      "problem": "Without expanding, prove that $\\Delta = \\begin{vmatrix} x+y & y+z & z+x \\\\ z & x & y \\\\ 1 & 1 & 1 \\end{vmatrix} = 0$.",
+      "solution": "Apply row operation $R_1 \\to R_1 + R_2$:\n$$ \\Delta = \\begin{vmatrix} x+y+z & y+z+x & z+x+y \\\\ z & x & y \\\\ 1 & 1 & 1 \\end{vmatrix} $$\nTake $(x+y+z)$ common from $R_1$ (Scalar multiplication property):\n$$ \\Delta = (x+y+z) \\begin{vmatrix} 1 & 1 & 1 \\\\ z & x & y \\\\ 1 & 1 & 1 \\end{vmatrix} $$\nNow, $R_1$ and $R_3$ are identical.\nBy Identity Property, the value of the determinant is 0.\n$$ \\Delta = (x+y+z)(0) = 0 $$"
+    },
+    {
+      "id": "ex_12_4_2",
+      "title": "Finding Inverse",
+      "problem": "Find the inverse of $A = \\begin{bmatrix} 2 & -2 \\\\ 4 & 3 \\end{bmatrix}$.",
+      "solution": "1.  **Calculate Determinant:**\n    $|A| = (2)(3) - (-2)(4) = 6 - (-8) = 14$.\n    Since $|A| \\neq 0$, inverse exists.\n\n2.  **Find Cofactors:**\n    $M_{11} = 3 \\implies A_{11} = (-1)^{1+1}(3) = 3$.\n    $M_{12} = 4 \\implies A_{12} = (-1)^{1+2}(4) = -4$.\n    $M_{21} = -2 \\implies A_{21} = (-1)^{2+1}(-2) = 2$.\n    $M_{22} = 2 \\implies A_{22} = (-1)^{2+2}(2) = 2$.\n\n3.  **Adjoint Matrix:**\n    $\\text{adj } A = \\begin{bmatrix} 3 & -4 \\\\ 2 & 2 \\end{bmatrix}^T = \\begin{bmatrix} 3 & 2 \\\\ -4 & 2 \\end{bmatrix}$.\n\n4.  **Inverse:**\n    $A^{-1} = \\frac{1}{14} \\begin{bmatrix} 3 & 2 \\\\ -4 & 2 \\end{bmatrix}$."
+    },
+    {
+      "id": "ex_12_4_3",
+      "title": "Solving Systems using Matrix Method",
+      "problem": "Solve the system of equations: $2x + 5y = 1$, $3x + 2y = 7$.",
+      "solution": "Express as $AX=B$:\n$$ \\begin{bmatrix} 2 & 5 \\\\ 3 & 2 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 1 \\\\ 7 \\end{bmatrix} $$\n\n1.  **Determinant:** $|A| = 4 - 15 = -11$. Unique solution exists.\n2.  **Inverse:**\n    $A^{-1} = \\frac{1}{-11} \\begin{bmatrix} 2 & -5 \\\\ -3 & 2 \\end{bmatrix}$.\n3.  **Calculate X:**\n    $$ X = A^{-1}B = -\\frac{1}{11} \\begin{bmatrix} 2 & -5 \\\\ -3 & 2 \\end{bmatrix} \\begin{bmatrix} 1 \\\\ 7 \\end{bmatrix} $$\n    $$ X = -\\frac{1}{11} \\begin{bmatrix} 2(1) + (-5)(7) \\\\ (-3)(1) + 2(7) \\end{bmatrix} $$\n    $$ X = -\\frac{1}{11} \\begin{bmatrix} 2 - 35 \\\\ -3 + 14 \\end{bmatrix} = -\\frac{1}{11} \\begin{bmatrix} -33 \\\\ 11 \\end{bmatrix} $$\n    $$ X = \\begin{bmatrix} 3 \\\\ -1 \\end{bmatrix} $$\n\n**Solution:** $x=3, y=-1$."
+    },
+    {
+      "id": "ex_12_4_4",
+      "title": "Properties of Adjoint (JEE Level)",
+      "problem": "If $A$ is a square matrix of order 3 and $|A| = 5$, find $|\\text{adj } A|$.",
+      "solution": "Using the property $|\\text{adj } A| = |A|^{n-1}$.\nHere, $n=3$ and $|A|=5$.\n$$ |\\text{adj } A| = 5^{3-1} = 5^2 = 25 $$"
+    },
+    {
+      "id": "ex_12_4_5",
+      "title": "Geometry Application",
+      "problem": "Find the value of $k$ if the area of the triangle with vertices $(2, -6), (5, 4), (k, 4)$ is 35 sq units.",
+      "solution": "Area formula: $\\Delta = \\frac{1}{2} | \\det | = 35 \\implies \\det = \\pm 70$.\n$$ \\begin{vmatrix} 2 & -6 & 1 \\\\ 5 & 4 & 1 \\\\ k & 4 & 1 \\end{vmatrix} = \\pm 70 $$\nExpand along $C_2$ (or $R_1$):\n$2(4-4) - (-6)(5-k) + 1(20-4k) = \\pm 70$\n$0 + 6(5-k) + 20 - 4k = \\pm 70$\n$30 - 6k + 20 - 4k = \\pm 70$\n$50 - 10k = \\pm 70$\n\nCase 1: $50 - 10k = 70 \\implies -10k = 20 \\implies k = -2$.\nCase 2: $50 - 10k = -70 \\implies -10k = -120 \\implies k = 12$.\n\n**Answer:** $k = 12, -2$."
+    }
+  ],
+  "exercises": [
+    {
+      "id": "prob_12_4_1",
+      "question": "Evaluate the determinant: |[2, 4], [-5, -1]|.",
+      "type": "Calculation",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_4_2",
+      "question": "If A = [[1, 2], [4, 2]], then show that |2A| = 4|A|.",
+      "type": "Verification",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_4_3",
+      "question": "Using properties of determinants, prove that |[a, a+b, a+b+c], [2a, 3a+2b, 4a+3b+2c], [3a, 6a+3b, 10a+6b+3c]| = a^3.",
+      "type": "Proof",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_4_4",
+      "question": "Find values of k if area of triangle is 4 sq. units and vertices are (k, 0), (4, 0), (0, 2).",
+      "type": "Geometry",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_4_5",
+      "question": "If A is an invertible matrix of order 2, then find det(A^-1).",
+      "type": "Conceptual",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_4_6",
+      "question": "Solve the system of equations using matrix method: x - y + z = 4, 2x + y - 3z = 0, x + y + z = 2.",
+      "type": "Long Answer",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_4_7",
+      "question": "If A is a square matrix such that A^2 = I, then find the simplified value of (A - I)^3 + (A + I)^3 - 7A.",
+      "type": "Algebra",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_4_8",
+      "question": "Find the maximum value of the determinant |[1, 1, 1], [1, 1+sin x, 1], [1, 1, 1+cos x]|.",
+      "type": "Calculus Link",
+      "difficulty": "JEE Advanced"
+    },
+    {
+      "id": "prob_12_4_9",
+      "question": "If A is a skew-symmetric matrix of odd order n, then show that |A| = 0.",
+      "type": "Proof",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_4_10",
+      "question": "Let P be a matrix of order 3x3 such that all entries in P are from the set {-1, 0, 1}. What is the maximum possible value of the determinant of P?",
+      "type": "Combinatorics/Logic",
+      "difficulty": "JEE Advanced"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "form_12_4_1",
+      "label": "Determinant Order 2",
+      "tex": "|A| = a_{11}a_{22} - a_{21}a_{12}"
+    },
+    {
+      "id": "form_12_4_2",
+      "label": "Laplace Expansion (Row i)",
+      "tex": "|A| = \\sum_{j=1}^{n} (-1)^{i+j} a_{ij} M_{ij}"
+    },
+    {
+      "id": "form_12_4_3",
+      "label": "Determinant of Scalar Multiple",
+      "tex": "|kA| = k^n |A|"
+    },
+    {
+      "id": "form_12_4_4",
+      "label": "Product Property",
+      "tex": "|AB| = |A||B|"
+    },
+    {
+      "id": "form_12_4_5",
+      "label": "Area of Triangle",
+      "tex": "\\text{Area} = \\frac{1}{2} \\left| \\det \\begin{pmatrix} x_1 & y_1 & 1 \\\\ x_2 & y_2 & 1 \\\\ x_3 & y_3 & 1 \\end{pmatrix} \\right|"
+    },
+    {
+      "id": "form_12_4_6",
+      "label": "Cofactor Definition",
+      "tex": "A_{ij} = (-1)^{i+j} M_{ij}"
+    },
+    {
+      "id": "form_12_4_7",
+      "label": "Alien Cofactor Property",
+      "tex": "\\sum_{j=1}^{n} a_{ij} A_{kj} = 0, \\text{ if } i \\neq k"
+    },
+    {
+      "id": "form_12_4_8",
+      "label": "Adjoint Property",
+      "tex": "A(\\text{adj } A) = |A| I"
+    },
+    {
+      "id": "form_12_4_9",
+      "label": "Inverse Formula",
+      "tex": "A^{-1} = \\frac{1}{|A|} \\text{adj } A"
+    },
+    {
+      "id": "form_12_4_10",
+      "label": "Determinant of Inverse",
+      "tex": "|A^{-1}| = \\frac{1}{|A|}"
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "id": "12_11",
+  "classId": 12,
+  "title": "Three Dimensional Geometry",
+  "description": "The study of lines and planes in 3D space using vector algebra. This chapter moves beyond point coordinates to equations of loci, angles between entities, and distances, forming the core of spatial reasoning in engineering and graphics.",
+  "topics": [
+    {
+      "id": "12_11_1",
+      "title": "Direction Cosines and Direction Ratios",
+      "content": "### 1. Direction Cosines (DCs) of a Line\nLet a line $L$ pass through the origin $O$ and make angles $\\alpha, \\beta, \\gamma$ with the positive directions of $x, y, z$ axes respectively. These angles are called **Direction Angles**.\nThe cosines of these angles, $\\cos \\alpha, \\cos \\beta, \\cos \\gamma$, are called the **Direction Cosines** of the line $L$.\nUsually denoted by $l, m, n$.\n$$ l = \\cos \\alpha, \\quad m = \\cos \\beta, \\quad n = \\cos \\gamma $$\n\n**Fundamental Relation:**\n$$ l^2 + m^2 + n^2 = 1 $$\n*Proof:* If $P(x, y, z)$ is a point on the line at distance $r$ from origin, then $x = lr, y = mr, z = nr$. Since $x^2+y^2+z^2=r^2$, we get $r^2(l^2+m^2+n^2) = r^2 \\implies l^2+m^2+n^2=1$.\n\n### 2. Direction Ratios (DRs) of a Line\nAny three numbers $a, b, c$ which are proportional to the direction cosines $l, m, n$ are called **Direction Ratios**.\n$$ \\frac{l}{a} = \\frac{m}{b} = \\frac{n}{c} = k $$\n\n**Conversion (DRs to DCs):**\n$$ l = \\pm \\frac{a}{\\sqrt{a^2+b^2+c^2}}, \\quad m = \\pm \\frac{b}{\\sqrt{a^2+b^2+c^2}}, \\quad n = \\pm \\frac{c}{\\sqrt{a^2+b^2+c^2}} $$\n* Note: The sign is chosen based on the desired orientation of the line.\n\n### 3. Relation to Two Points\nIf a line passes through $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$, its Direction Ratios are:\n$$ a = x_2 - x_1, \\quad b = y_2 - y_1, \\quad c = z_2 - z_1 $$"
+    },
+    {
+      "id": "12_11_2",
+      "title": "Equation of a Line in Space",
+      "content": "A line in space is uniquely determined by:\n1.  A fixed point and a direction.\n2.  Two fixed points.\n\n### 1. Point and Parallel Vector Form\nEquation of a line passing through a point $A$ with position vector $\\vec{a}$ and parallel to vector $\\vec{b}$.\n\n**Vector Form:**\nLet $\\vec{r}$ be the position vector of any point $P$ on the line.\nThe vector $\\vec{AP} = \\vec{r} - \\vec{a}$ is parallel to $\\vec{b}$.\nSo $\\vec{r} - \\vec{a} = \\lambda \\vec{b}$ for some scalar $\\lambda$.\n$$ \\vec{r} = \\vec{a} + \\lambda \\vec{b} $$\n\n**Cartesian Form:**\nLet $\\vec{a} = x_1\\hat{i} + y_1\\hat{j} + z_1\\hat{k}$ (Point).\nLet $\\vec{b} = a\\hat{i} + b\\hat{j} + c\\hat{k}$ (Direction Ratios).\nLet $\\vec{r} = x\\hat{i} + y\\hat{j} + z\\hat{k}$ (General Point).\nEquating components of $\\vec{r} - \\vec{a} = \\lambda \\vec{b}$:\n$x - x_1 = \\lambda a, \\quad y - y_1 = \\lambda b, \\quad z - z_1 = \\lambda c$.\nEliminating $\\lambda$:\n$$ \\frac{x - x_1}{a} = \\frac{y - y_1}{b} = \\frac{z - z_1}{c} $$\n\n### 2. Two Point Form\nLine passing through $\\vec{a}$ and $\\vec{b}$.\nDirection vector is $\\vec{b} - \\vec{a}$.\n\n**Vector Form:**\n$$ \\vec{r} = \\vec{a} + \\lambda (\\vec{b} - \\vec{a}) $$\n\n**Cartesian Form:**\nPoints $(x_1, y_1, z_1)$ and $(x_2, y_2, z_2)$.\nDRs are $x_2-x_1, y_2-y_1, z_2-z_1$.\n$$ \\frac{x - x_1}{x_2 - x_1} = \\frac{y - y_1}{y_2 - y_1} = \\frac{z - z_1}{z_2 - z_1} $$"
+    },
+    {
+      "id": "12_11_3",
+      "title": "Angle and Distance between Lines",
+      "content": "### 1. Angle between Two Lines\nLet lines be $\\vec{r} = \\vec{a_1} + \\lambda \\vec{b_1}$ and $\\vec{r} = \\vec{a_2} + \\mu \\vec{b_2}$.\nThe angle $\\theta$ between the lines is the angle between their direction vectors $\\vec{b_1}$ and $\\vec{b_2}$.\n$$ \\cos \\theta = \\left| \\frac{\\vec{b_1} \\cdot \\vec{b_2}}{|\\vec{b_1}| |\\vec{b_2}|} \\right| $$\n\n**Cartesian Form:**\nIf lines have DRs $a_1, b_1, c_1$ and $a_2, b_2, c_2$:\n$$ \\cos \\theta = \\left| \\frac{a_1a_2 + b_1b_2 + c_1c_2}{\\sqrt{a_1^2+b_1^2+c_1^2} \\sqrt{a_2^2+b_2^2+c_2^2}} \\right| $$\n* **Perpendicular:** $a_1a_2 + b_1b_2 + c_1c_2 = 0$ (Dot product 0).\n* **Parallel:** $\\frac{a_1}{a_2} = \\frac{b_1}{b_2} = \\frac{c_1}{c_2}$ (Vectors proportional).\n\n### 2. Skew Lines\nLines which are neither parallel nor intersecting are called **Skew Lines**. They lie in different planes.\n\n### 3. Shortest Distance between Two Lines\n**Case A: Skew Lines**\nLines $L_1: \\vec{r} = \\vec{a_1} + \\lambda \\vec{b_1}$ and $L_2: \\vec{r} = \\vec{a_2} + \\mu \\vec{b_2}$.\nThe shortest distance is along the vector perpendicular to both $\\vec{b_1}$ and $\\vec{b_2}$, i.e., $\\vec{b_1} \\times \\vec{b_2}$.\nWe project the vector joining the points $\\vec{a_2} - \\vec{a_1}$ onto this perpendicular direction.\n$$ d = \\left| \\frac{(\\vec{b_1} \\times \\vec{b_2}) \\cdot (\\vec{a_2} - \\vec{a_1})}{|\\vec{b_1} \\times \\vec{b_2}|} \\right| $$\n\n**Case B: Parallel Lines**\nLines $\\vec{r} = \\vec{a_1} + \\lambda \\vec{b}$ and $\\vec{r} = \\vec{a_2} + \\mu \\vec{b}$.\n$$ d = \\left| \\frac{\\vec{b} \\times (\\vec{a_2} - \\vec{a_1})}{|\\vec{b}|} \\right| $$"
+    },
+    {
+      "id": "12_11_4",
+      "title": "Equation of a Plane",
+      "content": "A plane is determined by:\n1.  Normal vector and distance from origin.\n2.  Point and normal vector.\n3.  Three non-collinear points.\n\n### 1. Normal Form\nPlane at distance $d$ from origin with normal unit vector $\\hat{n}$.\n**Vector Equation:**\n$$ \\vec{r} \\cdot \\hat{n} = d $$\n**Cartesian Equation:**\nIf $\\hat{n} = l\\hat{i} + m\\hat{j} + n\\hat{k}$ (DCs):\n$$ lx + my + nz = d $$\n\n### 2. Point-Normal Form\nPlane passing through point $\\vec{a}$ and perpendicular to vector $\\vec{N}$.\nLet $\\vec{r}$ be any point on plane. Vector $\\vec{r} - \\vec{a}$ lies on the plane.\nThus $(\\vec{r} - \\vec{a}) \\perp \\vec{N}$.\n**Vector Equation:**\n$$ (\\vec{r} - \\vec{a}) \\cdot \\vec{N} = 0 $$\n**Cartesian Equation:**\nLet $\\vec{a} = (x_1, y_1, z_1)$ and $\\vec{N} = A\\hat{i} + B\\hat{j} + C\\hat{k}$.\n$$ A(x - x_1) + B(y - y_1) + C(z - z_1) = 0 $$\nThis simplifies to general form: $Ax + By + Cz + D = 0$. (Here $(A, B, C)$ are DRs of normal).\n\n### 3. Three Point Form\nPlane passing through non-collinear points $\\vec{a}, \\vec{b}, \\vec{c}$.\nVectors $\\vec{b}-\\vec{a}$ and $\\vec{c}-\\vec{a}$ lie on the plane.\nNormal is $(\\vec{b}-\\vec{a}) \\times (\\vec{c}-\\vec{a})$.\nEquation:\n$$ (\\vec{r} - \\vec{a}) \\cdot [(\\vec{b}-\\vec{a}) \\times (\\vec{c}-\\vec{a})] = 0 $$\n\n### 4. Intercept Form\nPlane cutting intercepts $a, b, c$ on axes:\n$$ \\frac{x}{a} + \\frac{y}{b} + \\frac{z}{c} = 1 $$"
+    },
+    {
+      "id": "12_11_5",
+      "title": "Properties of Planes",
+      "content": "### 1. Coplanarity of Two Lines\nTwo lines $\\vec{r} = \\vec{a_1} + \\lambda \\vec{b_1}$ and $\\vec{r} = \\vec{a_2} + \\mu \\vec{b_2}$ are coplanar if they intersect or are parallel.\nCondition for intersection (Shortest distance = 0):\n$$ (\\vec{a_2} - \\vec{a_1}) \\cdot (\\vec{b_1} \\times \\vec{b_2}) = 0 $$\n\n### 2. Angle between Two Planes\nDefined as the angle between their normals $\\vec{n_1}$ and $\\vec{n_2}$.\n$$ \\cos \\theta = \\left| \\frac{\\vec{n_1} \\cdot \\vec{n_2}}{|\\vec{n_1}| |\\vec{n_2}|} \\right| $$\n\n### 3. Angle between Line and Plane\nAngle $\\phi$ between line (direction $\\vec{b}$) and plane (normal $\\vec{n}$).\nThe angle between $\\vec{b}$ and $\\vec{n}$ is $90^\\circ - \\phi$ (complementary).\n$$ \\cos(90^\\circ - \\phi) = \\sin \\phi = \\left| \\frac{\\vec{b} \\cdot \\vec{n}}{|\\vec{b}| |\\vec{n}|} \\right| $$\n\n### 4. Distance of a Point from a Plane\nDistance of point $\\vec{a}$ from plane $\\vec{r} \\cdot \\vec{N} = d$ (Note: form must match standard or adjust constant).\nCartesian form: Distance of $(x_1, y_1, z_1)$ from $Ax + By + Cz + D = 0$:\n$$ d = \\frac{|Ax_1 + By_1 + Cz_1 + D|}{\\sqrt{A^2 + B^2 + C^2}} $$"
+    }
+  ],
+  "examples": [
+    {
+      "id": "ex_12_11_1",
+      "title": "Direction Cosines",
+      "problem": "Find the direction cosines of the line passing through the two points $(-2, 4, -5)$ and $(1, 2, 3)$.",
+      "solution": "1.  **Direction Ratios:**\n    $a = x_2 - x_1 = 1 - (-2) = 3$.\n    $b = y_2 - y_1 = 2 - 4 = -2$.\n    $c = z_2 - z_1 = 3 - (-5) = 8$.\n    DRs: $<3, -2, 8>$.\n2.  **Magnitude:**\n    $\\sqrt{a^2 + b^2 + c^2} = \\sqrt{9 + 4 + 64} = \\sqrt{77}$.\n3.  **Direction Cosines:**\n    $l = \\frac{3}{\\sqrt{77}}, \\quad m = \\frac{-2}{\\sqrt{77}}, \\quad n = \\frac{8}{\\sqrt{77}}$."
+    },
+    {
+      "id": "ex_12_11_2",
+      "title": "Equation of Line",
+      "problem": "Find the vector and Cartesian equations of the line through the point $(5, 2, -4)$ and parallel to the vector $3\\hat{i} + 2\\hat{j} - 8\\hat{k}$.",
+      "solution": "Point $\\vec{a} = 5\\hat{i} + 2\\hat{j} - 4\\hat{k}$.\nParallel vector $\\vec{b} = 3\\hat{i} + 2\\hat{j} - 8\\hat{k}$.\n\n**Vector Equation:**\n$\\vec{r} = \\vec{a} + \\lambda \\vec{b}$\n$\\vec{r} = (5\\hat{i} + 2\\hat{j} - 4\\hat{k}) + \\lambda (3\\hat{i} + 2\\hat{j} - 8\\hat{k})$.\n\n**Cartesian Equation:**\nUsing $(x_1, y_1, z_1) = (5, 2, -4)$ and DRs $(3, 2, -8)$:\n$$ \\frac{x - 5}{3} = \\frac{y - 2}{2} = \\frac{z + 4}{-8} $$"
+    },
+    {
+      "id": "ex_12_11_3",
+      "title": "Shortest Distance between Skew Lines",
+      "problem": "Find the shortest distance between lines $\\vec{r} = (\\hat{i} + \\hat{j}) + \\lambda(2\\hat{i} - \\hat{j} + \\hat{k})$ and $\\vec{r} = (2\\hat{i} + \\hat{j} - \\hat{k}) + \\mu(3\\hat{i} - 5\\hat{j} + 2\\hat{k})$.",
+      "solution": "Identify vectors:\n$\\vec{a_1} = \\hat{i} + \\hat{j}, \\quad \\vec{b_1} = 2\\hat{i} - \\hat{j} + \\hat{k}$.\n$\\vec{a_2} = 2\\hat{i} + \\hat{j} - \\hat{k}, \\quad \\vec{b_2} = 3\\hat{i} - 5\\hat{j} + 2\\hat{k}$.\n\n1.  $\\vec{a_2} - \\vec{a_1} = (2-1)\\hat{i} + (1-1)\\hat{j} + (-1-0)\\hat{k} = \\hat{i} - \\hat{k}$.\n2.  $\\vec{b_1} \\times \\vec{b_2} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 2 & -1 & 1 \\\\ 3 & -5 & 2 \\end{vmatrix}$\n    $= \\hat{i}(-2+5) - \\hat{j}(4-3) + \\hat{k}(-10+3) = 3\\hat{i} - \\hat{j} - 7\\hat{k}$.\n3.  Magnitude $|\\vec{b_1} \\times \\vec{b_2}| = \\sqrt{9 + 1 + 49} = \\sqrt{59}$.\n4.  Dot Product $(\\vec{b_1} \\times \\vec{b_2}) \\cdot (\\vec{a_2} - \\vec{a_1}) = (3)(1) + (-1)(0) + (-7)(-1) = 3 + 7 = 10$.\n5.  Distance $d = \\frac{10}{\\sqrt{59}}$ units."
+    },
+    {
+      "id": "ex_12_11_4",
+      "title": "Equation of Plane (Point-Normal)",
+      "problem": "Find the vector and Cartesian equations of the plane passing through $(5, 2, -4)$ and perpendicular to the line with direction ratios $2, 3, -1$.",
+      "solution": "Point $\\vec{a} = (5, 2, -4)$.\nNormal $\\vec{N}$ is along the line, so DRs of Normal are $2, 3, -1$.\n$\\vec{N} = 2\\hat{i} + 3\\hat{j} - \\hat{k}$.\n\n**Vector Eq:** $(\\vec{r} - \\vec{a}) \\cdot \\vec{N} = 0$.\n$(\\vec{r} - (5\\hat{i} + 2\\hat{j} - 4\\hat{k})) \\cdot (2\\hat{i} + 3\\hat{j} - \\hat{k}) = 0$.\n\n**Cartesian Eq:**\n$2(x - 5) + 3(y - 2) - 1(z + 4) = 0$\n$2x - 10 + 3y - 6 - z - 4 = 0$\n$2x + 3y - z - 20 = 0$."
+    },
+    {
+      "id": "ex_12_11_5",
+      "title": "Intersection of Two Planes",
+      "problem": "Find the equation of the plane passing through the intersection of planes $3x - y + 2z - 4 = 0$ and $x + y + z - 2 = 0$ and the point $(2, 2, 1)$.",
+      "solution": "Equation of family of planes:\n$(3x - y + 2z - 4) + \\lambda(x + y + z - 2) = 0$.\nPasses through $(2, 2, 1)$. Substitute:\n$(3(2) - 2 + 2(1) - 4) + \\lambda(2 + 2 + 1 - 2) = 0$\n$(6 - 2 + 2 - 4) + \\lambda(3) = 0$\n$2 + 3\\lambda = 0 \\implies \\lambda = -2/3$.\n\nSubstitute $\\lambda$ back:\n$(3x - y + 2z - 4) - \\frac{2}{3}(x + y + z - 2) = 0$\nMultiply by 3:\n$3(3x - y + 2z - 4) - 2(x + y + z - 2) = 0$\n$9x - 3y + 6z - 12 - 2x - 2y - 2z + 4 = 0$\n$7x - 5y + 4z - 8 = 0$."
+    }
+  ],
+  "exercises": [
+    {
+      "id": "prob_12_11_1",
+      "question": "Find the direction cosines of a line which makes equal angles with the coordinate axes.",
+      "type": "Direction Cosines",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_11_2",
+      "question": "Find the equation of the line passing through point (1, 2, 3) and parallel to vector 3i + 2j - 2k.",
+      "type": "Line Equation",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_11_3",
+      "question": "Show that the lines (x-5)/7 = (y+2)/-5 = z/1 and x/1 = y/2 = z/3 are perpendicular.",
+      "type": "Angle between Lines",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_11_4",
+      "question": "Find the shortest distance between lines r = i + 2j + k + L(i - j + k) and r = 2i - j - k + M(2i + j + 2k).",
+      "type": "Shortest Distance",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_11_5",
+      "question": "Find the equation of the plane with intercepts 2, 3 and 4 on the x, y and z-axes respectively.",
+      "type": "Plane Intercepts",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_11_6",
+      "question": "Find the distance of the point (2, 5, -3) from the plane r.(6i - 3j + 2k) = 4.",
+      "type": "Distance Point-Plane",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_11_7",
+      "question": "Find the coordinates of the foot of the perpendicular drawn from the origin to the plane 2x + 3y + 4z - 12 = 0.",
+      "type": "Geometry Application",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_11_8",
+      "question": "Find the vector equation of the plane passing through the intersection of the planes r.(i+j+k)=6 and r.(2i+3j+4k)=-5 and the point (1, 1, 1).",
+      "type": "Family of Planes",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_11_9",
+      "question": "Find the angle between the line (x+1)/2 = y/3 = (z-3)/6 and the plane 10x + 2y - 11z = 3.",
+      "type": "Angle Line-Plane",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_11_10",
+      "question": "Find the image of the point (1, 6, 3) in the line x/1 = (y-1)/2 = (z-2)/3.",
+      "type": "Image in Line",
+      "difficulty": "JEE Advanced"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "form_12_11_1",
+      "label": "Direction Cosine Relation",
+      "tex": "l^2 + m^2 + n^2 = 1"
+    },
+    {
+      "id": "form_12_11_2",
+      "label": "Line (Vector Form)",
+      "tex": "\\vec{r} = \\vec{a} + \\lambda \\vec{b}"
+    },
+    {
+      "id": "form_12_11_3",
+      "label": "Line (Cartesian Form)",
+      "tex": "\\frac{x-x_1}{a} = \\frac{y-y_1}{b} = \\frac{z-z_1}{c}"
+    },
+    {
+      "id": "form_12_11_4",
+      "label": "Angle between Lines",
+      "tex": "\\cos \\theta = \\left| \\frac{\\vec{b_1} \\cdot \\vec{b_2}}{|\\vec{b_1}| |\\vec{b_2}|} \\right|"
+    },
+    {
+      "id": "form_12_11_5",
+      "label": "Shortest Distance (Skew)",
+      "tex": "d = \\left| \\frac{(\\vec{b_1} \\times \\vec{b_2}) \\cdot (\\vec{a_2} - \\vec{a_1})}{|\\vec{b_1} \\times \\vec{b_2}|} \\right|"
+    },
+    {
+      "id": "form_12_11_6",
+      "label": "Plane (Normal Form)",
+      "tex": "\\vec{r} \\cdot \\hat{n} = d"
+    },
+    {
+      "id": "form_12_11_7",
+      "label": "Plane (Point-Normal)",
+      "tex": "A(x-x_1) + B(y-y_1) + C(z-z_1) = 0"
+    },
+    {
+      "id": "form_12_11_8",
+      "label": "Angle Line-Plane",
+      "tex": "\\sin \\phi = \\left| \\frac{\\vec{b} \\cdot \\vec{n}}{|\\vec{b}| |\\vec{n}|} \\right|"
+    },
+    {
+      "id": "form_12_11_9",
+      "label": "Distance Point-Plane",
+      "tex": "d = \\frac{|Ax_1 + By_1 + Cz_1 + D|}{\\sqrt{A^2+B^2+C^2}}"
+    },
+    {
+      "id": "form_12_11_10",
+      "label": "Coplanarity Condition",
+      "tex": "(\\vec{a_2}-\\vec{a_1}) \\cdot (\\vec{b_1} \\times \\vec{b_2}) = 0"
+    }
+  ]
+}

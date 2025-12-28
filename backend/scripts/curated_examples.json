@@ -1,0 +1,1067 @@
+{
+    "class_9": {
+        "ch_1_number_systems": [
+            {
+                "id": "ex_ns_1",
+                "question": "Rationalize the denominator: $\\frac{1}{\\sqrt{2} - 1}$",
+                "steps": [
+                    {
+                        "explanation": "Multiply numerator and denominator by the conjugate of the denominator, which is $(\\sqrt{2} + 1)$",
+                        "math": "\\frac{1}{\\sqrt{2} - 1} \\times \\frac{\\sqrt{2} + 1}{\\sqrt{2} + 1}"
+                    },
+                    {
+                        "explanation": "Apply the identity $(a-b)(a+b) = a^2 - b^2$ to the denominator",
+                        "math": "= \\frac{\\sqrt{2} + 1}{(\\sqrt{2})^2 - (1)^2}"
+                    },
+                    {
+                        "explanation": "Simplify the denominator: $2 - 1 = 1$",
+                        "math": "= \\frac{\\sqrt{2} + 1}{1} = \\sqrt{2} + 1"
+                    }
+                ],
+                "finalAnswer": "$\\sqrt{2} + 1$"
+            },
+            {
+                "id": "ex_ns_2",
+                "question": "Simplify: $2^{5} \\times 2^{-3} \\times 2^{2}$",
+                "steps": [
+                    {
+                        "explanation": "Apply the law of exponents: $a^m \\times a^n = a^{m+n}$",
+                        "math": "2^{5} \\times 2^{-3} \\times 2^{2} = 2^{5 + (-3) + 2}"
+                    },
+                    {
+                        "explanation": "Add the exponents: $5 - 3 + 2 = 4$",
+                        "math": "= 2^{4}"
+                    },
+                    {
+                        "explanation": "Calculate the final value",
+                        "math": "= 16"
+                    }
+                ],
+                "finalAnswer": "$16$"
+            },
+            {
+                "id": "ex_ns_3",
+                "question": "Express $0.\\overline{6}$ in the form $\\frac{p}{q}$, where p and q are integers and $q \\neq 0$",
+                "steps": [
+                    {
+                        "explanation": "Let $x = 0.\\overline{6} = 0.6666...$"
+                    },
+                    {
+                        "explanation": "Multiply both sides by 10",
+                        "math": "10x = 6.6666..."
+                    },
+                    {
+                        "explanation": "Subtract the original equation from this",
+                        "math": "10x - x = 6.6666... - 0.6666..."
+                    },
+                    {
+                        "explanation": "Simplify to get",
+                        "math": "9x = 6 \\implies x = \\frac{6}{9} = \\frac{2}{3}"
+                    }
+                ],
+                "finalAnswer": "$\\frac{2}{3}$"
+            }
+        ],
+        "ch_2_polynomials": [
+            {
+                "id": "ex_poly_1",
+                "question": "Find the value of the polynomial $p(x) = x^3 - 4x^2 + x + 6$ at $x = 2$",
+                "steps": [
+                    {
+                        "explanation": "Substitute $x = 2$ in the polynomial",
+                        "math": "p(2) = (2)^3 - 4(2)^2 + (2) + 6"
+                    },
+                    {
+                        "explanation": "Calculate each term",
+                        "math": "= 8 - 4(4) + 2 + 6 = 8 - 16 + 2 + 6"
+                    },
+                    {
+                        "explanation": "Simplify",
+                        "math": "= 0"
+                    }
+                ],
+                "finalAnswer": "$p(2) = 0$, which means $(x-2)$ is a factor of $p(x)$"
+            },
+            {
+                "id": "ex_poly_2",
+                "question": "Expand $(2x + 3)^3$ using the algebraic identity",
+                "steps": [
+                    {
+                        "explanation": "Use the identity $(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$",
+                        "math": "(2x + 3)^3 = (2x)^3 + 3(2x)^2(3) + 3(2x)(3)^2 + (3)^3"
+                    },
+                    {
+                        "explanation": "Calculate each term",
+                        "math": "= 8x^3 + 3(4x^2)(3) + 3(2x)(9) + 27"
+                    },
+                    {
+                        "explanation": "Simplify",
+                        "math": "= 8x^3 + 36x^2 + 54x + 27"
+                    }
+                ],
+                "finalAnswer": "$8x^3 + 36x^2 + 54x + 27$"
+            },
+            {
+                "id": "ex_poly_3",
+                "question": "Factorize: $x^3 - 8$",
+                "steps": [
+                    {
+                        "explanation": "Recognize this as the difference of cubes: $a^3 - b^3$ where $a = x$ and $b = 2$"
+                    },
+                    {
+                        "explanation": "Apply the identity $a^3 - b^3 = (a - b)(a^2 + ab + b^2)$",
+                        "math": "x^3 - 8 = x^3 - 2^3 = (x - 2)(x^2 + 2x + 4)"
+                    }
+                ],
+                "finalAnswer": "$(x - 2)(x^2 + 2x + 4)$"
+            }
+        ],
+        "ch_3_coordinate_geometry": [
+            {
+                "id": "ex_cg_1",
+                "question": "Find the distance between the points $A(3, 4)$ and $B(-2, 1)$",
+                "steps": [
+                    {
+                        "explanation": "Use the distance formula: $d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$"
+                    },
+                    {
+                        "explanation": "Substitute the coordinates: $x_1 = 3, y_1 = 4, x_2 = -2, y_2 = 1$",
+                        "math": "d = \\sqrt{(-2 - 3)^2 + (1 - 4)^2}"
+                    },
+                    {
+                        "explanation": "Simplify",
+                        "math": "d = \\sqrt{(-5)^2 + (-3)^2} = \\sqrt{25 + 9} = \\sqrt{34}"
+                    }
+                ],
+                "finalAnswer": "$\\sqrt{34}$ units"
+            },
+            {
+                "id": "ex_cg_2",
+                "question": "Find the coordinates of the point which divides the line segment joining $A(4, -3)$ and $B(8, 5)$ in the ratio $3:1$ internally",
+                "steps": [
+                    {
+                        "explanation": "Use the section formula for internal division: $P = \\left(\\frac{mx_2 + nx_1}{m+n}, \\frac{my_2 + ny_1}{m+n}\\right)$"
+                    },
+                    {
+                        "explanation": "Here $m = 3$, $n = 1$, $A(x_1, y_1) = (4, -3)$, $B(x_2, y_2) = (8, 5)$"
+                    },
+                    {
+                        "explanation": "Calculate x-coordinate",
+                        "math": "x = \\frac{3(8) + 1(4)}{3+1} = \\frac{24 + 4}{4} = \\frac{28}{4} = 7"
+                    },
+                    {
+                        "explanation": "Calculate y-coordinate",
+                        "math": "y = \\frac{3(5) + 1(-3)}{3+1} = \\frac{15 - 3}{4} = \\frac{12}{4} = 3"
+                    }
+                ],
+                "finalAnswer": "$P(7, 3)$"
+            }
+        ],
+        "ch_4_linear_equations_in_two_variables": [
+            {
+                "id": "ex_le_1",
+                "question": "Find the slope and y-intercept of the line $3x + 2y = 12$",
+                "steps": [
+                    {
+                        "explanation": "Convert to slope-intercept form $y = mx + c$"
+                    },
+                    {
+                        "explanation": "Solve for y",
+                        "math": "2y = -3x + 12"
+                    },
+                    {
+                        "explanation": "Divide by 2",
+                        "math": "y = -\\frac{3}{2}x + 6"
+                    },
+                    {
+                        "explanation": "Compare with $y = mx + c$: slope $m = -\\frac{3}{2}$, y-intercept $c = 6$"
+                    }
+                ],
+                "finalAnswer": "Slope $= -\\frac{3}{2}$, Y-intercept $= 6$"
+            },
+            {
+                "id": "ex_le_2",
+                "question": "Check whether the lines $2x + 3y = 9$ and $4x + 6y = 18$ are parallel, intersecting, or coincident",
+                "steps": [
+                    {
+                        "explanation": "Write both equations in standard form: $a_1x + b_1y + c_1 = 0$ and $a_2x + b_2y + c_2 = 0$",
+                        "math": "2x + 3y - 9 = 0 \\quad \\text{and} \\quad 4x + 6y - 18 = 0"
+                    },
+                    {
+                        "explanation": "Calculate the ratios",
+                        "math": "\\frac{a_1}{a_2} = \\frac{2}{4} = \\frac{1}{2}, \\quad \\frac{b_1}{b_2} = \\frac{3}{6} = \\frac{1}{2}, \\quad \\frac{c_1}{c_2} = \\frac{-9}{-18} = \\frac{1}{2}"
+                    },
+                    {
+                        "explanation": "Since $\\frac{a_1}{a_2} = \\frac{b_1}{b_2} = \\frac{c_1}{c_2}$, the lines are coincident"
+                    }
+                ],
+                "finalAnswer": "The lines are coincident (same line) with infinitely many solutions"
+            }
+        ],
+        "ch_7_triangles": [
+            {
+                "id": "ex_tri_1",
+                "question": "In a right-angled triangle, if the two legs are 6 cm and 8 cm, find the length of the hypotenuse",
+                "steps": [
+                    {
+                        "explanation": "Apply the Pythagoras theorem: $\\text{Hypotenuse}^2 = \\text{Base}^2 + \\text{Perpendicular}^2$"
+                    },
+                    {
+                        "explanation": "Let hypotenuse = h. Substitute the values",
+                        "math": "h^2 = 6^2 + 8^2 = 36 + 64 = 100"
+                    },
+                    {
+                        "explanation": "Take square root",
+                        "math": "h = \\sqrt{100} = 10"
+                    }
+                ],
+                "finalAnswer": "Hypotenuse $= 10$ cm"
+            }
+        ],
+        "ch_12_herons_formula": [
+            {
+                "id": "ex_heron_1",
+                "question": "Find the area of a triangle with sides 7 cm, 8 cm, and 9 cm using Heron's formula",
+                "steps": [
+                    {
+                        "explanation": "Calculate the semi-perimeter $s = \\frac{a + b + c}{2}$",
+                        "math": "s = \\frac{7 + 8 + 9}{2} = \\frac{24}{2} = 12 \\text{ cm}"
+                    },
+                    {
+                        "explanation": "Apply Heron's formula: $\\text{Area} = \\sqrt{s(s-a)(s-b)(s-c)}$",
+                        "math": "\\text{Area} = \\sqrt{12(12-7)(12-8)(12-9)}"
+                    },
+                    {
+                        "explanation": "Simplify",
+                        "math": "= \\sqrt{12 \\times 5 \\times 4 \\times 3} = \\sqrt{720}"
+                    },
+                    {
+                        "explanation": "Simplify the square root",
+                        "math": "= \\sqrt{144 \\times 5} = 12\\sqrt{5}"
+                    }
+                ],
+                "finalAnswer": "$12\\sqrt{5}$ cm$^2$ (approximately 26.83 cm$^2$)"
+            }
+        ],
+        "ch_13_surface_areas_and_volumes": [
+            {
+                "id": "ex_sav_1",
+                "question": "A cylindrical tank has a radius of 7 m and height of 10 m. Find its total surface area and volume. (Take $\\pi = \\frac{22}{7}$)",
+                "steps": [
+                    {
+                        "explanation": "Total Surface Area of cylinder = $2\\pi r(r + h)$",
+                        "math": "= 2 \\times \\frac{22}{7} \\times 7 \\times (7 + 10)"
+                    },
+                    {
+                        "explanation": "Simplify",
+                        "math": "= 2 \\times 22 \\times 17 = 748 \\text{ m}^2"
+                    },
+                    {
+                        "explanation": "Volume of cylinder = $\\pi r^2 h$",
+                        "math": "= \\frac{22}{7} \\times 7^2 \\times 10 = \\frac{22}{7} \\times 49 \\times 10"
+                    },
+                    {
+                        "explanation": "Simplify",
+                        "math": "= 22 \\times 7 \\times 10 = 1540 \\text{ m}^3"
+                    }
+                ],
+                "finalAnswer": "Total Surface Area $= 748$ m$^2$, Volume $= 1540$ m$^3$"
+            }
+        ],
+        "ch_14_statistics": [
+            {
+                "id": "ex_stat_1",
+                "question": "Find the mean, median, and mode of the data: 3, 5, 7, 3, 8, 5, 3, 9, 5",
+                "steps": [
+                    {
+                        "explanation": "Arrange in ascending order: 3, 3, 3, 5, 5, 5, 7, 8, 9"
+                    },
+                    {
+                        "explanation": "Calculate Mean = $\\frac{\\text{Sum of observations}}{\\text{Number of observations}}$",
+                        "math": "\\text{Mean} = \\frac{3+3+3+5+5+5+7+8+9}{9} = \\frac{48}{9} = 5.33"
+                    },
+                    {
+                        "explanation": "Find Median (middle value). Since n = 9 (odd), median is the $\\frac{9+1}{2} = 5^{th}$ value",
+                        "math": "\\text{Median} = 5"
+                    },
+                    {
+                        "explanation": "Find Mode (most frequent value). Both 3 and 5 appear 3 times",
+                        "math": "\\text{Mode} = 3 \\text{ and } 5 \\text{ (bimodal)}"
+                    }
+                ],
+                "finalAnswer": "Mean $= 5.33$, Median $= 5$, Mode $= 3$ and $5$"
+            }
+        ],
+        "ch_15_probability": [
+            {
+                "id": "ex_prob_1",
+                "question": "A die is thrown once. Find the probability of getting (a) a prime number (b) a number greater than 4",
+                "steps": [
+                    {
+                        "explanation": "Sample space when a die is thrown: $S = \\{1, 2, 3, 4, 5, 6\\}$, so $n(S) = 6$"
+                    },
+                    {
+                        "explanation": "(a) Prime numbers on a die: $\\{2, 3, 5\\}$, so favorable outcomes = 3",
+                        "math": "P(\\text{prime}) = \\frac{3}{6} = \\frac{1}{2}"
+                    },
+                    {
+                        "explanation": "(b) Numbers greater than 4: $\\{5, 6\\}$, so favorable outcomes = 2",
+                        "math": "P(\\text{greater than 4}) = \\frac{2}{6} = \\frac{1}{3}"
+                    }
+                ],
+                "finalAnswer": "(a) $\\frac{1}{2}$ (b) $\\frac{1}{3}$"
+            }
+        ]
+    },
+    "class_10": {
+        "ch_1_real_numbers": [
+            {
+                "id": "ex_rn_1",
+                "question": "Find the HCF and LCM of 12 and 18 using prime factorization",
+                "steps": [
+                    {
+                        "explanation": "Find prime factorization of each number",
+                        "math": "12 = 2^2 \\times 3^1 \\quad \\text{and} \\quad 18 = 2^1 \\times 3^2"
+                    },
+                    {
+                        "explanation": "HCF = product of lowest powers of common prime factors",
+                        "math": "\\text{HCF} = 2^1 \\times 3^1 = 2 \\times 3 = 6"
+                    },
+                    {
+                        "explanation": "LCM = product of highest powers of all prime factors",
+                        "math": "\\text{LCM} = 2^2 \\times 3^2 = 4 \\times 9 = 36"
+                    },
+                    {
+                        "explanation": "Verify: HCF $\\times$ LCM = Product of numbers",
+                        "math": "6 \\times 36 = 216 = 12 \\times 18 \\checkmark"
+                    }
+                ],
+                "finalAnswer": "HCF $= 6$, LCM $= 36$"
+            }
+        ],
+        "ch_2_polynomials": [
+            {
+                "id": "ex_poly10_1",
+                "question": "If $\\alpha$ and $\\beta$ are zeros of the polynomial $p(x) = x^2 - 5x + 6$, find the value of $\\alpha^2 + \\beta^2$",
+                "steps": [
+                    {
+                        "explanation": "For a quadratic $ax^2 + bx + c$, sum of zeros $= -\\frac{b}{a}$ and product $= \\frac{c}{a}$"
+                    },
+                    {
+                        "explanation": "Here $a=1$, $b=-5$, $c=6$",
+                        "math": "\\alpha + \\beta = -\\frac{-5}{1} = 5 \\quad \\text{and} \\quad \\alpha\\beta = \\frac{6}{1} = 6"
+                    },
+                    {
+                        "explanation": "Use the identity: $\\alpha^2 + \\beta^2 = (\\alpha + \\beta)^2 - 2\\alpha\\beta$",
+                        "math": "\\alpha^2 + \\beta^2 = (5)^2 - 2(6) = 25 - 12 = 13"
+                    }
+                ],
+                "finalAnswer": "$\\alpha^2 + \\beta^2 = 13$"
+            },
+            {
+                "id": "ex_poly10_2",
+                "question": "Find a quadratic polynomial whose zeros are $3 + \\sqrt{2}$ and $3 - \\sqrt{2}$",
+                "steps": [
+                    {
+                        "explanation": "Let $\\alpha = 3 + \\sqrt{2}$ and $\\beta = 3 - \\sqrt{2}$"
+                    },
+                    {
+                        "explanation": "Sum of zeros",
+                        "math": "\\alpha + \\beta = (3 + \\sqrt{2}) + (3 - \\sqrt{2}) = 6"
+                    },
+                    {
+                        "explanation": "Product of zeros",
+                        "math": "\\alpha \\beta = (3 + \\sqrt{2})(3 - \\sqrt{2}) = 9 - 2 = 7"
+                    },
+                    {
+                        "explanation": "Quadratic polynomial = $x^2 - (\\text{sum})x + (\\text{product})$",
+                        "math": "p(x) = x^2 - 6x + 7"
+                    }
+                ],
+                "finalAnswer": "$x^2 - 6x + 7$"
+            }
+        ],
+        "ch_3_pair_of_linear_equations": [
+            {
+                "id": "ex_ple_1",
+                "question": "Solve the system: $2x + 3y = 11$ and $5x - 4y = -7$ using elimination method",
+                "steps": [
+                    {
+                        "explanation": "Multiply equation (1) by 4 and equation (2) by 3 to make coefficients of y equal",
+                        "math": "8x + 12y = 44 \\quad ... (3) \\\\ 15x - 12y = -21 \\quad ... (4)"
+                    },
+                    {
+                        "explanation": "Add equations (3) and (4) to eliminate y",
+                        "math": "23x = 23 \\implies x = 1"
+                    },
+                    {
+                        "explanation": "Substitute $x = 1$ in equation (1)",
+                        "math": "2(1) + 3y = 11 \\implies 3y = 9 \\implies y = 3"
+                    }
+                ],
+                "finalAnswer": "$x = 1$, $y = 3$"
+            }
+        ],
+        "ch_4_quadratic_equations": [
+            {
+                "id": "ex_qe_1",
+                "question": "Solve the quadratic equation $2x^2 - 7x + 3 = 0$ using the quadratic formula",
+                "steps": [
+                    {
+                        "explanation": "The quadratic formula is $x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$"
+                    },
+                    {
+                        "explanation": "Here $a = 2$, $b = -7$, $c = 3$. Calculate discriminant",
+                        "math": "D = b^2 - 4ac = (-7)^2 - 4(2)(3) = 49 - 24 = 25"
+                    },
+                    {
+                        "explanation": "Since $D > 0$, we have two distinct real roots",
+                        "math": "x = \\frac{-(-7) \\pm \\sqrt{25}}{2(2)} = \\frac{7 \\pm 5}{4}"
+                    },
+                    {
+                        "explanation": "Calculate both roots",
+                        "math": "x_1 = \\frac{7 + 5}{4} = \\frac{12}{4} = 3 \\quad \\text{and} \\quad x_2 = \\frac{7 - 5}{4} = \\frac{2}{4} = \\frac{1}{2}"
+                    }
+                ],
+                "finalAnswer": "$x = 3$ or $x = \\frac{1}{2}$"
+            },
+            {
+                "id": "ex_qe_2",
+                "question": "Find the nature of roots of $x^2 + 4x + 5 = 0$ without solving",
+                "steps": [
+                    {
+                        "explanation": "Calculate the discriminant $D = b^2 - 4ac$"
+                    },
+                    {
+                        "explanation": "Here $a = 1$, $b = 4$, $c = 5$",
+                        "math": "D = (4)^2 - 4(1)(5) = 16 - 20 = -4"
+                    },
+                    {
+                        "explanation": "Since $D < 0$, the equation has no real roots (complex roots)"
+                    }
+                ],
+                "finalAnswer": "No real roots (two complex conjugate roots)"
+            }
+        ],
+        "ch_5_arithmetic_progressions": [
+            {
+                "id": "ex_ap_1",
+                "question": "Find the 20th term of the AP: 5, 8, 11, 14, ...",
+                "steps": [
+                    {
+                        "explanation": "Identify first term $a = 5$ and common difference $d = 8 - 5 = 3$"
+                    },
+                    {
+                        "explanation": "Use the formula for nth term: $a_n = a + (n-1)d$",
+                        "math": "a_{20} = 5 + (20-1) \\times 3 = 5 + 19 \\times 3"
+                    },
+                    {
+                        "explanation": "Simplify",
+                        "math": "a_{20} = 5 + 57 = 62"
+                    }
+                ],
+                "finalAnswer": "$a_{20} = 62$"
+            },
+            {
+                "id": "ex_ap_2",
+                "question": "Find the sum of first 15 terms of the AP: 2, 7, 12, ...",
+                "steps": [
+                    {
+                        "explanation": "Identify $a = 2$, $d = 7 - 2 = 5$, $n = 15$"
+                    },
+                    {
+                        "explanation": "Use the sum formula: $S_n = \\frac{n}{2}[2a + (n-1)d]$",
+                        "math": "S_{15} = \\frac{15}{2}[2(2) + (15-1)(5)]"
+                    },
+                    {
+                        "explanation": "Simplify",
+                        "math": "= \\frac{15}{2}[4 + 70] = \\frac{15}{2} \\times 74 = 15 \\times 37 = 555"
+                    }
+                ],
+                "finalAnswer": "$S_{15} = 555$"
+            }
+        ],
+        "ch_7_coordinate_geometry": [
+            {
+                "id": "ex_cg10_1",
+                "question": "Find the area of the triangle with vertices $A(1, 2)$, $B(4, 6)$, and $C(7, 2)$",
+                "steps": [
+                    {
+                        "explanation": "Use the formula: Area $= \\frac{1}{2}|x_1(y_2 - y_3) + x_2(y_3 - y_1) + x_3(y_1 - y_2)|$"
+                    },
+                    {
+                        "explanation": "Substitute coordinates: $(x_1, y_1) = (1, 2)$, $(x_2, y_2) = (4, 6)$, $(x_3, y_3) = (7, 2)$",
+                        "math": "\\text{Area} = \\frac{1}{2}|1(6 - 2) + 4(2 - 2) + 7(2 - 6)|"
+                    },
+                    {
+                        "explanation": "Simplify",
+                        "math": "= \\frac{1}{2}|1(4) + 4(0) + 7(-4)| = \\frac{1}{2}|4 + 0 - 28|"
+                    },
+                    {
+                        "explanation": "Calculate final answer",
+                        "math": "= \\frac{1}{2}|-24| = \\frac{1}{2} \\times 24 = 12"
+                    }
+                ],
+                "finalAnswer": "Area $= 12$ square units"
+            }
+        ],
+        "ch_8_introduction_to_trigonometry": [
+            {
+                "id": "ex_trig_1",
+                "question": "If $\\tan A = \\frac{3}{4}$, find $\\sin A$ and $\\cos A$ (where $A$ is an acute angle)",
+                "steps": [
+                    {
+                        "explanation": "Given $\\tan A = \\frac{\\text{opposite}}{\\text{adjacent}} = \\frac{3}{4}$. So opposite = 3k, adjacent = 4k for some k"
+                    },
+                    {
+                        "explanation": "Find hypotenuse using Pythagoras theorem",
+                        "math": "\\text{hypotenuse} = \\sqrt{(3k)^2 + (4k)^2} = \\sqrt{9k^2 + 16k^2} = \\sqrt{25k^2} = 5k"
+                    },
+                    {
+                        "explanation": "Calculate $\\sin A$ and $\\cos A$",
+                        "math": "\\sin A = \\frac{\\text{opposite}}{\\text{hypotenuse}} = \\frac{3k}{5k} = \\frac{3}{5}"
+                    },
+                    {
+                        "explanation": "Similarly",
+                        "math": "\\cos A = \\frac{\\text{adjacent}}{\\text{hypotenuse}} = \\frac{4k}{5k} = \\frac{4}{5}"
+                    }
+                ],
+                "finalAnswer": "$\\sin A = \\frac{3}{5}$, $\\cos A = \\frac{4}{5}$"
+            },
+            {
+                "id": "ex_trig_2",
+                "question": "Prove that: $\\frac{1 + \\tan^2 A}{1 + \\cot^2 A} = \\tan^2 A$",
+                "steps": [
+                    {
+                        "explanation": "Use identities: $1 + \\tan^2 A = \\sec^2 A$ and $1 + \\cot^2 A = \\csc^2 A$",
+                        "math": "\\text{LHS} = \\frac{\\sec^2 A}{\\csc^2 A}"
+                    },
+                    {
+                        "explanation": "Convert to sin and cos",
+                        "math": "= \\frac{1/\\cos^2 A}{1/\\sin^2 A} = \\frac{\\sin^2 A}{\\cos^2 A}"
+                    },
+                    {
+                        "explanation": "Simplify",
+                        "math": "= \\tan^2 A = \\text{RHS}"
+                    }
+                ],
+                "finalAnswer": "Hence Proved"
+            }
+        ]
+    },
+    "class_11": {
+        "ch_1_sets": [
+            {
+                "id": "ex_sets_1",
+                "question": "If $A = \\{1, 2, 3, 4, 5\\}$ and $B = \\{4, 5, 6, 7\\}$, find $A \\cup B$, $A \\cap B$, and $A - B$",
+                "steps": [
+                    {
+                        "explanation": "$A \\cup B$ (Union) contains all elements from both sets",
+                        "math": "A \\cup B = \\{1, 2, 3, 4, 5, 6, 7\\}"
+                    },
+                    {
+                        "explanation": "$A \\cap B$ (Intersection) contains elements common to both",
+                        "math": "A \\cap B = \\{4, 5\\}"
+                    },
+                    {
+                        "explanation": "$A - B$ (Difference) contains elements in A but not in B",
+                        "math": "A - B = \\{1, 2, 3\\}"
+                    }
+                ],
+                "finalAnswer": "$A \\cup B = \\{1, 2, 3, 4, 5, 6, 7\\}$, $A \\cap B = \\{4, 5\\}$, $A - B = \\{1, 2, 3\\}$"
+            },
+            {
+                "id": "ex_sets_2",
+                "question": "In a class of 50 students, 30 study Mathematics and 25 study Physics. If 10 students study both subjects, find how many study at least one subject",
+                "steps": [
+                    {
+                        "explanation": "Let M = set of students studying Math, P = set of students studying Physics"
+                    },
+                    {
+                        "explanation": "Given: $n(M) = 30$, $n(P) = 25$, $n(M \\cap P) = 10$"
+                    },
+                    {
+                        "explanation": "Use formula: $n(M \\cup P) = n(M) + n(P) - n(M \\cap P)$",
+                        "math": "n(M \\cup P) = 30 + 25 - 10 = 45"
+                    }
+                ],
+                "finalAnswer": "45 students study at least one subject"
+            }
+        ],
+        "ch_2_relations_and_functions": [
+            {
+                "id": "ex_rf_1",
+                "question": "If $f(x) = x^2 + 1$ and $g(x) = 2x - 3$, find $(f \\circ g)(x)$ and $(g \\circ f)(x)$",
+                "steps": [
+                    {
+                        "explanation": "$(f \\circ g)(x) = f(g(x))$. First find $g(x)$, then apply $f$",
+                        "math": "(f \\circ g)(x) = f(2x - 3) = (2x - 3)^2 + 1"
+                    },
+                    {
+                        "explanation": "Expand",
+                        "math": "= 4x^2 - 12x + 9 + 1 = 4x^2 - 12x + 10"
+                    },
+                    {
+                        "explanation": "$(g \\circ f)(x) = g(f(x))$. First find $f(x)$, then apply $g$",
+                        "math": "(g \\circ f)(x) = g(x^2 + 1) = 2(x^2 + 1) - 3"
+                    },
+                    {
+                        "explanation": "Simplify",
+                        "math": "= 2x^2 + 2 - 3 = 2x^2 - 1"
+                    }
+                ],
+                "finalAnswer": "$(f \\circ g)(x) = 4x^2 - 12x + 10$, $(g \\circ f)(x) = 2x^2 - 1$"
+            }
+        ],
+        "ch_3_trigonometric_functions": [
+            {
+                "id": "ex_tf_1",
+                "question": "Prove that $\\cos(A + B) \\cos(A - B) = \\cos^2 A - \\sin^2 B$",
+                "steps": [
+                    {
+                        "explanation": "Use product-to-sum formula: $\\cos P \\cos Q = \\frac{1}{2}[\\cos(P-Q) + \\cos(P+Q)]$"
+                    },
+                    {
+                        "explanation": "Let $P = A + B$ and $Q = A - B$. Then $P - Q = 2B$ and $P + Q = 2A$",
+                        "math": "\\cos(A+B)\\cos(A-B) = \\frac{1}{2}[\\cos 2B + \\cos 2A]"
+                    },
+                    {
+                        "explanation": "Use double angle formulas: $\\cos 2\\theta = 1 - 2\\sin^2\\theta = 2\\cos^2\\theta - 1$",
+                        "math": "= \\frac{1}{2}[(1 - 2\\sin^2 B) + (2\\cos^2 A - 1)]"
+                    },
+                    {
+                        "explanation": "Simplify",
+                        "math": "= \\frac{1}{2}[2\\cos^2 A - 2\\sin^2 B] = \\cos^2 A - \\sin^2 B"
+                    }
+                ],
+                "finalAnswer": "Hence Proved"
+            },
+            {
+                "id": "ex_tf_2",
+                "question": "Solve $\\sin x = \\frac{\\sqrt{3}}{2}$ for $x \\in [0, 2\\pi]$",
+                "steps": [
+                    {
+                        "explanation": "We know $\\sin \\frac{\\pi}{3} = \\frac{\\sqrt{3}}{2}$"
+                    },
+                    {
+                        "explanation": "In $[0, 2\\pi]$, $\\sin$ is positive in Quadrants I and II"
+                    },
+                    {
+                        "explanation": "In Quadrant I: $x = \\frac{\\pi}{3}$"
+                    },
+                    {
+                        "explanation": "In Quadrant II: $x = \\pi - \\frac{\\pi}{3} = \\frac{2\\pi}{3}$"
+                    }
+                ],
+                "finalAnswer": "$x = \\frac{\\pi}{3}$ or $x = \\frac{2\\pi}{3}$"
+            }
+        ],
+        "ch_5_complex_numbers_and_quadratic_equations": [
+            {
+                "id": "ex_cn_1",
+                "question": "Express $(3 + 4i)(2 - i)$ in the form $a + bi$",
+                "steps": [
+                    {
+                        "explanation": "Multiply using distributive property",
+                        "math": "(3 + 4i)(2 - i) = 3(2) + 3(-i) + 4i(2) + 4i(-i)"
+                    },
+                    {
+                        "explanation": "Simplify each term",
+                        "math": "= 6 - 3i + 8i - 4i^2"
+                    },
+                    {
+                        "explanation": "Since $i^2 = -1$",
+                        "math": "= 6 - 3i + 8i - 4(-1) = 6 - 3i + 8i + 4"
+                    },
+                    {
+                        "explanation": "Combine real and imaginary parts",
+                        "math": "= (6 + 4) + (-3 + 8)i = 10 + 5i"
+                    }
+                ],
+                "finalAnswer": "$10 + 5i$"
+            },
+            {
+                "id": "ex_cn_2",
+                "question": "Find the modulus and argument of $z = -1 + i$",
+                "steps": [
+                    {
+                        "explanation": "Modulus $|z| = \\sqrt{a^2 + b^2}$ where $z = a + bi$",
+                        "math": "|z| = \\sqrt{(-1)^2 + (1)^2} = \\sqrt{1 + 1} = \\sqrt{2}"
+                    },
+                    {
+                        "explanation": "For argument, $z = -1 + i$ lies in Quadrant II (negative real, positive imaginary)"
+                    },
+                    {
+                        "explanation": "Reference angle $\\alpha = \\tan^{-1}\\left|\\frac{1}{-1}\\right| = \\tan^{-1}(1) = \\frac{\\pi}{4}$"
+                    },
+                    {
+                        "explanation": "In Quadrant II: $\\arg(z) = \\pi - \\alpha = \\pi - \\frac{\\pi}{4} = \\frac{3\\pi}{4}$"
+                    }
+                ],
+                "finalAnswer": "$|z| = \\sqrt{2}$, $\\arg(z) = \\frac{3\\pi}{4}$"
+            }
+        ],
+        "ch_7_permutations_and_combinations": [
+            {
+                "id": "ex_pc_1",
+                "question": "In how many ways can 5 people be seated in a row?",
+                "steps": [
+                    {
+                        "explanation": "This is a permutation problem with n = 5 objects arranged in a row"
+                    },
+                    {
+                        "explanation": "Number of ways = $n! = 5!$",
+                        "math": "5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120"
+                    }
+                ],
+                "finalAnswer": "120 ways"
+            },
+            {
+                "id": "ex_pc_2",
+                "question": "How many different committees of 3 members can be formed from a group of 7 people?",
+                "steps": [
+                    {
+                        "explanation": "This is a combination problem since order doesn't matter"
+                    },
+                    {
+                        "explanation": "Number of ways = $^nC_r = \\frac{n!}{r!(n-r)!}$",
+                        "math": "^7C_3 = \\frac{7!}{3!(7-3)!} = \\frac{7!}{3! \\cdot 4!}"
+                    },
+                    {
+                        "explanation": "Simplify",
+                        "math": "= \\frac{7 \\times 6 \\times 5}{3 \\times 2 \\times 1} = \\frac{210}{6} = 35"
+                    }
+                ],
+                "finalAnswer": "35 committees"
+            }
+        ],
+        "ch_10_straight_lines": [
+            {
+                "id": "ex_sl_1",
+                "question": "Find the equation of the line passing through $(2, 3)$ with slope $-\\frac{2}{3}$",
+                "steps": [
+                    {
+                        "explanation": "Use point-slope form: $y - y_1 = m(x - x_1)$"
+                    },
+                    {
+                        "explanation": "Substitute $m = -\\frac{2}{3}$, $(x_1, y_1) = (2, 3)$",
+                        "math": "y - 3 = -\\frac{2}{3}(x - 2)"
+                    },
+                    {
+                        "explanation": "Multiply both sides by 3",
+                        "math": "3(y - 3) = -2(x - 2)"
+                    },
+                    {
+                        "explanation": "Expand and simplify",
+                        "math": "3y - 9 = -2x + 4 \\implies 2x + 3y = 13"
+                    }
+                ],
+                "finalAnswer": "$2x + 3y = 13$ or $y = -\\frac{2}{3}x + \\frac{13}{3}$"
+            }
+        ],
+        "ch_11_conic_sections": [
+            {
+                "id": "ex_cs_1",
+                "question": "Find the equation of a circle with center $(3, -2)$ and radius 5",
+                "steps": [
+                    {
+                        "explanation": "Use the standard form: $(x - h)^2 + (y - k)^2 = r^2$"
+                    },
+                    {
+                        "explanation": "Substitute $h = 3$, $k = -2$, $r = 5$",
+                        "math": "(x - 3)^2 + (y - (-2))^2 = 5^2"
+                    },
+                    {
+                        "explanation": "Simplify",
+                        "math": "(x - 3)^2 + (y + 2)^2 = 25"
+                    }
+                ],
+                "finalAnswer": "$(x - 3)^2 + (y + 2)^2 = 25$"
+            },
+            {
+                "id": "ex_cs_2",
+                "question": "Find the focus and directrix of the parabola $y^2 = 12x$",
+                "steps": [
+                    {
+                        "explanation": "Compare with standard form $y^2 = 4ax$",
+                        "math": "4a = 12 \\implies a = 3"
+                    },
+                    {
+                        "explanation": "For $y^2 = 4ax$: Focus is at $(a, 0)$ and directrix is $x = -a$"
+                    },
+                    {
+                        "explanation": "Therefore, Focus = $(3, 0)$ and Directrix: $x = -3$"
+                    }
+                ],
+                "finalAnswer": "Focus: $(3, 0)$, Directrix: $x = -3$"
+            }
+        ]
+    },
+    "class_12": {
+        "ch_1_relations_and_functions": [
+            {
+                "id": "ex_rf12_1",
+                "question": "Check if the relation R on set $A = \\{1, 2, 3\\}$ defined by $R = \\{(1,1), (2,2), (3,3), (1,2), (2,1)\\}$ is an equivalence relation",
+                "steps": [
+                    {
+                        "explanation": "Check Reflexivity: $(a, a) \\in R$ for all $a \\in A$",
+                        "math": "(1,1), (2,2), (3,3) \\in R \\implies \\text{Reflexive } \\checkmark"
+                    },
+                    {
+                        "explanation": "Check Symmetry: If $(a, b) \\in R$ then $(b, a) \\in R$",
+                        "math": "(1,2) \\in R \\text{ and } (2,1) \\in R \\implies \\text{Symmetric } \\checkmark"
+                    },
+                    {
+                        "explanation": "Check Transitivity: If $(a,b), (b,c) \\in R$ then $(a,c) \\in R$",
+                        "math": "(1,2), (2,1) \\in R \\text{ but we need to check: } (1,2), (2,2) \\in R \\implies (1,2) \\in R \\checkmark"
+                    },
+                    {
+                        "explanation": "All three properties are satisfied"
+                    }
+                ],
+                "finalAnswer": "Yes, R is an equivalence relation"
+            }
+        ],
+        "ch_2_inverse_trigonometric_functions": [
+            {
+                "id": "ex_itf_1",
+                "question": "Find the principal value of $\\sin^{-1}\\left(-\\frac{1}{2}\\right)$",
+                "steps": [
+                    {
+                        "explanation": "Let $y = \\sin^{-1}\\left(-\\frac{1}{2}\\right)$, so $\\sin y = -\\frac{1}{2}$"
+                    },
+                    {
+                        "explanation": "The principal value branch of $\\sin^{-1}$ is $\\left[-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right]$"
+                    },
+                    {
+                        "explanation": "We know $\\sin\\left(\\frac{\\pi}{6}\\right) = \\frac{1}{2}$, so $\\sin\\left(-\\frac{\\pi}{6}\\right) = -\\frac{1}{2}$"
+                    },
+                    {
+                        "explanation": "Since $-\\frac{\\pi}{6} \\in \\left[-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right]$"
+                    }
+                ],
+                "finalAnswer": "$\\sin^{-1}\\left(-\\frac{1}{2}\\right) = -\\frac{\\pi}{6}$"
+            },
+            {
+                "id": "ex_itf_2",
+                "question": "Prove that $\\tan^{-1}\\frac{1}{2} + \\tan^{-1}\\frac{1}{3} = \\frac{\\pi}{4}$",
+                "steps": [
+                    {
+                        "explanation": "Use the formula: $\\tan^{-1}x + \\tan^{-1}y = \\tan^{-1}\\left(\\frac{x+y}{1-xy}\\right)$ when $xy < 1$"
+                    },
+                    {
+                        "explanation": "Here $x = \\frac{1}{2}$, $y = \\frac{1}{3}$, and $xy = \\frac{1}{6} < 1$"
+                    },
+                    {
+                        "explanation": "Apply the formula",
+                        "math": "\\tan^{-1}\\frac{1}{2} + \\tan^{-1}\\frac{1}{3} = \\tan^{-1}\\left(\\frac{\\frac{1}{2} + \\frac{1}{3}}{1 - \\frac{1}{2} \\cdot \\frac{1}{3}}\\right)"
+                    },
+                    {
+                        "explanation": "Simplify",
+                        "math": "= \\tan^{-1}\\left(\\frac{\\frac{5}{6}}{1 - \\frac{1}{6}}\\right) = \\tan^{-1}\\left(\\frac{\\frac{5}{6}}{\\frac{5}{6}}\\right) = \\tan^{-1}(1) = \\frac{\\pi}{4}"
+                    }
+                ],
+                "finalAnswer": "Hence Proved"
+            }
+        ],
+        "ch_3_matrices": [
+            {
+                "id": "ex_mat_1",
+                "question": "If $A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$ and $B = \\begin{pmatrix} 5 & 6 \\\\ 7 & 8 \\end{pmatrix}$, find $AB$",
+                "steps": [
+                    {
+                        "explanation": "Matrix multiplication: $(AB)_{ij} = \\sum_k A_{ik} B_{kj}$"
+                    },
+                    {
+                        "explanation": "Calculate each element",
+                        "math": "(AB)_{11} = 1(5) + 2(7) = 5 + 14 = 19"
+                    },
+                    {
+                        "explanation": "Continue",
+                        "math": "(AB)_{12} = 1(6) + 2(8) = 6 + 16 = 22"
+                    },
+                    {
+                        "explanation": "Continue",
+                        "math": "(AB)_{21} = 3(5) + 4(7) = 15 + 28 = 43"
+                    },
+                    {
+                        "explanation": "Continue",
+                        "math": "(AB)_{22} = 3(6) + 4(8) = 18 + 32 = 50"
+                    }
+                ],
+                "finalAnswer": "$AB = \\begin{pmatrix} 19 & 22 \\\\ 43 & 50 \\end{pmatrix}$"
+            }
+        ],
+        "ch_4_determinants": [
+            {
+                "id": "ex_det_1",
+                "question": "Find the determinant of $A = \\begin{pmatrix} 2 & -3 & 5 \\\\ 1 & 4 & -2 \\\\ 0 & 1 & 3 \\end{pmatrix}$",
+                "steps": [
+                    {
+                        "explanation": "Expand along the first row using cofactor expansion",
+                        "math": "|A| = 2 \\begin{vmatrix} 4 & -2 \\\\ 1 & 3 \\end{vmatrix} - (-3) \\begin{vmatrix} 1 & -2 \\\\ 0 & 3 \\end{vmatrix} + 5 \\begin{vmatrix} 1 & 4 \\\\ 0 & 1 \\end{vmatrix}"
+                    },
+                    {
+                        "explanation": "Calculate each 2x2 determinant",
+                        "math": "= 2(4 \\cdot 3 - (-2) \\cdot 1) + 3(1 \\cdot 3 - (-2) \\cdot 0) + 5(1 \\cdot 1 - 4 \\cdot 0)"
+                    },
+                    {
+                        "explanation": "Simplify",
+                        "math": "= 2(12 + 2) + 3(3 - 0) + 5(1 - 0) = 2(14) + 3(3) + 5(1)"
+                    },
+                    {
+                        "explanation": "Calculate final value",
+                        "math": "= 28 + 9 + 5 = 42"
+                    }
+                ],
+                "finalAnswer": "$|A| = 42$"
+            }
+        ],
+        "ch_5_continuity_and_differentiability": [
+            {
+                "id": "ex_cd_1",
+                "question": "Find the derivative of $f(x) = (3x^2 + 2)^5$ using chain rule",
+                "steps": [
+                    {
+                        "explanation": "Apply chain rule: $\\frac{d}{dx}[f(g(x))] = f'(g(x)) \\cdot g'(x)$"
+                    },
+                    {
+                        "explanation": "Let $u = 3x^2 + 2$, so $f = u^5$",
+                        "math": "\\frac{df}{dx} = \\frac{df}{du} \\cdot \\frac{du}{dx}"
+                    },
+                    {
+                        "explanation": "Calculate derivatives",
+                        "math": "\\frac{df}{du} = 5u^4 \\quad \\text{and} \\quad \\frac{du}{dx} = 6x"
+                    },
+                    {
+                        "explanation": "Combine and substitute back",
+                        "math": "f'(x) = 5(3x^2 + 2)^4 \\cdot 6x = 30x(3x^2 + 2)^4"
+                    }
+                ],
+                "finalAnswer": "$f'(x) = 30x(3x^2 + 2)^4$"
+            }
+        ],
+        "ch_7_integrals": [
+            {
+                "id": "ex_int_1",
+                "question": "Evaluate $\\int \\frac{2x + 3}{x^2 + 3x + 5} dx$",
+                "steps": [
+                    {
+                        "explanation": "Notice that derivative of denominator = $2x + 3$ (numerator)"
+                    },
+                    {
+                        "explanation": "This is of the form $\\int \\frac{f'(x)}{f(x)} dx = \\ln|f(x)| + C$"
+                    },
+                    {
+                        "explanation": "Let $u = x^2 + 3x + 5$, then $du = (2x + 3)dx$",
+                        "math": "\\int \\frac{2x + 3}{x^2 + 3x + 5} dx = \\int \\frac{du}{u} = \\ln|u| + C"
+                    },
+                    {
+                        "explanation": "Substitute back",
+                        "math": "= \\ln|x^2 + 3x + 5| + C"
+                    }
+                ],
+                "finalAnswer": "$\\ln|x^2 + 3x + 5| + C$"
+            },
+            {
+                "id": "ex_int_2",
+                "question": "Evaluate $\\int_0^1 x e^x dx$",
+                "steps": [
+                    {
+                        "explanation": "Use integration by parts: $\\int u \\, dv = uv - \\int v \\, du$"
+                    },
+                    {
+                        "explanation": "Let $u = x$ (so $du = dx$) and $dv = e^x dx$ (so $v = e^x$)",
+                        "math": "\\int x e^x dx = x e^x - \\int e^x dx = xe^x - e^x + C = e^x(x - 1) + C"
+                    },
+                    {
+                        "explanation": "Apply definite limits",
+                        "math": "\\int_0^1 x e^x dx = [e^x(x-1)]_0^1 = e^1(1-1) - e^0(0-1)"
+                    },
+                    {
+                        "explanation": "Simplify",
+                        "math": "= e(0) - 1(-1) = 0 + 1 = 1"
+                    }
+                ],
+                "finalAnswer": "$1$"
+            }
+        ],
+        "ch_10_vector_algebra": [
+            {
+                "id": "ex_vec_1",
+                "question": "Find the dot product of $\\vec{a} = 2\\hat{i} + 3\\hat{j} - \\hat{k}$ and $\\vec{b} = \\hat{i} - 2\\hat{j} + 3\\hat{k}$",
+                "steps": [
+                    {
+                        "explanation": "Dot product: $\\vec{a} \\cdot \\vec{b} = a_1b_1 + a_2b_2 + a_3b_3$"
+                    },
+                    {
+                        "explanation": "Substitute values",
+                        "math": "\\vec{a} \\cdot \\vec{b} = (2)(1) + (3)(-2) + (-1)(3)"
+                    },
+                    {
+                        "explanation": "Calculate",
+                        "math": "= 2 - 6 - 3 = -7"
+                    }
+                ],
+                "finalAnswer": "$\\vec{a} \\cdot \\vec{b} = -7$"
+            },
+            {
+                "id": "ex_vec_2",
+                "question": "Find the cross product $\\vec{a} \\times \\vec{b}$ where $\\vec{a} = 2\\hat{i} + 3\\hat{j}$ and $\\vec{b} = \\hat{i} + 2\\hat{j}$",
+                "steps": [
+                    {
+                        "explanation": "Cross product formula using determinant",
+                        "math": "\\vec{a} \\times \\vec{b} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 2 & 3 & 0 \\\\ 1 & 2 & 0 \\end{vmatrix}"
+                    },
+                    {
+                        "explanation": "Expand the determinant",
+                        "math": "= \\hat{i}(3 \\cdot 0 - 0 \\cdot 2) - \\hat{j}(2 \\cdot 0 - 0 \\cdot 1) + \\hat{k}(2 \\cdot 2 - 3 \\cdot 1)"
+                    },
+                    {
+                        "explanation": "Simplify",
+                        "math": "= \\hat{i}(0) - \\hat{j}(0) + \\hat{k}(4 - 3) = \\hat{k}"
+                    }
+                ],
+                "finalAnswer": "$\\vec{a} \\times \\vec{b} = \\hat{k}$"
+            }
+        ],
+        "ch_13_probability": [
+            {
+                "id": "ex_prob12_1",
+                "question": "A bag contains 3 red and 5 black balls. Two balls are drawn at random without replacement. Find the probability that both are red",
+                "steps": [
+                    {
+                        "explanation": "Total balls = 3 + 5 = 8"
+                    },
+                    {
+                        "explanation": "Probability that first ball is red",
+                        "math": "P(\\text{1st red}) = \\frac{3}{8}"
+                    },
+                    {
+                        "explanation": "After drawing one red ball, remaining: 2 red, 5 black (total 7)",
+                        "math": "P(\\text{2nd red | 1st red}) = \\frac{2}{7}"
+                    },
+                    {
+                        "explanation": "Probability that both are red (multiplication rule)",
+                        "math": "P(\\text{both red}) = \\frac{3}{8} \\times \\frac{2}{7} = \\frac{6}{56} = \\frac{3}{28}"
+                    }
+                ],
+                "finalAnswer": "$\\frac{3}{28}$"
+            },
+            {
+                "id": "ex_prob12_2",
+                "question": "If $P(A) = 0.4$, $P(B) = 0.5$, and $P(A \\cap B) = 0.2$, find $P(A | B)$",
+                "steps": [
+                    {
+                        "explanation": "Use conditional probability formula: $P(A|B) = \\frac{P(A \\cap B)}{P(B)}$"
+                    },
+                    {
+                        "explanation": "Substitute the values",
+                        "math": "P(A|B) = \\frac{0.2}{0.5} = \\frac{2}{5} = 0.4"
+                    }
+                ],
+                "finalAnswer": "$P(A|B) = 0.4$"
+            }
+        ]
+    }
+}

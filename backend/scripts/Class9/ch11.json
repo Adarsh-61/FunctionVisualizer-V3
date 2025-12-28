@@ -1,0 +1,264 @@
+{
+  "id": "class_9",
+  "title": "Class 9",
+  "chapters": [
+    {
+      "id": "ch_11_surface_areas_volumes",
+      "title": "Ch 11: Surface Areas and Volumes",
+      "topics": [
+        {
+          "id": "topic_11_1_introduction_3d_geometry",
+          "title": "11.1 The Transition to Three Dimensions",
+          "content": "### 1. From Plane Figures to Solid Shapes\nIn previous chapters, we dealt with **Plane Figures** like triangles, squares, and circles. These figures exist on a 2D plane; they have length and breadth, but no thickness. They have **Area** and **Perimeter**, but they cannot hold anything.\n\nNow, we step into the real world: the **3D World**. Objects here have length, breadth, and height (or thickness). These are called **Solids**.\n\n#### 1.1 Key Concepts\n1.  **Surface Area (SA):** The total area of all the faces (or surfaces) of the solid. It represents the amount of material (paper, cloth, paint) needed to cover the solid completely.\n    * **Unit:** Square units ($cm^2, m^2$).\n2.  **Volume (V):** The amount of space occupied by the solid. It represents the capacity of the solid to hold a substance (air, water, sand).\n    * **Unit:** Cubic units ($cm^3, m^3$).\n3.  **Lateral/Curved Surface Area (LSA/CSA):** The area of the side surfaces only, excluding the top and bottom bases. Useful for problems involving painting walls or making pipes.\n4.  **Total Surface Area (TSA):** The sum of the Lateral/Curved Surface Area and the area of the base(s).\n\n#### 1.2 The Dimension Logic\n* **1D:** Line (Length) $\\to$ Unit: $m$\n* **2D:** Plane (Length $\\times$ Breadth) $\\to$ Unit: $m^2$\n* **3D:** Solid (Length $\\times$ Breadth $\\times$ Height) $\\to$ Unit: $m^3$\n\n**Visualizing Capacity:** Imagine a hollow cube of side 1 cm. The amount of water it can hold is $1 ml$. Thus, $1 cm^3 = 1 ml$. This is the bridge between solid geometry and fluid capacity.",
+          "formulas": [
+            "1 \\text{ m}^3 = 1000 \\text{ Litres}",
+            "1 \\text{ Litre} = 1000 \\text{ cm}^3",
+            "1 \\text{ hectare} = 10,000 \\text{ m}^2"
+          ],
+          "examples": [],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_11_2_cuboid_and_cube",
+          "title": "11.2 Cuboids and Cubes",
+          "content": "### 2. The Cuboid: The Most Common Solid\nA **Cuboid** is a solid bounded by six rectangular faces. Examples: Bricks, Matchboxes, Books.\n\n#### 2.1 Anatomy of a Cuboid\n* **Faces:** 6 Rectangles (Opposite faces are identical).\n* **Edges:** 12 Line segments where faces meet.\n* **Vertices:** 8 Corners where edges meet.\n* **Dimensions:** Length ($l$), Breadth ($b$), Height ($h$).\n\n#### 2.2 Deriving Surface Area\nImagine cutting a cardboard box along its edges and laying it flat. This is called the **Net** of the solid.\n* Top and Bottom faces: Area $= l \\times b$ (2 such faces).\n* Front and Back faces: Area $= l \\times h$ (2 such faces).\n* Left and Right faces: Area $= b \\times h$ (2 such faces).\n\n**Total Surface Area (TSA):** Sum of all 6 faces.\n$$TSA = 2(lb) + 2(bh) + 2(hl) = 2(lb + bh + hl)$$\n\n**Lateral Surface Area (LSA):** Area of the 4 walls (excluding top and bottom).\n$$LSA = 2(lh) + 2(bh) = 2h(l + b)$$\n*Note:* This is simply $\\text{Perimeter of Base} \\times \\text{Height}$.\n\n#### 2.3 Deriving Volume\nVolume is built by stacking area. If you take a rectangular sheet of area $l \\times b$ and stack $h$ such sheets on top of each other, you get a cuboid.\n$$\\text{Volume} = \\text{Base Area} \\times \\text{Height} = (l \\times b) \\times h = lbh$$\n\n#### 2.4 The Cube: A Special Cuboid\nA **Cube** is a cuboid where length = breadth = height = $a$ (edge length).\n* **TSA:** $2(a\\cdot a + a\\cdot a + a\\cdot a) = 6a^2$\n* **LSA:** $4a^2$\n* **Volume:** $a \\cdot a \\cdot a = a^3$\n* **Diagonal:** The longest rod that can fit inside. $d = \\sqrt{l^2 + b^2 + h^2}$. For cube, $d = a\\sqrt{3}$.",
+          "formulas": [
+            "TSA_{\\text{cuboid}} = 2(lb+bh+hl)",
+            "LSA_{\\text{cuboid}} = 2h(l+b)",
+            "V_{\\text{cuboid}} = lbh",
+            "TSA_{\\text{cube}} = 6a^2",
+            "V_{\\text{cube}} = a^3"
+          ],
+          "examples": [
+            {
+              "id": "ex_surf_1",
+              "question": "A plastic box 1.5 m long, 1.25 m wide and 65 cm deep is to be made. It is open at the top. Determine the area of the sheet required and the cost if 1 m² costs ₹20.",
+              "steps": [
+                {
+                  "explanation": "Identify dimensions: $l = 1.5$ m, $b = 1.25$ m. Height $h = 65$ cm = $0.65$ m (Unit consistency is key!)."
+                },
+                {
+                  "explanation": "Since it is open at the top, we need the LSA + Area of Bottom base."
+                },
+                {
+                  "explanation": "Area = $2h(l+b) + lb$."
+                },
+                {
+                  "explanation": "$2(0.65)(1.5 + 1.25) + (1.5 \\times 1.25)$."
+                },
+                {
+                  "explanation": "$1.3(2.75) + 1.875 = 3.575 + 1.875 = 5.45 \\text{ m}^2$."
+                },
+                {
+                  "explanation": "Cost = Area $\\times$ Rate = $5.45 \\times 20$."
+                }
+              ],
+              "finalAnswer": "Area: 5.45 m², Cost: ₹109"
+            },
+            {
+              "id": "ex_surf_2",
+              "question": "The diagonal of a cube is $12\\sqrt{3}$ cm. Find its volume and surface area.",
+              "steps": [
+                {
+                  "explanation": "Formula for diagonal of a cube is $a\\sqrt{3}$."
+                },
+                {
+                  "explanation": "Given $a\\sqrt{3} = 12\\sqrt{3} \\implies a = 12$ cm."
+                },
+                {
+                  "explanation": "Volume $V = a^3 = 12^3 = 1728 \\text{ cm}^3$."
+                },
+                {
+                  "explanation": "Surface Area $TSA = 6a^2 = 6(12^2) = 6(144) = 864 \\text{ cm}^2$."
+                }
+              ],
+              "finalAnswer": "V: 1728 cm³, TSA: 864 cm²"
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Cuboid Dimensions",
+            "functions": [],
+            "points": [
+              { "x": 0, "y": 0, "label": "Origin (0,0,0)" },
+              { "x": 4, "y": 2, "label": "Base" },
+              { "x": 0, "y": 3, "label": "Height" }
+            ],
+            "xRange": [-1, 5],
+            "yRange": [-1, 4]
+          }
+        },
+        {
+          "id": "topic_11_3_cylinders",
+          "title": "11.3 Right Circular Cylinders",
+          "content": "### 3. The Cylinder: Rotating Rectangles\nA **Right Circular Cylinder** is generated by rotating a rectangle about one of its sides. It has two flat circular bases and one curved surface.\n\n#### 3.1 Unrolling the Cylinder\nImagine a tin can. If you cut the label vertically and unroll it, what shape do you get?\n* **Result:** A Rectangle.\n* The **Height** of the rectangle is the height of the cylinder ($h$).\n* The **Length** of the rectangle is the circumference of the circular base ($2\\pi r$).\n\n#### 3.2 Surface Area Derivations\n1.  **Curved Surface Area (CSA):** Area of the unrolled rectangle.\n    $$CSA = \\text{Length} \\times \\text{Height} = (2\\pi r) \\times h = 2\\pi rh$$\n2.  **Total Surface Area (TSA):** CSA + 2 Circular Bases.\n    $$TSA = 2\\pi rh + \\pi r^2 + \\pi r^2 = 2\\pi rh + 2\\pi r^2 = 2\\pi r(h + r)$$\n\n#### 3.3 Volume Derivation\nUsing the stacking principle: A cylinder is a stack of circular discs.\n$$\\text{Volume} = \\text{Base Area} \\times \\text{Height} = (\\pi r^2) \\times h = \\pi r^2 h$$\n\n#### 3.4 Hollow Cylinders (Pipes)\nA pipe has an inner radius ($r$) and an outer radius ($R$).\n* **Volume of Material:** External Volume - Internal Volume = $\\pi R^2 h - \\pi r^2 h = \\pi h(R^2 - r^2)$.\n* **Total Surface Area:** Inner CSA + Outer CSA + 2 Ring Areas (Ends).\n    $$TSA = 2\\pi rh + 2\\pi Rh + 2(\\pi R^2 - \\pi r^2)$$",
+          "formulas": [
+            "CSA_{\\text{cyl}} = 2\\pi rh",
+            "TSA_{\\text{cyl}} = 2\\pi r(r+h)",
+            "V_{\\text{cyl}} = \\pi r^2 h",
+            "V_{\\text{hollow}} = \\pi h(R^2-r^2)"
+          ],
+          "examples": [
+            {
+              "id": "ex_surf_3",
+              "question": "The curved surface area of a right circular cylinder of height 14 cm is 88 cm². Find the diameter of the base.",
+              "steps": [
+                {
+                  "explanation": "Given $h = 14$ cm, CSA = 88 cm²."
+                },
+                {
+                  "explanation": "Formula: $CSA = 2\\pi rh$."
+                },
+                {
+                  "explanation": "$88 = 2 \\times \\frac{22}{7} \\times r \\times 14$."
+                },
+                {
+                  "explanation": "$88 = 44 \\times 2 \\times r$ (since 14/7 = 2)."
+                },
+                {
+                  "explanation": "$88 = 88r \\implies r = 1$ cm."
+                },
+                {
+                  "explanation": "Diameter = $2r = 2$ cm."
+                }
+              ],
+              "finalAnswer": "2 cm"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_11_4_cones",
+          "title": "11.4 Right Circular Cones",
+          "content": "### 4. The Cone: A Pyramidal Masterpiece\nA **Right Circular Cone** is generated by rotating a right-angled triangle about one of its perpendicular sides. Examples: Ice-cream cones, Party hats.\n\n#### 4.1 Anatomy\n* **Vertex:** The sharp point at the top.\n* **Base:** A circle of radius $r$.\n* **Height ($h$):** Perpendicular distance from vertex to center of base.\n* **Slant Height ($l$):** Distance from vertex to any point on the edge of the base.\n\n**Pythagorean Relationship:** In the interior right triangle formed by radius, height, and slant height:\n$$l^2 = h^2 + r^2 \\implies l = \\sqrt{h^2 + r^2}$$\n\n#### 4.2 Deriving CSA (The Sector Method)\nIf you cut a hollow cone along its slant height and flatten it, you get a **Sector of a Circle**.\n* The radius of this large sector is the slant height $l$.\n* The arc length of this sector is the circumference of the cone's base $2\\pi r$.\n* Area of a Sector = $\\frac{1}{2} \\times \\text{Radius} \\times \\text{Arc Length}$.\n* $CSA = \\frac{1}{2} \\times l \\times (2\\pi r) = \\pi rl$.\n\n#### 4.3 Total Surface Area\n$$TSA = CSA + \\text{Base Area} = \\pi rl + \\pi r^2 = \\pi r(l + r)$$\n\n#### 4.4 Volume Derivation (Intuition)\nIf you take a cylinder and a cone with the *same* base radius and *same* height, and fill the cone with water, it takes exactly **3 cone-fulls** to fill the cylinder.\nThus, the volume of a cone is one-third the volume of the cylinder.\n$$\\text{Volume} = \\frac{1}{3} \\pi r^2 h$$",
+          "formulas": [
+            "l = \\sqrt{h^2+r^2}",
+            "CSA_{\\text{cone}} = \\pi rl",
+            "TSA_{\\text{cone}} = \\pi r(l+r)",
+            "V_{\\text{cone}} = \\frac{1}{3} \\pi r^2 h"
+          ],
+          "examples": [
+            {
+              "id": "ex_surf_4",
+              "question": "A conical tent is 10 m high and the radius of its base is 24 m. Find the slant height and the cost of canvas required at ₹70 per m².",
+              "steps": [
+                {
+                  "explanation": "Given $h = 10, r = 24$. We need slant height $l$."
+                },
+                {
+                  "explanation": "$l = \\sqrt{h^2 + r^2} = \\sqrt{10^2 + 24^2} = \\sqrt{100 + 576} = \\sqrt{676}$."
+                },
+                {
+                  "explanation": "$l = 26$ m."
+                },
+                {
+                  "explanation": "Canvas area = CSA (base is open). $CSA = \\pi rl = \\frac{22}{7} \\times 24 \\times 26$."
+                },
+                {
+                  "explanation": "$CSA \\approx 1961.14 \\text{ m}^2$."
+                },
+                {
+                  "explanation": "Cost = $1961.14 \\times 70 = 137280$ (approx)."
+                },
+                {
+                  "explanation": "Exact calculation: $\\frac{22}{7} \\times 24 \\times 26 \\times 70 = 22 \\times 24 \\times 26 \\times 10 = 137280$."
+                }
+              ],
+              "finalAnswer": "l=26m, Cost=₹137280"
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Cone Slant Height Relation",
+            "functions": [],
+            "points": [
+              { "x": 0, "y": 0, "label": "Center" },
+              { "x": 3, "y": 0, "label": "Radius (r)" },
+              { "x": 0, "y": 4, "label": "Vertex" }
+            ],
+            "shapes": [
+              { "type": "line", "x1": 0, "y1": 0, "x2": 0, "y2": 4, "color": "blue", "label": "h" },
+              { "type": "line", "x1": 0, "y1": 0, "x2": 3, "y2": 0, "color": "red", "label": "r" },
+              { "type": "line", "x1": 0, "y1": 4, "x2": 3, "y2": 0, "color": "green", "label": "l" }
+            ],
+            "xRange": [-1, 5],
+            "yRange": [-1, 5]
+          }
+        },
+        {
+          "id": "topic_11_5_spheres",
+          "title": "11.5 Spheres and Hemispheres",
+          "content": "### 5. The Sphere: The Perfect Shape\nA **Sphere** is the locus of all points in 3D space equidistant from a fixed center. Unlike a cylinder or cone, it has no edges or vertices.\n\n#### 5.1 Surface Area (The String Experiment)\nIf you take a sphere of radius $r$ and wind a string tightly around it, and then use that same string to fill circles of radius $r$, you will find that the string covers exactly **4 circles**.\n$$\\text{Surface Area} = 4 \\times (\\text{Area of Circle}) = 4\\pi r^2$$\n\n#### 5.2 Volume (Archimedes' Discovery)\nArchimedes proved that the volume of a sphere is $2/3$ of the volume of the smallest cylinder that can contain it (cylinder with radius $r$ and height $2r$).\n* $V_{\\text{cyl}} = \\pi r^2 (2r) = 2\\pi r^3$.\n* $V_{\\text{sphere}} = \\frac{2}{3} (2\\pi r^3) = \\frac{4}{3} \\pi r^3$.\n\n#### 5.3 The Hemisphere\nCutting a sphere in half gives a Hemisphere.\n1.  **Curved Surface Area (CSA):** Half of sphere's area = $2\\pi r^2$.\n2.  **Total Surface Area (TSA):** CSA + Flat Circular Base = $2\\pi r^2 + \\pi r^2 = 3\\pi r^2$.\n3.  **Volume:** Half of sphere's volume = $\\frac{2}{3} \\pi r^3$.",
+          "formulas": [
+            "SA_{\\text{sphere}} = 4\\pi r^2",
+            "V_{\\text{sphere}} = \\frac{4}{3} \\pi r^3",
+            "CSA_{\\text{hemi}} = 2\\pi r^2",
+            "TSA_{\\text{hemi}} = 3\\pi r^2",
+            "V_{\\text{hemi}} = \\frac{2}{3} \\pi r^3"
+          ],
+          "examples": [
+            {
+              "id": "ex_surf_5",
+              "question": "A hemispherical bowl is made of steel, 0.25 cm thick. The inner radius of the bowl is 5 cm. Find the outer curved surface area.",
+              "steps": [
+                {
+                  "explanation": "Inner radius $r = 5$ cm. Thickness $t = 0.25$ cm."
+                },
+                {
+                  "explanation": "Outer radius $R = r + t = 5 + 0.25 = 5.25$ cm."
+                },
+                {
+                  "explanation": "Outer CSA = $2\\pi R^2$."
+                },
+                {
+                  "explanation": "$= 2 \\times \\frac{22}{7} \\times 5.25 \\times 5.25$."
+                },
+                {
+                  "explanation": "$= 44 \\times 0.75 \\times 5.25$."
+                },
+                {
+                  "explanation": "$= 33 \\times 5.25 = 173.25 \\text{ cm}^2$."
+                }
+              ],
+              "finalAnswer": "173.25 cm²"
+            },
+            {
+              "id": "ex_surf_6",
+              "question": "A shot-put is a metallic sphere of radius 4.9 cm. If the density of the metal is 7.8 g/cm³, find the mass.",
+              "steps": [
+                {
+                  "explanation": "First, find Volume $V = \\frac{4}{3} \\pi r^3$."
+                },
+                {
+                  "explanation": "$V = \\frac{4}{3} \\times \\frac{22}{7} \\times (4.9)^3$."
+                },
+                {
+                  "explanation": "$4.9 = 49/10$. Calculation: $\\frac{4}{3} \\times \\frac{22}{7} \\times 4.9 \\times 4.9 \\times 4.9$."
+                },
+                {
+                  "explanation": "$V \\approx 493 \\text{ cm}^3$."
+                },
+                {
+                  "explanation": "Mass = Volume $\\times$ Density = $493 \\times 7.8$."
+                },
+                {
+                  "explanation": "Mass $\\approx 3845.44$ g $\\approx 3.85$ kg."
+                }
+              ],
+              "finalAnswer": "3.85 kg"
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_11_6_practice_bank",
+          "title": "11.6 Practice Bank & Compendium",
+          "content": "### 6. Comprehensive Practice Questions\n\n#### Section A: Direct Formulas (10 Questions)\n1.  Find the TSA of a cube of side 5 cm.\n2.  A cylinder has base radius 7 cm and height 10 cm. Find its volume.\n3.  Find the slant height of a cone with radius 3 cm and height 4 cm.\n4.  Calculate the surface area of a sphere of diameter 14 cm.\n5.  Find the volume of a hemisphere of radius 3 cm.\n6.  If the volume of a cube is 1000 cm³, find its edge length.\n7.  Find the curved surface area of a cylinder with diameter 20 cm and height 20 cm.\n8.  A cone has volume $1570 \\text{ cm}^3$ and height 15 cm. Find radius (Use $\\pi=3.14$).\n9.  Find the ratio of volumes of two spheres if their radii are in ratio 1:2.\n10. How many litres can a hemispherical bowl of radius 10.5 cm hold?\n\n#### Section B: Composite & Real World (10 Questions)\n11. A matchbox measures $4 \\text{ cm} \\times 2.5 \\text{ cm} \\times 1.5 \\text{ cm}$. What is the volume of a packet containing 12 such boxes?\n12. A village having a population of 4000 requires 150 litres of water per head per day. It has a tank measuring $20 \\text{ m} \\times 15 \\text{ m} \\times 6 \\text{ m}$. For how many days will the water last?\n13. **(Must Practice)** A river 3 m deep and 40 m wide is flowing at the rate of 2 km per hour. How much water will fall into the sea in a minute?\n14. The diameter of a roller is 84 cm and its length is 120 cm. It takes 500 complete revolutions to move once over to level a playground. Find the area of the playground in m².\n15. A heap of wheat is in the form of a cone whose diameter is 10.5 m and height is 3 m. Find its volume and the canvas area required to cover it.\n16. A right triangle ABC with sides 5 cm, 12 cm and 13 cm is revolved about the side 12 cm. Find the volume of the solid so obtained.\n17. **(Must Practice)** The diameter of the moon is approximately one-fourth of the diameter of the earth. Find the ratio of their surface areas.\n18. **(Must Practice)** A lead pencil consists of a cylinder of wood with a solid cylinder of graphite filled in the interior. The diameter of the pencil is 7 mm and the diameter of the graphite is 1 mm. If the length of the pencil is 14 cm, find the volume of the wood and that of the graphite.\n19. A hemispherical tank is made up of an iron sheet 1 cm thick. If the inner radius is 1 m, find the volume of the iron used to make the tank.\n20. **(Must Practice)** Twenty-seven solid iron spheres, each of radius $r$ and surface area $S$ are melted to form a sphere with surface area $S'$. Find the radius $r'$ of the new sphere.\n\n#### Section C: Advanced / JEE Foundation (Must Practice)\n21. **(Must Practice)** A semi-circular sheet of metal of diameter 28 cm is bent to form an open conical cup. Find the capacity of the cup.\n22. **(Must Practice)** Water flows at the rate of 10 m/minute through a cylindrical pipe 5 mm in diameter. How long would it take to fill a conical vessel having diameter at the base 40 cm and depth 24 cm?\n23. **(Must Practice)** A cloth having an area of 165 m² is shaped into the form of a conical tent of radius 5 m. (i) How many students can sit in the tent if a student, on an average, occupies 5/7 m² on the ground? (ii) Find the volume of the cone.\n24. **(Must Practice)** A sphere and a cube have the same surface area. Show that the ratio of the volume of the sphere to that of the cube is $\\sqrt{6} : \\sqrt{\\pi}$.\n25. **(Must Practice)** A cone, a hemisphere and a cylinder stand on equal bases and have the same height. Show that their volumes are in the ratio 1 : 2 : 3.\n26. **(Must Practice)** A hollow spherical shell is made of a metal of density 4.5 g/cm³. If its internal and external diameters are 8 cm and 9 cm respectively, find the weight of the shell.\n27. **(Must Practice)** A solid cylinder has a total surface area of 462 cm². Its curved surface area is one-third of its total surface area. Find the volume of the cylinder.\n28. **(Must Practice)** The difference between the outer and inner curved surface areas of a hollow right circular cylinder 14 cm long is 88 cm². If the volume of metal used in making the cylinder is 176 cm³, find the outer and inner diameters.\n29. **(Must Practice)** A wall of length 10 m was to be built across an open ground. The height of the wall is 4 m and thickness of the wall is 24 cm. If this wall is to be built up with bricks whose dimensions are $24 \\text{ cm} \\times 12 \\text{ cm} \\times 8 \\text{ cm}$, how many bricks would be required?\n30. **(Must Practice)** A cylindrical bucket, 32 cm high and with radius of base 18 cm, is filled with sand. This bucket is emptied on the ground and a conical heap of sand is formed. If the height of the conical heap is 24 cm, find the radius and slant height of the heap.\n\n---\n\n### 7. Formula Compendium\n\n| Shape | CSA / LSA | TSA | Volume |\n| :--- | :--- | :--- | :--- |\n| **Cuboid** | $2h(l+b)$ | $2(lb+bh+hl)$ | $lbh$ |\n| **Cube** | $4a^2$ | $6a^2$ | $a^3$ |\n| **Cylinder** | $2\\pi rh$ | $2\\pi r(h+r)$ | $\\pi r^2 h$ |\n| **Cone** | $\\pi rl$ | $\\pi r(l+r)$ | $\\frac{1}{3}\\pi r^2 h$ |\n| **Sphere** | $4\\pi r^2$ | $4\\pi r^2$ | $\\frac{4}{3}\\pi r^3$ |\n| **Hemisphere** | $2\\pi r^2$ | $3\\pi r^2$ | $\\frac{2}{3}\\pi r^3$ |\n\n* **Slant Height:** $l = \\sqrt{h^2+r^2}$\n* **Hollow Cylinder Vol:** $\\pi h(R^2-r^2)$",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

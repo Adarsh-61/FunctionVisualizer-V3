@@ -1,0 +1,180 @@
+{
+  "id": "12_7",
+  "classId": 12,
+  "title": "Integrals",
+  "description": "The inverse process of differentiation. This chapter unifies two seemingly distinct concepts: the Anti-derivative (finding a function given its rate of change) and the Definite Integral (calculating accumulation/area). It covers rigorous methods of integration, the Fundamental Theorem of Calculus, and advanced properties for evaluating complex definite integrals.",
+  "topics": [
+    {
+      "id": "12_7_1",
+      "title": "Indefinite Integrals",
+      "content": "### 1. The Concept of Anti-derivative\nIn differential calculus, we are given a function $f(x)$ and we find its derivative $f'(x)$. Integral calculus asks the reverse question: Given a derivative $f'(x)$, can we find the original function $f(x)$?\n\n**Definition:**\nA function $F(x)$ is called an **antiderivative** (or primitive) of a function $f(x)$ if $F'(x) = f(x)$ for all $x$ in the domain.\n\n**The Constant of Integration ($C$):**\nIf $F(x)$ is an antiderivative of $f(x)$, then $F(x) + C$ is also an antiderivative, because:\n$$ \\frac{d}{dx}[F(x) + C] = F'(x) + 0 = f(x) $$\nHere, $C$ is an arbitrary real constant. This means the antiderivative is not unique; it is a **family of functions**.\n\n**Notation:**\n$$ \\int f(x) dx = F(x) + C $$\n* $\\int$: The Integral Sign (an elongated 'S' for Summation).\n* $f(x)$: The Integrand.\n* $dx$: Indicates integration with respect to variable $x$.\n* $F(x) + C$: The Indefinite Integral.\n\n### 2. Geometric Interpretation\n$y = F(x) + C$ represents a family of curves. For different values of $C$, we get different curves that are parallel to each other (shifted vertically).\n* **Crucial Property:** At any specific $x = a$, the slope of the tangent ($\frac{dy}{dx}$) is the same for all members of the family ($f(a)$). Thus, the tangents to all curves at the points of intersection with the line $x = a$ are parallel.\n\n### 3. Properties of Indefinite Integrals\n1.  **Differentiation Inverse:** $\\frac{d}{dx} \\int f(x) dx = f(x)$ and $\\int f'(x) dx = f(x) + C$.\n2.  **Linearity:**\n    * $\\int [f(x) + g(x)] dx = \\int f(x) dx + \\int g(x) dx$\n    * $\\int k f(x) dx = k \\int f(x) dx$ (where $k$ is a constant).\n\n### 4. Standard Integrals (Derivatives in Reverse)\n* $\\int x^n dx = \\frac{x^{n+1}}{n+1} + C \\quad (n \\neq -1)$\n* $\\int \\frac{1}{x} dx = \\ln |x| + C$\n* $\\int e^x dx = e^x + C$\n* $\\int a^x dx = \\frac{a^x}{\\ln a} + C$\n* $\\int \\sin x dx = -\\cos x + C$\n* $\\int \\cos x dx = \\sin x + C$\n* $\\int \\sec^2 x dx = \\tan x + C$\n* $\\int \\text{cosec}^2 x dx = -\\cot x + C$\n* $\\int \\sec x \\tan x dx = \\sec x + C$\n* $\\int \\text{cosec } x \\cot x dx = -\\text{cosec } x + C$\n* $\\int \\frac{1}{\\sqrt{1-x^2}} dx = \\sin^{-1} x + C$\n* $\\int \\frac{1}{1+x^2} dx = \\tan^{-1} x + C$"
+    },
+    {
+      "id": "12_7_2",
+      "title": "Methods of Integration",
+      "content": "Unlike differentiation, there is no single rule (like Chain Rule) that works for all integrals. We use specific techniques to reduce complex integrals to standard forms.\n\n### 1. Integration by Substitution\nThis is the reverse of the Chain Rule. It involves changing the independent variable $x$ to $t$.\n\n**Method:**\nTo evaluate $\\int f(g(x)) g'(x) dx$:\n1.  Put $g(x) = t$.\n2.  Differentiate: $g'(x) dx = dt$.\n3.  Substitute: Integral becomes $\\int f(t) dt$.\n4.  Integrate w.r.t $t$ and then substitute back $t = g(x)$.\n\n**Important Standard Results via Substitution:**\n* $\\int \\tan x dx = \\ln |\\sec x| + C$\n* $\\int \\cot x dx = \\ln |\\sin x| + C$\n* $\\int \\sec x dx = \\ln |\\sec x + \\tan x| + C = \\ln |\\tan(\\frac{\\pi}{4} + \\frac{x}{2})| + C$\n* $\\int \\text{cosec } x dx = \\ln |\\text{cosec } x - \\cot x| + C = \\ln |\\tan(\\frac{x}{2})| + C$\n\n### 2. Integration using Trigonometric Identities\nWhen the integrand involves powers or products of trigonometric functions, we use identities to simplify.\n* $\\sin^2 x = \\frac{1 - \\cos 2x}{2}, \\quad \\cos^2 x = \\frac{1 + \\cos 2x}{2}$\n* $\\sin mx \\cos nx = \\frac{1}{2}[\\sin(m+n)x + \\sin(m-n)x]$\n* $\\sin 3x = 3\\sin x - 4\\sin^3 x$\n\n### 3. Integrals of Some Special Types\nWe derive formulas for $\\int \\frac{1}{Q(x)} dx$ and $\\int \\frac{1}{\\sqrt{Q(x)}} dx$ where $Q(x)$ is quadratic.\n* $\\int \\frac{dx}{x^2 - a^2} = \\frac{1}{2a} \\ln \\left| \\frac{x-a}{x+a} \\right| + C$\n* $\\int \\frac{dx}{a^2 - x^2} = \\frac{1}{2a} \\ln \\left| \\frac{a+x}{a-x} \\right| + C$\n* $\\int \\frac{dx}{x^2 + a^2} = \\frac{1}{a} \\tan^{-1} \\frac{x}{a} + C$\n* $\\int \\frac{dx}{\\sqrt{x^2 - a^2}} = \\ln |x + \\sqrt{x^2 - a^2}| + C$\n* $\\int \\frac{dx}{\\sqrt{a^2 - x^2}} = \\sin^{-1} \\frac{x}{a} + C$\n* $\\int \\frac{dx}{\\sqrt{x^2 + a^2}} = \\ln |x + \\sqrt{x^2 + a^2}| + C$\n\n**Technique for $ax^2 + bx + c$:**\nComplete the square: $ax^2 + bx + c = a(x + \\frac{b}{2a})^2 + (c - \\frac{b^2}{4a})$. Then use the standard forms above.\n\n### 4. Integration by Partial Fractions\nUsed for rational functions $\\frac{P(x)}{Q(x)}$ where degree of $P <$ degree of $Q$.\n1.  **Factorize Denominator:** $Q(x) = (x-a)(x-b)...$\n2.  **Decompose:**\n    * Linear Factors: $\\frac{A}{x-a} + \\frac{B}{x-b}$\n    * Repeated Linear: $\\frac{A}{x-a} + \\frac{B}{(x-a)^2}$\n    * Quadratic Factor (Irreducible): $\\frac{Ax+B}{ax^2+bx+c}$\n\n### 5. Integration by Parts\nThis is the reverse of the Product Rule.\n$$ \\int u v dx = u \\int v dx - \\int \\left( \\frac{du}{dx} \\int v dx \\right) dx $$\n**Selection Rule (ILATE):** Choose $u$ (function to differentiate) in order of preference: **I**nverse Trig, **L**ogarithmic, **A**lgebraic, **T**rigonometric, **E**xponential.\n\n**Classic Integral:** $\\int e^x [f(x) + f'(x)] dx = e^x f(x) + C$.\n*Proof:* Expand $\\int e^x f(x) dx + \\int e^x f'(x) dx$. Apply parts to the first term taking $u=f(x)$."
+    },
+    {
+      "id": "12_7_3",
+      "title": "Definite Integrals",
+      "content": "### 1. Concept\nThe definite integral $\\int_{a}^{b} f(x) dx$ represents the unique number (value) associated with the function $f$ on the interval $[a, b]$.\nGeometrically, if $f(x) \\ge 0$, it represents the **area** bounded by the curve $y=f(x)$, the x-axis, and the ordinates $x=a$ and $x=b$.\n\n### 2. Definite Integral as the Limit of a Sum (Riemann Sum)\nThis is the rigorous definition.\n$$ \\int_{a}^{b} f(x) dx = \\lim_{h \\to 0} h [f(a) + f(a+h) + ... + f(a+(n-1)h)] $$\nWhere $h = \\frac{b-a}{n} \\to 0$ as $n \\to \\infty$.\n\n**Steps to evaluate as limit of sum:**\n1.  Identify $a, b, f(x)$.\n2.  Write $h = (b-a)/n$.\n3.  Form the series sum.\n4.  Use summation formulas ($\\\\Sigma n, \\\\Sigma n^2, \\text{GP sum}$).\n5.  Apply limit $n \\to \\infty$.\n\n### 3. Fundamental Theorem of Calculus (FTC)\nThis theorem connects Differential and Integral Calculus.\n\n**First Fundamental Theorem:**\nLet $f$ be continuous on $[a, b]$ and let $A(x) = \\int_{a}^{x} f(t) dt$. Then $A'(x) = f(x)$.\n(Differentiation cancels Integration).\n\n**Second Fundamental Theorem:**\nLet $f$ be continuous on $[a, b]$ and $F$ be an antiderivative of $f$. Then:\n$$ \\int_{a}^{b} f(x) dx = F(b) - F(a) $$\nThis is the practical method to evaluate definite integrals."
+    },
+    {
+      "id": "12_7_4",
+      "title": "Properties of Definite Integrals",
+      "content": "Properties simplify the evaluation of definite integrals, often avoiding the need to find the antiderivative explicitly.\n\n* **P0:** $\\int_{a}^{b} f(x) dx = \\int_{a}^{b} f(t) dt$ (Variable is dummy).\n* **P1:** $\\int_{a}^{b} f(x) dx = -\\int_{b}^{a} f(x) dx$.\n* **P2:** $\\int_{a}^{b} f(x) dx = \\int_{a}^{c} f(x) dx + \\int_{c}^{b} f(x) dx$ (Splitting Interval).\n    * Crucial for Modulus functions $|x|$.\n* **P3:** $\\int_{a}^{b} f(x) dx = \\int_{a}^{b} f(a+b-x) dx$.\n    * *The King's Property.* Most important for JEE.\n* **P4:** $\\int_{0}^{a} f(x) dx = \\int_{0}^{a} f(a-x) dx$. (Special case of P3).\n* **P5:** $\\int_{0}^{2a} f(x) dx = \\int_{0}^{a} f(x) dx + \\int_{0}^{a} f(2a-x) dx$.\n* **P6:** $\\int_{0}^{2a} f(x) dx = \\begin{cases} 2\\int_{0}^{a} f(x) dx & \\text{if } f(2a-x)=f(x) \\\\ 0 & \\text{if } f(2a-x)=-f(x) \\end{cases}$\n* **P7 (Odd/Even):** $\\int_{-a}^{a} f(x) dx = \\begin{cases} 2\\int_{0}^{a} f(x) dx & \\text{if } f(-x)=f(x) \\text{ (Even)} \\\\ 0 & \\text{if } f(-x)=-f(x) \\text{ (Odd)} \\end{cases}$\n    * *Geometric Logic:* For odd functions, area on left ($x<0$) cancels area on right ($x>0$). For even, they add up."
+    }
+  ],
+  "examples": [
+    {
+      "id": "ex_12_7_1",
+      "title": "Substitution Method",
+      "problem": "Evaluate $\\int \\frac{\\tan^4 \\sqrt{x} \\sec^2 \\sqrt{x}}{\\sqrt{x}} dx$.",
+      "solution": "Let $\\sqrt{x} = t$.\nDifferentiate: $\\frac{1}{2\\sqrt{x}} dx = dt \\implies \\frac{dx}{\\sqrt{x}} = 2 dt$.\nSubstitute into integral:\n$$ I = \\int \\tan^4 t \\sec^2 t (2 dt) = 2 \\int \\tan^4 t \\sec^2 t dt $$\nNow, substitution again: Let $\\tan t = u \\implies \\sec^2 t dt = du$.\n$$ I = 2 \\int u^4 du = 2 \\frac{u^5}{5} + C $$\nSubstitute back $u = \\tan t = \\tan \\sqrt{x}$:\n$$ I = \\frac{2}{5} \\tan^5 \\sqrt{x} + C $$"
+    },
+    {
+      "id": "ex_12_7_2",
+      "title": "Integration by Parts",
+      "problem": "Evaluate $\\int x \\sin^{-1} x dx$.",
+      "solution": "Using ILATE: $u = \\sin^{-1} x$ (Inverse Trig), $v = x$ (Algebraic).\nFormula: $\\int uv dx = u \\int v dx - \\int (u' \\int v dx) dx$.\n\n1.  $u = \\sin^{-1} x \\implies u' = \\frac{1}{\\sqrt{1-x^2}}$.\n2.  $\\int v dx = \\int x dx = \\frac{x^2}{2}$.\n\nApply formula:\n$$ I = (\\sin^{-1} x)\\frac{x^2}{2} - \\int \\frac{1}{\\sqrt{1-x^2}} \\cdot \\frac{x^2}{2} dx $$\n$$ I = \\frac{x^2 \\sin^{-1} x}{2} - \\frac{1}{2} \\int \\frac{x^2}{\\sqrt{1-x^2}} dx $$\n\nTo solve integral part: Add and subtract 1 in numerator.\n$$ \\int \\frac{x^2}{\\sqrt{1-x^2}} dx = -\\int \\frac{1-x^2-1}{\\sqrt{1-x^2}} dx $$\n$$ = -\\left[ \\int \\sqrt{1-x^2} dx - \\int \\frac{1}{\\sqrt{1-x^2}} dx \\right] $$\nStandard forms:\n$\\int \\sqrt{1-x^2} dx = \\frac{x}{2}\\sqrt{1-x^2} + \\frac{1}{2}\\sin^{-1} x$.\n$\\int \\frac{1}{\\sqrt{1-x^2}} dx = \\sin^{-1} x$.\n\nCombine all terms carefully:\n$$ I = \\frac{x^2 \\sin^{-1} x}{2} + \\frac{1}{2} \\left( \\frac{x}{2}\\sqrt{1-x^2} + \\frac{1}{2}\\sin^{-1} x - \\sin^{-1} x \\right) + C $$\n$$ I = \\frac{x^2 \\sin^{-1} x}{2} + \\frac{x}{4}\\sqrt{1-x^2} - \\frac{1}{4}\\sin^{-1} x + C $$\n$$ I = \\frac{1}{4}(2x^2-1)\\sin^{-1} x + \\frac{x}{4}\\sqrt{1-x^2} + C $$"
+    },
+    {
+      "id": "ex_12_7_3",
+      "title": "Partial Fractions",
+      "problem": "Evaluate $\\int \\frac{x}{(x-1)(x-2)(x-3)} dx$.",
+      "solution": "Decompose into partial fractions:\n$$ \\frac{x}{(x-1)(x-2)(x-3)} = \\frac{A}{x-1} + \\frac{B}{x-2} + \\frac{C}{x-3} $$\n$x = A(x-2)(x-3) + B(x-1)(x-3) + C(x-1)(x-2)$.\n\nFind constants:\n* Put $x=1$: $1 = A(-1)(-2) \\implies 2A=1 \\implies A=1/2$.\n* Put $x=2$: $2 = B(1)(-1) \\implies -B=2 \\implies B=-2$.\n* Put $x=3$: $3 = C(2)(1) \\implies 2C=3 \\implies C=3/2$.\n\nIntegral:\n$$ I = \\int \\left( \\frac{1/2}{x-1} - \\frac{2}{x-2} + \\frac{3/2}{x-3} \\right) dx $$\n$$ I = \\frac{1}{2} \\ln|x-1| - 2 \\ln|x-2| + \\frac{3}{2} \\ln|x-3| + C $$"
+    },
+    {
+      "id": "ex_12_7_4",
+      "title": "Definite Integral - King's Property",
+      "problem": "Evaluate $I = \\int_{0}^{\\pi/2} \\frac{\\sin x}{\\sin x + \\cos x} dx$.",
+      "solution": "Using Property P4: $\\int_{0}^{a} f(x) dx = \\int_{0}^{a} f(a-x) dx$.\nHere $a = \\pi/2$. Replace $x$ with $\\pi/2 - x$.\n$$ I = \\int_{0}^{\\pi/2} \\frac{\\sin(\\pi/2 - x)}{\\sin(\\pi/2 - x) + \\cos(\\pi/2 - x)} dx $$\n$$ I = \\int_{0}^{\\pi/2} \\frac{\\cos x}{\\cos x + \\sin x} dx $$\n\nAdding original $I$ and new $I$:\n$$ 2I = \\int_{0}^{\\pi/2} \\left( \\frac{\\sin x}{\\sin x + \\cos x} + \\frac{\\cos x}{\\sin x + \\cos x} \\right) dx $$\n$$ 2I = \\int_{0}^{\\pi/2} \\frac{\\sin x + \\cos x}{\\sin x + \\cos x} dx = \\int_{0}^{\\pi/2} 1 dx $$\n$$ 2I = [x]_{0}^{\\pi/2} = \\frac{\\pi}{2} $$\n$$ I = \\frac{\\pi}{4} $$"
+    },
+    {
+      "id": "ex_12_7_5",
+      "title": "Limit of Sum (JEE Definition)",
+      "problem": "Evaluate $\\int_{0}^{2} e^x dx$ as the limit of a sum.",
+      "solution": "$f(x) = e^x, a=0, b=2$. So $nh = 2-0 = 2 \\implies h = 2/n$.\nBy definition:\n$$ I = \\lim_{h \\to 0} h [f(0) + f(h) + f(2h) + ... + f((n-1)h)] $$\n$$ I = \\lim_{h \\to 0} h [e^0 + e^h + e^{2h} + ... + e^{(n-1)h}] $$\nThis is a Geometric Progression with $a=1, r=e^h, n$ terms.\nSum $= \\frac{1((e^h)^n - 1)}{e^h - 1} = \\frac{e^{nh} - 1}{e^h - 1}$.\nSince $nh = 2$:\n$$ I = \\lim_{h \\to 0} h \\frac{e^2 - 1}{e^h - 1} = (e^2 - 1) \\lim_{h \\to 0} \\frac{h}{e^h - 1} $$\nUsing standard limit $\\lim_{x \\to 0} \\frac{e^x-1}{x} = 1$, the reciprocal limit is also 1.\n$$ I = (e^2 - 1)(1) = e^2 - 1 $$\n(Verify with FTC: $[e^x]_0^2 = e^2 - e^0 = e^2 - 1$. Correct)."
+    },
+    {
+      "id": "ex_12_7_6",
+      "title": "Special Type Integration",
+      "problem": "Evaluate $\\int \\frac{1}{1 + \\tan x} dx$.",
+      "solution": "Convert to sin/cos:\n$$ I = \\int \\frac{1}{1 + \\frac{\\sin x}{\\cos x}} dx = \\int \\frac{\\cos x}{\\cos x + \\sin x} dx $$\nTrick: Express numerator in terms of denominator ($D$) and derivative of denominator ($D'$).\nLet $\\cos x = A(\\cos x + \\sin x) + B(-\\sin x + \\cos x)$.\nCompare coefficients:\n$\\cos x$: $1 = A + B$\n$\\sin x$: $0 = A - B$\nSolving: $A = 1/2, B = 1/2$.\n\nSubstitute back:\n$$ I = \\int \\frac{\\frac{1}{2}(\\cos x + \\sin x) + \\frac{1}{2}(\\cos x - \\sin x)}{\\cos x + \\sin x} dx $$\n$$ I = \\frac{1}{2} \\int 1 dx + \\frac{1}{2} \\int \\frac{\\cos x - \\sin x}{\\cos x + \\sin x} dx $$\nFirst part is $x/2$.\nSecond part: Let $\\cos x + \\sin x = t \\implies (-\\sin x + \\cos x) dx = dt$. Integral is $\\int dt/t = \\ln|t|$.\n$$ I = \\frac{x}{2} + \\frac{1}{2} \\ln|\\cos x + \\sin x| + C $$"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "prob_12_7_1",
+      "question": "Evaluate integral of (x^3 - 1)/x^2 dx.",
+      "type": "Basic Integration",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_7_2",
+      "question": "Find integral of e^(2x+3) dx.",
+      "type": "Substitution",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_7_3",
+      "question": "Evaluate integral of sin(3x) cos(4x) dx.",
+      "type": "Trig Identity",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_7_4",
+      "question": "Find integral of dx / (x^2 - 6x + 13).",
+      "type": "Completing Square",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_7_5",
+      "question": "Evaluate integral of e^x (sin x + cos x) dx.",
+      "type": "By Parts (Standard Form)",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_7_6",
+      "question": "Solve definite integral from 0 to pi of x sin x / (1 + cos^2 x) dx.",
+      "type": "Definite Integral Properties",
+      "difficulty": "JEE Advanced"
+    },
+    {
+      "id": "prob_12_7_7",
+      "question": "Evaluate integral from 0 to 1 of tan inverse x dx.",
+      "type": "By Parts",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_7_8",
+      "question": "Find integral of (x^2 + 1) / (x^4 + 1) dx.",
+      "type": "Advanced Substitution (Divide by x^2)",
+      "difficulty": "JEE Advanced"
+    },
+    {
+      "id": "prob_12_7_9",
+      "question": "Evaluate limit as n tends to infinity of sum [ 1/(n+1) + 1/(n+2) + ... + 1/(2n) ].",
+      "type": "Limit of Sum",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_7_10",
+      "question": "If f(x) is continuous and integral 0 to x f(t) dt = x sin x, find f(x).",
+      "type": "Leibniz Rule (Differentiation of Integral)",
+      "difficulty": "JEE Advanced"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "form_12_7_1",
+      "label": "Power Rule",
+      "tex": "\\int x^n dx = \\frac{x^{n+1}}{n+1} + C"
+    },
+    {
+      "id": "form_12_7_2",
+      "label": "Integration by Parts",
+      "tex": "\\int uv dx = u\\int v dx - \\int (u' \\int v dx) dx"
+    },
+    {
+      "id": "form_12_7_3",
+      "label": "Special Form 1/Quadratic",
+      "tex": "\\int \\frac{dx}{x^2+a^2} = \\frac{1}{a} \\tan^{-1}\\frac{x}{a} + C"
+    },
+    {
+      "id": "form_12_7_4",
+      "label": "Special Form 1/Root Quadratic",
+      "tex": "\\int \\frac{dx}{\\sqrt{a^2-x^2}} = \\sin^{-1}\\frac{x}{a} + C"
+    },
+    {
+      "id": "form_12_7_5",
+      "label": "Fundamental Theorem of Calculus",
+      "tex": "\\int_a^b f(x) dx = F(b) - F(a)"
+    },
+    {
+      "id": "form_12_7_6",
+      "label": "King's Property",
+      "tex": "\\int_a^b f(x) dx = \\int_a^b f(a+b-x) dx"
+    },
+    {
+      "id": "form_12_7_7",
+      "label": "Limit of Sum",
+      "tex": "\\int_0^1 f(x) dx = \\lim_{n \\to \\infty} \\frac{1}{n} \\sum_{r=1}^n f(r/n)"
+    },
+    {
+      "id": "form_12_7_8",
+      "label": "Standard e^x Form",
+      "tex": "\\int e^x [f(x) + f'(x)] dx = e^x f(x) + C"
+    },
+    {
+      "id": "form_12_7_9",
+      "label": "Root Quadratic (Numerator)",
+      "tex": "\\int \\sqrt{a^2-x^2} dx = \\frac{x}{2}\\sqrt{a^2-x^2} + \\frac{a^2}{2}\\sin^{-1}\\frac{x}{a}"
+    },
+    {
+      "id": "form_12_7_10",
+      "label": "Even Function Property",
+      "tex": "\\int_{-a}^a f(x) dx = 2\\int_0^a f(x) dx \\text{ if } f(-x)=f(x)"
+    }
+  ]
+}

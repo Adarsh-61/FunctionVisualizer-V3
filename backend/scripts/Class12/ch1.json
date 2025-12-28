@@ -1,0 +1,185 @@
+{
+  "id": "12_1",
+  "classId": 12,
+  "title": "Relations and Functions",
+  "description": "The foundational chapter of abstract algebra and calculus. This module rigorously extends Class 11 concepts to define Equivalence Relations, Bijective Functions, Composition, and Invertibility, forming the necessary logic for Inverse Trigonometry and Calculus.",
+  "topics": [
+    {
+      "id": "12_1_1",
+      "title": "Types of Relations",
+      "content": "### 1. Review of Prerequisites\nBefore diving into Class 12 concepts, we recall the rigorous definition of a relation from Class 11.\n\n**Cartesian Product:** Given two non-empty sets $A$ and $B$, the Cartesian product $A \\times B$ is the set of all ordered pairs $(a, b)$ such that $a \\in A$ and $b \\in B$.\n$$ A \\times B = \\{ (a, b) : a \\in A, b \\in B \\} $$\n\n**Relation:** A relation $R$ from set $A$ to set $B$ is an arbitrary subset of $A \\times B$. If $(a, b) \\in R$, we say \"$a$ is related to $b$\" and write $a R b$.\n\n**Relation on a Set:** A relation $R$ on a set $A$ is a subset of $A \\times A$.\n\n### 2. Types of Relations\nWe categorize relations based on their internal structure and properties. Let $A$ be a non-empty set and $R$ be a relation on $A$.\n\n#### A. Trivial Relations\n1.  **Empty Relation:** $R = \\phi \\subset A \\times A$. No element of $A$ is related to any element of $A$. Example: Relation $R$ on set of boys $A$ defined by \"$a$ is sister of $b$\". Since no boy can be a sister, $R = \\phi$.\n2.  **Universal Relation:** $R = A \\times A$. Every element of $A$ is related to every element of $A$. Example: Relation $R$ on set of integers $A$ defined by \"$|a - b| \\ge 0$\". This is always true.\n\n#### B. Fundamental Properties (The Core Trio)\nThese three properties are crucial for defining mathematical structures.\n\n1.  **Reflexive Relation:**\n    A relation $R$ is reflexive if **every** element of $A$ is related to itself.\n    $$ \\forall a \\in A, \\quad (a, a) \\in R $$\n    * *Warning:* If even one element $a \\in A$ exists such that $(a, a) \\notin R$, the relation is NOT reflexive.\n    * *Example:* \"Is equal to\" (=) is reflexive because $a = a$.\n    * *Counter-Example:* \"Is greater than\" (>) is NOT reflexive because $a \\ngtr a$.\n\n2.  **Symmetric Relation:**\n    A relation $R$ is symmetric if whenever $a$ is related to $b$, $b$ is also related to $a$.\n    $$ \\forall a, b \\in A, \\quad (a, b) \\in R \\implies (b, a) \\in R $$\n    * *Example:* \"Is perpendicular to\" ($\\perp$) is symmetric. If $L_1 \\perp L_2$, then $L_2 \\perp L_1$.\n    * *Counter-Example:* \"Is father of\" is NOT symmetric.\n\n3.  **Transitive Relation:**\n    A relation $R$ is transitive if whenever $a$ is related to $b$ and $b$ is related to $c$, then $a$ is related to $c$.\n    $$ \\forall a, b, c \\in A, \\quad [(a, b) \\in R \\land (b, c) \\in R] \\implies (a, c) \\in R $$\n    * *Subtlety:* If $(a, b) \\in R$ but there is no $c$ such that $(b, c) \\in R$, the condition is vacuously true, and transitivity is NOT violated.\n    * *Example:* \"Is less than\" (<) is transitive. $a < b$ and $b < c$ implies $a < c$.\n    * *Counter-Example:* \"Is perpendicular to\" in 2D plane. $L_1 \\perp L_2$ and $L_2 \\perp L_3$ implies $L_1 || L_3$, not $L_1 \\perp L_3$.\n\n### 3. Equivalence Relation\nA relation $R$ on a set $A$ is called an **Equivalence Relation** if it is Reflexive, Symmetric, AND Transitive.\n* Equivalence relations generalize the concept of \"equality\". They partition a set into disjoint subsets where elements within a subset are essentially \"the same\" under the given relation.\n\n### 4. Equivalence Classes\nLet $R$ be an equivalence relation on set $A$. For any $a \\in A$, the **Equivalence Class** of $a$, denoted by $[a]$ or $\\bar{a}$, is the set of all elements in $A$ that are related to $a$.\n$$ [a] = \\{ x \\in A : (x, a) \\in R \\} $$\n\n**The Fundamental Theorem of Equivalence Relations:**\nAn equivalence relation $R$ on a set $A$ partitions $A$ into mutually disjoint equivalence classes whose union is $A$.\n1.  All elements in $[a]$ are related to each other.\n2.  No element of $[a]$ is related to any element of $[b]$ if $[a] \\neq [b]$.\n3.  $[a] \\cap [b] = \\phi$ or $[a] = [b]$.\n4.  $\\bigcup_{a \\in A} [a] = A$.\n\n* *Example:* Relation $R$ on $\\mathbb{Z}$ defined by \"$a - b$ is divisible by 2\".\n    * $[0] = \\{ ..., -2, 0, 2, 4, ... \\}$ (Even integers)\n    * $[1] = \\{ ..., -1, 1, 3, 5, ... \\}$ (Odd integers)\n    * These two classes partition $\\mathbb{Z}$.\n\n### 5. Advanced Relation Types (JEE Focus)\n* **Antisymmetric Relation:** A relation is antisymmetric if $(a, b) \\in R$ and $(b, a) \\in R$ implies $a = b$. (Used in Partial Ordering, e.g., $\\le$).\n* **Partial Order Relation:** Reflexive, Antisymmetric, and Transitive. (e.g., \"subset of\" $\\subseteq$).\n* **Total Number of Relations:** If $n(A) = m$, total relations = $2^{m^2}$.\n* **Number of Reflexive Relations:** $2^{m^2 - m}$.\n* **Number of Symmetric Relations:** $2^{m(m+1)/2}$."
+    },
+    {
+      "id": "12_1_2",
+      "title": "Types of Functions",
+      "content": "### 1. Definition Recap\nA function $f: A \\to B$ is a rule that associates **every** element of set $A$ with a **unique** element of set $B$.\n* **Domain:** Set $A$.\n* **Codomain:** Set $B$.\n* **Range:** Set of images = $\\{ f(x) : x \\in A \\} \\subseteq B$.\n\n### 2. One-One (Injective) Function\nA function $f: A \\to B$ is defined to be one-one (or injective) if the images of distinct elements of $A$ under $f$ are distinct.\n$$ \\forall x_1, x_2 \\in A, \\quad f(x_1) = f(x_2) \\implies x_1 = x_2 $$\nAlternatively: $x_1 \\neq x_2 \\implies f(x_1) \\neq f(x_2)$.\n\n**Tests for Injectivity:**\n1.  **Algebraic Method:** Assume $f(x) = f(y)$ and solve. If you get *only* $x=y$, it is one-one.\n2.  **Graphical Method (Horizontal Line Test):** If any horizontal line intersects the graph of the function at most once, it is one-one.\n3.  **Calculus Method:** For continuous differentiable functions, if $f'(x) > 0$ always (strictly increasing) or $f'(x) < 0$ always (strictly decreasing) in the domain, then $f$ is one-one.\n\n* *Counter-Example:* $f(x) = x^2$ is NOT one-one on $\\mathbb{R}$ because $f(2) = 4$ and $f(-2) = 4$, but $2 \\neq -2$.\n\n### 3. Onto (Surjective) Function\nA function $f: A \\to B$ is said to be onto (or surjective) if every element of $B$ is the image of some element of $A$ under $f$.\n$$ \\forall y \\in B, \\exists x \\in A \\text{ such that } f(x) = y $$\n**Condition:** Range of $f$ = Codomain of $f$.\n\n* *Example:* $f: \\mathbb{R} \\to [0, \\infty)$ defined by $f(x) = x^2$ is onto.\n* *Counter-Example:* $f: \\mathbb{R} \\to \\mathbb{R}$ defined by $f(x) = x^2$ is NOT onto because negative numbers in codomain have no pre-image.\n\n### 4. Bijective Function\nA function is **Bijective** if it is both **One-One and Onto**.\n* Bijectivity is the necessary and sufficient condition for a function to be **Invertible**.\n* Bijective functions set up a \"perfect pairing\" (one-to-one correspondence) between elements of $A$ and $B$.\n\n### 5. Counting Functions (JEE Advanced)\nLet $n(A) = m$ and $n(B) = n$.\n1.  **Total Functions:** $n^m$.\n2.  **One-One Functions (Injections):**\n    * If $m > n$: 0\n    * If $m \\le n$: $^nP_m = \\frac{n!}{(n-m)!}$\n3.  **Onto Functions (Surjections):**\n    * If $m < n$: 0\n    * If $m \\ge n$: $n^m - ^nC_1(n-1)^m + ^nC_2(n-2)^m - ... + (-1)^{n-1} ^nC_{n-1}(1)^m$ (Using Principle of Inclusion-Exclusion).\n4.  **Bijective Functions:**\n    * If $m \\neq n$: 0\n    * If $m = n$: $n!$"
+    },
+    {
+      "id": "12_1_3",
+      "title": "Composition of Functions",
+      "content": "### 1. Definition\nLet $f: A \\to B$ and $g: B \\to C$ be two functions. The composition of $f$ and $g$, denoted by $g \\circ f$, is the function from $A$ to $C$ defined by:\n$$ (g \\circ f)(x) = g(f(x)), \\quad \\forall x \\in A $$\n\n* **Visualizing:** It is a two-step machine. Input $x$ goes into $f$, output $f(x)$ becomes input for $g$, producing final output $g(f(x))$.\n* **Condition for Existence:** Range of $f$ must be a subset of Domain of $g$. ($R_f \\subseteq D_g$). If not, we must restrict the domain of $f$ to make it valid.\n\n### 2. Properties of Composition\n1.  **Non-Commutative:** In general, $g \\circ f \\neq f \\circ g$. In fact, if $f: A \\to B$ and $g: B \\to C$, $f \\circ g$ might not even be defined.\n2.  **Associative:** Composition is always associative. If $f: A \\to B, g: B \\to C, h: C \\to D$, then:\n    $$ h \\circ (g \\circ f) = (h \\circ g) \\circ f $$\n3.  **Properties of Injectivity/Surjectivity:**\n    * If $f$ and $g$ are one-one, then $g \\circ f$ is one-one.\n    * If $f$ and $g$ are onto, then $g \\circ f$ is onto.\n    * If $g \\circ f$ is one-one, then $f$ MUST be one-one (but $g$ need not be).\n    * If $g \\circ f$ is onto, then $g$ MUST be onto (but $f$ need not be).\n\n### 3. Identity Function Property\nLet $I_A: A \\to A$ and $I_B: B \\to B$ be identity functions ($I(x) = x$).\nFor $f: A \\to B$:\n$$ f \\circ I_A = f \\quad \\text{and} \\quad I_B \\circ f = f $$"
+    },
+    {
+      "id": "12_1_4",
+      "title": "Invertible Functions",
+      "content": "### 1. Definition of Inverse\nA function $f: X \\to Y$ is defined to be **invertible** if there exists a function $g: Y \\to X$ such that:\n$$ g \\circ f = I_X \\quad \\text{and} \\quad f \\circ g = I_Y $$\nwhere $I_X$ and $I_Y$ are identity functions on sets $X$ and $Y$ respectively.\n\nIf such a function $g$ exists, it is called the **inverse** of $f$ and is denoted by $f^{-1}$.\n\n### 2. Condition for Invertibility\n**Theorem:** A function $f: X \\to Y$ is invertible **if and only if** $f$ is a **bijective** function (one-one and onto).\n\n* **Reasoning:**\n    * To reverse the map ($Y \\to X$), every $y \\in Y$ must map back to something (requires $f$ to be Onto).\n    * Every $y \\in Y$ must map back to a *unique* $x$ (requires $f$ to be One-One).\n\n### 3. Finding the Inverse (Algorithm)\nTo find the inverse of $f(x)$:\n1.  Check if $f$ is bijective.\n2.  Let $y = f(x)$.\n3.  Solve this equation for $x$ in terms of $y$. You will get $x = g(y)$.\n4.  This function $g(y)$ is $f^{-1}(y)$.\n5.  Rewrite in terms of $x$ if needed: $f^{-1}(x)$.\n\n### 4. Properties of Inverse\n1.  **Uniqueness:** The inverse of a function, if it exists, is unique.\n2.  **Inverse of Inverse:** $(f^{-1})^{-1} = f$.\n3.  **Reversal Law:** $(g \\circ f)^{-1} = f^{-1} \\circ g^{-1}$. (Note the order reversal, similar to matrix inversion).\n4.  **Graph:** The graph of $f^{-1}(x)$ is the reflection of the graph of $f(x)$ along the line $y = x$.\n\n### 5. Graphs and Inverse Trigonometry Preview\nUnderstanding invertibility is critical for the next chapter (Inverse Trigonometric Functions). Since $\\sin x, \\cos x$ are periodic (many-to-one), they are not invertible on their natural domains. We must restrict their domains to make them bijective before defining inverses."
+    },
+    {
+      "id": "12_1_5",
+      "title": "Binary Operations",
+      "content": "### 1. Definition\nA **Binary Operation** $*$ on a set $A$ is a function $* : A \\times A \\to A$. We denote $*(a, b)$ by $a * b$.\nBasically, it is a rule that takes two elements from $A$ and produces a third element also in $A$ (Closure property).\n\n* *Examples:* Addition (+), Subtraction (-), Multiplication ($\\times$) on $\\mathbb{R}$.\n* *Non-Example:* Division ($\\div$) on $\\mathbb{R}$ (because division by 0 is undefined, result not in $\\mathbb{R}$). Division is valid on $\\mathbb{R} - \\{0\\}$.\n\n### 2. Properties of Binary Operations\nLet $*$ be a binary operation on $A$.\n\n1.  **Commutativity:**\n    $*$ is commutative if $a * b = b * a$ for all $a, b \\in A$.\n    * Addition is commutative; Subtraction is not ($a-b \\neq b-a$).\n\n2.  **Associativity:**\n    $*$ is associative if $(a * b) * c = a * (b * c)$ for all $a, b, c \\in A$.\n    * Addition is associative; Subtraction is not.\n\n3.  **Identity Element:**\n    An element $e \\in A$ is called the identity element for $*$ if:\n    $$ a * e = a = e * a, \\quad \\forall a \\in A $$\n    * For addition, $e = 0$. For multiplication, $e = 1$.\n    * Identity element, if it exists, is unique.\n\n4.  **Invertible Element:**\n    Given an identity $e$, an element $a \\in A$ is invertible if there exists $b \\in A$ such that:\n    $$ a * b = e = b * a $$\n    * $b$ is called the inverse of $a$, denoted $a^{-1}$.\n    * For addition in $\\mathbb{Z}$, inverse of $a$ is $-a$. For multiplication in $\\mathbb{R}$, inverse of $a$ is $1/a$ (if $a \\neq 0$).\n\n### 3. Operation Tables (Cayley Tables)\nFor a finite set, binary operations can be represented by a table where rows and columns represent elements, and the intersection cell contains the result of the operation.\nThis is extensively used in Group Theory (Higher Maths)."
+    }
+  ],
+  "examples": [
+    {
+      "id": "ex_12_1_1",
+      "title": "Equivalence Relation Proof",
+      "problem": "Show that the relation $R$ on the set $\\mathbb{Z}$ of integers defined by $R = \\{ (a, b) : 2 \\text{ divides } a - b \\}$ is an equivalence relation.",
+      "solution": "We check the three conditions for $R$ on $\\mathbb{Z}$:\n\n1.  **Reflexive:**\n    For any $a \\in \\mathbb{Z}$, $a - a = 0$.\n    Since 0 is divisible by 2 ($0 = 2 \\times 0$), we have $(a, a) \\in R$.\n    Thus, $R$ is reflexive.\n\n2.  **Symmetric:**\n    Let $(a, b) \\in R$. This means $a - b$ is divisible by 2.\n    So, $a - b = 2k$ for some integer $k$.\n    Then $b - a = -(a - b) = -2k = 2(-k)$.\n    Since $-k$ is an integer, $b - a$ is also divisible by 2.\n    Thus, $(b, a) \\in R$. $R$ is symmetric.\n\n3.  **Transitive:**\n    Let $(a, b) \\in R$ and $(b, c) \\in R$.\n    $a - b = 2m$ and $b - c = 2n$ for integers $m, n$.\n    Adding these equations:\n    $(a - b) + (b - c) = 2m + 2n$\n    $a - c = 2(m + n)$.\n    Since $m+n$ is an integer, $a - c$ is divisible by 2.\n    Thus, $(a, c) \\in R$. $R$ is transitive.\n\n**Conclusion:** Since $R$ is reflexive, symmetric, and transitive, it is an **Equivalence Relation**."
+    },
+    {
+      "id": "ex_12_1_2",
+      "title": "Injectivity and Surjectivity Check",
+      "problem": "Check the injectivity and surjectivity of the function $f: \\mathbb{N} \\to \\mathbb{N}$ given by $f(x) = x^2$.",
+      "solution": "Domain = $\\mathbb{N} = \\{1, 2, 3, ...\\}$, Codomain = $\\mathbb{N}$.\n\n1.  **Check Injectivity (One-One):**\n    Let $f(x_1) = f(x_2)$.\n    $x_1^2 = x_2^2 \\implies x_1^2 - x_2^2 = 0 \\implies (x_1 - x_2)(x_1 + x_2) = 0$.\n    Since $x_1, x_2 \\in \\mathbb{N}$, $x_1 + x_2 > 0$. Therefore, $x_1 - x_2$ must be 0, so $x_1 = x_2$.\n    Thus, $f$ is **injective**.\n\n2.  **Check Surjectivity (Onto):**\n    The codomain is $\\mathbb{N}$.\n    The range is the set of perfect squares: $\\{1, 4, 9, 16, ...\\}$.\n    Is every natural number a perfect square? No. For example, $2 \\in \\text{Codomain}$, but there is no $x \\in \\mathbb{N}$ such that $x^2 = 2$.\n    Thus, Range $\\neq$ Codomain.\n    $f$ is **not surjective**.\n\n**Conclusion:** $f$ is one-one but not onto."
+    },
+    {
+      "id": "ex_12_1_3",
+      "title": "Finding Inverse Function",
+      "problem": "Consider $f: \\mathbb{R}_+ \\to [4, \\infty)$ given by $f(x) = x^2 + 4$. Show that $f$ is invertible and find $f^{-1}$.",
+      "solution": "**Step 1: Check One-One**\nLet $f(x) = f(y)$.\n$x^2 + 4 = y^2 + 4 \\implies x^2 = y^2$.\nSince domain is $\\mathbb{R}_+$ (non-negative reals), $x=y$. So, one-one.\n\n**Step 2: Check Onto**\nLet $y \\in [4, \\infty)$. We need to find $x$ such that $f(x) = y$.\n$x^2 + 4 = y \\implies x^2 = y - 4$.\n$x = \\sqrt{y - 4}$.\nSince $y \\ge 4$, $y-4 \\ge 0$, so $\\sqrt{y-4}$ is real.\nAlso $\\sqrt{y-4} \\ge 0$, so $x \\in \\mathbb{R}_+$.\nFor every $y$ in codomain, there exists valid pre-image $x$. So, onto.\n\n**Step 3: Find Inverse**\nSince $f$ is bijective, it is invertible.\nLet $y = f(x) \\implies x = f^{-1}(y)$.\nWe found $x = \\sqrt{y - 4}$.\nThus, $f^{-1}(y) = \\sqrt{y - 4}$.\nRewriting in terms of $x$: $f^{-1}(x) = \\sqrt{x - 4}$."
+    },
+    {
+      "id": "ex_12_1_4",
+      "title": "Composition of Functions",
+      "problem": "If $f: \\mathbb{R} \\to \\mathbb{R}$ is given by $f(x) = (3 - x^3)^{1/3}$, then find $(f \\circ f)(x)$.",
+      "solution": "Definition: $(f \\circ f)(x) = f(f(x))$.\nLet $y = f(x) = (3 - x^3)^{1/3}$.\nWe need to find $f(y)$.\n$$ f(y) = (3 - y^3)^{1/3} $$\nSubstitute $y = (3 - x^3)^{1/3}$:\n$$ y^3 = [(3 - x^3)^{1/3}]^3 = 3 - x^3 $$\nSo,\n$$ f(y) = (3 - (3 - x^3))^{1/3} $$\n$$ f(y) = (3 - 3 + x^3)^{1/3} $$\n$$ f(y) = (x^3)^{1/3} = x $$\nThus, $(f \\circ f)(x) = x = I(x)$. This implies $f$ is its own inverse."
+    },
+    {
+      "id": "ex_12_1_5",
+      "title": "Binary Operations",
+      "problem": "Let $*$ be a binary operation on $\\mathbb{Q}$ defined by $a * b = \\frac{ab}{2}$.\n(i) Is $*$ commutative?\n(ii) Is $*$ associative?\n(iii) Find identity element.\n(iv) Find inverse of an element $a$.",
+      "solution": "**(i) Commutativity:**\n$a * b = \\frac{ab}{2}$.\n$b * a = \\frac{ba}{2} = \\frac{ab}{2}$.\nSince $a*b = b*a$, it is **commutative**.\n\n**(ii) Associativity:**\n$(a * b) * c = (\\frac{ab}{2}) * c = \\frac{(\\frac{ab}{2})c}{2} = \\frac{abc}{4}$.\n$a * (b * c) = a * (\\frac{bc}{2}) = \\frac{a(\\frac{bc}{2})}{2} = \\frac{abc}{4}$.\nIt is **associative**.\n\n**(iii) Identity Element:**\nLet $e$ be identity. $a * e = a$.\n$\\frac{ae}{2} = a$.\nSince $a$ is arbitrary (and non-zero rational), $e/2 = 1 \\implies e = 2$.\nCheck: $2 * a = \\frac{2a}{2} = a$. Correct. **Identity is 2**.\n\n**(iv) Inverse:**\nLet $b$ be inverse of $a$. $a * b = e = 2$.\n$\\frac{ab}{2} = 2 \\implies ab = 4 \\implies b = \\frac{4}{a}$.\nSo, inverse of $a$ is **$4/a$**."
+    },
+    {
+      "id": "ex_12_1_6",
+      "title": "Advanced Counting (JEE)",
+      "problem": "Set $A = \\{1, 2, 3\\}$. What is the number of relations containing $(1, 2)$ and $(1, 3)$ which are reflexive and symmetric but not transitive?",
+      "solution": "Relations on $A \\times A$ ($n=3$, $n^2=9$ pairs).\nReflexive means must contain $\\{ (1,1), (2,2), (3,3) \\}$.\nGiven it contains $(1, 2)$ and $(1, 3)$.\nSymmetric means if $(1, 2)$ is there, $(2, 1)$ must be there. If $(1, 3)$ is there, $(3, 1)$ must be there.\n\nSo far, the relation $R$ must contain: $\\{ (1,1), (2,2), (3,3), (1,2), (2,1), (1,3), (3,1) \\}$. (7 elements).\nThe remaining pairs in $A \\times A$ are $(2, 3)$ and $(3, 2)$.\n\n**Option 1:** $R_1 = \\{ (1,1), (2,2), (3,3), (1,2), (2,1), (1,3), (3,1) \\}$.\nIs it transitive?\n$(2, 1) \\in R_1$ and $(1, 3) \\in R_1$. For transitivity, $(2, 3)$ must be in $R_1$. It is not.\nSo $R_1$ is Reflexive, Symmetric, NOT Transitive. **(Count = 1)**\n\n**Option 2:** Add $(2, 3)$. For symmetry, must add $(3, 2)$ also.\n$R_2 = A \\times A$. This is Universal relation, which is always Transitive.\nSo we cannot add just $(2, 3)$ or both.\n\n**Answer:** Only **1** such relation exists."
+    }
+  ],
+  "exercises": [
+    {
+      "id": "prob_12_1_1",
+      "question": "Determine whether the relation R in the set A = {1, 2, 3, ..., 13, 14} defined as R = {(x, y) : 3x - y = 0} is reflexive, symmetric or transitive.",
+      "type": "Conceptual",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_1_2",
+      "question": "Show that the function f: R -> R defined by f(x) = |x| is neither one-one nor onto.",
+      "type": "Proof",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_1_3",
+      "question": "Find gof and fog, if f(x) = |x| and g(x) = |5x - 2|.",
+      "type": "Calculation",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_1_4",
+      "question": "Let f: N -> Y be a function defined as f(x) = 4x + 3, where Y = {y in N: y = 4x + 3 for some x in N}. Show that f is invertible. Find the inverse.",
+      "type": "Long Answer",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_1_5",
+      "question": "Let A = {1, 2, 3}. Find the number of equivalence relations containing (1, 2).",
+      "type": "Counting",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_1_6",
+      "question": "If f(x) = (ax + b) / (cx + d), find the condition for fof(x) = x.",
+      "type": "Algebraic",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_1_7",
+      "question": "Let f: [0, 1] -> [0, 1] be defined by f(x) = x if x is rational, and 1-x if x is irrational. Determine fof(x).",
+      "type": "Conceptual",
+      "difficulty": "JEE Advanced"
+    },
+    {
+      "id": "prob_12_1_8",
+      "question": "If the function f: R -> A given by f(x) = x^2 / (x^2 + 1) is a surjection, find set A.",
+      "type": "Range Finding",
+      "difficulty": "JEE Main"
+    },
+    {
+      "id": "prob_12_1_9",
+      "question": "Let * be a binary operation on N given by a * b = LCM(a, b). Find 5 * 7, 20 * 16. Is * commutative? Is * associative?",
+      "type": "Binary Ops",
+      "difficulty": "Board"
+    },
+    {
+      "id": "prob_12_1_10",
+      "question": "Find the number of onto functions from a set with 5 elements to a set with 3 elements.",
+      "type": "Combinatorics",
+      "difficulty": "JEE Advanced"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "form_12_1_1",
+      "label": "Reflexive Relation",
+      "tex": "\\forall a \\in A, (a, a) \\in R"
+    },
+    {
+      "id": "form_12_1_2",
+      "label": "Symmetric Relation",
+      "tex": "(a, b) \\in R \\implies (b, a) \\in R"
+    },
+    {
+      "id": "form_12_1_3",
+      "label": "Transitive Relation",
+      "tex": "(a, b) \\in R, (b, c) \\in R \\implies (a, c) \\in R"
+    },
+    {
+      "id": "form_12_1_4",
+      "label": "One-One Function (Injective)",
+      "tex": "f(x_1) = f(x_2) \\implies x_1 = x_2"
+    },
+    {
+      "id": "form_12_1_5",
+      "label": "Onto Function (Surjective)",
+      "tex": "\\text{Range}(f) = \\text{Codomain}(f)"
+    },
+    {
+      "id": "form_12_1_6",
+      "label": "Composition",
+      "tex": "(g \\circ f)(x) = g(f(x))"
+    },
+    {
+      "id": "form_12_1_7",
+      "label": "Identity of Binary Operation",
+      "tex": "a * e = a = e * a"
+    },
+    {
+      "id": "form_12_1_8",
+      "label": "Inverse of Binary Operation",
+      "tex": "a * b = e = b * a"
+    },
+    {
+      "id": "form_12_1_9",
+      "label": "Total Functions A->B",
+      "tex": "n(B)^{n(A)}"
+    },
+    {
+      "id": "form_12_1_10",
+      "label": "Number of Onto Functions",
+      "tex": "\\sum_{k=0}^{n} (-1)^k \\binom{n}{k} (n-k)^m"
+    }
+  ]
+}

@@ -1,0 +1,303 @@
+{
+  "id": "class_9",
+  "title": "Class 9",
+  "chapters": [
+    {
+      "id": "ch_4_linear_equations_two_variables",
+      "title": "Ch 4: Linear Equations in Two Variables",
+      "topics": [
+        {
+          "id": "topic_4_1_foundations_and_definitions",
+          "title": "4.1 Foundations & Mathematical Definition",
+          "content": "### 1. From Unidimensional to Bidimensional Logic\nAlgebra is the study of structures and relations. In earlier classes, you mastered **Linear Equations in One Variable** (e.g., $x + 5 = 0$). These equations represent a single condition on a single quantity. Geometrically, their solution is a **single point** on a number line.\n\nHowever, the real world rarely operates on a single variable. Most phenomena depend on two or more changing quantities:\n* The cost of a taxi ride depends on *distance* and *time*.\n* The area of a rectangle depends on *length* and *width*.\n* The velocity of a projectile depends on *horizontal* and *vertical* components.\n\nTo model these relationships, we need **Linear Equations in Two Variables**.\n\n#### 1.1 Formal Definition\nA linear equation in two variables, say $x$ and $y$, is an algebraic equation that can be rearranged into the **General Form**:\n$$ax + by + c = 0$$\nwhere:\n1.  **Variables:** $x$ and $y$ are the variables (unknowns).\n2.  **Constants:** $a, b, c$ are real numbers ($\\mathbb{R}$).\n3.  **Non-Zero Condition:** $a$ and $b$ are not both zero. (Mathematically written as $a^2 + b^2 \\neq 0$).\n4.  **Linearity:** The exponent (power) of both variables is exactly 1. There are no terms like $x^2, y^3, xy, \\sqrt{x}, 1/y$.\n\n#### 1.2 Why \"Linear\"?\nThe term \"Linear\" comes from the Latin word *linearis*, pertaining to a line. \n* **Algebraic Reason:** The degree of the polynomial is 1.\n* **Geometric Reason:** When the solutions of such an equation are plotted on a Cartesian plane, they fundamentally and invariably form a **Straight Line**. (We will prove this relationship in Section 4.3).\n\n#### 1.3 Constraints and Degenerate Cases\nLet's analyze the condition $a^2 + b^2 \\neq 0$:\n* **Case 1: $a \\neq 0, b \\neq 0$:** This is a true two-variable equation (e.g., $2x + 3y = 5$). It represents an oblique line.\n* **Case 2: $a = 0, b \\neq 0$:** The equation becomes $0x + by + c = 0 \\implies by + c = 0 \\implies y = -c/b$. This is geometrically a horizontal line.\n* **Case 3: $a \\neq 0, b = 0$:** The equation becomes $ax + 0y + c = 0 \\implies ax + c = 0 \\implies x = -c/a$. This is geometrically a vertical line.\n* **Case 4: $a = 0, b = 0$ (Invalid):** The equation becomes $0 + 0 + c = 0$. If $c \\neq 0$, this is a contradiction (False). If $c = 0$, it is a tautology (True for all $x, y$). Neither represents a specific line.\n\n#### 1.4 Real-Life Modeling (The Art of Translation)\nMathematics is a language. Translating a word problem into an equation is a critical skill.\n* *Scenario:* \"The cost of a notebook is twice the cost of a pen.\"\n* *Translation:* Let cost of notebook = $x$, cost of pen = $y$. Relation: $x = 2y$ or $x - 2y = 0$.\n* *Scenario:* \"The sum of ages of two brothers is 20.\"\n* *Translation:* $x + y = 20$.",
+          "formulas": [
+            "ax + by + c = 0 \\quad (a^2 + b^2 \\neq 0)",
+            "\\text{Degree of Linear Eq} = 1"
+          ],
+          "examples": [
+            {
+              "id": "ex_lin_1",
+              "question": "Express the equation $x/2 - y/3 = 5$ in standard form $ax + by + c = 0$ and identify $a, b, c$.",
+              "steps": [
+                {
+                  "explanation": "The given equation is $\\frac{x}{2} - \\frac{y}{3} = 5$."
+                },
+                {
+                  "explanation": "To remove fractions, multiply the entire equation by the LCM of 2 and 3, which is 6."
+                },
+                {
+                  "explanation": "$6(\\frac{x}{2}) - 6(\\frac{y}{3}) = 6(5)$"
+                },
+                {
+                  "explanation": "$3x - 2y = 30$"
+                },
+                {
+                  "explanation": "Rearrange to standard form (RHS = 0): $3x - 2y - 30 = 0$."
+                },
+                {
+                  "explanation": "Compare with $ax + by + c = 0$: $a = 3$, $b = -2$, $c = -30$."
+                }
+              ],
+              "finalAnswer": "$3x - 2y - 30 = 0; a=3, b=-2, c=-30$"
+            },
+            {
+              "id": "ex_lin_2",
+              "question": "Is $\\sqrt{2}x + \\sqrt{3}y = 0$ a linear equation in two variables?",
+              "steps": [
+                {
+                  "explanation": "Check the power of variables: $x$ is $x^1$, $y$ is $y^1$. Linearity holds."
+                },
+                {
+                  "explanation": "Check coefficients: $a = \\sqrt{2}$, $b = \\sqrt{3}$. Both are real numbers and non-zero."
+                },
+                {
+                  "explanation": "The irrationality of coefficients ($\\sqrt{2}$) does not affect the linearity of the variables."
+                }
+              ],
+              "finalAnswer": "Yes."
+            }
+          ],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_4_2_theory_of_solutions",
+          "title": "4.2 Theory of Solutions: Algebra vs Geometry",
+          "content": "### 2. What is a \"Solution\"?\nFor an equation in one variable, say $2x - 4 = 0$, the solution is a single number $x = 2$. It is a specific value that satisfies the equality.\n\nFor two variables, a solution is not a single number, but a **pair** of numbers $(x, y)$ that satisfy the equation simultaneously. \n\n#### 2.1 The Solution as an Ordered Pair\nA solution to $ax + by + c = 0$ is an ordered pair $(x_1, y_1)$ such that when $x$ is replaced by $x_1$ and $y$ by $y_1$, the LHS becomes equal to RHS (zero).\n\n* **Example:** Consider $x + y = 10$.\n    * $(5, 5)$ is a solution because $5 + 5 = 10$.\n    * $(1, 9)$ is a solution.\n    * $(-2, 12)$ is a solution.\n    * $(0.5, 9.5)$ is a solution.\n\n#### 2.2 Why Infinitely Many Solutions?\nThis is a fundamental concept often memorized but misunderstood.\n* **Algebraic Reason:** In the equation $ax + by + c = 0$, we have **two degrees of freedom** (two variables) but only **one constraint** (one equation). If we fix $x$, $y$ is automatically determined ($y = -(ax+c)/b$). Since we can choose *any* real value for $x$ (and there are infinite real numbers), there are infinite corresponding values for $y$.\n* **Geometric Reason:** The equation represents a line. A line is a collection of points. Since a line extends indefinitely and possesses the property of **continuum** (no gaps), it contains infinitely many points. Each point corresponds to a solution.\n\n#### 2.3 The Concept of Locus (Advanced)\nIn advanced mathematics, we view the equation as a **rule** or a **filter**. \nConsider the entire Cartesian plane (an infinite ocean of points). The equation $2x - y = 0$ acts as a filter. It asks every point $(x, y)$: *\"Is your ordinate exactly twice your abscissa?\"* \n* Point $(1, 2)$: \"Yes.\" -> You are on the line.\n* Point $(3, 5)$: \"No.\" -> You are not on the line.\nThe set of all points that say \"Yes\" forms the **Locus**, which happens to be a straight line.\n\n#### 2.4 Discrete vs Continuous Domains\nIdeally, $x$ and $y$ are real numbers (continuous line). However, context matters:\n* *Equation:* $x + y = 5$ where $x, y$ are **Natural Numbers**.\n    * Solutions: $(1, 4), (2, 3), (3, 2), (4, 1)$.\n    * Total: Finite (4 solutions).\n* *Equation:* $x + y = 5$ where $x, y$ are **Real Numbers**.\n    * Solutions: Infinite (a continuous line segment between axes and beyond).",
+          "formulas": [
+            "\\text{One Variable Eq} \\implies \\text{Unique Solution}",
+            "\\text{Two Variable Eq} \\implies \\text{Infinite Solutions}",
+            "\\text{Solution} = (x, y) \\in \\mathbb{R}^2"
+          ],
+          "examples": [
+            {
+              "id": "ex_lin_3",
+              "question": "Find four different solutions for the equation $x + 2y = 6$.",
+              "steps": [
+                {
+                  "explanation": "Rearrange the equation to express one variable in terms of the other: $x = 6 - 2y$. (Choosing $x$ is easier here to avoid fractions)."
+                },
+                {
+                  "explanation": "Pick arbitrary values for $y$ and calculate $x$."
+                },
+                {
+                  "explanation": "Let $y = 0 \\implies x = 6 - 2(0) = 6$. Solution: $(6, 0)$."
+                },
+                {
+                  "explanation": "Let $y = 1 \\implies x = 6 - 2(1) = 4$. Solution: $(4, 1)$."
+                },
+                {
+                  "explanation": "Let $y = 2 \\implies x = 6 - 2(2) = 2$. Solution: $(2, 2)$."
+                },
+                {
+                  "explanation": "Let $y = 3 \\implies x = 6 - 2(3) = 0$. Solution: $(0, 3)$."
+                }
+              ],
+              "finalAnswer": "$(6, 0), (4, 1), (2, 2), (0, 3)$"
+            },
+            {
+              "id": "ex_lin_4",
+              "question": "Find the value of $k$ if $x = 2, y = 1$ is a solution of the equation $2x + 3y = k$.",
+              "steps": [
+                {
+                  "explanation": "Since $(2, 1)$ is a solution, it must satisfy the equation."
+                },
+                {
+                  "explanation": "Substitute $x=2$ and $y=1$ into LHS."
+                },
+                {
+                  "explanation": "$2(2) + 3(1) = 4 + 3 = 7$."
+                },
+                {
+                  "explanation": "Equate to RHS: $7 = k$."
+                }
+              ],
+              "finalAnswer": "$k = 7$"
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Infinite Solutions on a Line",
+            "functions": [
+              {
+                "expression": "(6-x)/2",
+                "color": "blue",
+                "label": "x + 2y = 6"
+              }
+            ],
+            "points": [
+              { "x": 6, "y": 0, "label": "(6,0)", "color": "red" },
+              { "x": 4, "y": 1, "label": "(4,1)", "color": "red" },
+              { "x": 2, "y": 2, "label": "(2,2)", "color": "red" },
+              { "x": 0, "y": 3, "label": "(0,3)", "color": "red" }
+            ],
+            "xRange": [-2, 8],
+            "yRange": [-2, 6]
+          }
+        },
+        {
+          "id": "topic_4_3_graphical_representation",
+          "title": "4.3 Graphical Representation & Analysis",
+          "content": "### 3. Graphing: Visualizing the Algebraic Truth\nThe graph of a linear equation is the set of all points $(x, y)$ that satisfy the equation. For a linear equation, this graph is always a straight line.\n\n#### 3.1 Axiom of Line Determination\nFrom Euclidean geometry, we know that **two distinct points determine a unique line**. \nTherefore, to graph a linear equation, we theoretically need only two solutions. However, finding a third solution is recommended as a \"checkpoint\" to prevent calculation errors.\n\n#### 3.2 The Method of Intercepts (Most Efficient)\nThe fastest way to graph $ax + by + c = 0$ is often to find where the line cuts the axes.\n1.  **x-intercept:** Put $y = 0$ and solve for $x$. This gives point $A(x_1, 0)$.\n2.  **y-intercept:** Put $x = 0$ and solve for $y$. This gives point $B(0, y_1)$.\n3.  **Plot & Join:** Plot $A$ and $B$ and draw a line through them.\n\n#### 3.3 Lines Passing Through Origin\nIf the equation has **no constant term** (i.e., $c = 0$, like $y = 2x$), the line passes through the origin $(0, 0)$.\n* Here, putting $x=0$ gives $y=0$, and putting $y=0$ gives $x=0$. You get the same point twice.\n* You *must* pick a different value (e.g., $x=1$) to find a second point to determine the line.\n\n#### 3.4 Lines Parallel to Axes (One Variable Context)\n* **Equation $x = a$:**\n    * In one variable: A point $a$ on the number line.\n    * In two variables ($x + 0y = a$): A vertical line parallel to the y-axis, passing through $(a, 0)$. Every point on this line has abscissa $a$.\n* **Equation $y = b$:**\n    * In one variable: A point $b$ on the number line.\n    * In two variables ($0x + y = b$): A horizontal line parallel to the x-axis, passing through $(0, b)$. Every point on this line has ordinate $b$.\n\n#### 3.5 Reading the Graph (Slope Intuition)\nWhile formal slope ($m$) is taught later, observe the pattern:\n* Equation $y = x$: Line at $45^\\circ$.\n* Equation $y = 2x$: Line is steeper.\n* Equation $y = 0.5x$: Line is flatter.\n* Equation $y = -x$: Line slopes downwards.\nThis intuition connects the coefficient of $x$ to the steepness of the line.",
+          "formulas": [
+            "\\text{x-axis eq: } y = 0",
+            "\\text{y-axis eq: } x = 0",
+            "\\text{Line } || \\text{ x-axis: } y = k",
+            "\\text{Line } || \\text{ y-axis: } x = k"
+          ],
+          "examples": [
+            {
+              "id": "ex_lin_5",
+              "question": "Draw the graph of $3x + 4y = 12$. Use the intercept method.",
+              "steps": [
+                {
+                  "explanation": "Find x-intercept: Put $y = 0$. $3x + 0 = 12 \\implies 3x = 12 \\implies x = 4$. Point $A(4, 0)$."
+                },
+                {
+                  "explanation": "Find y-intercept: Put $x = 0$. $0 + 4y = 12 \\implies 4y = 12 \\implies y = 3$. Point $B(0, 3)$."
+                },
+                {
+                  "explanation": "Find a check-point: Let $x = 2$. $3(2) + 4y = 12 \\implies 6 + 4y = 12 \\implies 4y = 6 \\implies y = 1.5$. Point $C(2, 1.5)$."
+                },
+                {
+                  "explanation": "Plot A, B, C. They should be collinear. Draw the line passing through them."
+                }
+              ],
+              "finalAnswer": "Graph passes through (4,0) and (0,3)."
+            },
+            {
+              "id": "ex_lin_6",
+              "question": "Graph the equation $y = 2x$.",
+              "steps": [
+                {
+                  "explanation": "Notice $c=0$, so it passes through Origin $(0,0)$."
+                },
+                {
+                  "explanation": "Pick $x=1 \\implies y = 2(1) = 2$. Point $(1, 2)$."
+                },
+                {
+                  "explanation": "Pick $x = -1 \\implies y = 2(-1) = -2$. Point $(-1, -2)$."
+                },
+                {
+                  "explanation": "Plot $(0,0), (1,2), (-1,-2)$ and join them."
+                }
+              ],
+              "finalAnswer": "Line passing through origin with positive slope."
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Intercept Method Graph",
+            "functions": [
+              {
+                "expression": "(12-3*x)/4",
+                "color": "green",
+                "label": "3x + 4y = 12"
+              }
+            ],
+            "points": [
+              { "x": 4, "y": 0, "label": "x-intercept (4,0)", "color": "blue" },
+              { "x": 0, "y": 3, "label": "y-intercept (0,3)", "color": "blue" }
+            ],
+            "xRange": [-2, 6],
+            "yRange": [-2, 5]
+          }
+        },
+        {
+          "id": "topic_4_4_application_and_advanced_concepts",
+          "title": "4.4 Applications & Advanced Concepts (JEE Foundation)",
+          "content": "### 4. Beyond the Basics: Modeling and Mechanics\nLinear equations are the \"Hello World\" of mathematical modeling. They model relationships with a constant rate of change.\n\n#### 4.1 Word Problem Modeling Strategy\n1.  **Identify Variables:** What quantities are changing? Assign $x$ and $y$.\n2.  **Identify Constants:** What quantities are fixed (rates, initial fees)?\n3.  **Relate:** Translate English logic to Math equation.\n    * \"Total cost is sum of fixed fee and variable fee.\"\n    * $y = \\text{Fixed} + (\\text{Rate})x$\n\n#### 4.2 Geometric Interpretation of Coefficients (Advanced)\nConsider $Ax + By + C = 0$.\n* **Slope ($m$):** The steepness of the line is $-A/B$. (If written as $y = mx + c$, $m$ is the coefficient of $x$).\n    * If $A$ and $B$ have same signs, slope is negative (line goes down).\n    * If $A$ and $B$ have opposite signs, slope is positive (line goes up).\n* **Proportionality:** If $C=0$, $y$ is directly proportional to $x$ ($y \\propto x$).\n\n#### 4.3 Conditions for Solvability (Preview of Class 10)\nWhile a single equation has infinite solutions, a **system** of two equations ($a_1x+b_1y+c_1=0$ and $a_2x+b_2y+c_2=0$) behaves differently:\n* **Intersecting Lines:** Unique solution (Cross at one point).\n* **Parallel Lines:** No solution (Never cross).\n* **Coincident Lines:** Infinite solutions (Same line).\n\n#### 4.4 The Concept of \"Linearity\" in Science\nIn Physics (Ohm's Law $V=IR$) and Economics (Cost Functions), linearity implies that **output scales proportionally with input**. \n* Doubling $x$ doesn't necessarily double $y$ (unless $c=0$), but doubling the *change* in $x$ doubles the *change* in $y$.\n\n#### 4.5 Distance of a Line from Origin (BSc Prep)\nThe shortest distance from origin to line $ax+by+c=0$ is given by $d = \\frac{|c|}{\\sqrt{a^2+b^2}}$. \n* *Intuition:* If $c=0$, distance is 0 (line passes through origin). As $c$ increases, the line moves further away.",
+          "formulas": [
+            "y = mx + c \\quad (\\text{Slope-Intercept Form})",
+            "m = -A/B",
+            "d = \\frac{|Ax_1 + By_1 + C|}{\\sqrt{A^2+B^2}} \\quad (\\text{Distance Formula})"
+          ],
+          "examples": [
+            {
+              "id": "ex_lin_7",
+              "question": "A taxi charges a fixed fare of ₹50 and then ₹20 per km. Write a linear equation for total cost $y$ for a distance of $x$ km.",
+              "steps": [
+                {
+                  "explanation": "Let Total Cost = $y$ and Distance = $x$."
+                },
+                {
+                  "explanation": "Total Cost = Fixed Fare + (Rate $\\times$ Distance)."
+                },
+                {
+                  "explanation": "$y = 50 + 20x$."
+                },
+                {
+                  "explanation": "Standard Form: $20x - y + 50 = 0$."
+                }
+              ],
+              "finalAnswer": "$20x - y + 50 = 0$"
+            },
+            {
+              "id": "ex_lin_8",
+              "question": "Find the area of the triangle formed by the line $2x + 3y = 6$ and the coordinate axes.",
+              "steps": [
+                {
+                  "explanation": "Find intercepts to locate the vertices of the triangle."
+                },
+                {
+                  "explanation": "x-intercept (put $y=0$): $2x = 6 \\implies x = 3$. Point $A(3, 0)$."
+                },
+                {
+                  "explanation": "y-intercept (put $x=0$): $3y = 6 \\implies y = 2$. Point $B(0, 2)$."
+                },
+                {
+                  "explanation": "The triangle is formed by Origin $O(0,0)$, $A(3,0)$, and $B(0,2)$. This is a right-angled triangle."
+                },
+                {
+                  "explanation": "Base = $OA = 3$. Height = $OB = 2$."
+                },
+                {
+                  "explanation": "Area = $0.5 \\times \\text{Base} \\times \\text{Height} = 0.5 \\times 3 \\times 2 = 3$ sq units."
+                }
+              ],
+              "finalAnswer": "3 sq units"
+            }
+          ],
+          "visualization_type": "graph_2d",
+          "graph_config": {
+            "title": "Triangle Area with Axes",
+            "functions": [
+              {
+                "expression": "(6-2*x)/3",
+                "color": "purple",
+                "label": "2x + 3y = 6"
+              }
+            ],
+            "points": [
+              { "x": 3, "y": 0, "label": "A(3,0)", "color": "orange" },
+              { "x": 0, "y": 2, "label": "B(0,2)", "color": "orange" },
+              { "x": 0, "y": 0, "label": "O(0,0)", "color": "black" }
+            ],
+            "xRange": [-1, 5],
+            "yRange": [-1, 5]
+          }
+        },
+        {
+          "id": "topic_4_5_practice_bank",
+          "title": "4.5 Practice Bank",
+          "content": "### 5. Comprehensive Practice Questions\n\n#### Section A: Conceptual & Short Answer (10 Questions)\n1.  Write the coefficients $a, b, c$ of equation $x - 5 = \\sqrt{3}y$.\n2.  Express $y$ in terms of $x$ for equation $2x - 5y + 10 = 0$.\n3.  Check if $(2, 2)$ is a solution of $x + y = 4$ and $2x - y = 2$.\n4.  How many solutions does the equation $y = 5x + 2$ have?\n5.  Write the equation of a line parallel to x-axis and passing through $(2, 3)$.\n6.  At what point does the graph of $3x + 2y = 12$ cut the x-axis?\n7.  If the point $(3, 4)$ lies on $3y = ax + 7$, find $a$.\n8.  Give the geometric representation of $2x + 9 = 0$ in two variables.\n9.  Does the graph of $x + y = 0$ pass through the origin?\n10. True or False: The graph of $x=2$ is the line $x-2=0$.\n\n#### Section B: Plotting & Modeling (10 Questions)\n11. Draw the graph of $x + y = 7$ and $x - y = 1$ on the same graph paper. Find their intersection.\n12. **(Must Practice)** The force applied on a body is directly proportional to acceleration produced. Write an equation (take constant $k=3$) and graph it.\n13. Plot the points $(0,0), (2,2), (-2,-2)$. Do they lie on a line? Write its equation.\n14. Fahrenheit ($F$) and Celsius ($C$) are related by $F = 1.8C + 32$. Graph this for $C \\in [0, 50]$.\n15. Write the linear equation representing a line parallel to y-axis at a distance of 4 units to the left of origin.\n16. Solve for $y$ if $x=2$ in the equation $\\frac{x}{2} + \\frac{y}{3} = 2$.\n17. Find the area of the triangle formed by $x+y=10$ and the axes.\n18. Give equations of two lines passing through $(2, 14)$. How many more such lines are there?\n19. Find the coordinates of vertices of the triangle formed by $y=x, y=2x$ and $x+y=6$.\n20. Draw the graph of $|x| + |y| = 2$. (Hint: Consider 4 cases for quadrants).\n\n#### Section C: Board & JEE Foundation (Must Practice)\n21. **(Must Practice)** If $(2k-1, k)$ is a solution of $10x - 9y = 12$, find $k$.\n22. **(Must Practice)** Draw the graph of $3x + 2y = 12$. From graph, find value of $y$ when $x=8$.\n23. **(Must Practice)** Determine if points $A(1, 2), B(-1, -16), C(0, -7)$ are collinear.\n24. **(Must Practice)** A lending library has a fixed charge for the first three days and an additional charge for each day thereafter. Saritha paid ₹27 for a book kept for 7 days. Write the equation.\n25. **(Must Practice)** Find the value of $m$ so that the line $y = mx + 3$ passes through intersection of $x+y=6$ and $2x-3y=4$ (Note: Find intersection first).\n26. **(Must Practice)** Show that the line $y - x + 2 = 0$ passes through the origin if shifted by vector $(2, 0)$.\n27. **(Must Practice)** The path of a train A is $x + 2y - 4 = 0$ and train B is $2x + 4y - 12 = 0$. Plot them. Will they meet?\n28. **(Must Practice)** Find the equation of a line passing through $(3, 2)$ which is perpendicular to x-axis.\n29. **(Must Practice)** Graph $y = |x|$. (Hint: $y=x$ for $x \\ge 0$, $y=-x$ for $x<0$).\n30. **(Must Practice)** Solve graphically: $x + y = 3$ and $3x - 2y = 4$.",
+          "formulas": [],
+          "examples": [],
+          "visualization_type": "none"
+        },
+        {
+          "id": "topic_4_6_summary",
+          "title": "4.6 Formula & Concept Compendium",
+          "content": "### 6. Chapter Summary & Reference\n\n#### 6.1 Standard Form\n* **Equation:** $ax + by + c = 0$\n* **Constraint:** $a^2 + b^2 \\neq 0$\n\n#### 6.2 Nature of Solutions\n* A linear equation in 2 variables has **infinitely many solutions**.\n* The graph is a **straight line**.\n* Every point on the line is a solution; every solution is a point on the line.\n\n#### 6.3 Graphing Shortcuts\n* **x-intercept:** Put $y=0$, solve $x$ ($A(-c/a, 0)$).\n* **y-intercept:** Put $x=0$, solve $y$ ($B(0, -c/b)$).\n* **Origin:** If $c=0$, line passes through $(0,0)$.\n\n#### 6.4 Equation Forms\n1.  **General:** $ax + by + c = 0$\n2.  **Origin Line:** $y = mx$ (where $m$ is slope)\n3.  **Vertical:** $x = a$ (Parallel to y-axis)\n4.  **Horizontal:** $y = b$ (Parallel to x-axis)\n5.  **Slope-Intercept (Advanced):** $y = mx + c$ ($m = -a/b, c = -C/B$ in general notation)\n\n#### 6.5 Logical Checks\n* If a point $(h, k)$ lies on the graph, then $ah + bk + c = 0$.\n* If a line is parallel to x-axis, coeff of $x$ is 0.\n* If a line is parallel to y-axis, coeff of $y$ is 0.",
+          "formulas": [
+            "ax+by+c=0",
+            "y = mx",
+            "x = a",
+            "y = b"
+          ],
+          "examples": [],
+          "visualization_type": "none"
+        }
+      ]
+    }
+  ]
+}

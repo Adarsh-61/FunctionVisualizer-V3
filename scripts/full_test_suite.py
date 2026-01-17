@@ -200,6 +200,30 @@ except Exception as e:
     record("Algebra: Matrix add", False, str(e))
 
 try:
+    code, data = api_post("/api/math/algebra/matrix/operate", {
+        "matrix_a": [[5, 4], [3, 2]],
+        "matrix_b": [[1, 1], [1, 1]],
+        "operation": "subtract",
+    })
+    result_mat = data.get("payload", {}).get("result")
+    ok = result_mat == [["4", "3"], ["2", "1"]] or result_mat == [[4, 3], [2, 1]]
+    record("Algebra: Matrix subtract", code == 200 and data.get("status") == "ok" and ok, json.dumps(data)[:200])
+except Exception as e:
+    record("Algebra: Matrix subtract", False, str(e))
+
+try:
+    code, data = api_post("/api/math/algebra/matrix/operate", {
+        "matrix_a": [[1, 2], [3, 4]],
+        "matrix_b": [[2, 0], [1, 2]],
+        "operation": "multiply",
+    })
+    result_mat = data.get("payload", {}).get("result")
+    ok = result_mat == [["4", "4"], ["10", "8"]] or result_mat == [[4, 4], [10, 8]]
+    record("Algebra: Matrix multiply", code == 200 and data.get("status") == "ok" and ok, json.dumps(data)[:200])
+except Exception as e:
+    record("Algebra: Matrix multiply", False, str(e))
+
+try:
     code, data = api_post("/api/math/algebra/system/solve", {
         "equations": ["2*x + y = 5", "x - y = 1"],
     })
@@ -399,6 +423,41 @@ except Exception as e:
     record("Geometry: Vector dot", False, str(e))
 
 try:
+    code, data = api_post("/api/math/geometry/vector/operate", {
+        "v1": [1, 0, 0],
+        "v2": [0, 1, 0],
+        "operation": "cross",
+    })
+    res = data.get("payload", {}).get("result", [])
+    ok = isinstance(res, list) and res[:3] == [0.0, 0.0, 1.0]
+    record("Geometry: Vector cross", code == 200 and data.get("status") == "ok" and ok, json.dumps(data)[:200])
+except Exception as e:
+    record("Geometry: Vector cross", False, str(e))
+
+try:
+    code, data = api_post("/api/math/geometry/vector/operate", {
+        "v1": [1, 0, 0],
+        "v2": [0, 1, 0],
+        "operation": "angle",
+    })
+    deg = data.get("payload", {}).get("degrees")
+    record("Geometry: Vector angle", code == 200 and data.get("status") == "ok" and approx(float(deg), 90.0, 1e-2), json.dumps(data)[:200])
+except Exception as e:
+    record("Geometry: Vector angle", False, str(e))
+
+try:
+    code, data = api_post("/api/math/geometry/vector/operate", {
+        "v1": [2, 0, 0],
+        "v2": [1, 0, 0],
+        "operation": "projection",
+    })
+    res = data.get("payload", {}).get("result", [])
+    ok = isinstance(res, list) and res[:3] == [2.0, 0.0, 0.0]
+    record("Geometry: Vector projection", code == 200 and data.get("status") == "ok" and ok, json.dumps(data)[:200])
+except Exception as e:
+    record("Geometry: Vector projection", False, str(e))
+
+try:
     code, data = api_post("/api/math/geometry/3d/line", {
         "p1": [0, 0, 0],
         "p2": [1, 1, 1],
@@ -416,6 +475,20 @@ try:
     record("Geometry: 3D plane", code == 200 and data.get("status") == "ok", json.dumps(data)[:200])
 except Exception as e:
     record("Geometry: 3D plane", False, str(e))
+
+try:
+    code, data = api_post("/api/math/geometry/intersection/line_plane", {
+        "line_p1": [0, 0, -1],
+        "line_p2": [0, 0, 1],
+        "plane_p1": [0, 0, 0],
+        "plane_p2": [1, 0, 0],
+        "plane_p3": [0, 1, 0],
+    })
+    pt = data.get("payload", {}).get("point", [])
+    ok = isinstance(pt, list) and len(pt) == 3 and approx(float(pt[2]), 0.0)
+    record("Geometry: Line-plane intersection", code == 200 and data.get("status") == "ok" and ok, json.dumps(data)[:200])
+except Exception as e:
+    record("Geometry: Line-plane intersection", False, str(e))
 
 try:
     code, data = api_post("/api/math/geometry/conic/analyze", {
@@ -437,6 +510,48 @@ except Exception as e:
     record("Geometry: Conicoid sphere", False, str(e))
 
 try:
+    code, data = api_post("/api/math/geometry/conicoid", {
+        "shape": "ellipsoid",
+        "params": {"cx": 0, "cy": 0, "cz": 0, "a": 2, "b": 3, "c": 4},
+    })
+    elements = data.get("plot_elements", [])
+    record("Geometry: Conicoid ellipsoid", code == 200 and data.get("status") == "ok" and len(elements) > 0, json.dumps(data)[:200])
+except Exception as e:
+    record("Geometry: Conicoid ellipsoid", False, str(e))
+
+try:
+    code, data = api_post("/api/math/geometry/conicoid", {
+        "shape": "cylinder",
+        "params": {"r": 2, "h": 3},
+    })
+    elements = data.get("plot_elements", [])
+    record("Geometry: Conicoid cylinder", code == 200 and data.get("status") == "ok" and len(elements) > 0, json.dumps(data)[:200])
+except Exception as e:
+    record("Geometry: Conicoid cylinder", False, str(e))
+
+try:
+    code, data = api_post("/api/math/geometry/conicoid", {
+        "shape": "cone",
+        "params": {"r": 2, "h": 3},
+    })
+    elements = data.get("plot_elements", [])
+    record("Geometry: Conicoid cone", code == 200 and data.get("status") == "ok" and len(elements) > 0, json.dumps(data)[:200])
+except Exception as e:
+    record("Geometry: Conicoid cone", False, str(e))
+
+try:
+    code, data = api_post("/api/math/geometry/transform/2d", {
+        "point": {"x": 1, "y": 0},
+        "operation": "rotate",
+        "params": {"cx": 0, "cy": 0, "angle": 90},
+    })
+    pt = data.get("payload", {}).get("point", {})
+    ok = approx(float(pt.get("x")), 0.0, 1e-2) and approx(float(pt.get("y")), 1.0, 1e-2)
+    record("Geometry: Transform (rotate)", code == 200 and data.get("status") == "ok" and ok, json.dumps(data)[:200])
+except Exception as e:
+    record("Geometry: Transform (rotate)", False, str(e))
+
+try:
     code, data = api_post("/api/math/geometry/mensuration/heron", {
         "a": 3, "b": 4, "c": 5,
     })
@@ -454,6 +569,16 @@ try:
     record("Geometry: Mensuration (Solid)", code == 200 and data.get("status") == "ok" and float(vol) > 0, json.dumps(data)[:200])
 except Exception as e:
     record("Geometry: Mensuration (Solid)", False, str(e))
+
+try:
+    code, data = api_post("/api/math/geometry/mensuration/solid", {
+        "shape": "cube",
+        "params": {"side": 2},
+    })
+    vol = data.get("payload", {}).get("volume")
+    record("Geometry: Mensuration (Cube)", code == 200 and data.get("status") == "ok" and approx(float(vol), 8.0), json.dumps(data)[:200])
+except Exception as e:
+    record("Geometry: Mensuration (Cube)", False, str(e))
 
 
 # --- Matrices ---
@@ -515,6 +640,15 @@ try:
 except Exception as e:
     record("Matrices: Transform", False, str(e))
 
+try:
+    code, data = api_post("/api/math/matrices/transform", {
+        "matrix": [[1, 0], [0, 1]],
+        "shape": "unit_circle",
+    })
+    record("Matrices: Transform (unit_circle)", code == 200 and data.get("status") == "ok", json.dumps(data)[:200])
+except Exception as e:
+    record("Matrices: Transform (unit_circle)", False, str(e))
+
 
 # --- Trigonometry ---
 try:
@@ -539,6 +673,13 @@ except Exception as e:
     record("Trigonometry: Graph", False, str(e))
 
 try:
+    code, data = api_post("/api/math/trig/graph", {"func": "tan", "params": {"A": 1, "B": 1, "C": 0, "D": 0}})
+    elements = data.get("plot_elements", [])
+    record("Trigonometry: Graph (tan)", code == 200 and data.get("status") == "ok" and len(elements) > 0, json.dumps(data)[:200])
+except Exception as e:
+    record("Trigonometry: Graph (tan)", False, str(e))
+
+try:
     code, data = api_post("/api/math/trig/identity", {"lhs": "sin(x)^2 + cos(x)^2", "rhs": "1"})
     proven = data.get("payload", {}).get("proven")
     record("Trigonometry: Identity", code == 200 and data.get("status") == "ok" and proven is True, json.dumps(data)[:200])
@@ -560,11 +701,25 @@ except Exception as e:
     record("Trigonometry: Compound angle", False, str(e))
 
 try:
+    code, data = api_post("/api/math/trig/compound", {"op_type": "cos_diff", "A": "x", "B": "y"})
+    latex_val = data.get("latex", {}).get("Expansion")
+    record("Trigonometry: Compound angle (cos_diff)", code == 200 and data.get("status") == "ok" and bool(latex_val), json.dumps(data)[:200])
+except Exception as e:
+    record("Trigonometry: Compound angle (cos_diff)", False, str(e))
+
+try:
     code, data = api_post("/api/math/trig/heights", {"param_type": "find_height", "d": 10, "angle_deg": 45, "h": 0})
     res = data.get("payload", {}).get("result")
     record("Trigonometry: Heights & distances", code == 200 and data.get("status") == "ok" and approx(float(res), 10.0), json.dumps(data)[:200])
 except Exception as e:
     record("Trigonometry: Heights & distances", False, str(e))
+
+try:
+    code, data = api_post("/api/math/trig/heights", {"param_type": "find_dist", "d": 10, "angle_deg": 45, "h": 0})
+    res = data.get("payload", {}).get("result")
+    record("Trigonometry: Heights & distances (find_dist)", code == 200 and data.get("status") == "ok" and approx(float(res), 10.0), json.dumps(data)[:200])
+except Exception as e:
+    record("Trigonometry: Heights & distances (find_dist)", False, str(e))
 
 
 # --- AI ---
@@ -580,6 +735,22 @@ try:
             "system_prompt": "Answer briefly."
         })
         record("AI: Chat message", code2 == 200 and data2.get("status") == "ok" and bool(data2.get("content")), json.dumps(data2)[:200])
+        try:
+            with client.websocket_connect("/api/ai/chat/stream") as ws:
+                ws.send_text(json.dumps({
+                    "messages": [{"role": "user", "content": "Say OK"}],
+                    "system_prompt": "Respond with OK only."
+                }))
+                received_any = False
+                for _ in range(10):
+                    msg = ws.receive_text()
+                    if msg:
+                        received_any = True
+                        if "\"type\": \"done\"" in msg:
+                            break
+                record("AI: Chat stream (WS)", received_any, "websocket stream")
+        except Exception as ws_err:
+            record("AI: Chat stream (WS)", False, str(ws_err))
     else:
         record("AI: Chat message", False, "No AI provider available (OpenRouter/Ollama)")
 except Exception as e:
@@ -605,6 +776,43 @@ try:
 except Exception as e:
     record("Frontend: Route files present", False, str(e))
 
+# Frontend component presence checks (solvers and core UI)
+try:
+    required_components = [
+        FRONTEND_PATH / "src/components/solvers/AlgebraSolver.tsx",
+        FRONTEND_PATH / "src/components/solvers/CalculusSolver.tsx",
+        FRONTEND_PATH / "src/components/solvers/GeometryWorkstation.tsx",
+        FRONTEND_PATH / "src/components/solvers/TrigonometryWorkstation.tsx",
+        FRONTEND_PATH / "src/components/solvers/VectorSolver.tsx",
+        FRONTEND_PATH / "src/components/solvers/ThreeDGeometrySolver.tsx",
+        FRONTEND_PATH / "src/components/solvers/MensurationSolver.tsx",
+        FRONTEND_PATH / "src/components/graphs/PlotlyGraph.tsx",
+        FRONTEND_PATH / "src/components/layout/Navbar.tsx",
+        FRONTEND_PATH / "src/components/layout/Sidebar.tsx",
+    ]
+    ok = all(p.exists() and p.stat().st_size > 0 for p in required_components)
+    record("Frontend: Component files present", ok, ", ".join([str(p) for p in required_components]))
+except Exception as e:
+    record("Frontend: Component files present", False, str(e))
+
+# Curriculum data integrity
+try:
+    curriculum_path = FRONTEND_PATH / "src/data/curriculum.json"
+    data = json.loads(curriculum_path.read_text(encoding="utf-8"))
+    ok = isinstance(data, dict) and len(data.keys()) >= 4
+    # Ensure each class has chapters and topics
+    for cls in data.values():
+        if not cls.get("chapters"):
+            ok = False
+            break
+        for chap in cls.get("chapters", []):
+            if not chap.get("topics"):
+                ok = False
+                break
+    record("Frontend: Curriculum data integrity", ok, f"classes={len(data)}")
+except Exception as e:
+    record("Frontend: Curriculum data integrity", False, str(e))
+
 # Frontend API compatibility check for quadrilateral endpoint
 try:
     code, data = api_post("/api/math/geometry/quadrilateral", {
@@ -613,7 +821,6 @@ try:
         "p3": {"x": 4, "y": 3},
         "p4": {"x": 0, "y": 3},
     })
-    # Expect failure due to backend route mismatch
     record("Frontend API: Quadrilateral endpoint compatibility", code == 200, f"HTTP {code}")
 except Exception as e:
     record("Frontend API: Quadrilateral endpoint compatibility", False, str(e))

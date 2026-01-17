@@ -249,7 +249,7 @@ export const geometryApi = {
         p3: { x: number; y: number },
         p4: { x: number; y: number }
     ) =>
-        apiRequest<ComputationResult>('/api/math/geometry/quadrilateral/analyze', {
+        apiRequest<ComputationResult>('/api/math/geometry/quadrilateral', {
             method: 'POST',
             body: JSON.stringify({ p1, p2, p3, p4 }),
         }),

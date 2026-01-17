@@ -243,11 +243,34 @@ class FunctionAnalyzer:
         
         try:
             # Find where derivative equals zero
-            critical_x = solveset(self.derivative_expr, x)
+            # Prefer real solutions to avoid complex ConditionSets
+            try:
+                from sympy import S
+                critical_x = solveset(self.derivative_expr, x, domain=S.Reals)
+            except Exception:
+                critical_x = solveset(self.derivative_expr, x)
             
             points = []
             plot_points = []
             
+            # Handle non-iterable solution sets (e.g., ConditionSet)
+            if not hasattr(critical_x, "__iter__"):
+                steps = [
+                    f"Given: f(x) = {self.expression}",
+                    f"f'(x) = {latex(self.derivative_expr)}",
+                    "Could not enumerate critical points from the solution set.",
+                ]
+                return ComputationResult(
+                    status="ok",
+                    operation="critical_points",
+                    payload={"points": []},
+                    steps=steps,
+                    plot_elements=[],
+                    latex={
+                        "derivative_zero": f"f'(x) = {latex(self.derivative_expr)} = 0",
+                    },
+                )
+
             for cx in critical_x:
                 try:
                     if not cx.is_real:

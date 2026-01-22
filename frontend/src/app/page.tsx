@@ -78,7 +78,7 @@ export default function HomePage() {
 
                 <h1 className="text-5xl md:text-7xl font-bold mb-6">
                     <span className="text-gradient">Function</span>{' '}
-                    <span className="text-foreground">Visualiser</span>
+                    <span className="text-foreground">Visualizer</span>
                 </h1>
 
                 <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
@@ -141,7 +141,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="py-16 text-center"
             >
-                <h2 className="text-3xl font-bold mb-12">Why Function Visualiser?</h2>
+                <h2 className="text-3xl font-bold mb-12">Why Function Visualizer?</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="p-6">

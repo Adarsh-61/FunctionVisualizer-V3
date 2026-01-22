@@ -37,7 +37,7 @@ services:
       dockerfile: Dockerfile
 
     # Image naming for registry push
-    image: function-visualizer-backend:latest
+    image: adarsh61/function-visualizer-backend:latest
     container_name: function-visualizer-backend
 
     # Restart policy: always restart unless manually stopped
@@ -104,7 +104,7 @@ services:
       dockerfile: Dockerfile
 
     # Image naming for registry push
-    image: function-visualizer-frontend:latest
+    image: adarsh61/function-visualizer-frontend:latest
     container_name: function-visualizer-frontend
 
     # Restart policy

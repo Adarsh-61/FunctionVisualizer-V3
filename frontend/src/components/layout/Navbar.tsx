@@ -30,7 +30,7 @@ export function Navbar() {
                             <span className="text-white font-bold text-sm">FV</span>
                         </div>
                         <span className="font-semibold text-lg hidden sm:block">
-                            Function Visualiser
+                            Function Visualizer
                         </span>
                     </Link>
 

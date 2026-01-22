@@ -1,6 +1,6 @@
-# Function Visualiser - Deployment Guide
+# Function Visualizer - Deployment Guide
 
-This guide provides instructions for hosting and deploying **Function Visualiser v3**, utilizing **Docker Hardened Images (DHI)** for maximum security and performance.
+This guide provides instructions for hosting and deploying **Function Visualizer v3**, utilizing **Docker Hardened Images (DHI)** for maximum security and performance.
 
 ---
 
@@ -105,5 +105,5 @@ PORT=3000
 
 ---
 
-**Function Visualiser Team**
+**Function Visualizer Team**
 *Secure, Fast, and Open Source.*

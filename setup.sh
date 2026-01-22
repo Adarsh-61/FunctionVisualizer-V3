@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ==============================================================================
-# Function Visualiser - Automated Deployment Script
+# Function Visualizer - Automated Deployment Script
 # ==============================================================================
 # This script builds and deploys the application using Docker Compose.
 #
@@ -24,7 +24,7 @@ RED='\033[0;31m'
 NC='\033[0m'
 
 echo -e "${BLUE}======================================================${NC}"
-echo -e "${BLUE}   Function Visualiser | Deployment Setup v3.0${NC}"
+echo -e "${BLUE}   Function Visualizer | Deployment Setup v3.0${NC}"
 echo -e "${BLUE}======================================================${NC}"
 
 # 1. Check Prerequisites

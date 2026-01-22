@@ -1,4 +1,4 @@
-# Function Visualiser - Version 3
+# Function Visualizer - Version 3
 
 **Official Documentation**
 
@@ -22,9 +22,9 @@ Developed by the **NAS Team**
 
 ## 1. Project Overview
 
-### 1.1 What is Function Visualiser?
+### 1.1 What is Function Visualizer?
 
-Function Visualiser (Version 3) is a comprehensive, AI-powered educational platform specifically designed to help students master the mathematics curriculum prescribed by the National Council of Educational Research and Training (NCERT) of India. The system covers Classes 9, 10, 11, and 12, which correspond to high school mathematics education.
+Function Visualizer (Version 3) is a comprehensive, AI-powered educational platform specifically designed to help students master the mathematics curriculum prescribed by the National Council of Educational Research and Training (NCERT) of India. The system covers Classes 9, 10, 11, and 12, which correspond to high school mathematics education.
 
 ### 1.2 The Educational Problem It Solves
 
@@ -329,7 +329,7 @@ To enable the preferred locally-hosted AI features:
 
 ### 6.5 Docker Deployment
 
-The recommended way to deploy Function Visualiser in production is using Docker containers. The project includes a complete containerization setup with security hardening and production optimizations.
+The recommended way to deploy Function Visualizer in production is using Docker containers. The project includes a complete containerization setup with security hardening and production optimizations.
 
 #### 6.5.1 Docker Architecture
 
@@ -355,8 +355,8 @@ Ready-to-use images are available on Docker Hub:
 
 | Image | Pull Command |
 |-------|--------------|
-| [Backend](https://hub.docker.com/r/adarsh61/function-visualiser-backend) | `docker pull adarsh61/function-visualiser-backend:latest` |
-| [Frontend](https://hub.docker.com/r/adarsh61/function-visualiser-frontend) | `docker pull adarsh61/function-visualiser-frontend:latest` |
+| [Backend](https://hub.docker.com/r/adarsh61/function-visualizer-backend) | `docker pull adarsh61/function-visualizer-backend:latest` |
+| [Frontend](https://hub.docker.com/r/adarsh61/function-visualizer-frontend) | `docker pull adarsh61/function-visualizer-frontend:latest` |
 
 **Instant deployment with pre-built images:**
 ```bash
@@ -364,14 +364,14 @@ Ready-to-use images are available on Docker Hub:
 cat > docker-compose.yml << 'EOF'
 services:
   backend:
-    image: adarsh61/function-visualiser-backend:latest
+    image: adarsh61/function-visualizer-backend:latest
     ports:
       - "8000:8000"
     environment:
       - AI_MODE=auto
       - OLLAMA_BASE_URL=http://host.docker.internal:11434
   frontend:
-    image: adarsh61/function-visualiser-frontend:latest
+    image: adarsh61/function-visualizer-frontend:latest
     ports:
       - "3000:3000"
     depends_on:
@@ -522,7 +522,7 @@ This section is an end-user guide for students and general users.
 
 ## 8. AI Integration Overview: A "Local-First" Philosophy
 
-The Artificial Intelligence (AI) component of Function Visualiser is not just a chatbot; it is a deeply integrated "mathematical thinker" designed to guide students through problems.
+The Artificial Intelligence (AI) component of Function Visualizer is not just a chatbot; it is a deeply integrated "mathematical thinker" designed to guide students through problems.
 
 In Version 3, we have adopted a **Local-First Design Philosophy**. This means the system is built to run its AI computations directly on your own device whenever possible, rather than relying on external web servers. This decision was made to ensure:
 

@@ -18,8 +18,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'),
     title: {
-        default: 'Function Visualiser | Advanced Math & AI Solver',
-        template: '%s | Function Visualiser'
+        default: 'Function Visualizer | Advanced Math & AI Solver',
+        template: '%s | Function Visualizer'
     },
     description: 'Interactive mathematical visualization engine featuring real-time graphing, calculus, linear algebra, and AI-powered step-by-step problem solving.',
     keywords: ['math', 'calculus', 'algebra', 'geometry', 'visualization', 'AI', 'solver', 'interactive graph', '3d graphing', 'linear algebra'],
@@ -27,22 +27,22 @@ export const metadata: Metadata = {
     openGraph: {
         type: 'website',
         locale: 'en_US',
-        url: 'https://function-visualiser.com',
-        siteName: 'Function Visualiser',
-        title: 'Function Visualiser | Advanced Math & AI Solver',
+        url: 'https://FunctionVisualizer.vercel.app',
+        siteName: 'Function Visualizer',
+        title: 'Function Visualizer | Advanced Math & AI Solver',
         description: 'Explore mathematics with interactive tools for calculus, algebra, and geometry. Features AI-powered problem solving and dynamic 3D visualization.',
         images: [
             {
                 url: '/og-image.png',
                 width: 1200,
                 height: 630,
-                alt: 'Function Visualiser Dashboard'
+                alt: 'Function Visualizer Dashboard'
             }
         ]
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Function Visualiser | Advanced Math & AI Solver',
+        title: 'Function Visualizer | Advanced Math & AI Solver',
         description: 'Interactive mathematical visualization engine featuring real-time graphing, calculus, linear algebra, and AI-powered step-by-step problem solving.',
         images: ['/og-image.png'],
     },

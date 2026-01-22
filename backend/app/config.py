@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     """Application settings loaded from environment variables."""
 
     # API Configuration
-    app_name: str = "Function Visualiser API"
+    app_name: str = "Function Visualizer API"
     app_version: str = "3.0.0"
     debug: bool = False
 

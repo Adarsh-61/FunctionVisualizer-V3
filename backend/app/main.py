@@ -1,5 +1,5 @@
 """
-Function Visualiser Backend - Main Application Entry Point
+Function Visualizer Backend - Main Application Entry Point
 
 FastAPI application with CORS, WebSocket support, and all API routers.
 """
@@ -33,7 +33,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     yield
     
     # Shutdown
-    print("Shutting down Function Visualiser API")
+    print("Shutting down Function Visualizer API")
 
 
 # Create FastAPI application
@@ -41,7 +41,7 @@ app = FastAPI(
     title=f"{settings.app_name} (Version 3)",
     version=settings.app_version,
     description="""
-    Function Visualiser API (Version 3)
+    Function Visualizer API (Version 3)
     
     A high-performance mathematical computation and visualization backend with 
     context-aware AI assistance and a data-driven NCERT curriculum engine.

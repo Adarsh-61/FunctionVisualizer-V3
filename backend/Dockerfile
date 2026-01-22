@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # ==============================================================================
-# FUNCTION VISUALISER - BACKEND DOCKERFILE
+# FUNCTION VISUALIZER - BACKEND DOCKERFILE
 # ==============================================================================
 # 
 # This Dockerfile creates a production-ready Python/FastAPI container using a
@@ -37,7 +37,7 @@
 FROM python:3.11-slim-bookworm AS builder
 
 # OCI Labels - Standard metadata for container registries
-LABEL org.opencontainers.image.title="Function Visualiser Backend"
+LABEL org.opencontainers.image.title="Function Visualizer Backend"
 LABEL org.opencontainers.image.description="FastAPI backend for mathematical computation and AI tutoring"
 LABEL org.opencontainers.image.version="3.0.0"
 LABEL org.opencontainers.image.authors="NAS Team"

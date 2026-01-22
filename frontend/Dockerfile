@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # ==============================================================================
-# FUNCTION VISUALISER - FRONTEND DOCKERFILE
+# FUNCTION VISUALIZER - FRONTEND DOCKERFILE
 # ==============================================================================
 #
 # This Dockerfile creates a production-ready Next.js container using a
@@ -41,7 +41,7 @@
 FROM node:20-alpine AS builder
 
 # OCI Labels - Standard metadata for container registries
-LABEL org.opencontainers.image.title="Function Visualiser Frontend"
+LABEL org.opencontainers.image.title="Function Visualizer Frontend"
 LABEL org.opencontainers.image.description="Next.js frontend for interactive mathematics visualization"
 LABEL org.opencontainers.image.version="3.0.0"
 LABEL org.opencontainers.image.authors="NAS Team"

@@ -1,5 +1,5 @@
 # ==============================================================================
-# FUNCTION VISUALISER - DOCKER COMPOSE CONFIGURATION
+# FUNCTION VISUALIZER - DOCKER COMPOSE CONFIGURATION
 # ==============================================================================
 #
 # This file orchestrates the multi-container application deployment.
@@ -37,8 +37,8 @@ services:
       dockerfile: Dockerfile
 
     # Image naming for registry push
-    image: function-visualiser-backend:latest
-    container_name: function-visualiser-backend
+    image: function-visualizer-backend:latest
+    container_name: function-visualizer-backend
 
     # Restart policy: always restart unless manually stopped
     restart: always
@@ -104,8 +104,8 @@ services:
       dockerfile: Dockerfile
 
     # Image naming for registry push
-    image: function-visualiser-frontend:latest
-    container_name: function-visualiser-frontend
+    image: function-visualizer-frontend:latest
+    container_name: function-visualizer-frontend
 
     # Restart policy
     restart: always

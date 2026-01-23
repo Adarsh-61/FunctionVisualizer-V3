@@ -236,14 +236,14 @@ class AIService:
             raise RuntimeError("Ollama is not available (is it running?)")
         
         else:  # auto mode
-            if await self.openrouter.is_available():
-                self._current_provider = "openrouter"
-                return self.openrouter
-            
             if await self.ollama.is_available():
                 self._current_provider = "ollama"
-                logger.info("Falling back to Ollama (OpenRouter unavailable)")
                 return self.ollama
+            
+            if await self.openrouter.is_available():
+                self._current_provider = "openrouter"
+                logger.info("Falling back to OpenRouter (Ollama unavailable)")
+                return self.openrouter
             
             raise RuntimeError("No AI provider available")
     

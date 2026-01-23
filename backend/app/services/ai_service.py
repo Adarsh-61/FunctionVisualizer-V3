@@ -236,10 +236,12 @@ class AIService:
             raise RuntimeError("Ollama is not available (is it running?)")
         
         else:  # auto mode
+            # Try Ollama first
             if await self.ollama.is_available():
                 self._current_provider = "ollama"
                 return self.ollama
             
+            # Fallback to OpenRouter
             if await self.openrouter.is_available():
                 self._current_provider = "openrouter"
                 logger.info("Falling back to OpenRouter (Ollama unavailable)")
@@ -254,23 +256,67 @@ class AIService:
     
     async def chat(self, messages: List[Message]) -> str:
         """Send a chat request using the appropriate provider."""
-        provider = await self.get_active_provider()
-        return await provider.chat(messages)
+        try:
+            provider = await self.get_active_provider()
+            return await provider.chat(messages)
+        except Exception as e:
+            # If in auto mode and we failed with Ollama, try OpenRouter
+            if self.mode == "auto" and self._current_provider == "ollama":
+                logger.warning(f"Ollama failed in auto mode: {e}. Attempting fallback to OpenRouter.")
+                try:
+                    # Switch provider context for this request
+                    self._current_provider = "openrouter"
+                    if await self.openrouter.is_available():
+                        return await self.openrouter.chat(messages)
+                except Exception as fallback_error:
+                    logger.error(f"Fallback to OpenRouter also failed: {fallback_error}")
+            raise e
     
     async def chat_stream(self, messages: List[Message]) -> AsyncGenerator[str, None]:
         """Stream a chat response using the appropriate provider."""
-        provider = await self.get_active_provider()
-        async for chunk in provider.chat_stream(messages):
-            yield chunk
+        try:
+            provider = await self.get_active_provider()
+            async for chunk in provider.chat_stream(messages):
+                yield chunk
+        except Exception as e:
+            # If in auto mode and we failed with Ollama, try OpenRouter
+            if self.mode == "auto" and self._current_provider == "ollama":
+                logger.warning(f"Ollama stream failed in auto mode: {e}. Attempting fallback to OpenRouter.")
+                try:
+                    # Switch provider context for this request
+                    self._current_provider = "openrouter"
+                    if await self.openrouter.is_available():
+                        # We need to restart the stream
+                        async for chunk in self.openrouter.chat_stream(messages):
+                            yield chunk
+                        return # Exit successfully after fallback stream
+                except Exception as fallback_error:
+                    logger.error(f"Fallback to OpenRouter stream also failed: {fallback_error}")
+            raise e
     
     async def get_status(self) -> dict:
         """Get current AI service status."""
         openrouter_available = await self.openrouter.is_available()
         ollama_available = await self.ollama.is_available()
         
+        # Determine what the provider WOULD be if we asked for it now
+        # This fixes the issue of UI showing 'OpenRouter' default when _current_provider is None
+        effective_provider = self._current_provider
+        
+        if effective_provider is None:
+            if self.mode == "online" and openrouter_available:
+                effective_provider = "openrouter"
+            elif self.mode == "offline" and ollama_available:
+                effective_provider = "ollama"
+            elif self.mode == "auto":
+                if ollama_available:
+                    effective_provider = "ollama"
+                elif openrouter_available:
+                    effective_provider = "openrouter"
+        
         return {
             "mode": self.mode,
-            "current_provider": self._current_provider,
+            "current_provider": effective_provider,
             "openrouter": {
                 "available": openrouter_available,
                 "model": self.openrouter.model if openrouter_available else None,

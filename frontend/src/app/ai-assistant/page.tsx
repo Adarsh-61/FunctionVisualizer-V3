@@ -128,17 +128,23 @@ function AIAssistantContent() {
     // Helper to determine status text
     const statusText = useMemo(() => {
         if (!aiStatus) return 'Connecting...';
+        
         // Map provider names to properly capitalized display names
         const providerDisplayNames: Record<string, string> = {
             'openrouter': 'OpenRouter',
             'ollama': 'Ollama',
         };
+
         if (aiStatus.current_provider) {
             return providerDisplayNames[aiStatus.current_provider.toLowerCase()] ||
                 aiStatus.current_provider.charAt(0).toUpperCase() + aiStatus.current_provider.slice(1);
         }
-        if (aiStatus.openrouter.available) return 'OpenRouter';
-        if (aiStatus.ollama.available) return 'Ollama';
+
+        // If no provider is active but we are online, show mode or waiting state
+        if (aiStatus.mode === 'auto') return 'Auto (Connecting...)';
+        if (aiStatus.mode === 'offline' && aiStatus.ollama.available) return 'Ollama'; // Fallback
+        if (aiStatus.mode === 'online' && aiStatus.openrouter.available) return 'OpenRouter'; // Fallback
+        
         return 'Disconnected';
     }, [aiStatus]);
 
